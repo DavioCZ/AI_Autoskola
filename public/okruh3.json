@@ -1,0 +1,1715 @@
+[
+  {
+    "id": "24030001",
+    "otazka": "Co se rozumí pod pojmem \"defenzivní jízda\"?",
+    "obrazek": null,
+    "moznosti": [
+      "Takový způsob jízdy, ve kterém soutěžíme s ostatními účastníky provozu o to, kdo je lepší řidič.",
+      "Takový způsob jízdy, kdy se snažíme splynout se silničním provozem, k ostatním účastníkům silničního provozu se chováme ohleduplně, ukázněně a předvídáme i jejich možné chyby.",
+      "Takový způsob jízdy, ve kterém jde hlavně o to, abychom byli všude co nejrychleji a udělali co nejméně chyb."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24030004",
+    "otazka": "Jakým způsobem může ovlivnit výhled z vozidla sloupek mezi čelnim sklem a bočním oknem?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403004.png",
+    "moznosti": [
+      "Řidič nemůže takovou situaci vůbec ovlivnit.",
+      "Taková situace by neměla nastat, konstrukce karoserie je výrobcem uzpůsobena tak, aby měl řidič v každém okamžiku neomezený výhled před vozidlo. Výhled tedy není nikdy omezen.",
+      "Takové omezení výhledu je dané konstrukcí vozidla, řidič by měl zohlednit prostor omezeného výhledu a kontrolovat situaci vyhlédnutím za sloupek, jen tak dokáže omezený výhled eliminovat."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030010",
+    "otazka": "Který z uvedených sdělovačů informuje řidiče motorového vozidla o rozsvícených potkávacích světlech?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/2403010-3.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403010-1.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403010-2.png"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24030011",
+    "otazka": "Který z uvedených sdělovačů informuje řidiče motorového vozidla o rozsvícených dálkových světlech?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/2403011-1.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403011-2.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403011-3.png"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030012",
+    "otazka": "Který z uvedených sdělovačů informuje řidiče motorového vozidla o rozsvícených předních mlhových světlech?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/2403012-2.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403012-1.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403012-3.png"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030013",
+    "otazka": "Který z uvedených sdělovačů informuje řidiče motorového vozidla o rozsvícených zadních mlhových světlech?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/2403013-1.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403013-3.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403013-2.png"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030014",
+    "otazka": "Který z uvedených sdělovačů informuje řidiče motorového vozidla o závadě brzdového systému?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/2403014-1.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403014-3.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403014-2.png"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070024",
+    "otazka": "Mezi prvky aktivní bezpečnosti při jízdě na motocyklu patří:",
+    "obrazek": null,
+    "moznosti": [
+      "Přilba, ochranná bunda, rukavice, ochranné kalhoty a pevná kotníková obuv.",
+      "Kvalitní pneumatiky s dostatečným vzorkem dezénu, asistenční systémy, čistota světel a zpětných zrcátek."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030012",
+    "otazka": "Může být přetížení nákladního vozidla při přepravě nákladu nebezpečné?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230311.jpg",
+    "moznosti": [
+      "Ne nemůže, přetížení vozidla není nebezpečné, pokud řidič dodržuje bezpečnostní přestávky a reaguje na povětrnostní podmínky a další podněty v provozu.",
+      "Ne, nemůže. Pokud má řidič dostatek zkušeností s jízdou s přetíženým nákladem, tak dokáže všechny problémy s takovýmto vozidlem eliminovat.",
+      "Ano může, neboť přetížené vozidlo se v důsledku fyzikálních zákonů může stát neovladatelným."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23030030",
+    "otazka": "Při přepravě dětí a jejich umístění do dětské autosedačky je důležité zejména dbát na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230331.jpg",
+    "moznosti": [
+      "Dostatečnou hmotnost přepravovaného dítěte a jeho neustálého kontaktu dolních končetin s podlahou vozidla.",
+      "Umístění dětské autosedačky pouze za sedadlem spolujezdce, tedy vzadu vpravo. Jiná sedadla ve vozidle nejsou vybavena systémem ISOFIX.",
+      "Výšku přepravovaného dítěte, která má zásadní vliv na polohu bezpečnostního pásu, ten nikdy nesmí vést přes krk dítěte."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23030032",
+    "otazka": "Kdy je nutné vypnout čelní airbag před sedadlem spolujezdce s ohledem na přepravu dětí v zádržném systému?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230335.jpg",
+    "moznosti": [
+      "Bezpodmínečně pokaždé, když je dítě přepravováno v dětském zádržném systému čelem proti směru jízdy automobilu (tzv. vajíčko/protisměrná dětská autosedačka). V případě zádržných systémů instalovaných ve směru jízdy vozidla se airbag nevypíná, ale doporučuje se posunout sedadlo s dětskou autosedačkou směrem dozadu od čelního airbagu.",
+      "V případě umístění dětské autosedačky na přední sedadlo zůstává tento bezpečnostní prvek vždy aktivní.",
+      "Pokud mám na dětském zádržném systému použitém čelem proti směru jízdy automobilu (na tzv. vajíčku) ochranné madlo, není nutné čelní airbag vypínat, protože tato část slouží jako ochranný rám před nárazem airbagu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060012",
+    "otazka": "S jakým rizikem může řidič počítat při jízdě za označeným výcvikovým vozidlem autoškoly?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230701.png",
+    "moznosti": [
+      "Nemusí brát zřetel na žádné zvýšené riziko.",
+      "S tím, že vozidlo autoškoly může doprovázet žadatele o ŘO na motocyklu při výcviku nebo při závěrečných zkouškách.",
+      "S žádným rizikem. Nemusí brát ohled na tyto účastníky silničního provozu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060013",
+    "otazka": "Ve vyobrazené dopravní situaci by měl řidič nákladního automobilu nebo autobusu v obci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230702.png",
+    "moznosti": [
+      "Jet minimálně 50 km/h.",
+      "Jet nejvýše rychlostí, která je dána obecnou úpravou silničního provozu, není při tom nutno předvídat okolnosti vedoucí k náhlé nutnosti zastavit vozidlo.",
+      "Jet jen takovou rychlostí, aby byl schopen bezpečně zastavit vozidlo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060019",
+    "otazka": "Mezi prvky pasivní bezpečnosti při jízdě na motocyklu patří:",
+    "obrazek": null,
+    "moznosti": [
+      "přilba, ochranná bunda, rukavice, ochranné kalhoty a pevná kotníková obuv.",
+      "prvky, které zvyšují komfort řidiče při řízení, např.: vyhřívané rukojeti, nastavitelný štít, volitelné nastavení tlumičů pérování.",
+      "čistá zpětná zrcátka."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060046",
+    "otazka": "Řidič nákladního automobilu nebo autobusu ve vyobrazené dopravní situaci musí předvídat:",
+    "obrazek": null,
+    "moznosti": [
+      "Nebezpečí náhlého bočního poryvu větru pouze tam, kde ho upozorní dopravní značka \"Boční vítr\".",
+      "Nebezpečí náhlého bočního poryvu větru i tam, kde ho dopravní značka neupozorní.",
+      "Nebezpečí náhlého bočního poryvu větru pouze tam, kde ho upozorní tzv. \"větrný rukáv\"."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060029",
+    "otazka": "Jedete za dvěma motocykly, jejichž řidiči používají označení \"L” (autoškola). Je vzhledem k bezpečnosti silničního provozu vhodné se zařazovat při předjíždění mezi tato vozidla?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230719.png",
+    "moznosti": [
+      "Ne. Zákon o silničním provozu to sice nezakazuje, avšak nepřispěje to ke zvýšení bezpečnosti silničního provozu.",
+      "Ano. Navíc to přispěje ke zvýšení plynulosti silničního provozu.",
+      "Zařazování se mezi tato vozidla při předjíždění nemá žádný negativní vliv na bezpečnost provozu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060035",
+    "otazka": "Řidič vozidla hromadné dopravy osob by měl s ohledem na nevidomé osoby ve vyobrazené dopravní situaci zastavit.",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230725.png",
+    "moznosti": [
+      "Před nápisem BUS na vozovce, aby bylo vidět označení zastávky.",
+      "U označníku zastávky, protože nevidomé osoby ho naleznou pomocí slepecké hole.",
+      "U signálního pásu z reliéfní dlažby tak, aby nevidomé osoby bezpečně poznaly místo nástupu do autobusu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060039",
+    "otazka": "Při vyhýbání se překážce na motocyklu, směřuje pohled řidiče:",
+    "obrazek": null,
+    "moznosti": [
+      "Dopředu ve směru, kam chce řidič jet.",
+      "Stále na jeden statický bod.",
+      "Na překážku, které se chce řidič vyhnout."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060040",
+    "otazka": "Při otáčení se s motocyklem se řidič dívá:",
+    "obrazek": null,
+    "moznosti": [
+      "Do směru, kam se otáčí.",
+      "Na pohledu řidiče nezáleží.",
+      "Do směru před motocykl."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060041",
+    "otazka": "Při průjezdu zatáčkou na motocyklu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230731.png",
+    "moznosti": [
+      "Pokud je zatáčka pravotočivá, pomáhá si řidič kontaktem levého chodidla nohy se zemí.",
+      "Zůstávají obě dvě nohy na stupačkách.",
+      "Pokud je zatáčka pravotočivá, pomáhá si řidič kontaktem pravého chodidla nohy se zemí."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060042",
+    "otazka": "Při průjezdu mírné zatáčky na motocyklu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230732.png",
+    "moznosti": [
+      "Zatáčku projíždíme za současného \"vymáčknutí\" páčky spojky.",
+      "Zatáčku projíždíme za současného přibrzďování předního kola.",
+      "Zatáčku projíždíme pod mírným plynem."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060043",
+    "otazka": "Při průjezdu mírné zatáčky na motocyklu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230732.png",
+    "moznosti": [
+      "Je vhodné její projetí při rovnoměrném dávkování \"plynu\".",
+      "Je vhodné její projetí při výrazném zvyšování dávkování \"plynu\".",
+      "Je vhodné její projetí bez \"plynu\"."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060044",
+    "otazka": "Řidič motocyklu před zastavením:",
+    "obrazek": null,
+    "moznosti": [
+      "Nohu pokládá na zem s dostatečným předstihem před zastavením motocyklu.",
+      "Nejprve dobrzdí a teprve poté pokládá nohu na zem.",
+      "Nejprve pokládá nohu na zem a poté dobrzdí."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060045",
+    "otazka": "Jak může řidič snížit riziko střetu s projíždějícím cyklistou při vystupovaní z vozidla?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230735.png",
+    "moznosti": [
+      "Řidič vozidla využívá tzv. holandského manévru, kdy dveře otevře pravou (vzdálenější) rukou, která ho přinutí natočit tělo. Tímto způsobem lépe zkontroluje zpětné zrcátko a přes levé rameno se ohlédne vzad ještě před úplným otevřením dveří.",
+      "Řidič vozidla nemá povinnost, aby v dané situaci přemýšlel za ostatní účastníky provozu. Cyklista musí předvídat a rychlost jízdy přizpůsobit situaci, aby nedošlo ke kolizi.",
+      "Řidič vozidla se musí důkladně podívat do zpětného zrcátka na čelním skle a následně se ohlédne přes pravé rameno, aby celou situaci zkontroloval ve skle zadních dveří. Současně levou rukou otevírá dveře, aby projíždějícím cyklistům dal signál, že hodlá vystupovat."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040174",
+    "otazka": "Ve výhledu z motorového vozidla vidíte děti, které si hrají na chodníku. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Z dostatečné vzdálenosti upozorníte hrající si děti na možné nebezpečí zvukovým výstražným znamením.",
+      "Protože jsou děti na chodníku, nemáte důvod ke zvýšení opatrnosti ani ke změně způsobu jízdy.",
+      "Budete s ohledem na možné vběhnutí dětí do vozovky připraven(-a) brzdit a podle okolností snížíte rychlost jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050434",
+    "otazka": "Co se rozumí aktivní bezpečností vozidla?",
+    "obrazek": null,
+    "moznosti": [
+      "Vlastnosti vozidla minimalizující škody v průběhu dopravní nehody.",
+      "Vlastnosti vozidla minimalizující následky dopravní nehody po jejím vzniku.",
+      "Vlastnosti vozidla minimalizující příčiny vzniku dopravní nehody."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050435",
+    "otazka": "Co se rozumí pasivní bezpečností vozidla?",
+    "obrazek": null,
+    "moznosti": [
+      "Souhrn vlastností vozidla minimalizujících příčiny vzniku dopravní nehody.",
+      "Souhrn vlastností vozidla vylučujících následky dopravní nehody.",
+      "Souhrn vlastností vozidla minimalizujících škody v průběhu dopravní nehody."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050436",
+    "otazka": "Mezi prvky pasivní bezpečnosti patří:",
+    "obrazek": null,
+    "moznosti": [
+      "Zádržné systémy.",
+      "Aerodynamická stabilita.",
+      "Účinný brzdový systém."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050437",
+    "otazka": "Airbagy:",
+    "obrazek": null,
+    "moznosti": [
+      "Plně nahrazují funkci bezpečnostních pásů i jiných zádržných systémů.",
+      "Plní svou funkci pouze při řádném užití zádržných systémů .",
+      "Plní svou funkci pouze ve vozidlech vybavených systémem ABS."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050438",
+    "otazka": "Pohon všech kol zajišťuje automobilu zejména:",
+    "obrazek": null,
+    "moznosti": [
+      "Lepší akceleraci a snazší dosažení maximální rychlosti.",
+      "Snížení spotřeby paliva při současném zlepšení jízdních vlastností.",
+      "Zlepšení jízdních vlastností za zhoršených adhezních podmínek."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050439",
+    "otazka": "Přípojné vozidlo je:",
+    "obrazek": null,
+    "moznosti": [
+      "Pouze přívěs.",
+      "Pouze návěs.",
+      "Přívěs i návěs."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050440",
+    "otazka": "Mezi prvky aktivní bezpečnosti patří:",
+    "obrazek": null,
+    "moznosti": [
+      "Dobrý výhled z vozidla.",
+      "Airbag.",
+      "Deformovatelná příď."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050442",
+    "otazka": "Mezinárodní silniční doprava je:",
+    "obrazek": null,
+    "moznosti": [
+      "Doprava, při které je dopravcem užito vozidlo s registrační značkou cizího státu, který není členem Evropských společenství.",
+      "Doprava, při níž mají dopravce a zasílatel bydliště nebo sídlo ve dvou různých státech.",
+      "Doprava, při níž místo výchozí a místo cílové leží na území dvou různých států, nebo doprava, při níž místo výchozí a cílové sice leží na území téhož státu, ale část jízdy se uskuteční na území jiného státu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050444",
+    "otazka": "Při výměně pravého předního kola nákladního vozidla se nejlépe zabrání nežádoucímu pohybu vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Zajištěním levého zadního kola dvěma zakládacími klíny, jedním před kolem a druhým za kolem.",
+      "Zajištěním pravého zadního kola dvěma zakládacími klíny, jedním před kolem a druhým za kolem.",
+      "Zajištěním levého předního kola zakládacím klínem před kolem při současném zajištění kteréhokoliv zadního kola zakládacím klínem za kolem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050445",
+    "otazka": "Může řidič motocyklu přepravovat osobu, která nedosáhne nohama na stupačky?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano, ale jen v obci.",
+      "Nesmí.",
+      "Může, pokud je přepravované osobě více než 12 let."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050462",
+    "otazka": "Jak při výměně pravého předního kola nejlépe zajistíte vozidlo před nežádoucím pohybem:",
+    "obrazek": null,
+    "moznosti": [
+      "Zakládací klín se dá před levé přední kolo.",
+      "Před levé přední kolo a před libovolné zadní kolo se dá po jednom zakládacím klínu.",
+      "Levé zadní kolo se zajistí dvěma zakládacími klíny, jedním klínem před kolem a jedním za kolem."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050464",
+    "otazka": "Kdy je efektivní používat tempomat?",
+    "obrazek": null,
+    "moznosti": [
+      "Jen při vysokých rychlostech.",
+      "Pokud dopravní situace umožní jízdu stejnoměrnou rychlostí.",
+      "Jen ve stoupání nebo klesání."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050468",
+    "otazka": "Pokud kontrolka směrových světel bliká výrazně rychleji než obvykle, může být příčinou:",
+    "obrazek": null,
+    "moznosti": [
+      "Závada na přepínači směrových světel.",
+      "Závada na startéru vozidla.",
+      "Závada na některé ze žárovek směrových světel."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050472",
+    "otazka": "Za jízdy na motocyklu je řidič povinen:",
+    "obrazek": null,
+    "moznosti": [
+      "Mít na hlavě nasazenou a řádně připevněnou ochrannou přílbu schváleného typu.",
+      "Používat pouze kožené plné boty.",
+      "Nosit ochranný oděv, například koženou kombinézu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050473",
+    "otazka": "Řidič motocyklu nebo mopedu si za jízdy musí chránit zrak:",
+    "obrazek": null,
+    "moznosti": [
+      "Vhodným způsobem, například brýlemi nebo štítem, pokud tím není snížena bezpečnost jízdy.",
+      "Pouze při zhoršených povětrnostních podmínkách, například za deště nebo sněžení.",
+      "Pouze za ostrého slunce slunečními brýlemi s ochranným UV faktorem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050476",
+    "otazka": "Může být schopnost k řízení vozidla ovlivněna i po požití malého množství alkoholu, např. půl litru desetistupňového piva?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne, malé množství požitého alkoholu neovlivňuje schopnost k řízení motorového vozidla.",
+      "Ne, pokud se alkohol pije zároveň s černou kávou.",
+      "Ano, i malé množství požitého alkoholu snižuje schopnost k řízení motorového vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050480",
+    "otazka": "Při jízdě v obci se před Vaším vozidlem náhle objeví kutálející se míč. Jak byste měli reagovat?",
+    "obrazek": null,
+    "moznosti": [
+      "Pokračovat v jízdě, protože děti vědí, že mají zůstat stát na okraji chodníku a počkat, až auto přejede.",
+      "Okamžitě snížit rychlost jízdy nebo i zastavit vozidlo, protože na vozovku za míčem mohou vběhnout děti.",
+      "Vyhnout se míči, aby nedošlo k poškození Vašeho vozidla, a pokračovat v jízdě nezměněnou rychlostí."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050485",
+    "otazka": "Řidič nesmí přepravovat na druhém sedadle motocyklu:",
+    "obrazek": null,
+    "moznosti": [
+      "Osobu mladší 12 let.",
+      "Osobu mladší 15 let.",
+      "Osobu mladší 17 let."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050489",
+    "otazka": "Moped:",
+    "obrazek": null,
+    "moznosti": [
+      "Se nesmí vléci ani užít jako vlečné vozidlo.",
+      "Se nesmí vléci, smí se však užít jako vlečné vozidlo.",
+      "Se smí vléci, nesmí se však užít jako vlečné vozidlo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050491",
+    "otazka": "Motocykl s postranním vozíkem:",
+    "obrazek": null,
+    "moznosti": [
+      "Se nesmí vléci, smí se však užít jako vlečné vozidlo.",
+      "Se smí vléci i užít jako vlečné vozidlo.",
+      "Se smí vléci, nesmí se však užít jako vlečné vozidlo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050492",
+    "otazka": "Jaké důsledky mohou mít síly působící na náklad při průjezdu zatáčkou?",
+    "obrazek": null,
+    "moznosti": [
+      "Nedostatečně upevněný náklad se může v zatáčce vysypat nebo posunout.",
+      "Průjezd zatáčkou nemá žádný vliv na náklad.",
+      "V zatáčce získává vozidlo větší stabilitu v důsledku vyšší hmotnosti."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050495",
+    "otazka": "Čím je rychlost jízdy motocyklu vyšší:",
+    "obrazek": null,
+    "moznosti": [
+      "Tím více musí být v zatáčce motocykl naklopen.",
+      "Tím více v zatáčkách natáčíme řídítka.",
+      "Tím lépe lze projíždět zatáčky o malém poloměru."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050496",
+    "otazka": "Při jízdě se před Vaším vozidlem zpoza parkujících aut náhle objeví kutálející se míč. Jak byste měli reagovat?",
+    "obrazek": null,
+    "moznosti": [
+      "Pokračovat v jízdě, protože děti vědí, že mají zůstat stát na okraji chodníku a počkat, až auto přejede.",
+      "Okamžitě snížit rychlost jízdy nebo i zastavit vozidlo, protože na vozovku za míčem mohou vběhnout děti.",
+      "Vyhnout se míči, aby nedošlo k poškození Vašeho vozidla, a pokračovat v jízdě nezměněnou rychlostí."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050498",
+    "otazka": "Motocykl bez postranního vozíku:",
+    "obrazek": null,
+    "moznosti": [
+      "Se smí vléci, nesmí se však užít jako vlečné vozidlo.",
+      "Se nesmí vléci, smí se však užít jako vlečné vozidlo.",
+      "Se nesmí vléci ani užít jako vlečné vozidlo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050499",
+    "otazka": "Na dálnici musíte počítat se silným bočním větrem především:",
+    "obrazek": null,
+    "moznosti": [
+      "Mezi protihlukovými stěnami.",
+      "V podjezdech.",
+      "Na mostech."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050500",
+    "otazka": "Jaká je možná příčina vzniku nebezpečí pádu motocyklu v zatáčkách?",
+    "obrazek": null,
+    "moznosti": [
+      "Zvýšený okraj na vnější straně vozovky.",
+      "Olej na vozovce.",
+      "Svislé dopravní značení."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050501",
+    "otazka": "Na dálnici musíte počítat se silným bočním větrem především:",
+    "obrazek": null,
+    "moznosti": [
+      "Mezi protihlukovými stěnami.",
+      "V lesních úsecích.",
+      "V otevřeném terénu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050503",
+    "otazka": "Jaká je častá příčina vzniku nebezpečí pádu motocyklu v zatáčkách?",
+    "obrazek": null,
+    "moznosti": [
+      "Snížená krajnice vozovky.",
+      "Vodorovné dopravní značení.",
+      "Zvýšený okraj na vnější straně vozovky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050504",
+    "otazka": "Za minimální bezpečnou vzdálenost mezi za sebou jedoucími vozidly je zpravidla považován:",
+    "obrazek": null,
+    "moznosti": [
+      "Časový rozestup dvou sekund.",
+      "Časový rozestup pěti sekund.",
+      "Časový rozestup tři čtvrtě sekundy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050507",
+    "otazka": "Při jízdě v obytné zóně se před Vaším vozidlem náhle objeví kutálející se míč. Jak byste měli reagovat?",
+    "obrazek": null,
+    "moznosti": [
+      "Okamžitě začít brzdit, protože na vozovku za míčem mohou vběhnout děti.",
+      "Vyhnout se míči, aby nedošlo k poškození Vašeho vozidla, a pokračovat v jízdě nezměněnou rychlostí.",
+      "Pokračovat v jízdě, protože děti vědí, že mají zůstat stát mimo vozovku a počkat, až auto přejede."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050509",
+    "otazka": "Jaké důsledky mohou mít síly působící při průjezdu zatáčkou na větší náklad, který přepravujete na střešním nosiči zavazadel vozidla?",
+    "obrazek": null,
+    "moznosti": [
+      "Na náklad působí odstředivá síla, takže se může vysypat nebo posunout.",
+      "V zatáčce získává vozidlo větší stabilitu, protože náklad snižuje těžiště vozidla.",
+      "Průjezd zatáčkou nemá žádný vliv na náklad, nemění se těžiště ani jízdní vlastnosti vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050511",
+    "otazka": "Při zapojování vozidel do soupravy:",
+    "obrazek": null,
+    "moznosti": [
+      "Není důležité pořadí úkonů.",
+      "Nejprve zapojíme závěsné zařízení a potom zásuvku elektrického spojovacího zařízení.",
+      "Nejprve zapojíme zásuvku elektrického spojovacího zařízení a potom závěsné zařízení."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050512",
+    "otazka": "Brzdná dráha jízdní soupravy složené z motorového vozidla a brzděného přívěsu je v porovnání s brzdnou drahou samotného motorového vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Stejná.",
+      "Delší.",
+      "Kratší."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050513",
+    "otazka": "Brzdná dráha jízdní soupravy s brzděným přívěsem je v porovnání s brzdnou drahou soupravy s nebrzděným přívěsem o stejné hmotnosti:",
+    "obrazek": null,
+    "moznosti": [
+      "Stejná.",
+      "Kratší.",
+      "Delší."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050517",
+    "otazka": "Zvýšené riziko ztráty přilnavosti pneumatik a následného smyku za deště hrozí:",
+    "obrazek": null,
+    "moznosti": [
+      "V úseku s vyjetými kolejemi.",
+      "Na silnicích nižší třídy.",
+      "Na vozovce s betonovým povrchem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050518",
+    "otazka": "Prodleva brzd:",
+    "obrazek": null,
+    "moznosti": [
+      "Brzdnou dráhu prodlužuje.",
+      "Brzdnou dráhu zkracuje.",
+      "Brzdnou dráhu neovlivňuje."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050520",
+    "otazka": "Vozidlo, které přepravuje nebezpečný náklad:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí být označeno oranžovými výstražnými panely, které odpovídají předpisům.",
+      "Musí být označeno zvláštním výstražným světlem žluté barvy.",
+      "Nemusí být označeno, stačí jen prohlášení odesílatele o zboží, které má u sebe řidič vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050522",
+    "otazka": "Přetáčivý smyk u vozidla s pohonem zadních kol a manuální převodovkou budete řešit:",
+    "obrazek": null,
+    "moznosti": [
+      "Sešlápnutím pedálu akcelerátoru a natočením volantu směrem, kterým se pohybuje zadní část vozidla.",
+      "Sešlápnutím spojkového pedálu a natočením volantu směrem, kterým se pohybuje zadní část vozidla.",
+      "Sešlápnutím brzdového pedálu a natočením volantu směrem, kterým se pohybuje zadní část vozidla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050523",
+    "otazka": "Přilnavost mezi pneumatikou a povrchem vozovky je závislá na:",
+    "obrazek": null,
+    "moznosti": [
+      "Huštění pneumatiky a hloubce jejího dezénu. Druh povrchu vozovky nemá výraznější vliv na přilnavost.",
+      "Huštění pneumatiky, hloubce jejího dezénu a druhu povrchu vozovky.",
+      "Druhu povrchu vozovky. Huštění a hloubka dezénu pneumatiky výrazně přilnavost neovlivňují."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050605",
+    "otazka": "Při dvojnásobném zvýšení rychlosti působí na řidiče i motocykl v zatáčce:",
+    "obrazek": null,
+    "moznosti": [
+      "Odstředivá síla, která se nemění.",
+      "Přibližně dvojnásobná odstředivá síla.",
+      "Přibližně čtyřnásobná odstředivá síla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050631",
+    "otazka": "Na co je třeba dbát při nakládání sypkého materiálu?",
+    "obrazek": null,
+    "moznosti": [
+      "Sypký materiál by měl být naložen pokud možno co nejdále dozadu, aby se zvýšilo zatížení zadní poháněné nápravy.",
+      "Náklad je třeba umístit jen do středu ložné plochy.",
+      "Zatížení nákladové plochy musí být rovnoměrné."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060154",
+    "otazka": "Když zvýšíte rychlost jízdy na dvojnásobek (např. z 50 km/h na 100 km/h), prodlouží se tím brzdná dráha Vašeho vozidla na suché vozovce:",
+    "obrazek": null,
+    "moznosti": [
+      "Přibližně na dvojnásobek délky původní brzdné dráhy.",
+      "Přibližně na čtyřnásobek délky původní brzdné dráhy.",
+      "Přibližně na trojnásobek délky původní brzdné dráhy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060238",
+    "otazka": "Při přepravě nákladu na střešním nosiči zavazadel:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0454.jpg",
+    "moznosti": [
+      "Dochází ke zhoršení jízdních vlastností vozidla, a to zejména v důsledku zvýšení odporu vzduchu a vyššího těžiště vozidla.",
+      "Se jízdní vlastnosti vozidla nemění, protože střešní nosič zavazadel je konstruován tak, aby jeho užití nemělo vliv na chování vozidla.",
+      "Dochází ke zlepšení jízdních vlastností vozidla, protože v důsledku vyšší hmotnosti je vozidlo stabilnější."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060239",
+    "otazka": "Při jízdě na motocyklu za mokra se povrch vodorovného značení přechodů pro chodce nebo jízdních pruhů:",
+    "obrazek": null,
+    "moznosti": [
+      "Stává výrazně kluzkým, takže není vhodné na něm provádět žádný prudký manévr, jako je akcelerace, brzdění, náklon nebo náhlá změna směru jízdy.",
+      "Stává špatně viditelným a je proto nutné vždy používat obrysová a potkávací světla namísto světel pro denní svícení.",
+      "Nijak neliší od povrchu tohoto značení za sucha, je stejně viditelný a má i stejné adhezní vlastnosti."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060240",
+    "otazka": "Smyku předního kola v zatáčce a tím způsobenému pádu motocyklu předejdeme:",
+    "obrazek": null,
+    "moznosti": [
+      "Zvýšením brzdné síly na předním kole páčkou ruční brzdy.",
+      "Zvýšením výkonu přenášeného zadním kolem přidáním plynu.",
+      "Odbrzděním předního kola ještě před naklopením motocyklu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060241",
+    "otazka": "Správně jedoucí motocyklista projíždí zatáčkou tak, aby:",
+    "obrazek": null,
+    "moznosti": [
+      "Přidáváním plynu neustále zvyšoval rychlost motocyklu.",
+      "Brzděním snižoval neustále rychlost jízdy motocyklu.",
+      "Nebylo nutné v průběhu zatáčení přidávat plyn ani brzdit."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060242",
+    "otazka": "Při rychlosti 100 km/h je délka brzdné dráhy Vašeho vozidla oproti brzdné dráze při rychlosti 50 km/h:",
+    "obrazek": null,
+    "moznosti": [
+      "Přibližně dvakrát delší.",
+      "Přibližně čtyřikrát delší.",
+      "Přibližně třikrát delší."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060243",
+    "otazka": "Častou příčinou vzniku dopravních nehod při jízdě na dálnici je:",
+    "obrazek": null,
+    "moznosti": [
+      "Jízda v pravém jízdním pruhu.",
+      "Pomalá jízda nákladních vozidel.",
+      "Jízda s nedostatečnou vzdáleností mezi vozidly jedoucími za sebou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060244",
+    "otazka": "Při prudkém sešlápnutí brzdového pedálu vozidla bez protiblokovacího systému brzd (ABS) na náledí dojde:",
+    "obrazek": null,
+    "moznosti": [
+      "K zablokování kol vozidla a vozidlo se stává neřiditelným.",
+      "K zablokování kol zadní nápravy vozidla, při němž vozidlo zůstává řiditelným.",
+      "K maximálnímu brzdnému účinku, při němž vozidlo zastaví s nejkratší brzdnou dráhou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060261",
+    "otazka": "Těhotné ženy:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí používat bezpečnostní pásy.",
+      "Nemusí používat bezpečnostní pásy, pokud je vozidlo vybaveno airbagem.",
+      "Nesmí nikdy používat bezpečnostní pásy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060274",
+    "otazka": "Chystáte se předjet cyklistu. Bude vám stačit boční odstup od cyklisty přibližně 50 cm?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0123.jpg",
+    "moznosti": [
+      "Ano, pokud budete dávat zvuková nebo světelná výstražná znamení.",
+      "Ne, protože cyklista může náhle zakolísat a vybočit z dráhy směru své jízdy.",
+      "Ano, pokud snížíte rychlost na 40km/h, pak je předjíždění bezpečné."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060275",
+    "otazka": "Příčinou vzniku aquaplaningu je:",
+    "obrazek": null,
+    "moznosti": [
+      "Prudké zrychlení vozidla na mokré vozovce.",
+      "Rychlá jízda na vozovce pokryté větším množstvím vody.",
+      "Prudké brzdění vozidla na mokré vozovce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060276",
+    "otazka": "Za jízdy v noci se vám náhle v dálkových světlech objeví lesní zvěř. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Vypnete světla vozidla a pokračujete sníženou rychlostí v jízdě.",
+      "Okamžitě ztlumíte světla na potkávací a snížíte rychlost jízdy.",
+      "Pokračujete v jízdě stejným způsobem s dálkovými světly."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060277",
+    "otazka": "Častou příčinou těžkých nehod na dálnici při předjíždění je:",
+    "obrazek": null,
+    "moznosti": [
+      "Nedostatečné sledování provozu za vozidlem.",
+      "Pomalá jízda.",
+      "Jízda s bezpečnou vzdáleností mezi vozidly."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060278",
+    "otazka": "Správný tlak huštění pneumatik se zjišťuje:",
+    "obrazek": null,
+    "moznosti": [
+      "Na jízdou zahřátých pneumatikách.",
+      "Na studených, jízdou nezahřátých pneumatikách.",
+      "Na pneumatikách bez ohledu na jejich teplotu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060279",
+    "otazka": "Ve výhledu z motorového vozidla vidíte skupinu dětí na chodníku. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Použijete zvukové výstražné znamení a přejedete k levému okraji jízdního pruhu.",
+      "Protože jsou děti na chodníku, nemáte důvod ke zvýšení opatrnosti ani ke změně způsobu jízdy.",
+      "S ohledem na možné vběhnutí dětí do vozovky snížíte rychlost jízdy a zvýšíte pozornost."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060280",
+    "otazka": "Při zvyšování rychlosti jízdy se zorné pole řidiče:",
+    "obrazek": null,
+    "moznosti": [
+      "Zužuje.",
+      "Nemění.",
+      "Rozšiřuje."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060281",
+    "otazka": "Při začínajícím drobném dešti se snížení přilnavosti pneumatik nejvýrazněji projeví na vozovce:",
+    "obrazek": null,
+    "moznosti": [
+      "S asfaltovým povrchem.",
+      "S betonovým povrchem.",
+      "Dlážděné."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060283",
+    "otazka": "Při jízdě vozidla po krajnici:",
+    "obrazek": null,
+    "moznosti": [
+      "Není nutno dbát zvýšené opatrnosti.",
+      "Musí být uvedeno v činnost výstražné světelné zařízení.",
+      "Je nutno dbát zvýšené opatrnosti, vzhledem k možnosti porušení její nezpevněné části a převrácení vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060284",
+    "otazka": "Řidič jedoucí před Vámi dává výstražné světelné znamení. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Pokračujete v jízdě za nezměněných podmínek.",
+      "Snížíte rychlost jízdy a použijete také světelné výstražné znamení.",
+      "Zajedete co nejblíže k pravému okraji vozovky a zastavíte."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060285",
+    "otazka": "Zvukové výstražné znamení smí řidič ve vztahu k životnímu prostředí použít:",
+    "obrazek": null,
+    "moznosti": [
+      "Tam kde je to povoleno dopravní značkou.",
+      "Pouze v případech stanovených zákonem.",
+      "Kdykoliv to uzná za vhodné."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060286",
+    "otazka": "Při přepravě sypkého materiálu musí řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Dbát zvýšené opatrnosti vzhledem k možnosti ohrožení ostatních účastníků silničního provozu odlétávajícími částicemi.",
+      "V půlhodinových intervalech kontrolovat stav nákladu.",
+      "Jet rychlosti maximálně 40 km/h."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060288",
+    "otazka": "Při přepravě vozidlem hromadné dopravy osob cestující:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemá žádné povinnosti.",
+      "Musí dbát pokynů a příkazů řidiče.",
+      "Nesmí stát v uličce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060289",
+    "otazka": "Při řízení vozidla hromadné dopravy osob řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Smí jet rychlostí maximálně 60 km/h.",
+      "Musí každou hodinu kontrolovat vnější osvětlení vozidla.",
+      "Musí volit způsob a rychlost jízdy tak, aby neohrozil bezpečnost a pohodlí cestujících."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060291",
+    "otazka": "Vozidlo s vysokou plachtovou nástavbou je zvlášť citlivé na boční vítr pokud:",
+    "obrazek": null,
+    "moznosti": [
+      "Je plně naložené.",
+      "Převáží sypký náklad.",
+      "Je prázdné."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060292",
+    "otazka": "Přilnavost pneumatik snižuje:",
+    "obrazek": null,
+    "moznosti": [
+      "Malá hmotnost nákladu na vozidle.",
+      "Velká hmotnost nákladu na vozidle.",
+      "Silný déšť a vysoká vrstva vody na vozovce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060293",
+    "otazka": "Sníh, náledí nebo rozbředlý sníh na vozovce vyžadují:",
+    "obrazek": null,
+    "moznosti": [
+      "Zatížení vozidla na hodnotu celkové hmotnosti uvedené v technickém průkazu vozidla.",
+      "Brzdění s použitím parkovací brzdy.",
+      "Jízdu se zvýšenou opatrností, přizpůsobenou stavu vozovky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060294",
+    "otazka": "Vzduchový vír nebo náraz vzniklý při předjíždění:",
+    "obrazek": null,
+    "moznosti": [
+      "Je nebezpečný pouze pro jednostopá vozidla.",
+      "Je nebezpečím pro stabilitu předjížděných vozidel, zejména jednostopých.",
+      "Nemá vliv na předjížděná vozidla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060295",
+    "otazka": "Před vjetím na krajnici:",
+    "obrazek": null,
+    "moznosti": [
+      "Stačí snížit rychlost jízdy.",
+      "Je nutné se přesvědčit, že krajnice je dostatečně pevná a nedojde k jejímu utržení.",
+      "Není nutné se přesvědčit, že krajnice je dostatečně pevná, neboť je součástí pozemní komunikace."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060338",
+    "otazka": "Pokud je při jízdě na motocyklu nezbytné v nájezdu do zatáčky brzdit, potom je nejvhodnější:",
+    "obrazek": null,
+    "moznosti": [
+      "Intenzivně brzdit pouze přední nebo zadní brzdou.",
+      "Rychle přeřadit na nižší rychlostní stupeň s následně prudkým puštěním páčky spojky.",
+      "Brzdit přední i zadní brzdou, postupně a s výrazně menší silou, než při přímé jízdě."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060339",
+    "otazka": "Ovlivňují síly působící na náklad při průjezdu zatáčkou bezpečnost jízdy?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano, ale jen při přepravě sypkého materiálu.",
+      "Ne, tyto síly nemají žádný vliv na náklad.",
+      "Ano, náklad se může posunout nebo spadnout."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060402",
+    "otazka": "Častou příčinou těžkých nehod na dálnici je:",
+    "obrazek": null,
+    "moznosti": [
+      "Jízda v jízdním pruhu pro pomalá vozidla.",
+      "Únava pramenící z nedostatečného odpočinku a následný mikrospánek řidiče.",
+      "Pomalá jízda."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060412",
+    "otazka": "Na vozovce je velká kaluž vody, kterou s motocyklem musíte projet. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Nebudete brzdit, jen zvednete nohy ze stupaček a projedete kaluží.",
+      "Objedu kaluž přes chodník nebo krajnici vozovky.",
+      "Výrazně snížíte rychlost jízdy, nohy necháte na stupačkách a pomalu projedete kaluží."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060422",
+    "otazka": "Jaké nebezpečí hrozí při jízdě na mokré dlažbě?",
+    "obrazek": null,
+    "moznosti": [
+      "Zvýšené riziko sesmeknutí řetězu z důvodu rozstřiku vody.",
+      "Nebezpečí nehrozí, mají-li pneumatiky předepsanou hloubku dezénu.",
+      "Zvýšené riziko smyku a následného pádu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060423",
+    "otazka": "Co může vést ke smyku motocyklu při průjezdu zatáčkami?",
+    "obrazek": null,
+    "moznosti": [
+      "Nedostatečná rychlost jízdy.",
+      "Nízká hmotnost motocyklu.",
+      "Vadné tlumiče motocyklu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060424",
+    "otazka": "Co může vést ke smyku vozidla při průjezdu zatáčkami?",
+    "obrazek": null,
+    "moznosti": [
+      "Nízký tlak v pneumatikách.",
+      "Nedostatečná rychlost jízdy.",
+      "Jízda při středové dělicí čáře."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060425",
+    "otazka": "Co může vést ke smyku vozidla při průjezdu zatáčkami?",
+    "obrazek": null,
+    "moznosti": [
+      "Malá hmotnost nákladu.",
+      "Velké rozdíly v nahuštění jednotlivých pneumatik.",
+      "Malá hmotnost vozidla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060438",
+    "otazka": "Jedete za hustého deště za nákladním vozidlem, které intenzivně znečišťuje Vaše přední okno. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Zvýšíte rozestup mezi vozidly.",
+      "Pojedete co nejtěsněji za ním.",
+      "Okamžitě zahájíte předjíždění."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060452",
+    "otazka": "Projíždíte podél pastviny s pasoucím se dobytkem. Měl(a) byste:",
+    "obrazek": null,
+    "moznosti": [
+      "Použít zvukové výstražné znamení.",
+      "Zvýšit rychlost jízdy.",
+      "Předpokládat možnost vběhnutí zvířete do vozovky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060457",
+    "otazka": "Předjíždíte jezdce na koni. Před zahájením předjíždění:",
+    "obrazek": null,
+    "moznosti": [
+      "Zvýšíte rychlost jízdy a použijete světelné výstražné znamení; znamení o změně směru jízdy nepoužijete.",
+      "Snížíte rychlost jízdy a použijete zvukové výstražné znamení.",
+      "Vezmete v úvahu možnost úleku zvířete a jeho vběhnutí do Vaší jízdní dráhy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060458",
+    "otazka": "Používání ochranné výstroje jako rukavic, bot a vhodného oblečení:",
+    "obrazek": null,
+    "moznosti": [
+      "Je doporučováno jen pro jízdu na motocyklu na dálnicích a silnicích pro motorová vozidla.",
+      "Může u posádky motocyklu výrazně snížit zdravotní následky dopravní nehody.",
+      "Je zákonnou podmínkou účasti řidiče motocyklu v silničním provozu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060459",
+    "otazka": "Jedete za pomalu jedoucím vozidlem autoškoly. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "V klidu a trpělivě pojedete za ním a případně jej na vhodném místě předjedete.",
+      "Krátkým přerušovaným rozsvícením dálkových světel jej upozorníte, že omezuje plynulost silničního provozu.",
+      "Použijete zvukové výstražné znamení a zvýšenou rychlostí jej předjedete."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060460",
+    "otazka": "Jedete za autobusem, který zastavuje v zastávce při pravém okraji vozovky. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Předjedete jej zvýšenou rychlostí dříve než zastaví, abyste nemusel(a) zohledňovat vystupující cestující.",
+      "Zastavíte těsně za ním.",
+      "Objedete jej zleva sníženou rychlostí; berete v úvahu možnost zvýšeného pohybu chodců."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060461",
+    "otazka": "Řidič vozidla jedoucího před vámi zřejmě zapomněl vypnout znamení o změně směru jízdy vlevo. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Upozorníte jej zvukovým výstražným znamením.",
+      "Nebudete takové vozidlo předjíždět.",
+      "Upozorníte jej světelným výstražným znamením."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060463",
+    "otazka": "Může řidič číst za jízdy z mapy?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano, s výjimkou jízdy na dálnici.",
+      "Ne, zvyšuje se tím riziko dopravní nehody. Řidič se musí věnovat řízení vozidla.",
+      "Ano, ale pouze při rychlosti nižší než je 50 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060464",
+    "otazka": "Je velmi horký den. Co můžete jako řidič motocyklu očekávat na silnici?",
+    "obrazek": null,
+    "moznosti": [
+      "Rozměklý povrch vozovky a v důsledku toho ztížené ovládání vozidla.",
+      "Zvýšený pohyb zvěře v lesních úsecích.",
+      "Snížení přilnavosti pneumatik k vozovce vzhledem k jejich vyššímu zahřívání."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060477",
+    "otazka": "Ve výhledu z motorového vozidla vidíte děti, které si hrají na chodníku. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Budete s ohledem na možné vběhnutí dětí do vozovky připraven(a) brzdit a podle okolností snížíte rychlost jízdy.",
+      "Z dostatečné vzdálenosti upozorníte hrající si děti na možné nebezpečí zvukovým výstražným znamením.",
+      "Protože jsou děti na chodníku, nemáte důvod ke zvýšení opatrnosti ani ke změně způsobu jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060479",
+    "otazka": "Řidič vozidla, které je vybaveno zvláštním výstražným světlem oranžové barvy, smí tohoto světla užívat:",
+    "obrazek": null,
+    "moznosti": [
+      "Pokud by jeho jízdou nebo pracovní činností mohla být ohrožena bezpečnost provozu na pozemních komunikacích.",
+      "Vždy, i když není ohrožena bezpečnost provozu na pozemních komunikacích nebo jeho pracovní činnost.",
+      "Pouze za snížené viditelnosti, například za deště, tmy nebo sněžení, byla-li by jeho jízdou ohrožena bezpečnost."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060483",
+    "otazka": "Co se rozumí pod pojmem „defenzivní způsob jízdy“?",
+    "obrazek": null,
+    "moznosti": [
+      "Trvat na svém právu vyplývajícím ze zákona o provozu na pozemních komunikacích.",
+      "Opatrně zastavit na každé křižovatce.",
+      "Počítat s chybami ostatních účastníků provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060506",
+    "otazka": "Je silný dešť důvodem ke snížení rychlosti jízdy?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano, může dojít ke ztrátě přilnavosti pneumatik a prodlužuje se i brzdná dráha.",
+      "Ano, ale jen u vozidel, která nejsou vybavena protiblokovacím systémem brzd (ABS).",
+      "Ne, pokud mají pneumatiky alespoň minimální stanovenou hloubku dezénu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08080003",
+    "otazka": "Chodec na přechodu pro chodce signalizuje úmysl přejít vozovku mávnutím bílou slepeckou holí ve směru přecházení. Jak se zachováte?",
+    "obrazek": null,
+    "moznosti": [
+      "Snížím rychlost jízdy nebo zastavím vozidlo před přechodem pro chodce a umožním chodci nerušené a bezpečné přejití vozovky.",
+      "Budu pokračovat v jízdě, protože nevidomý člověk  bez doprovodu nesmí přecházet vozovku.",
+      "Zvukovým výstražným znamením dám najevo, že nemůže přecházet přes vozovku a budu pokračovat v jízdě."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08080025",
+    "otazka": "Při míjení osvětlených vozidel řidič musí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0110.jpg",
+    "moznosti": [
+      "Sledovat jízdu pohledem do rozsvícených světel, k oslnění a krátkodobému výpadku ostrého vidění za tak krátkou dobu pohledu nemůže dojít.",
+      "Sledovat jízdu osvětleného vozidla, vyvarovat se pohledu do rozsvícených světel, aby nedošlo k oslnění a krátkodobému výpadku ostrého vidění.",
+      "Sledovat pouze vlastní směr jízdy. Chování protijedoucích řidičů není nebezpečím."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "08100001",
+    "otazka": "Pokud nepřetržitě řídíte vozidlo o celkové hmotnosti 16 t, musíte zařadit bezpečnostní přestávku nejpozději:",
+    "obrazek": null,
+    "moznosti": [
+      "Po 4,5 hodinách.",
+      "Po 5,5 hodinách.",
+      "Po 5 hodinách."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08100003",
+    "otazka": "Při jízdě na dálnici jste se stali s vaším automobilem účastníkem dopravní nehody. V jakém pořadí budete postupovat?",
+    "obrazek": null,
+    "moznosti": [
+      "Okamžitě zastavíte vozidlo, zabezpečíte místo nehody a poskytnete první pomoc případným poraněným.",
+      "Okamžitě zastavíte vozidlo, zavoláte policii, zapnete varovná světla a počkáte ve vozidle na příjezd policie a lékařské záchranné služby.",
+      "Okamžitě zastavíte vozidlo, vyhledáte svědky nehody. První pomoc případným poraněným poskytne přivolaná lékařská záchranná služba."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08100004",
+    "otazka": "Silniční dopravou pro cizí potřeby se rozumí:",
+    "obrazek": null,
+    "moznosti": [
+      "Doprava, jejíž předmětem je přeprava osob, věcí nebo zvířat i bez smluvního závazku.",
+      "Doprava, při níž vzniká mezi provozovatelem silniční dopravy a osobou jejíž přepravní potřeby uspokojuje závazkový vztah, jehož předmětem je pouze přeprava osob.",
+      "Doprava, při níž vzniká mezi provozovatelem silniční dopravy a osobou, jejíž přepravní potřeba se uspokojuje, závazkový vztah, jehož předmětem je přeprava osob, věcí nebo zvířat."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08100006",
+    "otazka": "U parkovací brzdy vzduchotlakých brzd s pružinovým brzdovým válcem zajišťuje odbrzdění:",
+    "obrazek": null,
+    "moznosti": [
+      "Pružina v brzdovém válci.",
+      "Tlakový vzduch v brzdovém válci.",
+      "Vypuštění tlakového vzduchu z válce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "08100011",
+    "otazka": "Silniční linkovou osobní dopravou se rozumí:",
+    "obrazek": null,
+    "moznosti": [
+      "Pravidelné poskytování přepravních služeb na určené trase dopravní cesty, při kterém cestující vystupují a nastupují na předem určených zastávkách.",
+      "Nepravidelné poskytování přepravních služeb na libovolné trase, při které cestující nastupují a vystupují na předem určených zastávkách",
+      "Pravidelné poskytování přepravních služeb za úplatu na trase, při které cestující nastupují a vystupují na místech, která si sami určí."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120021",
+    "otazka": "Jaké nebezpečí hrozí při jízdě s motocyklem na mokré dlažbě?",
+    "obrazek": null,
+    "moznosti": [
+      "Žádné. Na dlažbě je motocykl stabilnější.",
+      "Zvýšený sklon k blokování kol při brzdění.",
+      "Žádné, pokud mají pneumatiky potřebnou hloubku dezénu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "08120022",
+    "otazka": "Pokud začne pršet, musí se motocyklista připravit na:",
+    "obrazek": null,
+    "moznosti": [
+      "Kluzkou vrstvu na povrchu vozovky.",
+      "Zkrácenou brzdnou dráhu motocyklu.",
+      "Snazší výjezd motocyklu ze zatáčky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120030",
+    "otazka": "S čím musíte počítat v případě, že je náklad nerovnoměrně rozložen?",
+    "obrazek": null,
+    "moznosti": [
+      "Dojde k nepovolenému překročení zatížení náprav.",
+      "Řízení vozidla nebude nijak ovlivněno.",
+      "Nerovnoměrné rozložení nákladu nemá vliv na zatížení náprav."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120031",
+    "otazka": "Přetížení nákladního vozidla lze předejít:",
+    "obrazek": null,
+    "moznosti": [
+      "Pohledem na deformaci pneumatik vozidla.",
+      "Brzdnou zkouškou s naloženým vozidlem.",
+      "Kontrolním vážením naloženého vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08120032",
+    "otazka": "Je zapotřebí být opatrný, pokud řídíte poprvé vozidlo,které neznáte?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano. Nevíte jak vozidlo reaguje např. při brzdění.",
+      "Ne. Každé vozidlo se ovládá stejně.",
+      "Ano. Pouze pokud je vozidlo na jiný typ paliva."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120033",
+    "otazka": "Musíte být opatrní, chcete-li použít k jízdě vozidlo, se kterým jedete poprvé?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano. Ovládací prvky a rozměry vozidla mohou být pro Vás nezvyklé.",
+      "Ne. Každé vozidlo se ovládá stejně.",
+      "Ano. Pouze pokud je vozidlo na jiný typ paliva."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120034",
+    "otazka": "Smyk vozidla při průjezdu zatáčkou může způsobit?",
+    "obrazek": null,
+    "moznosti": [
+      "Snížená viditelnost.",
+      "Vadný tlumič pérování vozidla.",
+      "Malá hmotnost vozidla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10040005",
+    "otazka": "Za protiprávní jednání při přepravě nebezpečného nákladu se považuje:",
+    "obrazek": null,
+    "moznosti": [
+      "pokud je k přepravě použito vozidlo výroby starší než jsou dva roky.",
+      "pokud náklad není označen voděodolnou barvou s přesným chemickým složením.",
+      "pokud zboží není povoleno k přepravě."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10040006",
+    "otazka": "Za okružní jízdu se považuje:",
+    "obrazek": null,
+    "moznosti": [
+      "mezinárodní příležitostná přeprava osob na objednávku po předem vyhrazené okružní trase, a je přepravovaná stejná skupina cestujících stejným vozidlem.",
+      "jízda s cestovní kanceláří s poznávacím cílem.",
+      "přeprava osob na lince osobní dopravy městy a obcemi, kdy výchozí a konečné místo cesty je stejné."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10040030",
+    "otazka": "Za kombinovanou dopravu se považuje systém přepravy při kterém:",
+    "obrazek": null,
+    "moznosti": [
+      "se jedná o dopravní obslužnost území ve vnitrostátní silniční dopravě.",
+      "je zboží přepravováno v jedné a téže přepravní jednotce, využije se též železniční a vodní doprava.",
+      "osoby využívají různých druhů dopravních prostředků, např. autobusu nebo vlaku."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10040034",
+    "otazka": "Snížit spotřebu paliva vozidla lze:",
+    "obrazek": null,
+    "moznosti": [
+      "dodržováním tlaku vzduchu v pneumatikách, který je předepsaný výrobcem.",
+      "použitím dražšího paliva.",
+      "nepoužíváním nejvyššího převodového stupně."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11040008",
+    "otazka": "Protiblokovací brzdový systém (ABS):",
+    "obrazek": null,
+    "moznosti": [
+      "vždy zkracuje brzdnou dráhu vozidla.",
+      "nemění brzdnou dráhu, zvyšuje pouze ovladatelnost vozidla při brždění",
+      "zajišťuje ovladatelnost vozidla při brždění."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100016",
+    "otazka": "Řidič vozidla z výhledu odbočující na křižovatce vlevo:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211069.jpg",
+    "moznosti": [
+      "Musí dát přednost v jízdě vozidlům přijíždějícím zprava a přizpůsobit rychlost jízdy okolnostem, které je možné předvídat, zejména možnosti smyku na zasněžené vozovce a případné tvorbě náledí na mostu.",
+      "Musí dát přednost v jízdě vozidlům přijíždějícím zprava, přitom nemá povinnost přizpůsobit rychlost jízdy okolnostem, které je možné předvídat.",
+      "Má přednost v jízdě před ostatními vozidly, přitom musí přizpůsobit rychlost jízdy okolnostem, které je možné předvídat, zejména možnosti smyku na zasněžené vozovce a případné tvorbě náledí na mostu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020010",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1039.jpg",
+    "moznosti": [
+      "porušuje předpisy tím, že objíždí autobus po tramvajovém pásu.",
+      "musí předpokládat nečekané vběhnutí chodce do vozovky v místě zastávky autobusu.",
+      "nesmí objíždět autobus; zastaví za ním a vyčká jeho odjezdu ze zastávky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020035",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1169.jpg",
+    "moznosti": [
+      "autobus v zastávce objede.",
+      "nesmí objíždět autobus; zastaví za ním a vyčká jeho odjezdu ze zastávky.",
+      "porušuje předpisy tím, že objíždí autobus po tramvajovém pásu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100014",
+    "otazka": "Dodržel řidič červeného nákladního automobilu při rychlosti 72 km/h (20m/s) bezpečnou vzdálenost za vozidlem jedoucím před ním?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209103.jpg",
+    "moznosti": [
+      "Ano",
+      "Ne"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100018",
+    "otazka": "Může telefonování za jízdy při použití Handsfree ovlivnit reakční dobu řidiče?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209107.jpg",
+    "moznosti": [
+      "Ne, reakční doba řidiče při použití Handsfree zůstává stejná a nemá vliv na dráhu pro zastavení vozidla.",
+      "Ano.",
+      "Ne, závisí pouze na tom s kým telefonuje."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100019",
+    "otazka": "Je minimální bezpečná vzdálenost mezi jedoucími vozidly zákonem přesně definována v metrech?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209108.jpg",
+    "moznosti": [
+      "Ano, je třeba dodržet vždy bezpečnou vzdálenost minimálně 30 metrů a u nákladních automobilů a autobusů vždy 40 metrů.",
+      "Ano, je třeba dodržet vždy bezpečnou vzdálenost minimálně 20 metrů a u nákladních automobilů a autobusů vždy 30 metrů.",
+      "Ne, je třeba zvážit všechny možné faktory. Zejména rychlost, technický stav a konstrukci vozidla, klimatické a adhezní podmínky a reakční dobu řidiče."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100020",
+    "otazka": "Ovlivní ovládání navigačního systému vozidla za jízdy reakční dobu řidiče nutnou k vyřešení mimořádné události v provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209109.jpg",
+    "moznosti": [
+      "Ne. Ovládat navigační systém vozidla za jízdy neprodlužuje reakční dobu řidiče.",
+      "Ano. Řidič se musí plně věnovat řízení vozidla a sledovat situaci v provozu na pozemních komunikacích."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100021",
+    "otazka": "Ovlivní připojování nabíječky k mobilnímu telefonu za jízdy reakční dobu řidiče nutnou k vyřešení mimořádné události v provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209110.jpg",
+    "moznosti": [
+      "Ne. Pouhé zapojení nabíječky k mobilnímu telefonu nemůže mít vliv na reakční dobu řidiče a ovlivnit tak vyřešení mimořádné události v provozu na pozemních komunikacích.",
+      "Ne. Řidič má povinnost mít ve vozidle zapnutý mobilní telefon.",
+      "Ano. Řidič se musí plně věnovat řízení vozidla a sledovat situaci v provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100022",
+    "otazka": "Ovlivní používání zkrášlovacích prostředků za jízdy reakční dobu řidiče nutnou ke sledování a řešení situací v provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209111.jpg",
+    "moznosti": [
+      "Ano. Řidič se musí plně věnovat řízení vozidla a sledovat situaci v provozu na pozemních komunikacích.",
+      "Ne. Protože je možné volant držet bezpečně i jednou rukou.",
+      "Ne. Protože je důležité dojet do cílové destinace náležitě upraven."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22100023",
+    "otazka": "Může ovlivnit nevhodné obutí řidiče reakční dobu nutnou k vyřešení mimořádné události v provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209112.jpg",
+    "moznosti": [
+      "Ne. Obuv nemá žádný vliv na řízení vozidla",
+      "Ne. Je důležité dobře vypadat i při řízení motorového vozidla.",
+      "Ano. Je vhodné používat k řízení obuv nelimitující řidiče při ovládání vozidla. Zejména při krizovém brzdění."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100024",
+    "otazka": "Může ovlivnit používání nevhodného obutí za jízdy reakční dobu řidiče nutnou k řešení situací v provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209113.jpg",
+    "moznosti": [
+      "Ano. Je vhodné používat k řízení obuv nelimitující řidiče při ovládání vozidla. Zejména při krizovém brždění.",
+      "Ne. Zejména v letním období je vhodné používat otevřenou obuv.",
+      "Ne. Obuv nemá žádný vliv na řízení vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22100025",
+    "otazka": "Může ovlivnit nevhodně zabezpečené zvíře za jízdy reakční dobu řidiče a čas nutný k vyřešení mimořádné události v provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209114.jpg",
+    "moznosti": [
+      "Ne. Pokud nepřesahuje 20 cm v kohoutku.",
+      "Ne. Pokud prošlo náležitým výcvikem a tréninkem zajišťujícím jeho bezproblémové chování za jízdy vozidlem.",
+      "Ano. Povinností řidiče je zabezpečit přepravované zvíře tak, aby neohrozilo řidiče a přepravované osoby."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100026",
+    "otazka": "Za snížené viditelnosti, deště a zhoršených klimatických podmínek je bezpečný odstup za vpředu jedoucím vozidlem?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209115.jpg",
+    "moznosti": [
+      "Časový odstup minimálně o 1 sekundu delší než za běžných podmínek.",
+      "Kratší než za dobré viditelnosti nebo běžných povětrnostních podmínek.",
+      "Stejný jako za dobré viditelnosti nebo běžných povětrnostních podmínek."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22100027",
+    "otazka": "Nedodržení bezpečné vzdálenosti za vpředu jedoucím vozidlem je v ČR:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209116.jpg",
+    "moznosti": [
+      "jednou z nejméně častých příčin vzniku dopravních nehod.",
+      "jedním z faktorů, který nemá na bezpečnost silničního provozu významný vliv.",
+      "jednou z nejčastějších příčin vzniku dopravních nehod."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100028",
+    "otazka": "Jakou metodou lze v případě krizové situace minimalizovat brzdnou dráhu na většině povrchů vozovky s vozidlem, které je vybaveno ABS?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209117.jpg",
+    "moznosti": [
+      "Přerušovaným brzděním.",
+      "Prudkým a silným sešlápnutím brzdového pedálu společně se sešlápnutím spojkového pedálu až k podlaze vozidla.",
+      "Citlivým zabrzděním, zejména na kluzkých površích, a podřazováním na nižší převodové stupně."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100029",
+    "otazka": "Jakým způsobem lze určit optimální bezpečnou vzdálenost za vpředu jedoucím vozidlem?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209118.jpg",
+    "moznosti": [
+      "Vždy minimálně 20 metrů od předu jedoucího vozidla, přičemž tuto vzdálenost řidič odhadne pomocí pevných bodů u pozemní komunikace",
+      "Metodou, při které se údaje vzdálenosti převádí na odhad času. Na začátek je třeba zvolit nějaký pevný bod na okraji pozemní komunikace (například strom). Od okamžiku, kdy vozidlo jedoucí před námi tento bod míjí, začne řidič počítat sekundy. Je-li interval, kdy ke zvolenému bodu přijede vozidlo kratší než 2 sekundy, nejedná se o minimální bezpečnou vzdálenost.",
+      "Vzdáleností mezi patníky u pozemní komunikace při jakékoliv rychlosti"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100030",
+    "otazka": "Jakým způsobem systém Front assist (systém zabraňující, nebo snižující následky čelního střetu) pomáhá v krizové situaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209119.jpg",
+    "moznosti": [
+      "Kamerou umístěnou v přední části automobilu nahrává viníka dopravní nehody.",
+      "Radarovým senzorem, případně doplněným o obrysovou kameru, umístěným v přední části automobilu vyhodnocuje jeho vzdálenost od překážky a v případě nutnosti aktivuje brzdový systém. Před aktivací brzd upozorní řidiče zvukovým a vizuálním znamením.",
+      "Zesílením přední části automobilu zmírňuje následky případné dopravní nehody."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100036",
+    "otazka": "V rámci dodržování bezpečné a defenzivní jízdy (například na dovolenou či služební cestu) by měl řidič vozidla z výhledu ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209125.jpg",
+    "moznosti": [
+      "vidět na vozovce minimálně jednu šipku pouze za vpředu jedoucím osobním vozidlem za běžných podmínek.",
+      "vidět na vozovce minimálně dvě šipky za vpředu jedoucím vozidlem za běžných podmínek a dodržet tak doporučenou bezpečnou vzdálenost jedoucích vozidel.",
+      "vidět na vozovce minimálně jednu šipku za vpředu jedoucím vozidlem za běžných podmínek a dodržet tak doporučenou bezpečnou vzdálenost jedoucích vozidel."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100037",
+    "otazka": "Systém ESC (ESP):",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209126.jpg",
+    "moznosti": [
+      "Zajišťuje vyšší brzdný účinek automobilu.",
+      "Udržuje vozidlo v jízdních pruzích.",
+      "Systém který pomáhá stabilizovat vozidlo při začínajícím smyku."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100038",
+    "otazka": "Airbag:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209127.jpg",
+    "moznosti": [
+      "Aktivuje se pouze při zapnutí bezpečnostního pásu.",
+      "Plně nahrazuje funkci bezpečnostních pásů.",
+      "Plní svou funkci pouze při řádném užití bezpečnostních pásů."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100040",
+    "otazka": "Ovlivní používání zkrášlovacích prostředků za jízdy reakční dobu řidiče nutnou ke sledování a řešení situací v provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209129.jpg",
+    "moznosti": [
+      "Ano. Řidič se musí věnovat plně řízení vozidla a sledovat situace v provozu na pozemních komunikacích.",
+      "Ne. Při řazení rychlostních stupňů také nemusím držet volant oběma rukama",
+      "Ne. Je důležité přijet do cílové destinace řádně a náležitě upraven/upravena."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22100041",
+    "otazka": "Ovlivní konzumace potravin za jízdy reakční dobu řidiče nutnou k vyřešení mimořádné události v provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209130.jpg",
+    "moznosti": [
+      "Ne. Pokud konzumuje lehkou a vyváženou stravu.",
+      "Ne. Konzumace potravin není zakázána.",
+      "Ano. Řidič se musí věnovat plně řízení vozidla a sledovat situaci v provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  }
+]
