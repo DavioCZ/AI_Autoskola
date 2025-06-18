@@ -9,7 +9,7 @@ import { Checkbox } from "../components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Progress } from "../components/ui/progress";
 import { Textarea } from "../components/ui/textarea";
-import { Send, BarChart2, RefreshCcw } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle } from "lucide-react";
 import clsx from "clsx";
 
 /* ----------------------- Data typy a konstanty ---------------------- */
@@ -88,7 +88,16 @@ function TopNav({
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 py-2">
         <h1 className="font-semibold text-lg select-none">Autoškola B</h1>
         <div className="flex-1 text-center text-sm font-medium text-gray-600 select-none">
-          {label} {timeLeft !== null && timeLeft !== undefined && <span className="ml-2 font-mono">{timeFmt}</span>}
+          {label}{" "}
+          {timeLeft !== null && timeLeft !== undefined && (
+            <span
+              className={clsx("ml-2 font-mono", {
+                "text-red-600": timeLeft < 60,
+              })}
+            >
+              {timeFmt}
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-2">
           {showStats && (
@@ -211,11 +220,31 @@ export default function DrivingTestApp() {
     setMessages((m) => [...m, { from: "user", text: userMessage }]);
     setDraft("");
 
-    // Mock AI Response
-    setTimeout(() => {
-      const mockAiResponse = `Toto je mockovaná odpověď AI na vaši otázku: "${userMessage}". Kontext otázky: ${currentQ?.otazka ? `"${currentQ.otazka}"` : "Žádný kontext otázky."}`;
-      setMessages((m) => [...m, { from: "ai", text: mockAiResponse }]);
-    }, 1000);
+    try {
+      const response = await fetch("/api/ai", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          question: userMessage,
+          context: { 
+            question: currentQ,
+            selectedAnswerIndex: responses[currentQ.id] // Add selected answer index
+          }, 
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setMessages((m) => [...m, { from: "ai", text: data.answer || "Nepodařilo se získat odpověď." }]);
+    } catch (error) {
+      console.error("Error fetching AI response:", error);
+      setMessages((m) => [...m, { from: "ai", text: "⚠️ Omlouvám se, došlo k chybě při komunikaci s AI." }]);
+    }
   };
 
   useEffect(() => {
@@ -308,20 +337,44 @@ export default function DrivingTestApp() {
             <Progress value={progress} className="mb-4 h-2" />
             {examMode && (
               <div className="mb-4 flex flex-wrap gap-1 justify-center">
-                {questions.map((_, idx) => (
-                  <Button
-                    key={`nav-${idx}`}
-                    variant={idx === current ? "default" : responses.hasOwnProperty(questions[idx].id) ? "secondary" : "outline"}
-                    size="sm"
-                    className={clsx("h-7 w-7 p-0 text-xs md:h-8 md:w-8 md:text-sm", {
-                      "bg-yellow-400 hover:bg-yellow-500 text-black": responses.hasOwnProperty(questions[idx].id) && idx !== current,
-                      "border-blue-500": idx === current,
-                    })}
-                    onClick={() => setCurrent(idx)}
-                  >
-                    {idx + 1}
-                  </Button>
-                ))}
+                {questions.map((questionItem, idx) => {
+                  const isAnswered = responses.hasOwnProperty(questionItem.id);
+                  const isCurrent = idx === current;
+                  
+                  // Determine correctness if answered (for potential future use, or if logic changes)
+                  // const isCorrect = isAnswered && responses[questionItem.id] === questionItem.spravna;
+
+                  let dynamicClasses = {};
+
+                  if (isAnswered && !isCurrent) {
+                    // If the question is answered and it's not the current one, mark it yellow.
+                    // This is the primary state for answered questions during the test.
+                    dynamicClasses = { "bg-yellow-400 hover:bg-yellow-500 text-black": true };
+                  }
+                  
+                  if (isCurrent) {
+                    // If it's the current question, add a blue border.
+                    // This can be combined with other styles (e.g., an answered current question).
+                    dynamicClasses = { ...dynamicClasses, "border-blue-500": true };
+                  }
+                  
+                  // Red/Green logic for "done" phase is handled in the results display,
+                  // not on these navigation buttons during the "test" phase.
+                  // If immediate red/green feedback on nav buttons during "test" is needed,
+                  // `isCorrect` would be used here.
+
+                  return (
+                    <Button
+                      key={`nav-${idx}`}
+                      variant={isCurrent ? "default" : isAnswered ? "secondary" : "outline"}
+                      size="sm"
+                      className={clsx("h-7 w-7 p-0 text-xs md:h-8 md:w-8 md:text-sm", dynamicClasses)}
+                      onClick={() => setCurrent(idx)}
+                    >
+                      {idx + 1}
+                    </Button>
+                  );
+                })}
               </div>
             )}
 
@@ -337,12 +390,48 @@ export default function DrivingTestApp() {
                   onValueChange={(val) => setResponses(prev => ({ ...prev, [q.id]: parseInt(val) }))}
                   className="mt-4 space-y-2"
                 >
-                  {q.moznosti.map((opt, idx) => (
-                    <div key={idx} className="flex items-center space-x-3 p-3 border rounded-md hover:bg-gray-50 transition-colors cursor-pointer">
-                      <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} />
-                      <label htmlFor={`opt-${q.id}-${idx}`} className="flex-1 text-sm md:text-base cursor-pointer">{opt}</label>
-                    </div>
-                  ))}
+                  {q.moznosti.map((opt, idx) => {
+                    const isSelected = responses[q.id] === idx;
+                    const isCorrect = idx === q.spravna;
+                    const anAnswerIsSelectedForThisQuestion = responses[q.id] !== undefined;
+
+                    let itemSpecificClasses = "";
+                    if (!examMode && anAnswerIsSelectedForThisQuestion) {
+                      if (isCorrect) { // This option is the correct one
+                        itemSpecificClasses = "bg-green-50 border-green-400 text-green-700";
+                      }
+                      if (isSelected && !isCorrect) { // This option was selected by the user AND it's wrong
+                        itemSpecificClasses = "bg-red-50 border-red-400 text-red-700";
+                      }
+                    }
+
+                    return (
+                      <div
+                        key={idx}
+                        className={clsx(
+                          "flex items-center space-x-3 p-3 border rounded-md transition-colors cursor-pointer",
+                          itemSpecificClasses,
+                          !itemSpecificClasses && "hover:bg-gray-50" // Only apply hover if not already colored
+                        )}
+                      >
+                        <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} />
+                        <label htmlFor={`opt-${q.id}-${idx}`} className="flex-1 text-sm md:text-base cursor-pointer flex items-center justify-between w-full">
+                          <span>{opt}</span>
+                          {!examMode && anAnswerIsSelectedForThisQuestion && isSelected && (
+                            isCorrect ? (
+                              <span className="ml-2 flex items-center text-green-600 font-medium">
+                                <CheckCircle2 size={18} className="mr-1" /> Správně
+                              </span>
+                            ) : (
+                              <span className="ml-2 flex items-center text-red-600 font-medium">
+                                <XCircle size={18} className="mr-1" /> Nesprávně
+                              </span>
+                            )
+                          )}
+                        </label>
+                      </div>
+                    );
+                  })}
                 </RadioGroup>
               </CardContent>
             </Card>
@@ -370,7 +459,13 @@ export default function DrivingTestApp() {
             <div className="flex-1 overflow-y-auto p-2 md:p-3 space-y-2 text-xs md:text-sm">
               {messages.map((msg, i) => (
                 <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.from === "ai" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto")}>
-                  {msg.text.split('\n').map((line, j) => <p key={j} className="break-words">{line}</p>)}
+                  {msg.text.split('\n').map((line, j) => {
+                    const isImageUrl = /\.(jpeg|jpg|gif|png)$/i.test(line.trim());
+                    if (isImageUrl && msg.from === "ai") { // Zobrazit obrázek pouze pokud je od AI a je to URL obrázku
+                      return <img key={j} src={line.trim()} alt="Odpověď AI" className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow"/>;
+                    }
+                    return <p key={j} className="break-words">{line}</p>;
+                  })}
                 </div>
               ))}
               <div ref={msgEndRef} />
