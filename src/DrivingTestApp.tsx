@@ -67,6 +67,12 @@ export type Stats = {
   examAvgTime: number; // v sekundách
   practiceAnswered: number;
   practiceCorrect: number;
+  // Statistiky posledního pokusu
+  lastExamScore: number | null;
+  lastExamTimeSpent: number | null;
+  lastExamPassed: boolean | null;
+  lastPracticeAnswered: number | null;
+  lastPracticeCorrect: number | null;
 };
 const DEFAULT_STATS: Stats = {
   examTaken: 0,
@@ -75,6 +81,11 @@ const DEFAULT_STATS: Stats = {
   examAvgTime: 0,
   practiceAnswered: 0,
   practiceCorrect: 0,
+  lastExamScore: null,
+  lastExamTimeSpent: null,
+  lastExamPassed: null,
+  lastPracticeAnswered: null,
+  lastPracticeCorrect: null,
 };
 function loadStats(): Stats {
   try {
@@ -206,14 +217,18 @@ export default function DrivingTestApp() {
 
   // Funkce pro výpočet a uložení statistik z procvičování
   function calculateAndSavePracticeStats() {
-    const currentStats = loadStats();
+    const currentStats = loadStats(); // Načteme aktuální celkové statistiky
     const answeredQuestionIds = Object.keys(practiceFirstAttempts);
     const answeredCountInSession = answeredQuestionIds.length;
     
     if (answeredCountInSession === 0) {
-      // Pokud v tomto kole nebyly zodpovězeny žádné otázky, nic neukládáme.
-      // Nebo bychom mohli zvážit, zda chceme resetovat practiceFirstAttempts zde,
-      // ale to se již děje v startTest.
+      // Pokud v tomto kole nebyly zodpovězeny žádné otázky, aktualizujeme pouze lastPractice statistiky na null (nebo je necháme)
+      // a neinkrementujeme celkové. Pro konzistenci je lepší je nastavit na null, pokud se nic nedělo.
+      // Avšak pokud chceme zobrazit "Poslední procvičování: 0/0", tak je třeba je nastavit.
+      // Prozatím, pokud nebylo nic zodpovězeno, nebudeme aktualizovat 'lastPractice' statistiky,
+      // aby tam zůstaly hodnoty z opravdu posledního hraného kola.
+      // Pokud by se mělo zobrazit "0/0", museli bychom to řešit jinak.
+      // Hlavní je, že neinkrementujeme celkové statistiky.
       return; 
     }
 
@@ -226,15 +241,19 @@ export default function DrivingTestApp() {
 
     const newStats: Stats = {
       ...currentStats,
+      // Agregované statistiky
       practiceAnswered: currentStats.practiceAnswered + answeredCountInSession,
       practiceCorrect: currentStats.practiceCorrect + correctCountInSession,
+      // Statistiky posledního kola procvičování
+      lastPracticeAnswered: answeredCountInSession,
+      lastPracticeCorrect: correctCountInSession,
+      // Resetujeme statistiky posledního ostrého testu, protože teď bylo procvičování
+      lastExamScore: currentStats.lastExamScore, // Zachováme, pokud chceme odděleně
+      lastExamTimeSpent: currentStats.lastExamTimeSpent,
+      lastExamPassed: currentStats.lastExamPassed,
     };
     saveStats(newStats);
-    setStats(newStats); // Update state to reflect changes in UI
-    // Po uložení statistik z procvičování je dobré vyčistit practiceFirstAttempts pro další kolo,
-    // i když se to děje i v startTest. Pro jistotu, pokud by flow bylo jiné.
-    // setPracticeFirstAttempts({}); // Toto zvážíme, zda je nutné zde, pokud se vždy volá startTest pro nové kolo.
-                                  // Prozatím necháme reset v startTest.
+    setStats(newStats); 
   }
 
   function finishExam() {
@@ -250,16 +269,27 @@ export default function DrivingTestApp() {
       const newAvgTime = Math.round((currentStats.examAvgTime * currentStats.examTaken + spent) / newTaken);
       const newStats: Stats = {
         ...currentStats,
+        // Agregované statistiky
         examTaken: newTaken,
         examPassed: currentStats.examPassed + (passed ? 1 : 0),
         examAvgScore: newAvgScore,
         examAvgTime: newAvgTime,
+        // Statistiky tohoto posledního ostrého testu
+        lastExamScore: score,
+        lastExamTimeSpent: spent,
+        lastExamPassed: passed,
+        // Resetujeme statistiky posledního procvičování, protože teď byl ostrý test
+        lastPracticeAnswered: currentStats.lastPracticeAnswered, // Zachováme, pokud chceme odděleně
+        lastPracticeCorrect: currentStats.lastPracticeCorrect,
       };
       saveStats(newStats);
       setStats(newStats);
     } else {
       // Pro režim procvičování zavoláme novou funkci pro uložení statistik
       calculateAndSavePracticeStats();
+      // Po dokončení procvičování (přes finishExam) se také zobrazí výsledky,
+      // takže `practiceFirstAttempts` by se mělo vyčistit pro další kolo,
+      // což se děje v `startTest`.
     }
   }
 
@@ -334,14 +364,31 @@ export default function DrivingTestApp() {
           </div>
           <Card className="mt-10 text-left">
             <CardHeader><h3 className="font-semibold">Statistiky</h3></CardHeader>
-            <CardContent className="text-sm space-y-2">
-              <p>Absolvované ostré testy: {stats.examTaken}</p>
-              <p>Úspěšně složené: {stats.examPassed}</p>
+            <CardContent className="text-sm space-y-1">
+              <h4 className="font-medium mt-1 mb-0.5 text-xs text-gray-500 uppercase">Ostré testy (celkově)</h4>
+              <p>Absolvované: {stats.examTaken}</p>
+              <p>Úspěšně složené: {stats.examPassed} ({stats.examTaken > 0 ? ((stats.examPassed/stats.examTaken)*100).toFixed(1) : "0.0"}%)</p>
               <p>Průměrné skóre: {stats.examAvgScore > 0 ? stats.examAvgScore.toFixed(1) : "0.0"} / 50</p>
               <p>Průměrný čas: {stats.examAvgTime > 0 ? `${Math.floor(stats.examAvgTime / 60)}m ${stats.examAvgTime % 60}s` : "0m 0s"}</p>
-              <hr className="my-2"/>
-              <p>Zodpovězeno v procvičování: {stats.practiceAnswered}</p>
-              <p>Z toho správně: {stats.practiceCorrect} ({stats.practiceAnswered > 0 ? ((stats.practiceCorrect/stats.practiceAnswered)*100).toFixed(1) : "0.0"}%)</p>
+              
+              {stats.lastExamScore !== null && (
+                <>
+                  <h4 className="font-medium mt-2 pt-1 border-t border-gray-200 mb-0.5 text-xs text-gray-500 uppercase">Poslední ostrý test</h4>
+                  <p>Výsledek: <span className={clsx(stats.lastExamPassed ? "text-green-600" : "text-red-600", "font-semibold")}>{stats.lastExamPassed ? "Úspěšně" : "Neúspěšně"}</span> ({stats.lastExamScore} b. / {stats.lastExamTimeSpent !== null ? `${Math.floor(stats.lastExamTimeSpent / 60)}m ${stats.lastExamTimeSpent % 60}s` : ""})</p>
+                </>
+              )}
+
+              <hr className="my-3"/>
+              <h4 className="font-medium mb-0.5 text-xs text-gray-500 uppercase">Procvičování (celkově)</h4>
+              <p>Zodpovězeno otázek: {stats.practiceAnswered}</p>
+              <p>Z toho správně na 1. pokus: {stats.practiceCorrect} ({stats.practiceAnswered > 0 ? ((stats.practiceCorrect/stats.practiceAnswered)*100).toFixed(1) : "0.0"}%)</p>
+
+              {stats.lastPracticeAnswered !== null && stats.lastPracticeCorrect !== null && (
+                <>
+                  <h4 className="font-medium mt-2 pt-1 border-t border-gray-200 mb-0.5 text-xs text-gray-500 uppercase">Poslední procvičování</h4>
+                  <p>Výsledek: {stats.lastPracticeCorrect} / {stats.lastPracticeAnswered} správně na 1. pokus ({stats.lastPracticeAnswered > 0 ? ((stats.lastPracticeCorrect/stats.lastPracticeAnswered)*100).toFixed(1) : "0.0"}%)</p>
+                </>
+              )}
             </CardContent>
           </Card>
         </div>
@@ -450,6 +497,7 @@ export default function DrivingTestApp() {
               <CardContent>
                 {q.obrazek && <img src={q.obrazek} alt="Dopravní situace" className="my-3 rounded max-h-60 md:max-h-80 mx-auto shadow-md" />}
                 <RadioGroup
+                  key={q.id} // Přidán key prop
                   value={responses[q.id]?.toString()}
                   onValueChange={(valStr) => {
                     const val = parseInt(valStr);
