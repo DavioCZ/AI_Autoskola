@@ -11,6 +11,7 @@ import { Progress } from "../components/ui/progress";
 import { Textarea } from "../components/ui/textarea";
 import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle } from "lucide-react";
 import clsx from "clsx";
+import { useAi, ChatMessage } from "./hooks/useAi"; // Přidán import
 
 /* ----------------------- Data typy a konstanty ---------------------- */
 export type Question = {
@@ -22,6 +23,27 @@ export type Question = {
   points: number;
   groupId: number;
 };
+
+// Nový typ pro ukládání detailů o odpovědi v režimu procvičování
+export type PracticeAttempt = {
+  firstAttemptIndex: number;      // Index odpovědi při prvním pokusu
+  isFirstAttemptCorrect: boolean; // Zda byl první pokus správný
+  finalAttemptIndex: number;      // Index odpovědi při finálním (posledním) pokusu
+  answered: true;                 // Indikátor, že na otázku bylo odpovězeno
+};
+
+// Typ pro stav responses - může obsahovat buď číslo (pro ostrý test) nebo PracticeAttempt (pro procvičování)
+// Pro jednoduchost zatím ponecháme Record<string, number> a logiku upravíme tak,
+// aby v procvičování responses[q.id] ukládalo PracticeAttempt, ale budeme muset být opatrní s typy.
+// Lepší by bylo mít dva různé stavy nebo sjednocený typ, ale pro začátek zkusíme modifikovat stávající.
+// Alternativně, můžeme responses vždy ukládat jako komplexní objekt, i pro examMode, jen některé fieldy nebudou relevantní.
+
+// Prozatím ponecháme responses: Record<string, number> a budeme ukládat jen první pokus
+// a správnost prvního pokusu si budeme pamatovat jinak, nebo změníme strukturu responses později,
+// pokud se ukáže jako nutné.
+// Pro zjednodušení první iterace:
+// Vytvoříme nový stav pro sledování prvních pokusů v procvičování.
+// responses: Record<string, number> bude nadále ukládat FINÁLNÍ odpověď studenta (pro zobrazení v UI)
 
 const GROUPS = [
   { id: 1, file: "/okruh1.json", name: "Pravidla provozu", quota: 10, points: 2 },
@@ -121,12 +143,16 @@ export default function DrivingTestApp() {
   const [selectedGroups, setSelected] = useState<number[]>(GROUPS.map((g) => g.id));
   const [questions, setQuestions] = useState<Question[]>([]);
   const [current, setCurrent] = useState(0);
-  const [responses, setResponses] = useState<Record<string, number>>({});
+  // responses bude nadále ukládat FINÁLNÍ vybraný index odpovědi (pro UI a pro AI kontext)
+  const [responses, setResponses] = useState<Record<string, number>>({}); 
+  // Nový stav pro ukládání informací o prvním pokusu v režimu procvičování
+  // Klíč je q.id, hodnota je objekt { firstAttemptIndex: number, isFirstAttemptCorrect: boolean }
+  const [practiceFirstAttempts, setPracticeFirstAttempts] = useState<Record<string, { firstAttemptIndex: number; isFirstAttemptCorrect: boolean }>>({});
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [stats, setStats] = useState<Stats>(loadStats()); // Manage stats in state
 
-  // chat UI state
-  const [messages, setMessages] = useState<Array<{ from: "ai" | "user"; text: string }>>([{ from: "ai", text: "Ahoj! Zeptej se na cokoliv k testu." }]);
+  // Použijeme useAi hook pro správu chatu
+  const { ask, loading: aiLoading, answer: aiAnswer, messages, setMessages } = useAi(); // přejmenováno loading a answer, aby se nepletlo
   const [draft, setDraft] = useState("");
   const msgEndRef = useRef<HTMLDivElement | null>(null);
 
@@ -158,6 +184,9 @@ export default function DrivingTestApp() {
     setQuestions(qs);
     setCurrent(0);
     setResponses({});
+    if (!examMode) { // Resetovat i první pokusy pro nový režim procvičování
+      setPracticeFirstAttempts({});
+    }
     setPhase("test");
     setTimeLeft(examMode ? OSTRY_TIME : null);
   };
@@ -174,36 +203,64 @@ export default function DrivingTestApp() {
   }, [timeLeft, phase]);
 
   /* ---------------------- ukončení testu ------------------------- */
-  function finishExam() {
-    setPhase("done");
+
+  // Funkce pro výpočet a uložení statistik z procvičování
+  function calculateAndSavePracticeStats() {
     const currentStats = loadStats();
-    let newStats: Stats;
+    const answeredQuestionIds = Object.keys(practiceFirstAttempts);
+    const answeredCountInSession = answeredQuestionIds.length;
+    
+    if (answeredCountInSession === 0) {
+      // Pokud v tomto kole nebyly zodpovězeny žádné otázky, nic neukládáme.
+      // Nebo bychom mohli zvážit, zda chceme resetovat practiceFirstAttempts zde,
+      // ale to se již děje v startTest.
+      return; 
+    }
+
+    let correctCountInSession = 0;
+    answeredQuestionIds.forEach(questionId => {
+      if (practiceFirstAttempts[questionId]?.isFirstAttemptCorrect) {
+        correctCountInSession++;
+      }
+    });
+
+    const newStats: Stats = {
+      ...currentStats,
+      practiceAnswered: currentStats.practiceAnswered + answeredCountInSession,
+      practiceCorrect: currentStats.practiceCorrect + correctCountInSession,
+    };
+    saveStats(newStats);
+    setStats(newStats); // Update state to reflect changes in UI
+    // Po uložení statistik z procvičování je dobré vyčistit practiceFirstAttempts pro další kolo,
+    // i když se to děje i v startTest. Pro jistotu, pokud by flow bylo jiné.
+    // setPracticeFirstAttempts({}); // Toto zvážíme, zda je nutné zde, pokud se vždy volá startTest pro nové kolo.
+                                  // Prozatím necháme reset v startTest.
+  }
+
+  function finishExam() {
+    setPhase("done"); // Vždy přejdeme na obrazovku výsledků
+    
     if (examMode) {
+      const currentStats = loadStats();
       const score = questions.reduce((acc, qq) => (responses[qq.id] === qq.spravna ? acc + qq.points : acc), 0);
       const passed = score >= 43;
       const newTaken = currentStats.examTaken + 1;
       const newAvgScore = parseFloat(((currentStats.examAvgScore * currentStats.examTaken + score) / newTaken).toFixed(1));
       const spent = OSTRY_TIME - (timeLeft ?? 0);
       const newAvgTime = Math.round((currentStats.examAvgTime * currentStats.examTaken + spent) / newTaken);
-      newStats = {
+      const newStats: Stats = {
         ...currentStats,
         examTaken: newTaken,
         examPassed: currentStats.examPassed + (passed ? 1 : 0),
         examAvgScore: newAvgScore,
         examAvgTime: newAvgTime,
       };
+      saveStats(newStats);
+      setStats(newStats);
     } else {
-      const answeredQuestionsInPractice = questions.filter(q => responses.hasOwnProperty(q.id));
-      const answeredCount = answeredQuestionsInPractice.length;
-      const correctCount = answeredQuestionsInPractice.filter(q => responses[q.id] === q.spravna).length;
-      newStats = {
-        ...currentStats,
-        practiceAnswered: currentStats.practiceAnswered + answeredCount,
-        practiceCorrect: currentStats.practiceCorrect + correctCount,
-      };
+      // Pro režim procvičování zavoláme novou funkci pro uložení statistik
+      calculateAndSavePracticeStats();
     }
-    saveStats(newStats);
-    setStats(newStats); // Update state to reflect changes in UI
   }
 
   function handleResetStats() {
@@ -217,34 +274,26 @@ export default function DrivingTestApp() {
     if (!draft.trim()) return;
     const currentQ = questions[current];
     const userMessage = draft.trim();
-    setMessages((m) => [...m, { from: "user", text: userMessage }]);
-    setDraft("");
+    setDraft(""); // Vyčistíme draft hned
 
-    try {
-      const response = await fetch("/api/ai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          question: userMessage,
-          context: { 
-            question: currentQ,
-            selectedAnswerIndex: responses[currentQ.id] // Add selected answer index
-          }, 
-        }),
-      });
+    // Detekce, zda student explicitně žádá o odpověď
+    const lowerUserMessage = userMessage.toLowerCase();
+    const explicitlyAskedForAnswer = 
+      lowerUserMessage.includes("řekni mi správnou odpověď") ||
+      lowerUserMessage.includes("řekni správnou odpověď") ||
+      lowerUserMessage.includes("jaká je správná odpověď") ||
+      lowerUserMessage.includes("co je správně") ||
+      lowerUserMessage.includes("prozraď správnou odpověď") ||
+      lowerUserMessage.includes("chci vědět odpověď");
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+    const studentSelectedIndex = responses[currentQ.id]; // Může být undefined, pokud nic není vybráno
 
-      const data = await response.json();
-      setMessages((m) => [...m, { from: "ai", text: data.answer || "Nepodařilo se získat odpověď." }]);
-    } catch (error) {
-      console.error("Error fetching AI response:", error);
-      setMessages((m) => [...m, { from: "ai", text: "⚠️ Omlouvám se, došlo k chybě při komunikaci s AI." }]);
-    }
+    // Voláme funkci 'ask' z hooku useAi s novým formátem kontextu
+    await ask(userMessage, {
+      question: currentQ, // Celý objekt aktuální otázky (obsahuje text, možnosti atd.)
+      studentSelected: typeof studentSelectedIndex === 'number' ? studentSelectedIndex : null, // index nebo null
+      explicitlyAsked: explicitlyAskedForAnswer 
+    });
   };
 
   useEffect(() => {
@@ -252,6 +301,21 @@ export default function DrivingTestApp() {
   }, [messages]);
 
   const q = questions[current];
+
+  useEffect(() => {
+    // Tento hook se stará o inicializaci/resetování zpráv chatu podle aktuální otázky a fáze testu.
+    if (q && phase === "test") {
+      const introText = `Otázka: ${q.otazka}\nMožnosti:\n${q.moznosti.join("\n")}`;
+      // Inicializujeme messages pomocí setMessages z hooku useAi
+      // Role je "user", aby první zpráva pro AI měla správnou roli.
+      // Typ pro setMessages v hooku je React.Dispatch<React.SetStateAction<ChatMessage[]>>
+      // a ChatMessage má role "user" | "assistant"
+      setMessages([{ role: "user", text: introText }]);
+      setDraft("");
+    } else if (phase !== "test" && phase !== "done") {
+      setMessages([{ role: "assistant", text: "Ahoj! Zeptej se na cokoliv k testu." }]);
+    }
+  }, [q, phase, setMessages, setDraft]); // setMessages a setDraft jsou nyní z hooku
 
   if (phase === "intro") {
     return (
@@ -387,7 +451,22 @@ export default function DrivingTestApp() {
                 {q.obrazek && <img src={q.obrazek} alt="Dopravní situace" className="my-3 rounded max-h-60 md:max-h-80 mx-auto shadow-md" />}
                 <RadioGroup
                   value={responses[q.id]?.toString()}
-                  onValueChange={(val) => setResponses(prev => ({ ...prev, [q.id]: parseInt(val) }))}
+                  onValueChange={(valStr) => {
+                    const val = parseInt(valStr);
+                    // Vždy aktualizujeme 'responses' pro UI (zobrazení vybrané odpovědi)
+                    setResponses(prev => ({ ...prev, [q.id]: val }));
+
+                    // Pokud jsme v režimu procvičování a pro tuto otázku ještě nebyl zaznamenán první pokus
+                    if (!examMode && !practiceFirstAttempts[q.id]) {
+                      setPracticeFirstAttempts(prev => ({
+                        ...prev,
+                        [q.id]: {
+                          firstAttemptIndex: val,
+                          isFirstAttemptCorrect: val === q.spravna,
+                        }
+                      }));
+                    }
+                  }}
                   className="mt-4 space-y-2"
                 >
                   {q.moznosti.map((opt, idx) => {
@@ -439,14 +518,29 @@ export default function DrivingTestApp() {
               <Button variant="outline" onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}>
                 Předchozí
               </Button>
+              {!examMode && ( // Tlačítko Ukončit pouze v režimu procvičování
+                <Button variant="outline" onClick={() => {
+                  // Odebráno confirm, statistiky se uloží vždy
+                  calculateAndSavePracticeStats(); // Uložíme statistiky
+                  setPhase("intro"); // Přejdeme do hlavního menu
+                }}>
+                  Ukončit
+                </Button>
+              )}
               <span className="text-sm text-gray-600">{current + 1} / {questions.length}</span>
               {current < questions.length - 1 ? (
                 <Button onClick={() => setCurrent(c => Math.min(questions.length - 1, c + 1))}>
                   Další
                 </Button>
               ) : (
-                <Button onClick={finishExam} className="bg-green-600 hover:bg-green-700 text-white">
-                  Dokončit test
+                <Button 
+                  onClick={finishExam} 
+                  className={clsx(
+                    "text-white",
+                    examMode ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700"
+                  )}
+                >
+                  {examMode ? "Dokončit test" : "Vyhodnotit procvičování"}
                 </Button>
               )}
             </div>
@@ -457,17 +551,20 @@ export default function DrivingTestApp() {
               <h3 className="font-semibold text-sm md:text-base">Zeptat se AI lektora</h3>
             </div>
             <div className="flex-1 overflow-y-auto p-2 md:p-3 space-y-2 text-xs md:text-sm">
-              {messages.map((msg, i) => (
-                <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.from === "ai" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto")}>
-                  {msg.text.split('\n').map((line, j) => {
+              {messages.map((msg: ChatMessage, i: number) => ( // Otypování msg a i
+                // Používáme msg.role z ChatMessage typu
+                <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto")}>
+                  {msg.text.split('\n').map((line: string, j: number) => { // Otypování line a j
                     const isImageUrl = /\.(jpeg|jpg|gif|png)$/i.test(line.trim());
-                    if (isImageUrl && msg.from === "ai") { // Zobrazit obrázek pouze pokud je od AI a je to URL obrázku
+                    // Používáme msg.role
+                    if (isImageUrl && msg.role === "assistant") { 
                       return <img key={j} src={line.trim()} alt="Odpověď AI" className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow"/>;
                     }
                     return <p key={j} className="break-words">{line}</p>;
                   })}
                 </div>
               ))}
+              {aiLoading && <div className="p-2.5 rounded-lg shadow-sm max-w-[90%] bg-blue-100 self-start opacity-70">Přemýšlím...</div>}
               <div ref={msgEndRef} />
             </div>
             <div className="p-2 border-t">
@@ -479,8 +576,9 @@ export default function DrivingTestApp() {
                   rows={2}
                   className="flex-1 text-xs md:text-sm resize-none"
                   onKeyPress={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }}}
+                  disabled={aiLoading} // Zakázat vstup během načítání
                 />
-                <Button onClick={sendMsg} size="icon" disabled={!draft.trim()}>
+                <Button onClick={sendMsg} size="icon" disabled={!draft.trim() || aiLoading}>
                   <Send size={16} />
                 </Button>
               </div>
@@ -496,8 +594,18 @@ export default function DrivingTestApp() {
     const totalPoints = examMode ? questions.reduce((acc, qq) => acc + qq.points, 0) : 0;
     const passed = examMode && score >= 43;
 
-    const answeredInPractice = questions.filter(q_item => responses.hasOwnProperty(q_item.id));
-    const correctInPractice = answeredInPractice.filter(q_item => responses[q_item.id] === q_item.spravna).length;
+    // Pro zobrazení výsledků aktuálního kola procvičování použijeme practiceFirstAttempts
+    let answeredInCurrentPracticeSession = 0;
+    let correctInCurrentPracticeSession = 0;
+    if (!examMode) {
+      const attemptedQuestionIdsInSession = Object.keys(practiceFirstAttempts);
+      answeredInCurrentPracticeSession = attemptedQuestionIdsInSession.length;
+      attemptedQuestionIdsInSession.forEach(id => {
+        if (practiceFirstAttempts[id]?.isFirstAttemptCorrect) {
+          correctInCurrentPracticeSession++;
+        }
+      });
+    }
 
     return (
       <>
@@ -514,9 +622,9 @@ export default function DrivingTestApp() {
           )}
           {!examMode && (
             <div className="text-lg md:text-xl mb-6">
-              Zodpověděli jste {answeredInPractice.length} otázek, z toho {correctInPractice} správně.
-              {answeredInPractice.length > 0 && (
-                <span> (Úspěšnost: {((correctInPractice / answeredInPractice.length) * 100).toFixed(1)}%)</span>
+              V tomto kole procvičování jste odpověděli na {answeredInCurrentPracticeSession} otázek, z toho {correctInCurrentPracticeSession} správně na první pokus.
+              {answeredInCurrentPracticeSession > 0 && (
+                <span> (Úspěšnost na první pokus: {((correctInCurrentPracticeSession / answeredInCurrentPracticeSession) * 100).toFixed(1)}%)</span>
               )}
             </div>
           )}
