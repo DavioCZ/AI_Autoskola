@@ -1,0 +1,861 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "21100016",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/211069.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "21100016",
+            "shrnuti": "Pohled z vozidla na zasněženou křižovatku s mostem, kde řidič přijíždí z vedlejší silnice a hodlá odbočit vlevo.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec",
+                    "barva": "Žlutá s bílým okrajem",
+                    "symbol": "Kosočtverec"
+                  },
+                  "kod_nazev": "IP 4a, Hlavní pozemní komunikace",
+                  "umisteni": "Na sloupku vpravo, nad dodatkovou tabulkou."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélník",
+                    "barva": "Bílá",
+                    "symbol": "Schéma křižovatky s vyznačením hlavní a vedlejší komunikace"
+                  },
+                  "kod_nazev": "E 13, Tvar křižovatky",
+                  "umisteni": "Pod značkou IP 4a. Ukazuje, že hlavní komunikace zatáčí doprava, zatímco směr rovně a vlevo je na vedlejší."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelník s červeným okrajem",
+                    "barva": "Bílé pozadí",
+                    "symbol": "Auto ve smyku"
+                  },
+                  "kod_nazev": "A 13, Nebezpečí smyku",
+                  "umisteni": "Na samostatném sloupku dále vpravo."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelník s červeným okrajem",
+                    "barva": "Bílé pozadí",
+                    "symbol": "Most"
+                  },
+                  "kod_nazev": "A 25, Most",
+                  "umisteni": "Na stejném sloupku jako A 13."
+                }
+              ],
+              "vodorovne": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z pozice řidiče blížícího se ke křižovatce ve tvaru T. Vozovka a okolí jsou pokryty sněhem. Podle dopravního značení (tvar křižovatky) se vozidlo nachází na vedlejší pozemní komunikaci a má v úmyslu odbočit vlevo. Hlavní silnice vede zprava a pokračuje rovně z pohledu přijíždějícího zprava. Dopravní značky dále varují před nebezpečím smyku a mostem, což jsou v zimních podmínkách velmi relevantní rizika."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič přijíždí z vedlejší silnice, takže musí dát přednost v jízdě vozidlům přijíždějícím po hlavní silnici (zprava).",
+              "Zimní podmínky (sníh, možnost náledí na mostě) vyžadují přizpůsobení rychlosti a zvýšenou opatrnost."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nedání přednosti v jízdě vozidlům na hlavní komunikaci.",
+              "Dostání smyku na zasněžené vozovce nebo na mostě, který může být namrzlý.",
+              "Prodloužená brzdná dráha kvůli sněhu a ledu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020010",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1039.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020010",
+            "shrnuti": "Kritická situace, kdy chodec vstupuje do vozovky zpoza stojícího autobusu, přímo do jízdní dráhy objíždějícího vozidla.",
+            "akteri": [
+              {
+                "typ": "autobus",
+                "popis": "Bílý kloubový autobus stojící v zastávce v pravém jízdním pruhu."
+              },
+              {
+                "typ": "chodec",
+                "popis": "Osoba, která právě vkročila do levého jízdního pruhu zpoza přední části autobusu."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z výhledu, které objíždí autobus a je v bezprostředním nebezpečí střetu s chodcem."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z pozice řidiče automobilu, který se v levém jízdním pruhu chystá objet autobus stojící v zastávce. V momentě míjení přední části autobusu náhle vstupuje do jízdní dráhy chodec, který byl zcela zakryt autobusem. Jedná se o typický příklad nebezpečí vyplývajícího z objíždění velké překážky."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí vždy předvídat, že zpoza autobusu může kdokoliv vstoupit do vozovky.",
+              "Při objíždění autobusu v zastávce je nutné výrazně snížit rychlost a být připraven okamžitě brzdit."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Přímý střet s chodcem, který se náhle objevil z mrtvého úhlu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020035",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1169.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020035",
+            "shrnuti": "Autobus stojící v zastávce dává znamení o změně směru jízdy vlevo, aby vyjel do jízdního pruhu.",
+            "akteri": [
+              {
+                "typ": "autobus",
+                "popis": "Červený autobus stojící v zastávkovém pruhu s aktivním levým směrovým světlem."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z výhledu, které se k situaci blíží v přilehlém jízdním pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla jedoucího po komunikaci v obci. Vpravo je zastávkový pruh, ve kterém stojí autobus. Autobus má zapnuté levé směrové světlo, čímž dává jasně najevo svůj úmysl vyjet ze zastávky a zařadit se do provozu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Pokud se situace odehrává v obci, řidič vozidla jedoucího v přilehlém pruhu je povinen autobusu umožnit vyjetí ze zastávky snížením rychlosti, případně i zastavením vozidla.",
+              "Řidič nesmí autobus v této situaci objíždět.",
+              "Řidič autobusu nesmí ohrozit ostatní účastníky provozu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Konflikt mezi vyjíždějícím autobusem a vozidlem z výhledu, pokud řidič automobilu nerespektuje svou povinnost a pokusí se autobus objet."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100014",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209103.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100014",
+            "shrnuti": "Pohled z kabiny nákladního automobilu, který nedodržuje bezpečnou vzdálenost za osobním vozem na dálnici.",
+            "akteri": [
+              {
+                "typ": "nákladní automobil",
+                "popis": "Vozidlo, z jehož kabiny je situace snímána."
+              },
+              {
+                "typ": "osobní automobil",
+                "popis": "Červené vozidlo jedoucí vpředu ve stejném pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Dvě po sobě jdoucí šipky (chevron)",
+                    "barva": "Bílá",
+                    "symbol": "Šipka"
+                  },
+                  "kod_nazev": "V 16b, Šipky pro bezpečný odstup",
+                  "umisteni": "Na vozovce v jízdním pruhu."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr z kabiny nákladního automobilu ukazuje nebezpečně malý odstup od červeného osobního automobilu jedoucího vpředu. Na vozovce jsou viditelné speciální vodorovné značky (šipky) pro udržování bezpečné vzdálenosti. Mezi vozidly není vidět ani jedna celá mezera mezi šipkami, což znamená, že vzdálenost je kriticky malá, daleko pod doporučenými 2 sekundami."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Bezpečná vzdálenost při rychlosti 72 km/h (20 m/s) by měla být alespoň 40 metrů (2 sekundy).",
+              "Zobrazená situace představuje hrubé porušení zásad bezpečné jízdy."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Extrémně vysoké riziko nárazu zezadu v případě náhlého brzdění předního vozidla, zejména s ohledem na delší reakční dobu a brzdnou dráhu nákladního automobilu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100018",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209107.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100018",
+            "shrnuti": "Řidič automobilu telefonuje za jízdy s použitím handsfree sluchátka.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Muž za volantem, který má v uchu bezdrátové handsfree sluchátko a evidentně telefonuje."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní pohled na řidiče v interiéru vozu. Ačkoliv nedrží telefon v ruce a má obě ruce volné pro řízení, jeho pozornost je evidentně věnována telefonnímu hovoru. Situace ilustruje vliv kognitivního rozptýlení na řízení."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "I legální forma telefonování (pomocí handsfree) prokazatelně prodlužuje reakční dobu řidiče.",
+              "Mentální zaneprázdnění hovorem snižuje schopnost plně vnímat a vyhodnocovat dopravní situaci."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Zpožděná reakce na neočekávanou událost (náhlé brzdění, překážka na silnici).",
+              "Přehlédnutí důležité dopravní značky nebo signálu.",
+              "tzv. \"inattention blindness\" (slepota z nepozornosti), kdy se řidič sice dívá, ale nevnímá."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100019",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209108.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100019",
+            "shrnuti": "Kolona vozidel na dálnici jedoucích v těsném závěsu za sebou, ilustrující nedodržování bezpečné vzdálenosti.",
+            "akteri": [
+              {
+                "typ": "osobní automobil",
+                "popis": "Více osobních automobilů a jedno nákladní vozidlo jedoucí v koloně v levém jízdním pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na dálnici se třemi jízdními pruhy. V levém pruhu jede kolona vozidel s velmi malými rozestupy. Situace ukazuje běžný, ale nebezpečný jev, kdy řidiči nereagují na rychlost jízdy adekvátní bezpečnou vzdáleností."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon nedefinuje bezpečnou vzdálenost v metrech, ale jako takovou vzdálenost, aby bylo možné zabránit srážce v případě náhlého snížení rychlosti nebo zastavení vozidla jedoucího vpředu.",
+              "Vzdálenost závisí na mnoha faktorech (rychlost, stav vozovky, počasí, reakční doba). Praktická pomůcka jsou 2 sekundy."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vysoké riziko hromadné nehody (řetězové srážky) v případě náhlého brzdění prvního vozidla v koloně."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100020",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209109.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100020",
+            "shrnuti": "Řidič za jízdy ovládá navigační systém, čímž se plně nevěnuje řízení.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Osoba za volantem, která se dívá na obrazovku navigace a dotýká se jí prstem."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na ruce a středovou konzoli v automobilu. Řidič levou rukou drží volant, zatímco pravou rukou zadává data do navigačního systému na dotykové obrazovce. Jeho zrak a pozornost jsou upřeny na displej, nikoli na dopravní situaci před vozidlem."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Jakákoli manipulace se zařízením (navigace, rádio, telefon) za jízdy odvádí vizuální, manuální i kognitivní pozornost od řízení.",
+              "Tyto činnosti výrazně prodlužují reakční dobu a zvyšují riziko nehody."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Přehlédnutí náhlé změny v provozu (brzdění, změna pruhu jiného vozidla).",
+              "Vyjetí z jízdního pruhu.",
+              "Srážka s překážkou nebo jiným vozidlem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100021",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209110.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100021",
+            "shrnuti": "Řidič se za jízdy snaží připojit nabíjecí kabel k mobilnímu telefonu, čímž se nevěnuje řízení.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Osoba za volantem, která se dívá dolů na mobilní telefon a snaží se do něj zapojit kabel."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z interiéru vozidla ukazuje řidiče, který drží v jedné ruce mobilní telefon a ve druhé nabíjecí kabel. Jeho pohled směřuje dolů na telefon, nikoli na silnici před sebou. Jedná se o velmi nebezpečné rozptýlení pozornosti."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "I zdánlivě jednoduchá a krátká činnost, jako je připojení kabelu, vyžaduje vizuální a manuální pozornost, která chybí pro řízení.",
+              "Řidič je povinen se plně věnovat řízení vozidla a sledovat situaci v provozu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Během doby, kdy se řidič nedívá na silnici, může vozidlo ujet desítky metrů 'naslepo'.",
+              "Vysoké riziko srážky z důvodu naprosté nepozornosti."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100022",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209111.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100022",
+            "shrnuti": "Řidička se za jízdy líčí a dívá se do zpětného zrcátka místo na silnici.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Žena za volantem, která se dívá do zpětného zrcátka a nanáší si řasenku."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Interiér vozidla. Řidička drží jednou rukou volant a v druhé ruce má řasenku. Její pohled je upřen do zpětného zrcátka, které používá k líčení. Plně se tak nevěnuje sledování dopravní situace před vozidlem."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato činnost je extrémním příkladem rozptýlení, které kombinuje vizuální, manuální i kognitivní nepozornost.",
+              "Řidič je povinen se plně věnovat řízení."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Absolutní ztráta přehledu o dění před vozidlem.",
+              "Vysoká pravděpodobnost způsobení dopravní nehody."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100023",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209112.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100023",
+            "shrnuti": "Detail nohou řidičky v botách na vysokém podpatku při ovládání pedálů.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Nohy ženy v botách s vysokými a tenkými podpatky."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr na prostor pro nohy u řidiče. Řidička má obuté lodičky na vysokém jehlovém podpatku. Její pravá noha je na plynovém pedálu. Tento typ obuvi je pro řízení zcela nevhodný."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vysoké podpatky znemožňují správné a citlivé ovládání pedálů.",
+              "Podpatek se může zachytit o kobereček nebo se zaklínit pod pedálem.",
+              "Noha nemá správnou oporu, což znemožňuje vyvinutí maximální síly při krizovém brzdění."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Prodloužení reakční doby při nutnosti přešlápnout z plynu na brzdu.",
+              "Neschopnost plně sešlápnout brzdový pedál v krizové situaci.",
+              "Nechtěné přidání plynu místo brzdění."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100024",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209113.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100024",
+            "shrnuti": "Detail nohy řidiče v pantofli při ovládání pedálů.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Noha muže v otevřené pantofli (žabce)."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr na prostor pro nohy u řidiče. Řidič má na noze volnou plážovou obuv typu 'žabky'. Tato obuv není na noze pevně fixována a představuje značné riziko při řízení."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Volná obuv se může snadno sklouznout z nohy nebo z pedálu.",
+              "Může se zaklínit pod pedály a zablokovat jejich funkci.",
+              "Není možné vyvinout plnou a kontrolovanou sílu na pedály."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Sklouznutí boty pod brzdový pedál a znemožnění brzdění.",
+              "Zpožděná nebo nedostatečná reakce při potřebě rychlého brzdění.",
+              "Ztráta kontroly nad vozidlem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100025",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209114.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100025",
+            "shrnuti": "Malý pes se volně pohybuje v prostoru řidiče a rozptyluje ho.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Osoba za volantem, kterou rozptyluje pes."
+              },
+              {
+                "typ": "zvíře",
+                "popis": "Malý pes (teriér) stojící na klíně řidiče a dívající se z okna."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Interiér vozidla. Na klíně řidiče sedí malý pes, který ho olizuje a dívá se ven. Řidič se usmívá a věnuje pozornost psovi místo řízení. Zvíře není nijak zabezpečeno."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon vyžaduje, aby přepravovaná zvířata byla zabezpečena tak, aby neohrozila řidiče, přepravované osoby ani bezpečnost provozu.",
+              "Volně se pohybující zvíře je významným zdrojem rozptýlení a představuje riziko."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Zvíře může skočit řidiči pod pedály nebo mu zakrýt výhled.",
+              "Při nárazu se zvíře stává neřízeným projektilem, který může zranit posádku.",
+              "Neustálé rozptylování řidiče a prodlužování jeho reakční doby."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100026",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209115.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100026",
+            "shrnuti": "Pohled z vozidla jedoucího za jiným autem za silného deště a snížené viditelnosti.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo jedoucí vpředu, jehož zadní světla jsou vidět skrz déšť."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled přes čelní sklo automobilu, po kterém stékají kapky deště a pracují stěrače. Před vozidlem jede jiné auto. Viditelnost je výrazně snížená kvůli silnému dešti a vodní tříšti od vozidla vpředu. Vozovka je mokrá."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Za zhoršených podmínek (déšť, snížená viditelnost, mokrá vozovka) se prodlužuje brzdná dráha a zhoršuje přilnavost (riziko akvaplaningu).",
+              "Je nutné výrazně zvětšit bezpečnou vzdálenost za vpředu jedoucím vozidlem (doporučuje se prodloužit časový odstup minimálně na 3-4 sekundy)."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nedobrzdění a náraz do vozidla vpředu kvůli prodloužené brzdné dráze.",
+              "Ztráta kontroly nad vozidlem v důsledku akvaplaningu.",
+              "Snížená schopnost včas rozpoznat nebezpečí kvůli špatné viditelnosti."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100027",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209116.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100027",
+            "shrnuti": "Agresivní jízda, kdy černé auto jede v těsném závěsu za bílým autem.",
+            "akteri": [
+              {
+                "typ": "osobní automobil",
+                "popis": "Černé auto (zřejmě BMW) jedoucí těsně za bílým vozem."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled ze zpětného zrcátka bílého vozu. V zrcátku je vidět přední část černého automobilu, který je nalepený na zadní nárazník a nedodržuje bezpečnou vzdálenost. Jedná se o typický příklad agresivní jízdy, tzv. tailgatingu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Nedodržování bezpečné vzdálenosti je jednou z nejčastějších příčin dopravních nehod, zejména na dálnicích.",
+              "Toto chování je nebezpečné a bezohledné."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vysoká pravděpodobnost nárazu zezadu při jakémkoli zpomalení předního vozidla.",
+              "Vyvolání stresu u řidiče předního vozidla, což může vést k jeho chybě."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100028",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209117.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100028",
+            "shrnuti": "Ilustrace krizového brzdění s ABS – noha prudce a plnou silou šlape na brzdový pedál.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Detail nohy v tenisce, která se vší silou opírá o brzdový pedál."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na prostor pedálů v automobilu. Noha řidiče v sportovní obuvi je plnou vahou a silou na brzdovém pedálu, který je zcela sešlápnutý. Vedle je vidět i pedál spojky. Obrázek znázorňuje správný postup při nouzovém brzdění ve vozidle vybaveném systémem ABS."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "U vozidla s ABS je pro dosažení maximálního brzdného účinku nutné sešlápnout brzdový pedál co nejrychleji a co největší silou a držet ho sešlápnutý až do zastavení.",
+              "Systém ABS se postará o to, aby se kola nezablokovala a vozidlo zůstalo ovladatelné. Řidič může cítit pulzování v pedálu, což je normální."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100029",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209118.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100029",
+            "shrnuti": "Ilustrace metody \"dvou sekund\" pro odhad bezpečné vzdálenosti pomocí pevného bodu u silnice.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Dvě auta jedoucí za sebou."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace. Na silnici jedou dvě auta za sebou. U silnice stojí strom, který slouží jako pevný referenční bod. Šipka ukazuje, že jakmile přední auto mine strom, řidič zadního auta začne počítat. Text \"jednadvacet, dvaadvacet\" symbolizuje odměřování dvou sekund. Cílem je, aby zadní auto dojelo ke stromu ne dříve, než řidič dopočítá."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek názorně vysvětluje praktickou metodu, jak si v provozu snadno zkontrolovat, zda je dodržován minimální bezpečný časový odstup.",
+              "Tato metoda je univerzálnější než odhad vzdálenosti v metrech, protože časový odstup automaticky zohledňuje rychlost jízdy."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100030",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209119.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100030",
+            "shrnuti": "Ilustrace funkce systému nouzového brzdění (Front Assist), který detekuje překážku a aktivuje brzdy.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo vybavené asistenčním systémem."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo vpředu sloužící jako překážka."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace. Z přední části automobilu vychází kužel radarových vln, které detekují vozidlo jedoucí vpředu. Nad vozidlem jsou ikony symbolizující varování řidiče (zvukové, vizuální) a následnou automatickou aktivaci brzdového systému, aby se zabránilo srážce nebo zmírnily její následky."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek popisuje princip fungování moderního aktivního bezpečnostního prvku.",
+              "Systém pomocí radaru nebo kamery monitoruje prostor před vozidlem, a pokud vyhodnotí riziko srážky, nejprve varuje řidiče a poté je schopen sám autonomně brzdit."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100036",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209125.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100036",
+            "shrnuti": "Jízda po dálnici se značením pro udržování bezpečného odstupu (šipky).",
+            "akteri": [
+              {
+                "typ": "osobní automobil",
+                "popis": "Vozidlo z výhledu."
+              },
+              {
+                "typ": "osobní automobil",
+                "popis": "Stříbrné vozidlo jedoucí vpředu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Dvě po sobě jdoucí šipky (chevron)",
+                    "barva": "Bílá",
+                    "symbol": "Šipka"
+                  },
+                  "kod_nazev": "V 16b, Šipky pro bezpečný odstup",
+                  "umisteni": "Na vozovce v jízdním pruhu."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla jedoucího po dálnici. Před ním jede další osobní automobil. V jízdním pruhu jsou na vozovce namalovány bílé šipky. Mezi vozidlem z výhledu a vozidlem vpředu jsou vidět právě dvě celé šipky, což indikuje dodržení doporučené bezpečné vzdálenosti podle tohoto značení."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značení 'dvě šipky' odpovídá přibližně dvousekundovému časovému odstupu, což je považováno za minimální bezpečnou vzdálenost za normálních podmínek.",
+              "Řidič by měl vidět mezi svým a předním vozidlem právě tyto dvě šipky."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100037",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209126.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100037",
+            "shrnuti": "Ilustrace funkce elektronického stabilizačního systému (ESC/ESP), který koriguje smyk vozidla.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Dvě vozidla pro srovnání: jedno bez a jedno s ESP."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace porovnávající chování dvou vozidel při vyhýbacím manévru. Horní vozidlo (bez ESP) dostává smyk a stává se neovladatelným. Dolní vozidlo (s ESP) systém detekuje počínající smyk a cíleným přibrzděním jednotlivých kol stabilizuje vozidlo a udrží ho v požadovaném směru. Je zde vidět i kontrolka ESP na palubní desce."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek vysvětluje funkci systému ESC (Electronic Stability Control) nebo ESP (Electronic Stability Program).",
+              "Tento systém pomáhá řidiči zvládnout smyk tím, že automaticky přibrzďuje jednotlivá kola a případně omezuje výkon motoru."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100038",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209127.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100038",
+            "shrnuti": "Ilustrace součinnosti bezpečnostního pásu a airbagu při čelním nárazu.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Figurína řidiče při simulovaném nárazu."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace znázorňující funkci pasivních bezpečnostních prvků. Při čelním nárazu bezpečnostní pás zadrží tělo řidiče a zabrání jeho pohybu vpřed. Následně se aktivuje airbag, který ztlumí náraz hlavy a hrudníku. Je zdůrazněno, že oba systémy fungují společně."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Airbag je doplňkový zádržný systém (SRS - Supplemental Restraint System).",
+              "Jeho správná funkce je podmíněna použitím bezpečnostního pásu. Bez pásu může být airbag neúčinný nebo dokonce nebezpečný.",
+              "Bezpečnostní pás je primárním a nejdůležitějším zádržným systémem."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100040",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209129.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100040",
+            "shrnuti": "Řidička se za jízdy líčí, konkrétně si nanáší rtěnku, a nedívá se na silnici.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Žena za volantem, která se dívá do zpětného zrcátka a nanáší si rtěnku."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Interiér vozidla. Řidička jednou rukou drží volant a v druhé ruce má rtěnku. Její pohled směřuje do zpětného zrcátka, které využívá pro aplikaci kosmetiky. Je plně rozptýlena a nesleduje situaci v provozu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Líčení za volantem je hrubým porušením povinnosti plně se věnovat řízení.",
+              "Tato činnost odvádí vizuální, manuální i kognitivní pozornost."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vysoké riziko způsobení nehody z nepozornosti.",
+              "Neschopnost reagovat na jakoukoli změnu v dopravní situaci."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100041",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209130.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100041",
+            "shrnuti": "Řidič za jízdy konzumuje jídlo (hamburger), čímž se plně nevěnuje řízení.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Muž za volantem, který jí hamburger."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na řidiče v automobilu. Jednou rukou drží volant a druhou rukou drží hamburger, do kterého se právě zakusuje. Jeho pozornost je rozdělena mezi jídlo a řízení."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Konzumace jídla za jízdy je dalším příkladem nebezpečného rozptylování, které odvádí manuální a kognitivní pozornost od řízení.",
+              "Řidič je povinen se plně věnovat řízení vozidla."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Prodloužená reakční doba na nenadálou událost.",
+              "V případě potřeby náhlého manévru nemá řidič obě ruce na volantu pro plnou kontrolu.",
+              "Riziko upuštění jídla a následné instinktivní snahy ho sebrat, což vede k úplné ztrátě pozornosti."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 22,
+    "pocet_url_nalezeno": 22,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": {
+    "další_start_index": 147,
+    "zbývá": 15
+  }
+}

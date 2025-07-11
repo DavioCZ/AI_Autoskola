@@ -1,0 +1,41 @@
+# node / front-end artefakty
+node_modules/
+dist/
+.env
+.vscode/
+.DS_Store
+
+# Dependencies
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+
+# Misc
+*.pem
+
+# Environment Variables
+.env*.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Editor directories and files
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Output files from run_vision.js
+*.out.json

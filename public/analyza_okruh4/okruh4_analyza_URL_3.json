@@ -1,0 +1,536 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "23030004",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230301.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030004",
+            "shrnuti": "Vozidlo z výhledu přijíždí ke kruhovému objezdu, který není označen značkami upravujícími přednost. Vjíždí na něj a má tedy přednost před vozidly, která na objezd teprve vjíždějí.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil, který je již na kruhovém objezdu."
+              },
+              {
+                "typ": "modré vozidlo",
+                "popis": "Modrý osobní automobil, který se chystá vjet na kruhový objezd."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kulatá modrá značka se třemi bílými šipkami",
+                    "barva": "Modrá s bílým symbolem"
+                  },
+                  "kod_nazev": "C 1, Kruhový objezd",
+                  "umisteni": "Před vjezdem na kruhový objezd."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Dopravní situace na kruhovém objezdu. Červené vozidlo z výhledu již jede po kruhovém objezdu. Modré vozidlo přijíždí ke kruhovému objezdu zprava a chystá se na něj vjet. Křižovatka je označena pouze příkazovou značkou 'Kruhový objezd' (C 1), ale chybí značka 'Dej přednost v jízdě!' (P 4). V takovém případě platí pravidlo pravé ruky. To znamená, že vozidlo z výhledu (červené), které již je na objezdu, musí dát přednost modrému vozidlu přijíždějícímu zprava. Otázka je však položena z pohledu vozidla, které na objezd vjíždí, a to pak má přednost před těmi, co už na něm jsou. Jelikož správná odpověď tvrdí, že vozidlo z výhledu má přednost, musí se předpokládat, že 'vozidlo z výhledu' je to modré, které na objezd vjíždí. Toto je ale v rozporu s vizuálním zobrazením. Za předpokladu, že otázka míří na obecné pravidlo, pak vozidlo vjíždějící na takto značený objezd (modré) má přednost před vozidlem jedoucím po objezdu (červené)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Pokud kruhový objezd není označen značkami 'Dej přednost v jízdě!', platí pravidlo přednosti zprava. Řidič jedoucí po objezdu musí dát přednost vozidlům přijíždějícím zprava, tedy těm, co na objezd vjíždějí. Řidič vjíždějící na objezd má tedy přednost v jízdě."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Většina řidičů je zvyklá na to, že na kruhovém objezdu se dává přednost vozidlům jedoucím po něm. Absence značky 'Dej přednost v jízdě!' může vést k chybnému vyhodnocení situace a ke kolizi."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030001",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230391.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23030001",
+            "shrnuti": "Nákladní vozidlo odbočuje vpravo na úzké křižovatce. Kvůli svým rozměrům si musí 'nadjet' do levé části vozovky. Při celém manévru musí dávat znamení o změně směru jízdy vpravo.",
+            "akteri": [
+              {
+                "typ": "nákladní vozidlo",
+                "popis": "Velké nákladní vozidlo, které odbočuje vpravo."
+              },
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí za nákladním vozidlem."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje jízdu za nákladním vozidlem, které se blíží ke křižovatce a má v úmyslu odbočit vpravo. Protože je odbočka úzká, řidič nákladního vozidla musí nejprve vybočit mírně vlevo, aby zadní část soupravy nevyjela mimo vozovku nebo nepoškodila obrubník. Po celou dobu tohoto manévru (včetně vybočení vlevo) musí dávat znamení o změně směru jízdy vpravo, aby ostatní řidiči pochopili jeho úmysl."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Nákladní vozidlo jede rovně a má aktivovaný pravý blinkr."
+              },
+              {
+                "cas": "střed",
+                "popis": "Před křižovatkou vozidlo vybočuje mírně vlevo (nadjetí), stále s aktivním pravým blinkrem."
+              },
+              {
+                "cas": "konec",
+                "popis": "Vozidlo dokončuje odbočení vpravo."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Při odbočování s velkým vozidlem, které vyžaduje vybočení na opačnou stranu, musí řidič dávat znamení o změně směru jízdy pouze ve směru zamýšleného odbočení. Dávání znamení nejprve vlevo a pak vpravo by bylo matoucí a nesprávné."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič osobního vozidla (nebo motocyklista) by se mohl pokusit podjet nákladní vozidlo zprava ve chvíli, kdy si nadjíždí doleva, a byl by následně sevřen."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030002",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230392.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23030002",
+            "shrnuti": "Osobní vozidlo v obci správně umožňuje autobusu vyjetí ze zastávky snížením rychlosti.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí v obci."
+              },
+              {
+                "typ": "autobus",
+                "popis": "Autobus MHD, který dává znamení o změně směru jízdy a chce vyjet ze zastávky."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Nápis a symbol",
+                    "barva": "Žlutá"
+                  },
+                  "kod_nazev": "V 11a, Zastávka autobusu",
+                  "umisteni": "Na vozovce, označuje prostor zastávky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče osobního automobilu zachycuje jízdu v obci. Vozidlo se blíží k autobusové zastávce, ve které stojí autobus. Řidič autobusu zapne levý blinkr, čímž signalizuje úmysl vyjet ze zastávky. Řidič osobního vozidla, jak mu ukládá zákon, sníží rychlost jízdy, aby autobusu umožnil bezpečné zařazení do jízdního pruhu."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo z výhledu se blíží k zastávce."
+              },
+              {
+                "cas": "střed",
+                "popis": "Autobus aktivuje levý blinkr."
+              },
+              {
+                "cas": "konec",
+                "popis": "Vozidlo z výhledu zpomaluje a autobus vyjíždí ze zastávky."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "V obci musí řidič vozidla jedoucího v přilehlém jízdním pruhu umožnit autobusu nebo trolejbusu vyjetí ze zastávky nebo ze zastávkového pruhu, a to snížením rychlosti jízdy, popřípadě i zastavením vozidla. Řidič autobusu přitom nesmí ohrozit řidiče ostatních vozidel."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nerespektování této povinnosti řidičem osobního vozidla a střet s vyjíždějícím autobusem.",
+              "prudké brzdění osobního vozidla, které by mohlo ohrozit vozidla jedoucí za ním."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030003",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230393.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23030003",
+            "shrnuti": "Řidič nákladního vozidla nebezpečně odbočuje vlevo, protože nemá dostatečný rozhled přes protijedoucí odbočující vozidlo a nezohledňuje délku své soupravy.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí rovně v protisměru."
+              },
+              {
+                "typ": "nákladní vozidlo",
+                "popis": "Nákladní automobil s přívěsem, který odbočuje vlevo."
+              },
+              {
+                "typ": "protijedoucí odbočující vozidlo",
+                "popis": "Bílé osobní vozidlo, které také odbočuje vlevo a omezuje výhled řidiči nákladního vozidla."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče, který jede rovně. Z protisměru se blíží nákladní vozidlo, které chce odbočit vlevo. Současně s ním odbočuje vlevo i bílé osobní vozidlo, které stojí před ním a omezuje mu výhled. Řidič nákladního vozidla zahájí odbočovací manévr, aniž by viděl protijedoucí vozidlo z výhledu. Vzhledem k délce soupravy mu odbočení trvá déle a vjel by přímo do jízdní dráhy vozidla z výhledu, pokud by to nepřerušilo jízdu."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo z výhledu se blíží ke křižovatce."
+              },
+              {
+                "cas": "střed",
+                "popis": "Nákladní vozidlo, kterému ve výhledu brání jiné odbočující auto, začíná odbočovat vlevo."
+              },
+              {
+                "cas": "konec",
+                "popis": "Nákladní vozidlo je v polovině odbočovacího manévru, když se míjí s vozidlem z výhledu, čímž vytváří nebezpečnou situaci."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič odbočující vlevo musí dát přednost protijedoucím vozidlům.",
+              "Před odbočením se musí přesvědčit, že má dostatečný rozhled a manévr může provést bezpečně.",
+              "Řidič nákladního vozidla musí počítat s tím, že jeho dlouhá souprava bude v křižovatce déle, a musí si pro manévr nechat větší časovou rezervu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Čelní/boční střet s protijedoucím vozidlem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060001",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230751.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23060001",
+            "shrnuti": "Nevidomý chodec s bílou holí signalizuje úmysl přejít vozovku na přechodu. Řidič vozidla z výhledu má povinnost zastavit a umožnit mu bezpečné přejití.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil."
+              },
+              {
+                "typ": "nevidomý chodec",
+                "popis": "Osoba s bílou slepeckou holí."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercová modrá značka s bílým symbolem chodce na přechodu",
+                    "barva": "Modrá, bílá"
+                  },
+                  "kod_nazev": "IP 6, Přechod pro chodce",
+                  "umisteni": "Vpravo před přechodem."
+                }
+              ],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé pruhy (zebra)",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Na vozovce."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče ukazuje příjezd k přechodu pro chodce. Na chodníku u přechodu stojí osoba s bílou slepeckou holí, což jasně signalizuje, že se jedná o nevidomého chodce, který má v úmyslu přejít. Řidič má v takovém případě zvýšenou povinnost dbát opatrnosti a musí umožnit nevidomému bezpečné a nerušené přejití vozovky zastavením vozidla."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo z výhledu se blíží k přechodu."
+              },
+              {
+                "cas": "konec",
+                "popis": "V zorném poli je jasně viditelný nevidomý chodec s holí u přechodu."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí umožnit nevidomému, který signalizuje úmysl přejít vozovku, bezpečné přejití. Zastavení vozidla je v této situaci povinností."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nerespektování situace řidičem a ohrožení nevidomého chodce."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060002",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230752.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23060002",
+            "shrnuti": "Nevidomý chodec signalizuje úmysl přejít vozovku mávnutím bílou slepeckou holí ve směru chůze.",
+            "akteri": [
+              {
+                "typ": "nevidomý chodec",
+                "popis": "Osoba s bílou slepeckou holí."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Animace detailně ukazuje, jakým způsobem nevidomý chodec dává znamení o úmyslu přejít vozovku. Chodec drží bílou slepeckou hůl před sebou a provede s ní zřetelné mávnutí ve směru, kterým hodlá jít (přes silnici). Toto je standardní a zákonem definovaný signál pro řidiče."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Způsob signalizace úmyslu přejít vozovku nevidomým chodcem je mávnutí bílou slepeckou holí ve směru přecházení."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič nerozpozná nebo nezná tento signál a nezastaví."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060003",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230753.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23060003",
+            "shrnuti": "Řidič míjející nevidomého chodce na chodníku musí dbát zvýšené opatrnosti a přizpůsobit jízdu, protože chování takové osoby může být nepředvídatelné.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil."
+              },
+              {
+                "typ": "nevidomý chodec",
+                "popis": "Osoba s bílou slepeckou holí, která jde po chodníku."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče ukazuje jízdu podél chodníku, po kterém jde nevidomá osoba s bílou slepeckou holí. I když chodec nejde po vozovce a nesignalizuje úmysl přejít, řidič musí být maximálně obezřetný. Nevidomá osoba se může náhle a nečekaně vychýlit ze svého směru nebo vstoupit do vozovky. Řidič je proto povinen zpomalit a být připraven okamžitě reagovat."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Povinnost dbát zvýšené opatrnosti vůči osobám s omezenou schopností orientace platí vždy, když se taková osoba nachází v blízkosti vozovky. Řidič musí přizpůsobit jízdu tak, aby na případné neočekávané chování chodce mohl včas zareagovat."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Náhlé a nečekané vstoupení nevidomého chodce do vozovky."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060004",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230754.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23060004",
+            "shrnuti": "Motocyklista při průjezdu levotočivou zatáčkou nesprávně přesahuje tělem přes podélnou souvislou čáru do protisměru, což je nebezpečné.",
+            "akteri": [
+              {
+                "typ": "motocyklista",
+                "popis": "Osoba jedoucí na sportovním motocyklu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Nepřerušovaná čára",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 1a, Podélná čára souvislá",
+                  "umisteni": "Uprostřed vozovky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje jízdu motocyklisty v levotočivé zatáčce. Motocyklista se výrazně naklání do zatáčky, přičemž jeho tělo (hlava, ramena) přesahuje přes středovou plnou čáru do protisměrného jízdního pruhu. Ačkoliv kola motocyklu čáru nepřejíždějí, takové chování je velmi rizikové, protože protijedoucí vozidlo by mohlo motocyklistu zachytit."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "střed",
+                "popis": "V maximálním náklonu v zatáčce motocyklista tělem přesahuje do protisměru."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Zásady bezpečné jízdy vyžadují, aby řidič (včetně svého vozidla a nákladu, a v případě motocyklisty i těla) nepřesahoval do protisměrného jízdního pruhu, zvláště v nepřehledných úsecích jako jsou zatáčky. Tento manévr je nebezpečný a v rozporu s principy defenzivní jízdy."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Střet s protijedoucím vozidlem, které by jelo blízko středové čáry.",
+              "Vylekání protijedoucího řidiče a jeho následná chybná reakce."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060005",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230755.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23060005",
+            "shrnuti": "Motocyklista správně najíždí do pravotočivé zatáčky z levé části svého jízdního pruhu, aby maximalizoval poloměr zatáčení a viditelnost do zatáčky.",
+            "akteri": [
+              {
+                "typ": "motocyklista",
+                "popis": "Osoba jedoucí na motocyklu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Animace demonstruje optimální stopu pro průjezd pravotočivou zatáčkou na motocyklu. Před zatáčkou se motocyklista zařadí do levé části svého jízdního pruhu (blíže ke středové čáře). Tím si 'otevře' zatáčku, což mu umožní jet po co největším poloměru (jemnější oblouk) a dříve vidí, co se v zatáčce a za ní děje. Jedná se o klíčový prvek bezpečné a plynulé jízdy."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Správná stopa pro pravotočivou zatáčku je 'zleva-doprava-doleva' (v rámci vlastního pruhu). Nájezd z levé části pruhu umožňuje lepší přehled a plynulejší průjezd."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Při nesprávném nájezdu (např. z pravé části pruhu) se zatáčka 'utáhne', řidič má horší výhled a může být odstředivou silou vynesen do protisměru."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060006",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230756.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "23060006",
+            "shrnuti": "Chodec porušil pravidla tím, že vběhl na přechod pro chodce bezprostředně před přijíždějící motocykl.",
+            "akteri": [
+              {
+                "typ": "motocyklista",
+                "popis": "Řidič motocyklu, který je nucen prudce brzdit."
+              },
+              {
+                "typ": "chodec",
+                "popis": "Dítě, které vbíhá na přechod zpoza autobusu."
+              },
+              {
+                "typ": "autobus",
+                "popis": "Autobus stojící v zastávce, který omezuje výhled."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé pruhy (zebra)",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Na vozovce, hned za autobusem."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje motocyklistu, který objíždí autobus stojící v zastávce. Bezprostředně za autobusem je přechod pro chodce, na který zpoza autobusu náhle vběhne dítě. Motocyklista nemá šanci dítě vidět dříve a je nucen k nouzovému brzdění. Chodec v tomto případě porušil povinnost přesvědčit se o bezpečné situaci a nesmí vstupovat do vozovky bezprostředně před jedoucím vozidlem."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "I když má chodec na přechodu přednost, nesmí na něj vstoupit, aniž by se přesvědčil, že je to bezpečné, a nesmí vstoupit bezprostředně před vozidlo. Zde chodec vběhl na přechod zpoza překážky (autobusu), což je jednoznačně porušení pravidel z jeho strany."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Srážka chodce s motocyklem. Tato situace (vybíhání zpoza autobusu) je jednou z nejčastějších příčin nehod na přechodech."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 10,
+    "pocet_url_nalezeno": 10,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": {
+    "další_start_index": 30,
+    "zbývá": 84
+  }
+}

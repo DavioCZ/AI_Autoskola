@@ -1,0 +1,4931 @@
+[
+  {
+    "id": "24030003",
+    "otazka": "Je řidič motorového vozidla povinen dodržet bezpečný boční odstup (1,5 m resp. 1m) při míjení cyklisty, který se pohybuje stejným směrem ve vyhrazeném jízdním pruhu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403003.png",
+    "moznosti": [
+      "Nemusí, dodržení předepsaného odstupu je povinností cyklisty.",
+      "Musí vždy.",
+      "Nemusí, jelikož v takovém případě se nejedná o předjíždění."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030005",
+    "otazka": "Můžete od řidiče motocyklu s označením \"L\" (žák autoškoly), který je v dalším vozidle doprovázen učitelem, očekávat, že se při řízení dopustí nějaké chyby, například nedání přednosti v jízdě?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403005.png",
+    "moznosti": [
+      "Ano, chybu řidiče (žáka autoškoly) nelze vyloučit a v rámci defenzivní jízdy je vhodné s ní počítat.",
+      "Ne, žák autoškoly jedoucí samostatně dostává pokyny od učitele a chyba je tak vyloučena.",
+      "Ne, žák autoškoly zná své povinnosti a můžete se spolehnout, že bude vše dodržovat."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030009",
+    "otazka": "Který z uvedených sdělovačů informuje řidiče motorového vozidla o rozsvícených obrysových světlech?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/2403009-1.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403009-2.png",
+      "https://www.autoskola-testy.cz/img/tripple/2403009-3.png"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030018",
+    "otazka": "Kde může řídit sedmnáctiletý řidič (L17) za doprovodu mentora?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403018.png",
+    "moznosti": [
+      "V České republice.",
+      "V České republice s výjimkou dálnic.",
+      "Ve všech zemích Evropské unie."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030019",
+    "otazka": "Jaký trest hrozí sedmnáctiletému řidiči (L17), který bude řídit motorové vozidlo skupiny B bez přítomnosti mentora v tomto vozidle?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403019.png",
+    "moznosti": [
+      "Pokuta a zákaz řízení motorových vozidel.",
+      "Domluva.",
+      "Trest za toto jednání zákon nestanovuje."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030020",
+    "otazka": "Může sedmnáctiletý řidič (L17) řídit s kýmkoliv, kdo splňuje podmínky pro mentory stanovené zákonem?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403020.png",
+    "moznosti": [
+      "Ano, pokud doprovázející osoba splňuje podmínky a může to dokázat tím, že je zapsána v Evidenční kartě jiného řidiče L17.",
+      "Ne, může řídit jen v doprovodu mentora, který je zapsán v Evidenční kartě řidiče.",
+      "Ano, stačí, že doprovázející osoba splňuje minimální podmínky řidičské praxe."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24030021",
+    "otazka": "Může sedmnáctiletý řidič (L17) řídit v přítomnosti mentora, který je pod vlivem alkoholu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403021.png",
+    "moznosti": [
+      "Ano, pokud je hladina alkoholu v krvi Mentora nižší než 0,5 promile.",
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030029",
+    "otazka": "Za jakých podmínek může sedmnáctiletý řidič (L17) po složení závěrečné zkoušky žadatele o řidičské oprávnění skupiny B řídit motorové vozidlo?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403029.png",
+    "moznosti": [
+      "Může řídit motorové vozidlo skupiny B samostatně, ale pouze v obci.",
+      "Po úspěšném složení závěrečné zkoušky může již řídit motorové vozidlo skupiny B samostatně.",
+      "Do věku 18 let může řídit pouze pod dohledem mentora, který je zapsán v jeho evidenční kartě řidiče."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030030",
+    "otazka": "Jaké podmínky musí splňovat mentor sedmnáctiletého řidiče (L17)?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403030.png",
+    "moznosti": [
+      "Musí být držitelem řidičského oprávnění skupiny B minimálně 10 let, posledních 5 let toto oprávnění nepozbyl (neměl zákaz řízení), nemá zadržený řidičský průkaz, nemá v bodovém hodnocení řidiče zaznamenán žádný bod, souhlasí se zápisem jako mentor do evidenční karty sedmnáctiletého řidiče (L17).",
+      "Nemusí splňovat žádné zvláštní podmínky, pouze musí souhlasit se zápisem sebe, jako mentora, do evidenční karty sedmnáctiletého řidiče (L17).",
+      "Musí být držitelem řidičského oprávnění minimálně 5 let, může mít v bodovém hodnocení řidiče zaznamenány maximálně 2 body."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030031",
+    "otazka": "Jaký je maximální počet mentorů, kteří mohou být zapsáni v Evidenční kartě sedmnáctiletého řidiče (L17)?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403031.png",
+    "moznosti": [
+      "4",
+      "3",
+      "1"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030032",
+    "otazka": "Kde musí sedět mentor při doprovodu sedmnáctiletého řidiče (L17)?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403032.png",
+    "moznosti": [
+      "Nemusí být ve vozidle přítomen, může jet v doprovodném vozidle.",
+      "Na zadním sedadle spolujezdce.",
+      "Na sedadle spolujezdce vedle řidiče."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030033",
+    "otazka": "Kdy nesmí mentor vykonávat doprovod sedmnáctiletého řidiče (L17)?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403033.png",
+    "moznosti": [
+      "Nemá stanoveny žádné podmínky.",
+      "Když se dopustí přestupku, který je zařazen do bodového hodnocení.",
+      "Bezprostředně po požití alkoholického nápoje nebo v takové době po požití alkoholického nápoje, kdy by mohl být ještě pod vlivem alkoholu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030034",
+    "otazka": "Je mentor při doprovodu sedmnáctiletého řidiče (L17) povinen prokázat svoji totožnost policistovi, vojenskému policistovi nebo celníkovi?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403034.png",
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030035",
+    "otazka": "Je mentor při doprovodu sedmnáctiletého řidiče (L17) povinen podrobit se na výzvu policisty vyšetření, zda není pod vlivem alkoholu či jiné návykové látky?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403035.png",
+    "moznosti": [
+      "Ne.",
+      "Ano.",
+      "Ano, ale jen pokud řidič spáchá přestupek."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070014",
+    "otazka": "Řidič se nesmí otáčet:",
+    "obrazek": null,
+    "moznosti": [
+      "Na žádné křižovatce.",
+      "Na křižovatce, na které je provoz upraven dopravními značkami.",
+      "Na křižovatce, na které je provoz řízen světelnými signály nebo policistou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070017",
+    "otazka": "Jak se zachová řidič červeného vozidla ve vyobrazené dopravní situaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240707.png",
+    "moznosti": [
+      "Má přednost v jízdě.",
+      "Dává přednost pouze vozidlům přijíždějícím po hlavní pozemní komunikaci.",
+      "Musí dát přednost všem vozidlům jedoucím po pozemní komunikaci, na kterou vjíždí."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070018",
+    "otazka": "Pokud osoba pohybující se pomocí ručního nebo motorového vozíku pro invalidy nemůže užít chodník:",
+    "obrazek": null,
+    "moznosti": [
+      "Protože je řidičem vozidla, musí na pozemní komunikaci jezdit vpravo, a pokud tomu nebrání zvláštní okolnosti, při pravém okraji vozovky.",
+      "Musí užít jen levé krajnice nebo levého okraje vozovky, protože má stejné povinnosti jako chodec,",
+      "Smí užít pravé krajnice nebo pravého okraje vozovky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070019",
+    "otazka": "Jakým způsobem lze ukončit platnost zákazových dopravních značek?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240709.png",
+    "moznosti": [
+      "Nejbližší křižovatkou nebo příslušnou dopravní značkou ukončující zákaz.",
+      "Platnost končí po ujetí 90 m za dopravní značkou.",
+      "Vyústěním polní nebo lesní cesty."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070020",
+    "otazka": "Může řidič motocyklu ve vyobrazené křižovatce pokračovat v přímém směru?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240710.jpg",
+    "moznosti": [
+      "Může, protože patří mezi vozidla s výjimkou uvedenou na dopravní značce.",
+      "Nemůže, protože by jel do pěší zóny."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070022",
+    "otazka": "Jakou maximální rychlostí může jet v obci řidič po pozemní komunikaci označené touto dopravní značkou, není-li stanoveno jinak?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240712.png",
+    "moznosti": [
+      "130 km/h",
+      "110 km/h",
+      "80 km/h"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070023",
+    "otazka": "Smí chodec vstupovat na přechod pro chodce nebo na vozovku, přijíždí-li tramvaj ?",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí.",
+      "Může, pokud je tramvaj na tramvajovém pásu.",
+      "Může. Řidič tramvaje mu musí umožnit bezpečné přejití vozovky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070026",
+    "otazka": "Může řidič motorového vozidla vjíždět do prostoru vyhrazeného jízdního pruhu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240717.jpg",
+    "moznosti": [
+      "Ne, do vyhrazeného jízdního pruhu pro cyklisty nesmí vůbec vjíždět.",
+      "Ano, například pokud je to nutné při objíždění překážky, nesmí přitom cyklistu jedoucího v tomto pruhu ohrozit ani omezit.",
+      "Může, pokud neohrozí cyklistu jedoucího v tomto pruhu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070027",
+    "otazka": "Řidič vozidla z výhledu hodlá pokračovat v jízdě v přímém směru. Přitom:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240718.jpg",
+    "moznosti": [
+      "Musí dát znamení o změně směru jízdy vpravo.",
+      "Nedává znamení o změně směru jízdy.",
+      "Musí dát znamení o změně směru jízdy vlevo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070028",
+    "otazka": "Řidič vozidla z výhledu hodlá pokračovat v jízdě vlevo. Přitom:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240719.png",
+    "moznosti": [
+      "Nemusí dát přednost protijedoucímu vozidlu, protože odbočuje vlevo.",
+      "Musí dát přednost protijedoucímu vozidlu.",
+      "Nemusí dát přednost protijedoucímu vozidlu, neboť pokračuje po hlavní pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070029",
+    "otazka": "Jak se zachovám jako řidič motocyklu z výhledu, pokud jedu při pravém okraji vozovky:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240720.png",
+    "moznosti": [
+      "Dám znamení o změně směru jízdy a s bezpečným odstupem objíždím zaparkovaná vozidla.",
+      "Znamení o změně směru jízdy budu dávat pouze v případě, že přejedu přes přerušovanou čáru do protisměru nebo za mnou pojede jiné vozidlo.",
+      "Pokračuji bez změny v jízdě, mezi zaparkované vozidlo a přerušovanou čáru se vejdu, nemusím tedy dávat znamení o změně směru jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070034",
+    "otazka": "Řidič vozidla z výhledu ve vyobrazené křižovatce s přerušovaně svítícím žlutým světlem hodlá pokračovat v jízdě vlevo. Přitom:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240725.png",
+    "moznosti": [
+      "Nemusí dát přednost protijedoucímu vozidlu, protože odbočuje vlevo.",
+      "Musí dát přednost protijedoucímu vozidlu.",
+      "Nemusí dát přednost protijedoucímu vozidlu, neboť pokračuje po hlavní pozemní komunikaci a nejedná se o křižovatku řízenou světelnými signály."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070038",
+    "otazka": "Jakým směrem může jet řidič nákladního vozidla o celkové hmotnosti nad 3500 kg, pokud není zaregistrován v systému elektronického mýtného?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240729.png",
+    "moznosti": [
+      "Smí odbočit vlevo a pokračovat dále po dálnici směr Chomutov.",
+      "Smí pokračovat po silnici č. 118 směr Budyně nad Ohří.",
+      "Nesmí pokračovat v žádném směru vyznačeném na návěsti."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070039",
+    "otazka": "Může řidič jedoucí v přímém směru pokračovat za křižovatkou rychlostí 35 km/h?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240730.png",
+    "moznosti": [
+      "Pouze v noci.",
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030008",
+    "otazka": "Řidič autobusu za jízdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí držet v ruce nebo jiným způsobem mikrofon.",
+      "Smí držet v ruce nebo jiným způsobem mikrofon a informovat cestující, pokud se jedná o zájezd a nejedná se o osádku dvou řidičů.",
+      "Smí držet v ruce nebo jiným způsobem mikrofon a informovat cestující, pokud se jedná o nepravidelnou přepravu osob - zájezd."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030009",
+    "otazka": "Může řidič řídit vozidlo pokud je jeho schopnost k řízení snížena v důsledku jeho zdravotního stavu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230307.jpg",
+    "moznosti": [
+      "Může.",
+      "Nemůže.",
+      "Může, pouze na dojetí k lékaři, nebo svého bydliště za podmínky zvýšené opatrnosti."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030011",
+    "otazka": "Smí řidič při zastavení vozidla před železničním přejezdem za snížené viditelnosti užít potkávací světla?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230310.jpg",
+    "moznosti": [
+      "Ne, je povinen vždy užít dálková světla.",
+      "Ano, za všech okolností.",
+      "Ne, pokud by jimi mohl oslnit řidiče v protisměru."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23030013",
+    "otazka": "Smí řidič traktoru přepravovat v kabině děti?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230312.jpg",
+    "moznosti": [
+      "Ano, ale dítě do 150 cm výšky a 36 kg váhy musí být přepravováno v dětském zádržném systému.",
+      "Ne, ve zvláštním motorovém vozidle nesmějí být přepravovány osoby mladší 15 let.",
+      "Ano, ale pouze na sedadle povinně vybaveným zádržným bezpečnostním systémem."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030014",
+    "otazka": "Smí se s nákladním automobilem s okamžitou hmotností 12 000 kg vléci na tyči nákladní automobil, který má poruchu na brzdovém systému a má okamžitou hmotností 15 000 kg?",
+    "obrazek": null,
+    "moznosti": [
+      "Smí. Okamžité hmotnosti vozidel při vlečení na tyči nerozhodují.",
+      "Nesmí. Vozidlo s poškozeným brzdovým systémem se nesmí vléci vůbec.",
+      "Nesmí. Nemá-li vlečené vozidlo účinné brzdy, nesmí jeho okamžitá hmotnost být vyšší než okamžitá hmotnost vlečného vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23100001",
+    "otazka": "Smí řidič s řidičským oprávněním skupiny B řídit soupravu vozidel, kdy osobní automobil má největší povolenou hmotnost 2 050 kg a provozní hmotnost 1 500 kg a přípojné vozidlo má největší povolenou hmotnost 1 650 kg a provozní hmotnost 900 kg?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230314.png",
+    "moznosti": [
+      "Smí. Pro spojení vozidel do soupravy je rozhodující součet okamžitých hmotností vozidel soupravy, který nesmí překročit 3 500 kg.",
+      "Nesmí. V případě, kdy přípojné vozidlo převyšuje 750 kg největší povolené hmotnosti, nesmí největší povolená hmotnost jízdní soupravy pro řidičské oprávnění skupiny B převýšit 3 500 kg.",
+      "Smí. Pro spojení vozidel do soupravy se sčítají provozní hmotnosti každého z vozidel soupravy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030016",
+    "otazka": "Může řidič s řidičským oprávněním skupiny B s harmonizovaným kódem 96 řídit soupravu vozidel,kdy osobní automobil má největší povolenou hmotnost 3 050 kg a okamžitou hmotnost 2 500 kg a přípojné vozidlo má největší povolenou hmotnost 1 650 kg a okamžitou hmotnost 900 kg?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230315.png",
+    "moznosti": [
+      "Může. Pro spojení vozidel do soupravy je rozhodující součet okamžitých hmotností vozidel soupravy, který nesmí překročit 4 250 kg.",
+      "Nesmí. V případě, kdy přípojné vozidlo převyšuje 750 kg největší povolené hmotnosti, nesmí největší povolená hmotnost jízdní soupravy pro uvedené řidičské oprávnění převýšit 4 250 kg.",
+      "Může. Pro spojení vozidel do soupravy se sčítají provozní hmotnosti každého z vozidel soupravy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030017",
+    "otazka": "Smí řidič nákladního vozidla při jízdě vozidlem držet v ruce nebo jiným způsobem vysílačku?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230316.jpg",
+    "moznosti": [
+      "Ne.",
+      "Ano, nic mu to nezakazuje.",
+      "Ano, ale pro samotné vysílání je však již potřeba vlastnit povolení ČTÚ."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030024",
+    "otazka": "Za jakých podmínek smí řidič nákladního automobilu o nejvyšší povolené hmotnosti 7490 kg pokračovat v neděli v 16:00 hodin v jízdě po silnici č.16 směrem Mělník?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230324.jpg",
+    "moznosti": [
+      "Smí pokračovat po silnici č.16 jen pokud je vozidlo zaregistrováno v systému elektronického mýtného a vybaveno funkční palubní jednotkou.",
+      "Smí pokračovat dál bez omezení.",
+      "Nesmí pokračovat v jízdě po silnici č.16, v neděli po celý rok platí zákaz jízdy na silnici I.třídy pro nákladní automobily."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030025",
+    "otazka": "Řidič nákladního automobilu při běžném provozu (pokud tomu nebrání lékařským potvrzením doložené objektivní zdravotní důvody), musí být na sedadle vybaveném bezpečnostním pásem:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230326.jpg",
+    "moznosti": [
+      "Připoután, to neplatí při couvání vozidla.",
+      "Připoután vždy a bezpodmínečně.",
+      "Připoután jen při rychlosti vozidla nad 25 km/hod."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030026",
+    "otazka": "Pokud tomu nebrání interní předpis provozovatele vozidla, v kabině nákladního automobilu na sedadle spolujezdce vybaveném bezpečnostními pásy se:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230327.jpg",
+    "moznosti": [
+      "Nesmí nikdy přepravovat dítě, jehož tělesná hmotnost nepřevyšuje 36 kg a současně tělesná výška nepřevyšuje 150 cm, pokud se nejedná o osobu starší 15 let.",
+      "Smí přepravovat dítě, jehož tělesná hmotnost nepřevyšuje 36 kg a výška nepřevyšuje 150 cm, přičemž musí být použita předepsaným způsobem dětská autosedačka.",
+      "Nesmí nikdy přepravovat osoba mladší 15 let."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030027",
+    "otazka": "Pokud sedadlo spolujezdce v kabině nákladního automobilu není vybaveno zádržným bezpečnostním systémem, je zakázáno:",
+    "obrazek": null,
+    "moznosti": [
+      "Přepravovat na tomto sedadle osoby, jejichž tělesná hmotnost nepřevyšuje 36 kg.",
+      "Přepravovat na tomto sedadle osoby mladší 15 let.",
+      "Přepravovat na tomto sedadle dítě menší než 150 cm nebo dítě mladší 3 let."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23030028",
+    "otazka": "Řidič autobusu (vozidla hromadné dopravy osob) nesmí:",
+    "obrazek": null,
+    "moznosti": [
+      "Ve vozidle kouřit.",
+      "Ve vozidle kouřit. To neplatí, pokud v autobusu nejsou cestující.",
+      "Ve vozidle kouřit. To neplatí, pokud je prostor řidiče oddělen od prostoru pro cestující bezpečnostní přepážkou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030029",
+    "otazka": "Je možné přepravovat na předním sedadle osobního automobilu dítě mladší 12 let a nepřevyšující parametry dané zákonem pro jízdu v zádržném systému (150 cm / 36 kg)?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230330.jpg",
+    "moznosti": [
+      "Ne, základním limitem pro jízdu na předním sedadle je věk. Dítě mladší 12 let nesmí vpředu cestovat.",
+      "Ano, na předním sedadle je možné přepravovat dítě v tzv. vajíčku, dále s využitím dalších typů zádržných systémů (dětská autosedačka/podsedák), které se používají až do doby dosažení výškových a hmotnostních limitů dle zákona.",
+      "Ano, ale pouze v dětském zádržném systému pro nejmenší tzv. vajíčku. V ostatních případech je umístění dětských autosedaček a podsedáků možné pouze na zadních sedadlech."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060014",
+    "otazka": "Osoba, která vede motocykl o objemu válců do 50 cm3, je:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230703.png",
+    "moznosti": [
+      "Cyklista.",
+      "Řidič.",
+      "Chodec."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060015",
+    "otazka": "Řidič na motocyklu nesmí přepravovat na druhém sedadle osobu mladší:",
+    "obrazek": null,
+    "moznosti": [
+      "15 let.",
+      "12 let.",
+      "10 let."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060016",
+    "otazka": "Přepravovaná osoba při jízdě na motocyklu se musí:",
+    "obrazek": null,
+    "moznosti": [
+      "Nohama dotýkat stupaček pouze ve věku nad 18 let.",
+      "Nohama dotýkat stupaček.",
+      "Vždy alespoň jednou nohou dotýkat stupačky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060017",
+    "otazka": "Pokud není motocykl vybaven směrovými světly, dává znamení o změně směru jízdy řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "nohou.",
+      "v takovém případě není povinen dávat znamení o změně směru jízdy.",
+      "paží."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060018",
+    "otazka": "Znamení o změně směru jízdy paží se dává:",
+    "obrazek": null,
+    "moznosti": [
+      "jen do doby ukončení změny směru jízdy.",
+      "po celou dobu jízdního úkonu.",
+      "jen před započetím jízdního úkonu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060023",
+    "otazka": "Do jakého věku musí být dítě při jízdě na jízdním kole na silnici, místní komunikaci a veřejně přístupné účelové komunikaci (s výjimkou chodníku, cyklostezky, obytné a pěší zony) pod dohledem osoby starší 15 let?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230713.png",
+    "moznosti": [
+      "Do 10 let věku.",
+      "Do 6 let věku.",
+      "Na věku nezáleží, je to na rozhodnutí rodiče."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060024",
+    "otazka": "Osoba vedoucí jízdní kolo nebo moped po komunikaci, kde není chodník, musí užít:",
+    "obrazek": null,
+    "moznosti": [
+      "Pravé krajnice nebo pravého okraje vozovky.",
+      "Kterékoliv krajnice nebo okraje vozovky.",
+      "Levé krajnice nebo levého okraje vozovky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060025",
+    "otazka": "V místě s nejvyšší dovolenou rychlostí nepřevyšující 30 km.h-1 je předepsaný bezpečný boční odstup při předjíždění cyklisty řidičem motorového vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejméně 1,5 m.",
+      "Nejméně 0,5 m.",
+      "Nejméně 1 m."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060026",
+    "otazka": "Jaký úmysl signalizuje nevidomý chodec, který mávne bílou slepeckou holí směrem k vozovce?",
+    "obrazek": null,
+    "moznosti": [
+      "Zastavit vozidlo MHD mimo vyznačenou zastávku.",
+      "Zastavit vozidlo taxislužby.",
+      "Přejít vozovku."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060027",
+    "otazka": "Jak musí být osvětleno jízdní kolo cyklisty za jízdy při snížené viditelnosti v místě, kde vozovka není dostatečně a souvisle osvětlena:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemusí být osvětleno, protože jízdní kolo není motorové vozidlo.",
+      "Pomocí rozsvíceného světlometu s bílým světlem svítícím dopředu a zadní svítilnou se světlem bílé barvy nebo přerušovaným světlem modré barvy.",
+      "Pomocí rozsvíceného světlometu s bílým světlem svítícím dopředu a zadní svítilnou se světlem červené barvy nebo přerušovaným světlem červené barvy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060028",
+    "otazka": "Smí chodec vstupovat na přechod pro chodce nebo na vozovku, přijíždějí-li \"vozidla s právem přednostní jízdy\"?",
+    "obrazek": null,
+    "moznosti": [
+      "Smí.",
+      "Nesmí pouze v případě, kdy vozidlo s právem přednostní jízdy užije zvláštní výstražné světlo modré nebo modré a červené barvy a zároveň i povinné zvukové výstražné znamení.",
+      "Nesmí. Nachází-li se již na přechodu pro chodce nebo na vozovce, musí neprodleně uvolnit prostor pro projetí těchto vozidel."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060030",
+    "otazka": "Smí řidič vozidla z výhledu přejíždět podélnou čáru souvislou při předjíždění cyklisty?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230720.png",
+    "moznosti": [
+      "Ne, řidič nesmí předjíždět, jelikož vodorovnou dopravní značku podélnou čáru souvislou je zakázáno přejíždět nebo ji nákladem přesahovat.",
+      "Ano, ale pouze v obci.",
+      "Ano."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060031",
+    "otazka": "Pokud bude řidič motorového vozidla z výhledu ve vyobrazené dopravní situaci v obci míjet cyklistu ve vyhrazeném jízdním pruhu, pak:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230721.jpg",
+    "moznosti": [
+      "Nemusí od něho dodržet bezpečný boční odstup 1,5 m, ale musí dbát zvýšené opatrnosti.",
+      "Musí v každém případě od něho dodržet bezpečný boční odstup 1 m.",
+      "Musí v každém případě od něho dodržet bezpečný boční odstup 1,5 m."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060032",
+    "otazka": "Spolujezdec na motocyklu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230722.png",
+    "moznosti": [
+      "Je účastníkem silničního provozu, ale zákon o silničním provozu se na něj nevztahuje.",
+      "Je účastníkem silničního provozu a vztahuje se na něj zákon o silničním provozu.",
+      "Není účastníkem silničního provozu a proto se na něj zákon o silničním provozu nevztahuje."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060033",
+    "otazka": "Ŕidič vozidla z výhledu ve vyobrazené dopravní situaci:",
+    "obrazek": null,
+    "moznosti": [
+      "V tomto úseku předjíždět cyklistu nesmí, protože by musel přejet podélnou čáru souvislou.",
+      "Nesmí předjíždět na přechodu pro chodce a bezprostředně před ním.",
+      "Musí výstražným zvukovým znamením vždy upozornit předjížděného cyklistu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060034",
+    "otazka": "Smí osoba pohybující se pomocí ručního nebo motorového vozíku pro invalidy užít k jízdě chodník?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne.",
+      "Ano. Pouze v obytné nebo pěší zóně.",
+      "Ano, jen neohrozí-li ostatní chodce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060036",
+    "otazka": "Smí řidič motorového vozidla z výhledu ve vyobrazené dopravní situaci předjet cyklistu?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne, při předjíždění cyklisty řidič nesmí přejíždět podélnou čáru souvislou. Nebylo by tak možné dodržet bezpečný boční odstup od cyklisty.",
+      "Ano, pokud má dostatečný výhled před vozidlo a pokud dodrží bezpečný boční odstup od cyklisty. Při předjíždění cyklisty řidič smí přejíždět podélnou čáru souvislou.",
+      "Ano, ale pouze pokud nebude přejíždět ani nákladem přesahovat podélnou čáru souvislou a udrží bezpečný boční odstup 0,5 m od předjížděného cyklisty."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060037",
+    "otazka": "V jednotlivých případech a je-li to naléhavě nutné, mohou vozidla označená parkovacím průkazem pro osoby se zdravotním postižením vjíždět i do oblasti označené dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230727.png",
+    "moznosti": [
+      "Pěší zóna.",
+      "Emisní zóna.",
+      "Zákaz vjezdu všech vozidel v obou směrech."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060038",
+    "otazka": "Řidiči motorového vozidla označeného parkovacím průkazem pro osoby se zdravotním postižením nemusí v jednotlivých případech a je-li to naléhavě nutné, po dobu nezbytně potřebnou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230727.png",
+    "moznosti": [
+      "Nemusí dodržovat zákaz zastavení a stání, které jsou stanoveny zákonem.",
+      "Dodržovat zákaz zastavení vyplývající z dopravní značky \"zákaz zastavení\"; přitom nesmí být ohrožena bezpečnost a plynulost provozu na pozemních komunikacích.",
+      "Dodržovat zákaz stání a zákaz stání vyplývající z dopravní značky \"zákaz stání\"; přitom nesmí být ohrožena bezpečnost a plynulost provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040187",
+    "otazka": "Řidič, který při předjíždění motorového vozidla vybočuje ze směru své jízdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemusí dávat znamení o změně směru jízdy.",
+      "Dává znamení o změně směru jízdy jen tehdy, vyžaduje-li to bezpečnost provozu.",
+      "Musí dávat znamení o změně směru jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040223",
+    "otazka": "Vozidlo vjíždějící na pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí být předem očištěno tak, aby neznečišťovalo pozemní komunikaci.",
+      "Musí být očištěno na nejbližším vhodném místě po vjetí na pozemní komunikaci.",
+      "Musí být v případě, že tak lze učinit bez větších obtíží, předem očištěno."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040239",
+    "otazka": "Autobus s označením „Označení autobusu přepravujícího děti“ zastavil v označené zastávce. Řidič vozidla, které jede za ním:",
+    "obrazek": null,
+    "moznosti": [
+      "Je povinen zastavit vozidlo za tímto autobusem a pokračovat v jízdě může až po odjezdu autobusu ze zastávky.",
+      "Smí autobus objet, jen pokud mu dopravce dává znamení, že je možné autobus bezpečně objet.",
+      "Smí tento autobus objet, pokud při tom dbá zvýšené opatrnosti a přihlédne k možnosti vběhnutí dětí do vozovky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040240",
+    "otazka": "Na pozemní komunikaci objíždí vozidlo překážku. Musí jeho řidič dávat znamení o změně směru své jízdy?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040251",
+    "otazka": "Po předjetí jiného vozidla máte v úmyslu se zařadit před toto vozidlo. Musíte dávat znamení o změně směru jízdy?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040255",
+    "otazka": "V tunelu došlo k poruše motorového vozidla, které se stalo nepojízdným. Jako řidič takového vozidla nesmíte:",
+    "obrazek": null,
+    "moznosti": [
+      "Zastavovat jiná vozidla.",
+      "Kouřit nebo zacházet s otevřeným ohněm.",
+      "Opustit vozidlo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06040259",
+    "otazka": "Svítí-li světlo signálu se žlutým světlem „Pozor!“ na křižovatce přerušovaně:",
+    "obrazek": null,
+    "moznosti": [
+      "Znamená to pro řidiče povinnost neprodleně křižovatku opustit.",
+      "Je to signál pro řidiče k volnému průjezdu křižovatkou.",
+      "Nejde o křižovatku s provozem řízeným světelnými signály."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040268",
+    "otazka": "Řidič nesmí překročit:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejvyšší povolenou rychlost vozidla, a jde-li o jízdní soupravu, musí brát zřetel jen na nejvyšší povolenou rychlost přípojného vozidla.",
+      "Nejvyšší povolenou rychlost vozidla, a jde-li o jízdní soupravu, nejvyšší povolenou rychlost žádného z vozidel soupravy.",
+      "Nejvyšší povolenou rychlost vozidla, a jde-li o jízdní soupravu, nemusí brát zřetel na nejvyšší povolenou rychlost přípojného vozidla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06040276",
+    "otazka": "Řidič vozidla, který nehodlá nebo nemůže projet podél tramvaje vpravo:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí pokračovat v jízdě za tramvají až na takové místo, kde lze podél tramvaje projet vpravo.",
+      "Musí zastavit vozidlo a umožnit ostatním řidičům projetí podél tramvaje.",
+      "Musí za ní jet v takové vzdálenosti, aby umožnil projetí podél tramvaje ostatním řidičům."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040277",
+    "otazka": "Řidič, který měl účast na dopravní nehodě, je povinen:",
+    "obrazek": null,
+    "moznosti": [
+      "Neprodleně zastavit vozidlo, jen pokud došlo při této nehodě ke škodě na majetku převyšující částku 50 000 Kč nebo ke zranění nebo usmrcení osob.",
+      "Neprodleně zastavit vozidlo.",
+      "Neprodleně zastavit vozidlo, jen pokud došlo ke zranění nebo usmrcení osob."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06040278",
+    "otazka": "Zapnutím výstražného světelného znamení dává řidič upozornění, pokud:",
+    "obrazek": null,
+    "moznosti": [
+      "Je nutné náhle snížit rychlost jízdy nebo zastavit vozidlo.",
+      "Řidič před vozidlem jede pomalu a zdržuje provoz na pozemních komunikacích.",
+      "Předjíždí kolonu vozidel, která jej zpomaluje v jízdě."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040287",
+    "otazka": "Řidič motorového vozidla smí dávat světelné výstražné znamení krátkým přerušovaným rozsvícením dálkových světel nebo přepínáním potkávacích a dálkových světel:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen mimo obec při předjíždění k upozornění řidiče předjížděného vozidla.",
+      "Pokud chce upozornit ostatní řidiče na silniční kontrolu.",
+      "Pouze k odvrácení hrozícího nebezpečí nebo k upozornění řidiče předjížděného vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040297",
+    "otazka": "Řidič při vyjíždění z kruhového objezdu:",
+    "obrazek": null,
+    "moznosti": [
+      "Není povinen dát znamení o změně směru jízdy.",
+      "Je povinen dát znamení o změně směru jízdy vpravo.",
+      "Je povinen upozornit ostatní účastníky provozu o svém úmyslu výstražným světelným znamením."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06040298",
+    "otazka": "Řidič vjíždějící z účelové pozemní komunikace na jinou pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemusí dát přednost v jízdě vozidlům nebo jezdcům na zvířatech nebo organizovanému útvaru chodců nebo průvodcům hnaných zvířat se zvířaty jdoucím po pozemní komunikaci.",
+      "Musí dát přednost v jízdě vozidlům nebo jezdcům na zvířatech nebo organizovanému útvaru chodců nebo průvodcům hnaných zvířat se zvířaty jdoucím po pozemní komunikaci.",
+      "Nemusí dát přednost jezdcům na zvířatech nebo organizovanému útvaru chodců jdoucím po pozemní komunikaci, musí dát přednost v jízdě pouze vozidlům jedoucím po pozemní komunikaci."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06040299",
+    "otazka": "Kdo odpovídá za umístění a upevnění dětské autosedačky v souladu s návodem k jejímu použití?",
+    "obrazek": null,
+    "moznosti": [
+      "Osoba, která dítě doprovází, a u dítěte bez doprovodu řidič.",
+      "Zákonný zástupce dítěte nebo jím pověřená osoba.",
+      "Vždy řidič vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040308",
+    "otazka": "Za vozidlem hromadné dopravy osob, které zastavilo v obci v zastávce bez nástupního ostrůvku nebo bez nástupiště na zvýšeném tramvajovém pásu, musí řidič jiného vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Snížit rychlost vozidla s ohledem na bezpečnost nastupujících a vystupujících cestujících.",
+      "Vozidlo zastavit i v případě, zastaví-li vozidlo hromadné dopravy osob u okraje vozovky.",
+      "Vozidlo zastavit; je-li v zastávce více vozidel hromadné dopravy osob, musí zastavit za druhým z nich, pokračovat v jízdě smí teprve tehdy, neohrozí-li již cestující, kteří nastupují nebo vystupují."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040315",
+    "otazka": "Řidič vozidla, které zastavilo nebo stálo a opět vyjíždí od okraje pozemní komunikace nebo od chodníku:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí dávat znamení o změně směru jízdy a nesmí ohrozit ani omezit ostatní účastníky provozu na pozemních komunikacích.",
+      "Nemusí dávat znamení o změně směru jízdy a může omezit ostatní účastníky provozu na pozemních komunikacích.",
+      "Musí dávat znamení o změně směru jízdy a nesmí ohrozit ostatní účastníky provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040328",
+    "otazka": "Na jednosměrné pozemní komunikaci smí řidič zastavit a stát:",
+    "obrazek": null,
+    "moznosti": [
+      "Pouze vlevo.",
+      "Pouze vpravo.",
+      "Vpravo i vlevo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040342",
+    "otazka": "Před železničním přejezdem, u kterého je umístěna dopravní značka „Stůj, dej přednost v jízdě!“, musí řidič zastavit vozidlo:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejméně 5 m před železničním přejezdem.",
+      "Nejdále 5 m za touto dopravní značkou.",
+      "Na takovém místě, odkud má náležitý rozhled na trať."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06040347",
+    "otazka": "Na silniční vegetaci, pokud to není povoleno místní úpravou na pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidič může zastavit na dobu nezbytně nutnou.",
+      "Řidič může zastavit, nikoli však stát.",
+      "Řidič nesmí zastavit a stát."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050157",
+    "otazka": "Řidič motorového vozidla o maximální přípustné hmotnosti nepřevyšující 3 500 kg a autobusu smí jet:",
+    "obrazek": null,
+    "moznosti": [
+      "Na silnici pro motorová vozidla rychlostí nejvýše 110 km.h-1 a na dálnici rychlostí nejvýše 130 km.h-1, s výjimkou řidiče autobusu, který na dálnici smí jet rychlostí nejvýše 110 km.h-1.",
+      "Na silnici pro motorová vozidla rychlostí nejvýše 110 km.h-1 a na dálnici rychlostí nejvýše 130 km.h-1.",
+      "Na silnici pro motorová vozidla a na dálnici rychlostí nejvýše 130 km.h-1."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050309",
+    "otazka": "Stanovené osvětlení, odrazky a registrační značka, rozpoznávací značka státu ani vyznačení nejvyšší povolené rychlosti:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmějí být zakryty přepravovaným nákladem ani zařízeními sloužícími k jeho upevnění a ochraně (např. plachta, řetězy nebo lana).",
+      "Mohou být zakryty zařízeními sloužícími k upevnění a ochraně nákladu (např. plachta, řetězy nebo lana), nelze-li náklad jinak zajistit.",
+      "Mohou být zakryty nákladem, pokud je za jízdy na vozidle v chodu zvláštní výstražné světlo oranžové barvy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050310",
+    "otazka": "Za nesnížené viditelnosti při přepravě zemědělských produktů nemusí být zvláštním způsobem označen náklad přečnívající:",
+    "obrazek": null,
+    "moznosti": [
+      "Z boku vnější okraj obrysových světel o více než 40 cm.",
+      "Vozidlo vzadu o více než 1 metr.",
+      "Vozidlo vpředu o více než 1 metr."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050311",
+    "otazka": "Při přepravě živých zvířat:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí být vozidlo označeno zvláštním označením pro vozidla přepravující živá zvířata.",
+      "Nesmí být ohrožena bezpečnost přepravovaných zvířat.",
+      "Musí být za jízdy na vozidle v chodu zvláštní výstražné světlo oranžové barvy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050313",
+    "otazka": "Přečnívá-li za snížené viditelnosti náklad z boku u motorového vozidla nebo jízdní soupravy vnější okraj obrysových světel o více než 40 cm, musí být přečnívající konec nákladu:",
+    "obrazek": null,
+    "moznosti": [
+      "Označen vzadu červeným světlem a trojúhelníkovou červenou odrazkou a vpředu neoslňujícím bílým světlem a trojúhelníkovou bílou odrazkou.",
+      "Označen vzadu červeným světlem a jinou než trojúhelníkovou červenou odrazkou a vpředu neoslňujícím bílým světlem a jinou než trojúhelníkovou bílou odrazkou.",
+      "Označen červeným praporkem o rozměrech nejméně 20 x 20 cm a dále vzadu červeným světlem a vpředu neoslňujícím bílým světlem."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050314",
+    "otazka": "Zvláštním způsobem musí být označen náklad, který přečnívá vozidlo vpředu nebo vzadu:",
+    "obrazek": null,
+    "moznosti": [
+      "O více než 50 cm.",
+      "O více než 70 cm.",
+      "O více než 1 metr."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050315",
+    "otazka": "Zvláštním způsobem musí být označen náklad, který z boku u motorového vozidla nebo jízdní soupravy přečnívá:",
+    "obrazek": null,
+    "moznosti": [
+      "Vnější okraj obrysových světel o více než 40 cm.",
+      "Vnější obrys motorového vozidla nebo jízdní soupravy o více než 20 cm.",
+      "Vnější okraj obrysových světel o více než 20 cm."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050316",
+    "otazka": "K měření rychlosti vozidel je oprávněna:",
+    "obrazek": null,
+    "moznosti": [
+      "Policie České republiky, obecní policie a celní správa.",
+      "Policie České republiky.",
+      "Policie České republiky a obecní policie."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050317",
+    "otazka": "Náklad, který přečnívá vpředu nebo vzadu vozidlo, musí být zvláštním způsobem označen, pouze pokud takto přečnívá:",
+    "obrazek": null,
+    "moznosti": [
+      "O více než 100 cm.",
+      "O více než 75 cm.",
+      "O více než 125 cm."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050318",
+    "otazka": "Nakládání či skládání nákladu na pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Je zakázáno. Výjimku může udělit příslušný útvar Policie České republiky.",
+      "Je dovoleno, s výjimkou skládání sypkých substrátů (např. písku).",
+      "Je dovoleno jen tehdy, nelze-li to provést mimo pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050319",
+    "otazka": "Nakládání či skládání nákladu na pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí probíhat za snížené viditelnosti.",
+      "Nesmí omezit plynulost provozu na pozemních komunikacích.",
+      "Nesmí ohrozit bezpečnost provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050320",
+    "otazka": "Při nakládání nebo skládání nákladu na pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí být osoby nakládající nebo skládající náklad oděny ve svrchní části oděvu z retroreflexního materiálu.",
+      "Musí být náklad naložen nebo složen co nejrychleji a tak, aby nebyla ohrožena bezpečnost provozu na pozemních komunikacích.",
+      "Musí být přibrána způsobilá a náležitě poučená osoba, aby nebyla ohrožena bezpečnost provozu na pozemních komunikacích."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050321",
+    "otazka": "Přepravované věci musí být ve vozidle umístěny:",
+    "obrazek": null,
+    "moznosti": [
+      "Tak, aby neomezovaly a neohrožovaly řidiče nebo osoby přepravované ve vozidle a nebránily výhledu z místa řidiče.",
+      "Tak, aby nemohly překážet v rychlém opuštění vozidla, například v případě dopravní nehody.",
+      "Vždy v prostoru uzpůsobeném a určeném pro přepravu zavazadel."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050322",
+    "otazka": "Náklad musí být na vozidle umístěn a upevněn:",
+    "obrazek": null,
+    "moznosti": [
+      "Tak, aby byla zajištěna stabilita a ovladatelnost vozidla a aby náklad neohrožoval bezpečnost provozu na pozemních komunikacích.",
+      "Tak, aby nepřečníval vozidlo vpředu, vzadu ani z boku.",
+      "Tak, aby v případě dopravní nehody nemohlo dojít k jeho poškození nebo zničení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050324",
+    "otazka": "Při přepravě nákladu nesmějí po straně z vozidla vyčnívat:",
+    "obrazek": null,
+    "moznosti": [
+      "Předměty, které lze snadno přehlédnout, jako jsou například jednotlivé tyče nebo roury.",
+      "Žádné předměty, které nejsou viditelně označeny červeným praporkem o rozměrech nejméně 30 x 30 cm.",
+      "Žádné předměty."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050330",
+    "otazka": "Ve zvláštním motorovém vozidle nesmějí být přepravovány:",
+    "obrazek": null,
+    "moznosti": [
+      "Osoby starší 60 let.",
+      "Osoby mladší 18 let.",
+      "Osoby mladší 15 let."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050331",
+    "otazka": "Strážník obecní policie:",
+    "obrazek": null,
+    "moznosti": [
+      "Je oprávněn zastavovat vozidla pouze ve stejnokroji obecní policie.",
+      "Je oprávněn k zastavování vozidel i v civilním oblečení.",
+      "Není oprávněn zastavovat vozidla ani ve stejnokroji obecní policie."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050332",
+    "otazka": "Celník ve stejnokroji:",
+    "obrazek": null,
+    "moznosti": [
+      "Smí zastavovat vozidla.",
+      "Smí zastavovat vozidla pouze na hraničním přechodu.",
+      "Nesmí zastavovat vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050333",
+    "otazka": "Přečnívá-li za snížené viditelnosti náklad vozidlo vpředu nebo vzadu o více než 1 metr, musí být přečnívající konec nákladu:",
+    "obrazek": null,
+    "moznosti": [
+      "Označen vzadu červeným světlem a jinou než trojúhelníkovou červenou odrazkou a vpředu neoslňujícím bílým světlem a jinou než trojúhelníkovou bílou odrazkou.",
+      "Označen vzadu červeným světlem a trojúhelníkovou červenou odrazkou a vpředu neoslňujícím bílým světlem a trojúhelníkovou bílou odrazkou.",
+      "Označen červeným praporkem o rozměrech nejméně 30 x 30 cm a dále vzadu červeným světlem a vpředu neoslňujícím bílým světlem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050334",
+    "otazka": "Přečnívá-li za nesnížené viditelnosti náklad vozidlo vpředu nebo vzadu o více než 1 metr, musí být přečnívající konec nákladu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0458.jpg",
+    "moznosti": [
+      "Označen vzadu červenou a vpředu bílou odrazkou jiného než trojúhelníkového tvaru.",
+      "Označen vzadu červenou a vpředu bílou odrazkou trojúhelníkového tvaru.",
+      "Označen červeným praporkem o rozměrech nejméně 30 x 30 cm."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050339",
+    "otazka": "Řidič nesmí zastavit a stát:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen v odbočovacím pruhu.",
+      "V připojovacím pruhu, nejméně 50 m před místem připojení k průběžnému pruhu.",
+      "V připojovacím nebo odbočovacím pruhu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050340",
+    "otazka": "Řidič vozidla, které je povinně vybaveno přenosným trojúhelníkem a pro technickou závadu se na pozemní komunikaci mimo obec stalo nepojízdným, je povinen tento trojúhelník umístit:",
+    "obrazek": null,
+    "moznosti": [
+      "Na střed vozovky ve vzdálenosti nejméně 50 metrů za vozidlem, na dálnici nejméně 100 m za vozidlem.",
+      "Na střechu vozidla, odkud bude zezadu dobře viditelný.",
+      "Na okraj vozovky ve vzdálenosti nejméně 50 metrů za vozidlem, na dálnici nejméně 100 m za vozidlem."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050351",
+    "otazka": "Řidič předjížděného vozidla:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0460.jpg",
+    "moznosti": [
+      "Může zvyšovat rychlost a bránit i jinak v předjíždění.",
+      "Může zvyšovat rychlost, pokud má silnější vozidlo.",
+      "Nesmí zvyšovat rychlost ani jinak bránit předjíždění."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050352",
+    "otazka": "Řidiči protijedoucích vozidel se vyhýbají:",
+    "obrazek": null,
+    "moznosti": [
+      "Vlevo, minimálně 10 m před místem, kde se budou míjet.",
+      "Vpravo, včas a v dostatečné míře.",
+      "Vlevo, včas a v dostatečné míře."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050358",
+    "otazka": "Při jízdě po silnici pro motorová vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Je zakázáno zastavit a stát mimo místa označená jako parkoviště.",
+      "Je zakázáno zastavit a stát, s výjimkou míst na krajnici, kde je parkování povoleno.",
+      "Platí stejná ustanovení jako pro zastavení a stání na ostatních pozemních komunikacích."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050360",
+    "otazka": "Řidič odbočující z kruhového objezdu:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemusí dávat znamení o změně směru jízdy.",
+      "Musí dávat znamení o změně směru jízdy vlevo.",
+      "Musí dávat znamení o změně směru jízdy vpravo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050362",
+    "otazka": "Může řidič motorového vozidla předjíždět bezprostředně před přechodem pro chodce, pokud dává znamení o změně směru jízdy?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050363",
+    "otazka": "Při jízdě na dálnici:",
+    "obrazek": null,
+    "moznosti": [
+      "Je zakázáno zastavit a stát mimo místa označená jako parkoviště.",
+      "Platí stejná ustanovení jako pro zastavení a stání na ostatních pozemních komunikacích.",
+      "Je zakázáno zastavit a stát, s výjimkou míst na krajnici, kde je parkování povoleno."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050373",
+    "otazka": "Provozovatel silničního motorového vozidla nesmí provozovat na pozemních komunikacích vozidlo, které:",
+    "obrazek": null,
+    "moznosti": [
+      "Má registrační značku jiného státu.",
+      "Je technicky nezpůsobilé k provozu.",
+      "Není opatřeno dálniční známkou."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050384",
+    "otazka": "Řidič smí v provozu na pozemních komunikacích užít:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen vozidlo, které splňuje technické podmínky stanovené zvláštním předpisem.",
+      "I vozidlo, které splňuje jen některé technické podmínky stanovené zvláštním předpisem, pokud řidič dbá při jízdě zvýšené opatrnosti.",
+      "I vozidlo, které sice nesplňuje technické podmínky, ale majitel vozidla dovolí vozidlo užít nebo jeho užití přikáže."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050386",
+    "otazka": "Je řidič povinen dbát zvýšené opatrnosti vůči výcvikovým vozidlům autoškoly?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050396",
+    "otazka": "Řidič motorového vozidla je povinen podrobit vozidlo technické silniční kontrole největší přípustné hmotnosti na nápravu, největší přípustné hmotnosti vozidla nebo jízdní soupravy nebo technického stavu vozidla nebo jízdní soupravy na výzvu:",
+    "obrazek": null,
+    "moznosti": [
+      "Policisty, strážníka obecní policie nebo celníka.",
+      "Policisty nebo strážníka obecní policie.",
+      "Policisty"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050398",
+    "otazka": "Mohou účastníci provozu na pozemních komunikacích používat tzv. aktivní antiradary, tj. technické prostředky, které znemožňují nebo ovlivňují funkci technických prostředků používaných policií při dohledu na bezpečnost provozu?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050401",
+    "otazka": "Provozovatel vozidla je:",
+    "obrazek": null,
+    "moznosti": [
+      "Každá fyzická osoba, která je držitelem řidičského oprávnění.",
+      "Každá fyzická osoba, která je držitelem řidičského oprávnění, ale není vlastníkem vozidla.",
+      "Osoba, která je v registru silničních vozidel zapsána jako vlastník vozidla, není-li jako jeho provozovatel v registru silničních vozidel zapsána jiná osoba."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050402",
+    "otazka": "Je vozka, který řídí potahové vozidlo, řidičem?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050409",
+    "otazka": "Stát znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "Uvést vozidlo do klidu nad dobu dovolenou pro zastavení.",
+      "Přerušit jízdu z důvodu nezávislého na vůli řidiče, například při závadě na vozidle.",
+      "Uvést vozidlo do klidu na dobu nezbytně nutnou k neprodlenému nastoupení nebo vystoupení přepravovaných osob anebo k neprodlenému naložení nebo složení nákladu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050410",
+    "otazka": "Dát přednost v jízdě znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "Povinnost řidiče počínat si tak, aby jinému účastníkovi provozu na pozemních komunikacích nijak nepřekážel.",
+      "Povinnost řidiče počínat si tak, aby jinému účastníkovi provozu na pozemních komunikacích nevzniklo žádné nebezpečí.",
+      "Povinnost řidiče nezahájit jízdu nebo jízdní úkon nebo v nich nepokračovat, jestiže by řidič, který má přednost v jízdě, musel náhle změnit směr nebo rychlost jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050412",
+    "otazka": "Místo, v němž se pozemní komunikace protínají nebo spojují, nejde-li o vyústění účelové pozemní komunikace na jinou pozemní komunikaci, se nazývá:",
+    "obrazek": null,
+    "moznosti": [
+      "Křižovatka.",
+      "Hranice křižovatky.",
+      "Spojnice pozemních komunikací."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050414",
+    "otazka": "Je jezdec na koni, který se pohybuje po pozemní komunikaci, řidičem?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050415",
+    "otazka": "Platí pro jezdce na koni, který jede po pozemní komunikaci, povinnosti a práva řidiče?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050419",
+    "otazka": "Vozka, který řídí potahové vozidlo, je:",
+    "obrazek": null,
+    "moznosti": [
+      "Jezdcem na zvířeti.",
+      "Průvodcem vedených a hnaných zvířat.",
+      "Řidičem."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050484",
+    "otazka": "Přečnívá-li za nesnížené viditelnosti náklad z boku u motorového vozidla nebo jízdní soupravy vnější okraj obrysových světel o více než 40 cm, musí být přečnívající konec nákladu:",
+    "obrazek": null,
+    "moznosti": [
+      "Označen červeným praporkem o rozměrech nejméně 30 x 30 cm.",
+      "Označen vzadu červenou a vpředu bílou odrazkou trojúhelníkového tvaru.",
+      "Označen vzadu červenou a vpředu bílou odrazkou jiného než trojúhelníkového tvaru."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050514",
+    "otazka": "Na silnici pro motorová vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Je zakázáno stát mimo místa označená jako parkoviště; na krajnici je zde možné zastavit i mimo vyznačené parkoviště.",
+      "Je zakázáno zastavit a stát mimo místa označená jako parkoviště.",
+      "Je zakázáno zastavit a stát, s výjimkou míst na krajnici, kde je parkování povoleno."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050553",
+    "otazka": "Vyžadují-li provozní nebo jiné závažné důvody, aby osoby při vystupování z vozidla hromadné dopravy osob mimo zastávku nebo nastupování do něj mimo zastávku vstoupily do vozovky:",
+    "obrazek": null,
+    "moznosti": [
+      "Je dopravce oprávněn zastavovat ostatní vozidla.",
+      "Je cestující z vozidla hromadné dopravy osob starší 18 let oprávněn zastavovat ostatní vozidla.",
+      "Je dopravce povinen tuto skutečnost neprodleně oznámit policii nebo obecní policii."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050561",
+    "otazka": "Je-li překážkou provozu na pozemní komunikaci vozidlo, které provozovatel neodstranil, rozhodne o jeho odstranění:",
+    "obrazek": null,
+    "moznosti": [
+      "Správce pozemní komunikace s předchozím souhlasem Policie České republiky; vozidlo se odstraní na náklady správce pozemní komunikace.",
+      "Správce pozemní komunikace; vozidlo se odstraní na náklady jeho provozovatele.",
+      "Policista nebo strážník obecní policie; vozidlo se odstraní na náklady jeho provozovatele."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050564",
+    "otazka": "Při vlečení motorového vozidla na tyči musí být délka tyče taková, aby vzdálenost mezi vozidly nebyla:",
+    "obrazek": null,
+    "moznosti": [
+      "Menší než 1 m a větší než 5 m.",
+      "Menší než 1 m a větší než 6 m.",
+      "Menší než 1,5 m a větší než 5 m."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050566",
+    "otazka": "Při řízení provozu na křižovatce policistou je řidič vozidla, pro kterého z pokynu policisty taková povinnost vyplývá, povinen zastavit vozidlo:",
+    "obrazek": null,
+    "moznosti": [
+      "Na takovém místě, kde bude mít dobrý výhled do křižovatky.",
+      "V křižovatce a v takové vzdálenosti od policisty, aby nebyla ohrožena jeho bezpečnost.",
+      "Před hranicí křižovatky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050576",
+    "otazka": "V pěší zóně smí řidič jet rychlostí:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejvýše 10 km/h.",
+      "Nejvýše 20 km/h.",
+      "Nejvýše 30 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050590",
+    "otazka": "V pěší zóně:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí řidič stát jinde než na místech označených jako parkoviště, zastavit ale může i mimo parkoviště.",
+      "Nesmí řidič mimo parkoviště ani zastavit vozidlo.",
+      "Nesmí řidič zastavit a stát jinde než na místech označených jako parkoviště."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050591",
+    "otazka": "Hry dětí na pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Jsou zakázány.",
+      "Jsou dovoleny v obytné a pěší zóně.",
+      "Jsou dovoleny pouze v obytné zóně."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050592",
+    "otazka": "V obytné zóně řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí mimo parkoviště ani zastavit vozidlo.",
+      "Nesmí stát jinde než na místech označených jako parkoviště, zastavit ale může i mimo parkoviště.",
+      "Nesmí zastavit a stát jinde než na místech označených jako parkoviště."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050593",
+    "otazka": "V obytné zóně:",
+    "obrazek": null,
+    "moznosti": [
+      "Mohou chodci užít k chůzi pouze chodníku, a kde chodník není, užijí levou krajnici či levý okraj vozovky.",
+      "Smějí chodci užívat pozemní komunikaci v celé její šířce.",
+      "Mohou chodci užít k chůzi pouze chodníku, a kde chodník není, mohou užít pozemní komunikaci v celé šířce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050594",
+    "otazka": "V pěší zóně:",
+    "obrazek": null,
+    "moznosti": [
+      "Mohou chodci užít k chůzi pouze chodníku, a kde chodník není, užijí levou krajnici či levý okraj vozovky.",
+      "Smějí chodci užívat pozemní komunikaci v celé její šířce.",
+      "Mohou chodci užít k chůzi pouze chodníku, a kde chodník není, mohou užít pozemní komunikaci v celé šířce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050597",
+    "otazka": "V obytné zóně smí řidič jet rychlostí:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejvýše 50 km/h.",
+      "Nejvýše 20 km/h.",
+      "Nejvýše 30 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050599",
+    "otazka": "Chodci v pěší zóně:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí umožnit jízdu všem vozidlům.",
+      "Musí umožnit jízdu pouze vozidlům s právem přednostní jízdy.",
+      "Nemusí při užívání pěší zóny brát ohled na pohyb vozidel."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050602",
+    "otazka": "Chodci v obytné zóně:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí umožnit jízdu pouze vozidlům s právem přednostní jízdy.",
+      "Musí umožnit jízdu všem vozidlům.",
+      "Nemusí při užívání obytné zóny brát ohled na pohyb vozidel."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050603",
+    "otazka": "Při jízdě v obytné zóně:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí řidič dbát zvýšené ohleduplnosti vůči chodcům, které nesmí ohrozit, a v případě nutnosti musí zastavit vozidlo.",
+      "Platí pro řidiče ve vztahu k chodcům stejná ustanovení jako na kterékoli jiné pozemní komunikaci.",
+      "Musí řidič dbát zvýšené ohleduplnosti vůči chodcům, které nesmí ohrozit ani omezit."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050604",
+    "otazka": "Při jízdě v pěší zóně:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí řidič dbát zvýšené ohleduplnosti vůči chodcům, které nesmí ohrozit, a v případě nutnosti musí zastavit vozidlo.",
+      "Musí řidič dbát zvýšené ohleduplnosti vůči chodcům, které nesmí ohrozit ani omezit.",
+      "Platí pro řidiče ve vztahu k chodcům stejná ustanovení jako na kterékoli jiné pozemní komunikaci."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050607",
+    "otazka": "Mimo obec se na pozemní komunikaci o dvou nebo více jízdních pruzích v jednom směru jízdy jezdí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0429.jpg",
+    "moznosti": [
+      "V kterémkoli jízdním pruhu, jestliže tím není ohrožena plynulost provozu na pozemních komunikacích, zejména jízda ostatních vozidel.",
+      "V pravém jízdním pruhu. V ostatních jízdních pruzích se smí jet, jestliže je to nutné k objíždění, předjíždění, otáčení nebo odbočování.",
+      "V levém jízdním pruhu. V ostatních jízdních pruzích se smí jet, jestliže je to nutné k objíždění, předjíždění, otáčení nebo odbočování."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050621",
+    "otazka": "Nemohou-li se řidiči protijedoucích vozidel bezpečně vyhnout v situaci, kdy k bezpečnému vyhnutí není nutné, aby musel jeden z řidičů couvat:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí dát přednost v jízdě ten, na jehož straně jízdy je překážka nebo zúžená vozovka.",
+      "Musí dát přednost v jízdě ten, na jehož straně jízdy není překážka nebo zúžená vozovka.",
+      "Musí dát přednost v jízdě ten, pro něhož je to snazší nebo méně nebezpečné."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050622",
+    "otazka": "Nemohou-li se řidiči protijedoucích vozidel bezpečně vyhnout v situaci, kdy je k bezpečnému vyhnutí nutné, aby jeden z řidičů couval:",
+    "obrazek": null,
+    "moznosti": [
+      "Učiní tak ten, pro něhož je to snazší nebo méně nebezpečné.",
+      "Učiní tak ten, na jehož straně jízdy není překážka nebo zúžená vozovka.",
+      "Učiní tak ten, na jehož straně jízdy je překážka nebo zúžená vozovka."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050636",
+    "otazka": "Dojde-li při jízdě vozidla v tunelu k poruše vozidla, pro kterou se toto vozidlo stalo nepojízdným:",
+    "obrazek": null,
+    "moznosti": [
+      "Jsou řidič a přepravované osoby z porouchaného vozidla povinni neprodleně opustit tunel.",
+      "Je řidič porouchaného vozidla povinen neprodleně odstranit závadu, která mu brání v další jízdě.",
+      "Je řidič porouchaného vozidla podle okolností oprávněn zastavovat jiná vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050637",
+    "otazka": "Dojde-li při jízdě vozidla v tunelu k poruše vozidla, pro kterou se toto vozidlo stalo nepojízdným:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidič vozidla a přepravované osoby mohou zůstat ve vozidle, pokud neprodleně oznámili zastavení vozidla policii nebo osobě vykonávající dohled nad provozem tunelu.",
+      "Řidič vozidla neoznačuje vozidlo jako překážku v provozu na pozemních komunikacích.",
+      "Řidič ani přepravovaná osoba nesmí kouřit ani zacházet s otevřeným ohněm. Nezávislé topení nepojízdného vozidla musí v tunelu být vypnuto."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050638",
+    "otazka": "Za křižovatku se nepovažuje:",
+    "obrazek": null,
+    "moznosti": [
+      "Vyústění polní nebo lesní cesty nebo jiné účelové pozemní komunikace na jinou pozemní komunikaci.",
+      "Místo, kde se protínají nebo spojují dvě účelové pozemní komunikace.",
+      "Místo, kde se protínají nebo spojují dvě polní cesty nebo dvě lesní cesty."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060049",
+    "otazka": "Odbočují-li řidiči protijedoucích vozidel vlevo:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0188.jpg",
+    "moznosti": [
+      "Vyhýbají se podle okolností a dostatku prostoru v křižovatce vpravo i vlevo.",
+      "Vyhýbají se vpravo (jejich vozidla se míjejí levými boky).",
+      "Vyhýbají se vlevo (jejich vozidla se míjejí pravými boky)."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060051",
+    "otazka": "Svislé dopravní značky upravující přednost:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0299.jpg",
+    "moznosti": [
+      "Jsou nadřazeny světelným signálům.",
+      "Jsou postaveny na roveň světelných signálů.",
+      "Jsou podřízeny světelným signálům."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060061",
+    "otazka": "Řidič motorového vozidla, který je povinen užít přenosného výstražného trojúhelníku, jej musí umístit:",
+    "obrazek": null,
+    "moznosti": [
+      "V libovolné vzdálenosti na okraj vozovky tak, aby byl pro přijíždějící řidiče včas a zřetelně viditelný.",
+      "Na okraj vozovky tak, aby byl pro přijíždějící řidiče včas a zřetelně viditelný, a to ve vzdálenosti nejméně 50 m, na dálnici nejméně 100 m za vozidlem; v obci může být tato vzdálenost, vyžadují-li to okolnosti, kratší.",
+      "Na krajnici vozovky ve vzdálenosti nejméně 80 m, na dálnici a silnici I. třídy nejméně 130 m za vozidlem."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060067",
+    "otazka": "Dojde-li během jízdy na dálnici na vozidle nebo nákladu k závadě, pro kterou nelze dosáhnout na rovině rychlosti nejméně 80 km/h, musí řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Přejet do jízdního pruhu pro pomalá vozidla a v něm pokračovat v jízdě.",
+      "Vozidlo okamžitě odstavit na krajnici a označit jako překážku provozu.",
+      "Opustit dálnici na nejbližším výjezdu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060069",
+    "otazka": "Během jízdy na dálnici mimo obec se ukázalo, že s Vaším vozidlem ve stoupání nelze dosáhnout rychlosti nejméně 80 km/h (např. pro nedostatečný výkon motoru nebo pro hmotnost přepravovaného nákladu). Můžete pokračovat v jízdě po dálnici?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne. Vozidlo musíte odstavit na krajnici a označit jako překážku provozu.",
+      "Ano. Důležité je, že vozidlo může dosáhnout této rychlosti na rovině.",
+      "Ne. Dálnici musíte opustit na nejbližším výjezdu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060070",
+    "otazka": "Během jízdy na silnici pro motorová vozidla mimo obec se ukázalo, že Vaše vozidlo ve stoupání nedosahuje rychlosti nejméně 80 km/h (např. pro nedostatečný výkon motoru nebo pro hmotnost přepravovaného nákladu). Můžete pokračovat v jízdě po této silnici?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne. Vozidlo musíte odstavit na krajnici a označit jako překážku provozu.",
+      "Ne. Silnici pro motorová vozidla musíte opustit na nejbližším výjezdu.",
+      "Ano. Důležité je, že vozidlo může dosáhnout této rychlosti na rovině."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060071",
+    "otazka": "Po pozemní komunikaci jde osoba, která vede psa. Vztahují se na ni povinnosti průvodce vedených zvířat?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060072",
+    "otazka": "Zastavit znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "Přerušit jízdu z důvodu nezávislého na vůli řidiče, například při poruše vozidla.",
+      "Uvést vozidlo do klidu na dobu nezbytně nutnou k neprodlenému nastoupení nebo vystoupení přepravovaných osob anebo k neprodlenému naložení nebo složení nákladu.",
+      "Povinnost řidiče nezahájit jízdní úkon nebo v něm nepokračovat, jestliže by řidič, který má přednost v jízdě, musel náhle změnit směr nebo rychlost jízdy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060074",
+    "otazka": "Patří k povinnostem účastníka provozu na pozemních komunikacích řídit se pokyny strážníků obecní policie?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060075",
+    "otazka": "Během jízdy může kouřit:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidič vozidla hromadné dopravy osob.",
+      "Řidič osobního motorového vozidla.",
+      "Řidič motocyklu a mopedu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060076",
+    "otazka": "Provozovatel silničního motorového vozidla nesmí provozovat na pozemních komunikacích vozidlo:",
+    "obrazek": null,
+    "moznosti": [
+      "Které je technicky nezpůsobilé k provozu.",
+      "Které spotřebou pohonných hmot přesahuje limity stanovené výrobcem vozidla.",
+      "K jehož pohonu má být podle návodu k použití užit pouze bezolovnatý benzín."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060079",
+    "otazka": "Vozidlo hromadné dopravy osob je:",
+    "obrazek": null,
+    "moznosti": [
+      "Autobus, trolejbus nebo tramvaj.",
+      "Motorové vozidlo s nejméně osmi místy pro cestující.",
+      "Vozidlo taxislužby."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060080",
+    "otazka": "Patří vojenský policista mezi osoby, které jsou oprávněny k řízení provozu na pozemních komunikacích?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060082",
+    "otazka": "Řidič na pozemní komunikaci s jednosměrným provozem:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí couvat, i když je to nezbytně nutné, například k zajetí do řady stojících vozidel nebo vyjetí z ní.",
+      "Smí couvat, jestliže je tato pozemní komunikace široká nejméně 6 metrů.",
+      "Smí couvat, jestliže je to nezbytně nutné, například k zajetí do řady stojících vozidel nebo vyjetí z ní."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060083",
+    "otazka": "Řidič motorového vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Se nesmí otáčet na místech nepřehledných nebo jinak nebezpečných, např. v nepřehledné zatáčce a její blízkosti nebo před nepřehledným vrcholem stoupání pozemní komunikace, na něm a za ním.",
+      "Se může otáčet v těsné blízkosti železničního přejezdu, pokud je železniční zabezpečovací zařízení funkční.",
+      "Se může otáčet na přechodu pro chodce nebo na přejezdu pro cyklisty nebo v jejich těsné blízkosti, pokud tím neohrozí bezpečnost ostatních účastníků silničního provozu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060084",
+    "otazka": "Přejíždět z jednoho jízdního pruhu do druhého smí řidič jen tehdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Neohrozí-li řidiče jedoucího v jízdním pruhu, do kterého přejíždí; znamení o změně směru nedává.",
+      "Neohrozí-li a neomezí-li řidiče jedoucího v jízdním pruhu, do kterého přejíždí; přitom musí dávat znamení o změně směru jízdy.",
+      "Neomezí-li řidiče jedoucího v jízdním pruhu, do kterého přejíždí; znamení o změně směru nedává."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060096",
+    "otazka": "Kdy smíte při jízdě s motorovým vozidlem, které je vybaveno světly pro denní svícení, těmito světly svítit?",
+    "obrazek": null,
+    "moznosti": [
+      "Při nesnížené viditelnosti samostatně a při současném použití obrysových světel i při snížené viditelnosti.",
+      "Pouze v době od 6.00 hodin do 20.00 hodin a jen při současném použití obrysových světel.",
+      "Pouze při nesnížené viditelnosti, a to bez současného použití obrysových světel."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060097",
+    "otazka": "Podél tramvaje se jezdí:",
+    "obrazek": null,
+    "moznosti": [
+      "Vpravo i vlevo, pokud je tramvajový pás ve stejné úrovni s vozovkou.",
+      "Vpravo, pokud není dopravní značkou „Objíždění tramvaje“ povolena jízda vlevo.",
+      "Vpravo; vlevo smí řidič jet v případě, stojí-li tramvaj v zastávce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060098",
+    "otazka": "Řidič při vjíždění na pozemní komunikaci z místa ležícího mimo pozemní komunikaci musí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0096.jpg",
+    "moznosti": [
+      "Dát přednost v jízdě vozidlům přijíždějícím zprava.",
+      "Dát přednost v jízdě ostatním účastníkům provozu na pozemních komunikacích.",
+      "Brát ohled na ostatní účastníky provozu na pozemních komunikacích."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060099",
+    "otazka": "Tramvaj zastavila v zastávce bez nástupního ostrůvku. Řidič jiného vozidla jedoucího za touto tramvají musí:",
+    "obrazek": null,
+    "moznosti": [
+      "Zastavit vozidlo. Pokračovat v jízdě smí teprve tehdy, neohrozí-li již cestující, kteří nastupují nebo vystupují.",
+      "Zastavit vozidlo na dobu, než tramvaj odjede z prostoru zastávky.",
+      "Tramvaj se zvýšenou opatrností objet vlevo; přitom musí svou jízdu přizpůsobit zejména možnosti vstoupení chodců do vozovky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060101",
+    "otazka": "Řidič, který se po předjetí zařazuje před vozidlo, které předjel:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí dávat znamení o změně směru jízdy a nesmí ohrozit ani omezit řidiče vozidla, které předjel.",
+      "Nemusí dávat znamení o změně směru jízdy, pokud neomezí řidiče vozidla, které předjel.",
+      "Může omezit řidiče vozidla, které předjel, a musí dávat znamení o změně směru jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060102",
+    "otazka": "Řidič motorového vozidla o maximální přípustné hmotnosti převyšující 3 500 kg, s výjimkou autobusu, smí jet mimo obec rychlostí nejvýše:",
+    "obrazek": null,
+    "moznosti": [
+      "90 km.h-1.",
+      "80 km.h-1.",
+      "70 km.h-1."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060103",
+    "otazka": "Pokud není dopravní značkou „Nejvyšší dovolená rychlost“ dovolena rychlost vyšší, smí jet řidič v obci rychlostí nejvýše:",
+    "obrazek": null,
+    "moznosti": [
+      "70 km.h-1.",
+      "60 km.h-1.",
+      "50 km.h-1."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060104",
+    "otazka": "Při použití sněhových řetězů na vozidle smí jet řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Rychlostí nejvýše 30 km.h-1.",
+      "Rychlostí nejvýše 80 km.h-1.",
+      "Rychlostí nejvýše 50 km.h-1"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24020001",
+    "otazka": "Řidič vozidla jedoucí za jiným vozidlem:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí za ním ponechat dostatečnou bezpečnostní vzdálenost, aby se mohl vyhnout srážce v případě náhlého snížení rychlosti nebo náhlého zastavení vozidla, které jede před ním.",
+      "Musí ponechat za ním dostatečnou bezpečnostní vzdálenost pouze v nepřehledných úsecích pozemní komunikace.",
+      "Nemusí ponechávat za ním dostatečnou bezpečnostní vzdálenost, pokud to nevyžaduje dopravní situace."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060107",
+    "otazka": "Řidiči protijedoucích vozidel se vyhýbají:",
+    "obrazek": null,
+    "moznosti": [
+      "Vpravo, při zachování minimálního bočního odstupu 1 m.",
+      "Vpravo, včas a v dostatečné míře.",
+      "Vlevo, včas a v dostatečné míře."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060108",
+    "otazka": "Ustanovení o provozu na dálnici platí:",
+    "obrazek": null,
+    "moznosti": [
+      "Pro dálnici a silnici pro motorová vozidla.",
+      "Jen pro dálnice.",
+      "Pro všechny pozemní komunikace, s výjimkou místních komunikací."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060109",
+    "otazka": "Vjíždět na dálnici a vyjíždět z dálnice smí řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen na místech k tomu určených.",
+      "Rychlostí vozidla nepřesahující 50 km.h-1.",
+      "Potahového vozidla nebo nemotorového vozidla pouze u parkoviště."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060111",
+    "otazka": "Na křižovatce, kde není dopravními značkami rozlišena přednost v jízdě, řidič musí dát přednost v jízdě:",
+    "obrazek": null,
+    "moznosti": [
+      "Vozidlům nebo jezdcům na zvířatech přijíždějícím zleva nebo organizované skupině chodců nebo průvodcům hnaných zvířat se zvířaty přicházejícím zleva.",
+      "Vozidlům nebo jezdcům na zvířatech přijíždějícím zprava nebo organizované skupině chodců nebo průvodcům hnaných zvířat se zvířaty přicházejícím zprava.",
+      "Motorovým vozidlům nebo jezdcům na zvířatech přijíždějícím zprava, tramvajím v obou směrech a chodcům přicházejícím zprava."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060113",
+    "otazka": "Řidič nesmí vjet do křižovatky, nedovoluje-li mu situace pokračovat v jízdě v křižovatce a za křižovatkou, takže by byl nucen zastavit vozidlo v křižovatce. To neplatí:",
+    "obrazek": null,
+    "moznosti": [
+      "Pokud řidič musel zastavit vozidlo v křižovatce vzhledem k dopravní situaci, zejména kvůli hustému provozu.",
+      "Pokud důvodem zastavení vozidla je, že řidič hodlá v této křižovatce couvat.",
+      "Pokud důvodem zastavení vozidla je plnění povinnosti umožnit chodci nerušené a bezpečné přejití vozovky na přechodu pro chodce nebo povinnost dát přednost v jízdě při odbočování vlevo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060114",
+    "otazka": "Řidič nesmí vjet do křižovatky, nedovoluje-li mu situace pokračovat v jízdě v křižovatce a za křižovatkou, takže by byl nucen zastavit vozidlo v křižovatce. To neplatí:",
+    "obrazek": null,
+    "moznosti": [
+      "Pokud důvodem zastavení vozidla je plnění povinnosti umožnit chodci nerušené a bezpečné přejití vozovky na přechodu pro chodce nebo povinnost dát přednost v jízdě při odbočování vlevo.",
+      "Pokud řidič musel zastavit vozidlo proto, že kvůli hustému provozu zastavila i vozidla jedoucí před ním.",
+      "Pokud důvodem zastavení vozidla je, že řidič hodlá v této křižovatce nebo v její bezprostřední blízkosti couvat."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060116",
+    "otazka": "Zajíždí-li řidič za účelem zastavení nebo stání k okraji pozemní komunikace nebo k chodníku:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemusí dávat znamení o změně směru jízdy, pokud neohrozí nebo neomezí vozidla jedoucí za ním.",
+      "Nemusí dávat znamení o změně směru jízdy.",
+      "Musí dávat znamení o změně směru jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060117",
+    "otazka": "Nastupovat do vozidla nebo vystupovat z něj se smí jen tehdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Není-li tím ohrožena bezpečnost nastupujících nebo vystupujících osob ani jiných účastníků provozu na pozemních komunikacích.",
+      "Není-li tím ohrožena bezpečnost nastupujících nebo vystupujících osob bez ohledu na ostatní účastníky provozu na pozemních komunikacích.",
+      "Zastaví-li vozidlo v obci na místě k tomu určeném, například na parkovišti."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060118",
+    "otazka": "Je-li dávána výstraha přerušovaným zvukem houkačky nebo zvonku přejezdového zabezpečovacího zařízení, znamená to, že řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí vjíždět na železniční přejezd.",
+      "Musí při přejíždění přejezdu dbát zvýšené opatrnosti.",
+      "Může přejezd bezpečně přejet."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060119",
+    "otazka": "Vozidla se před železničním přejezdem řadí:",
+    "obrazek": null,
+    "moznosti": [
+      "Tak, aby všichni řidiči měli náležitý výhled na železniční přejezd.",
+      "Za sebou v pořadí, ve kterém přijela.",
+      "Náhodně."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060120",
+    "otazka": "Při přejíždění železničního přejezdu nesmí řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Zbytečně prodlužovat dobu jeho přejíždění.",
+      "Dávat zvuková výstražná znamení.",
+      "Náhle snížit rychlost jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060121",
+    "otazka": "Je-li dávána výstraha dvěma červenými střídavě přerušovanými světly signálu přejezdového zabezpečovacího zařízení, znamená to, že řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Smí vjíždět na železniční přejezd.",
+      "Nesmí vjíždět na železniční přejezd.",
+      "Musí zapnout výstražné světelné zařízení."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060122",
+    "otazka": "Svítí-li přerušované bílé světlo signálu přejezdového zabezpečovacího zařízení, smí 50 m před železničním přejezdem a při jeho přejíždění jet řidič rychlostí:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejvýše 40 km.h-1.",
+      "Nejvýše 30 km.h-1.",
+      "Nejvýše 50 km.h-1."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060125",
+    "otazka": "Řidič, který se hodlá vzdálit od vozidla tak, že nemůže v případě potřeby okamžitě zasáhnout:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí vypnout motor a zapalování a použít parkovací brzdu nebo zařadit rychlostní stupeň.",
+      "Musí dát výstražné znamení zapnutím výstražného světelného zařízení, vypnout motor a zapalování.",
+      "Musí učinit taková opatření, aby vozidlo nemohlo ohrozit bezpečnost provozu na pozemních komunikacích a nemohla je neoprávněně užít jiná osoba."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060126",
+    "otazka": "Dojde-li při jízdě vozidla v tunelu k poruše vozidla, pro kterou se toto vozidlo stalo nepojízdným:",
+    "obrazek": null,
+    "moznosti": [
+      "Je řidič porouchaného vozidla podle okolností oprávněn zastavovat jiná vozidla.",
+      "Je řidič porouchaného vozidla povinen neprodleně opravit závadu, která mu brání v alespoň nouzovém dojetí.",
+      "Je řidič porouchaného vozidla povinen neprodleně odstranit vozidlo z tunelu, například jeho odtlačením."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060127",
+    "otazka": "Dojde-li při jízdě vozidla v tunelu k poruše vozidla, pro kterou se toto vozidlo stalo nepojízdným:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidič ani přepravovaná osoba nesmí kouřit ani zacházet s otevřeným ohněm. Nezávislé topení nepojízdného vozidla může v tunelu zůstat zapnuto.",
+      "Řidič ani přepravovaná osoba nesmí zacházet s otevřeným ohněm, kouřit mohou pouze na místech k tomu určených. Nezávislé topení nepojízdného vozidla může v tunelu zůstat zapnuto.",
+      "Řidič ani přepravovaná osoba nesmí kouřit ani zacházet s otevřeným ohněm. Nezávislé topení nepojízdného vozidla musí v tunelu být vypnuto."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060128",
+    "otazka": "Při jízdě v tunelu došlo k poruše vozidla, pro kterou se toto vozidlo stalo nepojízdným. Řidič porouchaného vozidla je:",
+    "obrazek": null,
+    "moznosti": [
+      "Povinen neprodleně odstranit závadu, která mu brání v další jízdě, nebo nepojízdné vozidlo z tunelu odstranit.",
+      "Oprávněn podle okolností zastavovat jiná vozidla.",
+      "Povinen zapnout výstražné světelné zařízení a neprodleně opustit tunel."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060129",
+    "otazka": "V tunelu došlo k poruše motorového vozidla, které se stalo nepojízdným. Jako řidič takového vozidla nesmíte:",
+    "obrazek": null,
+    "moznosti": [
+      "Zacházet s otevřeným ohněm; kouřit v tunelu smíte jen na místech označených jako únikové východy.",
+      "Kouřit ani zacházet s otevřeným ohněm.",
+      "Kouřit; zacházet s otevřeným ohněm v tunelu smíte, pokud je to nezbytné k odstranění závady vozidla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060130",
+    "otazka": "Obytná zóna je:",
+    "obrazek": null,
+    "moznosti": [
+      "Každé sídliště s nejméně 500 obyvatel, jehož začátek je označen dopravní značkou „Sídliště“ a konec je označen dopravní značkou „Konec sídliště“.",
+      "Obec s minimálně 50 trvale žijícími obyvateli, jejíž začátek je označen dopravní značkou „Obec“ a konec je označen dopravní značkou „Konec obce“.",
+      "Zastavěná oblast, jejíž začátek je označen dopravní značkou „Obytná zóna“ a konec je označen dopravní značkou „Konec obytné zóny“."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060133",
+    "otazka": "Přednost při čerpání pohonných hmot mají:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidiči vozidel s právem přednostní jízdy.",
+      "Řidiči vozidel hromadné dopravy osob (např. autobusů).",
+      "Řidiči vozidel přepravujících zboží, které podléhá rychlé zkáze."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060134",
+    "otazka": "Při vlečení motorového vozidla se smí jet rychlostí:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejvýše 60 km/h.",
+      "Nejvýše 90 km/h.",
+      "Nejvýše 70 km/h."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060136",
+    "otazka": "Ten, kdo způsobil překážku provozu na pozemních komunikacích:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí ji neprodleně odstranit; neučiní-li tak, odstraní ji na jeho náklady vlastník pozemní komunikace.",
+      "Oznámí to neprodleně vlastníkovi pozemní komunikace, který překážku na vlastní náklady odstraní.",
+      "Oznámí to neprodleně policii, která zajistí její označení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060137",
+    "otazka": "Při zastavení vozidla před železničním přejezdem:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí řidič motorového vozidla zařadit rychlostní stupeň nebo použít parkovací brzdu.",
+      "Nesmí řidič užít ani potkávací světla, pokud by jimi mohl oslnit řidiče v protisměru.",
+      "Musí řidič motorového vozidla okamžitě vypnout motor."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060138",
+    "otazka": "Svítí-li zvláštní výstražné světlo modré nebo modré a červené barvy na stojícím vozidle, musí řidiči ostatních vozidel podle okolností:",
+    "obrazek": null,
+    "moznosti": [
+      "Urychleně opustit místo, kde toto vozidlo stojí.",
+      "Snížit rychlost jízdy a popřípadě i zastavit vozidlo.",
+      "Opatrně otočit vozidlo a jet jinou trasou."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060140",
+    "otazka": "Při čerpání pohonných hmot mají přednost:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidiči vozidel s právem přednostní jízdy; přitom nepoužívají zvláštních výstražných znamení.",
+      "Řidiči vozidel s právem přednostní jízdy; k upozornění ostatních řidičů však musejí použít zvláštních výstražných znamení.",
+      "Řidiči vozidel hromadné dopravy osob, např. autobusů, a řidiči vozidel přepravujících zboží, které podléhá rychlé zkáze."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060141",
+    "otazka": "Při čerpání pohonných hmot mají přednost:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidiči vozidel přepravujících osobu těžce postiženou nebo těžce pohybově postiženou.",
+      "Řidiči vozidel s právem přednostní jízdy; přitom nepoužívají zvláštních výstražných znamení.",
+      "Řidiči autobusů a řidiči vozidel přepravujících zboží, které podléhá rychlé zkáze."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060142",
+    "otazka": "Překážka provozu na pozemních komunikacích musí být označena:",
+    "obrazek": null,
+    "moznosti": [
+      "Pouze pokud se nachází v nepřehledném úseku pozemní komunikace, např. v zatáčce nebo před vrcholem stoupání pozemní komunikace.",
+      "Tak, aby ji jiný účastník provozu na pozemních komunikacích mohl včas a z dostatečné vzdálenosti zpozorovat.",
+      "Pouze pokud se nachází na dálnici, silnici pro motorová vozidla nebo silnici I. třídy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060143",
+    "otazka": "Dojde-li při dopravní nehodě k poškození pozemní komunikace, jsou účastníci dopravní nehody povinni:",
+    "obrazek": null,
+    "moznosti": [
+      "Neprodleně ohlásit tuto událost vlastníkovi pozemní komunikace.",
+      "Neprodleně ohlásit tuto událost příslušnému obecnímu úřadu obce s rozšířenou působností.",
+      "Neprodleně ohlásit tuto událost Policii České republiky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060144",
+    "otazka": "Dojde-li při dopravní nehodě k poškození životního prostředí, jsou účastníci dopravní nehody povinni:",
+    "obrazek": null,
+    "moznosti": [
+      "Neprodleně ohlásit tuto událost Inspekci životního prostředí.",
+      "Neprodleně ohlásit tuto událost vlastníkům všech dotčených pozemků.",
+      "Neprodleně ohlásit tuto událost Policii České republiky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060145",
+    "otazka": "Při řízení provozu na křižovatce znamená pro řidiče signál se současně svítícím červeným a žlutým světlem „Pozor!“:",
+    "obrazek": null,
+    "moznosti": [
+      "Povinnost zastavit vozidlo před světelným signalizačním zařízením, neboť bude následovat signál „Stůj!“.",
+      "Povinnost připravit se k jízdě.",
+      "Upozornění, že řízení provozu světelnými signály bude ukončeno."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060146",
+    "otazka": "„Signál žlutého světla ve tvaru chodce\", jímž je doplněn signál se zelenou šipkou směřující vpravo nebo vlevo, upozorňuje řidiče, že při jízdě směrem, kterým tato šipka ukazuje:",
+    "obrazek": null,
+    "moznosti": [
+      "Začíná obytná zóna nebo pěší zóna.",
+      "Křižuje směr chůze přecházejících chodců, kterým musí dát přednost.",
+      "Není zřízen chodník a chodci proto mohou jít po levém okraji vozovky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060150",
+    "otazka": "Nesvítí-li přerušované bílé světlo signálu přejezdového zabezpečovacího zařízení, smí řidič ve vzdálenosti 50 m před železničním přejezdem a při jeho přejíždění jet rychlostí:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejvýše 30 km/h.",
+      "Nejvýše 50 km/h.",
+      "Nejméně 30 km/h."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060151",
+    "otazka": "V prostoru čerpací stanice pohonných hmot je zakázáno:",
+    "obrazek": null,
+    "moznosti": [
+      "Opravovat jakoukoli součást vozidla.",
+      "Opravovat motor vozidla.",
+      "Opravovat elektrická zařízení na vozidle."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060152",
+    "otazka": "V prostoru čerpací stanice pohonných hmot je zakázáno:",
+    "obrazek": null,
+    "moznosti": [
+      "Zdržovat se déle, než je nezbytně nutné.",
+      "Seřizovat motor vozidla.",
+      "Opravovat vozidlo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060153",
+    "otazka": "Při čerpání pohonných hmot mají přednost:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidiči vozidel s právem přednostní jízdy; přitom nepoužívají zvláštních výstražných znamení.",
+      "Řidiči vozidel hromadné dopravy osob, např. autobusů, a řidiči nákladních vozidel.",
+      "Řidiči vozidel s právem přednostní jízdy; k upozornění ostatních řidičů však musejí použít zvláštních výstražných znamení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060155",
+    "otazka": "Jaký je vztah mezi světelnými signály a svislými dopravními značkami upravujícími přednost?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0299.jpg",
+    "moznosti": [
+      "Svislé dopravní značky upravující přednost jsou nadřazeny světelným signálům.",
+      "Světelné signály jsou postaveny na roveň svislým dopravním značkám upravujícím přednost.",
+      "Světelné signály jsou nadřazeny svislým dopravním značkám upravujícím přednost."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060156",
+    "otazka": "V obytné zóně řidič smí jet rychlostí:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejvýše 20 km.h-1.",
+      "Nejvýše 40 km.h-1.",
+      "Nejvýše 30 km.h-1."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060157",
+    "otazka": "Při přepravě sypkých substrátů, například písku, musí být:",
+    "obrazek": null,
+    "moznosti": [
+      "Vozidlo vybaveno zvláštním výstražným světlem oranžové barvy, které musí být při jízdě zapnuté.",
+      "Vozidlo viditelně označeno zvláštním označením vozidla přepravujícího sypké substráty.",
+      "Náklad zajištěn tak, aby nedocházelo k jeho samovolnému odlétávání, například plachtou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060159",
+    "otazka": "Vyžadují-li provozní nebo jiné závažné důvody, aby osoby při nastupování do autobusu, trolejbusu či tramvaje mimo zastávku vstoupily do vozovky:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí řidič na nezbytně nutnou dobu zastavit ostatní projíždějící vozidla.",
+      "Je dopravce oprávněn zastavovat ostatní vozidla.",
+      "Je každý z cestujících starší 18 let oprávněn zastavovat ostatní vozidla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060172",
+    "otazka": "V obytné a pěší zóně je stání dovoleno:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen na krajnici nebo na chodníku, i když tato místa nejsou označena jako parkoviště.",
+      "Kdekoliv, s výjimkou míst označených dopravní značkou „Zákaz zastavení“ nebo „Zákaz stání“.",
+      "Jen na místech označených jako parkoviště."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060173",
+    "otazka": "Při řízení provozu na křižovatce signál se současně svítícím červeným a žlutým světlem „Pozor!“ znamená pro řidiče povinnost:",
+    "obrazek": null,
+    "moznosti": [
+      "Dbát při průjezdu křižovatkou zvýšené opatrnosti.",
+      "Připravit se k jízdě.",
+      "Zastavit vozidlo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060174",
+    "otazka": "V prostoru čerpací stanice pohonných hmot:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí ve vozidle vždy zůstat alespoň jedna osoba starší 18 let.",
+      "Je řidiči zakázáno se vzdalovat od vozidla.",
+      "Je řidiči i přepravované osobě zakázáno kouřit."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060175",
+    "otazka": "Před čerpáním pohonných hmot musí řidič:",
+    "obrazek": null,
+    "moznosti": [
+      "Zastavit motor a vypnout zapalování; to neplatí pro řidiče vozidel se vznětovým motorem.",
+      "Vždy vozidlo zajistit proti pohybu zabrzděním a zařazením rychlostního stupně.",
+      "Zastavit motor a vypnout zapalování."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060176",
+    "otazka": "Světelné signály:",
+    "obrazek": null,
+    "moznosti": [
+      "Jsou nadřazeny pokynům příslušníků nebo orgánů vojenské pořádkové služby.",
+      "Jsou nadřazeny svislým dopravním značkám upravujícím přednost.",
+      "Jsou nadřazeny všem dopravním značkám."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060177",
+    "otazka": "Při přepravě živých zvířat:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí být ohrožena bezpečnost řidiče, přepravovaných osob ani zvířat a ani bezpečnost provozu na pozemních komunikacích.",
+      "Musí být vozidlo vybaveno zvláštními výstražnými světly oranžové barvy.",
+      "Musí být u vozidel i za nesnížené viditelnosti rozsvícena jen potkávací světla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060178",
+    "otazka": "Účastníci dopravní nehody jsou povinni:",
+    "obrazek": null,
+    "moznosti": [
+      "Učinit vhodná opatření, aby nebyla ohrožena bezpečnost provozu na pozemních komunikacích v místě dopravní nehody, a vyžadují-li to okolnosti, jsou oprávněni zastavovat jiná vozidla.",
+      "Neprodleně zastavit ostatní vozidla až do doby, než se na místo nehody dostaví příslušník policie.",
+      "Neprodleně odstranit vozidla poškozená při nehodě na místo ležící mimo silnici."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060179",
+    "otazka": "Při přepravě nákladu:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí být překročena maximální přípustná hmotnost vozidla a maximální přípustná hmotnost na nápravu vozidla.",
+      "Smí být užitečná hmotnost vozidla překročena nejvýše o 20%.",
+      "Smí být užitečná hmotnost vozidla překročena nejvýše o 10%."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060180",
+    "otazka": "V provozu na pozemních komunikacích je zakázáno:",
+    "obrazek": null,
+    "moznosti": [
+      "Troubit.",
+      "Neoprávněně užívat zvláštních výstražných světel a zvláštního zvukového výstražného znamení, které užívá vozidlo s právem přednostní jízdy.",
+      "Svítit za nesnížené viditelnosti."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060181",
+    "otazka": "Z jedoucího vozidla dává policista ve stejnokroji znamení k zastavení vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Zvukovým výstražným znamením a zapnutím zařízení umožňujícího výstražnou funkci směrových světel.",
+      "Zapínáním potkávacích nebo dálkových světel.",
+      "Kýváním paže nahoru a dolů nebo vysunutým zastavovacím terčem, popřípadě rozsvícením nápisu „STOP“."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060182",
+    "otazka": "Vozidlům s právem přednostní jízdy a vozidlům jimi doprovázeným musí řidiči ostatních vozidel:",
+    "obrazek": null,
+    "moznosti": [
+      "Umožnit bezpečný a plynulý průjezd, a jestliže je to nutné i zastavit vozidlo na takovém místě, aby jim nepřekážela.",
+      "Umožnit bezpečný a plynulý průjezd okamžitým zastavením vozidla.",
+      "Umožnit bezpečné předjetí, nejsou však povinni jim umožnit bezpečný a plynulý průjezd."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060183",
+    "otazka": "Vozidla vjíždějící na pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemusí být předem očištěna, pokud pozemní komunikaci pouze přejíždějí.",
+      "Musí předem dávat světelné výstražné znamení.",
+      "Musí být předem očištěna, aby neznečišťovala pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060184",
+    "otazka": "Řidiči protijedoucích vozidel se vyhýbají:",
+    "obrazek": null,
+    "moznosti": [
+      "Vpravo, včas a v dostatečné míře.",
+      "Tak, aby zachovali boční odstup alespoň 2 m.",
+      "Zásadně vlevo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060185",
+    "otazka": "Při couvání řidič nesmí:",
+    "obrazek": null,
+    "moznosti": [
+      "Kouřit.",
+      "Omezit ostatní účastníky silničního provozu.",
+      "Ohrozit ostatní účastníky provozu na pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060188",
+    "otazka": "Motorové vozidlo musí mít za jízdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Rozsvícena obrysová světla a potkávací světla nebo světla pro denní svícení, pokud je jimi vybaveno podle zvláštního právního předpisu.",
+      "Zavřena boční okna.",
+      "Vždy rozsvícena všechna světla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060189",
+    "otazka": "Při vjíždění na kruhový objezd a jízdě po kruhovém objezdu:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidič nedává znamení o změně směru jízdy, nepřejíždí-li z jednoho jízdního pruhu do druhého.",
+      "Řidič dává vždy znamení o změně směru jízdy.",
+      "Řidič nedává znamení o změně směru jízdy ani při přejíždění z pruhu do pruhu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060190",
+    "otazka": "Vozidlo musí mít za jízdy při snížené viditelnosti:",
+    "obrazek": null,
+    "moznosti": [
+      "Rozsvícena jen tlumená světla.",
+      "Rozsvícena jen dálková světla.",
+      "Rozsvícena obrysová a potkávací světla nebo dálková světla, pokud je jimi vybaveno podle zvláštního právního předpisu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060191",
+    "otazka": "Svislé stálé dopravní značky jsou nadřazeny:",
+    "obrazek": null,
+    "moznosti": [
+      "Vodorovným dopravním značkám.",
+      "Pokynům policisty.",
+      "Světelným signálům."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060192",
+    "otazka": "Řidič nesmí kouřit:",
+    "obrazek": null,
+    "moznosti": [
+      "Při jízdě na motocyklu, na mopedu a na jízdním kole.",
+      "Při řízení nákladního automobilu.",
+      "Jen při jízdě na jízdním kole."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060193",
+    "otazka": "Řidič nesmí požít alkoholický nápoj:",
+    "obrazek": null,
+    "moznosti": [
+      "Během jízdy.",
+      "Ještě hodinu po skončení jízdy.",
+      "Bezprostředně po skončení jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060194",
+    "otazka": "Svítí-li zvláštní výstražné světlo modré nebo modré a červené barvy na stojícím vozidle:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí řidiči ostatních vozidel vždy zastavit vozidlo.",
+      "Musí ostatní řidiči zastavit vozidlo na krajnici.",
+      "Musí řidiči ostatních vozidel podle okolností snížit rychlost jízdy a popřípadě i zastavit vozidlo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060195",
+    "otazka": "Řidič nesmí při jízdě vozidlem:",
+    "obrazek": null,
+    "moznosti": [
+      "Mít nasazeny ochranné brýle.",
+      "Prudce zrychlovat.",
+      "Držet v ruce nebo jiným způsobem telefonní přístroj nebo jiné hovorové nebo záznamové zařízení."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060196",
+    "otazka": "Řidič nesmí při jízdě vozidlem:",
+    "obrazek": null,
+    "moznosti": [
+      "Telefonovat jen při jízdě v obci.",
+      "Držet v ruce nebo jiným způsobem telefonní přístroj nebo jiné hovorové nebo záznamové zařízení.",
+      "Telefonovat ani komunikovat prostřednictvím jiného hovorového zařízení."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060197",
+    "otazka": "Při zařazování z připojovacího pruhu do průběžného pruhu:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidič nesmí ohrozit řidiče jedoucí v průběžném pruhu.",
+      "Řidič nesmí omezit řidiče vozidla jedoucího v průběžném pruhu.",
+      "Musí řidič jedoucí v připojovacím pruhu dosáhnout stejné rychlosti jako ostatní řidiči."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060198",
+    "otazka": "Znamení k zastavení vozidla dává policista ve stejnokroji:",
+    "obrazek": null,
+    "moznosti": [
+      "Píšťalkou.",
+      "Vztyčenou paží nebo zastavovacím terčem a za snížené viditelnosti červeným světlem, kterým pohybuje v horním půlkruhu.",
+      "Kýváním směrovkou nahoru a dolů."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060199",
+    "otazka": "Na dálnici a na silnici pro motorová vozidla je zastavení a stání dovoleno:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen na krajnici nebo na středním dělícím pásu.",
+      "Kdekoliv, pokud tím nejsou ohroženi ani omezeni řidiči ostatních vozidel jedoucích po dálnici nebo silnici pro motorová vozidla.",
+      "Jen na místech označených jako parkoviště."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060201",
+    "otazka": "Signál dvou vedle sebe umístěných střídavě přerušovaných červených světel znamená pro řidiče:",
+    "obrazek": null,
+    "moznosti": [
+      "Povinnost zastavit vozidlo před světelným signalizačním zařízením.",
+      "Možnost zvýšit rychlost jízdy.",
+      "Povinnost zařadit nižší rychlostní stupeň."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060202",
+    "otazka": "Před železničním přejezdem:",
+    "obrazek": null,
+    "moznosti": [
+      "Si musí řidič počínat zvlášť opatrně, zejména se přesvědčit, zda může železniční přejezd bezpečně přejet.",
+      "Řidič nesmí řadit rychlostní stupně.",
+      "Musí řidič vždy zastavit, aby se přesvědčil, zda může železniční přejezd bezpečně přejet."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060203",
+    "otazka": "Kdo způsobil překážku provozu na pozemních komunikacích:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí ji odstranit nejpozději do 24 hodin, a neučiní-li tak, odstraní ji správce komunikace na svůj vlastní náklad.",
+      "Není povinen ji odstranit, překážku je vždy povinen odstranit správce komunikace na svůj vlastní náklad.",
+      "Musí ji neprodleně odstranit, a neučiní-li tak, odstraní ji na jeho náklad vlastník pozemní komunikace."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060204",
+    "otazka": "Účastníci dopravní nehody jsou povinni:",
+    "obrazek": null,
+    "moznosti": [
+      "Zajistit svědky nehody.",
+      "Umožnit odstranění vozidel poškozených při nehodě na místo ležící mimo silnici bez ohledu na to, vyžaduje-li to obnovení silničního provozu či nikoliv.",
+      "Umožnit obnovení provozu na pozemních komunikacích, zejména provozu vozidel hromadné dopravy osob."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060205",
+    "otazka": "Účastníci dopravní nehody jsou povinni:",
+    "obrazek": null,
+    "moznosti": [
+      "Navzájem si předložit doklad o zaplacení pojistného.",
+      "Navzájem si předložit osvědčení o vozidle.",
+      "Prokázat si na požádání navzájem svou totožnost."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060206",
+    "otazka": "Řidič smí zastavit a stát:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen mimo vozovku.",
+      "Jen vlevo ve směru jízdy.",
+      "Vpravo ve směru jízdy co nejblíže k okraji pozemní komunikace a na jednosměrné pozemní komunikaci vpravo i vlevo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060209",
+    "otazka": "Řidič smí jet jen takovou rychlostí:",
+    "obrazek": null,
+    "moznosti": [
+      "Aby byl schopen zastavit vozidlo na vzdálenost 100 m.",
+      "Aby byl schopen zastavit vozidlo, když mu nedá jiný řidič přednost v jízdě.",
+      "Aby byl schopen zastavit vozidlo na vzdálenost, na kterou má rozhled."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060210",
+    "otazka": "Řidič nesmí požít alkoholický nápoj nebo užít návykovou látku:",
+    "obrazek": null,
+    "moznosti": [
+      "Bezprostředně po skončení jízdy.",
+      "Do 24 hodin po skončení jízdy.",
+      "Během jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060211",
+    "otazka": "Zákon o silničním provozu upravuje pravidla provozu:",
+    "obrazek": null,
+    "moznosti": [
+      "Na všech pozemních komunikacích a též na polích, loukách a v lesích.",
+      "Jen na dálnicích a silnicích pro motorová vozidla.",
+      "Na dálnicích, silnicích, místních komunikacích a účelových komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060212",
+    "otazka": "Dát přednost v jízdě znamená povinnost řidiče:",
+    "obrazek": null,
+    "moznosti": [
+      "Nezahájit jízdu nebo jízdní úkon nebo v nich nepokračovat, jestliže by řidič, který má přednost v jízdě, musel náhle změnit směr nebo rychlost jízdy.",
+      "Počínat si tak, aby řidič, který má přednost v jízdě, věděl, že nebude v jízdě omezen.",
+      "Počínat si tak, aby řidič, který má přednost v jízdě, nemusel ani mírně zpomalit."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060214",
+    "otazka": "V obci na pozemní komunikaci o dvou nebo více jízdních pruzích vyznačených na vozovce v jednom směru jízdy smí řidič motorového vozidla užívat k jízdě:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen pravého jízdního pruhu.",
+      "Jen pravého a středního jízdního pruhu; nejkrajnější levý jízdní pruh se užívá pouze pro odbočování.",
+      "Kteréhokoliv jízdního pruhu; přitom se nepovažuje za předjíždění, jedou-li vozidla v jednom z jízdních pruhů rychleji než vozidla v jiném jízdním pruhu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060215",
+    "otazka": "Řidič, který měl účast na dopravní nehodě:",
+    "obrazek": null,
+    "moznosti": [
+      "Je povinen učinit opatření k zabránění vzniku škody osobám nebo věcem, pokud tato hrozí v důsledku dopravní nehody.",
+      "Musí vždy nehodu oznámit policii.",
+      "Musí vždy nehodu oznámit vlastníkovi pozemní komunikace."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060216",
+    "otazka": "Rychlost jízdy musí řidič přizpůsobit:",
+    "obrazek": null,
+    "moznosti": [
+      "Zdravotnímu stavu spolujezdců.",
+      "Ročnímu období.",
+      "Předpokládanému stavebnímu a dopravně technickému stavu pozemní komunikace."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060217",
+    "otazka": "O odstranění vozidla, které neoprávněně stojí na vyhrazeném parkovišti:",
+    "obrazek": null,
+    "moznosti": [
+      "Rozhodne policista nebo strážník obecní policie; vozidlo se odstraní na náklad jeho provozovatele.",
+      "Může rozhodnout jen strážník obecní policie.",
+      "Může rozhodnout jen policista."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060218",
+    "otazka": "Řidič motorového vozidla je povinen na výzvu policisty:",
+    "obrazek": null,
+    "moznosti": [
+      "Doplnit nádrž vozidla pohonnými látkami.",
+      "Podrobit vozidlo kontrole hmotnosti vozidla nebo jízdní soupravy.",
+      "Přibrat jako spolujezdce osobu, které ujelo vozidlo hromadné dopravy osob."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060219",
+    "otazka": "Mimo obec se na pozemní komunikaci o dvou nebo více jízdních pruzích vyznačených na vozovce v jednom směru jízdy jezdí:",
+    "obrazek": null,
+    "moznosti": [
+      "Zpravidla v levém jízdním pruhu.",
+      "V pravém jízdním pruhu. V ostatních jízdních pruzích se smí jet, jestliže je to nutné k objíždění, předjíždění, otáčení nebo odbočování.",
+      "V kterémkoliv jízdním pruhu bez ohledu na jízdní úkon."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060220",
+    "otazka": "Řidič musí dát přednost v jízdě vozidlům jedoucím po pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Při vjíždění z místa ležícího mimo pozemní komunikaci na pozemní komunikaci a při vjíždění z účelové pozemní komunikace, ze stezky pro cyklisty anebo z obytné nebo pěší zóny na jinou pozemní komunikaci.",
+      "Při vjíždění z polní nebo lesní cesty na pozemní komunikaci, jen když vozidla jedoucí po pozemní komunikaci přijíždějí zleva.",
+      "Pouze, když vjíždí z místa ležícího mimo silnici na silnici; při vjíždění z polní nebo lesní cesty, ze stezky pro cyklisty anebo z obytné nebo pěší zóny na jinou silnici platí ustanovení o jízdě křižovatkou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060221",
+    "otazka": "Přejíždět z jednoho jízdního pruhu do druhého smí řidič jen tehdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Když v jízdním pruhu, do kterého přejíždí, nejede žádné motorové vozidlo.",
+      "Neohrozí-li a neomezí-li řidiče jedoucího v jízdním pruhu, do kterého přejíždí; přitom musí dávat znamení o změně směru jízdy.",
+      "Má-li řádně očištěná zpětná zrcátka."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060222",
+    "otazka": "Podél nástupního nebo ochranného ostrůvku se jezdí:",
+    "obrazek": null,
+    "moznosti": [
+      "Zásadně vlevo.",
+      "Výlučně vpravo; vlevo za žádných okolností.",
+      "Vpravo; vlevo se smí jet tehdy, brání-li jízdě vpravo překážka nebo jestliže je to bezpečnější s ohledem na rozměry vozidla nebo nákladu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060223",
+    "otazka": "Při odbočování na křižovatce nebo na místo ležící mimo pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Dává řidič znamení o změně směru jízdy jen při odbočování vlevo.",
+      "Nemusí řidič dávat znamení o změně směru jízdy.",
+      "Musí řidič dávat znamení o změně směru jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060224",
+    "otazka": "Před odbočováním vlevo se musí řidič zařadit:",
+    "obrazek": null,
+    "moznosti": [
+      "Do levého jízdního pruhu ve vzdálenosti 500 m před místem, kde hodlá odbočovat.",
+      "Vždy do středu vozovky bez ohledu na protijedoucí vozidla.",
+      "Co nejdále vlevo v části vozovky určené pro jeho směr jízdy s ohledem na rozměry vozidla nebo nákladu a šířku vozovky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060226",
+    "otazka": "Na pozemní komunikaci se jezdí:",
+    "obrazek": null,
+    "moznosti": [
+      "Výlučně při pravém okraji vozovky, a to za všech okolností.",
+      "Vpravo, a pokud tomu nebrání zvláštní okolnosti, při pravém okraji vozovky, pokud není stanoveno jinak.",
+      "Vpravo ve vzdálenosti nejméně 1 m od okraje vozovky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060227",
+    "otazka": "Na krajnici smí řidič motorového vozidla vjet:",
+    "obrazek": null,
+    "moznosti": [
+      "Kdykoliv to uzná za vhodné, s výjimkou míst označených výstražnou dopravní značkou „Nebezpečná krajnice“.",
+      "Jen při zastavení a stání nebo jestliže je to nutné při objíždění, vyhýbání, odbočování nebo otáčení, přitom musí dbát zvýšené opatrnosti.",
+      "Jen pro účely stání."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060229",
+    "otazka": "Na tramvajový pás v úrovni vozovky se smí v podélném směru vjet:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen při objíždění, předjíždění, odbočování, otáčení, vjíždění na pozemní komunikaci nebo vyžadují-li to zvláštní okolnosti.",
+      "Jen je-li to nutné při couvání.",
+      "Jen při odbočování na místo ležící mimo silnici."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060230",
+    "otazka": "Řidič, který při objíždění vozidla, jež zastavilo nebo stojí, nebo při objíždění překážky provozu na pozemních komunikacích anebo chodce, vybočuje ze směru své jízdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemusí dávat znamení o změně směru jízdy.",
+      "Nesmí ohrozit pouze řidiče jedoucí za ním.",
+      "Nesmí ohrozit ani omezit protijedoucí řidiče a ohrozit ostatní účastníky provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060231",
+    "otazka": "Řidič nesmí předjíždět:",
+    "obrazek": null,
+    "moznosti": [
+      "Pokud před tím nedal zvukové výstražné znamení.",
+      "Pokud nemá před sebe rozhled na vzdálenost 300 m.",
+      "Nemá-li před sebe rozhled na takovou vzdálenost, která je nutná k bezpečnému předjetí."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060232",
+    "otazka": "Při odbočování řidič nesmí:",
+    "obrazek": null,
+    "moznosti": [
+      "Dávat světelná výstražná znamení.",
+      "Omezit řidiče jedoucí za ním.",
+      "Ohrozit řidiče jedoucí za ním a musí dbát zvýšené opatrnosti."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060308",
+    "otazka": "Řidič nesmí připustit, aby počet přepravovaných osob starších 12 let překročil:",
+    "obrazek": null,
+    "moznosti": [
+      "Počet povolených míst určených k přepravě osob.",
+      "Dvojnásobek počtu povolených míst určených k přepravě osob.",
+      "Počet povolených míst určených k přepravě osob, jen pokud jsou vybavena zádržným bezpečnostním systémem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060315",
+    "otazka": "Pokud přijíždíte na tuto křižovatku, musíte dát přednost:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0434.jpg",
+    "moznosti": [
+      "Všem vozidlům a jezdcům na zvířatech přibližujícím se ke křižovatce po hlavní pozemní komunikaci. Organizovaná skupina chodců a průvodci hnaných zvířat se zvířaty musí dát přednost vám.",
+      "Všem vozidlům, jezdcům na zvířatech, organizované skupině chodců a průvodcům hnaných zvířat se zvířaty přibližujícím se ke křižovatce po hlavní pozemní komunikaci.",
+      "Všem vozidlům, jezdcům na zvířatech a organizované skupině chodců přibližujícím se ke křižovatce po hlavní pozemní komunikaci. Průvodci hnaných zvířat se zvířaty musí dát přednost vám."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060316",
+    "otazka": "Mám, jako řidič automobilu z výhledu, za povinnost dát vozidlu přijíždějícímu zprava přednost v jízdě?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0181.jpg",
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060318",
+    "otazka": "Řidič smí oddělený tramvajový pás přejíždět jen příčně. Může přitom omezit v jízdě tramvaj?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0390.jpg",
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060320",
+    "otazka": "Pokud přijíždíte na tuto křižovatku, musíte dát přednost v jízdě všem vozidlům přijíždějícím:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0434.jpg",
+    "moznosti": [
+      "Jen zleva.",
+      "Jen zprava.",
+      "Zprava i zleva."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060322",
+    "otazka": "Světelný signál se současně svítícím červeným a žlutým světlem „Pozor“, znamená pro řidiče povinnost:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0391.jpg",
+    "moznosti": [
+      "Zastavit vozidlo.",
+      "Pokračovat v jízdě.",
+      "Připravit se k jízdě."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060323",
+    "otazka": "Lze místo, kde se spojují vyobrazené pozemní komunikace, považovat za křižovatku?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0348.jpg",
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060326",
+    "otazka": "Mimo obec se na pozemní komunikaci o dvou nebo více jízdních pruzích vyznačených na vozovce v jednom směru jízdy jezdí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0416.jpg",
+    "moznosti": [
+      "V pravém jízdním pruhu; v ostatních jízdních pruzích mohou jet pouze vozidla, jejichž celková hmotnost nepřevyšuje 3 500 kg.",
+      "V kterémkoli jízdním pruhu; je-li to však nutné, musí být pro rychleji jedoucí vozidla uvolněn levý krajní jízdní pruh.",
+      "V pravém jízdním pruhu; v ostatních jízdních pruzích se smí jet, jestliže je to nutné k objíždění, předjíždění, otáčení nebo odbočování."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060327",
+    "otazka": "Je cyklista řidičem se všemi právy a povinnostmi účastníka provozu na pozemních komunikacích?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0476.jpg",
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060328",
+    "otazka": "Na pozemní komunikaci s jednosměrným provozem smí řidič couvat:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0450.jpg",
+    "moznosti": [
+      "Pouze, užije-li při couvání zvukové výstražné znamení.",
+      "Pouze tehdy, jestliže je to nezbytně nutné, například k vyjetí z řady stojících vozidel.",
+      "Kdykoli, vždy však jen s pomocí způsobilé a náležitě poučené osoby."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060329",
+    "otazka": "Přípojné vozidlo, které jede v prostředním jízdním pruhu, má nejvyšší povolenou rychlost 75 km/h. Může toto vozidlo jet po dálnici?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0425.jpg",
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060335",
+    "otazka": "Chodec smí vstoupit na přechod pro chodce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0474.jpg",
+    "moznosti": [
+      "Vždy, protože má absolutní přednost před vozidly.",
+      "Jen pokud dá znamení rukou, že bude přecházet; pak může řidiče donutit i k náhlé změně rychlosti a směru jízdy.",
+      "Jen pokud se neblíží vozidlo, před které by bezprostředně vstoupil."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060337",
+    "otazka": "Smíte jako řidič vozidla z výhledu v dané situaci vjet na tento železniční přejezd?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0102.jpg",
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060342",
+    "otazka": "Je jezdec na koni, který se pohybuje po pozemní komunikaci, řidičem a platí pro něj povinnosti a práva účastníků provozu na pozemních komunikacích?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060343",
+    "otazka": "Během jízdy může kouřit:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidič nákladního vozidla.",
+      "Řidič autobusu.",
+      "Řidič motocyklu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060344",
+    "otazka": "Řidič motorového vozidla, jehož celková hmotnost nepřevyšuje 3.500 kg, smí v obci zastavit a stát:",
+    "obrazek": null,
+    "moznosti": [
+      "I kolmo, popřípadě šikmo k okraji pozemní komunikace nebo zastavit v druhé řadě, pokud tím není ohrožena bezpečnost a plynulost provozu.",
+      "I kolmo, popřípadě šikmo k okraji pozemní komunikace; ve druhé řadě smí zastavit pouze řidič vozidla taxislužby.",
+      "Pouze vpravo ve směru jízdy rovnoběžně s okrajem pozemní komunikace a co nejblíže k němu; řidič vozidla taxislužby smí zastavit i v druhé řadě."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060347",
+    "otazka": "Do skupiny tvořené vozidly s právem přednostní jízdy a vozidly jimi doprovázenými se řidiči ostatních vozidel:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmějí zařazovat.",
+      "Smějí zařazovat jen za nesnížené viditelnosti.",
+      "Smějí zařazovat jen se zvýšenou opatrností."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060349",
+    "otazka": "Místní úprava provozu na pozemních komunikacích:",
+    "obrazek": null,
+    "moznosti": [
+      "Je nadřazená obecné úpravě provozu na pozemních komunikacích.",
+      "Neplatí za snížené viditelnosti.",
+      "Je úprava silničního provozu podřazená obecné úpravě silničního provozu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060350",
+    "otazka": "Pěší zóna je:",
+    "obrazek": null,
+    "moznosti": [
+      "Oblast, jejíž začátek je označen dopravní značkou „Pěší zóna“ a konec je označen dopravní značkou „Konec pěší zóny“.",
+      "Oblast, jejíž začátek je označen dopravní značkou „Stezka pro chodce“ a konec je označen dopravní značkou „Konec stezky pro chodce“.",
+      "Každý chodník, oddělený od vozovky výškově nebo jinak, který jiní účastníci provozu než chodci nesmí použít."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060351",
+    "otazka": "V obytné a pěší zóně smí řidič jet rychlostí nejvýše:",
+    "obrazek": null,
+    "moznosti": [
+      "40 km/h.",
+      "20 km/h.",
+      "30 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060352",
+    "otazka": "Na pozemní komunikaci o třech jízdních pruzích vyznačených na vozovce v jednom směru jízdy smí řidič přejíždět z levého jízdního pruhu do středního jízdního pruhu jen:",
+    "obrazek": null,
+    "moznosti": [
+      "Tehdy, neohrozí-li řidiče přejíždějícího do středního jízdního pruhu z pravého jízdního pruhu.",
+      "Pokud má jistotu, že neomezí řidiče vozidel jedoucích za ním.",
+      "Tehdy, neomezí-li řidiče přejíždějícího do středního jízdního pruhu z pravého jízdního pruhu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060353",
+    "otazka": "Provozovatel vozidla nesmí přikázat nebo svěřit samostatné řízení vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Osobě, o které nezná údaje potřebné k určení její totožnosti.",
+      "Osobě, u které nezná její věk.",
+      "Osobě, která je držitelem jen cestovního pasu a odpovídajícího řidičského oprávnění."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060354",
+    "otazka": "Řidič při vjíždění z účelové pozemní komunikace na jinou pozemní komunikaci:",
+    "obrazek": null,
+    "moznosti": [
+      "Dává přednost v jízdě vozidlům přijíždějícím zleva.",
+      "Musí dát přednost v jízdě vozidlům nebo jezdcům na zvířatech nebo organizovanému útvaru chodců nebo průvodcům hnaných zvířat se zvířaty.",
+      "Nedává přednost v jízdě."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060355",
+    "otazka": "Pokud hustota provozu na dálnici a rychlostní silnici o dvou jízdních pruzích v jednom směru jízdy vyvolá vznik kolony stojících vozidel, jsou řidiči souběžně jedoucích vozidel povinni:",
+    "obrazek": null,
+    "moznosti": [
+      "Snížit vzájemný boční odstup.",
+      "Rozsvítit stanovené osvětlení vozidla.",
+      "vytvořit mezi jízdními pruhy prostor pro průjezd vozidel s právem přednostní jízdy"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060356",
+    "otazka": "Pokud hustota provozu na silnici pro motorová vozidla o dvou jízdních pruzích v jednom směru jízdy vyvolá vznik kolony stojících vozidel, jsou řidiči souběžně jedoucích vozidel povinni:",
+    "obrazek": null,
+    "moznosti": [
+      "Řadit se průběžně do pravého jízdního pruhu.",
+      "vytvořit mezi jízdními pruhy prostor pro průjezd vozidel s právem přednostní jízdy",
+      "Řadit se průběžně do levého jízdního pruhu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060357",
+    "otazka": "Řidič je povinen podrobit se vyšetření ke zjištění, zda není ovlivněn alkoholem nebo jinou návykovou látkou:",
+    "obrazek": null,
+    "moznosti": [
+      "Na výzvu starosty obce.",
+      "Na výzvu policisty nebo strážníka obecní policie.",
+      "Na výzvu pracovníka dopravního podniku."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060358",
+    "otazka": "Je-li pro zařazování do průběžného jízdního pruhu zřízen připojovací jízdní pruh:",
+    "obrazek": null,
+    "moznosti": [
+      "Je řidič povinen před zařazením do průběžného pruhu zastavit.",
+      "Je řidič povinen před zařazením do průběžného pruhu užít připojovacího pruhu.",
+      "Musí řidič jedoucí v průběžném pruhu snížit rychlost jízdy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060359",
+    "otazka": "Řidič nesmí předjíždět na křižovatce a v těsné blízkosti před ní; tento zákaz neplatí:",
+    "obrazek": null,
+    "moznosti": [
+      "Pokud je vozidlo řádně osvětleno.",
+      "Na hlavní pozemní komunikaci.",
+      "Dává-li řidič řádně a včas znamení o změně směru jízdy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060361",
+    "otazka": "Řidič jízdní soupravy, jejíž celková délka přesahuje 7 m, nesmí předjíždět jiné vozidlo:",
+    "obrazek": null,
+    "moznosti": [
+      "Pokud k jeho předjetí nemá dostatečnou rychlost, takže by omezil v jízdě ostatní vozidla svou výrazně nižší rychlostí jízdy.",
+      "Nejede-li jím řízené vozidlo rychlostí alespoň 50 km/h.",
+      "Pokud je výrazně snížena viditelnost."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060362",
+    "otazka": "Zastavovat vozidlo je oprávněn:",
+    "obrazek": null,
+    "moznosti": [
+      "Ten, kdo je k tomu pověřen policistou.",
+      "Policista ve stejnokroji.",
+      "Kdokoliv."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060365",
+    "otazka": "K měření rychlosti vozidel je oprávněna:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen obecní policie.",
+      "Jen policie.",
+      "Policie a obecní policie."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060368",
+    "otazka": "Řidič motorového vozidla je povinen:",
+    "obrazek": null,
+    "moznosti": [
+      "Být připoután na sedadle bezpečnostním pásem, pokud jím je sedadlo povinně vybaveno podle zvláštního právního předpisu, jen za jízdy mimo obec.",
+      "Se za jízdy připoutat bezpečnostními pásy.",
+      "Být za jízdy připoután na sedadle bezpečnostním pásem, pokud jím je sedadlo povinně vybaveno podle zvláštního právního předpisu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060369",
+    "otazka": "Dojde-li při jízdě vozidla v tunelu k poruše vozidla, pro kterou se toto vozidlo stalo nepojízdným, nebo dojde-li k dopravní nehodě, je řidič povinen neprodleně:",
+    "obrazek": null,
+    "moznosti": [
+      "Vypnout osvětlení vozidla.",
+      "Opustit tunel.",
+      "Vypnout motor, a je-li k vytápění vozidla použito nezávislého topení, vypnout i toto topení."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060371",
+    "otazka": "Řidič nesmí snížit náhle rychlost jízdy nebo náhle zastavit:",
+    "obrazek": null,
+    "moznosti": [
+      "S výjimkou případu, kdy je zastavován pracovníkem dráhy.",
+      "S výjimkou případu zdravotní nevolnosti.",
+      "Pokud to nevyžaduje bezpečnost provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060373",
+    "otazka": "Svislé zákazové dopravní značky:",
+    "obrazek": null,
+    "moznosti": [
+      "Upozorňují na místa, kde řidiči hrozí nebezpečí.",
+      "Informují řidiče motorových vozidel o omezeních na silnici.",
+      "Ukládají účastníku provozu na pozemních komunikacích zákazy nebo omezení."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060374",
+    "otazka": "Vodorovné dopravní značky jsou vyznačeny:",
+    "obrazek": null,
+    "moznosti": [
+      "Pomocí příslušných dopravních zařízení.",
+      "Na tabulích; přechodné změny provozu jsou provedeny červenou barvou.",
+      "Barvou nebo jiným srozumitelným způsobem; přechodná změna místní úpravy provozu na pozemních komunikacích je vyznačena žlutou nebo oranžovou barvou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060375",
+    "otazka": "Na dálnici a na silnici pro motorová vozidla je vlečení motorového vozidla dovoleno jen tehdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Je-li možno při jízdě po rovině dosáhnout rychlosti nejméně 60 km/h.",
+      "Je-li vlečeno po krajnici (v odstavném pruhu).",
+      "Jestliže je to nutné k jeho odstranění z dálnice nebo ze silnice pro motorová vozidla; vozidlo smí být vlečeno jen k nejbližšímu výjezdu, kde musí dálnici nebo silnici pro motorová vozidla opustit."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060376",
+    "otazka": "Na dálnici je vlečení motorového vozidla dovoleno jen tehdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Je-li možno při jízdě po rovině dosáhnout rychlosti nejméně 65 km/h.",
+      "Jestliže je to nutné k jeho odstranění z dálnice nebo ze silnice pro motorová vozidla; vozidlo smí být vlečeno jen k nejbližšímu výjezdu, kde musí dálnici nebo silnici pro motorová vozidla opustit.",
+      "Je-li vlečeno po krajnici nebo v odstavném pruhu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060377",
+    "otazka": "Na silnici pro motorová vozidla je vlečení motorového vozidla dovoleno jen tehdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Je-li možno při jízdě po rovině dosáhnout rychlosti nejméně 80 km/h.",
+      "Jestliže je to nutné k jeho odstranění z dálnice nebo ze silnice pro motorová vozidla; vozidlo smí být vlečeno jen k nejbližšímu výjezdu, kde musí dálnici nebo silnici pro motorová vozidla opustit.",
+      "Jestliže maximální přípustná hmotnost vlečeného vozidla nepřevyšuje 3.500 kg."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060378",
+    "otazka": "Řidič smí na dálnici a na silnici pro motorová vozidla vjíždět a z nich vyjíždět:",
+    "obrazek": null,
+    "moznosti": [
+      "Jen na místech k tomu určených.",
+      "Z kteréhokoliv místa nebo pozemku přiléhajícího k dálnici nebo silnici pro motorová vozidla.",
+      "Kdekoliv."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060380",
+    "otazka": "Zastavit s vozidlem ve druhé řadě můžete jen tehdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Nelze-li s vozidlem ve vzdálenosti menší než 100 m zastavit při okraji pozemní komunikace.",
+      "Přepravujete-li osobu těžce postiženou nebo těžce pohybově postiženou.",
+      "Zůstane-li volný alespoň jeden jízdní pruh o šířce nejméně 3 m."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060381",
+    "otazka": "Silnice pro motorová vozidla je:",
+    "obrazek": null,
+    "moznosti": [
+      "Každá pozemní komunikace o nejméně dvou jízdních pruzích v jednom směru jízdy, pokud vede mimo obec.",
+      "Pozemní komunikace označená dopravní značkou „Silnice pro motorová vozidla“.",
+      "Každá silnice I. třídy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060385",
+    "otazka": "Předjíždí se:",
+    "obrazek": null,
+    "moznosti": [
+      "Vlevo; vpravo se předjíždí vozidlo, které mění směr jízdy vlevo a není-li již pochybnosti o dalším směru jeho jízdy.",
+      "Vpravo nebo vlevo, podle toho, kde je v dané situaci více prostoru pro bezpečné předjetí.",
+      "Vlevo, a to bez výjimky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060386",
+    "otazka": "Nemotorové vozidlo je:",
+    "obrazek": null,
+    "moznosti": [
+      "Přípojné vozidlo a vozidlo pohybující se pomocí lidské nebo zvířecí síly, například jízdní kolo, ruční vozík nebo potahové vozidlo.",
+      "Každé vozidlo poháněné jiným než spalovacím motorem, například elektromobil.",
+      "Kolejové vozidlo, které se účastní provozu na pozemních komunikacích."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060392",
+    "otazka": "Připojovací pruh je:",
+    "obrazek": null,
+    "moznosti": [
+      "Jízdní pruh vyhrazený jen pro vozidla hromadné dopravy osob.",
+      "Jízdní pruh určený pro zařazování vozidel do průběžného pruhu.",
+      "Jízdní pruh určený pro pomalá vozidla, která nemohou v daném úseku dosáhnout okamžité rychlosti nejméně 60 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060393",
+    "otazka": "Jízdní pruh, do kterého hodlá přejet řidič vozidla z výhledu, se nazývá:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0233.jpg",
+    "moznosti": [
+      "Průběžný pruh.",
+      "Připojovací pruh.",
+      "Odbočovací pruh."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060394",
+    "otazka": "Je jezdec na koloběžce, který se pohybuje po pozemní komunikaci, řidičem?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060396",
+    "otazka": "Dávat světelné výstražné znamení krátkým přerušovaným rozsvícením dálkových světel nebo přepínáním potkávacích a dálkových světel k upozornění řidiče předjížděného vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Je dovoleno pouze na dálnici a silnici pro motorová vozidla.",
+      "Je zakázáno.",
+      "Je dovoleno."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060397",
+    "otazka": "Dávat zvukové výstražné znamení k upozornění řidiče předjížděného vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Je dovoleno pouze mimo obec.",
+      "Je dovoleno.",
+      "Je zakázáno."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060398",
+    "otazka": "Je-li pro zařazování do průběžného jízdního pruhu zřízen připojovací pruh:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0014.jpg",
+    "moznosti": [
+      "Je řidič povinen před zařazením do průběžného jízdního pruhu dosáhnout rychlosti nejméně 80 km/h.",
+      "Je řidič povinen před zařazením do průběžného pruhu užít připojovacího pruhu.",
+      "Nemusí ho řidič před zařazením do průběžného pruhu užít, pokud přejetím do průběžného pruhu neomezí ani neohrozí ostatní řidiče."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060400",
+    "otazka": "Vyžadují-li provozní nebo jiné závažné důvody, aby osoby při vystupování z vozidla taxislužby vstoupily do vozovky:",
+    "obrazek": null,
+    "moznosti": [
+      "Je řidič vozidla taxislužby povinen umístit za vozidlo přenosný výstražný trojúhelník.",
+      "Je řidič vozidla taxislužby oprávněn zastavovat ostatní vozidla.",
+      "Je řidič vozidla taxislužby povinen oznámit tuto skutečnost policii."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060401",
+    "otazka": "Vyžadují-li provozní nebo jiné závažné důvody, aby osoby při vystupování z autobusu mimo zastávku vstoupily do vozovky:",
+    "obrazek": null,
+    "moznosti": [
+      "Je každý cestující z autobusu starší 18 let oprávněn zastavovat ostatní vozidla.",
+      "Je dopravce oprávněn zastavovat ostatní vozidla.",
+      "Je dopravce povinen umístit za stojící autobus přenosný výstražný trojúhelník."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060408",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0231.jpg",
+    "moznosti": [
+      "Nesmí pokračovat v jízdě křižovatkou. Má za povinnost zastavit vozidlo před příčnou čárou souvislou.",
+      "Může pokračovat v jízdě křižovatkou; je v dostatečné vzdálenosti od křižovatky a na světelném signalizačním zařízení již svítí signál „Připravit k jízdě“.",
+      "Může pokračovat v jízdě křižovatkou, dává znamení o změně směru včas a v dostatečné míře a je na hlavní pozemní komunikaci."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060413",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0029.jpg",
+    "moznosti": [
+      "Nemusí dát přednost v jízdě červenému vozidlu jedoucímu zprava, protože toto vozidlo se pohybuje v přípojovacím pruhu.",
+      "Musí snížením rychlosti jízdy umožnit plynulou jízdu červenému vozidlu jedoucímu zprava.",
+      "Musí dát přednost v jízdě červenému vozidlu, protože toto vozidlo přijíždí zprava."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060418",
+    "otazka": "Při tomto pokynu policisty je řidič:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0401.jpg",
+    "moznosti": [
+      "Povinen zastavit vozidlo, ať přijíždí z kteréhokoliv směru jízdy; odbočit vlevo je povolené.",
+      "Povinen připravit se k jízdě, pokud jede ze směru, pro který byl provoz předtím zastaven.",
+      "Oprávněn pokračovat v jízdě jen přímým směrem, bez možnosti odbočení."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060465",
+    "otazka": "Na signál se zeleným plným kruhovým světlem „Volno“:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0297.jpg",
+    "moznosti": [
+      "Smíte odbočit vpravo, přičemž musíte dát přednost chodcům přecházejícím ve volném směru po přechodu pro chodce.",
+      "Nesmíte odbočit vpravo, neboť uvedený signál platí pouze pro jízdu v přímém směru a odbočení neumožňuje.",
+      "Smíte odbočit vpravo, přičemž chodci přecházející ve volném směru po přechodu pro chodce Vám musí dát přednost."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060467",
+    "otazka": "Vozidlem se pro účely provozu na pozemních komunikacích rozumí:",
+    "obrazek": null,
+    "moznosti": [
+      "Pouze nekolejové vozidlo poháněné vlastní pohonnou jednotkou.",
+      "Každé motorové vozidlo, nemotorové vozidlo i tramvaj.",
+      "Pouze autobus, trolejbus nebo tramvaj."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060468",
+    "otazka": "Podél tramvaje se jezdí:",
+    "obrazek": null,
+    "moznosti": [
+      "Vlevo.",
+      "Vpravo; vlevo se smí jet pouze tehdy, když v protisměru nejede žádná tramvaj nebo jiné vozidlo.",
+      "Vpravo, pokud není dopravní značkou \"Objíždění tramvaje\" povolena jízda vlevo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060469",
+    "otazka": "Řidiči je na dálnici a na silnici pro motorová vozidla zakázáno:",
+    "obrazek": null,
+    "moznosti": [
+      "Couvání; vjíždění na střední dělicí pás a otáčení je dovoleno jen v místech, kde je tento pás přerušen.",
+      "Otáčení; couvání a vjíždění na střední dělicí pás je dovoleno jen v místech, kde tento pás není přerušen.",
+      "Otáčení, couvání a vjíždění na střední dělicí pás včetně míst, kde je pás přerušen."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060470",
+    "otazka": "Řidič nesmí zastavit a stát:",
+    "obrazek": null,
+    "moznosti": [
+      "Na křižovatce a ve vzdálenosti kratší než 5 m před hranicí křižovatky a 5 m za ní; tento zákaz neplatí v obci na křižovatce tvaru „T“ na protější straně vyúsťující pozemní komunikace.",
+      "V obci na křižovatce tvaru „T“ na protější straně vyúsťující pozemní komunikace.",
+      "Na křižovatce a ve vzdálenosti kratší než 3 m před hranicí křižovatky a 3 m za ní."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060471",
+    "otazka": "U vlečeného vozidla musí být za snížené viditelnosti rozsvícena:",
+    "obrazek": null,
+    "moznosti": [
+      "Obrysová nebo potkávací světla a při poruše těchto světel musí být vozidlo na straně ke středu vozovky osvětleno vpředu červeným přerušovaným světlem.",
+      "Obrysová nebo potkávací světla a při poruše těchto světel musí být vlečené vozidlo na straně ke středu vozovky osvětleno vpředu neoslňujícím bílým světlem a vzadu červeným světlem.",
+      "Obrysová světla spolu se zapnutým výstražným světelným zařízením; při poruše obrysových světel lze užít výstražné světelné zařízení samostatně."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060481",
+    "otazka": "Řidič vozidla, které je vybaveno zvláštním výstražným světlem oranžové barvy, smí tohoto světla užívat:",
+    "obrazek": null,
+    "moznosti": [
+      "Pokud by jeho jízdou nebo pracovní činností mohla být ohrožena bezpečnost provozu na pozemních komunikacích.",
+      "Je-li nutné upozornit ostatní účastníky provozu na hrozící nebezpečí, například při nutnosti náhle snížit rychlost jízdy nebo zastavit vozidlo.",
+      "Pouze za snížené viditelnosti, například za deště, tmy nebo sněžení, pokud by jeho jízdou byla ohrožena bezpečnost provozu na pozemních komunikacích."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08080008",
+    "otazka": "Světelný ukazatel nad pozemní komunikací ukazuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0444.jpg",
+    "moznosti": [
+      "Nejvyšší dovolenou rychlost jízdy pro daný jízdní pruh.",
+      "Doporučenou rychlost jízdy pro daný jízdní pruh.",
+      "Nejvyšší okamžitou rychlost jízdy v daném jízdním pruhu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08080020",
+    "otazka": "Řidiči motorových vozidel mohou vjet do vyznačeného středního pruhu pozemní komunikace:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0445.jpg",
+    "moznosti": [
+      "Při předjíždění pomaleji jedoucích motorových vozidel, ale musí dávat včas znamení o změně směru jízdy.",
+      "Kdykoliv, pokud tramvaj neomezí v jízdě nebo jej užít k předjíždění tramvaje, která stojí v zastávce.",
+      "Pouze tehdy, pokud je to nutné k objíždění, odbočování nebo vjíždění na pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08080032",
+    "otazka": "Krajnice je část povrchu pozemní komunikace:",
+    "obrazek": null,
+    "moznosti": [
+      "Která leží mezi okrajem přilehlého jízdního pruhu a hranou koruny pozemní komunikace.",
+      "Kde končí pozemní komunikace označená vodorovným dopravním značením (podélnou čarou souvislou).",
+      "Kterou se rozumí nezpevněná část vozovky, která není součástí pozemní komunikace."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08080036",
+    "otazka": "Světelný ukazatel nad pozemní komunikací ukazuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0447.jpg",
+    "moznosti": [
+      "Nejnižší dovolenou rychlost jízdy v daném úseku.",
+      "Okamžitou rychlost jízdy vozidel, která projíždějí daným úsekem.",
+      "Nejvyšší dovolenou rychlost jízdy v daném úseku."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08100005",
+    "otazka": "Během jízdy motorovým vozidlem není ze zákona zakázáno kouřit:",
+    "obrazek": null,
+    "moznosti": [
+      "Řidiči motocyklu, mopedu nebo jízdním kole.",
+      "Řidiči vozidla hromadné dopravy osob.",
+      "Řidiči osobního motorového vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "09010002",
+    "otazka": "Dojde-li při dopravní nehodě ke hmotné škodě na některém ze zúčastněných vozidel včetně přepravovaných věcí nižší než 100 000 Kč, jsou účastníci dopravní nehody povinni ohlásit tuto nehodu policistovi:",
+    "obrazek": null,
+    "moznosti": [
+      "Jestliže při ní vznikla škoda na vozidle hromadné přepravy osob.",
+      "Pokud o to požádá svědek dopravní nehody.",
+      "Jestliže při ní došlo k poškození životního prostředí."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "09010003",
+    "otazka": "Dojde-li při dopravní nehodě ke hmotné škodě na některém ze zúčastněných vozidel včetně přepravovaných věcí nižší než 100 000 Kč, jsou účastníci dopravní nehody povinni ohlásit tuto nehodu policistovi:",
+    "obrazek": null,
+    "moznosti": [
+      "Jestliže nemohou sami bez vynaložení nepřiměřeného úsilí zabezpečit obnovení plynulosti provozu na pozemních komunikacích.",
+      "Jestliže nehoda vznikla v důsledku nedání přednosti v jízdě.",
+      "Jestliže je nutno některé ze zúčastněných vozidel odstranit pomocí odtahové služby."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "09010004",
+    "otazka": "Účastníci dopravní nehody jsou povinni neprodleně ohlásit policistovi:",
+    "obrazek": null,
+    "moznosti": [
+      "Každou nehodu bez ohledu na výši hmotné škody.",
+      "Nehodu, při níž došlo k usmrcení nebo zranění osoby nebo k hmotné škodě převyšující zřejmě na některém ze zúčastněných vozidel včetně přepravovaných věcí částku 100 000 Kč.",
+      "Nehodu, při níž došlo k usmrcení nebo zranění osoby; nejsou povinni ohlásit nehodu, při níž došlo jen k hmotné škodě bez ohledu na její výši."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "09010005",
+    "otazka": "Účastníci dopravní nehody jsou povinni neprodleně ohlásit tuto událost policistovi, dojde-li při nehodě:",
+    "obrazek": null,
+    "moznosti": [
+      "K hmotné škodě převyšující zřejmě na některém ze zúčastněných vozidel včetně přepravovaných věcí částku 30 000 Kč.",
+      "K hmotné škodě převyšující zřejmě na některém ze zúčastněných vozidel včetně přepravovaných věcí částku 50 000 Kč.",
+      "K hmotné škodě převyšující zřejmě na některém ze zúčastněných vozidel včetně přepravovaných věcí částku 100 000 Kč."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "09010006",
+    "otazka": "Dojde-li při dopravní nehodě k poškození obecně prospěšného zařízení, jsou účastníci dopravní nehody:",
+    "obrazek": null,
+    "moznosti": [
+      "Povinni neprodleně ohlásit tuto událost Policii České republiky, pouze pokud výše způsobené škody přesahuje částku 50 000 Kč.",
+      "Povinni neprodleně ohlásit tuto událost Policii České republiky, pouze pokud výše způsobené škody přesahuje částku 100 000 Kč.",
+      "Povinni vždy neprodleně ohlásit tuto událost Policii České republiky, bez ohledu na výši způsobené škody."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "09010007",
+    "otazka": "Účastníci dopravní nehody, při které došlo ke hmotné škodě na majetku třetí osoby, s výjimkou škody na vozidle, jehož řidič má účast na dopravní nehodě nebo škody na věci přepravované v tomto vozidle:",
+    "obrazek": null,
+    "moznosti": [
+      "Nejsou povinni ohlásit tuto dopravní nehodu policistovi, jestliže se dohodnou na míře účasti na způsobené škodě a ohlásí nehodu pojišťovně.",
+      "Jsou povinni ohlásit tuto dopravní nehodu policistovi pouze v případě, že je tato škoda vyšší než 100 000 Kč.",
+      "Jsou povinni vždy ohlásit tuto dopravní nehodu policistovi."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "09010008",
+    "otazka": "Dojde-li při dopravní nehodě ke hmotné škodě pouze na vozidle, jehož řidič měl účast na dopravní nehodě nebo ke hmotné škodě na věci přepravované v tomto vozidle nepřevyšující 100 000 Kč:",
+    "obrazek": null,
+    "moznosti": [
+      "Jsou účastnící dopravní nehody povinni neprodleně ohlásit tuto nehodu policistovi.",
+      "Nesmí účastnící dopravní nehody tuto ohlásit policistovi.",
+      "Nejsou účastnící dopravní nehody povinni ohlásit tuto nehodu policistovi."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10040013",
+    "otazka": "Řidič nesmí předjíždět:",
+    "obrazek": null,
+    "moznosti": [
+      "nemá-li před sebe rozhled na takovou vzdálenost, která je nutná k bezpečnému předjetí.",
+      "nemá-li před sebe rozhled na vzdálenost nutnou k bezpečnému předjetí; to neplatí na jednosměrné pozemní komunikaci a při předjíždění cyklistů.",
+      "v noci."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10040019",
+    "otazka": "V dané situaci, mohou účastníci silničního provozu odbočovat?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/10040019.jpg",
+    "moznosti": [
+      "vpravo i vlevo, dodrží-li ustanovení o odbočování.",
+      "pouze vpravo, dodrží-li ustanovení o odbočování.",
+      "pouze vlevo, dodrží-li ustanovení o odbočování."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10040020",
+    "otazka": "Tento pokyn policisty znamená:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/10040020.jpg",
+    "moznosti": [
+      "\"Pozor!\"",
+      "\"Volno\"",
+      "\"Stůj!\""
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10040026",
+    "otazka": "Při řízení křižovatky policistou mohou pokračovat v jízdě vozidla:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/10040026.jpg",
+    "moznosti": [
+      "ke kterým stojí policista bokem.",
+      "ke kterým stojí policista čelem.",
+      "ke kterým stojí policista zády."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10040028",
+    "otazka": "Podél nástupního ostrůvku nebo ochranného ostrůvku se jezdí:",
+    "obrazek": null,
+    "moznosti": [
+      "vpravo; vlevo se smí jet jen při předjíždění nebo odbočování vlevo.",
+      "vpravo; vlevo se smí jet jen tehdy, brání-li jízdě vpravo překážka nebo jestliže je to bezpečnější s ohledem na rozměry vozidla nebo nákladu.",
+      "vpravo i vlevo, pokud je nástupní ostrůvek nebo ochranný ostrůvek ve stejné úrovni s vozovkou."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10040029",
+    "otazka": "Přejíždět z jednoho jízdního pruhu do druhého smí řidič jen tehdy:",
+    "obrazek": null,
+    "moznosti": [
+      "neohrozí-li a neomezí-li řidiče jedoucího v jízdním pruhu, do kterého přejíždí; znamení o změně směru nedává.",
+      "neohrozí-li řidiče jedoucího v jízdním pruhu, do kterého přejíždí; znamení o změně směru nedává.",
+      "neohrozí-li a neomezí-li řidiče jedoucího v jízdním pruhu, do kterého přejíždí; přitom musí dávat znamení o změně směru jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060001",
+    "otazka": "\"Řidič\" je:",
+    "obrazek": null,
+    "moznosti": [
+      "pouze ten, kdo řídí motorové vozidlo.",
+      "ten, kdo řídí motorové nebo nemotorové vozidlo anebo tramvaj.",
+      "ten, kdo řídí motorové nebo nemotorové vozidlo, ne však tramvaj."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060002",
+    "otazka": "\"Chodec\":",
+    "obrazek": null,
+    "moznosti": [
+      "Je výhradně kráčející osoba.",
+      "Není osoba, která se pohybuje na lyžích, kolečkových bruslích nebo obdobném sportovním vybavení.",
+      "Je i osoba, která se pohybuje na kolečkových bruslích nebo obdobném sportovním vybavení."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060007",
+    "otazka": "\"Zastavit\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "uvést vozidlo do klidu na dobu nutnou k vyřízení osobních nebo pracovních záležitostí řidiče nebo přepravovaných osob.",
+      "uvést vozidlo do klidu na dobu nezbytně nutnou k neprodlenému nastoupení nebo vystoupení přepravovaných osob anebo k neprodlenému naložení nebo složení nákladu.",
+      "uvést vozidlo do klidu před světelným signálem nebo železničním přejezdem."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060008",
+    "otazka": "\"Zastavit\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "uvést vozidlo do klidu na dobu nezbytně nutnou k neprodlenému nastoupení nebo vystoupení přepravovaných osob anebo k neprodlenému naložení nebo složení nákladu.",
+      "uvést vozidlo do klidu na dobu nepřesahující 5 minut.",
+      "uvést vozidlo do klidu z důvodu nezávislého na vůli řidiče (před světelnými signály, železničním přejezdem apod.)."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060010",
+    "otazka": "\"Zastavit\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "zastavit vozidlo z důvodu dávání přednosti chodcům na vyznačených přechodech pro chodce nebo vozidlům na křižovatce.",
+      "uvést vozidlo do klidu na dobu nejvýše 10 minut.",
+      "uvést vozidlo do klidu na dobu nezbytně nutnou k neprodlenému nastoupení nebo vystoupení přepravovaných osob anebo k neprodlenému naložení nebo složení nákladu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060011",
+    "otazka": "\"Obec\":",
+    "obrazek": null,
+    "moznosti": [
+      "je území vyznačené v mapě, musí mít název a je označeno dopravní značkou \"Nejvyšší dovolená rychlost\".",
+      "je zastavěné území, jehož začátek a konec je na pozemní komunikaci označen příslušnými dopravními značkami,které se vždy umísťují na účelových komunikacích.",
+      "je zastavěné území, jehož začátek a konec je na pozemní komunikaci označen příslušnými dopravními značkami; na účelových komunikacích se značky neosazují."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060012",
+    "otazka": "\"Zastavit vozidlo\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "uvést vozidlo do klidu nad dobu povolenou pro zastavení.",
+      "uvést vozidlo do klidu pro neprodlené nastoupení nebo vystoupení přepravovaných osob.",
+      "přerušit jízdu z důvodu nezávislého na vůli řidiče."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060013",
+    "otazka": "\"Zastavit vozidlo\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "přerušit jízdu z důvodu nezávislého na vůli řidiče.",
+      "zastavit na dobu delší než 3 minuty.",
+      "přerušit jízdu pro nastoupení a vystoupení přepravovaných osob, složení nebo naložení nákladu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060014",
+    "otazka": "\"Dát přednost v jízdě\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "povinnost řidiče nezahájit jízdu nebo jízdní úkon nebo v nich nepokračovat pouze na křižovatkách rozlišených dopravními značkami.",
+      "povinnost řidiče nezahájit jízdu nebo jízdní úkon nebo v nich nepokračovat, jestliže by řidič, který má přednost v jízdě, musel náhle změnit směr nebo rychlost jízdy.",
+      "povinnost řidiče vždy zastavit vozidlo, jestliže do křižovatky přijíždí po hlavní pozemní komunikaci motorové vozidlo nebo tramvaj; nemotorovým vozidlům přednost v jízdě nedává."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060015",
+    "otazka": "\"Silnice pro motorová vozidla\":",
+    "obrazek": null,
+    "moznosti": [
+      "je každá pozemní komunikace s výjimkou dálnic.",
+      "je pozemní komunikace označená dopravní značkou \"Silnice pro motorová vozidla\".",
+      "je silnice označená dopravní značkou \"Rychlostní komunikace\"."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060016",
+    "otazka": "\"Silnice pro motorová vozidla\":",
+    "obrazek": null,
+    "moznosti": [
+      "je pozemní komunikace označená dopravní značkou \"Nejvyšší dovolená rychlost\".",
+      "je pozemní komunikace označená dopravní značkou \"Silnice pro motorová vozidla\".",
+      "je pozemní komunikace, kterou nemotorová vozidla smějí užívat pouze ve stanovené době."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060017",
+    "otazka": "\"Silnice pro motorová vozidla\":",
+    "obrazek": null,
+    "moznosti": [
+      "je pozemní komunikace označená dopravní značkou \"Silnice pro motorová vozidla\".",
+      "je místní pozemní komunikace označená dopravní značkou \"Dálnice\".",
+      "je účelová pozemní komunikace určená pro rychlou jízdu motorových vozidel."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060018",
+    "otazka": "\"Připojovací pruh\":",
+    "obrazek": null,
+    "moznosti": [
+      "je jízdní pruh připojený pro předjíždění nemotorových vozidel.",
+      "je přídatný jízdní pruh určený pro zařazování vozidel do jízdního proudu průběžného pruhu.",
+      "je přídatný jízdní pruh určený pro vyjíždění z průběžného jízdního pruhu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060019",
+    "otazka": "\"Připojovací pruh\":",
+    "obrazek": null,
+    "moznosti": [
+      "je přídatný jízdní pruh určený pro zařazování vozidel do jízdního proudu průběžného pruhu.",
+      "je přídatný jízdní pruh určený pro bezpečné otáčení vozidel.",
+      "je jízdní pruh, připojený pro zastavení nebo nouzové zastavení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060020",
+    "otazka": "\"Připojovací pruh\":",
+    "obrazek": null,
+    "moznosti": [
+      "je jízdní pruh, připojený mezi pravý a levý jízdní pruh, určený pro předjíždění vozidel na přehledných místech pozemní komunikace.",
+      "je přídatný jízdní pruh určený pro zařazování vozidel do jízdního proudu průběžného pruhu.",
+      "je jízdní pruh, připojený pro bezpečné couvání a otáčení nebo zastavení a stání."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060021",
+    "otazka": "\"Křižovatka\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo, v němž se protínají nebo spojují dvě pozemní komunikace; za křižovatku se nepovažuje místo, které není označeno dopravní značkou \"Křižovatka\".",
+      "je místo, v němž se protínají nebo spojují pozemní komunikace; za křižovatku se považuje i vyústění polní nebo lesní cesty.",
+      "je místo, v němž se pozemní komunikace protínají nebo spojují; za křižovatku se nepovažuje vyústění polní nebo lesní cesty nebo jiné účelové komunikace na jinou pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060022",
+    "otazka": "\"Křižovatka\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo, v němž se protínají nebo spojují nejvýše tři pozemní komunikace; za křižovatku se považuje i vyústění polní nebo lesní cesty.",
+      "je místo, v němž se protínají pozemní komunikace; za křižovatku se nepovažuje místo, kde se pozemní komunikace spojují.",
+      "je místo, v němž se pozemní komunikace protínají nebo spojují; za křižovatku se nepovažuje vyústění polní nebo lesní cesty nebo jiné účelové komunikace na jinou pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060023",
+    "otazka": "\"Křižovatka\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo, v němž se spojují nejvýše dvě pozemní komunikace; za křižovatku se nepovažuje místo, kde se pozemní komunikace protínají.",
+      "je místo, v němž se pozemní komunikace protínají nebo spojují; za křižovatku se nepovažuje kruhový objezd.",
+      "je místo, v němž se pozemní komunikace protínají nebo spojují; za křižovatku se nepovažuje vyústění polní nebo lesní cesty nebo jiné účelové komunikace na jinou pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060024",
+    "otazka": "\"Tramvajový pás\":",
+    "obrazek": null,
+    "moznosti": [
+      "není součástí pozemní komunikace.",
+      "je část pozemní komunikace určená především pro provoz tramvají.",
+      "je část pozemní komunikace vždy zvýšená nad úroveň vozovky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060025",
+    "otazka": "\"Tramvajový pás\":",
+    "obrazek": null,
+    "moznosti": [
+      "je část pozemní komunikace určená pro provoz tramvají; za tramvajový pás se nepovažuje pouze jedna kolej pro oba směry jízdy.",
+      "je součástí pozemní komunikace, která je vždy označena jako hlavní pozemní komunikace.",
+      "je část pozemní komunikace určená především pro provoz tramvají."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060026",
+    "otazka": "\"Obec\":",
+    "obrazek": null,
+    "moznosti": [
+      "je zastavěné území, jehož začátek a konec je na pozemní komunikaci označen příslušnými dopravními značkami; na účelových komunikacích se značky neosazují.",
+      "je zastavěné území, označené dopravní značkou \"Zóna s dopravním omezením\" a dopravní značkou \"Konec zóny s dopravním omezením\".",
+      "je území od první stavby do ukončení obce označené dopravní značkou \"Konec nejvyšší dovolené rychlosti\"."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060027",
+    "otazka": "\"Doklad totožnosti\":",
+    "obrazek": null,
+    "moznosti": [
+      "je pouze občanský průkaz.",
+      "je každý doklad, na kterém je uvedeno jméno, příjmení a trvalý pobyt.",
+      "je doklad, kterým občan České republiky nebo cizinec prokazuje svoji totožnost podle zvláštního právního předpisu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060028",
+    "otazka": "\"Doklad totožnosti\":",
+    "obrazek": null,
+    "moznosti": [
+      "je doklad, kterým občan České republiky nebo cizinec prokazuje svoji totožnost podle zvláštního právního předpisu.",
+      "je pouze občanský průkaz, kterým občan České republiky nebo cizinec prokazuje svoji totožnost.",
+      "je každý doklad, na kterém je fotografie držitele tohoto dokladu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060029",
+    "otazka": "\"Nemotorové vozidlo\" je:",
+    "obrazek": null,
+    "moznosti": [
+      "Přípojné vozidlo a vozidlo pohybující se pomocí lidské nebo zvířecí síly, například jízdní kolo, ruční vozík nebo potahové vozidlo.",
+      "Pouze ruční vozík nebo jízdní kolo.",
+      "Pouze přípojné a potahové vozidlo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060030",
+    "otazka": "\"Přejezd pro cyklisty\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo na pozemní komunikaci určené pro přejíždění cyklistů přes silnici pro motorová vozidla.",
+      "je vždy mimo úroveň vozovky.",
+      "je místo na pozemní komunikaci určené pro přejíždění cyklistů přes pozemní komunikaci vyznačené příslušnou dopravní značkou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060031",
+    "otazka": "\"Řidič\" je:",
+    "obrazek": null,
+    "moznosti": [
+      "ten, kdo řídí pouze motorové vozidlo a trolejbus.",
+      "ten, kdo řídí motorové nebo nemotorové vozidlo anebo tramvaj.",
+      "ten, kdo řídí motorové nebo nemotorové vozidlo, ne však tramvaj nebo trolejbus."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060032",
+    "otazka": "\"Řidič\" je:",
+    "obrazek": null,
+    "moznosti": [
+      "ten, kdo řídí motorové nebo nemotorové vozidlo anebo tramvaj.",
+      "ten, kdo řídí pouze motorové vozidlo a tramvaj.",
+      "pouze ten, kdo řídí motorové vozidlo; za řidiče se nepovažuje ten, kdo řídí nemotorové vozidlo nebo tramvaj."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060033",
+    "otazka": "\"Vozidlo\":",
+    "obrazek": null,
+    "moznosti": [
+      "je motorové vozidlo, nemotorové vozidlo nebo tramvaj.",
+      "je každé vozidlo s výjimkou tramvaje.",
+      "je pouze motorové vozidlo, poháněné vlastní pohonnou jednotkou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060034",
+    "otazka": "\"Nemotorové vozidlo\":",
+    "obrazek": null,
+    "moznosti": [
+      "Je pouze jízdní kolo nebo ruční vozík.",
+      "Je vozidlo pohybující se pomocí lidské nebo zvířecí síly, například jízdní kolo nebo ruční vozík; s výjimkou potahového a přípojného vozidla.",
+      "Je přípojné vozidlo a vozidlo pohybující se pomocí lidské nebo zvířecí síly, například jízdní kolo, ruční vozík nebo potahové vozidlo"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060035",
+    "otazka": "\"Chodec\":",
+    "obrazek": null,
+    "moznosti": [
+      "Není osoba, která se pohybuje na kolečkových bruslích nebo obdobném sportovním vybavení.",
+      "Je i osoba, která vede psa.",
+      "Není osoba, která se pohybuje pomocí ručního nebo motorového vozíku pro invalidy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060036",
+    "otazka": "\"Účastník provozu na pozemních komunikacích\":",
+    "obrazek": null,
+    "moznosti": [
+      "je každý, kdo se přímým způsobem účastní provozu na pozemních komunikacích.",
+      "je každý, kdo se účastní provozu na pozemních komunikacích s výjimkou dětí.",
+      "je pouze řidič motorových vozidel a chodec."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060037",
+    "otazka": "\"Vozka\":",
+    "obrazek": null,
+    "moznosti": [
+      "se nepovažuje za řidiče.",
+      "je řidič, který řídí potahové vozidlo.",
+      "řídí zvláštní vozidlo a nemusí dodržovat některá ustanovení zákona."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060038",
+    "otazka": "\"Motorové vozidlo\":",
+    "obrazek": null,
+    "moznosti": [
+      "je nekolejové vozidlo poháněné vlastní pohonnou jednotkou a trolejbus.",
+      "je vozidlo poháněné vlastní pohonnou jednotkou, tramvaj a trolejbus.",
+      "je pouze vozidlo poháněné vlastním motorem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060039",
+    "otazka": "\"Motorové vozidlo\":",
+    "obrazek": null,
+    "moznosti": [
+      "je vozidlo poháněné vlastní pohonnou jednotkou a tramvaj.",
+      "je nekolejové vozidlo poháněné vlastní pohonnou jednotkou a trolejbus.",
+      "je vozidlo poháněné vlastní pohonnou jednotkou, ne však trolejbus."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060040",
+    "otazka": "\"Jízdní souprava\":",
+    "obrazek": null,
+    "moznosti": [
+      "je souprava složená z jednoho nebo více motorových vozidel a jednoho nebo více přípojných vozidel.",
+      "je souprava více přípojných vozidel.",
+      "je složená z jednoho motorového vozidla s tažným zařízením."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060041",
+    "otazka": "\"Jízdní souprava\":",
+    "obrazek": null,
+    "moznosti": [
+      "musí být složena vždy jen z jednoho motorového vozidla a jednoho přípojného vozidla.",
+      "je souprava složená z jednoho nebo více motorových vozidel a jednoho nebo více přípojných vozidel.",
+      "nemůže být složena z více než jednoho motorového a dvou přípojných vozidel."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060043",
+    "otazka": "\"Stát\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "uvést vozidlo do klidu nad dobu povolenou pro zastavení.",
+      "uvést vozidlo do klidu na dobu neurčitou.",
+      "uvést vozidlo do klidu na dobu více než 30 minut."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060044",
+    "otazka": "\"Stát\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "zastavit na dobu přesahující 10 minut.",
+      "zastavit vozidlo na vyhrazeném parkovišti.",
+      "uvést vozidlo do klidu nad dobu povolenou pro zastavení."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060045",
+    "otazka": "\"Stát\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "zastavit před světelným signálem nebo železničním přejezdem.",
+      "uvést vozidlo do klidu nad dobu povolenou pro zastavení.",
+      "zastavit vozidlo u pravého okraje vozovky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060046",
+    "otazka": "\"Zastavit vozidlo\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "přerušit jízdu z důvodu nezávislého na vůli řidiče.",
+      "přerušit jízdu z důvodů vyvolaných provozem na pozemních komunikacích, maximálně však na dobu 3 minut.",
+      "uvést vozidlo do klidu nad dobu povolenou pro stání."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060047",
+    "otazka": "\"Dálnice\":",
+    "obrazek": null,
+    "moznosti": [
+      "je pozemní komunikace označená dopravní značkou \"Dálnice\" nebo dopravní značkou \"Silnice pro motorová vozidla\".",
+      "je každá pozemní komunikace o třech nebo více jízdních pruzích vyznačených na vozovce v jednom směru jízdy.",
+      "je pozemní komunikace označená dopravní značkou \"Dálnice\"."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060048",
+    "otazka": "\"Dálnice\":",
+    "obrazek": null,
+    "moznosti": [
+      "je pozemní komunikace označená dopravní značkou \"Dálnice\".",
+      "je pozemní komunikace o více než dvou jízdních pruzích vyznačených na vozovce v jednom směru jízdy; je označena dopravní značkou \"Nejvyšší dovolená rychlost\".",
+      "je pozemní komunikace označená dopravní značkou \"Silnice I. třídy\"."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060049",
+    "otazka": "\"Jízdní pruh\" je část vozovky:",
+    "obrazek": null,
+    "moznosti": [
+      "široká nejméně 3,5 m.",
+      "dovolující jízdu vozidel v jednom jízdním proudu za sebou.",
+      "vždy vyznačená vodorovnou dopravní značkou."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060050",
+    "otazka": "\"Krajnice\":",
+    "obrazek": null,
+    "moznosti": [
+      "je část povrchu pozemní komunikace ležící mezi okrajem přilehlého jízdního pruhu a hranou koruny pozemní komunikace, skládá se zpravidla ze zpevněné a nezpevněné části.",
+      "je část povrchu pozemní komunikace, která je vždy označena dopravní značkou \"Nebezpečná krajnice\".",
+      "je část vozovky, na kterou je ve všech případech zakázáno vjíždět."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060051",
+    "otazka": "\"Krajnice\":",
+    "obrazek": null,
+    "moznosti": [
+      "je vždy nezpevněná část vozovky, na kterou je zakázáno vjíždět.",
+      "je část povrchu pozemní komunikace, která je určena pro povolené předjíždění vpravo.",
+      "je část povrchu pozemní komunikace ležící mezi okrajem přilehlého jízdního pruhu a hranou koruny pozemní komunikace, skládá se zpravidla ze zpevněné a nezpevněné části."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060052",
+    "otazka": "\"Krajnice\":",
+    "obrazek": null,
+    "moznosti": [
+      "je část povrchu pozemní komunikace ležící mezi okrajem přilehlého jízdního pruhu a hranou koruny pozemní komunikace, skládá se zpravidla ze zpevněné a nezpevněné části.",
+      "je část povrchu pozemní komunikace určená výhradně pro jízdu nemotorových vozidel.",
+      "je vždy zpevněná část vozovky mezi okrajem přilehlého jízdního pruhu a hranou koruny vozovky, určená pro zastavení, otáčení a předjíždění vpravo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060053",
+    "otazka": "\"Krajnice\":",
+    "obrazek": null,
+    "moznosti": [
+      "je vždy zpevněná část vozovky při pravém okraji pozemní komunikace, na které je zakázána jízda nemotorových vozidel.",
+      "je část povrchu pozemní komunikace při pravém nebo levém okraji jízdního pruhu.",
+      "je část povrchu pozemní komunikace ležící mezi okrajem přilehlého jízdního pruhu a hranou koruny pozemní komunikace, skládá se zpravidla ze zpevněné a nezpevněné části."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060054",
+    "otazka": "\"Průběžný pruh\":",
+    "obrazek": null,
+    "moznosti": [
+      "je střední jízdní pruh tam, kde jsou na vozovce vyznačeny alespoň tři jízdní pruhy v jednom směru jízdy.",
+      "je jízdní pruh probíhající v původním směru (bez odbočení) křižovatkou nebo v místě, kde se mění počet jízdních pruhů.",
+      "je jízdní pruh, který je po ukončení znovu obnoven a vyznačen na vozovce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10060055",
+    "otazka": "\"Průběžný pruh\":",
+    "obrazek": null,
+    "moznosti": [
+      "je jízdní pruh probíhající v původním směru (bez odbočení) křižovatkou nebo v místě, kde se mění počet jízdních pruhů.",
+      "je jízdní pruh probíhající obcí od jejího začátku až do ukončení dopravní značkou \"Konec obce\".",
+      "je jízdní pruh označený svislou dopravní značkou \"Okruh\" nebo \"Změna směru okruhu\"."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060056",
+    "otazka": "\"Železniční přejezd\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo, kde se úrovňově kříží pozemní komunikace se železnicí a je vždy označeno dopravní značkou \"Stůj, dej přednost v jízdě\".",
+      "je místo, kde se úrovňově kříží pozemní komunikace se železnicí a příslušnou dopravní značkou se neoznačuje.",
+      "je místo, kde se úrovňově kříží pozemní komunikace se železnicí, popřípadě s jinou dráhou ležící na samostatném tělese, a označené příslušnou dopravní značkou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060057",
+    "otazka": "\"Železniční přejezd\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo, kde se při křížení s železnicí vždy užívá závor a zabezpečovacího zařízení.",
+      "je místo, kde se mimoúrovňově kříží pozemní komunikace se železnicí, popřípadě s železniční vlečkou, označené dopravní značkou \"Dej přednost v jízdě\".",
+      "je místo, kde se úrovňově kříží pozemní komunikace se železnicí, popřípadě s jinou dráhou ležící na samostatném tělese, a označené příslušnou dopravní značkou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060058",
+    "otazka": "\"Přechod pro chodce\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo na pozemní komunikaci určené pro přecházení chodců, vyznačené příslušnou dopravní značkou.",
+      "je místo na vozovce, určené pro přecházení chodců, které může být označeno dopravní značkou.",
+      "je místo vyznačené dopravními knoflíky, které může být doplněno symbolem kráčejícího chodce."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060059",
+    "otazka": "\"Přechod pro chodce\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo na pozemní komunikaci určené pro přecházení chodců, které vždy musí být řízeno světelnými signály.",
+      "je místo na vozovce určené pro přecházení chodců, které však nesmějí k přecházení vozovky užívat osoby hluchoslepé.",
+      "je místo na pozemní komunikaci určené pro přecházení chodců, vyznačené příslušnou dopravní značkou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10060060",
+    "otazka": "\"Přechod pro chodce\":",
+    "obrazek": null,
+    "moznosti": [
+      "je místo na pozemní komunikaci určené pro přecházení chodců, vyznačené příslušnou dopravní značkou.",
+      "je místo na pozemní komunikaci určené pro přecházení chodců, které musí být vždy označeno přerušovaně svítícím světelným signálem ve tvaru kráčejícího chodce.",
+      "je místo na pozemní komunikaci určené pro přecházení chodců, které nesmí být řízeno akustickými signály."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060061",
+    "otazka": "\"Celostátní dopravní informační systém\":",
+    "obrazek": null,
+    "moznosti": [
+      "je systém, obsahující aktuální informace o situaci v provozu na pozemních komunikacích, které mají vliv na bezpečnost a plynulost provozu na pozemních komunikacích.",
+      "je systém informací o silničních kontrolách.",
+      "je systém, který obsahuje informace o dostupnosti rozhlasových stanic v okolí pozemní komunikace."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060062",
+    "otazka": "\"Celostátní dopravní informační systém\":",
+    "obrazek": null,
+    "moznosti": [
+      "je systém, obsahující aktuální informace o situaci v provozu na pozemních komunikacích, které mají vliv na bezpečnost a plynulost provozu na pozemních komunikacích.",
+      "je systém, obsahující všeobecné informace o situaci v provozu na pozemních komunikacích, s výjimkou silnic II. třídy.",
+      "obsahuje pouze informace o situaci v provozu na dálnicích."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10060111",
+    "otazka": "\"Dát přednost v jízdě\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "povinnost řidiče nezahájit jízdu nebo jízdní úkon nebo v nich nepokračovat, jestliže by řidič, který má přednost v jízdě, musel náhle změnit směr nebo rychlost jízdy.",
+      "povinnost řidiče vždy zastavit vozidlo před hranicí křižovatky nebo před vjezdem na jinou pozemní komunikaci.",
+      "povinnost řidiče nezahájit jízdu nebo jízdní úkon nebo v nich nepokračovat pouze pokud do křižovatky přijíždí vozidlo nebo tramvaj zprava."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11040001",
+    "otazka": "Křižovatka je místo:",
+    "obrazek": null,
+    "moznosti": [
+      "V němž se pozemní komunikace protínají nebo spojují.",
+      "Kde se dva jízdní pruhy sbíhají v jeden, aniž by bylo zřejmé, který z nich je průběžný.",
+      "Vyústění účelové pozemní komunikace na jinou pozemní komunikaci."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11040002",
+    "otazka": "V obci smí řidič vozidla o celkové hmotnosti nepřevyšující 3.500 kg zastavit a stát kolmo, popřípadě šikmo k okraji pozemní komunikace jen:",
+    "obrazek": null,
+    "moznosti": [
+      "Zůstane-li při zastavení volný alespoň jeden jízdní pruh široký 2,5 m.",
+      "Zůstane-li při stání volný alespoň jeden pruh široký nejméně 2 m.",
+      "Nedojde-li k ohrožení bezpečnosti a plynulosti silničního provozu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "11040003",
+    "otazka": "Vyžadují-li to okolnosti, zejména není-li znamení o změně směru jízdy dávané směrovými světly nebo paží dostatečně viditelné, například pro šířku nákladu, musí se dávat znamení o změně směru jízdy:",
+    "obrazek": null,
+    "moznosti": [
+      "Společně se zvukovým výstražným znamením.",
+      "Jiným zřetelným způsobem, například způsobilou a náležitě poučenou osobou.",
+      "Pouze světelným a zvukovým výstražným znamením."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11040004",
+    "otazka": "Řidič motorového vozidla, jehož celková hmotnost převyšuje 3 500 kg, smí v obci zastavit a stát:",
+    "obrazek": null,
+    "moznosti": [
+      "i kolmo, popřípadě šikmo k okraji pozemní komunikace. Ve druhé řadě smí řidič zastavit pouze řidič vozidla taxislužby.",
+      "vpravo ve směru jízdy co nejblíže k okraji pozemní komunikace a na jednosměrné pozemní komunikaci vpravo i vlevo, v jedné řadě a rovnoběžně s okrajem pozemní komunikace.",
+      "i kolmo, popřípadě šikmo k okraji pozemní komunikace nebo zastavit v druhé řadě, pokud tím není ohrožena bezpečnost a plynulost provozu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11040005",
+    "otazka": "Dojde-li při jízdě vozidla v tunelu k poruše vozidla, pro kterou se toto vozidlo stalo nepojízdným, nebo dojde-li k dopravní nehodě, je řidič povinen:",
+    "obrazek": null,
+    "moznosti": [
+      "Okamžitě zahájit opravu vozidla.",
+      "Neprodleně oznámit zastavení vozidla nebo stání vozidla policii nebo osobě vykonávající dohled nad provozem tunelu.",
+      "Neprodleně vyhledat místo určené k soustředění osob."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11040006",
+    "otazka": "Je porušením zákona, pokud vozidlo svítí za normální, nesnížené viditelnosti pouze světly pro denní svícení?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11070001",
+    "otazka": "Povinností přepravované osoby je:",
+    "obrazek": null,
+    "moznosti": [
+      "neohrožovat svým chováním bezpečnost provozu na pozemních komunikacích, zejména neomezovat řidiče v bezpečném ovládání vozidla.",
+      "informovat řidiče o situaci v provozu na pozemních komunikacích.",
+      "pomáhat řidiči dle jeho pokynů v ovládání vozidla, zvláště pokud je to řidič začátečník."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11070003",
+    "otazka": "Na pozemní komunikaci o třech nebo více jízdních pruzích vyznačených na vozovce v jednom směru jízdy smí řidič nákladního automobilu o celkové hmotnosti převyšující 3 500 kg, jízdní soupravy, jejíž celková délka přesahuje 7 m, zvláštního motorového vozidla a motocyklu s nejvyšší povolenou rychlostí do 45 km/h užít k jízdě:",
+    "obrazek": null,
+    "moznosti": [
+      "kteréhokoliv jízdního pruhu bez ohledu na jízdní úkon.",
+      "výhradně pravého jízdního pruhu.",
+      "výhradně dvou jízdních pruhů nejbližších k pravému okraji vozovky; v ostatních jízdních pruzích smí jet tehdy, jestliže je to nutné k objíždění, otáčení nebo odbočování."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "11080006",
+    "otazka": "\"Nesmět omezit\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "povinnost řidiče předjíždět vždy pouze vlevo.",
+      "povinnost počínat si tak, aby jinému účastníku provozu na pozemních komunikacích nebylo nijak překáženo.",
+      "povinnost řidiče užívat pouze potkávací světla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11080007",
+    "otazka": "\"Nesmět omezit\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "povinnost řidiče dávat přednost v jízdě.",
+      "povinnost řidiče jet vždy při pravém okraji vozovky.",
+      "povinnost počínat si tak, aby jinému účastníku provozu na pozemních komunikacích nebylo nijak překáženo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "11080008",
+    "otazka": "Nesmět omezit znamená povinnost počínat si tak, aby:",
+    "obrazek": null,
+    "moznosti": [
+      "druhý řidič nemusel náhle snížit rychlost jízdy nebo zastavit.",
+      "jiný řidič mohl bezpečně zastavit vozidlo.",
+      "jinému účastníku provozu na pozemních komunikacích nebylo nijak překáženo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "11080009",
+    "otazka": "Nesmět omezit znamená povinnost:",
+    "obrazek": null,
+    "moznosti": [
+      "počínat si tak, aby jinému účastníku provozu na pozemních komunikacích neomezoval rychlou jízdu.",
+      "počínat si tak, aby jinému účastníku provozu na pozemních komunikacích nebylo nijak překáženo.",
+      "počínat si tak, aby jinému účastníku provozu na pozemních nevzniklo žádné nebezpečí."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11080010",
+    "otazka": "Nesmět ohrozit znamená povinnost počínat si tak, aby:",
+    "obrazek": null,
+    "moznosti": [
+      "druhý řidič nemusel zastavit vozidlo.",
+      "jinému účastníku provozu na pozemních komunikacích nevzniklo žádné nebezpečí.",
+      "žádný řidič nemusel ani mírně snížit rychlost jízdy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11080011",
+    "otazka": "Nesmět ohrozit znamená povinnost:",
+    "obrazek": null,
+    "moznosti": [
+      "počínat si tak, aby jinému účastníku provozu na pozemních komunikacích nijak nepřekážel.",
+      "počínat si tak, aby si řidič při účasti v provozu na pozemních komunikacích nepoškodil vozidlo.",
+      "počínat si tak, aby jinému účastníku provozu na pozemních komunikacích nevzniklo žádné nebezpečí."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "11080013",
+    "otazka": "\"Nesmět ohrozit\" znamená:",
+    "obrazek": null,
+    "moznosti": [
+      "povinnost chodce přecházet pouze na přechodech pro chodce.",
+      "povinnost počínat si tak, aby jinému účastníku provozu na pozemních komunikacích nevzniklo žádné nebezpečí.",
+      "povinnost počínat si tak, aby ostatním účastníkům provozu na pozemních komunikacích nepřekážel."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11080014",
+    "otazka": "Řidič nesmí ohrozit chodce:",
+    "obrazek": null,
+    "moznosti": [
+      "přecházejícího pozemní komunikaci, na kterou řidič odbočuje, při odbočování na místo ležící mimo pozemní komunikaci, při vjíždění na pozemní komunikaci a při otáčení nebo couvání.",
+      "jen pokud přecházejí na vyznačeném přechodu pro chodce v obci.",
+      "pouze při otáčení nebo couvání."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11080015",
+    "otazka": "Chodce, který přechází pozemní komunikaci po přechodu pro chodce nebo který zjevně hodlá přecházet pozemní komunikaci po přechodu pro chodce:",
+    "obrazek": null,
+    "moznosti": [
+      "řidič nesmí ohrozit nebo omezit, v případě potřeby je řidič povinen i zastavit vozidlo před přechodem pro chodce; tyto povinnosti se nevztahují na řidiče tramvaje.",
+      "řidič nesmí ohrozit, ale může je omezit.",
+      "řidič nesmí ohrozit nebo omezit, v případě potřeby je řidič povinen i zastavit vozidlo před přechodem pro chodce; tyto povinnosti se vztahují na všechny řidiče."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11080016",
+    "otazka": "Vztahuje se na řidiče tramvaje povinnost zastavit vozidlo před přechodem pro chodce, pokud by ohrozil nebo omezil chodce, který zjevně hodlá přecházet pozemní komunikaci po přechodu pro chodce?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11080017",
+    "otazka": "Řidič, který při předjíždění vybočuje ze směru své jízdy:",
+    "obrazek": null,
+    "moznosti": [
+      "musí dávat znamení o změně směru jízdy a nesmí ohrozit řidiče jedoucího za ním.",
+      "musí dávat znamení o změně směru jízdy jen pokud za ním jede další vozidlo.",
+      "znamení o změně směru jízdy nedává."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11080019",
+    "otazka": "Řidič, který při předjíždění motorového vozidla vybočuje ze směru své jízdy,:",
+    "obrazek": null,
+    "moznosti": [
+      "dává znamení o změně směru jízdy jen tehdy, pokud řidiče předjížděného vozidla předem neupozornil jiným způsobem.",
+      "musí dávat znamení o změně směru jízdy a nesmí ohrozit řidiče jedoucího za ním.",
+      "nemusí dávat znamení o změně směru jízdy, pokud při předjíždění neomezí ani neohrozí řidiče jedoucí za ním."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11080020",
+    "otazka": "Řidič nesmí předjíždět:",
+    "obrazek": null,
+    "moznosti": [
+      "bezprostředně za přechodem pro chodce nebo za přejezdem pro cyklisty.",
+      "na přechodu pro chodce; na přejezdu pro cyklisty však předjíždět smí.",
+      "na přechodu pro chodce nebo na přejezdu pro cyklisty a bezprostředně před nimi."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "11080021",
+    "otazka": "Řidič nesmí předjíždět:",
+    "obrazek": null,
+    "moznosti": [
+      "na přechodu pro chodce nebo na přejezdu pro cyklisty a bezprostředně před nimi.",
+      "na křižovatce s řízeným provozem.",
+      "bezprostředně za přechodem pro chodce nebo za přejezdem pro cyklisty."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "11080026",
+    "otazka": "Povinnost nesmět ohrozit a nesmět omezit se vztahuje",
+    "obrazek": null,
+    "moznosti": [
+      "pouze na chodce.",
+      "pouze na řidiče.",
+      "na všechny účastníky provozu na pozemních komunikacích, kterým je tato povinnost stanovena zákonem."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "11080027",
+    "otazka": "Kolonou vozidel se rozumí:",
+    "obrazek": null,
+    "moznosti": [
+      "souvislý proud více vozidel, u kterého nelze předjíždět každé vozidlo jednotlivě, rozestup mezi jednotlivými vozidly při předjíždění nebo objíždění neumožňuje bezpečné zařazení.",
+      "proud vozidel s výjimkou motocyklů, který při předjíždění nebo objíždění neumožňuje bezpečné zařazení.",
+      "souvislý proud více vozidel, u kterého lze předjíždět každé vozidlo jednotlivě, rozestup mezi jednotlivými vozidly při předjíždění nebo objíždění umožňuje bezpečné zařazení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100001",
+    "otazka": "Žadatel o řidičské oprávnění smí řídit motorové vozidlo skupiny, o kterou žádá:",
+    "obrazek": null,
+    "moznosti": [
+      "pod dohledem rodičů, nebo zákonného zástupce.",
+      "pod dohledem osoby s nejméně pětiletou praxí v řízení.",
+      "pod dohledem učitele autoškoly."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100009",
+    "otazka": "Řidič vozidla z výhledu při objíždění označené  překážky v provozu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211041.jpg",
+    "moznosti": [
+      "nesmí omezit cyklistu jedoucího ve vyhrazeném jízdním pruhu",
+      "může omezit cyklistu jedoucího ve vyhrazeném jízdním pruhu"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100014",
+    "otazka": "Technickou silniční kontrolou se mimo jiné rozumí kontrola technického stavu vozidla. Řidič motorového vozidla je povinen:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211062.jpg",
+    "moznosti": [
+      "Na výzvu policisty podrobit vozidlo technické silniční kontrole v případě, kdy vozidlo vykazuje nebezpečnou závadu",
+      "Na výzvu policisty podrobit vozidlo technické silniční kontrole, pouze pokud uplynula doba 1 roku od řádné technické prohlídky vozidla",
+      "Na výzvu policisty podrobit vozidlo technické silniční kontrole"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100025",
+    "otazka": "Řidič vozidla z výhledu hodlá pokračovat v jízdě po hlavní pozemní komunikaci. Přitom:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211104.jpg",
+    "moznosti": [
+      "musí dát znamení o změně směru jízdy vlevo",
+      "musí dát znamení o změně směru jízdy vpravo",
+      "nemusí dát znamení o změně směru jízdy"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100029",
+    "otazka": "Smí řidič z výhledu zastavit vozidlo na přechodu pro chodce, aby měl náležitý výhled do křižovatky?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211114.jpg",
+    "moznosti": [
+      "ano",
+      "ne"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100035",
+    "otazka": "Jakou minimální hloubku hlavních dezénových drážek nebo zářezů u zimních pneumatik musí mít řidič vozidla do 3500 kg celkové hmotnosti za touto dopravní značkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211139.jpg",
+    "moznosti": [
+      "1,6 mm, a to v období od 1. dubna do 31. října.",
+      "4 mm, a to v období od 1. listopadu do 31. března.",
+      "4 mm, a to bez ohledu na datum a aktuální nebo předpokládané povětrnostní podmínky"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21110001",
+    "otazka": "Řidič se smí otáčet:",
+    "obrazek": null,
+    "moznosti": [
+      "na přejezdu pro cyklisty",
+      "na křižovatce, na které je provoz upraven dopravními značkami",
+      "na křižovatce, na které je provoz řizen světelnými signály"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020009",
+    "otazka": "S kamarády jste se ve večerních hodinách zúčastnil oslavy a v době od 20:00 do 24:00 hodin jste vypil šest 12 stupňových piv (6 x 0,5 litru) a 5 velkých panáků (5 x 40 ml) tvrdého alkoholu. Můžete ráno v 5:00 hodin po vydatné snídani a studené sprše bez obav řídit vozidlo?",
+    "obrazek": null,
+    "moznosti": [
+      "Ne",
+      "Ano"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020012",
+    "otazka": "Signál žlutého světla ve tvaru chodce pro řidiče vozidla z výhledu znamená, že:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1048.jpg",
+    "moznosti": [
+      "může nerušeně a bezpečně odbočit, neboť chodci na uvedený signál nesmí vstupovat do vozovky",
+      "pokud pokračuje v přímém směru musí umožnit vyobrazenému chodci  přejít přes přechod pro chodce",
+      "při odbočení vpravo křižuje směr chůze přecházejících chodců"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020015",
+    "otazka": "Řidič jedoucí po komunikaci označené touto dopravní značkou mimo obec, může jet rychlostí nejvýše:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1063.png",
+    "moznosti": [
+      "130 km/h.",
+      "110 km/h.",
+      "90 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020016",
+    "otazka": "Řidič jedoucí po dálnici, v úseku který prochází obcí, může jet rychlostí nejvýše:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1064.png",
+    "moznosti": [
+      "130 km/h.",
+      "80 km/h.",
+      "50 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020017",
+    "otazka": "Jakou nejvyšší rychlostí můžete pokračovat po projetí křižovatky v přímém směru:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1077.jpg",
+    "moznosti": [
+      "50 km/h.",
+      "20 km/h.",
+      "30 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020019",
+    "otazka": "Smí se řidič vozidla z výhledu otočit do protisměru přes tramvajový pás?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1101.jpg",
+    "moznosti": [
+      "ANO.",
+      "NE."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020025",
+    "otazka": "Jako řidič motorového vozidla musíte v zimě před vyjetím očistit vozidlo od nečistot, sněhu a námrazy, které:",
+    "obrazek": null,
+    "moznosti": [
+      "zabraňují výhledu z místa řidiče vpřed a do stran.",
+      "zabraňují výhledu z místa řidiče vpřed, vzad a do stran",
+      "zabraňují výhledu z místa řidiče vpřed a vzad."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020027",
+    "otazka": "Jak se zachovám jako řidič osobního vozidla z výhledu pokud jedu při pravém okraji vozovky:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1145.jpg",
+    "moznosti": [
+      "pokračuji bez změny v jízdě, mezi zaparkované vozidlo a přerušovanou čáru se vejdu, nemusím tedy dávat znamení o změně směru jízdy.",
+      "dám znamení o změně směru jízdy a s bezpečným odstupem objíždím zaparkovaná vozidla.",
+      "znamení o změně směru jízdy budu dávat pouze v případě, že přejedu přes přerušovanou čáru do protisměru."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020028",
+    "otazka": "Osoba na přechodu pro chodce označená holí s bílými a červenými pruhy:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1148.jpg",
+    "moznosti": [
+      "je osobou nevidomou.",
+      "je osobou se zraněním dolní končetiny.",
+      "je osobou hluchoslepou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020036",
+    "otazka": "Může \"osoba starší 10 let jedoucí na koloběžce\" přejíždět přes přechod pro chodce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1173.jpg",
+    "moznosti": [
+      "ANO, platí pro ni pravidla pro chodce.",
+      "NE, platí pro ni pravidla pro jízdu na jízdním kole."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020037",
+    "otazka": "Jak se zachová řidič vozidla z výhledu odbočujícího na pozemní komunikaci vpravo?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1180.jpg",
+    "moznosti": [
+      "Nemusí na tuto osobu brát zvláštní ohled, protože se nenachází na přechodu pro chodce.",
+      "Nesmí ohrozit chodce přecházejícího pozemní komunikaci a dbát zvýšené opatrnosti vůči osobě s omezenou schopností orientace."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050008",
+    "otazka": "Zastavuje-li řidič u okraje pozemní komunikace:",
+    "obrazek": null,
+    "moznosti": [
+      "může dávat znamení o změně směru jízdy.",
+      "nesmí dávat znamení o změně směru jízdy.",
+      "musí dávat znamení o změně směru jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22050010",
+    "otazka": "Při zařazování z připojovacího pruhu do průběžného pruhu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1037.jpg",
+    "moznosti": [
+      "má řidič vozidla z výhledu přednost před vozidly jedoucími v průběžném pruhu.",
+      "nesmí řidič vozidla z výhledu ohrozit vozidla jedoucí v průběžném pruhu.",
+      "nesmí řidič vozidla z výhledu ohrozit ani omezit vozidla jedoucí v průběžném pruhu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050015",
+    "otazka": "Jaké platí v České republice legislativní podmínky pro používání dětských zádržných systémů?",
+    "obrazek": null,
+    "moznosti": [
+      "Dítě musí být umístěno v dětském zádržném systému do věku 12 let.",
+      "Používání dětského zádržného systému není legislativně upraveno.",
+      "Dítě, jehož tělesná hmotnost nepřevyšuje 36 kg a tělesná výška nepřevyšuje 150 cm musí být umístěno v dětském zádržném systému."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22050017",
+    "otazka": "Jak se zachová řidič vozidla přijíždějící k přechodu pro chodce, kde osoby zjevně hodlají přecházet pozemní komunikaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1166.jpg",
+    "moznosti": [
+      "Nesmí ohrozit nebo omezit chodce a v případě potřeby je řidič povinen i zastavit vozidlo před přechodem pro chodce.",
+      "Nemusí snížit rychlost jízdy nebo zastavit vozidlo před přechodem pro chodce."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050018",
+    "otazka": "Chodci ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1168.jpg",
+    "moznosti": [
+      "nemusí použít místo pro přecházení pokud jsou od něj vzdáleni do 50m",
+      "musí použít místo pro přecházení pokud jsou od něj vzdáleni do 50m."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050020",
+    "otazka": "Řidič vozidla z výhledu hodlá pokračovat v jízdě vlevo. Přitom:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1193.jpg",
+    "moznosti": [
+      "nemusí dát přednost protijedoucímu vozidlu, neboť jede na signál \"VOLNO\".",
+      "musí dát přednost protijedoucímu vozidlu.",
+      "nemusí dát přednost protijedoucímu vozidlu, neboť pokračuje po hlavní pozemní komunikaci."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050023",
+    "otazka": "Řidič vozidla z výhledu ve vyobrazené dopravní situaci v obci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1233.jpg",
+    "moznosti": [
+      "je informován o motorovém vozidle, které tvoří překážku na pozemní komunikaci ve vzdálenosti 150 metrů a musí přizpůsobit jízdu této mimořádné dopravní situaci.",
+      "je informován o motorovém vozidle, které tvoří překážku provozu na pozemní komunikaci ve vzdálenosti 50 metrů nebo kratší a musí přizpůsobit jízdu této mimořádné dopravní situaci.",
+      "je informován o motorovém vozidle, které tvoří překážku na pozemní komunikaci ve vzdálenosti 100 metrů a musí přizpůsobit jízdu této mimořádné dopravní situaci."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050024",
+    "otazka": "Osoba na kolečkových lyžích je považována z hlediska pravidel provozu na pozemních komunikacích za:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1234.jpg",
+    "moznosti": [
+      "cyklistu.",
+      "jezdce na osobním přepravníku.",
+      "chodce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22050030",
+    "otazka": "Smí řidič vozidla z výhledu vjet na železniční přejezd?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1243.jpg",
+    "moznosti": [
+      "Ano, situace je dostatečně přehledná a závory jsou zvednuty.",
+      "Ne."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100034",
+    "otazka": "Záchranářská ulička se tvoří:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209123.jpg",
+    "moznosti": [
+      "Až po příjezdu vozidel s právem přednosti v jízdě.",
+      "Jen pokud je na vozovce místo na uvolnění jízdního pruhu.",
+      "V momentě zpomalování vozidel v souvislé koloně."
+    ],
+    "spravna": 2
+  }
+]

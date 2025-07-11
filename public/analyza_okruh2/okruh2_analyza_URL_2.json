@@ -1,0 +1,1294 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "06050156",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0041.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050156",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Zúžená vozovka (z pravé strany)'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý symbol znázorňující zúžení vozovky z pravé strany."
+                  },
+                  "kod_nazev": "A 6b, Zúžená vozovka (z pravé strany)",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 6b, která upozorňuje na místo, kde se vozovka oproti předcházejícímu úseku výrazně zužuje z pravé strany. Pozadí je rozmazané a nezobrazuje kontext."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka varuje řidiče předem, aby přizpůsobil jízdu a rychlost nadcházejícímu zúžení z pravé strany. Je důležité si všimnout, že správná odpověď v datech uvádí zúžení z obou stran, což je v rozporu se zobrazenou značkou."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050200",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a11.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050200",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Přechod pro chodce'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram postavy kráčející po přechodu."
+                  },
+                  "kod_nazev": "A 11, Přechod pro chodce",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 11, která předem upozorňuje na přechod pro chodce. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka upozorňuje na přechod pro chodce, který by řidič jinak neočekával nebo který není z dostatečné vzdálenosti viditelný."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050201",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a8.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050201",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Nebezpečí smyku'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram automobilu ve smyku."
+                  },
+                  "kod_nazev": "A 8, Nebezpečí smyku",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 8, která upozorňuje na úsek, kde může dojít ke smyku vozidla. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka varuje před úsekem, kde hrozí smyk i za neztížených povětrnostních podmínek. Pro smyk za ztížených podmínek se užívá dodatková tabulka."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050202",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a6a.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050202",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Zúžená vozovka (z obou stran)'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý symbol znázorňující symetrické zúžení vozovky z obou stran."
+                  },
+                  "kod_nazev": "A 6a, Zúžená vozovka (z obou stran)",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 6a, která upozorňuje na místo, kde se vozovka oproti předcházejícímu úseku výrazně zužuje z obou stran. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka varuje řidiče předem, aby přizpůsobil jízdu a rychlost nadcházejícímu symetrickému zúžení vozovky."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050203",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a10.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050203",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Světelné signály'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram semaforu se třemi světly."
+                  },
+                  "kod_nazev": "A 10, Světelné signály",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 10, která upozorňuje na místo, kde je provoz řízen světelnými signály. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka se používá tam, kde by řidič světelné signály neočekával, nebo kde nejsou z dostatečné vzdálenosti viditelné."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050204",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a2b.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050204",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Dvojitá zatáčka, první vpravo'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý symbol znázorňující dvě po sobě následující zatáčky, z nichž první je vpravo."
+                  },
+                  "kod_nazev": "A 2b, Dvojitá zatáčka, první vpravo",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 2b. Upozorňuje na dvě nebo více po sobě následujících zatáček, z nichž první je vpravo. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka upozorňuje na nebezpečný úsek, který vyžaduje snížení rychlosti a zvýšenou pozornost. Správná odpověď v datech je v rozporu se zobrazenou značkou (uvádí první zatáčku vlevo)."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050205",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a12.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050205",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Děti'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram dvou běžících dětí."
+                  },
+                  "kod_nazev": "A 12, Děti",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 12. Upozorňuje na místo (např. v blízkosti škol, hřišť), kde se často pohybují děti a hrozí nebezpečí jejich vběhnutí do vozovky. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí v takto označeném úseku počítat se zvýšeným rizikem a být připraven okamžitě reagovat."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050206",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a23.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050206",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Kolona'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram řady automobilů za sebou."
+                  },
+                  "kod_nazev": "A 23, Kolona",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 23. Upozorňuje na místo nebo úsek, kde může dojít k tvorbě kolon stojících nebo pomalu jedoucích vozidel. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka varuje před rizikem náhlého brzdění a nabourání do konce kolony. Řidič by měl být připraven zpomalit nebo zastavit."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050207",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a24.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050207",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Náledí nebo sníh'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram sněhové vločky."
+                  },
+                  "kod_nazev": "A 24, Náledí nebo sníh",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 24. Upozorňuje na úsek pozemní komunikace, kde se může vyskytovat náledí nebo sníh. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka signalizuje zvýšené riziko smyku v zimním období a nutnost přizpůsobit jízdu stavu vozovky."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050208",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a1a.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050208",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Zatáčka vpravo'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý symbol znázorňující zatáčku (směrový oblouk) vpravo."
+                  },
+                  "kod_nazev": "A 1a, Zatáčka vpravo",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 1a. Upozorňuje na nebezpečnou zatáčku vpravo, jejíž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí přizpůsobit rychlost a techniku jízdy charakteru zatáčky, na kterou je upozorněn."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050209",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a26.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050209",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Mlha'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram automobilu vjíždějícího do oblasti se sníženou viditelností (mlhy)."
+                  },
+                  "kod_nazev": "A 26, Mlha",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 26. Upozorňuje na úsek, kde se často vyskytuje mlha nebo kouř, což vede ke snížení viditelnosti. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí být připraven na náhlé zhoršení viditelnosti, snížit rychlost a případně použít světla do mlhy."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050210",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a25.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050210",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Tramvaj'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram tramvaje."
+                  },
+                  "kod_nazev": "A 25, Tramvaj",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 25. Upozorňuje na místo, kde tramvaj křižuje směr jízdy ostatních vozidel, nebo jede po pozemní komunikaci spolu s ostatními vozidly. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka varuje řidiče před potenciálním konfliktem s tramvají a nutností respektovat specifická pravidla pro jízdu podél a přes tramvajový pás."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050211",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a19.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050211",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Cyklisté'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram cyklisty."
+                  },
+                  "kod_nazev": "A 19, Cyklisté",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 19. Upozorňuje na místo, kde cyklisté vjíždějí na vozovku nebo ji přejíždějí, nebo na úsek s častým výskytem cyklistů. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí v takto označeném úseku dbát zvýšené opatrnosti vůči cyklistům."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050212",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a19.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050212",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Cyklisté'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram cyklisty."
+                  },
+                  "kod_nazev": "A 19, Cyklisté",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 19. Upozorňuje na místo, kde cyklisté vjíždějí na vozovku nebo ji přejíždějí, nebo na úsek s častým výskytem cyklistů. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka upozorňuje na možný výskyt cyklistů, neoznačuje stezku pro cyklisty ani prostor pro cyklisty."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050213",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a15.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050213",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Práce na silnici'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram postavy s lopatou."
+                  },
+                  "kod_nazev": "A 15, Práce na silnici",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 15. Upozorňuje na práci na pozemní komunikaci nebo v její blízkosti, která může ohrozit bezpečnost provozu. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí počítat s možným zúžením vozovky, přítomností pracovníků, stavebních strojů a přizpůsobit tomu rychlost a způsob jízdy."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050214",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a16.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050214",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Boční vítr'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram větrného rukávu."
+                  },
+                  "kod_nazev": "A 16, Boční vítr",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 16. Upozorňuje na úsek, kde může silný boční vítr ohrozit bezpečnost provozu. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič, zejména u vozidel s velkou boční plochou (dodávky, nákladní vozy, vozidla s přívěsem), musí být připraven na náhlé poryvy větru a korigovat směr jízdy."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050215",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a9.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050215",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Provoz v obou směrech'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Dvě černé šipky směřující proti sobě."
+                  },
+                  "kod_nazev": "A 9, Provoz v obou směrech",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 9. Upozorňuje řidiče na úsek, kde je na rozdíl od předchozího úseku (např. po skončení jednosměrné komunikace) provoz veden v obou směrech. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí po projetí této značky počítat s protijedoucími vozidly a přizpůsobit tomu svou jízdu (zařadit se vpravo, nepředjíždět v nepřehledných místech atd.)."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050216",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a14.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050216",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Zvěř'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram jelena ve skoku."
+                  },
+                  "kod_nazev": "A 14, Zvěř",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 14. Upozorňuje na úsek, kde může docházet k častému výskytu divoké zvěře přebíhající přes vozovku. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka varuje před nebezpečím srážky s divokou zvěří. Řidič by měl snížit rychlost a zvýšit pozornost, zejména za snížené viditelnosti."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050217",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a3.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050217",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Křižovatka'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý symbol kříže."
+                  },
+                  "kod_nazev": "A 3, Křižovatka",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 3. Upozorňuje na křižovatku, kde není přednost v jízdě upravena jinými dopravními značkami, a platí zde tedy přednost zprava. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka se používá mimo obec k upozornění na křižovatku s vedlejší pozemní komunikací. Může být také použita k upozornění na konec hlavní komunikace, po kterém následuje křižovatka, kde již platí přednost zprava."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050218",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a2a.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050218",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Dvojitá zatáčka, první vpravo'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý symbol znázorňující dvě po sobě následující zatáčky, z nichž první je vpravo."
+                  },
+                  "kod_nazev": "A 2a, Dvojitá zatáčka, první vpravo",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 2a. Upozorňuje na dvě nebo více po sobě následujících zatáček, z nichž první je vpravo, a jejichž bezpečné projetí vyžaduje snížení rychlosti. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí přizpůsobit jízdu sérii zatáček, na které je upozorněn."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050219",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a17.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050219",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Odlétávající štěrk'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram pneumatiky, od které odlétává štěrk."
+                  },
+                  "kod_nazev": "A 17, Odlétávající štěrk",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 17. Upozorňuje na úsek, kde se na vozovce vyskytuje volný štěrk, který může být vymrštěn koly vozidel a ohrozit ostatní účastníky provozu (např. poškozením skel, zraněním chodců). Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič by měl v takovém úseku snížit rychlost a udržovat větší odstup od vozidel jedoucích vpředu."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050221",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a22.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050221",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Jiné nebezpečí'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý vykřičník."
+                  },
+                  "kod_nazev": "A 22, Jiné nebezpečí",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 22. Upozorňuje na jiná nebezpečí, než která lze označit jinou výstražnou značkou. Druh nebezpečí se obvykle specifikuje na dodatkové tabulce. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka vyžaduje od řidiče zvýšenou opatrnost, protože varuje před nespecifikovaným rizikem."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050222",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a7b.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050222",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Zpomalovací práh'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram umělé nerovnosti na vozovce (zpomalovacího prahu)."
+                  },
+                  "kod_nazev": "A 7b, Zpomalovací práh",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 7b. Upozorňuje na umělou nerovnost na vozovce, jejímž účelem je snížení rychlosti vozidel. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí před touto nerovností výrazně snížit rychlost, aby nedošlo k poškození vozidla nebo ztrátě kontroly nad ním."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050223",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a20.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050223",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Letadla'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram letadla."
+                  },
+                  "kod_nazev": "A 20, Letadla",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 20. Upozorňuje na místo, kde v malé výšce nad pozemní komunikací přelétávají letadla. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič by se neměl lekat náhlého hluku nebo stínu a měl by se plně věnovat řízení."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050224",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a1a.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050224",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Zatáčka vpravo'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý symbol znázorňující zatáčku (směrový oblouk) vpravo."
+                  },
+                  "kod_nazev": "A 1a, Zatáčka vpravo",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 1a. Upozorňuje na nebezpečnou zatáčku vpravo, jejíž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka upozorňuje na zatáčku, ale na rozdíl od směrovací desky (Z 4c) primárně neusměrňuje provoz. Správná odpověď v datech je v rozporu se zobrazenou značkou, jelikož odkazuje na význam směrovací desky."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050225",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/a13.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050225",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Zvířata'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram krávy."
+                  },
+                  "kod_nazev": "A 13, Zvířata",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou dopravní značku A 13. Upozorňuje na úsek, kde může docházet k přecházení domácích zvířat přes pozemní komunikaci. Na značce je symbol krávy. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka varuje před nebezpečím srážky s domácími zvířaty (např. hnaným dobytkem). Symbol zvířete na značce se může lišit."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050241",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/b15.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050241",
+            "shrnuti": "Zobrazení zákazové dopravní značky 'Zákaz vjezdu vozidel, jejichž šířka přesahuje vyznačenou mez'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Číselný údaj (např. '2,2 m') mezi dvěma svislými černými trojúhelníky směřujícími k sobě."
+                  },
+                  "kod_nazev": "B 15, Zákaz vjezdu vozidel, jejichž šířka přesahuje vyznačenou mez",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na zákazovou dopravní značku B 15. Zakazuje vjezd vozidel, jejichž okamžitá šířka včetně nákladu přesahuje hodnotu uvedenou na značce. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Rozhodující je okamžitá šířka vozidla, což zahrnuje i náklad a vnější zpětná zrcátka, nikoli jen údaj v technickém průkazu."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050242",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/b7.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050242",
+            "shrnuti": "Zobrazení zákazové dopravní značky 'Zákaz vjezdu motocyklů'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram motocyklisty na motocyklu."
+                  },
+                  "kod_nazev": "B 7, Zákaz vjezdu motocyklů",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na zákazovou dopravní značku B 7. Zakazuje vjezd všem motocyklům (jednostopým motorovým vozidlům). Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákaz platí pro všechny motocykly, ať už s postranním vozíkem nebo bez něj."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050252",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/b5.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050252",
+            "shrnuti": "Zobrazení zákazové dopravní značky 'Zákaz vjezdu autobusů'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram autobusu z bočního pohledu."
+                  },
+                  "kod_nazev": "B 5, Zákaz vjezdu autobusů",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na zákazovou dopravní značku B 5. Zakazuje vjezd autobusům. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka se vztahuje na autobusy, tedy motorová vozidla pro dopravu osob s více než 8 místy k sezení kromě místa řidiče."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050253",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/b5.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050253",
+            "shrnuti": "Zobrazení zákazové dopravní značky 'Zákaz vjezdu autobusů'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram autobusu z bočního pohledu."
+                  },
+                  "kod_nazev": "B 5, Zákaz vjezdu autobusů",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na zákazovou dopravní značku B 5. Zakazuje vjezd autobusům. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka zakazuje vjezd všem autobusům, bez ohledu na to, zda se jedná o linkovou, dálkovou nebo městskou hromadnou dopravu."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050255",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/b12.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050255",
+            "shrnuti": "Zobrazení zákazové dopravní značky 'Zákaz vjezdu vozidel vyznačených druhů'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Dva černé piktogramy: osobní automobil a motocykl."
+                  },
+                  "kod_nazev": "B 12, Zákaz vjezdu vozidel vyznačených druhů",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na zákazovou dopravní značku B 12. Zakazuje vjezd vozidlům, jejichž piktogramy jsou na značce zobrazeny. V tomto případě se jedná o osobní automobily a motocykly. Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka zakazuje vjezd pouze těm druhům vozidel, které jsou na ní explicitně vyobrazeny. Ostatní vozidla (např. nákladní automobily, autobusy) vjet mohou, pokud to nezakazuje jiná značka."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050256",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/b11.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050256",
+            "shrnuti": "Zobrazení zákazové dopravní značky 'Zákaz vjezdu všech motorových vozidel'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Dva černé piktogramy: osobní automobil a motocykl."
+                  },
+                  "kod_nazev": "B 3a, Zákaz vjezdu všech motorových vozidel s výjimkou motocyklů bez postranního vozíku",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na zákazovou dopravní značku B 3a. Zakazuje vjezd všech motorových vozidel s výjimkou motocyklů bez postranního vozíku. Symbol na značce je piktogram osobního automobilu (obrazek b11.jpg ve skutečnosti zobrazuje značku B3a, nikoli B11, jak by název souboru mohl naznačovat). Pozadí je rozmazané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka B 3a (zobrazená na obrázku) zakazuje vjezd všech motorových vozidel kromě motocyklů bez postranního vozíku. Značka B 11 (na kterou se zřejmě ptá otázka dle dat, ale která není zobrazena) by zakazovala vjezd všech motorových vozidel bez výjimky. Analýza se drží vizuálního obsahu."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 31,
+    "pocet_url_nalezeno": 31,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": {
+    "další_start_index": 56,
+    "zbývá": 184
+  }
+}

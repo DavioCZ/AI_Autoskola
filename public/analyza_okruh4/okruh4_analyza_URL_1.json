@@ -1,0 +1,654 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "24030036",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403036.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030036",
+            "shrnuti": "Vozidlo z výhledu se správně zařazuje z připojovacího do průběžného jízdního pruhu na dálnici.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil, který najíždí na dálnici pomocí připojovacího pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Široká přerušovaná čára",
+                    "barva": "Bílá",
+                    "symbol": "Čáry s mezerami"
+                  },
+                  "kod_nazev": "V 2b, Podélná čára přerušovaná",
+                  "umisteni": "Odděluje připojovací pruh od průběžného."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Plná čára",
+                    "barva": "Bílá",
+                    "symbol": "Nepřerušovaná čára"
+                  },
+                  "kod_nazev": "V 1a, Podélná čára souvislá",
+                  "umisteni": "Na pravém okraji vozovky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče ukazuje nájezd na dálnici. Vozidlo využívá celou délku připojovacího pruhu k akceleraci, aby se jeho rychlost vyrovnala rychlosti provozu v průběžném pruhu. Na konci připojovacího pruhu se plynule a bezpečně zařazuje do pravého průběžného pruhu. Počasí je slunečné, viditelnost dobrá."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo z výhledu vjíždí do připojovacího pruhu."
+              },
+              {
+                "cas": "střed",
+                "popis": "Vozidlo zrychluje v připojovacím pruhu, v průběžném pruhu nejsou žádná bezprostředně blízká vozidla."
+              },
+              {
+                "cas": "konec",
+                "popis": "Vozidlo se plynule zařazuje do průběžného pruhu na konci připojovacího pruhu."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič správně využil celou délku připojovacího pruhu, aby nabral rychlost a bezpečně se zařadil. Nezastavil na konci pruhu, což by bylo nebezpečné, ani se nezařadil okamžitě na začátku, což by bylo předčasné a bez dostatečné rychlosti."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030037",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403037.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030037",
+            "shrnuti": "Vozidlo jedoucí v průběžném jízdním pruhu bezdůvodně zastavuje, aby pustilo vozidlo z připojovacího pruhu, a tím vytváří nebezpečnou situaci.",
+            "akteri": [
+              {
+                "typ": "vozidlo v průběžném pruhu",
+                "popis": "Stříbrné osobní vozidlo, které zastaví v pravém jízdním pruhu dálnice."
+              },
+              {
+                "typ": "vozidlo v připojovacím pruhu",
+                "popis": "Tmavé osobní vozidlo, které se snaží zařadit na dálnici."
+              },
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí za stříbrným vozidlem."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Široká přerušovaná čára",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 2b, Podélná čára přerušovaná",
+                  "umisteni": "Odděluje připojovací pruh od průběžného."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje jízdu v pravém průběžném pruhu na dálnici. Vozidlo jedoucí před vozidlem z výhledu náhle a bezdůvodně zastaví, zřejmě aby umožnilo zařazení vozidla z připojovacího pruhu. Toto chování je v rozporu s pravidly, protože řidič v průběžném pruhu nemá povinnost dát přednost vozidlu v připojovacím pruhu a zastavení na dálnici je extrémně nebezpečné."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidla jedou plynule v průběžném pruhu."
+              },
+              {
+                "cas": "střed",
+                "popis": "Stříbrné vozidlo před vozidlem z výhledu začíná brzdit a zastavuje."
+              },
+              {
+                "cas": "konec",
+                "popis": "Stříbrné vozidlo stojí v průběžném pruhu, zatímco vozidlo z připojovacího pruhu se zařazuje před něj. Tím je vytvořena nebezpečná situace."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič v průběžném pruhu nesmí ohrozit řidiče v připojovacím pruhu, ale nemá povinnost mu umožnit zařazení zpomalením či zastavením. Zastavení v průběžném pruhu dálnice je hrubým porušením pravidel a vytváří vysoce rizikovou situaci pro vozidla přijíždějící zezadu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Střet zezadu s vozidlem, které nečekaně zastavilo v průběžném pruhu.",
+              "Vytvoření řetězové nehody."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030038",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403038.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030038",
+            "shrnuti": "Protijedoucí vozidlo nebezpečně předjíždí přes plnou čáru a ohrožuje vozidlo z výhledu.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil, který je nucen uhnout k pravému okraji vozovky."
+              },
+              {
+                "typ": "protijedoucí vozidlo",
+                "popis": "Stříbrné osobní vozidlo, které provádí nebezpečný předjížděcí manévr."
+              },
+              {
+                "typ": "předjížděné vozidlo",
+                "popis": "Bílé osobní vozidlo jedoucí v protisměru."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Nepřerušovaná (plná) čára"
+                  },
+                  "kod_nazev": "V 1a, Podélná čára souvislá",
+                  "umisteni": "Uprostřed vozovky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče ukazuje jízdu po úzké silnici. Uprostřed vozovky je vyznačena podélná souvislá čára, která zakazuje předjíždění. Z protisměru se náhle objeví vozidlo, které předjíždí jiné vozidlo, přejíždí plnou čáru a vjíždí do jízdní dráhy vozidla z výhledu. Řidič vozidla z výhledu je nucen prudce uhnout doprava ke krajnici, aby zabránil čelnímu střetu."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo z výhledu jede po silnici v mírné levotočivé zatáčce."
+              },
+              {
+                "cas": "střed",
+                "popis": "Zpoza zatáčky se v protisměru objevuje předjíždějící vozidlo."
+              },
+              {
+                "cas": "konec",
+                "popis": "Předjíždějící vozidlo je plně v jízdním pruhu vozidla z výhledu. Řidič z výhledu uhýbá, aby odvrátil srážku."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Protijedoucí řidič porušil pravidla tím, že předjížděl v místě, kde je to zakázáno podélnou souvislou čárou.",
+              "Svým manévrem přímo ohrozil řidiče vozidla z výhledu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Čelní střet s protijedoucím vozidlem.",
+              "Sjetí vozidla z výhledu z vozovky při úhybném manévru."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030039",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403039.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030039",
+            "shrnuti": "Vozidlo z výhledu dodržuje dostatečnou bezpečnou vzdálenost za vpředu jedoucím vozidlem, odpovídající pravidlu dvou sekund.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí v tunelu."
+              },
+              {
+                "typ": "vpředu jedoucí vozidlo",
+                "popis": "Bílá dodávka."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje jízdu vozidla z výhledu v tunelu za bílou dodávkou. Z videa je patrné, že odstup mezi vozidly je značný. Při použití pravidla dvou sekund (počítání času od okamžiku, kdy zadní část předního vozidla mine pevný bod, do okamžiku, kdy jej mine přední část vlastního vozidla) je zřejmé, že časový odstup je 2 sekundy nebo více."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Bezpečná vzdálenost, často doporučovaná jako pravidlo 'dvou sekund', je v této situaci dodržena. To poskytuje řidiči dostatek času na reakci v případě náhlého brzdění vozidla vpředu."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030040",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403040.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030040",
+            "shrnuti": "Jízda v úseku s vodorovným značením 'Šipky' (chevrons), které slouží k vizuálnímu odhadu bezpečné vzdálenosti.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil."
+              },
+              {
+                "typ": "vpředu jedoucí vozidlo",
+                "popis": "Stříbrné osobní vozidlo."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Symboly šipek",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 13, Šipky",
+                  "umisteni": "Uprostřed jízdního pruhu."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje jízdu po víceproudé komunikaci. V jízdním pruhu vozidla z výhledu jsou na vozovce vyznačeny bílé šipky (chevrons). Toto značení slouží jako pomůcka pro udržování bezpečné vzdálenosti. Pravidlo obvykle zní, že řidič by měl mezi svým vozidlem a vozidlem vpředu vidět dvě tyto šipky."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Dopravní značení V 13 'Šipky' vyznačuje doporučenou bezpečnou vzdálenost mezi vozidly. Řidič by měl jet tak, aby viděl alespoň dvě šipky mezi sebou a vozidlem před sebou, což odpovídá bezpečnému odstupu cca 2 sekundy."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nedodržení bezpečné vzdálenosti a následný střet při náhlém brzdění vozidla vpředu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030041",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403041.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030041",
+            "shrnuti": "Vozidlo z výhledu reaguje na rizikovou situaci v levém jízdním pruhu zpomalením, což je správný defenzivní postup.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí v pravém pruhu."
+              },
+              {
+                "typ": "vozidlo v levém pruhu",
+                "popis": "Tmavé osobní vozidlo, které prudce brzdí."
+              },
+              {
+                "typ": "vozidlo v levém pruhu (druhé)",
+                "popis": "Bílé osobní vozidlo jedoucí za tmavým vozidlem."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video zachycuje jízdu v pravém jízdním pruhu na víceproudé komunikaci. V levém jízdním pruhu vozidlo vpředu prudce brzdí, na což reaguje i vozidlo za ním. Tato situace představuje riziko, protože vozidla z levého pruhu mohou náhle přejet do pravého pruhu. Řidič vozidla z výhledu správně reaguje mírným zpomalením, čímž si vytváří větší časový a prostorový polštář pro řešení případného nebezpečí."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Plynulá jízda v obou pruzích."
+              },
+              {
+                "cas": "střed",
+                "popis": "Vozidlo v levém pruhu začíná intenzivně brzdit, rozsvítí se brzdová světla."
+              },
+              {
+                "cas": "konec",
+                "popis": "Vozidlo z výhledu zpomaluje a zvětšuje odstup, čímž reaguje na potenciální nebezpečí."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Defenzivní jízda vyžaduje předvídání a reagování na potenciální rizika, i když se přímo netýkají vlastního jízdního pruhu. Zpomalení a vytvoření prostoru je správná reakce na nestabilní situaci v sousedním pruhu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Náhlé přejetí vozidla z levého pruhu do pravého, přímo před vozidlo z výhledu.",
+              "Vznik dopravní nehody v levém pruhu s možnými následky i pro pravý pruh (úlomky, otočení vozidel)."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030042",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403042.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030042",
+            "shrnuti": "Řidič modrého vozidla nedává přednost vozidlu z výhledu, které jede po kruhovém objezdu.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí po kruhovém objezdu."
+              },
+              {
+                "typ": "modré vozidlo",
+                "popis": "Osobní automobil, který vjíždí na kruhový objezd, aniž by dal přednost."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelník s vrcholem dolů",
+                    "barva": "Bílá s červeným okrajem"
+                  },
+                  "kod_nazev": "P 4, Dej přednost v jízdě!",
+                  "umisteni": "Na vjezdu na kruhový objezd (pro modré vozidlo)."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kulatá modrá značka se třemi bílými šipkami",
+                    "barva": "Modrá s bílým symbolem"
+                  },
+                  "kod_nazev": "C 1, Kruhový objezd",
+                  "umisteni": "Na vjezdu na kruhový objezd (pro modré vozidlo)."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje situaci na kruhovém objezdu. Vozidlo z výhledu jede po objezdu. Zprava se blíží modré vozidlo, které má u vjezdu na objezd umístěnou značku 'Dej přednost v jízdě!'. Řidič modrého vozidla tuto povinnost nerespektuje a vjíždí na kruhový objezd těsně před vozidlo z výhledu, které je nuceno brzdit, aby nedošlo ke střetu."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo z výhledu se blíží k vjezdu, kde se chystá vjet modré vozidlo."
+              },
+              {
+                "cas": "střed",
+                "popis": "Modré vozidlo vjíždí na objezd, aniž by zastavilo nebo dalo přednost."
+              },
+              {
+                "cas": "konec",
+                "popis": "Vozidlo z výhledu musí brzdit, aby se vyhnulo kolizi s modrým vozidlem."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič vjíždějící na kruhový objezd označený značkami C1 a P4 musí dát přednost v jízdě vozidlům jedoucím po tomto objezdu. Řidič modrého vozidla toto pravidlo porušil."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Boční střet vozidel na kruhovém objezdu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030043",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403043.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030043",
+            "shrnuti": "Chodkyně vstupuje na přechod pro chodce bez rozhlédnutí a sledování provozu, čímž porušuje své povinnosti.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil, který zastavuje před přechodem."
+              },
+              {
+                "typ": "chodkyně",
+                "popis": "Žena, která přechází po přechodu a dívá se do mobilního telefonu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercová modrá značka s bílým symbolem chodce na přechodu",
+                    "barva": "Modrá, bílá"
+                  },
+                  "kod_nazev": "IP 6, Přechod pro chodce",
+                  "umisteni": "Před přechodem pro chodce."
+                }
+              ],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé pruhy (zebra)",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Na vozovce."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče ukazuje přiblížení k přechodu pro chodce. Vozidlo z výhledu zastavuje, aby umožnilo přejití chodkyni. Chodkyně však vstupuje na přechod a pokračuje v chůzi, aniž by se rozhlédla nebo zvedla hlavu od mobilního telefonu, který drží v ruce. Tím se plně nevěnuje sledování dopravní situace."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo se blíží k přechodu, chodkyně se blíží k okraji vozovky."
+              },
+              {
+                "cas": "střed",
+                "popis": "Chodkyně vstupuje do vozovky, stále se dívá do telefonu."
+              },
+              {
+                "cas": "konec",
+                "popis": "Chodkyně přechází vozovku, aniž by se rozhlédla. Vozidlo z výhledu stojí a dává jí přednost."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "I chodec má povinnosti. Nesmí vstupovat na přechod bezprostředně před blížícím se vozidlem a musí se přesvědčit, zda může bezpečně přejít. Věnování se mobilnímu telefonu při přecházení je porušením povinnosti sledovat situaci v provozu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Střet chodce s vozidlem, jehož řidič by chodce neviděl včas nebo by nepředpokládal jeho náhlé vstoupení do vozovky."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030044",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403044.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030044",
+            "shrnuti": "Řidič se blíží k železničnímu přejezdu, který je zabezpečen svislou dopravní značkou 'Stůj, dej přednost v jízdě!', a je povinen zastavit.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Osmiúhelník",
+                    "barva": "Červená s bílým nápisem 'STOP'"
+                  },
+                  "kod_nazev": "P 6, Stůj, dej přednost v jízdě!",
+                  "umisteni": "Na sloupku u železničního přejezdu, vpravo od vozovky."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kříž ve tvaru 'X'",
+                    "barva": "Bílá s červenými konci"
+                  },
+                  "kod_nazev": "A 32a, Výstražný kříž pro železniční přejezd jednokolejný",
+                  "umisteni": "Nad značkou P 6."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Světelné zabezpečovací zařízení pro železniční přejezd (PZS)",
+                  "popis_svetel": [
+                    "Všechna světla (červená i případné bílé) na zařízení jsou VYPNUTÁ."
+                  ],
+                  "souhrnny_stav": "Zařízení je mimo provoz nebo neaktivní. Řidič se řídí svislými dopravními značkami."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče ukazuje příjezd k jednokolejnému železničnímu přejezdu. Světelná signalizace není aktivní. U přejezdu je však umístěna svislá dopravní značka P 6 'Stůj, dej přednost v jízdě!'. Tato značka ukládá řidiči povinnost zastavit vozidlo na takovém místě, odkud má náležitý rozhled na trať, bez ohledu na to, zda svítí světla nebo zda vlak právě projel."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo z výhledu se blíží k přejezdu."
+              },
+              {
+                "cas": "konec",
+                "popis": "Vozidlo zastavuje před přejezdem v souladu se značkou 'STOP'."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Dopravní značka 'Stůj, dej přednost v jízdě!' (STOP) je nadřazena stavu světelné signalizace (pokud ta není v provozu). Povinnost zastavit zde vyplývá přímo z této dopravní značky."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nerespektování značky STOP a vjetí na přejezd před přijíždějící vlak.",
+              "Nedostatečné rozhlédnutí se po zastavení."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030045",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403045.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24030045",
+            "shrnuti": "Řidič jedoucí po hlavní silnici musí i přesto předvídat a sledovat chování traktoru vyjíždějícího z vedlejší polní cesty.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí po hlavní silnici."
+              },
+              {
+                "typ": "traktor",
+                "popis": "Zemědělský stroj, který se chystá vjet na hlavní silnici z polní cesty vpravo."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Vpravo u silnice, před křižovatkou."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje jízdu po silnici označené jako hlavní. Z polní cesty vpravo se k silnici blíží traktor. Přestože řidič vozidla z výhledu má přednost v jízdě, princip defenzivní jízdy a obecná povinnost předcházet nebezpečí vyžadují, aby sledoval chování řidiče traktoru a byl připraven reagovat, pokud by traktorista nedal přednost."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo jede po hlavní silnici."
+              },
+              {
+                "cas": "střed",
+                "popis": "V zorném poli se objevuje traktor přijíždějící zprava z vedlejší cesty."
+              },
+              {
+                "cas": "konec",
+                "popis": "Traktor zastavuje a dává přednost, ale řidič z výhledu musí být stále ostražitý."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Přednost v jízdě nezbavuje řidiče povinnosti chovat se ohleduplně a opatrně a předcházet rizikovým situacím. Je nutné sledovat i ostatní účastníky provozu, i když porušují pravidla."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vjetí traktoru na hlavní silnici bez dání přednosti v jízdě.",
+              "Znečištění vozovky z kol traktoru a riziko smyku."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 10,
+    "pocet_url_nalezeno": 10,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": {
+    "další_start_index": 10,
+    "zbývá": 104
+  }
+}

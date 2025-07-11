@@ -1,0 +1,508 @@
+[
+  {
+    "id": "24030002",
+    "otazka": "Jaká je maximální povolená konstrukční rychlost elektrokoloběžky, kterou je možno řídit bez řidičského oprávnění?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403002.png",
+    "moznosti": [
+      "45 km/h",
+      "15 km/h",
+      "25 km/h"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050628",
+    "otazka": "Provozovatel motocyklu přistaví tento motocykl k technické prohlídce nejpozději:",
+    "obrazek": null,
+    "moznosti": [
+      "Ve lhůtě 2 let po jeho prvním zaregistrování a potom pravidelně ve lhůtách 2 let.",
+      "Ve lhůtě 4 let po jeho prvním zaregistrování a potom pravidelně ve lhůtách 2 let.",
+      "Ve lhůtě 6 let po jeho prvním zaregistrování a potom pravidelně ve lhůtách 4 let."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060015",
+    "otazka": "Historické vozidlo:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí být bez povolení Policie ČR provozováno na pozemních komunikacích.",
+      "Lze na pozemních komunikacích provozovat bez jakéhokoli omezení.",
+      "Nelze provozovat na pozemních komunikacích za účelem podnikání a běžného denního užívání pro vlastní potřeby."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060086",
+    "otazka": "Zjistíme-li závady na brzdovém systému, které zjevně znemožňují účinně zastavit vozidlo a tím ohrožují bezpečnost provozu na pozemních komunikacích:",
+    "obrazek": null,
+    "moznosti": [
+      "Vozidlo nesmí být užito k provozu na pozemních komunikacích, smí však být vlečeno na tyči.",
+      "Vozidlo lze provozovat na pozemních komunikacích na základě jednorázového povolení policie.",
+      "S vozidlem lze přiměřenou rychlostí dojet jen do nejbližšího místa, kde lze závadu odstranit."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060087",
+    "otazka": "Lhůta pro přistavení silničního vozidla k pravidelné technické prohlídce se počítá ode dne:",
+    "obrazek": null,
+    "moznosti": [
+      "Prodeje silničního vozidla a potom vždy ode dne úspěšného provedení pravidelné technické prohlídky.",
+      "Vyrobení silničního vozidla a potom vždy v pravidelných pětiletých lhůtách.",
+      "Prvního zaregistrování silničního vozidla a potom vždy ode dne provedení pravidelné technické prohlídky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060088",
+    "otazka": "Vozidlo je technicky nezpůsobilé k provozu na pozemních komunikacích, pokud:",
+    "obrazek": null,
+    "moznosti": [
+      "Spotřeba pohonných hmot přesahuje limity stanovené výrobcem vozidla.",
+      "Do termínu příští pravidelné technické prohlídky zbývá méně než tři kalendářní měsíce.",
+      "Pro závady v technickém stavu bezprostředně ohrožuje bezpečnost provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060091",
+    "otazka": "Nebrzděný přívěs, jehož přípustná hmotnost nepřevyšuje 750 kg a který nebyl dříve registrován v zahraničí, přistaví jeho provozovatel k technické prohlídce nejpozději ve lhůtě:",
+    "obrazek": null,
+    "moznosti": [
+      "2 let po zaregistrování tohoto přívěsu a potom pravidelně nejpozději ve lhůtách 2 let.",
+      "4 let po zaregistrování tohoto přívěsu a potom pravidelně nejpozději ve lhůtách 4 let.",
+      "6 let po zaregistrování tohoto přívěsu a potom pravidelně nejpozději ve lhůtách 4 let."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060094",
+    "otazka": "K pohonu motorů vozidel se smí používat:",
+    "obrazek": null,
+    "moznosti": [
+      "Pohonné hmoty nesplňující požadavky na jakost, umožní-li spolehlivý provoz těchto motorů.",
+      "Pouze pohonné hmoty předepsané výrobcem těchto motorů nebo pohonné hmoty s nižším oktanovým číslem.",
+      "Pouze pohonné hmoty předepsané výrobcem těchto motorů."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060251",
+    "otazka": "Historickým vozidlem je:",
+    "obrazek": null,
+    "moznosti": [
+      "Každé vozidlo, jehož konstrukce neodpovídá technickým požadavkům na nově vyráběná vozidla.",
+      "Vozidlo, které je zapsáno v registru historických a sportovních vozidel a kterému byl vydán průkaz historického vozidla.",
+      "Vozidlo, které nesmí být použito k provozu na pozemních komunikacích."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060252",
+    "otazka": "Historickým vozidlem je:",
+    "obrazek": null,
+    "moznosti": [
+      "Každé vozidlo starší než 20 let.",
+      "Vozidlo, které je zapsáno v registru historických a sportovních vozidel a kterému byl vydán průkaz historického vozidla.",
+      "Každé vozidlo starší než 15 let."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060265",
+    "otazka": "Provozovatel osobního automobilu, který nebyl dříve registrován v zahraničí, přistaví tento automobil k technické prohlídce nejpozději ve lhůtě:",
+    "obrazek": null,
+    "moznosti": [
+      "2 let po prvním zaregistrování tohoto automobilu a potom pravidelně ve lhůtách 4 let.",
+      "4 let po prvním zaregistrování tohoto automobilu a potom pravidelně ve lhůtách 4 let.",
+      "4 let po prvním zaregistrování tohoto automobilu a potom pravidelně ve lhůtách 2 let."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060427",
+    "otazka": "Na téže nápravě musí být používány:",
+    "obrazek": null,
+    "moznosti": [
+      "Pneumatiky stejného rozměru bez ohledu na homologaci a typ dezénu.",
+      "Pouze shodné pneumatiky, přičemž shodnou pneumatikou se rozumí pneumatika stejného rozměru, konstrukce, druhu dezénu a značky.",
+      "Pneumatiky stejného rozměru a značky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060428",
+    "otazka": "Používání pneumatik s protiskluzovými hroty:",
+    "obrazek": null,
+    "moznosti": [
+      "Je povoleno pouze v zimním období.",
+      "Je zakázáno pro všechna vozidla, s výjimkou vozidel záchranné služby.",
+      "Je povoleno pouze v zimním období a jen v horských oblastech."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060429",
+    "otazka": "Činná plocha pláště pneumatiky v provozu musí mít po celém obvodu a v celé šíři vrchního běhounu jasně viditelný dezén s hloubkou hlavních dezénových drážek:",
+    "obrazek": null,
+    "moznosti": [
+      "U všech vozidel nejméně 1,0 mm.",
+      "U osobních vozidel 1,5 mm a u nákladních vozidel 2,0 mm.",
+      "U mopedů nejméně 1,0 mm a u vozidel ostatních kategorií nejméně 1,6 mm."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060431",
+    "otazka": "Nová přípojná vozidla za osobní automobil:",
+    "obrazek": null,
+    "moznosti": [
+      "Nepodléhají registraci.",
+      "Podléhají registraci pouze na žádost jejich vlastníka.",
+      "Podléhají registraci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060432",
+    "otazka": "Nově registrovaná přípojná vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Mají registrační značku shodnou s tažným vozidlem.",
+      "Nemusí mít žádnou registrační značku.",
+      "Mají po zaregistrování svou přidělenou registrační značku."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060434",
+    "otazka": "Jiná než předepsaná nebo povolená světelná zařízení:",
+    "obrazek": null,
+    "moznosti": [
+      "Smí být na vozidle použita pouze za předpokladu, že jejich užití nebude obtěžovat ostatní účastníky provozu na pozemních komunikacích.",
+      "Smí být použita pouze při tuningové úpravě vozidla.",
+      "Nesmí být na vozidle použita."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060439",
+    "otazka": "Okamžitá hmotnost jízdní soupravy:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí být větší než největší povolená hmotnost jízdní soupravy stanovená při schválení technické způsobilosti tažného vozidla.",
+      "Může být libovolná, nesmí však překročit limity stanovené prováděcí vyhláškou.",
+      "Může být větší než největší povolená hmotnost jízdní soupravy stanovená při schválení technické způsobilosti tažného vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060440",
+    "otazka": "Pokud přípojné vozidlo svými rozměry po připojení k tažnému vozidlu znemožní řidiči řádný výhled vnějšími zpětnými zrcátky:",
+    "obrazek": null,
+    "moznosti": [
+      "Smí být taková souprava užívána v silničním provozu.",
+      "Smí být taková souprava v silničním provozu užita pouze na silnicích II. a III. třídy a místních komunikacích.",
+      "Tažné vozidlo musí být opatřeno doplňkovými zpětnými zrcátky s větším vyložením nebo jiným zařízením, které zajistí řádný výhled."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060441",
+    "otazka": "Započítává se do největší povolené délky autobusů jakákoliv odnímatelná výbava (např. schrána na lyže atd.)?",
+    "obrazek": null,
+    "moznosti": [
+      "Ano, ale jen u meziměstských a dálkových autobusů.",
+      "Ano, započítává.",
+      "Ne, nezapočítává."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060442",
+    "otazka": "Povinná výbava motorových a přípojných vozidel musí být umístěna ve vozidle:",
+    "obrazek": null,
+    "moznosti": [
+      "Pouze pokud nepřekáží při běžném užití vozidla.",
+      "Při každém užití vozidla v provozu na pozemních komunikacích.",
+      "Pouze pokud je vozidlo přistaveno na STK."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060443",
+    "otazka": "Na vozidle mohou být použita jen taková světelná zařízení:",
+    "obrazek": null,
+    "moznosti": [
+      "Jejichž činnost je signalizována kontrolkou.",
+      "Která jsou pevně spojena s vozidlem, bez ohledu na jejich počet, barvu a umístění.",
+      "Která jsou pro danou kategorii předepsána a povolena."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060444",
+    "otazka": "Úprava barvy světla vyzařovaného světelným zařízením vozidla je:",
+    "obrazek": null,
+    "moznosti": [
+      "Je možná změna jiným způsobem, např. přestříkáním.",
+      "Zakázána.",
+      "Povolena pouze záměnou žárovky jiné barvy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060445",
+    "otazka": "Nádoby na záložní palivo musí být provedeny tak, aby:",
+    "obrazek": null,
+    "moznosti": [
+      "Palivo nemohlo vytékat při jakékoli poloze nádoby.",
+      "Se nedaly ve vozidle zaměnit s jinou nádobou.",
+      "Neměly objem větší než 5 litrů."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060447",
+    "otazka": "Dodatečná montáž předních mlhových světel na vozidlo je možná:",
+    "obrazek": null,
+    "moznosti": [
+      "Pokud montáž odpovídá technickým požadavkům stanoveným mezinárodním předpisem.",
+      "Není možná.",
+      "Bez omezení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060450",
+    "otazka": "K pravidelné technické prohlídce může přistavit vozidlo:",
+    "obrazek": null,
+    "moznosti": [
+      "Jakákoliv osoba, které je vozidlo svěřeno.",
+      "Pouze provozovatel vozidla.",
+      "Pouze vlastník vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060451",
+    "otazka": "Kontrolní nálepka osvědčující technickou způsobilost vozidla se umísťuje:",
+    "obrazek": null,
+    "moznosti": [
+      "Na přední tabulku registrační značky.",
+      "Na zadní tabulku registrační značky.",
+      "Podle požadavku zákazníka."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060453",
+    "otazka": "Proděravěním kontrolní nálepky, osvědčující technickou způsobilost vozidla, se vyznačuje:",
+    "obrazek": null,
+    "moznosti": [
+      "Rok, měsíc a den provedení příští pravidelné technické prohlídky.",
+      "Rok provedení příští pravidelné technické prohlídky.",
+      "Rok a měsíc, do kterého platí osvědčení o technické způsobilosti vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060456",
+    "otazka": "Pokud je vozidlo vybaveno indikací defektu a soupravou pro bezdemontážní opravu pneumatiky:",
+    "obrazek": null,
+    "moznosti": [
+      "Nemusí být automobil povinně vybaven náhradním kolem.",
+      "Musí být automobil povinně vybaven náhradním kolem pouze při provozu na dálnici.",
+      "Musí být automobil povinně vybaven náhradním kolem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060513",
+    "otazka": "Tabulku registrační značky umístí vlastník nebo provozovatel vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Do místa určeného konstrukčním řešením vozidla.",
+      "Na kterékoliv viditelné místo na vozidle.",
+      "Na kteréhokoliv místo na přídi nebo zádi vozidla; přitom však nesmí zakrýt předepsané osvětlení vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060514",
+    "otazka": "Tabulku registrační značky umístí vlastník nebo provozovatel vozidla:",
+    "obrazek": null,
+    "moznosti": [
+      "Tak, aby ani v případě vážné dopravní nehody nemohlo dojít k její ztrátě.",
+      "Tak, že ji vždy za použití šroubů nebo nýtů pevně spojí s karoserií.",
+      "Tak, aby při běžném provozu na pozemních komunikacích nedošlo k její ztrátě."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060515",
+    "otazka": "Na tabulku registrační značky:",
+    "obrazek": null,
+    "moznosti": [
+      "Nesmí být umístěny žádné nápisy nebo vyobrazení, které by narušily její čitelnost nebo rozlišovací schopnost, není-li stanoveno jinak.",
+      "Smí být umístěny pouze státní znak České republiky nebo vyobrazení státní vlajky České republiky.",
+      "Smí být umisťovány pouze předměty, jejichž plocha nepřesahuje 5 cm2."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060516",
+    "otazka": "V těsné blízkosti tabulky registrační značky:",
+    "obrazek": null,
+    "moznosti": [
+      "Lze umístit pouze reklamní nápisy, které nelze zaměnit s číselným kódem na registrační značce.",
+      "Nesmí být umístěny žádné nápisy nebo vyobrazení, které by narušily její čitelnost nebo rozlišovací schopnost, není-li stanoveno jinak.",
+      "Lze umístit pouze drobné ozdobné předměty nebo nápisy, pokud jimi tabulka registrační značky není překryta."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060524",
+    "otazka": "Jestliže je vozidlo vybaveno tažným zařízením schváleným s odnímatelnou spojovací koulí bez použití nářadí, musí mít tuto kouli odejmutou, pokud:",
+    "obrazek": null,
+    "moznosti": [
+      "Není využívána ke spojení s přípojným vozidlem či jiným zařízením.",
+      "Nebylo tažné zařízení použito po dobu delší než 1 měsíc.",
+      "Je vozidlo v klidu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060525",
+    "otazka": "Pneumatika náhradního kola, s výjimkou kola pro nouzové dojetí:",
+    "obrazek": null,
+    "moznosti": [
+      "Musí být nahuštěna nejméně na tlak odpovídající nejvyššímu předepsanému huštění pneumatik na vozidle.",
+      "Musí být nahuštěna na tlak odpovídající nejnižšímu předepsanému huštění pneumatik na vozidle.",
+      "Může být nahuštěna i na nižší tlak, než je předepsáno pro pneumatiky na vozidle."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060526",
+    "otazka": "Pro spojování vozidel do jízdních souprav s nebrzděným přívěsem, jehož největší přípustná hmotnost nepřevyšuje 750 kg, platí že:",
+    "obrazek": null,
+    "moznosti": [
+      "Hmotnost přívěsu není nijak vázána na technickou specifikaci tažného vozidla.",
+      "Přívěs musí být vzadu viditelně označen symbolem dopravní značky \"Jiné nebezpečí\".",
+      "Okamžitá hmotnost přívěsu nesmí překročit největší povolenou hmotnost pro nebrzděné přívěsy, jež je uvedena v technickém průkazu a osvědčení o registraci konkrétního tažného vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08120023",
+    "otazka": "Pokud je technickou prohlídkou silničního vozidla shledána nebezpečná závada:",
+    "obrazek": null,
+    "moznosti": [
+      "Stanice kontroly technického stavu vozidla je povinna závadu odstranit.",
+      "Vozidlo je technicky nezpůsobilé k provozu a nesmí být v provozu používáno.",
+      "Vozidlo je technicky způsobilé k provozu pouze na dobu 30 dnů."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "08120025",
+    "otazka": "Přestavbou silničního vozidla je:",
+    "obrazek": null,
+    "moznosti": [
+      "Změna nebo úprava podstatných částí mechanismu nebo konstrukce provozovaného silničního vozidla.",
+      "Nahrazení nebo doplnění vozidla součástí nebo výbavou, která splňuje podmínky stanovené zákonem.",
+      "Každá oprava vozidla, při které bylo použito náhradních dílů."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120026",
+    "otazka": "Za přestavbu silničního vozidla se považuje:",
+    "obrazek": null,
+    "moznosti": [
+      "Změna nebo úprava podstatných částí mechanismu nebo konstrukce provozovaného silničního vozidla.",
+      "Výměna podstatné části mechanizmu nebo konstrukce silničního vozidla za náhradní díl k vozidlu.",
+      "Nahrazení nebo doplnění vozidla součástí nebo výbavou, která splňuje podmínky stanovené zákonem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120028",
+    "otazka": "Výrobce motorů, systémů a zařízení k pohonu vozidel:",
+    "obrazek": null,
+    "moznosti": [
+      "Neurčuje pohonné hmoty a provozní hmoty používané v provozu silničních motorových vozidel.",
+      "Doporučuje pohonné hmoty a provozní hmoty používané v provozu silničních motorových vozidel.",
+      "Předepisuje pohonné hmoty, provozní hmoty a maziva používané k provozu silničních motorových vozidel."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08120035",
+    "otazka": "Stanice technické kontroly může při pravidelné technické prohlídce:",
+    "obrazek": null,
+    "moznosti": [
+      "Seřizovat světlomety, pokud se jedná o jednoduché seřízení.",
+      "Seřizovat brzdovou soustavu, řízení a nápravu.",
+      "Seřizovat řídící funkce motoru u motorů s řízeným emisním systémem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120036",
+    "otazka": "Silniční vozidlo je technicky způsobilé k provozu na pozemních komunikacích, pokud:",
+    "obrazek": null,
+    "moznosti": [
+      "Technickou prohlídkou silničního vozidla, jeho ústrojí a částí nebyly zjištěny žádné závady.",
+      "Technickou prohlídkou silničního vozidla, jeho ústrojí a částí nebyly zjištěny žádné závady nebo jen lehké závady.",
+      "Technickou prohlídkou silničního vozidla, jeho ústrojí a částí byly zjištěny jen závady, které neohrožují bezprostředně bezpečnost jízdy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "08120037",
+    "otazka": "Pokud je na silničním vozidle shledána vážná závada, je vozidlo:",
+    "obrazek": null,
+    "moznosti": [
+      "Technicky způsobilé k provozu pouze na dobu 30 dnů ode dne vyznačení zápisu výsledku technické prohlídky silničního vozidla.",
+      "Technicky nezpůsobilé k provozu po dobu nutnou k odstranění závady ode dne vyznačení zápisu výsledku technické prohlídky silničního vozidla.",
+      "Technicky nezpůsobilé k provozu na pozemních komunikacích ode dne vyznačení zápisu výsledku technické prohlídky silničního vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10040038",
+    "otazka": "Technickou prohlídkou silničního vozidla se rozumí:",
+    "obrazek": null,
+    "moznosti": [
+      "kontrola vylepení nálepky osvědčující technickou způsobilosti vozidla.",
+      "kontrola technického stavu, činnosti ústrojí a zařízení silničního vozidla ve stanici STK.",
+      "kontrola vylepení nálepky osvědčující měření emisí."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100013",
+    "otazka": "Má vozidlo dle kontrolní nálepky na fotografii k dnešnímu dni platnou technickou prohlídku?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209102.jpg",
+    "moznosti": [
+      "Nelze určit.",
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100039",
+    "otazka": "Má vozidlo dle kontrolní nálepky na fotografii platnou technickou prohlídku?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209128.jpg",
+    "moznosti": [
+      "Ne.",
+      "Ano.",
+      "Nelze určit."
+    ],
+    "spravna": 1
+  }
+]

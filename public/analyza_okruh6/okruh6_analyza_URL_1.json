@@ -1,0 +1,953 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "24030006",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403006.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030006",
+            "shrnuti": "Obrázek zobrazuje kartu řidiče do digitálního tachografu, která je předmětem otázky.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Statický obrázek ukazuje plastovou kartu řidiče, která se používá v digitálních tachografech k zaznamenávání doby řízení, přestávek a odpočinku řidičů profesionálů. Na kartě je vidět čip, fotografie držitele a identifikační údaje. Slouží jako vizuální pomůcka k otázce, kde lze o tuto kartu zažádat."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "O vydání karty řidiče se žádá na kterémkoliv obecním úřadě obce s rozšířenou působností (ORP), bez ohledu na místo trvalého bydliště žadatele."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030007",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403007.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030007",
+            "shrnuti": "Obrázek znázorňuje nákladní automobil s nákladem, který ilustruje problematiku největších povolených rozměrů.",
+            "akteri": [
+              {
+                "typ": "nákladní automobil",
+                "popis": "Červený tahač s návěsem, na kterém je naložen náklad."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Obrázek ukazuje jízdní soupravu (tahač s návěsem) naloženou nákladem. Otázka se týká toho, zda se do největších povolených rozměrů (délka, šířka, výška) započítává i náklad."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon stanoví, že největší povolené rozměry vozidel a jízdních souprav se vztahují na vozidla včetně jejich nákladu. Celkový rozměr (např. výška vozidla + výška nákladu) nesmí překročit stanovený limit (obvykle 4,00 m na výšku), pokud není udělena výjimka pro nadrozměrnou přepravu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Překročení maximální povolené výšky a následný náraz do mostu, viaduktu nebo trolejového vedení."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030015",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403015.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030015",
+            "shrnuti": "Obrázek ukazuje oranžový maják, který smí řidič užít jen v případě ohrožení bezpečnosti provozu.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Zvláštní výstražné světlo oranžové barvy",
+                  "popis_svetel": [
+                    "Oranžové světlo je ZAPNUTÉ a bliká."
+                  ],
+                  "souhrnny_stav": "Aktivní výstražné zařízení."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na obrázku je detail střechy vozidla se zapnutým zvláštním výstražným světlem oranžové barvy (tzv. oranžový maják)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič vozidla vybaveného oranžovým majákem smí tohoto světla užívat pouze tehdy, pokud by jeho jízdou nebo pracovní činností (např. práce na silnici, nadrozměrná přeprava, odtah) mohla být ohrožena bezpečnost ostatních účastníků provozu. Pouhé omezování provozu k zapnutí majáku neopravňuje."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030016",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403016.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030016",
+            "shrnuti": "Obrázek zobrazuje kartu řidiče do digitálního tachografu a kalendář, což ilustruje otázku na lhůty pro její obnovu.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Koláž obrázků: vlevo karta řidiče, vpravo stránka z kalendáře. Slouží jako vizuální kontext k otázce týkající se lhůty a místa pro podání žádosti o obnovu karty řidiče, jejíž platnost končí."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Žádost o obnovu karty řidiče z důvodu konce platnosti se podává na kterémkoliv obecním úřadě obce s rozšířenou působností. Žádost je nutné podat nejpozději 15 pracovních dnů před skončením platnosti stávající karty."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030017",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403017.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030017",
+            "shrnuti": "Obrázek rukou předávajících si kartu řidiče ilustruje téma neoprávněného použití cizí karty.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Symbolický obrázek ukazuje dvě ruce, přičemž jedna předává druhé kartu řidiče. To vizuálně reprezentuje situaci neoprávněného použití karty jiné osoby, což je závažný přestupek."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Užití cizí nebo nahlášené ztracené/odcizené karty řidiče je závažný přestupek. Za tento delikt hrozí řidiči ve správním řízení vysoká pokuta (až 10 000 Kč) a zákaz činnosti (řízení) na 6 měsíců až 1 rok. Dopravci hrozí pokuta až 350 000 Kč."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030018",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230317.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030018",
+            "shrnuti": "Obrázek jízdní soupravy, kde součet největších povolených hmotností automobilu a přívěsu překračuje 4 250 kg, vyžaduje řidičské oprávnění skupiny B+E.",
+            "akteri": [
+              {
+                "typ": "jízdní souprava",
+                "popis": "Osobní automobil táhnoucí velký obytný přívěs."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na obrázku je osobní automobil, který táhne velký dvouosý obytný přívěs. Otázka specifikuje hmotnosti: auto 2 500 kg, přívěs 1 800 kg. Celková největší povolená hmotnost soupravy je 4 300 kg."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidičské oprávnění skupiny B stačí pro soupravy do 3 500 kg.",
+              "Řidičské oprávnění skupiny B s kódem 96 stačí pro soupravy, kde největší povolená hmotnost soupravy je v rozmezí 3 500 kg až 4 250 kg.",
+              "Protože součet hmotností (2 500 + 1 800 = 4 300 kg) překračuje 4 250 kg, je pro řízení této soupravy nutné řidičské oprávnění skupiny B+E."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030019",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230318.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030019",
+            "shrnuti": "Obrázek autobusu s přívěsem na kola. Pro řízení soupravy, kde přívěs má největší povolenou hmotnost nad 750 kg, je třeba řidičské oprávnění skupiny D+E.",
+            "akteri": [
+              {
+                "typ": "jízdní souprava",
+                "popis": "Autobus táhnoucí přívěs pro přepravu jízdních kol."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na obrázku je autobus s připojeným speciálním přívěsem pro přepravu jízdních kol. Otázka uvádí, že největší povolená hmotnost přívěsu je 900 kg."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidičské oprávnění skupiny D opravňuje k řízení autobusu s přípojným vozidlem o největší povolené hmotnosti nepřevyšující 750 kg.",
+              "Protože největší povolená hmotnost přívěsu (900 kg) je vyšší než 750 kg, je pro řízení této soupravy nutné řidičské oprávnění skupiny D+E."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030020",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060020",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230703.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060020",
+            "shrnuti": "Obrázek ukazuje motocykl, který spadá do kategorie A1. Řidičské oprávnění A1 opravňuje i k řízení vozidel skupiny AM.",
+            "akteri": [
+              {
+                "typ": "motocykl",
+                "popis": "Lehký motocykl (skútr)."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Statický obrázek skútru na neutrálním pozadí. Otázka se týká rozsahu řidičských oprávnění."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidičská oprávnění vyšších skupin vždy zahrnují i oprávnění pro skupiny nižší v rámci daného druhu vozidla. Držitel oprávnění skupiny A1 (lehké motocykly do 125 cm3 a 11 kW) je tedy oprávněn řídit i vozidla skupiny AM (mopedy s konstrukční rychlostí do 45 km/h)."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060021",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230703.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060021",
+            "shrnuti": "Obrázek ukazuje motocykl. Otázka se týká rozsahu řidičského oprávnění skupiny A2.",
+            "akteri": [
+              {
+                "typ": "motocykl",
+                "popis": "Lehký motocykl (skútr)."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Statický obrázek skútru na neutrálním pozadí. Otázka se týká rozsahu řidičských oprávnění."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidičské oprávnění skupiny A2 (motocykly s výkonem do 35 kW) zahrnuje i oprávnění pro nižší skupiny motocyklů, tedy skupiny A1 a AM."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060022",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230703.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060022",
+            "shrnuti": "Obrázek ukazuje motocykl. Otázka se týká rozsahu řidičského oprávnění skupiny A2.",
+            "akteri": [
+              {
+                "typ": "motocykl",
+                "popis": "Lehký motocykl (skútr)."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Statický obrázek skútru na neutrálním pozadí. Otázka se týká rozsahu řidičských oprávnění."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidičské oprávnění skupiny A2 opravňuje k řízení motocyklů s výkonem motoru nejvýše 35 kW a s poměrem výkonu/hmotnosti nejvýše 0,2 kW/kg, které nebyly upraveny z motocyklu s více než dvojnásobným výkonem."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040230",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040232",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050037",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050109",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050116",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050117",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050118",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050127",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050130",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050342",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050425",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050429",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050430",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050431",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050601",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060011",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060012",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060016",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060017",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060019",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060020",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060021",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060022",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060023",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060024",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060025",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060026",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060027",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060028",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060029",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060030",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060031",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060032",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060034",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060035",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060036",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060037",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060039",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060040",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060041",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060042",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060043",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060044",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060271",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060272",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060290",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060309",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060312",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060333",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060334",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060485",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060487",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060489",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060491",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060493",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060494",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060499",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060509",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060510",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10040023",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11040011",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11040012",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11050001",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11080001",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11080002",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11080028",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11080029",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11080030",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11080032",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "11080033",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "15120001",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020026",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1142.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020026",
+            "shrnuti": "Vozidlo má zadní registrační značku zakrytou nosičem na kola, což je protiprávní.",
+            "akteri": [
+              {
+                "typ": "osobní automobil",
+                "popis": "Vozidlo s namontovaným nosičem na jízdní kola na tažném zařízení."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na obrázku je zadní část osobního automobilu, na kterém je nainstalován nosič jízdních kol. Tento nosič zcela zakrývá zadní tabulku registrační značky vozidla. Takový stav je v rozporu se zákonem, který vyžaduje, aby byla registrační značka vždy čitelná. Správným řešením je buď přemístit původní značku na nosič, nebo si zažádat o třetí značku určenou speciálně pro tento účel."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Registrační značka musí být vždy čitelná a nesmí být zakrytá. Jízda s takto zakrytou značkou je přestupkem."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100031",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209120.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100031",
+            "shrnuti": "Obrázek zelené karty a peněz ilustruje téma sankcí za neuzavření povinného ručení.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Koláž obrázků: vlevo zelená karta (doklad o pojištění odpovědnosti), vpravo české koruny. Ilustruje finanční postih spojený s provozováním vozidla bez platného pojištění odpovědnosti."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Provozovatel vozidla, které je provozováno bez platného pojištění odpovědnosti z provozu vozidla, je povinen uhradit České kanceláři pojistitelů příspěvek do garančního fondu. Výše příspěvku se počítá za každý den, kdy byla tato povinnost porušena. Jedná se o sankci nad rámec případné pokuty od policie nebo správního orgánu."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100032",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209121.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100032",
+            "shrnuti": "Obrázek havárie a formuláře ilustruje situaci, kdy škodu způsobí nepojištěné vozidlo.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Koláž obrázků: vlevo dvě havarovaná auta, vpravo evropský záznam o dopravní nehodě. Vizuálně reprezentuje situaci dopravní nehody a následného řešení škody."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Pokud škodu způsobí provozem vozidla osoba, která nemá uzavřené pojištění odpovědnosti, poškozený má právo uplatnit nárok na náhradu újmy u České kanceláře pojistitelů (ČKP). ČKP vyplatí plnění z garančního fondu a následně tuto částku vymáhá po nepojištěném viníkovi."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 81,
+    "pocet_url_nalezeno": 12,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": false
+}

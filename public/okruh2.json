@@ -1,0 +1,2449 @@
+[
+  {
+    "id": "24030008",
+    "otazka": "Vyberte správný význam vyobrazeného dopravního značení:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403008.png",
+    "moznosti": [
+      "Zákaz vjezdu všech vozidel v obou směrech. Úsek je dlouhý 1500 m.",
+      "Ve vzdálenosti 1500 m (za vyobrazenou dopravní značkou) končí úsek zákazu vjezdu všech motorových vozidel v obou směrech.",
+      "Ve vzdálenosti 1500 m (za vyobrazenou dopravní značkou) následuje zákaz vjezdu všech vozidel v obou směrech."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030022",
+    "otazka": "Tato dopravní značka označuje oblast:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403022.png",
+    "moznosti": [
+      "Kde platí pravidla silničního provozu pro provoz ve sdílené zóně.",
+      "Kde platí pravidla silničního provozu pro provoz v obytné zóně.",
+      "Kde platí pravidla silničního provozu pro provoz v pěší zóně."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030023",
+    "otazka": "Jak se musí zachovat řidič v úseku za vyobrazenou dopravní značkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403023.png",
+    "moznosti": [
+      "Musí dodržovat pouze obecná pravidla silničního provozu.",
+      "Musí dodržovat pravidla silničního provozu platná pro pohyb v pěší zóně.",
+      "Je povinen dodržovat pravidla silničního provozu platná pro jízdu ve sdílené zóně."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030024",
+    "otazka": "Co vyznačuje vyobrazená dopravní značka?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403024.png",
+    "moznosti": [
+      "Konec pěší zóny.",
+      "Konec obytné zóny.",
+      "Konec sdílené zóny."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030025",
+    "otazka": "Jaká pravidla silničního provozu musíte dodržovat mimo zónu označenou vyobrazenou dopravní značkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403025.png",
+    "moznosti": [
+      "Platí ustanovení pro jízdu mimo obec.",
+      "Nemusím již dodržovat pravidla silničního provozu pro jízdu ve sdílené zóně.",
+      "Musím dále dodržovat ustanovení platná pro jízdu ve sdílené zóně."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24030026",
+    "otazka": "Co vyznačuje vyobrazená dopravní značka?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403026.png",
+    "moznosti": [
+      "Parkoviště, které je určeno pro parkování vozidel, jejichž řidič odtud bezprostředně pokračuje v jízdě jako cestující v jiném vozidle v rámci spolujízdy.",
+      "Parkoviště, které je určeno pro parkování vozidel, jejichž řidič pokračuje v jízdě veřejnou dopravou.",
+      "Parkoviště, které je určeno pro zastavení vozidel za účelem vystoupení přepravovaných dětí před školou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030027",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403027.png",
+    "moznosti": [
+      "Informuje řidiče hodlajícího podélně zaparkovat vozidlo o nutnosti dodržet vyznačený rozestup mezi vozidly.",
+      "Ve spojení s příslušnou vodorovnou dopravní značkou „Bezpečný odstup“ informuje o bezpečném odstupu mezi jedoucími vozidly.",
+      "Stanovuje řidiči dodržet rozestup min. 200 m za vpředu jedoucím vozidlem."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24030028",
+    "otazka": "Jaký je význam vyobrazené dopravní značky?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403028.png",
+    "moznosti": [
+      "Označuje místo pro kempování obytných vozidel a obytných přívěsů.",
+      "Označuje místo pro parkování obytných vozidel.",
+      "Označuje servisní místo pro sanitaci hygienických zařízení obytných automobilů a obytných přívěsů."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070011",
+    "otazka": "Vyobrazený směrový sloupek:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240701.png",
+    "moznosti": [
+      "Používá se pro vyznačení křižovatky silnic nižší třídy.",
+      "Označuje okraj pozemní komunikace.",
+      "Vyznačuje vyústění polní a lesní cesty na pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070012",
+    "otazka": "Jak se zachová řidič v případě, že vyjíždí z komunikace označené vyobrazenými sloupky?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240702.png",
+    "moznosti": [
+      "Dá přednost v jízdě všem vozidlům, jedoucím po komunikaci, na kterou vyjíždí.",
+      "Dá přednost v jízdě vozidlům přijíždějícím zleva.",
+      "Dá přednost v jízdě vozidlům, přijíždějícím zprava."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070015",
+    "otazka": "Řidič nákladního automobilu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240705.png",
+    "moznosti": [
+      "Musí odbočit vpravo.",
+      "Nesmí odbočit vpravo.",
+      "Může odbočit vpravo, přitom nesmí ohrozit ani omezit cyklistu jedoucího ve vyhrazením jízdním pruhu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070016",
+    "otazka": "Řidič motocyklu na nejbližší křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240706.png",
+    "moznosti": [
+      "Nesmí odbočit vpravo.",
+      "Může odbočit vpravo, přitom nesmí ohrozit ani omezit cyklistu jedoucího ve vyhrazeném jízdním pruhu.",
+      "Může odbočit vpravo, přičemž mu cyklista jedoucí ve vyhrazeném jízdním pruhu musí dát přednost v jízdě."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070021",
+    "otazka": "Jak se má zachovat řidič motocyklu ve vyobrazené dopravní situaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240711.png",
+    "moznosti": [
+      "Jednostopé vozidlo může zúžením projet.",
+      "Zastaví motocykl před zúžením.",
+      "Musí se s řidičem protijedoucího vozidla domluvit."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070025",
+    "otazka": "Může se motocyklista zařadit před světelnou křižovatkou do prostoru vyznačeného vodorovnou dopravní značkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240716.jpg",
+    "moznosti": [
+      "Může, pokud je tam dostatek prostoru.",
+      "Nemůže, prostor je vyhrazen pouze cyklistům.",
+      "Může, motocyklista se řadí na křižovatce před ostatní vozidla."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070031",
+    "otazka": "Jaký je význam vyobrazené dopravní značky:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240722.jpg",
+    "moznosti": [
+      "Značka informuje řidiče o tom, že řidič protijedoucího vozidla smí do následujícího úseku pozemní komunikace vjet pouze v případě, kdy se jeho a protijedoucí vozidlo mohou bezpečně vyhnout.",
+      "Značka přikazuje řidiči dát přednost v jízdě protijedoucímu vozidlu v případě, kdy se protijedoucí vozidla nemohou bezpečně vyhnout.",
+      "Značka přikazuje jízdu po křižovatce ve směru šipek na značce zobrazených."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070033",
+    "otazka": "Řidič autobusu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240724.png",
+    "moznosti": [
+      "Nesmí odbočit vpravo.",
+      "Může odbočit vpravo, přitom nesmí ohrozit ani omezit cyklistu jedoucího ve vyhrazením jízdním pruhu.",
+      "Musí odbočit vpravo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070035",
+    "otazka": "Do úseku pozemní komunikace za vyobrazenou dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240726.png",
+    "moznosti": [
+      "Je zakázán vjezd jen osobním automobilům.",
+      "Je zakázán vjezd všem motorovým vozidlům",
+      "Je zakázán vjezd všech motorových vozidel s výjimkou motocyklů bez postranního vozíku."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23030005",
+    "otazka": "Sestava jednotlivých šipek umístěných za sebou upozorňuje řidiče vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230302.jpg",
+    "moznosti": [
+      "Na nebezpečnou zatáčku vlevo, v níž musí řidič výrazně snížit rychlost jízdy.",
+      "Na tři po sobě následující zatáčky, z nichž první je vlevo.",
+      "Na skutečnost, že za zatáčkou je ve vzdálenosti 240 m železniční přejezd."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030006",
+    "otazka": "Tato dopravní značka zakazuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230303.png",
+    "moznosti": [
+      "Jízdu ve vyznačeném jízdním pruhu pro nákladní vozidla s největší přípustnou hmotností nad 12 t.",
+      "Předjíždění pro všechna nákladní vozidla ve vyznačeném úseku.",
+      "Vjezd do vyznačeného jízdního pruhu nákladním automobilům, tahačům přívěsu nebo návěsu a speciálním automobilům, značka neplatí pro obytné automobily."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23030007",
+    "otazka": "Značka informuje o zákazu vjezdu, který za nejbližší křižovatkou platí v přímém směru pro:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230305.png",
+    "moznosti": [
+      "Nákladní vozidla s největší povolenou hmotností nad 6 t.",
+      "Všechna vozidla s okamžitou hmotností nad 6 t.",
+      "Všechna vozidla s celkovou hmotností do 6 t."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030010",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230309.jpg",
+    "moznosti": [
+      "Zakazuje vjezd vozidel nebo jízdních souprav přepravujících sypké materiály, které nemají zakrytý nákladový prostor.",
+      "Zakazuje vjezd vozidlům, která přepravují výbušniny, snadno hořlavý nebo jinak nebezpečný náklad.",
+      "Zakazuje vjezd vozidlům přepravujícím ropu nebo ropné materiály nebo jiné látky, které by mohly způsobit ohrožení životního prostředí, zejména znečištění vody."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23030022",
+    "otazka": "Smí do takto označeného úseku (na most), vjet řidič osobního automobilu délky 5 m s obytným přívěsem délky 6 m?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230321.jpg",
+    "moznosti": [
+      "Ne, součet délky tažného vozidla a přípojného vozidla je více než 8 m.",
+      "Ano, ani jedno z vozidel soupravy není delší než 8 m.",
+      "Ano, zákaz se nevztahuje na osobní vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030023",
+    "otazka": "Řidič nákladního automobilu z výhledu s nejvyšší povolenou hmotností 3 300 kg s přípojným vozidlem s nejvyšší povolenou hmotností 2 000 kg:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230323.jpg",
+    "moznosti": [
+      "Nesmí vjet do takto označeného úseku. Součet nejvyšších povolených hmotností vozidel soupravy je vyšší než nejvyšší povolená hmotnost vyznačená na dopravní značce.",
+      "Smí do takto označeného úseku vjet, ani jedno z vozidel soupravy nepřesahuje povolenou hmotnost.",
+      "Smí do takto označeného úseku vjet, zákaz se vztahuje pouze na „velká“ nákladní vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030031",
+    "otazka": "Řidič vozidla z výhledu smí vjet do levého jízdního pruhu, pokud:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230333.jpg",
+    "moznosti": [
+      "Největší povolená šířka vozidla dle technického průkazu bez sklopné části zrcátek není menší než 2,2 m.",
+      "Okamžitá šířka vozidla včetně nákladu a zpětných zrcátek není větší než 2,2 m.",
+      "Dodrží odstup od před ním jedoucího vozidla nejméně 2,2 m."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06040193",
+    "otazka": "Jak se zachováte v místě, kde je tato výstražná dopravní značka?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0038.jpg",
+    "moznosti": [
+      "Přizpůsobím jízdu tomu, že se vozovka oproti předcházejícímu úseku výrazně zužuje, a to z obou stran",
+      "Nezměním způsob jízdy ani chování, protože není důvod očekávat změnu dopravní situace.",
+      "Zvýším rychlost jízdy, abych byl co nejrychleji z místa zúžení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040194",
+    "otazka": "Tato dopravní značka označuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/p2.jpg",
+    "moznosti": [
+      "Vedlejší pozemní komunikaci.",
+      "Konec hlavní pozemní komunikace.",
+      "Hlavní pozemní komunikaci"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050074",
+    "otazka": "Vyobrazená dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/c5a.jpg",
+    "moznosti": [
+      "Doporučuje řidiči motorového vozidla o třech a více kolech pokračovat v jízdě až po nasazení sněhových řetězů.",
+      "Zakazuje vjezd vozidlům s nasazenými sněhovými řetězy.",
+      "Přikazuje řidiči motorového vozidla o třech a více kolech pokračovat v jízdě až po nasazení sněhových řetězů na nejméně dvě hnací kola."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050156",
+    "otazka": "Tato značka upozorňuje na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0041.jpg",
+    "moznosti": [
+      "Místo,kde se vozovka oproti předcházejícímu úseku výrazně zužuje, a to z obou stran.",
+      "Místo, kde při souběžné jízdě platí střídavé řazení do jízdního proudu průběžného pruhu.",
+      "Místo, kde se vozovka oproti předcházejícímu úseku výrazně zužuje z jedné strany."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050200",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a11.jpg",
+    "moznosti": [
+      "Upozorňuje na přechod pro chodce, který by řidič jinak neočekával a který není viditelný z dostatečné vzdálenosti.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace, v jejichž blízkosti se chodci často pohybují nebo shromažďují, přecházejí vozovku, nebo kde hrozí zvýšené nebezpečí jejich nenadálého vběhnutí do vozovky.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace s možností zvýšeného výskytu chodců anebo častého přecházení chodců přes pozemní komunikaci."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050201",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a8.jpg",
+    "moznosti": [
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde může dojít ke smyku vozidla i za neztížených povětrnostních podmínek.",
+      "Upozorňuje na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vlevo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde může dojít ke smyku vozidla za ztížených povětrnostních podmínek, například za deště nebo sněžení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050202",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a6a.jpg",
+    "moznosti": [
+      "Upozorňuje na místo, kde se snižuje počet jízdních pruhů a kde při souběžné jízdě platí střídavé řazení do jízdního proudu.",
+      "Upozorňuje na místo, kde se vozovka oproti předcházejícímu úseku výrazně rozšiřuje, a to z obou stran.",
+      "Upozorňuje na místo, kde se vozovka oproti předcházejícímu úseku výrazně zužuje, a to z obou stran."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050203",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a10.jpg",
+    "moznosti": [
+      "Upozorňuje na místo, kde je provoz na pozemní komunikaci řízen světelnými signály, které by řidič jinak neočekával, nebo které nejsou s ohledem na místní podmínky viditelné z dostatečné vzdálenosti.",
+      "Upozorňuje na železniční přejezd, který je vybaven přejezdovým zabezpečovacím zařízením, které by řidič jinak neočekával.",
+      "Upozorňuje na každou křižovatku, na které je provoz řízen světelnými signály."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050204",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a2b.jpg",
+    "moznosti": [
+      "Upozorňuje na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vpravo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vlevo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050205",
+    "otazka": "Tato dopravní značka upozorňuje na místo nebo úsek pozemní komunikace:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a12.jpg",
+    "moznosti": [
+      "Kde se nachází zastávka autobusu přepravujícího děti a kde je řidič povinen dbát zvýšené opatrnosti vůči nebezpečí jejich nenadálého vběhnutí do vozovky.",
+      "S předpokladem zvýšeného výskytu chodců anebo častého přecházení chodců přes pozemní komunikaci v místě, kde není zřízen přechod pro chodce, např. v místě pro přecházení.",
+      "V jejichž blízkosti se děti často pohybují nebo shromažďují, přecházejí vozovku, nebo kde hrozí zvýšené nebezpečí jejich nenadálého vběhnutí do vozovky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050206",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a23.jpg",
+    "moznosti": [
+      "Upozorňuje na bezpečný odstup mezi vozidly jedoucími v koloně.",
+      "Upozorňuje na nebezpečí výskytu kolony stojících nebo pomalu jedoucích vozidel.",
+      "Upozorňuje na místo, kde při souběžné jízdě platí střídavé řazení do jízdního proudu průběžného pruhu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050207",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a24.jpg",
+    "moznosti": [
+      "Upozorňuje na úsek se zvýšeným nebezpečím výskytu náledí na vozovce.",
+      "Upozorňuje řidiče motorového vozidla o třech a více kolech na povinnost pokračovat v jízdě až po nasazení sněhových (protiskluzových) řetězů na nejméně dvě hnací kola.",
+      "Přikazuje řidiči motorového vozidla kategorie M nebo N, aby pokračoval v jízdě jen při splnění podmínek stanovených zákonem pro provoz vozidel v zimním období, a to bez ohledu na datum a aktuální nebo předpokládané povětrnostní podmínky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050208",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a1a.jpg",
+    "moznosti": [
+      "Označuje zejména nebezpečnou zatáčku a usměrňuje provoz ve směru šipky.",
+      "Vyznačuje skutečný tvar hlavní pozemní komunikace.",
+      "Upozorňuje řidiče na zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050209",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a26.jpg",
+    "moznosti": [
+      "Upozorňuje na vjezd do tunelu, kde kromě obecných pravidel provozu na pozemních komunikacích platí zvláštní pravidla pro provoz v tunelu.",
+      "Upozorňuje na místo, hromadné dopravní nehody.",
+      "Upozorňuje na nebezpečí výskytu mlhy nebo kouře."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050210",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a25.jpg",
+    "moznosti": [
+      "Upozorňuje na místo, kde tramvaj křižuje směr jízdy ostatních vozidel.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde je povolena jízda podél tramvaje vlevo.",
+      "Upozorňuje na místo, kde má řidič povinnost dát přednost v jízdě tramvaji, a to zejména mimo křižovatku."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050211",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a19.jpg",
+    "moznosti": [
+      "Přikazuje cyklistům užít v daném směru takto označeného pruhu nebo stezky.",
+      "Upozorňuje na místo, kde cyklisté vjíždějí na vozovku nebo ji přejíždějí, anebo na úsek, kde se cyklisté často vyskytují.",
+      "Zakazuje vjezd cyklistům a jízdu na jízdním kole. Vedení jízdního kola cyklistou je povoleno."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050212",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a19.jpg",
+    "moznosti": [
+      "Označuje místo určené pro cyklisty čekající na světelný signál „Volno“.",
+      "Upozorňuje na místo, kde cyklisté vjíždějí na vozovku nebo ji přejíždějí, anebo na úsek, kde se cyklisté často vyskytují.",
+      "Vyznačuje pruh nebo stezku pro cyklisty."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050213",
+    "otazka": "Tato dopravní značka upozorňuje na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a15.jpg",
+    "moznosti": [
+      "Práci na pozemní komunikaci nebo v jejím bezprostředním okolí, která by mohla ohrozit bezpečnost provozu na pozemních komunikacích nebo při níž by mohli být provozem ohroženi pracovníci tuto činnost vykonávající.",
+      "Místo nebo úsek pozemní komunikace, kde může docházet k časté nakládce a vykládce vozidel správce pozemní komunikace.",
+      "Místo nebo úsek pozemní komunikace, kde může docházet k častému pohybu hrajících si dětí."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050214",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a16.jpg",
+    "moznosti": [
+      "Upozorňuje na místo s nebezpečím náhlého poryvu bočního větru, který může ohrozit bezpečnost provozu na pozemních komunikacích.",
+      "Upozorňuje na místo, v jehož blízkosti je umístěn větrný rukáv, z jehož pohybu je patrný směr a síla větru.",
+      "Upozorňuje na místo, v jehož blízkosti je letiště, kde v malé výšce nad pozemní komunikací přelétávají letadla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050215",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a9.jpg",
+    "moznosti": [
+      "Upozorňuje na úsek pozemní komunikace, kde je řidič povinen dát přednost v jízdě protijedoucímu vozidlu v případě, kdy se protijedoucí vozidla nemohou bezpečně vyhnout.",
+      "Upozorňuje na úsek pozemní komunikace, kde je na rozdíl od předcházejícího úseku provoz vozidel veden dočasně nebo trvale v obou směrech.",
+      "Upozorňuje na úsek pozemní komunikace, kde je provoz veden střídavě v obou směrech."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050216",
+    "otazka": "Tato dopravní značka upozorňuje na místo nebo úsek pozemní komunikace, kde:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a14.jpg",
+    "moznosti": [
+      "Platí zákaz používání výstražných zvukových znamení z důvodu ochrany divoké zvěře.",
+      "Může docházet k častému výskytu domácích zvířat na pozemní komunikaci, přičemž na značce může být použít i jiný určený symbol zvířete.",
+      "Může docházet k častému výskytu divoké zvěře na pozemní komunikaci, přičemž na značce může být použít i jiný určený symbol volně žijícího živočicha."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050217",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a3.jpg",
+    "moznosti": [
+      "Upozorňuje na jednokolejný železniční přejezd.  Je-li řidič povinen před železničním přejezdem zastavit vozidlo, zastaví před touto značkou.",
+      "Upozorňuje předem na křižovatku, kde je přednost v jízdě upravena dopravními značkami.",
+      "Upozorňuje na křižovatku, kde na rozdíl od svého předcházejícího průběhu již není pozemní komunikace hlavní a uplatňuje se zde ustanovení o přednosti v jízdě vozidel přijíždějících zprava."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050218",
+    "otazka": "Tato dopravní značka upozorňuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a2a.jpg",
+    "moznosti": [
+      "Na zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vlevo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vpravo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050219",
+    "otazka": "Tato výstražná dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a17.jpg",
+    "moznosti": [
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde se může vlivem sesuvů nebo padání kamenů na pozemní komunikaci vyskytovat kamení nebo zemina.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde řidič musí dbát zvýšené opatrnosti vůči ostatním účastníkům provozu na pozemních komunikacích vzhledem k častému výskytu vodních kaluží.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde se na vozovce vyskytuje volný štěrk, který by mohl ohrozit bezpečnost účastníků provozu na pozemních komunikacích."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050221",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a22.jpg",
+    "moznosti": [
+      "Železniční přejezd, který není označen jinými dopravními značkami.",
+      "Upozorňuje na jiné nebezpečí než to, které je možno označit příslušnou výstražnou značkou.",
+      "Upozorňuje na změnu místní úpravy provozu na pozemních komunikacích, změnu v organizaci dopravy, neobvyklé stavební uspořádání pozemní komunikace, místo s častým výskytem nehod apod."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050222",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a7b.jpg",
+    "moznosti": [
+      "Upozorňuje na hrboly, výtluky, díry a jiné nerovnosti ve vozovce nebo na úsek s nerovným povrchem vozovky, vyžadující zvýšenou opatrnost nebo výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na nerovnosti ve vozovce nebo na úsek s nerovným povrchem vozovky způsobeným vyjetými kolejemi.",
+      "Upozorňuje na umělou nerovnost na vozovce, jejímž účelem je zejména snížení rychlosti jedoucích vozidel."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050223",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a20.jpg",
+    "moznosti": [
+      "Informuje o jiném cíli než obci nebo její části. Za jiný cíl se ve vyobrazeném případě považuje letiště.",
+      "Upozorňuje na místo, kde v malé výšce nad pozemní komunikací přelétávají letadla.",
+      "Upozorňuje na úsek pozemní komunikace směřující na nechráněné letiště."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050224",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a1a.jpg",
+    "moznosti": [
+      "Upozorňuje na nebezpečnou zatáčku, v níž musí řidič výrazně snížit rychlost jízdy, a usměrňuje provoz ve směru šipky.",
+      "Upozorňuje na zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na zatáčku (směrový oblouk) vlevo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050225",
+    "otazka": "Tato dopravní značka upozorňuje na místo nebo úsek pozemní komunikace, kde:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a13.jpg",
+    "moznosti": [
+      "Může docházet k častému výskytu divoké zvěře na pozemní komunikaci, přičemž na značce může být použít i jiný určený symbol volně žijícího živočicha.",
+      "Platí zákaz hnaní domácích zvířat po pozemní komunikaci.",
+      "Může docházet k častému výskytu domácích zvířat na pozemní komunikaci, přičemž na značce může být použít i jiný určený symbol zvířete."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050241",
+    "otazka": "Tato dopravní značka zakazuje vjezd vozidel, jejichž:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b15.jpg",
+    "moznosti": [
+      "Okamžitá výška včetně nákladu je větší než údaj uvedený na značce.",
+      "Okamžitá šířka včetně nákladu a zpětných zrcátek je větší než údaj uvedený na značce.",
+      "Okamžitá délka včetně nákladu a příslušenství vozidla je větší než údaj uvedený na značce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050242",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b7.jpg",
+    "moznosti": [
+      "Zakazuje jen vjezd motocyklům s postranním vozíkem.",
+      "Umožňuje vjezd motocyklům.",
+      "Zakazuje vjezd motocyklům."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050252",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b5.jpg",
+    "moznosti": [
+      "Zakazuje vjezd všem motorovým vozidlům, s výjimkou autobusů.",
+      "Zakazuje vjezd autobusům.",
+      "Označuje zastávku autobusu linkové osobní dopravy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050253",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b5.jpg",
+    "moznosti": [
+      "Zakazuje vjezd autobusů.",
+      "Označuje zastávku autobusu městské hromadné dopravy.",
+      "Zakazuje vjezd autobusů městské hromadné dopravy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050255",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b12.jpg",
+    "moznosti": [
+      "Zakazuje vjezd všem motorovým i nemotorovým vozidlům.",
+      "Povoluje vjezd  vozidlům vyznačených druhů. Nevyznačená vozidla mají vjezd zakázán.",
+      "Zakazuje vjezd vozidlům vyznačených druhů."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050256",
+    "otazka": "Zákaz vjezdu podle vyobrazené dopravní značky platí pro:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b11.jpg",
+    "moznosti": [
+      "Všechna vozidla.",
+      "Všechna motorová vozidla.",
+      "Vozidla vyznačených druhů."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050257",
+    "otazka": "Tato dopravní značka zakazuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b13.jpg",
+    "moznosti": [
+      "Vjezd vozidel, jejichž okamžitá hmotnost přesahuje údaj uvedený na značce.",
+      "Vjezd vozidel, jejichž nejvyšší dovolená hmotnost přesahuje vyznačenou mez.",
+      "Vjezd vozidel, jejichž okamžitá hmotnost připadající na nápravu přesahuje údaj uvedený na značce."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050258",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b16.jpg",
+    "moznosti": [
+      "Upozorňuje na výšku nadcházejícího podjezdu s vyznačením hodnoty.",
+      "Zakazuje vjezd vozidel, jejichž výška  je vyšší než údaj uvedený na značce, a to bez ohledu na náklad.",
+      "Zakazuje vjezd vozidel, jejichž okamžitá výška včetně nákladu je vyšší než údaj uvedený na značce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050259",
+    "otazka": "Co znamená tato dopravní značka?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0210.jpg",
+    "moznosti": [
+      "„Parkoviště“ (částečné stání na chodníku).",
+      "„Parkoviště“ (stání na chodníku podélné).",
+      "„Parkoviště“ (stání na chodníku kolmé nebo šikmé)."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050260",
+    "otazka": "Označte správný význam značky:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b28.jpg",
+    "moznosti": [
+      "Ukončuje platnost zákazu stání.",
+      "Zakazuje stání, tj. uvedení vozidla do klidu na dobu delší, než je doba nezbytně nutná k neprodlenému nastoupení nebo vystoupení přepravovaných osob nebo k neprodlenému naložení a vyložení nákladu.",
+      "Zakazuje zastavení  tj. uvedení vozidla do klidu, kromě případů vyvolaných okolnostmi v provozu na pozemních komunikacích jako je např. stojící kolona vozidel apod."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050261",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b31.jpg",
+    "moznosti": [
+      "Zakazuje jezdci na zvířeti vjet se zvířetem na pozemní komunikaci za značkou; zákaz platí i pro vedení nebo hnaní takového zvířete.",
+      "Přikazuje jezdci na zvířeti užít takto označené pozemní komunikace nebo stezky; příkaz platí i pro i pro vedení nebo hnaní takového zvířete.",
+      "Označuje stezku pro jezdce na zvířeti; ostatním účastníkům provozu na pozemních komunikacích je její užívání zakázáno."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050262",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b30.jpg",
+    "moznosti": [
+      "Přikazuje chodcům užít v daném směru takto označené stezky. Ostatním účastníkům provozu na pozemních komunikacích je její užívání zakázáno.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace s možností zvýšeného výskytu chodců anebo častého přecházení chodců přes pozemní komunikaci v místě, kde není zřízen přechod pro chodce.",
+      "Zakazuje chodcům vstoupit na pozemní komunikaci nacházející se v prostoru za značkou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050263",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b23a.jpg",
+    "moznosti": [
+      "Ukončuje platnost značky „Zákaz výstražných zvukových znamení“.",
+      "Zakazuje užívání výstražných zvukových znamení.",
+      "Zakazuje užívání  všech výstražných znamení."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050264",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b25.jpg",
+    "moznosti": [
+      "Upozorňuje na úsek, kde se otáčejí vozidla zimní údržby.",
+      "Ukončuje platnost zákazu otáčení.",
+      "Zakazuje otáčení."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050269",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b24b.jpg",
+    "moznosti": [
+      "Ukončuje zákaz odbočování vlevo na nejbližší křižovatce, na účelovou komunikaci v místě jejího připojení nebo na místo ležící mimo pozemní komunikaci. .",
+      "Zakazuje odbočování vpravo na nejbližší křižovatce, na účelovou komunikaci v místě jejího připojení nebo na místo ležící mimo pozemní komunikaci.",
+      "Zakazuje odbočování vlevo na nejbližší křižovatce, na účelovou komunikaci v místě jejího připojení nebo na místo ležící mimo pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050270",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b22b.jpg",
+    "moznosti": [
+      "Ukončuje platnost značky „Zákaz předjíždění pro nákladní automobily“.",
+      "Zakazuje řidiči nákladního automobilu o nejvyšší povolené hmotnosti převyšující 3500 kg předjíždět motorové vozidlo vlevo.",
+      "Ukončuje platnost všech zákazů, které jsou stanoveny pro jedoucí vozidla."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050271",
+    "otazka": "Tato značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b24a.jpg",
+    "moznosti": [
+      "Ukončuje platnost zákazu odbočování vpravo na nejbližší křižovatce, na účelovou komunikaci v místě jejího připojení nebo na místo ležící mimo pozemní komunikaci.",
+      "Zakazuje odbočování vpravo na nejbližší křižovatce, na účelovou komunikaci v místě jejího připojení nebo na místo ležící mimo pozemní komunikaci.",
+      "Zakazuje odbočování vlevo na nejbližší křižovatce, na účelovou komunikaci v místě jejího připojení nebo na místo ležící mimo pozemní komunikaci."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050274",
+    "otazka": "Tato značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b29.jpg",
+    "moznosti": [
+      "Zakazuje stání, tj. uvedení vozidla do klidu na dobu delší, než je doba nezbytně nutná k neprodlenému nastoupení nebo vystoupení přepravovaných osob nebo k neprodlenému naložení a vyložení nákladu.",
+      "Ukončuje platnost zákazu zastavení na dobu delší, než je doba nezbytně nutná k neprodlenému nastoupení nebo vystoupení přepravovaných osob nebo k neprodlenému naložení a vyložení nákladu.",
+      "Zakazuje zastavení nebo stání, tj. uvedení vozidla do klidu, kromě případů vyvolaných okolnostmi v provozu na pozemních komunikacích jako je např. stojící kolona vozidel apod."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050277",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a5a.jpg",
+    "moznosti": [
+      "Upozorňuje na klesající úsek pozemní komunikace, kde lze při sníženém účinku brzd, zastavit vozidlo pomocnými prostředky, například protisvahem, hrubým štěrkovým povrchem apod. Na značce se uvádí skutečný nejvyšší podélný sklon vozovky.",
+      "Upozorňuje na úsek pozemní komunikace, kde místní podmínky činí klesání nebezpečným. Na značce se uvádí skutečný nejvyšší podélný sklon vozovky.",
+      "Upozorňuje na úsek pozemní komunikace s prudkým stoupáním. Na značce se uvádí skutečný nejvyšší podélný sklon vozovky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050280",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b9.jpg",
+    "moznosti": [
+      "Zakazuje vjezd potahových vozidel.",
+      "Zakazuje vedení nebo hnaní zvířete na pozemní komunikaci za značkou.",
+      "Zakazuje jezdci na zvířeti vjet se zvířetem na pozemní komunikaci za značkou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050290",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b8.jpg",
+    "moznosti": [
+      "Zakazuje vjezd cyklistům a jízdu na jízdním kole. Vedení jízdního kola cyklistou je povoleno.",
+      "Zakazuje vjezd všem vozidlům s výjimkou cyklistů.",
+      "Přikazuje cyklistům užít v daném směru takto označené stezky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050295",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a2b.jpg",
+    "moznosti": [
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde může dojít ke smyku vozidla i za neztížených povětrnostních podmínek.",
+      "Upozorňuje na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vpravo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vlevo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050347",
+    "otazka": "Která z vyobrazených dodatkových tabulek vyznačuje směr k místu, ke kterému se vztahuje dopravní značka, pod kterou je tato tabulka umístěna:",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/e8d.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/e2c.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/e7b.jpg"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050348",
+    "otazka": "Která z vyobrazených dopravních značek zakazuje řidiči jet rychlostí 40 km/h:",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/c6b.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/b20a.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/c6a.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050361",
+    "otazka": "Která z vyobrazených dopravních značek označuje hlavní pozemní komunikaci.",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/p3.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/p1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/a3.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050371",
+    "otazka": "Tato značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b18.jpg",
+    "moznosti": [
+      "Zakazuje vjezd vozidlům, která přepravují výbušniny, snadno hořlavý nebo jinak nebezpečný náklad.",
+      "Zakazuje vjezd vozidlům přepravujícím ropu nebo ropné materiály nebo jiné látky, které by mohly způsobit ohrožení životního prostředí, zejména znečištění vody.",
+      "Zakazuje vjezd vozidel nebo jízdních souprav přepravujících sypké materiály, které nemají zakrytý nákladový prostor."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050374",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a1a.jpg",
+    "moznosti": [
+      "Upozorňuje řidiče na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vpravo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje řidiče na zatáčku (směrový oblouk) vlevo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje řidiče na zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050375",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a4.jpg",
+    "moznosti": [
+      "Přikazuje jízdu po křižovatce s kruhovým objezdem ve směru šipek na značce zobrazených.",
+      "Označuje dopravní okruh zřízený pro objíždění obce nebo její části.",
+      "Upozorňuje v odůvodněných případech na křižovatku s kruhovým objezdem."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050381",
+    "otazka": "Která z vyobrazených dodatkových tabulek vyznačuje úsek platnosti dopravní značky, pod kterou je umístěna:",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/e8d.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/e7b.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/e2c.jpg"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050390",
+    "otazka": "Tato dopravní značka řidiče:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a7b.jpg",
+    "moznosti": [
+      "Upozorňuje na hrboly, výtluky, díry a jiné nerovnosti ve vozovce nebo na úsek s nerovným povrchem vozovky, vyžadující zvýšenou opatrnost nebo výrazné snížení rychlosti jízdy.",
+      "Bezprostředně označuje umělou nerovnost na vozovce, jejímž účelem je snížení rychlosti jedoucích vozidel.",
+      "Upozorňuje na umělou nerovnost na vozovce, jejímž účelem je zejména snížení rychlosti jedoucích vozidel."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050393",
+    "otazka": "Dopravní značka „Jednosměrný provoz“ vymezuje úsek komunikace, kde je zakázáno:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0051.jpg",
+    "moznosti": [
+      "Zastavit a stát, s výjimkou míst označených jako parkoviště.",
+      "Jet rychlostí vyšší než 20 km.h-1, jestliže dopravní značkou není dovolena rychlost vyšší.",
+      "Couvat, pokud to není nezbytně nutné, například k zajetí do řady vozidel nebo vyjetí z ní."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050446",
+    "otazka": "Tato výstražná dopravní značka upozorňuje na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a1a.jpg",
+    "moznosti": [
+      "Zatáčku vpravo.",
+      "Směr pro opuštění křižovatky s kruhovým objezdem.",
+      "Zatáčku vlevo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050449",
+    "otazka": "Tato značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a7b.jpg",
+    "moznosti": [
+      "Upozorňuje na hrboly, výtluky, díry a jiné nerovnosti ve vozovce nebo na úsek s nerovným povrchem vozovky, vyžadující zvýšenou opatrnost nebo výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na umělou nerovnost na vozovce, jejímž účelem je zejména snížení rychlosti jedoucích vozidel.",
+      "Bezprostředně označuje umělou nerovnost na vozovce, jejímž účelem je snížení rychlosti jedoucích vozidel a je zpravidla označena žlutočernými pruhy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050451",
+    "otazka": "Tato dopravní značka upozorňuje na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a1b.jpg",
+    "moznosti": [
+      "Zatáčku (směrový oblouk) vlevo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Směr dopravního okruhu zřízeného pro objíždění obce nebo její části."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050452",
+    "otazka": "Tato značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a8.jpg",
+    "moznosti": [
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde může dojít ke smyku vozidla i za neztížených povětrnostních podmínek.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde může dojít ke smyku vozidla pouze za deště, sněhu nebo náledí.",
+      "Upozorňuje na místo nebo úsek pozemní komunikace, kde může dojít ke smyku vozidla pouze za ztížených povětrnostních podmínek."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050454",
+    "otazka": "Tato značka zakazuje vjezd:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b18.jpg",
+    "moznosti": [
+      "Vozidlům, jejichž okamžitá hmotnost připadající na nápravu přesahuje hodnoty stanovené výrobcem vozidla.",
+      "Vozidlům přepravujícím ropu nebo ropné materiály nebo jiné látky, které by mohly způsobit ohrožení životního prostředí.",
+      "Vozidlům, která přepravují výbušniny, snadno hořlavý nebo jinak nebezpečný náklad"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050457",
+    "otazka": "Tato dopravní značka znamená:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b1.jpg",
+    "moznosti": [
+      "Zákaz vjezdu všech motorových vozidel (v obou směrech).",
+      "Zákaz vjezdu všech nemotorových vozidel (v obou směrech).",
+      "Zákaz vjezdu všech vozidel (v obou směrech)."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050461",
+    "otazka": "Tato značka znamená:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0073.jpg",
+    "moznosti": [
+      "Přikázaný směr objíždění vpravo.",
+      "Jednosměrný provoz.",
+      "Přikázaný směr jízdy vpravo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050526",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b28.jpg",
+    "moznosti": [
+      "Zakazuje stání, tj. uvedení vozidla do klidu na dobu delší, než je doba nezbytně nutná k neprodlenému nastoupení nebo vystoupení přepravovaných osob nebo k neprodlenému naložení a vyložení nákladu.",
+      "Zakazuje zastavení  s výjimkou doby nezbytně nutné k neprodlenému nastoupení nebo vystoupení přepravovaných osob anebo k neprodlenému naložení nebo složení nákladu.",
+      "Zakazuje zastavení nebo stání, tj. uvedení vozidla do klidu, kromě případů vyvolaných okolnostmi v provozu na pozemních komunikacích jako je např. stojící kolona vozidel apod."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050550",
+    "otazka": "Tato dopravní značka znamená:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a2a.jpg",
+    "moznosti": [
+      "Dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vlevo.",
+      "Nebezpečí smyku na místě nebo úseku pozemní komunikace, za ztížených povětrnostních podmínek.",
+      "Dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vpravo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050551",
+    "otazka": "Tato dopravní značka upozorňuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a7b.jpg",
+    "moznosti": [
+      "Na umělou nerovnost na vozovce, jejímž účelem je zejména snížení rychlosti jedoucích vozidel.",
+      "Na vyjeté koleje ve vozovce.",
+      "Na hrboly, výtluky, díry a jiné nerovnosti ve vozovce nebo na úsek s nerovným povrchem vozovky, vyžadující zvýšenou opatrnost nebo výrazné snížení rychlosti jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050624",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a6b.jpg",
+    "moznosti": [
+      "Upozorňuje na místo, kde se vozovka oproti předcházejícímu úseku výrazně zužuje z pravé strany.",
+      "Upozorňuje na snížení počtu jízdních pruhů v místě a vyznačuje, který pruh je průběžný.",
+      "Upozorňuje na místo, kde se vozovka oproti předcházejícímu úseku výrazně zužuje z levé strany."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050625",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a7a.jpg",
+    "moznosti": [
+      "Bezprostředně označuje umělou nerovnost na vozovce, jejímž účelem je snížení rychlosti jedoucích vozidel a je zpravidla označena žlutočernými pruhy.",
+      "Upozorňuje na hrboly, výtluky, díry a jiné nerovnosti ve vozovce nebo na úsek s nerovným povrchem vozovky, vyžadující zvýšenou opatrnost nebo výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na umělou nerovnost na vozovce, jejímž účelem je zejména snížení rychlosti jedoucích vozidel."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050626",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a5b.jpg",
+    "moznosti": [
+      "Upozorňuje na úsek pozemní komunikace s prudkým stoupáním. Na značce se uvádí skutečný nejvyšší podélný sklon vozovky.",
+      "Upozorňuje na únikový pruh za nebezpečným klesáním, kde lze v případě nouze, například při sníženém účinku brzd, zastavit vozidlo pomocnými prostředky, například protisvahem, hrubým štěrkovým povrchem apod.",
+      "Upozorňuje na úsek pozemní komunikace, kde místní podmínky činí klesání nebezpečným. Na značce se uvádí skutečný nejvyšší podélný sklon vozovky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050627",
+    "otazka": "Tato značka upozorňuje řidiče:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a4.jpg",
+    "moznosti": [
+      "Na změnu místní úpravy provozu na pozemních komunikacích na dopravním okruhu.",
+      "Na dopravní okruh zřízený pro objíždění obce nebo její části.",
+      "Na křižovatku s kruhovým objezdem."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050641",
+    "otazka": "Vyberte dopravní značku, která řidiče upozorňuje na místo, kde je provoz na pozemní komunikaci řízen světelnými signály, které by řidič jinak neočekával, nebo které nejsou s ohledem na místní podmínky viditelné z dostatečné vzdálenosti. :",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/a1b.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/a10.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/a20.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050642",
+    "otazka": "Která z těchto dopravních značek zakazuje zastavení?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/c12b.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/b28.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/b29.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060004",
+    "otazka": "Zákaz vjezdu vyplývající z vyobrazené dopravní značky platí pro:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b10.jpg",
+    "moznosti": [
+      "Ruční vozíky o okamžité šířce větší než 600 mm.",
+      "Ruční vozíky o okamžité šířce do 600 mm.",
+      "Všechna potahová vozidla o okamžité šířce větší než 600 mm."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060052",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b32.jpg",
+    "moznosti": [
+      "Upozorňuje řidiče na oblast, zejména část obce, kde je omezen provoz vozidel, která nesplňují zvláštní emisní podmínky.",
+      "Zakazuje jízdu vozidlům, která nemají přidělenou emisní plaketu na základě jejich emisní kategorie odrážející zátěž životního prostředí.",
+      "Zakazuje jízdu (nikoli jen vjezd) pro určená vozidla v území, pro které byla vyhlášena smogová situace podle zvláštního právního předpisu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060053",
+    "otazka": "Která z vyobrazených dopravních značek nepatří do značek upravujících přednost?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/p2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/p1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/a3.jpg"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060055",
+    "otazka": "Tato výstražná dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a30.jpg",
+    "moznosti": [
+      "Upozorňuje řidiče na železniční přejezd nevybavený závorami.",
+      "Upozorňuje řidiče na železniční přejezd vybavený závorami.",
+      "Upozorňuje řidiče na jednokolejný železniční přejezd."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060056",
+    "otazka": "Tato výstražná dopravní značka upozorňuje řidiče:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a28.jpg",
+    "moznosti": [
+      "Na místo dopravní nehody.",
+      "Na úsek pozemní komunikace, kde je nebezpečné vjet na krajnici.",
+      "Na místo nebo úsek pozemní komunikace, kde je dovolené parkování na krajnici."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060057",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a31b.jpg",
+    "moznosti": [
+      "Se umisťuje ve vzdálenosti 240 m před železničním přejezdem, na nějž upozorňuje.",
+      "Se umisťuje ve vzdálenosti 140 m před železničním přejezdem, na nějž upozorňuje.",
+      "Se umisťuje ve vzdálenosti 160 m před železničním přejezdem, na nějž upozorňuje."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060058",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a25.jpg",
+    "moznosti": [
+      "Upozorňuje na místo, kde má řidič povinnost dát přednost v jízdě tramvaji, a to zejména mimo křižovatku",
+      "Upozorňuje na železniční přejezd bez závor.",
+      "Upozorňuje zejména na místo, kde tramvaj křižuje směr jízdy ostatních vozidel."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060059",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a32a.jpg",
+    "moznosti": [
+      "Upozorňuje na jednokolejný železniční přejezd.  Je-li řidič povinen před železničním přejezdem zastavit vozidlo, zastaví na místě, odkud má na železniční trať náležitý rozhled.",
+      "Upozorňuje na jednokolejný železniční přejezd.  Je-li řidič povinen před železničním přejezdem zastavit vozidlo, zastaví před touto značkou.",
+      "Upozorňuje na vícekolejný železniční přejezd, kde je potřeba dbát zvýšené opatrnosti pro případ současného průjezdu vlaků z obou směrů."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060160",
+    "otazka": "Tato dopravní značka upozorňuje účastníky provozu na pozemních komunikacích:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a18.jpg",
+    "moznosti": [
+      "Místo nebo úsek, v jehož blízkosti se nachází kamenolom.",
+      "Na místo nebo úsek pozemní komunikace, kde se může vlivem sesuvů nebo padání kamenů na pozemní komunikaci vyskytovat kamení nebo zemina.",
+      "Na místo nebo úsek pozemní komunikace, kde se na vozovce vyskytuje volný štěrk,"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060161",
+    "otazka": "Tato značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/06060161.jpg",
+    "moznosti": [
+      "Zakazuje řidiči pokračovat v jízdě bez zastavení vozidla v prostoru státní hranice a současně označuje státní hranici.",
+      "Upozorňuje řidiče na stanici technické kontroly a měření emisí.",
+      "Zakazuje řidiči pokračovat v jízdě bez zastavení vozidla v prostoru u značky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060162",
+    "otazka": "Tato značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b23b.jpg",
+    "moznosti": [
+      "Ukončuje platnost značky „Zákaz výstražných zvukových znamení“.",
+      "Zakazuje užívání výstražných zvukových znamení.",
+      "Ukončuje zákaz užívání výstražných znamení."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060163",
+    "otazka": "Tato dopravní značka zakazuje vjezd vozidlům:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b18.jpg",
+    "moznosti": [
+      "Přepravujícím výbušniny, snadno hořlavý nebo jinak nebezpečný náklad a označeným podle zvláštních předpisů.",
+      "Které nejsou opatřeny příslušnou emisní plaketou přidělovanou na základě jejich emisní kategorie odrážející zátěž životního prostředí.",
+      "Přepravujícím ropu nebo ropné materiály nebo jiné látky, které by mohly způsobit ohrožení životního prostředí, zejména znečištění vody."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060164",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b26.jpg",
+    "moznosti": [
+      "Upozorňuje řidiče na blížící se dopravní značku se zákazem nebo omezením jízdy pro jedoucí vozidla.",
+      "Ukončuje platnost všech zákazů, které jsou stanoveny pro jedoucí vozidla.",
+      "Upozorňuje na následující omezení v jízdě pro řidiče nákladních automobilů přepravujících nebezpečný náklad."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060165",
+    "otazka": "Na takto označené pozemní komunikace je zakázán vjezd:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b4.jpg",
+    "moznosti": [
+      "Nákladním automobilům s nejvyšší dovolenou hmotností nepřevyšující 3.500 kg; značka neplatí pro obytné automobily.",
+      "Nákladním automobilům, tahačům přívěsu nebo návěsu a speciálním automobilům; značka neplatí pro obytné automobily.",
+      "Nákladním automobilům s nejvyšší dovolenou hmotností převyšující 3.500 kg; značka neplatí pro obytné automobily."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060166",
+    "otazka": "Tato dopravní značka zakazuje vjezd:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b11.jpg",
+    "moznosti": [
+      "Všech motorových vozidel.",
+      "Všech motorových i nemotorových vozidel.",
+      "Osobních vozidel a motocyklů."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060167",
+    "otazka": "Vyobrazená dopravní značka zakazuje vjezd:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b2.jpg",
+    "moznosti": [
+      "Všem druhům vozidel v obou směrech pozemní komunikace.",
+      "Všem druhům vozidel na jednosměrnou pozemní komunikaci, v níž je provoz veden opačným směrem.",
+      "Nemotorovým vozidlům ze směru, kde je značka umístěna."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060169",
+    "otazka": "Tato značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b17.jpg",
+    "moznosti": [
+      "Zakazuje vjezd vozidel nebo jízdních souprav, jejichž okamžitá délka včetně nákladu je větší než údaj uvedený na značce.",
+      "Informuje o bezpečném odstupu mezi jedoucími nákladními vozidly včetně vyznačení vzdálenosti.",
+      "Zakazuje řidiči vozidla udržovat od vozidla jedoucího před ním vzdálenost menší, než je stanovena údajem uvedeným na značce."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060170",
+    "otazka": "Do úseku pozemní komunikace označeného touto dopravní značkou je dovoleno vjet:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b3a.jpg",
+    "moznosti": [
+      "Jen vozidlům určeným k přepravě osob, jejichž celková hmotnost nepřesahuje 3.500 kg.",
+      "Jen nemotorovým vozidlům.",
+      "Jen nemotorovým vozidlům a motocyklům bez postranního vozíku."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060171",
+    "otazka": "V úseku pozemní komunikace označeném touto dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b21a.jpg",
+    "moznosti": [
+      "Je řidiči nákladního automobilu o nejvyšší povolené hmotnosti převyšující 3500 kg zakázáno předjíždět motorové vozidlo vlevo.",
+      "Je řidiči zakázáno předjíždět motorové i nemotorové vozidlo vlevo.",
+      "Je řidiči zakázáno předjíždět motorové vozidlo vlevo s výjimkou motocyklů bez postranního vozíku."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060233",
+    "otazka": "Tato značka upozorňuje na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a27.jpg",
+    "moznosti": [
+      "Usek pozemní komunikace směřující na nechráněné nábřeží nebo břeh vodní plochy.",
+      "Místo, kde často dochází k dopravním nehodám.",
+      "Místo dopravní nehody."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060234",
+    "otazka": "Tato dopravní značka zakazuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b33.jpg",
+    "moznosti": [
+      "Vjezd motorových vozidel s přívěsem a návěsem.",
+      "Vjezd ručních vozíků širších než je 600 mm.",
+      "Vjezd potahovým vozidlům."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060235",
+    "otazka": "Vyberte dopravní značku, která označuje konec úseku pozemní komunikace s nejnižší dovolenou rychlostí:",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/b20a.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/c6b.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/c6a.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060237",
+    "otazka": "Řidič vozidla z výhledu je upozorňován:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0109.jpg",
+    "moznosti": [
+      "Na nebezpečnou zatáčku vlevo.",
+      "Na skutečnost, že za zatáčkou je ve vzdálenosti 80 m železniční přejezd.",
+      "Na skutečnost, že za zatáčkou je ve vzdálenosti 240 m železniční přejezd."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060254",
+    "otazka": "Na křižovatce označené touto dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0073.jpg",
+    "moznosti": [
+      "Nesmíte odbočit vpravo.",
+      "Můžete odbočit vpravo, jen pokud hodláte zastavit na volném místě na parkovišti.",
+      "Musíte odbočit vpravo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060258",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0262.jpg",
+    "moznosti": [
+      "Platí pro všechny následující křižovatky v přímém směru, pokud její platnost není ukončena dopravní značkou \"Hlavní pozemní komunikace\".",
+      "Platí jen pro nejbližší křižovatku.",
+      "Platí pro všechny křižovatky na území obce, které je označeno příslušnou dopravní značkou."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060296",
+    "otazka": "Za nejbližší svislou dopravní značkou jako řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0023.jpg",
+    "moznosti": [
+      "Musíte dát přednost v jízdě protijedoucím vozidlům.",
+      "Máte přednost v jízdě před protijedoucími vozidly.",
+      "Musíte jet po krajnici, pokud je to nezbytné pro vyhnutí se protijedoucím vozidlům, která nesmíte omezit."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060297",
+    "otazka": "V úseku za touto dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0033.jpg",
+    "moznosti": [
+      "Smí jet řidič rychlostí nejvýše 20 km/h.",
+      "Smí jet řidič rychlostí nejvýše 50 km/h.",
+      "Smí jet řidič rychlostí nejvýše 30 km/h."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060298",
+    "otazka": "V úseku za touto dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0033.jpg",
+    "moznosti": [
+      "Smí řidič zastavit a stát jen na místech označených jako parkoviště.",
+      "Smí řidič stát jen na místech označených jako parkoviště; zastavit však smí i mimo parkoviště.",
+      "Není zastavení, stání ani parkování právní úpravou omezeno."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060299",
+    "otazka": "V úseku za touto dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0033.jpg",
+    "moznosti": [
+      "Musí řidič dbát zvýšené ohleduplnosti vůči chodcům, které nesmí ohrozit.",
+      "Má vždy řidič motorového i nemotorového vozidla přednost před chodci, kteří ho nesmějí omezit.",
+      "Musí řidič dbát zvýšené ohleduplnosti vůči chodcům jen na přechodech pro chodce."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060300",
+    "otazka": "Za vyobrazenou dvojicí dopravních značek:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0037.jpg",
+    "moznosti": [
+      "Bude řidič vjíždět na dálnici; je povinen použít připojovací pruh a musí dát přednost v jízdě vozidlům jedoucím v průběžném pruhu.",
+      "Bude řidič vjíždět na kruhový objezd; vozidlům jedoucím po kruhovém objezdu musí dát přednost v jízdě.",
+      "Musí řidič odbočit vlevo, přičemž je povinen dát přednost v jízdě vozidlům jedoucím v obou směrech."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060302",
+    "otazka": "Pokud jako řidič vidíte na vozovce tento symbol, musíte:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0076.jpg",
+    "moznosti": [
+      "Snížit rychlost jízdy na 20 km/h, protože vjíždíte do pěší zóny.",
+      "Zastavit vozidlo, protože za ním začíná stezka pro chodce, na kterou nesmíte vjíždět.",
+      "Přizpůsobit jízdu tomu, že se blížíte k přechodu pro chodce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060303",
+    "otazka": "Na vyobrazené křižovatce musíte jako řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0078.jpg",
+    "moznosti": [
+      "Dát přednost v jízdě vozidlům přijíždějícím zleva.",
+      "Odbočit vpravo.",
+      "Dát přednost v jízdě vozidlům v obou směrech."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060304",
+    "otazka": "Za touto dopravní značkou smíte jet rychlostí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0117.jpg",
+    "moznosti": [
+      "Nejvýše 60 km/h, protože vjíždíte do obce.",
+      "Nejvýše 20 km/h, protože vjíždíte do obytné zóny.",
+      "Nejvýše 50 km/h, protože vjíždíte do obce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060305",
+    "otazka": "Za touto dopravní značkou smíte jet rychlostí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0117.jpg",
+    "moznosti": [
+      "Nejvýše 20 km/h.",
+      "Nejvýše 60 km/h.",
+      "Nejvýše 50 km/h."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060306",
+    "otazka": "Za touto dopravní značkou řidič:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0130.jpg",
+    "moznosti": [
+      "Musí dbát zvýšené opatrnosti a dát přednost v jízdě protijedoucímu vozidlu, pokud se s ním nemůže bezpečně vyhnout.",
+      "Nemusí měnit způsob jízdy, protože má přednost v jízdě před protijedoucími vozidly.",
+      "Protijedoucího vozidla smí do následujícího úseku pozemní komunikace vjet pouze v případě, kdy se jeho a protijedoucí vozidlo mohou bezpečně vyhnout."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060307",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0403.jpg",
+    "moznosti": [
+      "Smí pokračovat v jízdě pouze ve směru přímo přitom nemusí dát přednost v jízdě vozidlům přijíždějícím zprava.",
+      "Smí pokračovat v jízdě pouze ve směru přímo a přitom má přednost v jízdě, protože přijíždí po hlavní pozemní komunikaci.",
+      "Smí pokračovat v jízdě pouze ve směru přímo přitom musí dát přednost v jízdě vozidlům přijíždějícím zprava."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060313",
+    "otazka": "Nejbližší dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0186.jpg",
+    "moznosti": [
+      "Platí pro všechny následující křižovatky v přímém směru, pokud její platnost není ukončena dopravní značkou „Konec hlavní pozemní komunikace“.",
+      "Platí pro všechny křižovatky na území obce, které je označeno příslušnou dopravní značkou.",
+      "Platí jen pro nejbližší křižovatku."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060314",
+    "otazka": "Řidič vozidla z výhledu na nejbližší křižovatce za první dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0186.jpg",
+    "moznosti": [
+      "Musí přizpůsobit jízdu tomu, že bude dávat přednost v jízdě vozidlům, která mohou přijíždět zprava.",
+      "Musí přizpůsobit jízdu tomu, že řidič v protisměru má přednost v jízdě.",
+      "Nemusí výrazně měnit způsob jízdy, protože je na hlavní pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060317",
+    "otazka": "Za nejbližší dopravní značkou v daném případě:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0383.jpg",
+    "moznosti": [
+      "Musíte dát přednost v jízdě pouze vozidlům hromadné dopravy osob.",
+      "Musíte dát přednost v jízdě vozidlům jedoucím po hlavní pozemní komunikaci. Tato značka je nadřazena světelným signálům.",
+      "Se musíte řídit světelnými signály, které jsou této dopravní značce nadřazeny."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060325",
+    "otazka": "Dopravní značka, kterou vidíte jako nejbližší, znamená:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0188.jpg",
+    "moznosti": [
+      "Dej přednost v jízdě!",
+      "Hlavní pozemní komunikace.",
+      "Konec hlavní pozemní komunikace."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060399",
+    "otazka": "V situaci na obrázku musí řidič při řízení zohlednit, že:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0211.jpg",
+    "moznosti": [
+      "Je dopravní značkou předem upozorňován na práci na silnici, která je vykonávána ve vzdálenosti 150 m.",
+      "Je dopravní značkou předem upozorňován na přechod pro chodce, který bude následovat ve vzdálenosti 150 m.",
+      "Je dopravní značkou upozorňován na úsek o délce 150 m, kde lze očekávat zvýšený pohyb chodců."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060405",
+    "otazka": "Za touto dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0066.jpg",
+    "moznosti": [
+      "Může řidič zastavit na dobu nezbytně nutnou k neprodlenému nastoupení nebo vystoupení přepravovaných osob anebo k neprodlenému naložení nebo složení nákladu; stát tam však nesmí.",
+      "Nesmí řidič ani zastavit na dobu nezbytně nutnou k neprodlenému nastoupení nebo vystoupení přepravovaných osob anebo k neprodlenému naložení nebo složení nákladu.",
+      "Nesmí řidič zastavit, stát ani zastavit vozidlo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060406",
+    "otazka": "Za touto dopravní značkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0046.jpg",
+    "moznosti": [
+      "Je řidiči doporučeno řidiči jet rychlostí nejvýše 30 km/h.",
+      "Je řidiči zakázáno jet rychlostí více než 30 km/h.",
+      "Je řidiči přikázáno jet rychlostí nejméně 30 km/h, pokud s ohledem na provozní podmínky lze této rychlosti dosáhnout."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060407",
+    "otazka": "Ve vyobrazené situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0049.jpg",
+    "moznosti": [
+      "Musí řidič přizpůsobit jízdu s předpokladem, že za horizontem bude snižovat rychlost jízdy nebo zastavovat před přechodem pro chodce.",
+      "Musí řidič snížit rychlost jízdy z důvodu umělé nerovnosti na vozovce, jejímž účelem je zejména snížení rychlosti jedoucích vozidel.",
+      "Musí řidič snížit rychlost jízdy, neboť je upozorněn dopravní značkou na úsek pozemní komunikace, kde místní podmínky činí klesání nebezpečným."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060410",
+    "otazka": "Tímto směrovým sloupkem může být:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/z11d.jpg",
+    "moznosti": [
+      "Vymezeno místo, kde účelová pozemní komunikace (např. polní cesta) vyúsťuje na jinou pozemní komunikaci.",
+      "Zvýrazněna či nahrazena vodorovná dopravní značka podélná čára souvislá.",
+      "Označeno místo častých dopravních nehod."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060411",
+    "otazka": "Tento směrový sloupek:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/z11c.jpg",
+    "moznosti": [
+      "Upozorňuje řidiče na nezpevněnou krajnici.",
+      "Označuje kluzký úsek pozemní komunikace, kde hrozí smyk vozidla.",
+      "Vymezuje vyústění účelové pozemní komunikace na jinou pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060415",
+    "otazka": "Lze za nejbližší dopravní značkou zastavit za účelem neprodleného vystoupení přepravovaných osob?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0052.jpg",
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060416",
+    "otazka": "Lze před nejbližší dopravní značkou zastavit za účelem neprodleného vyložení nákladu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0052.jpg",
+    "moznosti": [
+      "Ano.",
+      "Ne."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060419",
+    "otazka": "Za první skupinou dopravních značek:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0193.jpg",
+    "moznosti": [
+      "Může řidič vozidla z výhledu pokračovat v jízdě v přímém směru, neohrozí-li řidiče jedoucího na křižovatce zleva.",
+      "Bude řidič vozidla z výhledu vjíždět na kruhový objezd.",
+      "Musí řidič vozidla z výhledu na nejbližší křižovatce odbočit vpravo nebo vlevo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060472",
+    "otazka": "Zákaz vjezdu podle vyobrazené dopravní značky platí pro:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b17.jpg",
+    "moznosti": [
+      "Nákladní vozidla a jejich jízdní soupravy.",
+      "Vozidla nebo soupravy vozidel, jejichž okamžitá délka včetně nákladu přesahuje vyznačenou mez.",
+      "Dodávkové a nákladní automobily a jejich jízdní soupravy o nejvyšší povolené hmotnosti  nepřevyšující 7000 kg."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060474",
+    "otazka": "Tato značka zakazuje vjezd:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b14.jpg",
+    "moznosti": [
+      "Všech vozidel, jejichž okamžitá hmotnost připadající na nápravu přesahuje údaj uvedený na značce.",
+      "Všech vozidel, jejichž okamžitá hmotnost připadající na nápravu nedosahuje údaj uvedený na značce.",
+      "Všech přípojných jednonápravových vozidel."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060475",
+    "otazka": "Tato značka označuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a27.jpg",
+    "moznosti": [
+      "Místo dopravní nehody.",
+      "Úsek častých dopravních nehod.",
+      "Místo nebezpečí pádu vozidla z nezpevněné krajnice."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060476",
+    "otazka": "Vyobrazená dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/b10.jpg",
+    "moznosti": [
+      "Zakazuje vjezd potahových vozidel.",
+      "Upozorňuje na práci na pozemní komunikaci kde jsou používány ruční pracovní stroje.",
+      "Zakazuje vjezd ručních vozíků o okamžité šířce větší než 600 mm."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08080030",
+    "otazka": "Na tomto místě může zastavit a stát:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0478.jpg",
+    "moznosti": [
+      "Pokud je parkovací místo volné, může zde zastavit a stát i jiné vozidlo s označením O1.",
+      "Vozidlo rodinných příslušníků osoby těžce postižené, které ale není označeno speciálním označením.",
+      "Jen vozidlo, které přepravuje osobu těžce postiženou nebo těžce pohybově postiženou, které je označeno speciálním označením a příslušnou registrační značkou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08100088",
+    "otazka": "Vyberte dopravní značku, která řidiče upozorňuje na místo, kde je provoz na pozemní komunikaci řízen světelnými signály, které by řidič jinak neočekával, nebo které nejsou s ohledem na místní podmínky viditelné z dostatečné vzdálenosti:",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/08100088-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/08100088-3.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/08100088-2.jpg"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08100094",
+    "otazka": "Která z vyobrazených dopravních značek neumožňuje řidiči, pokud to ostatní okolnosti provozu na pozemních komunikacích dovolují, jet rychlostí 25 km/h?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/08100094-2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/08100094-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/08100094-3.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "08120015",
+    "otazka": "Tato dopravní značka upozorňuje na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0053.jpg",
+    "moznosti": [
+      "Křižovatku, na které není přednost v jízdě upravena svislými dopravními značkami.",
+      "Křižovatku, na které je přednost v jízdě dále upravena svislými dopravními značkami.",
+      "Blízkost železničního přejezdu, který není opatřen železničním zabezpečovacím zařízením."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120016",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0023.jpg",
+    "moznosti": [
+      "Má přednost v jízdě před protijedoucími vozidly.",
+      "Musí dodržovat označený směr jízdy.",
+      "Nemá přednost v jízdě před protijedoucími vozidly."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08120017",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0037.jpg",
+    "moznosti": [
+      "Musí dát přednost v jízdě vozidlu jedoucímu po kruhovém objezdu a jet ve směru šipek zobrazených na příkazové značce.",
+      "Má přednost v jízdě před vozidlem jedoucím po kruhovém objezdu pokud dává znamení o změně směru jízdy.",
+      "Musí vždy na hranici křižovatky zastavit vozidlo a dát přednost v jízdě vozidlu jedoucímu po kruhovém objezdu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10040037",
+    "otazka": "Na obrázku není znázorněna dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/10040037.jpg",
+    "moznosti": [
+      "\"Přechod pro chodce\".",
+      "\"Hlavní pozemní komunikace\".",
+      "\"Dej přednost v jízdě\", s dodatkovou tabulkou."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "11040007",
+    "otazka": "Tato značka upozorňuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/a4.jpg",
+    "moznosti": [
+      "Na směr k výjezdu z kruhového parkoviště.",
+      "Na křižovatku s kruhovým objezdem.",
+      "Na změnu dopravního okruhu zřízeného pro objíždění obce nebo její části."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "15120002",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/15120002.jpg",
+    "moznosti": [
+      "Platí pro všechny následující křižovatky v přímém směru, pokud její platnost není ukončena dopravní značkou \"Hlavní pozemní komunikace\".",
+      "Platí jen pro nejbližší křižovatku.",
+      "Platí pro všechny křižovatky na území obce, které jsou označeny touto dopravní značkou."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "15120004",
+    "otazka": "Tato výstražná dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/15120004.jpg",
+    "moznosti": [
+      "Upozorňuje na zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na zatáčku (směrový oblouk) vlevo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na dvě nebo více po sobě následujících zatáček (směrových oblouků), z nichž první je vpravo, a jejichž bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "16010002",
+    "otazka": "Která značka upozorňuje na práci na pozemní komunikaci nebo v jejím bezprostředním okolí, která by mohla ohrozit bezpečnost provozu na pozemních komunikacích nebo při níž by mohli být provozem ohroženi pracovníci tuto činnost vykonávající.?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/16010002-2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010002-3.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010002-1.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "16010003",
+    "otazka": "S čím musíte počítat v místě označeném touto dopravní značkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/16010003.jpg",
+    "moznosti": [
+      "S cyklistickými trasami v místě jejich vzájemného křížení.",
+      "S cyklisty, kteří vjíždějí na vozovku nebo ji přejíždějí, anebo na úsek, kde se cyklisté často vyskytují.",
+      "S cyklisty čekajícími na světelný signál \"Volno\"."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "16010004",
+    "otazka": "Co vám říká tato dopravní značka?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/16010004.jpg",
+    "moznosti": [
+      "Přikazuje jízdu ve směru vpravo bezprostředně před značkou.",
+      "Upozorňuje na zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Označuje zejména nebezpečnou zatáčku, v níž musí řidič výrazně snížit rychlost jízdy, a usměrňuje provoz."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "16010005",
+    "otazka": "Co vám říká tato dopravní značka?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/16010005.jpg",
+    "moznosti": [
+      "Upozorňuje na zatáčku (směrový oblouk) vlevo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Upozorňuje na zatáčku (směrový oblouk) vpravo, jehož bezpečné projetí vyžaduje výrazné snížení rychlosti jízdy.",
+      "Přikazuje jízdu ve směru vlevo bezprostředně před značkou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "16010006",
+    "otazka": "Která z vyobrazených dopravních značek upozorňuje na práci na pozemní komunikaci nebo v jejím bezprostředním okolí, která by mohla ohrozit bezpečnost provozu na pozemních komunikacích nebo při níž by mohli být provozem ohroženi pracovníci tuto činnost vykonávající?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/16010006-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010006-2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010006-3.jpg"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "16010007",
+    "otazka": "Která z vyobrazených dopravních značek neupravuje přednost.",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/16010007-2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010007-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010007-3.jpg"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "16010008",
+    "otazka": "Která z vyobrazených dopravních značek neupravuje přednost?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/16010008-2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010008-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010008-3.jpg"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "16010009",
+    "otazka": "Která z vyobrazených dopravních značek neupravuje přednost?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/16010009-2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010009-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010009-3.jpg"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "16010010",
+    "otazka": "Která značka nepatří do skupiny značek výstražných?",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/16010010-3.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010010-2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010010-1.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "16010011",
+    "otazka": "Jestliže je vyobrazená dopravní značka umístěna na pozemní komunikaci u křižovatky a není doplněna vodorovnou příčnou čárou souvislou s nápisem \"STOP\":",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/16010011.jpg",
+    "moznosti": [
+      "Má řidič povinnost zastavit vozidlo před touto dopravní značkou a dát přednost v jízdě.",
+      "Má řidič povinnost zastavit vozidlo na takovém místě, odkud má do křižovatky náležitý rozhled, a dát přednost v jízdě.",
+      "Má řidič povinnost zastavit vozidlo na hranici křižovatky a dát přednost v jízdě."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "16010014",
+    "otazka": "Tato dopravní značka upravuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/16010014.jpg",
+    "moznosti": [
+      "Přednost pro vozidla jedoucí ze směru označeného červenou šipkou.",
+      "Přednost před protijedoucími nákladními vozidly v případě, kdy se protijedoucí vozidla nemohou bezpečně vyhnout.",
+      "Přednost pro vozidla jedoucí ze směru označeného černou šipkou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "16010016",
+    "otazka": "Vyberte dopravní značku \"Nejnižší dovolená rychlost\", která řidiči přikazuje, pokud to ostatní okolnosti provozu na pozemních komunikacích dovolují, jet nejméně rychlostí vyjádřenou na značce číslem v kilometrech za hodinu.",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/16010016-3.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010016-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010016-2.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "16010017",
+    "otazka": "Která z vyobrazených dopravních značek neumožňuje řidiči, pokud si to nevynutí ostatní okolnosti provozu na pozemních komunikacích, jet rychlostí 25 km/h:",
+    "obrazek": null,
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/16010017-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010017-3.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/16010017-2.jpg"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100002",
+    "otazka": "Platnost zónových dopravních značek:",
+    "obrazek": null,
+    "moznosti": [
+      "končí po 100 m od značky.",
+      "je ukončena dopravní značkou informující o jejím konci, není-li stanoveno jinak.",
+      "je ukončena na nejbližší křižovatce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100003",
+    "otazka": "Které směrové sloupky označují úsek pozemní komunikace, kde hrozí zvýšené nebezpečí námrazy:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211006.jpg",
+    "moznosti": [
+      "https://www.autoskola-testy.cz/img/tripple/211006-2.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/211006-1.jpg",
+      "https://www.autoskola-testy.cz/img/tripple/211006-3.jpg"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100006",
+    "otazka": "Tato dopravní značka označuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211016.jpg",
+    "moznosti": [
+      "placené parkoviště s parkovacím automatem na mince.",
+      "parkoviště na kruhovém objezdu.",
+      "parkoviště, na kterém řidič musí ve vozidle viditelně umístit kotouč s nastavením začátku stání."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100007",
+    "otazka": "Toto označení:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211020.jpg",
+    "moznosti": [
+      "označuje prostor určený pro odkládání zavazadel ve vozidle hromadné dopravy",
+      "informuje účastníky provozu o řízení vozidla méně zkušeným řidičem",
+      "upozorňuje na povinnost označit vozidlo výstražným trojúhelníkem"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100008",
+    "otazka": "Do oblasti za těmito dopravními značkami:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211031.jpg",
+    "moznosti": [
+      "je zakázáno vjet",
+      "je možné vjet za účelem zkrácení si cesty",
+      "je možné vjet za účelem parkování vozidla"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100012",
+    "otazka": "Smí řidič motorového vozidla, který není držitelem platného parkovacího oprávnění pro danou oblast, zaparkovat za touto dopravní značkou v sobotu v poledne?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211053.jpg",
+    "moznosti": [
+      "Ano, bezplatně",
+      "Ano, pokud uhradí parkovné",
+      "Ne"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100015",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211068.jpg",
+    "moznosti": [
+      "Zakazuje vjezd více jak dvou vozidel v jednom směru jízdy.",
+      "Informuje řidiče o přednosti v jízdě před protijedoucími vozidly.",
+      "Přikazuje řidiči dát přednost v jízdě protijedoucím vozidlům."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100018",
+    "otazka": "Jakou rychlostí můžete jet v obci jako řidič osobního automobilu z výhledu na vyobrazené situaci za nejbližší informativní značkou zónovou",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211072.jpg",
+    "moznosti": [
+      "80 km/h",
+      "110 km/h",
+      "50 km/h"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100019",
+    "otazka": "Co znázorňuje vodorovná dopravní značka na obrázku?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211083.jpg",
+    "moznosti": [
+      "Přejezd pro cyklisty.",
+      "Prostor určený pro cyklisty čekající na světelný signál „Volno“.",
+      "Pruh nebo stezku pro cyklisty"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100020",
+    "otazka": "Ve zřízeném prostoru pro cyklisty na křižovatce se světelnými signály se mohou řadit pouze:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211084.jpg",
+    "moznosti": [
+      "motocyklisté a cyklisté.",
+      "cyklisté",
+      "potahová vozidla a cyklisté."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100021",
+    "otazka": "Co znázorňuje vodorovná dopravní značka na obrázku?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211085.jpg",
+    "moznosti": [
+      "Piktogramový koridor pro cyklisty",
+      "Jízdní pruh pro cyklisty",
+      "Prostor pro cyklisty"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100022",
+    "otazka": "V úseku pozemní komunikace, který následuje za touto svislou dopravní značkou, jako řidič motorového vozidla",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211092.jpg",
+    "moznosti": [
+      "smíte ve vyhrazeném jízdním pruhu pro cyklisty zastavit na  dobu nezbytně nutnou k neprodlenému nastoupení nebo vystoupení přepravovaných osob, anebo k neprodlenému naložení nebo složení nákladu",
+      "smíte zastavit a stát ve vyhrazeném jízdním pruhu pro cyklisty.",
+      "nesmíte zastavit a stát ve vyhrazeném jízdním pruhu pro cyklisty."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100027",
+    "otazka": "Ve vyobrazené situaci řidič vozidla z výhledu vpravo:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211111.jpg",
+    "moznosti": [
+      "smí zastavit",
+      "smí stát",
+      "nesmí zastavit a stát"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100031",
+    "otazka": "Za vyobrazenou dopravní značkou se můžete jako řidič motorového vozidla setkat",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211123.jpg",
+    "moznosti": [
+      "s cyklisty v protisměru, kteří vedou kolo.",
+      "s jízdou cyklistů v protisměru, které nesmíte ohrozit.",
+      "s jízdou cyklistů v protisměru, kterým musíte dát přednost."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100032",
+    "otazka": "S čím jako řidič motorového vozidla musíte počítat v místech označených touto vodorovnou dopravní značkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211124.jpg",
+    "moznosti": [
+      "Se zvýšeným provozem cyklistů.",
+      "S blížícím se přejezdem pro cyklisty.",
+      "S blížícím se prostorem určeným pro cyklisty čekající na světelný signál volno\".\""
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100033",
+    "otazka": "Co znázorňuje tato informativní směrová značka?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211133.jpg",
+    "moznosti": [
+      "Směrová tabulka označuje jízdní pruh pro cyklisty a jeho číslo.",
+      "Směrová tabulka pro cyklisty informuje o čísle cyklistické trasy.",
+      "Dopravní značka označuje cyklostezku."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100034",
+    "otazka": "Do úseku pozemní komunikace za touto dopravní značkou můžete jako řidič motorového vozidla s maximální přípustnou hmotností nepřevyšující 3500 kg, jet jen v případě, že použijete zimní pneumatiky s hloubkou dezénu hlavních dezénových drážek nebo zářezů nejméně",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211139.jpg",
+    "moznosti": [
+      "4 mm, a to v období od 1. listopadu do 31. března.",
+      "2 mm, a to bez ohledu na datum a aktuální nebo předpokládané povětrnostní podmínky.",
+      "4 mm, a to bez ohledu na datum a aktuální nebo předpokládané povětrnostní podmínky."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020004",
+    "otazka": "Vyobrazený směrový sloupek:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1005.png",
+    "moznosti": [
+      "označuje okraj pozemní komunikace",
+      "se používá při usměrňování provozu a pro zdůraznění podélné čáry souvislé vodorovného dopravního značení",
+      "vyznačuje vyústění účelové komunikace na jinou pozemní komunikaci"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020005",
+    "otazka": "Řidič osobního automobilu na nejbližší křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1008.jpg",
+    "moznosti": [
+      "musí odbočit vpravo",
+      "nesmí odbočit vpravo",
+      "může odbočit vpravo"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020008",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1021.png",
+    "moznosti": [
+      "přikazuje řidiči dát přednost vozidlům připojujícím se zprava",
+      "určuje povinnost dát přednost v jízdě vozidlům na hlavní pozemní komunikaci.",
+      "neexistuje"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020011",
+    "otazka": "Od místa vyobrazených dopravních značek platí že:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1043.jpg",
+    "moznosti": [
+      "řidič může jet rychlostí nejvýše 100 km/h, neboť ve vzdálenosti 1000 m probíhá práce na silnici.",
+      "řidič může jet rychlostí nejvýše 110 km/h, až do místa, kde probíhá práce na silnici."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020013",
+    "otazka": "Může řidič vjet do prostoru označeného vodorovnou dopravní značkou \"Žluté zkřížené čáry\", pokud mu dopravní situace za touto plochou neumožňuje pokračovat v jízdě?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1059.jpg",
+    "moznosti": [
+      "Ne.",
+      "Ano, pokud nebude bránit v jízdě jiným vozidlům.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020014",
+    "otazka": "Jak může být ukončena platnost svislé dopravní značky B 20a \"Nejvyšší dovolená rychlost\"?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1060.png",
+    "moznosti": [
+      "Nejbližší křižovatkou.",
+      "Vyústěním polní nebo lesní cesty.",
+      "Po ujetí délky úseku 80 m."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020020",
+    "otazka": "Řidič vozidla z výhledu na vyobrazené křižovatce může:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1113.jpg",
+    "moznosti": [
+      "odbočit vlevo, nebo jet v přímém směru.",
+      "odbočit vpravo.",
+      "odbočit vpravo i vlevo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020023",
+    "otazka": "Řidič vozidla z výhledu se:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1121.jpg",
+    "moznosti": [
+      "smí otočit do protisměru přes tramvajový pás; přitom musí dát přednost v jízdě tramvajím jedoucím v obou směrech a vozidlům jedoucím v protisměru.",
+      "smí otočit do protisměru přes tramvajový pás; přitom musí dát přednost v jízdě pouze tramvajím jedoucím ve stejném směru.",
+      "nesmí otočit do protisměru přes tramvajový pás."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020024",
+    "otazka": "Vyobrazená dopravní situace upozorňuje řidiče na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1129.jpg",
+    "moznosti": [
+      "možnost přecházení pouze chodců.",
+      "možnost přecházení chodců a přejíždění cyklistů.",
+      "možnost přejíždění pouze cyklistů."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020029",
+    "otazka": "Tato svislá dopravní značka upozorňuje řidiče na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1150.jpg",
+    "moznosti": [
+      "nebezpečné stoupání.",
+      "na úsek, kde místní podmínky činí klesání pozemní komunikace nebezpečným.",
+      "nebezpečné klesání."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020030",
+    "otazka": "Tato svislá dopravní značka upozorňuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1156.jpg",
+    "moznosti": [
+      "na dětské dopravní hřiště.",
+      "na stezku pro cyklisty.",
+      "na zvýšený výskyt cyklistů."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020031",
+    "otazka": "Může řidič přes tuto vodorovnou dopravní značku odbočit vlevo k najetí na parkoviště u obchodního domu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1157.jpg",
+    "moznosti": [
+      "ANO",
+      "NE"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020032",
+    "otazka": "Může řidič přes tuto vodorovnou dopravní značku odbočit vlevo k najetí do garáže u rodinného domu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1158.jpg",
+    "moznosti": [
+      "NE",
+      "ANO"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020038",
+    "otazka": "Platnost přenosné dopravní značky \"Nejvyšší dovolená rychlost\" umístěná na vozidle, které označuje pohyblivé pracoviště tvořené pomalu se pohybujícím vozidlem nebo skupinou vozidel, končí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1144.jpg",
+    "moznosti": [
+      "100 m ve směru jízdy za tímto vozidlem nebo za posledním vozidlem skupiny, jedná-li se o skupinu vozidel.",
+      "300 m ve směru jízdy za tímto vozidlem nebo za posledním vozidlem skupiny, jedná-li se o skupinu vozidel.",
+      "pouze svislou přenosnou dopravní značkou  Konec nejvyšší dovolené rychlosti, nebo Konec všech zákazů nebo křižovatkou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050007",
+    "otazka": "Dopravní značka na obrázku pro řidiče znamená:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1003.png",
+    "moznosti": [
+      "možnost se volně pohybovat v obou jízdních pruzích.",
+      "zákaz značku přejíždět nebo ji nákladem přesahovat, pokud to není nutné k objíždění, odbočování na místo ležící mimo pozemní komunikaci nebo vjíždění na pozemní komunikaci z místa ležícího mimo pozemní komunikaci a předjíždění cyklistů.",
+      "zákaz značku přejíždět nebo ji nákladem přesahovat, pokud to není nutné k objíždění, předjíždění cyklistů a traktorů."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050009",
+    "otazka": "Řidič vozidla z výhledu, který hodlá jet do centra Prahy:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1029.jpg",
+    "moznosti": [
+      "může odbočit vlevo i vpravo a najede na městský okruh; z dopravních značek nevyplývá, který směr je určen pro cestu do centra.",
+      "musí přejet do levého jízdního pruhu, jízdní pruh ve kterém se nachází vede pouze směr letiště.",
+      "může pokračovat v jízdním pruhu, ve kterém se právě nachází."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22050011",
+    "otazka": "Vyobrazenou dopravní značkou může být ukončena platnost:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1038.jpg",
+    "moznosti": [
+      "všech dopravních značek.",
+      "dopravní značky \"Nejvyšší dovolená rychlost\".",
+      "dopravní značky \"Zákaz zastavení\"."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050012",
+    "otazka": "Může řidič projet úsekem označeným vyobrazenou dopravní značkou \"Jiný zákaz\", když si chce zkrátit cestu nebo objet komplikovanou dopravní situaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1061.jpg",
+    "moznosti": [
+      "Ne",
+      "Ano",
+      "Ano, pokud zná místní situaci"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050013",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1110.jpg",
+    "moznosti": [
+      "zakazuje zastavení a stání.",
+      "upozorňuje na křižovatku, kde není přednost v jízdě upravena svislými dopravními značkami.",
+      "upozorňuje na křižovatku s vyznačením jejího tvaru."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050014",
+    "otazka": "Speciální označení osoby nevidomé je:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1147.png",
+    "moznosti": [
+      "Hůl s bílými a červenými pruhy o šířce 100 mm, která musí být opatřena nejméně jedním reflexním bílým pruhem šířky 50 mm a nejméně souvislá třetina její délky musí mít průměr nejméně 12 mm.",
+      "Hůl s černými a žlutými pruhy o šířce 100 mm, která musí být opatřena nejméně jedním reflexním bílým pruhem šířky 50 mm.",
+      "Bílá hůl, která musí být opatřena nejméně jedním reflexním bílým pruhem šířky 50 mm."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22050021",
+    "otazka": "Tato svislá dopravní značka upozorňuje řidiče na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1228.jpg",
+    "moznosti": [
+      "nebezpečné klesání.",
+      "na úsek, kde místní podmínky činí stoupání pozemní komunikace nebezpečným.",
+      "nebezpečné stoupání."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050022",
+    "otazka": "Řidič osobního vozidla z výhledu ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1232.jpg",
+    "moznosti": [
+      "musí dát přednost v jízdě protijedoucím vozidlům a jet rychlostí nejvýše 20 km/h.",
+      "musí dát přednost v jízdě protijedoucím vozidlům lehčím než 22 tun.",
+      "má přednost v jízdě před protijedoucími vozidly."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050025",
+    "otazka": "Signál dvou vedle sebe umístěných střídavě přerušovaných červených světel ve vyobrazené dopravní situaci znamená pro řidiče modrého vozidla:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1235.jpg",
+    "moznosti": [
+      "povinnost snížit rychlost jízdy přičemž nemusí zastavit vozidlo.",
+      "povinnost zastavit vozidlo před světelným signalizačním zařízením."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050026",
+    "otazka": "Tato dopravní značka upozorňuje řidiče na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1236.jpg",
+    "moznosti": [
+      "železniční přejezd bez závor ve vzdálenosti 240 m.",
+      "železniční přejezd se závorami ve vzdálenosti 240 m.",
+      "železniční přejezd se závorami ve vzdálenosti 180 m."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050027",
+    "otazka": "Řidič vozidla z výhledu je upozorňován:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1237.jpg",
+    "moznosti": [
+      "na skutečnost, že za zatáčkou je ve vzdálenosti 240 m železniční přejezd.",
+      "na nebezpečnou zatáčku vpravo.",
+      "na tři po sobě následující zatáčky, z nichž první je vpravo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050028",
+    "otazka": "Tato dopravní značka:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1238.png",
+    "moznosti": [
+      "upozorňuje na úsek pozemní komunikace směřující na nechráněné nábřeží nebo břeh vodní plochy.",
+      "upozorňuje na místo, kde je možné použít přívoz.",
+      "upozorňuje na zvedací nebo jiný pohyblivý most."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050029",
+    "otazka": "Tato dopravní značka upozorňuje na:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1239.png",
+    "moznosti": [
+      "nábřeží.",
+      "zvedací nebo jiný pohyblivý most.",
+      "zvýšenou hladinu vodní plochy."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050032",
+    "otazka": "Řidič vozidla z výhledu v následujícím úseku:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1327.jpg",
+    "moznosti": [
+      "by měl jet doporučenou rychlostí 20 km/h",
+      "musí jet rychlostí minimálně 20 km/h",
+      "nesmí překročit rychlost 20 km/h"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22100015",
+    "otazka": "Tato svislá dopravní značka označuje:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209104.jpg",
+    "moznosti": [
+      "Záchytné parkoviště, ze kterého lze pokračovat v jízdě prostředkem hromadné dopravy osob.",
+      "Parkoviště, na kterém lze zastavit za účelem vystoupení a nastoupení osob.",
+      "Parkoviště, kde je dovoleno zastavení a stání."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100035",
+    "otazka": "Řidič vozidla z výhledu pokračující v přímém směru:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2209124.jpg",
+    "moznosti": [
+      "musí za vyobrazenou dopravní značkou dát přednost v jízdě vozidlům nebo jezdcům na zvířatech přijíždějícím zprava nebo organizované skupině chodců nebo průvodcům hnaných zvířat se zvířaty přicházejícím zprava.",
+      "musí za vyobrazenou dopravní značkou dát přednost v jízdě pouze vozidlům.",
+      "musí za vyobrazenou dopravní značkou dát přednost v jízdě vozidlům nebo jezdcům na zvířatech přijíždějícím zleva nebo organizované skupině chodců nebo průvodcům hnaných zvířat se zvířaty přicházejícím zleva."
+    ],
+    "spravna": 0
+  }
+]

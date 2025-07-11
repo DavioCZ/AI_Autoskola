@@ -1,0 +1,684 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "24030001",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030004",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403004.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030004",
+            "shrnuti": "Pohled z interiéru vozidla, kde levý přední sloupek (A-sloupek) zakrývá výhled na chodce chystajícího se přejít silnici.",
+            "akteri": [
+              {
+                "typ": "chodec",
+                "popis": "Osoba stojící na levé straně vozovky, částečně zakrytá A-sloupkem vozidla, ze kterého je situace pozorována."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr je pořízen z pozice řidiče osobního automobilu. V popředí je vidět volant a palubní deska. Klíčovým prvkem je levý přední sloupek karoserie (A-sloupek), který vytváří mrtvý úhel. V tomto mrtvém úhlu je téměř zcela skryt chodec, který stojí u okraje silnice a zjevně se chystá vstoupit do vozovky zleva."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek názorně demonstruje nebezpečí mrtvého úhlu způsobeného konstrukcí vozidla.",
+              "Řidič musí aktivně měnit polohu hlavy a těla, aby eliminoval tento omezený výhled a zkontroloval situaci za sloupkem."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vysoké riziko přehlédnutí chodce řidičem, který se spoléhá pouze na statický pohled dopředu.",
+              "Potenciální srážka s chodcem, pokud se řidič rozjede nebo bude odbočovat vlevo bez důkladné kontroly prostoru za A-sloupkem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030010",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403010-3.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030010",
+            "shrnuti": "Zelená kontrolka zapnutých předních mlhových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje zelený symbol pro rozsvícená přední mlhová světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující dolů a přeškrtnuté vlnovkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403010-1.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030010",
+            "shrnuti": "Zelená kontrolka zapnutých potkávacích světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje zelený symbol pro rozsvícená potkávací (tlumená) světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující šikmo dolů."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403010-2.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030010",
+            "shrnuti": "Modrá kontrolka zapnutých dálkových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje modrý symbol pro rozsvícená dálková světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující přímo vpřed."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030011",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403011-1.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030011",
+            "shrnuti": "Modrá kontrolka zapnutých dálkových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje modrý symbol pro rozsvícená dálková světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující přímo vpřed."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403011-2.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030011",
+            "shrnuti": "Zelená kontrolka zapnutých potkávacích světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje zelený symbol pro rozsvícená potkávací (tlumená) světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující šikmo dolů."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403011-3.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030011",
+            "shrnuti": "Zelená kontrolka zapnutých předních mlhových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje zelený symbol pro rozsvícená přední mlhová světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující dolů a přeškrtnuté vlnovkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030012",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403012-2.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030012",
+            "shrnuti": "Zelená kontrolka zapnutých předních mlhových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje zelený symbol pro rozsvícená přední mlhová světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující dolů a přeškrtnuté vlnovkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403012-1.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030012",
+            "shrnuti": "Modrá kontrolka zapnutých dálkových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje modrý symbol pro rozsvícená dálková světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující přímo vpřed."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403012-3.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030012",
+            "shrnuti": "Oranžová/žlutá kontrolka zapnutých zadních mlhových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje oranžový/žlutý symbol pro rozsvícená zadní mlhová světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující přímo vpravo a přeškrtnuté vlnovkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030013",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403013-1.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030013",
+            "shrnuti": "Zelená kontrolka zapnutých předních mlhových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje zelený symbol pro rozsvícená přední mlhová světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující dolů a přeškrtnuté vlnovkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403013-3.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030013",
+            "shrnuti": "Oranžová/žlutá kontrolka zapnutých zadních mlhových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje oranžový/žlutý symbol pro rozsvícená zadní mlhová světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující přímo vpravo a přeškrtnuté vlnovkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403013-2.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030013",
+            "shrnuti": "Modrá kontrolka zapnutých dálkových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje modrý symbol pro rozsvícená dálková světla. Symbol se skládá ze stylizovaného reflektoru, ze kterého vycházejí paprsky směřující přímo vpřed."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030014",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403014-1.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030014",
+            "shrnuti": "Červená kontrolka brzdového systému nebo zatažené parkovací brzdy.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje červený symbol brzdového systému. Skládá se z kruhu s písmenem 'P' uprostřed, obklopeného závorkami. Indikuje zataženou parkovací (ruční) brzdu."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403014-3.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030014",
+            "shrnuti": "Červená kontrolka obecné závady brzdového systému.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje červený symbol obecné závady brzdového systému. Skládá se z kruhu s vykřičníkem uprostřed, obklopeného závorkami. Může signalizovat nízkou hladinu brzdové kapaliny nebo jinou vážnou poruchu."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403014-2.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030014",
+            "shrnuti": "Oranžová/žlutá kontrolka závady systému ABS.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ikona zobrazuje oranžový/žlutý symbol závady protiblokovacího systému brzd (ABS). Skládá se z kruhu s nápisem 'ABS' uprostřed, obklopeného závorkami."
+            },
+            "poznatky_relevantni_k_odpovedim": [],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070024",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030012",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230311.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030012",
+            "shrnuti": "Fotografie nákladního vozidla, které je zjevně přetížené a nebezpečně nakloněné na pravou stranu.",
+            "akteri": [
+              {
+                "typ": "nákladní automobil",
+                "popis": "Starší nákladní automobil s valníkovou nástavbou, jehož nákladový prostor je plně naložen a viditelně přetížen, což způsobuje výrazný náklon vozidla."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Obrázek zachycuje nákladní automobil stojící na nezpevněné ploše. Vozidlo je extrémně přetížené, což je patrné z prohnutého rámu a silně stlačených pneumatik. Celá nástavba a kabina jsou nebezpečně nakloněny na pravou stranu, což signalizuje bezprostřední riziko převrácení vozidla a ztráty stability."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek ilustruje přímé nebezpečí plynoucí z přetížení vozidla.",
+              "Přetížení dramaticky mění jízdní vlastnosti vozidla, zejména jeho těžiště, stabilitu v zatáčkách a brzdnou dráhu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vysoké riziko převrácení vozidla, zejména při jízdě do zatáčky nebo na nerovném povrchu.",
+              "Selhání přetížených komponentů (pneumatiky, nápravy, brzdy).",
+              "Ztráta kontroly nad vozidlem a způsobení vážné dopravní nehody."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030030",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230331.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030030",
+            "shrnuti": "Dítě v autosedačce, kde je bezpečnostní pás veden nesprávně a nebezpečně přes krk.",
+            "akteri": [
+              {
+                "typ": "dítě",
+                "popis": "Dítě sedící v dětské autosedačce (podsedáku), nesprávně připoutané bezpečnostním pásem."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr ukazuje dítě v autosedačce. Horní ramenní část tříbodového bezpečnostního pásu je vedena příliš vysoko a vede přímo přes krk dítěte, nikoliv přes rameno a klíční kost. Toto je život ohrožující nesprávné použití zádržného systému."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek zdůrazňuje klíčovou roli správné výšky dítěte a správného nastavení pásu pro bezpečnost.",
+              "Pás vedený přes krk může při nehodě způsobit vážné až smrtelné zranění."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Při nárazu nebo prudkém brzdění hrozí uškrcení nebo vážné poranění krční páteře a měkkých tkání krku."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030032",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230335.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030032",
+            "shrnuti": "Nebezpečná situace: dětská autosedačka proti směru jízdy na předním sedadle s aktivním čelním airbagem.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na sedadle spolujezdce je umístěna dětská autosedačka typu 'vajíčko', tedy proti směru jízdy. Na palubní desce je viditelně rozsvícená kontrolka signalizující, že čelní airbag spolujezdce je aktivní. Tato kombinace je zakázaná a pro dítě smrtelně nebezpečná."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek jednoznačně ilustruje situaci, kdy je bezpodmínečně nutné deaktivovat čelní airbag spolujezdce.",
+              "Síla aktivovaného airbagu by udeřila do autosedačky a mohla by způsobit fatální zranění dítěte."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "V případě dopravní nehody a aktivace airbagu dojde k vymrštění autosedačky proti opěradlu sedadla, což s vysokou pravděpodobností způsobí smrtelné zranění hlavy a krční páteře dítěte."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060012",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230701.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060012",
+            "shrnuti": "Pohled na zadní část osobního automobilu označeného jako vozidlo autoškoly.",
+            "akteri": [
+              {
+                "typ": "osobní automobil",
+                "popis": "Bílé vozidlo s viditelným označením autoškoly (písmeno 'L' na modrobílém štítku) na zadním okně."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr je soustředěn na zadní část bílého osobního automobilu jedoucího po silnici. Na zadním skle je umístěno standardní označení vozidla provádějícího výcvik v autoškole - modrý obdélník s bílým písmenem 'L'. Vozidlo jede v přímém směru."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Identifikuje vozidlo autoškoly, což je klíčové pro kontext otázky o možných rizicích.",
+              "Vozidlo autoškoly může doprovázet žáka na motocyklu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič-žák může reagovat nejistě, pomaleji, nebo udělat neočekávaný manévr.",
+              "Vozidlo může náhle zastavit nebo zpomalit na pokyn instruktora.",
+              "V blízkosti vozidla se může pohybovat doprovázený motocyklista (žák)."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060013",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230702.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060013",
+            "shrnuti": "Pohled zpoza nákladního vozidla blížícího se k přechodu pro chodce, u kterého čekají lidé.",
+            "akteri": [
+              {
+                "typ": "nákladní automobil",
+                "popis": "Velké nákladní vozidlo jedoucí v pravém jízdním pruhu."
+              },
+              {
+                "typ": "chodec",
+                "popis": "Skupina chodců, včetně dítěte, stojící na chodníku u přechodu pro chodce, s úmyslem přejít."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec",
+                    "barva": "Modrá, bílá",
+                    "symbol": "Panáček na přechodu"
+                  },
+                  "kod_nazev": "IP 6, Přechod pro chodce",
+                  "umisteni": "Vpravo vedle vozovky před přechodem."
+                }
+              ],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Široké příčné pruhy (zebra)",
+                    "barva": "Bílá",
+                    "symbol": ""
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Příčně přes vozovku."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Situace je zachycena z pohledu řidiče jedoucího za nákladním automobilem v městském prostředí. Před vozidly se nachází vyznačený přechod pro chodce. U přechodu na pravém chodníku stojí několik chodců, kteří se zjevně chystají přejít vozovku. Řidič nákladního vozidla musí na tuto situaci reagovat a přizpůsobit jízdu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič (nákladního vozidla nebo autobusu) musí předvídat, že chodci mohou vstoupit do vozovky.",
+              "Vzhledem k hmotnosti a rozměrům vozidla je nutné jet takovou rychlostí, aby bylo možné bezpečně zastavit před přechodem."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Náhlé vstoupení chodců do vozovky, zejména dítěte, které může být méně předvídatelné.",
+              "Nedostatečná rychlost reakce řidiče nákladního vozidla.",
+              "Delší brzdná dráha nákladního vozidla ve srovnání s osobním automobilem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060019",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060046",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060029",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230719.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060029",
+            "shrnuti": "Dva motocyklisté s označením autoškoly ('L') jedoucí za sebou.",
+            "akteri": [
+              {
+                "typ": "motocyklista",
+                "popis": "Dva jezdci na motocyklech. Oba mají na zádech reflexní vestu s označením 'L', značící výcvikovou jízdu."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na silnici vedoucí mimo obec jedou za sebou dva motocykly. Oba jezdci jsou oblečeni v motocyklové výbavě a na zádech mají výrazné vesty s písmenem 'L'. Tvoří tak malou skupinu vozidel ve výcviku."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek ukazuje skupinu vozidel autoškoly, která by neměla být rozdělována.",
+              "Předjíždění s následným zařazením se mezi tato vozidla narušuje výcvik a komunikaci mezi instruktorem a žákem (i když instruktor není na obrázku vidět, je třeba jeho přítomnost předpokládat, např. v doprovodném vozidle nebo jako jednoho z jezdců)."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Zařazení se mezi motocykly může vést k nepředvídatelným reakcím žáků, kteří nejsou zkušení řidiči.",
+              "Narušení bezpečné vzdálenosti mezi vozidly ve výcviku.",
+              "Zvýšené riziko kolize kvůli nejistému chování jednoho nebo obou žáků."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060035",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230725.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060035",
+            "shrnuti": "Nevidomá osoba s bílou holí stojící na zastávce u signálního pásu z reliéfní dlažby.",
+            "akteri": [
+              {
+                "typ": "chodec",
+                "popis": "Nevidomá osoba, identifikovatelná podle bílé slepecké hole, čekající na dopravní prostředek."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Pás s vystouplými drážkami",
+                    "barva": "Šedá (betonová)",
+                    "symbol": "Reliéfní povrch"
+                  },
+                  "kod_nazev": "Signální pás (součást prvků pro osoby se sníženou schopností orientace)",
+                  "umisteni": "Na okraji nástupiště zastávky."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr detailně ukazuje část nástupiště autobusové zastávky. Na zemi je viditelný signální pás z reliéfní dlažby, který slouží pro orientaci nevidomých a slabozrakých. Přímo u tohoto pásu stojí osoba držící bílou slepeckou hůl. Tato osoba je připravena k nástupu do přijíždějícího vozidla."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Signální pás určuje nevidomé osobě přesné a bezpečné místo pro nástup (obvykle u prvních dveří autobusu).",
+              "Řidič autobusu by měl zastavit tak, aby dveře byly přímo u tohoto pásu a usnadnil tak nevidomé osobě nástup."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Pokud řidič autobusu zastaví mimo signální pás, nevidomá osoba bude dezorientovaná a bude muset nebezpečně hledat dveře.",
+              "Riziko pádu nevidomé osoby z obrubníku, pokud je nucena pohybovat se mimo vodicí linie."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060039",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060040",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060041",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230731.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060041",
+            "shrnuti": "Motocyklista správně projíždí zatáčkou s oběma nohama na stupačkách.",
+            "akteri": [
+              {
+                "typ": "motocyklista",
+                "popis": "Jezdec na sportovním motocyklu v náklonu při průjezdu levotočivou zatáčkou."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Obrázek zachycuje motocyklistu v akci při průjezdu asfaltovou zatáčkou. Jezdec je v náklonu spolu s motocyklem, což je správná technika. Důležitým detailem je, že obě jeho nohy jsou správně umístěny na stupačkách motocyklu a nedotýkají se země."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Ilustruje správnou techniku jízdy v zatáčce, kde nohy zůstávají na stupačkách pro udržení stability a kontroly.",
+              "Sundávání nohy ze stupačky (s výjimkou specifických off-road technik) je při běžném silničním průjezdu zatáčkou chybou."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 20,
+    "pocet_url_nalezeno": 24,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": {
+    "další_start_index": 20,
+    "zbývá": 142
+  }
+}

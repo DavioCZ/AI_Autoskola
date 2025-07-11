@@ -1,0 +1,712 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "24030003",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403003.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030003",
+            "shrnuti": "Automobil míjí cyklistu jedoucího ve vyhrazeném jízdním pruhu.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Stříbrný osobní automobil, viditelný zezadu zleva.",
+                "cinnost": "Jede v levém jízdním pruhu a částečně zasahuje do vyhrazeného pruhu pro cyklisty, čímž míjí cyklistu.",
+                "pozice": "Levý jízdní pruh s přesahem do pravého (vyhrazeného)."
+              },
+              {
+                "typ": "cyklista",
+                "popis": "Osoba na jízdním kole.",
+                "cinnost": "Jede stejným směrem jako automobil.",
+                "pozice": "Ve vyhrazeném jízdním pruhu pro cyklisty."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára"
+                  },
+                  "kod_nazev": "V 2b, Podélná čára přerušovaná",
+                  "umisteni": "Mezi jízdním pruhem pro motorová vozidla a vyhrazeným jízdním pruhem pro cyklisty."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Symbol",
+                    "barva": "Bílá",
+                    "symbol": "Piktogram jízdního kola"
+                  },
+                  "kod_nazev": "V 14, Vyhrazený jízdní pruh",
+                  "umisteni": "Na povrchu vyhrazeného jízdního pruhu."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled zezadu na dopravní situaci na víceproudé komunikaci v městském prostředí. V levém pruhu jede stříbrný automobil. Pravý pruh je vyznačen jako vyhrazený jízdní pruh pro cyklisty, což je zřejmé z piktogramu kola na vozovce. V tomto pruhu jede cyklista. Automobil se nachází vedle cyklisty a mírně zasahuje do jeho pruhu. Počasí je slunečné, viditelnost dobrá."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Otázka se ptá na povinnost dodržet bezpečný boční odstup při míjení cyklisty ve vyhrazeném pruhu.",
+              "Zákon rozlišuje mezi předjížděním a míjením. V tomto případě se jedná o jízdu v souběžných pruzích, tedy míjení, nikoliv předjíždění. Na míjení ve vyhrazeném pruhu se povinnost dodržet odstup 1,5 m / 1 m nevztahuje, což však nezbavuje řidiče povinnosti obecné opatrnosti.",
+              "Správná odpověď (2) a její odůvodnění 'Nemusí, jelikož v takovém případě se nejedná o předjíždění' přesně odpovídá právnímu výkladu situace."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Cyklista může náhle vybočit ze svého směru jízdy (např. kvůli nerovnosti na vozovce).",
+              "Řidič automobilu může cyklistu ohrozit příliš malým bočním odstupem, i když zákonem není přesně definován."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030005",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403005.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030005",
+            "shrnuti": "Záběr na zadní část motocyklu s označením 'L' pro žáka autoškoly.",
+            "akteri": [
+              {
+                "typ": "motocykl",
+                "popis": "Zadní část motocyklu, pravděpodobně v provozu.",
+                "cinnost": "Není specifikována, pravděpodobně jede po silnici.",
+                "pozice": "V jízdním pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková tabulka",
+                    "barva": "Modrý podklad, bílé písmeno",
+                    "symbol": "Písmeno 'L'"
+                  },
+                  "kod_nazev": "O 2, Označení vozidla autoškoly",
+                  "umisteni": "Na zadní části motocyklu."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní pohled na zadní část motocyklu. Na blatníku nad zadním kolem je připevněna modrá tabulka s bílým písmenem 'L', která označuje vozidlo používané k výcviku v autoškole. V pozadí je rozostřená silnice a zeleň, což naznačuje, že vozidlo je v pohybu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Označení 'L' identifikuje řidiče jako žáka autoškoly.",
+              "Žák autoškoly je osoba ve výcviku, která se učí ovládat vozidlo a aplikovat pravidla provozu. Z podstaty věci je náchylnější k chybám.",
+              "Princip defenzivní jízdy velí předvídat možné chyby ostatních účastníků provozu, zejména těch méně zkušených."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Žák na motocyklu se může dopustit nepředvídatelného manévru (náhlé brzdění, špatné odbočení, nedání přednosti).",
+              "Ostatní řidiči by měli k takto označenému vozidlu přistupovat se zvýšenou opatrností a trpělivostí."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030009",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403009-1.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030009",
+            "shrnuti": "Kontrolka dálkových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Zobrazen piktogram kontrolky dálkových světel. Jedná se o modrý symbol světlometu s vodorovnými paprsky směřujícími doleva."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tento symbol (modrý světlomet, vodorovné paprsky) jednoznačně identifikuje zapnutá dálková (hlavní) světla."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403009-2.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030009",
+            "shrnuti": "Kontrolka potkávacích světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Zobrazen piktogram kontrolky potkávacích (tlumených) světel. Jedná se o zelený symbol světlometu se šikmými paprsky směřujícími doleva a dolů."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tento symbol (zelený světlomet, šikmé paprsky dolů) jednoznačně identifikuje zapnutá potkávací (tlumená) světla."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        },
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/tripple/2403009-3.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030009",
+            "shrnuti": "Kontrolka obrysových světel.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Zobrazen piktogram kontrolky obrysových (parkovacích) světel. Jedná se o zelený symbol dvou stylizovaných žárovek s paprsky směřujícími od sebe, jedna doleva a druhá doprava."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tento symbol (dvě zelené žárovky s paprsky do stran) jednoznačně identifikuje zapnutá obrysová světla. Otázka se ptá na obrysová světla, proto je tato možnost správná."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030018",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403018.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030018",
+            "shrnuti": "Ilustrace režimu L17 s vyznačeným územím České republiky.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Červený osobní automobil s řidičem (L17) a mentorem.",
+                "cinnost": "Symbolicky jede po mapě.",
+                "pozice": "Na stylizované mapě České republiky."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace zobrazuje červené auto s mladým řidičem a mentorem na sedadle spolujezdce. Auto jede po silnici, která je stylizovaná do tvaru obrysu mapy České republiky. V pozadí je vlajka České republiky. Cílem ilustrace je vizuálně znázornit územní platnost režimu L17."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Režim L17 (řidičák od 17 let s mentorem) je specifická úprava českého zákona o silničním provozu.",
+              "Jeho platnost je omezena na území státu, který ho vydal, tedy na Českou republiku.",
+              "V zahraničí tento specifický režim není uznáván a 17letý řidič by byl považován za osobu bez platného řidičského oprávnění."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič L17 a mentor by se mohli mylně domnívat, že mohou v tomto režimu jet i do zahraničí (např. do sousedních zemí EU), což by vedlo k vážným právním postihům."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030019",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403019.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030019",
+            "shrnuti": "Ilustrace jízdy řidiče L17 bez mentora a následné policejní kontroly.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Červený osobní automobil.",
+                "cinnost": "Řízen mladým řidičem bez mentora.",
+                "pozice": "Na silnici."
+              },
+              {
+                "typ": "řidič",
+                "popis": "Mladá osoba (L17) vypadající ustaraně.",
+                "cinnost": "Řídí vozidlo.",
+                "pozice": "Na sedadle řidiče."
+              },
+              {
+                "typ": "policie",
+                "popis": "Policejní vozidlo viditelné ve zpětném zrcátku.",
+                "cinnost": "Pravděpodobně se chystá zastavit vozidlo před sebou.",
+                "pozice": "Za vozidlem L17."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ilustrace zobrazuje pohled zpoza ramene mladého řidiče, který sám řídí červené auto. Jeho výraz je ustaraný. Ve zpětném zrcátku je vidět blížící se policejní auto. Na sedadle spolujezdce je prázdno, což symbolizuje absenci mentora. Grafika vizuálně reprezentuje situaci porušení pravidel L17."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Jízda 17letého držitele řidičského oprávnění skupiny B bez doprovodu zapsaného mentora je závažným porušením zákona.",
+              "Tento přestupek je kvalifikován jako řízení bez příslušného řidičského oprávnění.",
+              "Za takový přestupek hrozí sankce ve správním řízení, která zahrnuje finanční pokutu a zákaz činnosti (řízení motorových vozidel)."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Spáchání závažného přestupku krátce po získání řidičského oprávnění.",
+              "Ztráta řidičského oprávnění a nutnost jeho nového získání po uplynutí trestu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030020",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403020.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030020",
+            "shrnuti": "Ilustrace řidiče L17 s mentorem a evidenční kartou řidiče.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Mladý řidič L17.",
+                "cinnost": "Řídí vozidlo.",
+                "pozice": "Na sedadle řidiče."
+              },
+              {
+                "typ": "mentor",
+                "popis": "Dospělá osoba.",
+                "cinnost": "Dohlíží na jízdu.",
+                "pozice": "Na sedadle spolujezdce."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace ukazuje mladého řidiče a mentora v autě. Nad nimi je zobrazen stylizovaný dokument s názvem 'Evidenční karta řidiče', na kterém je fotografie mentora a jeho jméno, což symbolizuje jeho oficiální zápis. Tato vizualizace zdůrazňuje, že mentor musí být konkrétní, předem schválená a zapsaná osoba."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Režim L17 vyžaduje, aby doprovázející osoba (mentor) byla oficiálně zapsána v Evidenční kartě řidiče daného 17letého řidiče.",
+              "Nestačí, aby doprovázející osoba pouze obecně splňovala podmínky pro mentora (věk, praxe, bez bodů atd.).",
+              "Řidič L17 nemůže řídit s kýmkoli, kdo by teoreticky mohl být mentorem, ale pouze s těmi, kteří jsou pro něj specificky zaregistrováni."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Mylná domněnka, že 17letý řidič může jet s jakýmkoli zkušeným řidičem (např. jiným rodičem, starším sourozencem), který není zapsán v jeho evidenční kartě. Taková jízda by byla nelegální."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030021",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403021.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030021",
+            "shrnuti": "Ilustrace mentora pod vlivem alkoholu.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Mladý řidič L17.",
+                "cinnost": "Řídí vozidlo.",
+                "pozice": "Vlevo v autě."
+              },
+              {
+                "typ": "mentor",
+                "popis": "Osoba na sedadle spolujezdce, která je zjevně pod vlivem alkoholu.",
+                "cinnost": "Sedí vedle řidiče.",
+                "pozice": "Vpravo v autě."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace znázorňuje situaci v autě. Vlevo sedí mladý řidič. Vpravo na sedadle spolujezdce sedí mentor, který má červený obličej a nad hlavou má bublinu s obrázkem lahve, což jasně symbolizuje, že je pod vlivem alkoholu. Situace je doplněna přeškrtnutým symbolem 'OK'."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Na mentora se vztahují stejné povinnosti jako na řidiče, co se týče alkoholu a jiných návykových látek.",
+              "Mentor nesmí být při výkonu své funkce pod vlivem alkoholu (platí nulová tolerance, tedy 0,00 promile).",
+              "Pokud je mentor pod vlivem alkoholu, nesplňuje podmínky pro doprovod a jízda je považována za jízdu bez mentora, což je nelegální."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Mentor pod vlivem alkoholu není schopen řádně plnit svou úlohu, dohlížet na jízdu a správně reagovat na případné krizové situace.",
+              "Jízda s mentorem pod vlivem alkoholu je závažným přestupkem jak pro mentora, tak pro řidiče L17."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030029",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403029.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030029",
+            "shrnuti": "Ilustrace podmínek pro řízení v režimu L17.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Mladý řidič L17.",
+                "cinnost": "Sedí ve vozidle s mentorem.",
+                "pozice": "Vozidlo na silnici."
+              },
+              {
+                "typ": "mentor",
+                "popis": "Dospělá osoba na sedadle spolujezdce.",
+                "cinnost": "Dohlíží na jízdu.",
+                "pozice": "Sedadlo spolujezdce."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace zobrazuje auto s mladým řidičem a mentorem, jedoucí po silnici. Nad autem je zobrazeno číslo '17' přeškrtnuté a nahrazené číslem '18', což symbolizuje přechod z režimu L17 na plnohodnotné řízení. Také je zde piktogram dokladu, symbolizující úspěšné složení zkoušky."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Úspěšné složení závěrečné zkoušky v autoškole před dosažením 18 let neznamená, že žadatel může řídit samostatně.",
+              "Od složení zkoušky až do dosažení věku 18 let je řidič v režimu L17.",
+              "V tomto období smí řídit motorové vozidlo skupiny B pouze pod dohledem mentora zapsaného v jeho evidenční kartě."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Mladý řidič by se mohl mylně domnívat, že po úspěšné zkoušce už na něj omezení L17 neplatí a mohl by řídit sám, čímž by se dopustil přestupku."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030030",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403030.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030030",
+            "shrnuti": "Ilustrace požadavků na mentora v režimu L17.",
+            "akteri": [
+              {
+                "typ": "mentor",
+                "popis": "Stylizovaná postava reprezentující mentora.",
+                "cinnost": "Je obklopena ikonami reprezentujícími podmínky.",
+                "pozice": "Centrální část obrázku."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace znázorňuje postavu mentora, kolem které jsou ikony symbolizující klíčové podmínky: ikona řidičského průkazu s textem 'B min. 10 let', kalendář s textem '5 let bez zákazu', bodový systém s nulou, a zaškrtávací pole se souhlasem. Tyto piktogramy vizuálně shrnují zákonné požadavky na osobu mentora."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Otázka se ptá na přesné podmínky, které musí mentor splňovat.",
+              "Správná odpověď (0) detailně a přesně vyjmenovává všechny zákonné požadavky: držení ŘP sk. B minimálně 10 let, bez pozbytí nebo zákazu řízení v posledních 5 letech, bez bodů v bodovém hodnocení a souhlas se zápisem do evidenční karty."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Záměna nebo neznalost přesných podmínek může vést k neplatnému zápisu mentora a následně k nelegálním jízdám."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030031",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403031.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030031",
+            "shrnuti": "Ilustrace evidenční karty řidiče L17 s vyznačeným počtem mentorů.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace zobrazuje stylizovanou evidenční kartu řidiče. Na kartě jsou čtyři pole pro zápis mentorů, všechna jsou vyplněna. Vedle je velkým písmem uvedeno 'MAX 4'. Tato vizualizace jasně komunikuje maximální povolený počet zapsaných mentorů."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu stanovuje maximální počet osob, které mohou být zapsány jako mentoři pro jednoho řidiče L17.",
+              "Tento maximální počet je 4."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030032",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403032.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030032",
+            "shrnuti": "Ilustrace správného umístění mentora ve vozidle.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Mladý řidič L17.",
+                "cinnost": "Řídí vozidlo.",
+                "pozice": "Sedadlo řidiče (vlevo)."
+              },
+              {
+                "typ": "mentor",
+                "popis": "Dospělá osoba.",
+                "cinnost": "Dohlíží na jízdu.",
+                "pozice": "Sedadlo spolujezdce (vpravo)."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace ukazuje pohled shora na interiér vozu. Vlevo sedí řidič (L17). Vpravo vedle něj na sedadle spolujezdce sedí mentor. Zadní sedadla jsou prázdná. Tato pozice je zvýrazněna. Ilustrace jasně ukazuje povinné umístění mentora."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon přesně stanovuje, kde musí mentor během jízdy sedět.",
+              "Povinnou pozicí je sedadlo vedle řidiče (sedadlo spolujezdce).",
+              "Mentor nemůže sedět na zadním sedadle ani jet v jiném vozidle."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Pokud by mentor seděl jinde než na sedadle spolujezdce, nebyla by splněna zákonná podmínka doprovodu a jízda by byla nelegální."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030033",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403033.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030033",
+            "shrnuti": "Ilustrace situace, kdy mentor nesmí vykonávat doprovod (alkohol).",
+            "akteri": [
+              {
+                "typ": "mentor",
+                "popis": "Osoba, která má být mentorem.",
+                "cinnost": "Je zobrazen s ikonou lahve alkoholu.",
+                "pozice": "Centrální část obrázku."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace zobrazuje postavu mentora, který je konfrontován s přeškrtnutou lahví alkoholu. Vedle je zobrazeno auto s řidičem L17, ke kterému směřuje přeškrtnutá šipka od mentora. Toto vizuální uspořádání jasně sděluje, že mentor pod vlivem alkoholu nesmí vykonávat doprovod."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Otázka se ptá, kdy mentor nesmí vykonávat doprovod.",
+              "Jednou z klíčových podmínek je střízlivost. Na mentora se vztahuje absolutní zákaz požívání alkoholu nebo jiných návykových látek před a během jízdy.",
+              "Pokud by byl mentor pod vlivem, nesmí doprovod vykonávat, jelikož by nebyl schopen řádně plnit své povinnosti a jízda by byla nelegální."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Bagatelizace požití malého množství alkoholu mentorem s mylným přesvědčením, že 'neřídí'. Zákon je v tomto striktní."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030034",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403034.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030034",
+            "shrnuti": "Ilustrace silniční kontroly, kde policista žádá doklady od mentora.",
+            "akteri": [
+              {
+                "typ": "policista",
+                "popis": "Příslušník Policie ČR ve stejnokroji.",
+                "cinnost": "Provádí silniční kontrolu, gestem žádá o doklad.",
+                "pozice": "Vedle vozidla."
+              },
+              {
+                "typ": "mentor",
+                "popis": "Osoba na sedadle spolujezdce.",
+                "cinnost": "Podává policistovi doklad totožnosti.",
+                "pozice": "Ve vozidle."
+              },
+              {
+                "typ": "řidič",
+                "popis": "Mladý řidič L17.",
+                "cinnost": "Sedí za volantem.",
+                "pozice": "Ve vozidle."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace znázorňuje situaci při silniční kontrole vozidla řízeného v režimu L17. Policista stojící u okénka spolujezdce požaduje předložení dokladů. Mentor, sedící na sedadle spolujezdce, mu podává svůj doklad totožnosti (občanský nebo řidičský průkaz)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Mentor je účastníkem silničního provozu se specifickými povinnostmi.",
+              "Jednou z těchto povinností je na výzvu policisty, vojenského policisty nebo celníka prokázat svou totožnost.",
+              "Policie tak ověřuje, zda se jedná o osobu oprávněně zapsanou v evidenční kartě řidiče."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Mentor by odmítl prokázat totožnost, čímž by se dopustil přestupku.",
+              "Zjistilo by se, že se nejedná o zapsaného mentora."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24030035",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403035.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030035",
+            "shrnuti": "Ilustrace dechové zkoušky na alkohol u mentora.",
+            "akteri": [
+              {
+                "typ": "policista",
+                "popis": "Příslušník Policie ČR ve stejnokroji.",
+                "cinnost": "Podává mentorovi přístroj na dechovou zkoušku.",
+                "pozice": "Vedle vozidla."
+              },
+              {
+                "typ": "mentor",
+                "popis": "Osoba na sedadle spolujezdce.",
+                "cinnost": "Připravuje se na dechovou zkoušku.",
+                "pozice": "Ve vozidle."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace zobrazuje silniční kontrolu. Policista podává mentorovi, sedícímu na sedadle spolujezdce, digitální přístroj pro dechovou zkoušku na přítomnost alkoholu. Ilustrace tak znázorňuje jednu z povinností mentora."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Stejně jako řidič, i mentor je povinen se na výzvu policisty podrobit vyšetření, zda není ovlivněn alkoholem nebo jinou návykovou látkou.",
+              "Tato povinnost platí kdykoli během výkonu funkce mentora, nejen v případě spáchání přestupku.",
+              "Odmítnutí dechové zkoušky je samo o sobě závažným přestupkem."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Mentor pod vlivem alkoholu by byl odhalen, což by mělo právní důsledky pro něj i pro řidiče L17."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070014",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 15,
+    "pocet_url_nalezeno": 17,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": [],
+    "poznámky": []
+  },
+  "pokracovani": {
+    "dalsi_start_index": 15,
+    "zbyva": 236
+  }
+}

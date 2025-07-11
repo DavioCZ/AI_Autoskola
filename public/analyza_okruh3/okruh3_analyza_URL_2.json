@@ -1,0 +1,292 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "23060042",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230732.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060042",
+            "shrnuti": "Motocyklista projíždějící mírnou pravotočivou zatáčkou na silnici.",
+            "akteri": [
+              {
+                "typ": "motocyklista",
+                "popis": "Jezdec na cestovním motocyklu v mírném náklonu projíždí zatáčkou."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára"
+                  },
+                  "kod_nazev": "V 2a, Podélná čára přerušovaná",
+                  "umisteni": "Uprostřed vozovky."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Obrázek zachycuje motocyklistu při průjezdu táhlou, mírnou pravotočivou zatáčkou na kvalitní asfaltové silnici. Jezdec udržuje stabilitu a plynulý průjezd, což implikuje správnou práci s plynem a brzdami před zatáčkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek ilustruje ideální situaci pro průjezd zatáčky pod mírným, konstantním plynem, což stabilizuje motocykl a udržuje trakci."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060043",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230732.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060043",
+            "shrnuti": "Motocyklista projíždějící mírnou pravotočivou zatáčkou na silnici.",
+            "akteri": [
+              {
+                "typ": "motocyklista",
+                "popis": "Jezdec na cestovním motocyklu v mírném náklonu projíždí zatáčkou."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára"
+                  },
+                  "kod_nazev": "V 2a, Podélná čára přerušovaná",
+                  "umisteni": "Uprostřed vozovky."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Obrázek zachycuje motocyklistu při průjezdu táhlou, mírnou pravotočivou zatáčkou na kvalitní asfaltové silnici. Jezdec udržuje stabilitu a plynulý průjezd, což implikuje správnou práci s plynem a brzdami před zatáčkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek ilustruje ideální situaci pro průjezd zatáčky pod mírným, rovnoměrným plynem, což stabilizuje motocykl a udržuje trakci. Prudké přidávání nebo ubírání plynu by mohlo vést k destabilizaci."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060044",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060045",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230735.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060045",
+            "shrnuti": "Řidič automobilu otevírá dveře tzv. holandským chvatem, zatímco se zezadu blíží cyklista.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Osoba sedící na místě řidiče, která otevírá dveře vzdálenější (pravou) rukou."
+              },
+              {
+                "typ": "cyklista",
+                "popis": "Osoba jedoucí na jízdním kole, která se zezadu blíží k parkujícímu automobilu."
+              }
+            ],
+            "znaceni_a_zarizeni": {},
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr ukazuje řidiče v zaparkovaném autě, který se chystá vystoupit. Místo levé ruky používá k otevření dveří svou pravou ruku. Tento pohyb ho nutí otočit trup a hlavu, čímž získává mnohem lepší přehled o situaci za vozidlem. V zorném poli je vidět přijíždějící cyklista, kterého by při běžném otevření dveří mohl snadno přehlédnout. Jde o názornou ukázku tzv. holandského chvatu (Dutch Reach)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obrázek demonstruje efektivní a bezpečnou metodu otevírání dveří, která minimalizuje riziko srážky s projíždějícími cyklisty nebo jinými vozidly.",
+              "Tento manévr donutí řidiče zkontrolovat mrtvý úhel."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Bez použití této techniky hrozí, že řidič náhle otevře dveře do jízdní dráhy cyklisty, což může vést k vážné nehodě (tzv. 'dooring')."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040174",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050434",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050435",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050436",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050437",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050438",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050439",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050440",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050442",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050444",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050445",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050462",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050464",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050468",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050472",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050473",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050476",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050480",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050485",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050489",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050491",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 25,
+    "pocet_url_nalezeno": 3,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": {
+    "další_start_index": 45,
+    "zbývá": 117
+  }
+}

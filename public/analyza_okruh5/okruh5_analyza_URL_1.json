@@ -1,0 +1,407 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "24030002",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2403002.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24030002",
+            "shrnuti": "Obrázek zobrazuje elektrokoloběžku, která je předmětem otázky na maximální povolenou konstrukční rychlost pro jízdu bez řidičského oprávnění.",
+            "akteri": [
+              {
+                "typ": "elektrokoloběžka",
+                "popis": "Moderní elektrokoloběžka šedé barvy, stojící na stojánku."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Statický obrázek elektrokoloběžky na neutrálním pozadí. Koloběžka má řídítka s displejem, přední a zadní kolo, stupátko a je vybavena stojánkem. Obrázek slouží jako vizuální kontext k otázce týkající se legislativních limitů pro tento typ vozidla."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Podle aktuální legislativy (účinné od 1. ledna 2024) je elektrokoloběžka, kterou lze řídit bez řidičského oprávnění (považuje se za jízdní kolo), omezena maximální konstrukční rychlostí do 25 km/h a výkonem motoru do 1000 W. Koloběžky, které překračují tyto parametry, jsou považovány za motorová vozidla a vyžadují příslušné řidičské oprávnění, registraci a povinné ručení."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050628",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060015",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060086",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060087",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060088",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060091",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060094",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060251",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060252",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060265",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060427",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060428",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060429",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060431",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060432",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060434",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060439",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060440",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060441",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060442",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060443",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060444",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060445",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060447",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060450",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060451",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060453",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060456",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060513",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060514",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060515",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060516",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060524",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060525",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060526",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08120023",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08120025",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08120026",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08120028",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08120035",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08120036",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08120037",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10040038",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100013",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209102.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100013",
+            "shrnuti": "Detail kontrolní nálepky STK, z které je patrné, že platnost technické prohlídky již vypršela.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Obrázek ukazuje detail červené kontrolní nálepky o provedení pravidelné technické prohlídky. Na nálepce je vidět rok '22' a proděravěný je měsíc '10' (říjen). To znamená, že technická prohlídka byla platná do konce října 2022. Otázka se ptá na platnost 'k dnešnímu dni'. Jelikož dnešní datum (v době generování odpovědi) je pozdější než říjen 2022, technická prohlídka je neplatná."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Platnost STK vypršela v říjnu 2022."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100039",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209128.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100039",
+            "shrnuti": "Detail kontrolní nálepky STK, z které je patrné, že platnost technické prohlídky již vypršela.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Obrázek ukazuje detail červené kontrolní nálepky o provedení pravidelné technické prohlídky. Na nálepce je vidět rok '21' a proděravěný je měsíc '8' (srpen). To znamená, že technická prohlídka byla platná do konce srpna 2021. Protože dnešní datum je pozdější než srpen 2021, technická prohlídka je neplatná."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Platnost STK vypršela v srpnu 2021."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 46,
+    "pocet_url_nalezeno": 3,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": false
+}

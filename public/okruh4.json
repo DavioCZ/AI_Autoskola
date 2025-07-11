@@ -1,0 +1,1460 @@
+[
+  {
+    "id": "24030036",
+    "otazka": "Zachoval se řidič vozidla z výhledu při zařazování do průběžného jízdního pruhu správně?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403036.mp4",
+    "moznosti": [
+      "ne, do průběžného jízdního pruhu měl najet okamžitě na začátku připojovacího pruhu, protože v průběžném jízdním pruhu nejelo žádné vozidlo.",
+      "ano, využil celou délku připojovacího pruhu, aby dosáhl rychlosti vozidel v průběžném jízdním pruhu a zařadil se do něj.",
+      "ne, na konci připojovacího pruhu měl zastavit a zařadit se až poté, kdy se přesvědčil o tom, že situace v průběžném jízdním pruhu mu to umožňuje."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24030037",
+    "otazka": "Ve vyobrazené dopravní situaci řidič vozidla jedoucí v průběžném jízdním pruhu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403037.mp4",
+    "moznosti": [
+      "měl umožnit najetí vozidla z připojovacího pruhu najetím do levého jízdního pruhu.",
+      "správně zastavil, aby umožnil zařazení vozidla z připojovacího pruhu.",
+      "způsobil nebezpečnou dopravní situaci, tím, že zastavil v průběžném jízdním pruhu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030038",
+    "otazka": "Ve vyobrazené dopravní situaci řidič protijedoucího vozidla",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403038.mp4",
+    "moznosti": [
+      "předjížděl bezpečně, dostatečná šířka vozovky umožňovala, aby se protijedoucí vozidla vyhnula.",
+      "nesměl v daném místě předjíždět.",
+      "při předjíždění ohrozil řidiče vozidla z výhledu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030039",
+    "otazka": "Dodržel řidič vozidla z výhledu v ukázce dostatečnou bezpečnou vzdálenost od před ním jedoucího vozidla?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403039.mp4",
+    "moznosti": [
+      "Ano, vzdálenost mezi vozidly byla minimálně 1 sekundu.",
+      "Ano, vzdálenost mezi vozidly byla minimálně 2 sekundy.",
+      "Ne, bezpečná vzdálenost byla nedostatečná."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24030040",
+    "otazka": "Jak se zachováte jako řidič vozidla z výhledu v ukázce v úseku s vyznačenými šipkami na vozovce?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403040.mp4",
+    "moznosti": [
+      "Pojedu tak, aby vzdálenost od vozidla přede mnou odpovídala minimálně vzdálenosti dvou celých šipek na vozovce.",
+      "Zvětším vzdálenost, tak abych viděl minimálně 3 šipky na vozovce mezi mnou a vozidlem přede mnou.",
+      "Zpomalím, šipky jsou optickou brzdou a upozorňují mě na rizikové místo na komunikaci."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030041",
+    "otazka": "Jak se jako řidič vozidla z výhledu zachovám ve vyobrazené dopravní situaci s ohledem na zásady bezpečné a defenzivní jízdy?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403041.mp4",
+    "moznosti": [
+      "Budu pokračovat stejnou rychlostí, situace v levém jízdním pruhu se mě netýká.",
+      "Zpomalím, abych vytvořil větší prostor pro řešení rizikové situace.",
+      "Zvýším rychlost jízdy tak, abych se vyhnul rizikové situaci v levém jízdním pruhu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24030042",
+    "otazka": "K jakému porušení silničních pravidel ve vyobrazené dopravní situaci došlo?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403042.mp4",
+    "moznosti": [
+      "Řidič vozidla z výhledu nesměl zastavit před přechodem pro chodce při výjezdu z kruhového objezdu.",
+      "Řidič autobusu nedal přednost v jízdě řidiči vozidla z výhledu, který vjížděl na kruhový objezd.",
+      "Řidič modrého vozidla, které vjíždělo na kruhový objezd, nedal přednost v jízdě řidiči vozidla z výhledu, který jel po kruhovém objezdu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030043",
+    "otazka": "K jakému porušení silničních pravidel došlo ve vyobrazené dopravní situaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403043.mp4",
+    "moznosti": [
+      "Řidič vozidla z výhledu zastavil před přechodem pro chodce v místě výjezdu z kruhového objezdu.",
+      "Řidič vozidla z výhledu ohrozil chodkyni, která přecházela po přechodu pro chodce.",
+      "Chodkyně se před vstupem do vozovky nerozhlédla, nevěnovala se situaci v provozu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24030044",
+    "otazka": "Musí ve vyobrazené dopravní situaci řidič vozidla z výhledu zastavit vozidlo před jednokolejným železničním přejezdem?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403044.mp4",
+    "moznosti": [
+      "Musí, protože mu to přikazuje svislá dopravní značka.",
+      "Musí, protože řidič má povinnost zastavit před každým železničním přejezdem.",
+      "Nemusí, protože právě přejel vlak. Jedná se o jednokolejný přejezd, nemůže tedy ihned po něm jet vlak další."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24030045",
+    "otazka": "Jako řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/2403045.mp4",
+    "moznosti": [
+      "mám povinnost sledovat situaci v provozu, abych v případě nutnosti mohl včasnou reakcí odvrátit hrozící nebezpečí střetu i přesto, že jsem na hlavní pozemní komunikaci",
+      "na hlavní pozemní komunikaci nemám povinnost sledovat ostatní účastníky provozu.",
+      "na hlavní pozemní komunikaci nemusím reagovat na hrozící nebezpečí střetu, ostatní účastníci jsou povinni odvrátit hrozící nebezpečí střetu, které jsem nezavinil."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070001",
+    "otazka": "Musí řidič vozidla z výhledu sledovat i situaci vpravo, v místě podélně zaparkovaných vozidel?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240751.mp4",
+    "moznosti": [
+      "Musí, protože má povinnost umožnit vyjetí řidiči zaparkovaného vozidla.",
+      "Ano, řidič je povinen sledovat situaci v provozu na pozemních komunikacích a předvídat hrozící nebezpečí spočívající mj. i v tom, že některý z parkujících řidičů může při vyjíždění z parkovacího místa za ním jedoucí vozidlo přehlédnout.",
+      "Nemusí, jede po hlavní komunikaci a řidiči ostatních vozidel mu musí dát přednost v jízdě."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070002",
+    "otazka": "Cyklista starší 10 let ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240752.mp4",
+    "moznosti": [
+      "nesmí jet po chodníku, ale smí jet po přechodu pro chodce.",
+      "smí přejet po vyznačeném přejezdu pro cyklisty.",
+      "nesmí jet po chodníku ani po přechodu pro chodce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070003",
+    "otazka": "Jak se zachoval řidič oranžového vozidla ve vyobrazené dopravní situaci, přijíždějící k železničnímu přejezdu, před kterým je umístěna dopravní značka “Stůj, dej přednost v jízdě!”?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240753.mp4",
+    "moznosti": [
+      "Měl za povinnost zastavit vozidlo před železničním přejezdem, protože mu to přikazovala svislá dopravní značka.",
+      "Správně odhadl dobu, kdy ještě bylo možné bezpečně přejet železniční přejezd.",
+      "Měl za povinnost zastavit vozidlo před železničním přejezdem, protože se jednalo o jednokolejný železniční přejezd."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070004",
+    "otazka": "Ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240754.mp4",
+    "moznosti": [
+      "řidič vozidla, který jede v levém jízdním pruhu, měl za povinnost zastavit vozidlo před přechodem pro chodce, protože zde zastavili řidiči vozidel jedoucích stejným směrem.",
+      "řidič vozidla jedoucí v levém jízdním pruhu, nemusí před přechodem pro chodce zastavit vozidlo, má dostatek času projet aniž by ohrozil nebo omezil chodce.",
+      "chodec nesmí vstoupit na přechod pro chodce do doby, než zastaví vozidla řidiči jedoucí v obou jízdních pruzích v jednom směru."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070005",
+    "otazka": "Dodrželi řidiči vozidel odbočující na křižovatce vlevo pravidla provozu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240755.mp4",
+    "moznosti": [
+      "Ne, měli se správně vyhýbat vlevo.",
+      "Ne, před odbočováním vlevo měli povinnost se zařadit co nejblíže k pravému okraji vozovky.",
+      "Ano, oba dali znamení o změně směru jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "24070006",
+    "otazka": "Řidič černého vozidla:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240756.mp4",
+    "moznosti": [
+      "musí dát znamení o změně směru jízdy, protože odbočuje na vedlejší pozemní komunikaci.",
+      "musí dát znamení o změně směru jízdy, protože mění směr jízdy doleva.",
+      "nemusí dát znamení o změně směru jízdy, protože jede po hlavní pozemní komunikaci."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070007",
+    "otazka": "Dodržel řidič bílého vozidla pravidla silničního provozu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240757.mp4",
+    "moznosti": [
+      "Ano, na přechodu pro chodce nebyli chodci, které by ohrozil nebo omezil.",
+      "Ne, otáčení na přechodu pro chodce je zakázáno.",
+      "Ne, otáčení přes tramvajový pás je zakázáno."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "24070008",
+    "otazka": "Řidič vozidla z výhledu na křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240758.mp4",
+    "moznosti": [
+      "musí dát přednost v jízdě řidiči protijedoucího vozidla odbočujícího vlevo.",
+      "musí na takovém místě, odkud má náležitý rozhled, na příkaz svislé dopravní značky zastavit vozidlo.",
+      "má přednost v jízdě před řidičem protijedoucího vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070009",
+    "otazka": "Řidič zeleného vozidla v dané dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240759.mp4",
+    "moznosti": [
+      "může odbočit vlevo, nesmí však ohrozit řidiče protijedoucího vozidla.",
+      "může odbočit pouze v případě, že odbočuje do místa vyznačeného červenými směrovými sloupky.",
+      "nesmí v tomto místě odbočit vlevo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "24070010",
+    "otazka": "Došlo ve vyobrazené dopravní situaci k porušení pravidel silničního provozu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/240760.mp4",
+    "moznosti": [
+      "Ano, řidič protijedoucího osobního vozidla při odbočování vlevo byl povinen dát přednost v jízdě řidiči motocyklu.",
+      "Ne, oba řidiči odbočili v souladu s pravidly silničního provozu.",
+      "Ano, řidič motocyklu nesměl při odbočování vpravo najíždět do levého jízdního pruhu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23030004",
+    "otazka": "Řidič vozidla z výhledu ve vyobrazené křižovatce s kruhovým objezdem:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230301.jpg",
+    "moznosti": [
+      "Musí dát přednost v jízdě vozidlům jedoucím po kruhovém objezdu.",
+      "Se musí na tomto kruhovém objezdu pouze otočit a jet zpět.",
+      "Má přednost v jízdě před vozidly jedoucími po kruhovém objezdu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23030001",
+    "otazka": "Řidič nákladního vozidla ve vyobrazené dopravní situaci při odbočování vpravo s ohledem na rozměry vozidla musel nejdříve vybočit ze směru své jízdy vlevo a přitom",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230391.mp4",
+    "moznosti": [
+      "nemusel dávat znamení o změně směru jízdy.",
+      "musel dávat pouze znamení o změně směru jízdy vpravo.",
+      "musel dát nejdříve znamení o změně směru jízdy vlevo a poté vpravo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030002",
+    "otazka": "Ve vyobrazené dopravní situaci řidič osobního motorového vozidla",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230392.mp4",
+    "moznosti": [
+      "nemusel umožnit vyjetí autobusu ze zastávky, ale jedná se o slušnost vůči řidiči autobusu.",
+      "musel snížit rychlost jízdy, případně zastavit, aby umožnil vyjetí autobusu ze zastávky.",
+      "nesměl umožnit vyjetí autobusu ze zastávky, protože by snížením rychlosti jízdy, případně zastavením, mohl ohrozit řidiče za ním jedoucích vozidel."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23030003",
+    "otazka": "Provedl řidič nákladního vozidla ve vyobrazené dopravní situaci odbočení vlevo bezpečně a v souladu s pravidly silničního provozu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230393.mp4",
+    "moznosti": [
+      "Ne, měl omezený přímý výhled způsobený protijedoucím vozidlem odbočujícím vlevo a zároveň nezohlednil délku svého vozidla.",
+      "Ano, řidič nákladního vozidla měl dostatečný rozhled a při odbočení neomezil ani neohrozil protijedoucího řidiče vozidla z výhledu.",
+      "Ne, měl omezený přímý výhled způsobený protijedoucím vozidlem odbočujícím vlevo. Délku vozidla zohlednit nemusel."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060001",
+    "otazka": "Ve vyobrazené dopravní situaci řidič vozidla z výhledu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230751.mp4",
+    "moznosti": [
+      "nemusel zastavit před přechodem pro chodce, nevidomý chodec byl ještě daleko od místa přecházení vozovky a řidič měl dostatek času přechod pro chodce přejet, aniž by chodce ohrozil nebo omezil.",
+      "nemusel umožnit nevidomému chodci přejití vozovky, protože ten se dopustil přestupku, kdy hodlal sám, bez doprovodu přecházet vozovku.",
+      "musel umožnit nevidomému chodci nerušené a bezpečné přejití vozovky, protože bylo zřejmé, že nevidomý chodec hodlá přecházet vozovku po přechodu pro chodce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060002",
+    "otazka": "Nevidomý chodec signalizuje úmysl přejít vozovku",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230752.mp4",
+    "moznosti": [
+      "mávnutím bílou slepeckou holí ve směru přecházení.",
+      "ťukáním bílé slepecké hole o konec chodníku",
+      "otočením hlavy ze strany na stranu, jako kdyby se rozhlížel."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060003",
+    "otazka": "Řidič vozidla z výhledu ve vyobrazené dopravní situaci",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230753.mp4",
+    "moznosti": [
+      "musel dbát zvýšené opatrnosti i v případě, že šel nevidomý chodec po chodníku a přizpůsobit svou jízdu tak, aby byl schopný reagovat na případnou neočekávanou reakci nevidomého chodce.",
+      "musel dbát zvýšené opatrnosti a dodržet zákonem stanovený odstup minimálně 2 m od nevidomého chodce, aby mohl zabránit případné kolizi.",
+      "nemusel dbát zvýšené opatrnosti, protože nevidomý chodec šel po chodníku a neměl tedy důvod této situaci přizpůsobit svou jízdu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060004",
+    "otazka": "Při průjezdu levotočivé zatáčky s ohledem na zásady bezpečné jízdy řidič motocyklu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230754.mp4",
+    "moznosti": [
+      "může tělem přesahovat do protisměrného jízdního pruhu, nesmí přesáhnout podélnou čáru souvislou koly motocyklu",
+      "neměl by tělem přesahovat podélnou čáru souvislou, aby předcházel rizikovým situacím.",
+      "může tělem přesahovat do protisměrného jízdního pruhu, jelikož může kdykoli narovnat motocykl, vyhnout se překážce a následně pokračovat v průjezdu zatáčkou."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060005",
+    "otazka": "Pro optimální průjezd pravotočivou zatáčkou s ohledem na zásady bezpečné jízdy najíždí řidič motocyklu do zatáčky",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230755.mp4",
+    "moznosti": [
+      "v pravé části svého jízdního pruhu, má tak větší poloměr při průjezdu zatáčkou a dříve tak vidí do zatáčky.",
+      "do levé části svého jízdního pruhu, má tak větší poloměr při průjezdu zatáčkou a dříve tak vidí do zatáčky.",
+      "ke středu svého jízdního pruhu, má tak menší poloměr při průjezdu zatáčkou, není nutné, aby viděl co nejdále do zatáčky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060006",
+    "otazka": "Došlo ve vyobrazené dopravní situaci k porušení pravidel silničního provozu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230756.mp4",
+    "moznosti": [
+      "Ano, řidič motocyklu musel zastavit za autobusem, který stojí v obci v zastávce a pokračovat až po jeho odjetí.",
+      "Ne, chodec má na přechodu přednost a řidič motocyklu tomu přizpůsobil rychlost své jízdy.",
+      "Ano, chodec se před tím, než vstoupil na přechod pro chodce nepřesvědčil o situaci v provozu a vběhl bezprostředně před řidiče motocyklu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060007",
+    "otazka": "Jak se musí ve vyobrazené dopravní situaci zachovat řidič vozidla z výhledu v místě označeném bílou klikatou čárou na vozovce za dopravní značkou \"Chodci\"?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230757.mp4",
+    "moznosti": [
+      "Musí zde projíždět se zvýšenou opatrností a přizpůsobit rychlost jízdy zvýšenému pohybu chodců.",
+      "Musí umožnit chodcům, aby v tomto místě přešli vozovku a to zpomalením nebo i zastavením vozidla.",
+      "Musí kvůli zvýšenému pohybu chodců jet v bezpečném odstupu od kraje vozovky. Povinný odstup od kraje vozovky je vyznačen bílou klikatou čárou na vozovce."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "23060008",
+    "otazka": "Ve vyobrazené dopravní situaci osoba na osobním přepravníku",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230758.mp4",
+    "moznosti": [
+      "mohla jet po chodníku, ale nesměla přejet po přechodu pro chodce.",
+      "nesměla jet ani po chodníku, ani přejet po přechodu pro chodce.",
+      "mohla jet po chodníku a přejet po přechodu pro chodce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060009",
+    "otazka": "Porušili řidič vozidla z výhledu a řidič bílého osobního vozidla ve vyobrazené dopravní situaci při předjíždění cyklisty pravidla silničního provozu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230759.mp4",
+    "moznosti": [
+      "Ano porušili, předjížděli cyklistu v místě, kde byla na vozovce vyznačena podélná čára souvislá.",
+      "Ano porušili, mohli sice cyklistu předjíždět, ale nesměli přitom přejet podélnou čáru souvislou.",
+      "Ne neporušili, při předjíždění cyklisty mohli přejet podélnou čáru souvislou, aby dodrželi minimální boční odstup 1,5 m."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "23060010",
+    "otazka": "Musí řidič vozidla z výhledu ve vyobrazené dopravní situaci dodržet zákonem stanovený bezpečný boční odstup nejméně 1,5 m od cyklisty?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230760.mp4",
+    "moznosti": [
+      "Ano, cyklista jede ve vyhrazeném jízdním pruhu pro cyklisty, jedná se o předjíždění cyklisty řidičem.",
+      "Ne, cyklista jede ve vyhrazeném jízdním pruhu pro cyklisty, nejedná se tedy o předjíždění.",
+      "Ano, pokud však cyklista jede ve vyhrazeném jízdním pruhu pro cyklisty, bezpečný boční odstup je stanoven na nejméně 1 m."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "23060011",
+    "otazka": "Vyhodnoťte nejzávažnější riziko v ukázce",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/230761.mp4",
+    "moznosti": [
+      "jezdec na koloběžce na přechodu pro chodce",
+      "chodec na přechodu pro chodce",
+      "autobus stojící v autobusové zastávce"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040205",
+    "otazka": "Můžete při vjíždění na tramvajový pás omezit v jízdě tramvaj?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0296.jpg",
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040243",
+    "otazka": "Řidič vozidla z výhledu projede vyobrazenou křižovatkou jako:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0287.jpg",
+    "moznosti": [
+      "Druhý.",
+      "První.",
+      "Třetí."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06040252",
+    "otazka": "Může řidič vozidla z výhledu vjet na železniční přejezd?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0091.jpg",
+    "moznosti": [
+      "Ne.",
+      "Ano."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06040332",
+    "otazka": "Jak se zachováte jako řidič vozidla z výhledu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5003.jpg",
+    "moznosti": [
+      "Dáte přednost zelenému automobilu.",
+      "Dáte přednost červenému automobilu.",
+      "Projedete křižovatkou jako první."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050022",
+    "otazka": "Jste řidičem vozidla z výhledu. Na vyobrazené křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5039.jpg",
+    "moznosti": [
+      "Musíte dát přednost v jízdě žlutému vozidlu, které přijíždí po hlavní pozemní komunikaci. Řidič zeleného vozidla musí dát přednost v jízdě vám.",
+      "Máte přednost v jízdě před zeleným i žlutým vozidlem. Jako druhé projede křižovatkou žluté vozidlo a jako poslední zelené vozidlo.",
+      "Musíte dát přednost v jízdě žlutému vozidlu, protože je na hlavní pozemní komunikaci, i zelenému vozidlu, protože odbočujete vlevo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050024",
+    "otazka": "Jste řidičem vozidla z výhledu. Jaké chování očekáváte od řidiče zeleného vozidla?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5023.jpg",
+    "moznosti": [
+      "Dá přednost v jízdě vašemu vozidlu, které projede křižovatkou jako první.",
+      "Projede křižovatkou jako první a nedává přednost v jízdě žádnému vozidlu.",
+      "Dá přednost v jízdě červenému vozidlu a projede křižovatkou jako druhý."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050048",
+    "otazka": "Jedete v obci jako řidič vozidla z výhledu. Je vaší povinností umožnit autobusu vyjetí ze zastávky?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5058a.jpg",
+    "moznosti": [
+      "Ano, a to snížením rychlosti jízdy nebo i zastavením vozidla.",
+      "Ano, avšak pouze snížením rychlosti nebo změnou směru jízdy, nikoli zastavením vozidla.",
+      "Ne, protože autobus vyjíždí od okraje pozemní komunikace."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050055",
+    "otazka": "Jako řidič automobilu z výhledu projedete touto křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5001.jpg",
+    "moznosti": [
+      "Jako první nebo druhý. Vozidla projíždějí křižovatkou v pořadí, v jakém k ní přijela.",
+      "Jako druhý, protože zelené vozidlo, které přijíždí zprava, má přednost v jízdě.",
+      "Jako první, protože zelené vozidlo, které přijíždí zprava, vám musí dát přednost v jízdě."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050059",
+    "otazka": "Ve vyobrazené dopravní situaci jste řidičem vozidla z výhledu. Na křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5024.jpg",
+    "moznosti": [
+      "Dáte přednost v jízdě červenému i zelenému vozidlu. Jako první projede křižovatkou červené vozidlo.",
+      "Dáte přednost v jízdě zelenému i červenému vozidlu. Jako první projede křižovatkou zelené vozidlo.",
+      "Máte přednost v jízdě před červeným vozidlem. Zelené vozidlo projede křižovatkou jako první."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050073",
+    "otazka": "Jste řidičem vozidla z výhledu. Na vyobrazené křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5006c.jpg",
+    "moznosti": [
+      "Pojedete jako poslední. Jako první pojede zelené vozidlo a po něm červené nákladní vozidlo.",
+      "Pojedete jako druhý, hned po zeleném vozidle, kterému musíte dát přednost v jízdě.",
+      "Pojedete jako první. Po vás pojede zelené vozidlo a jako poslední červené nákladní vozidlo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050143",
+    "otazka": "Jste řidičem vozidla z výhledu. Na vyobrazené křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5031.jpg",
+    "moznosti": [
+      "Projedete jako první, protože jste na hlavní pozemní komunikaci. Hned po Vás projede červený nákladní automobil.",
+      "Projedete jako druhý, hned po červeném nákladním vozidle, kterému musíte dát přednost v jízdě.",
+      "Projedete jako druhý, hned po protijedoucím žlutém vozidle, kterému musíte dát přednost v jízdě."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050306",
+    "otazka": "Ve vyobrazené situaci jste řidičem vozidla z výhledu. Jak se zachováte?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0319.jpg",
+    "moznosti": [
+      "Musím odbočit vpravo.",
+      "Dám přednost vozidlu přijíždějícímu zprava.",
+      "Projedu křižovatkou jako první."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050481",
+    "otazka": "Jako řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5063.jpg",
+    "moznosti": [
+      "Můžete pokračovat v jízdě křižovatkou. Jste na hlavní pozemní komunikaci.",
+      "Jste povinen dát přednost vozidlu přijíždějícímu zleva.",
+      "Máte přednost v jízdě před řidičem přijíždějícím zleva."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050483",
+    "otazka": "Jste řidičem vozidla z výhledu. V jakém pořadí projedou vozidla touto křižovatkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5012a.jpg",
+    "moznosti": [
+      "Jako první červené vozidlo, jako druhé zelené vozidlo, jako poslední modré vozidlo společně s Vaším vozidlem.",
+      "Jako první zelené vozidlo, jako druhé červené vozidlo, jako poslední modré vozidlo společně s Vaším vozidlem.",
+      "Jako první červené vozidlo společně se zeleným vozidlem, následně modré vozidlo společně s Vaším vozidlem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050508",
+    "otazka": "Vozidla projedou křižovatkou v pořadí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0287.jpg",
+    "moznosti": [
+      "1. vozidlo z výhledu, 2. bílé vozidlo, 3. červené vozidlo.",
+      "1. vozidlo z výhledu, 2. červené vozidlo, 3. bílé vozidlo.",
+      "1. bílé vozidlo, 2. červené vozidlo, 3. vozidlo z výhledu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050524",
+    "otazka": "Jste řidičem vozidla z výhledu. V jakém pořadí projedou vozidla vyobrazenou křižovatkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5027.jpg",
+    "moznosti": [
+      "1. modré protijedoucí vozidlo, 2. Vaše vozidlo, 3. oranžové nákladní vozidlo.",
+      "1. Vaše vozidlo, 2. oranžové nákladní vozidlo, 3. modré protijedoucí vozidlo,",
+      "1. Vaše vozidlo, 2. modré protijedoucí vozidlo, 3. oranžové nákladní vozidlo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050525",
+    "otazka": "Jste řidičem vozidla z výhledu. V jakém pořadí projedou vozidla touto křižovatkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5030.jpg",
+    "moznosti": [
+      "1. Vaše vozidlo, 2. červené nákladní vozidlo, 3. protijedoucí modré vozidlo.",
+      "1. Vaše vozidlo společně s protijedoucím modrým vozilem, 2. červené nákladní vozidlo.",
+      "1. červené nákladní vozidlo, 2. Vaše vozidlo společně s protijedoucím modrým vozidlem."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050560",
+    "otazka": "Jste řidičem vozidla z výhledu. Na vyobrazené křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5004.jpg",
+    "moznosti": [
+      "Musíte dát přednost v jízdě protijedoucímu automobilu; poté můžete pokračovat v jízdě do křižovatky.",
+      "Projede křižovatkou jako poslední; jako první projede vozidlo označené zvláštním výstražným světlem žluté barvy, které přijíždí zleva, a hned po něm protijedoucí automobil.",
+      "Máte přednost v jízdě před protijedoucím automobilem, ale musíte současně sledovat chování řidiče, který jede před vámi."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050579",
+    "otazka": "Jakou rychlostí je možno přejíždět přes tento železniční přejezd?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0086.jpg",
+    "moznosti": [
+      "Nejvýše 50 km/h.",
+      "Nejvýše 30 km/h.",
+      "Nejvýše 40 km/h."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050580",
+    "otazka": "Jakou rychlostí je možno přejíždět přes tento železniční přejezd?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0086.jpg",
+    "moznosti": [
+      "Nejvýše 60 km/h.",
+      "Nejvýše 30 km/h.",
+      "Nejvýše 50 km/h."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050583",
+    "otazka": "Jste řidičem vozidla z výhledu. Určete, v jakém pořadí projedou vozidla touto křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5018.jpg",
+    "moznosti": [
+      "1. červené vozidlo, 2. zelené vozidlo, 3. Vaše vozidlo.",
+      "1. Vaše vozidlo současně s protijedoucím červeným vozidlem, 2. zelené vozidlo.",
+      "1. Vaše vozidlo současně se zeleným vozidlem jedoucím zprava, 2. červené vozidlo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050584",
+    "otazka": "Jste řidičem vozidla z výhledu. Určete, v jakém pořadí projedou vozidla vyobrazenou křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5020.jpg",
+    "moznosti": [
+      "1. Vaše vozidlo, 2. zelené vozidlo jedoucí zprava, 3. žluté vozidlo.",
+      "1. Vaše vozidlo, 2. protijedoucí žluté vozidlo, 3. zelené vozidlo.",
+      "1. zelené vozidlo jedoucí zprava, 2. Vaše vozidlo, 3. žluté vozidlo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050585",
+    "otazka": "Jste řidičem vozidla z výhledu. Určete, v jakém pořadí projedou vozidla touto křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5021.jpg",
+    "moznosti": [
+      "1. zelené vozidlo jedoucí zleva, 2. protijedoucí zelené vozidlo, 3. oranžové nákladní vozidlo, 4. Vaše vozidlo.",
+      "1. zelené vozidlo jedoucí zleva, 2. protijedoucí zelené vozidlo, 3. Vaše vozidlo, 4. oranžové nákladní vozidlo.",
+      "1. protijedoucí zelené vozidlo, 2. zelené vozidlo jedoucí zleva, 3. oranžové nákladní vozidlo, 4. Vaše vozidlo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050586",
+    "otazka": "Jste řidičem vozidla z výhledu. Určete, kolikáté projede Vaše vozidlo touto křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5021.jpg",
+    "moznosti": [
+      "Druhé.",
+      "Poslední.",
+      "Třetí."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050587",
+    "otazka": "Jste řidičem vozidla z výhledu. Určete, kolikáté projede Vaše vozidlo touto křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5022.jpg",
+    "moznosti": [
+      "Jako druhé.",
+      "Jako třetí.",
+      "Jako poslední."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06050589",
+    "otazka": "Jste řidičem vozidla z výhledu. Určete, v jakém pořadí projedou vozidla touto křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5022.jpg",
+    "moznosti": [
+      "1. modré vozidlo jedoucí zleva, 2. protijedoucí červené vozidlo, 3. zelené vozidlo jedoucí zprava, 4. Vaše vozidlo.",
+      "1. modré vozidlo jedoucí zleva současně se zeleným vozidlem jedoucím zprava, 2. Vaše vozidlo současně s protijedoucím červeným vozidlem.",
+      "1. Vaše vozidlo současně s protijedoucím červeným vozidlem, 2. modré vozidlo jedoucí zleva současně se zeleným vozidlem jedoucím zprava."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06050609",
+    "otazka": "Můžete jako řidič vozidla z výhledu vjet do křižovatky před vozidlem, které ve vyobrazené situaci přijíždí zleva?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5010a.jpg",
+    "moznosti": [
+      "Mohu, protože jsem na hlavní pozemní komunikaci a proto mám přednost v jízdě.",
+      "Nemohu, protože bych mu neumožnil bezpečný a plynulý průjezd křižovatkou.",
+      "Mohu. Druhé vozidlo přijíždí zleva a musí mi proto dát přednost v jízdě."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06050629",
+    "otazka": "Jste řidičem vozidla z výhledu. V jakém pořadí projedou vozidla touto křižovatkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5019.jpg",
+    "moznosti": [
+      "1. Vaše vozidlo současně s protijedoucím zeleným vozidlem, 2. žluté nákladní vozidlo.",
+      "1. Protijedoucí zelené vozidlo, 2. žluté nákladní vozidlo, 3. Vaše vozidlo.",
+      "1. Protijedoucí zelené vozidlo současně se žlutým nákladním vozidlem, 2. Vaše vozidlo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060047",
+    "otazka": "Jste řidičem vozidla z výhledu. Určete, v jakém pořadí projedou vozidla touto křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5029.jpg",
+    "moznosti": [
+      "1. Protijedoucí modré vozidlo, 2. Vaše vozidlo současně se zeleným vozidlem jedoucím zprava.",
+      "1. Vaše vozidlo současně se zeleným vozidlem jedoucím zprava, 2. protijedoucí modré vozidlo.",
+      "1. Vaše vozidlo, 2. protijedoucí modré vozidlo, 3. zelené vozidlo jedoucí zprava."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060115",
+    "otazka": "Jste řidičem vozidla z výhledu. Při jízdě křižovatkou, která je znázorněna na obrázku:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5001.jpg",
+    "moznosti": [
+      "Dáte přednost v jízdě zelenému vozidlu, protože zelené vozidlo přijíždí zleva.",
+      "Máte přednost v jízdě před zeleným vozidlem, protože zelené vozidlo přijíždí zleva.",
+      "Dáte přednost v jízdě zelenému vozidlu, protože zelené vozidlo přijíždí zprava."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060246",
+    "otazka": "Vyobrazený železniční přejezd se nachází na pozemní komunikaci mimo obec. Jakou nejvyšší rychlostí můžete jet ve vzdálenosti 50 metrů před tímto přejezdem?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0083.jpg",
+    "moznosti": [
+      "Nejvýše 90 km/h.",
+      "Nejvýše 30 km/h.",
+      "Nejvýše 50 km/h."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060247",
+    "otazka": "Řidič porušuje zákon, pokud přes vyobrazený železniční přejezd přejíždí:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0083.jpg",
+    "moznosti": [
+      "Rychlostí 25 km/h.",
+      "Rychlostí 30 km/h.",
+      "Rychlostí 35 km/h."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060248",
+    "otazka": "Vyobrazený železniční přejezd se nachází na pozemní komunikaci mimo obec. Jakou nejvyšší rychlostí smíte jet ve vzdálenosti 50 metrů před tímto přejezdem?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0086.jpg",
+    "moznosti": [
+      "Nejvýše 90 km/h.",
+      "Nejvýše 70 km/h.",
+      "Nejvýše 50 km/h."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060249",
+    "otazka": "Jste řidičem vozidla z výhledu. Při jízdě křižovatkou, která je znázorněna na obrázku:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5001.jpg",
+    "moznosti": [
+      "Máte přednost v jízdě před zeleným vozidlem, protože zelené vozidlo přijíždí zleva.",
+      "Dáte přednost v jízdě zelenému vozidlu, protože zelené vozidlo přijíždí zprava.",
+      "Máte přednost v jízdě před zeleným vozidlem, protože zelené vozidlo přijíždí zprava."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060250",
+    "otazka": "Jakou rychlostí můžete přejet přes železniční přejezd, pokud nesvítí přerušované bílé světlo přejezdového zabezpečovacího zařízení?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0083.jpg",
+    "moznosti": [
+      "Nejvýše 50 km/h.",
+      "Nejvýše 40 km/h.",
+      "Nejvýše 30 km/h."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060319",
+    "otazka": "Jako řidič vozidla z výhledu máte v úmyslu po projetí křižovatkou v přímém směru zastavit 20 m od křižovatky. Smíte tak ve vyobrazené situaci učinit?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0186.jpg",
+    "moznosti": [
+      "Ne, protože dopravní značka zakazuje zastavení.",
+      "Ano, protože dopravní značka zakazuje pouze stání.",
+      "Ano, ale pouze u levého okraje vozovky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060324",
+    "otazka": "Na křižovatce nevyplývá přednost v jízdě z dopravních značek. V jakém pořadí projedou řidiči křižovatkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0376.jpg",
+    "moznosti": [
+      "Modré vozidlo má přednost v jízdě před červeným.",
+      "Červené vozidlo má přednost v jízdě před modrým.",
+      "Jako první projede křižovatkou rychleji jedoucí vozidlo."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060404",
+    "otazka": "Jako řidič auta z výhledu v dané situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0251.jpg",
+    "moznosti": [
+      "Musíte sledovat světelnou signalizaci a chování odbočujících řidičů v protisměru, jimž musíte dát přednost v jízdě.",
+      "Musíte na příkaz dopravní značky odbočit vpravo.",
+      "Musíte zejména sledovat světelnou signalizaci a chování odbočujících řidičů v protisměru, i když Vám musejí dát přednost v jízdě."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060414",
+    "otazka": "Blížíte se k místu, kde si děti hrají na chodníku. Jak se musíte zachovat?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5014.jpg",
+    "moznosti": [
+      "Podle okolností zpomalit jízdu a být připraven brzdit.",
+      "Dát výstražné zvukové znamení a pokračovat v jízdě.",
+      "Pokračovat v jízdě stejnou rychlostí, abych neomezil vozidla za sebou."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "06060420",
+    "otazka": "Řidič vozidla z výhledu na vyobrazené křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0172.jpg",
+    "moznosti": [
+      "Má přednost v jízdě před všemi vozidly, přesto ale musí přibrzdit před hranicí křižovatky a přesvědčit se, zda může křižovatkou bezpečně projet.",
+      "Musí dát přednost všem vozidlům přijíždějícím zprava.",
+      "Musí dát přednost všem vozidlům přijíždějícím zprava i zleva."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "06060502",
+    "otazka": "Jste řidičem vozidla z výhledu. Ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5009.jpg",
+    "moznosti": [
+      "Smíte odbočit vlevo, aniž byste někomu musel(a) dávat přednost.",
+      "Nesmíte odbočit vlevo, neboť zelený plný kruhový světelný signál „Volno“ umožňuje projet křižovatku pouze v přímém směru.",
+      "Smíte odbočit vlevo, ale musíte dát přednost chodcům přecházejícím ve volném směru po přechodu pro chodce."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "06060505",
+    "otazka": "Jste řidičem vozidla z výhledu. Na vyobrazené křižovatce:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5036.jpg",
+    "moznosti": [
+      "Musíte dát přednost v jízdě protijedoucímu červenému vozidlu. Následně projedete před zeleným nákladním automobilem, který Vám musí dát přenost v jízdě.",
+      "Projedete křižovatkou současně s protijedoucím červeným vozidlem, před zeleným nákladním automobilem, který Vám musí dát přednost v jízdě.",
+      "Musíte dát přednost v jízdě oběma přijíždějícím vozidlům. Jako první projede křižovatkou protijedoucí červený automobil."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08080010",
+    "otazka": "Na této frekventované pozemní komunikaci jste se zařadili do levého odbočovacího pruhu. Na křižovatce jste zjistili, že jste měli jet vpravo. Jak se zachováte?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0298.jpg",
+    "moznosti": [
+      "Zastavíte a pokusíte se couváním zařadit do správného odbočovacího pruhu.",
+      "Odbočíte vlevo a budete počítat se zajížďkou.",
+      "Zvukovým výstražným znamením upozorníte ostatní řidiče, že odbočujete vpravo."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "08080014",
+    "otazka": "Může řidič vozidla z výhledu odbočit vpravo, aniž by porušil pravidla bezpečného provozu?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/0300.jpg",
+    "moznosti": [
+      "Ano, na světelném signalizačním zařízením je dán pokyn \"Volno\". Řidič může pokračovat v započatém jízdním úkonu.",
+      "Ne, situace před vozidlem mu to nedovoluje kvůli odbočujícím vozidlům v protisměru.",
+      "Ne, před křižovatkou se zařadil do jízdního pruhu, odkud nesmí odbočit směrem vpravo i když dává znamení o změně směru jízdy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "08080016",
+    "otazka": "Můžete jako řidič vozidla z výhledu vjet do křižovatky?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5010b.jpg",
+    "moznosti": [
+      "Ano, řidič vozidla, i když má za jízdy rozsvícené zvláštní výstražné světlo modré barvy, má povinnosti jako ostatní účastníci provozu na pozemních komunikacích.",
+      "Ne, řidiči ostatních vozidel musí umožnit jízdu vozidel s právem přednostní jízdy.",
+      "Ano, i řidič vozidla s právem přednostní jízdy je povinnen dát přednost vozidlům přijíždějícím zprava."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "08080018",
+    "otazka": "Jak se zachováte v této situaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/5068.jpg",
+    "moznosti": [
+      "Zastavím v takové vzdálenosti od signalizačního zařízení, abych umožnil průjezd případným protijedoucím vozidlům. Počkám na signál \"Volno\".",
+      "Úsek projedu zvýšenou rychlostí. Žádné vozidlo v protisměru nejede. Nebudu čekat na signál \"Volno\".",
+      "Situace je dostatečně přehledná a tak pojedu dál, i když svítí na světelném signalizačním zařízení signál \"Stůj\"."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "08110269",
+    "otazka": "Jak se zachováte v této dopravní situaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/585b.jpg",
+    "moznosti": [
+      "Pojedu stejnou rychlostí jako doposud. Autobus, který zastavil v zastávce, není důvodem ke zvýšené opatrnosti v jízdě.",
+      "Musím zastavit za autobusem a počkat než vyjede ze zastávky. Potom mohu pokračovat v jízdě.",
+      "Snížím rychlost jízdy. Musím počítat s náhlým vstoupením do vozovky osob, které vystupují z autobusu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10110001",
+    "otazka": "Řidič vozidla z výhledu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11001.jpg",
+    "moznosti": [
+      "dává přednost v jízdě oběma tramvajím.",
+      "projede křižovatkou jako první.",
+      "projede křižovatkou jako poslední."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10110002",
+    "otazka": "Řidič vozidla z výhledu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11001.jpg",
+    "moznosti": [
+      "dává přednost v jízdě oběma tramvajím.",
+      "projede křižovatkou jako první.",
+      "dává přednost v jízdě tramvaji č. 2."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10110003",
+    "otazka": "Tramvaje č.1 a 2 projedou křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11001.jpg",
+    "moznosti": [
+      "Obě současně spolu se zeleným nákladním automobilem, po projetí vozidla z výhledu.",
+      "Obě současně jako první, spolu se zeleným nákladním automobilem.",
+      "Obě současně jako druhé, po projetí zeleného nákladního automobilu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10110009",
+    "otazka": "Řidič vozidla z výhledu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11002.jpg",
+    "moznosti": [
+      "dává přednost v jízdě oběma tramvajím.",
+      "projede křižovatkou jako první.",
+      "dává přednost v jízdě zelenému vozidlu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10110010",
+    "otazka": "Řidič vozidla z výhledu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11002.jpg",
+    "moznosti": [
+      "projede křižovatkou jako první.",
+      "dává přednost v jízdě tramvaji č. 1.",
+      "projede křižovatkou jako poslední."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10110011",
+    "otazka": "Řidič vozidla z výhledu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11002.jpg",
+    "moznosti": [
+      "projede křižovatkou jako první.",
+      "dává přednost v jízdě tramvaji č. 2.",
+      "dává přednost v jízdě tramvaji č. 1 a zelenému vozidlu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10110016",
+    "otazka": "Jako první projede křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11002.jpg",
+    "moznosti": [
+      "Tramvaj č. 1 a 2.",
+      "Vozidlo z výhledu.",
+      "Vozidlo z výhledu současně se zeleným vozidlem."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "10110027",
+    "otazka": "Jako poslední projede křižovatkou",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11003.jpg",
+    "moznosti": [
+      "vozidlo z výhledu.",
+      "modré nákladní vozidlo.",
+      "žluté vozidlo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10110028",
+    "otazka": "Vozidlo z výhledu projede křižovatkou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11003.jpg",
+    "moznosti": [
+      "jako druhé.",
+      "jako první.",
+      "jako poslední."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10110043",
+    "otazka": "Řidič vozidla z výhledu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11004.jpg",
+    "moznosti": [
+      "projede křižovatkou jako druhý.",
+      "projede křižovatkou jako první.",
+      "projede křižovatkou současně se zeleným vozidlem."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "10110044",
+    "otazka": "Řidič vozidla z výhledu",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11004.jpg",
+    "moznosti": [
+      "přijíždí do křižovatky po hlavní pozemní komunikaci.",
+      "přijíždí do křižovatky po vedlejší pozemní komunikaci.",
+      "přijíždí do křižovatky, kde není přednost v jízdě upravena svislými dopravními značkami."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "10110045",
+    "otazka": "Na této křižovatce",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/11004.jpg",
+    "moznosti": [
+      "je přednost v jízdě upravena svislými dopravními značkami.",
+      "má přednost v jízdě vozidlo z výhledu.",
+      "není přednost v jízdě upravena svislými dopravními značkami."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "11020032",
+    "otazka": "Vozidlo z výhledu projede křižovatkou jako:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/10040027.jpg",
+    "moznosti": [
+      "druhé, protože protijedoucí vozidlo odbočuje z hlavní pozemní komunikace na vedlejší a má přednost v jízdě.",
+      "první.",
+      "druhé."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100005",
+    "otazka": "Cyklistovi, který dává znamení o změně směru jízdy proto, aby mohl přejet z vyhrazeného jízdního pruhu pro cyklisty do průběžného pruhu, řidič jedoucí v přilehlém pruhu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211013.jpg",
+    "moznosti": [
+      "musí tento úkon umožnit snížením rychlosti jízdy, popřípadě i zastavením vozidla.",
+      "nemusí tento úkon umožnit, jedná se o jízdu z pruhu do pruhu, cyklista nesmí ohrozit ani omezit řidiče jedoucí v pruhu, do kterého se zařazuje.",
+      "nemusí tento úkon umožnit, pokud jej neohrozí."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100010",
+    "otazka": "Na uvedené křižovatce řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211046.jpg",
+    "moznosti": [
+      "Nemusí se při odbočení vpravo řídit světelnými signály, neboť těmto je nadřazena přenosná svislá dopravní značka „Práce na silnici“, která informuje o poruše světelných signálů.",
+      "Je doplňkovou zelenou šipkou informován o přednosti v jízdě vozidel přijíždějících zprava.",
+      "Smí odbočit vpravo, přitom musí dát přednost v jízdě vozidlům a jezdcům na zvířatech jedoucím ve volném směru a útvarům chodců jdoucím ve volném směru."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100011",
+    "otazka": "Řidič vozidla z výhledu hodlá na nejbližší křižovatce odbočit vpravo. Za této situace:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211047.jpg",
+    "moznosti": [
+      "Řidič nesmí omezit cyklistu přejíždějícího pozemní komunikaci na přejezdu pro cyklisty.",
+      "Řidič nesmí ohrozit cyklistu přejíždějícího pozemní komunikaci na přejezdu pro cyklisty."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100013",
+    "otazka": "Řidič vozidla z výhledu se chystá odbočit vlevo. Musí dát přednost v jízdě tramvaji?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211057.jpg",
+    "moznosti": [
+      "Ano",
+      "Ne"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100017",
+    "otazka": "Řidič vozidla z výhledu odbočující na křižovatce vlevo:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211070.jpg",
+    "moznosti": [
+      "Má přednost v jízdě před ostatními vozidly, přitom není povinen dát znamení o změně směru jízdy vlevo, protože projíždí křižovatkou po hlavní pozemní komunikaci, přitom musí přizpůsobit rychlost jízdy okolnostem, které je možné předvídat, zejména riziku smyku na zasněžené vozovce.",
+      "Má přednost v jízdě před ostatními vozidly, přitom musí přizpůsobit rychlost jízdy okolnostem, které je možné předvídat, zejména riziku smyku na zasněžené vozovce. Přitom dává znamení o změně směru jízdy vlevo.",
+      "Musí dát přednost v jízdě protijedoucím vozidlům, přitom musí přizpůsobit rychlost jízdy okolnostem, které je možné předvídat, zejména riziku smyku na zasněžené vozovce"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100023",
+    "otazka": "Řidič osobního vozidla odbočujícího ve vyobrazené situaci vlevo:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211100.jpg",
+    "moznosti": [
+      "musí dát přednost v jízdě pouze protijedoucí tramvaji",
+      "musí dát přednost v jízdě tramvajím v obou směrech",
+      "má přednost v jízdě před tramvajemi v obou směrech"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100024",
+    "otazka": "Řidič vozidla z výhledu v této dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211102.jpg",
+    "moznosti": [
+      "může projet křižovatkou",
+      "musí zastavit vozidlo v místě, odkud má náležitý rozhled do křižovatky",
+      "musí zastavit vozidlo před příčnou čárou souvislou"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "21100026",
+    "otazka": "Na vyobrazeném místě musí řidič:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211109.jpg",
+    "moznosti": [
+      "odbočit vlevo, přičemž má přednost před vozidly přijíždějícími zprava",
+      "odbočit vpravo, přičemž má přednost před vozidly přijíždějícími zleva",
+      "odbočit vlevo, přičemž musí dát přednost vozidlům přijíždějícím zprava"
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "21100028",
+    "otazka": "Řidič vozidla z výhledu je povinen v této situaci",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211112.jpg",
+    "moznosti": [
+      "sledovat pouze přechod pro chodce; vozidla přijíždějící zprava musí dát přednost jemu",
+      "sledovat přechod pro chodce a vozidla přijíždějící zprava, kterým musí dát přednost",
+      "odbočit vpravo"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "21100030",
+    "otazka": "Řidič vozidla z výhledu hodlá odbočit vlevo. V jakém pořadí projedou vozidla touto křižovatkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/211118.jpg",
+    "moznosti": [
+      "vozidlo z výhledu, tramvaj",
+      "tramvaj, vozidlo z výhledu",
+      "obě vozidla mohou projet současně"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020001",
+    "otazka": "Ve vyobrazené dopravní situaci řidič:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219005.mp4",
+    "moznosti": [
+      "lépe vnímá chodce, kteří jsou v obci povinni mít na sobě prvky z retroreflexních materiálů.",
+      "musí použít dálková světla po celou dobu objíždění chodců pohybujících se po pozemní komunikaci, kteří nepoužijí oděv a vybavení z retroreflexních materiálů.",
+      "musí vnímat riziko špatně viditelných chodců, kteří se pohybují bez retroreflexních prvků, které chodci v obci nemusí mít povinně na sobě."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020002",
+    "otazka": "Řidič motorového vozidla z výhledu v dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219004.mp4",
+    "moznosti": [
+      "porušil pravidla silničního provozu tím, že odbočil přes vyhrazený jízdní pruh.",
+      "mohl odbočit vpravo, přičemž nesměl ohrozit a omezit vozidla jedoucí ve vyhrazeném jízdním pruhu.",
+      "mohl odbočit vpravo bez ohledu na vozidla jedoucí ve vyhrazeném jízdním pruhu, která nesměla ohrozit a omezit vozidla odbočující z průběžného pruhu."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020003",
+    "otazka": "Jako řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219006.mp4",
+    "moznosti": [
+      "na hlavní pozemní komunikaci nemám povinnost sledovat ostatní účastníky provozu.",
+      "na hlavní pozemní komunikaci nemusím reagovat na hrozící nebezpečí střetu, ostatní účastníci jsou povinni odvrátit hrozící nebezpečí střetu, které jsem nezavinil.",
+      "mám povinnost sledovat situaci provozu, abych v případě nutnosti mohl včasnou reakcí odvrátit hrozící nebezpečí střetu i přesto, že jsem na hlavní pozemní komunikaci."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020006",
+    "otazka": "Jak se zachováte jako řidič vozidla z výhledu na následující křižovatce?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1014.jpg",
+    "moznosti": [
+      "Mám přednost před červeným vozidlem, protože na vedlejší komunikaci zprava je značka Stůj, dej přednost v jízdě!",
+      "Dám přednost zprava červenému vozidlu.",
+      "Dám přednost v jízdě  pouze vozidlům na hlavní pozemní komunikaci"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22020007",
+    "otazka": "Jak se zachováte na následující křižovatce jako řidič vozidla z výhledu, který odbočuje vlevo?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1015.jpg",
+    "moznosti": [
+      "Dám přednost v jízdě vozidlům na hlavní pozemní komunikaci a poté odbočím vlevo před protijedoucím modrým vozidlem.",
+      "Dám přednost v jízdě vozidlům na hlavní pozemní komunikaci a modrému protijedoucímu vozidlu.",
+      "Křižovatkou projedu jako poslední."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020018",
+    "otazka": "Na vyobrazené dopravní situaci řidič osobního automobilu jedoucí v přímém směru:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1099.jpg",
+    "moznosti": [
+      "má přednost v jízdě před tramvají.",
+      "musí dát přednost v jízdě tramvaji.",
+      "jede současně s tramvají."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020021",
+    "otazka": "Řidič vozidla z výhledu hodlá odbočit vlevo. V jakém pořadí projedou vozidla touto křižovatkou?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1117.jpg",
+    "moznosti": [
+      "Tramvaj i vozidlo z výhledu projedou současně.",
+      "Jako první projede vozidlo z výhledu, následně tramvaj.",
+      "Jako první projede tramvaj, následně vozidlo z výhledu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020022",
+    "otazka": "Na nejbližší křižovatce řidič osobního vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1120.jpg",
+    "moznosti": [
+      "smí odbočit vpravo.",
+      "musí odbočit vlevo.",
+      "nesmí odbočit vpravo."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22020033",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1163.jpg",
+    "moznosti": [
+      "má přednost v jízdě před vozidly jedoucími po kruhovém objezdu.",
+      "musí dát přednost v jízdě vozidlům pohybujícím se po kruhovém objezdu."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22020034",
+    "otazka": "Řidič červeného vozidla jedoucí po kruhovém objezdu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1164.jpg",
+    "moznosti": [
+      "má přednost v jízdě na kruhovém objezdu.",
+      "musí dát přednost v jízdě vozidlům vjíždějícím na kruhový objezd.",
+      "musí zastavit a dát přednost v jízdě vozidlům vjíždějícím na kruhový objezd."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050001",
+    "otazka": "Ve vyobrazené dopravní situaci na silnici pro motorová vozidla:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219007.mp4",
+    "moznosti": [
+      "řidič červeného vozidla nesplnil povinnost vytvořit prostor pro průjezd vozidla s právem přednostní jízdy z důvodu kolony stojících a pomalu jedoucích vozidel.",
+      "jsou řidiči vozidel povinni vytvořit prostor pro průjezd vozidla s právem přednostní jízdy až v okamžiku jeho příjezdu.",
+      "řidiči všech vozidel mají povinnost se zařadit co nejvíce vlevo, aby při pravém okraji komunikace vytvořili prostor pro průjezd vozidla s právem přednostní jízdy z důvodu kolony stojících a pomalu jedoucích vozidel."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050002",
+    "otazka": "Ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219008.mp4",
+    "moznosti": [
+      "by měli řidič vozidla z výhledu i cyklista předvídat možnost otevření dveří do vozovky vzhledem k vystupující osobě z vozidla na chodník",
+      "nesmí cyklista vyjet z jízdního pruhu pro cyklisty z důvodu vyhýbání se překážce a musí jet takovou rychlostí, aby před ní stačil zastavit",
+      "cyklista porušil pravidla silničního provozu, protože nedodržel minimální bezpečný boční odstup 1,5 m od zaparkovaných vozidel."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050003",
+    "otazka": "Pohybují-li se pomalu nebo stojí-li vozidla za sebou:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219009.mp4",
+    "moznosti": [
+      "může cyklista jedoucí stejným směrem tato vozidla předjíždět nebo objíždět z pravé strany po pravém okraji vozovky nebo krajnici. To neplatí, odbočuje-li vozidlo vpravo a dává-li znamení o změně směru jízdy.",
+      "může motocyklista tato vozidla předjíždět nebo objíždět, pokud je mezi vozidly dostatek místa.",
+      "může motocyklista jedoucí stejným směrem tato vozidla předjíždět nebo objíždět z pravé strany po pravém okraji vozovky nebo krajnici. To neplatí, odbočuje-li vozidlo vpravo a dává-li znamení o změně směru jízdy."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050004",
+    "otazka": "Ve vyobrazené dopravní situaci řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219010.mp4",
+    "moznosti": [
+      "musí se zařadit co nejdále vlevo v části vozovky určené pro jeho směr jízdy, neboť odbočuje vlevo, na předjíždějícího motocyklistu nemusí brát ohled.",
+      "aby zabránil střetu s motocyklistou, sníží rychlost jízdy a přestože odbočuje vlevo, uhýbá k pravému okraji vozovky.",
+      "aby zabránil střetu s motocyklistou musí se zařadit co nejdále vlevo v části vozovky určené pro jeho směr jízdy a vytvořit tak bezpečný prostor v pravé části vozovky"
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050005",
+    "otazka": "Ve vyobrazené dopravní situaci musí řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219011.mp4",
+    "moznosti": [
+      "zastavit a pokračovat v jízdě až po vyjetí autobusu ze zastávky, aby se předešlo střetu s chodci, kteří mohou vyběhnout zpoza autobusu do vozovky.",
+      "přizpůsobit své chování a rychlost vozidla tak, aby mohl včas reagovat na případné vběhnutí chodců zpoza autobusu do vozovky",
+      "umožnit vyjetí autobusu ze zastávky."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22050006",
+    "otazka": "S ohledem na defenzivní způsob jízdy řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219012.mp4",
+    "moznosti": [
+      "by měl zvýšit pozornost a přizpůsobit svou jízdu zejména kvůli omezenému výhledu způsobenému zastavením autobusu v zastávce.",
+      "věnuje pozornost pouze chodcům, jinak má dostatečný přímý rozhled a nemusí tak snižovat rychlost jízdy, protože je na hlavní pozemní komunikaci.",
+      "musí zastavit vozidlo za autobusem a vyčkat jeho odjezdu ze zastávky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22050016",
+    "otazka": "Řidič vozidla z výhledu musí ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/1165.jpg",
+    "moznosti": [
+      "dát přednost pouze vozidlům přijíždějícím do křižovatky po hlavní pozemní komunikaci.",
+      "dát přednost vozidlům přijíždějícím do křižovatky po hlavní pozemní komunikaci a vozidlům přijíždějícím zprava.",
+      "vždy zastavit vozidlo před přechodem pro chodce."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100001",
+    "otazka": "Vyhodnoťte nejzávažnější riziko v animaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219001.mp4",
+    "moznosti": [
+      "cyklista",
+      "dodávka na vedlejší pozemní komunikaci",
+      "přecházející chodkyně"
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22100002",
+    "otazka": "Ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219002.mp4",
+    "moznosti": [
+      "Svislá dopravní značka zakazuje přejíždět do levého jízdního pruhu při ztížených klimatických podmínkách.",
+      "By řidiči měli v souvislosti s klimatickými podmínkami očekávat možnost vzniku překážky a rizikového chování ostatních řidičů.",
+      "Při ztížených klimatických podmínkách si řidič jedoucí první určuje směr jízdy a ostatní řidiči se musí přizpůsobit jeho jízdě."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100003",
+    "otazka": "Jaká pravidla silničního provozu musíme dodržovat v následující dopravní situaci?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219003.mp4",
+    "moznosti": [
+      "Dodržovat nejvyšší dovolenou rychlost 30 km/h.",
+      "Dávat přednost všem couvajícím vozidlům, hrajícím si dětem na vozovce a psům na vodítku, dodržovat nejvyšší povolenou rychlosti 25 km/h.",
+      "Počínat si zvláště obezřetně vůči ostatním účastníkům provozu a při výjezdu z obytné zóny dávat přednost všem účastníkům silničního provozu."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100004",
+    "otazka": "Řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219013.mp4",
+    "moznosti": [
+      "je upozorněn červenými směrovými sloupky na riziková místa, kde může docházet k výjezdům zemědělské techniky.",
+      "se v úseku označeném červenými směrovými sloupky může pohybovat nejvyšší dovolenou rychlostí 70 km/hod.",
+      "musí sledovat situaci v provozu a dát přednost v jízdě vozidlům vyjíždějícím z pozemní komunikace označené červenými směrovými sloupky."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22100005",
+    "otazka": "Ve vyobrazené dopravní situaci:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219014.mp4",
+    "moznosti": [
+      "řidič červeného vozidla nemohl předvídat možnost smyku svého vozidla.",
+      "řidič červeného vozidla nepřizpůsobil rychlost při průjezdu zatáčkou na mokré vozovce.",
+      "řidič vozidla z výhledu jel na pozemní komunikaci mimo obec vyšší rychlostí, než mu zákon umožňuje."
+    ],
+    "spravna": 1
+  },
+  {
+    "id": "22100006",
+    "otazka": "Ve vyobrazené dopravní situaci řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219015.mp4",
+    "moznosti": [
+      "může objíždět tramvaj, pokud neohrozí osoby vystupující z tramvaje.",
+      "může objíždět tramvaj, pokud neohrozí protijedoucí řidiče.",
+      "nesmí objíždět tramvaj, pokud to není umožněno dopravní značkou \"Objíždění tramvaje\"."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100007",
+    "otazka": "S ohledem na defenzivní způsob jízdy řidič vozidla z výhledu:",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219016.mp4",
+    "moznosti": [
+      "zvýší rychlost jízdy a předjede jezdce na koloběžce ještě před zúžením.",
+      "nebude v této dopravní situaci předjíždět jezdce na koloběžce a bude dodržovat bezpečnou vzdálenost 0,7 sekundy na reakční dobu řidiče plus 0,3 sekundy na prodlevu brzd.",
+      "nebude v této dopravní situaci předjíždět jezdce na koloběžce a bude dodržovat bezpečnou vzdálenost minimálně 2 sekundy."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100008",
+    "otazka": "Ve vyobrazené dopravní situaci chodkyně na přechodu pro chodce",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219017.mp4",
+    "moznosti": [
+      "se před přecházením po přechodu pro chodce musela přesvědčit, zda pozemní komunikaci může přejít, aby nevstoupila bezprostředně před jedoucí vozidlo.",
+      "se při přecházení po přechodu pro chodce nemusí věnovat situaci v provozu.",
+      "se před přecházením po přechodu pro chodce nemusela přesvědčit, zda pozemní komunikaci může přejít, protože má na přechodu pro chodce absolutní přednost."
+    ],
+    "spravna": 0
+  },
+  {
+    "id": "22100009",
+    "otazka": "Dodržel řidič vozidla z výhledu bezpečnou vzdálenost pro případnou náhlou změnu jízdy nebo pád cyklisty?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219018.mp4",
+    "moznosti": [
+      "nedodržel bezpečnou vzdálenost pro jízdu předepsanou v piktogramovém koridoru pro cyklisty.",
+      "dodržel bezpečnou vzdálenost, ale překročil nejvyšší dovolenou rychlost.",
+      "dodržel bezpečnou vzdálenost za cyklistou."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100010",
+    "otazka": "Ve vyobrazené dopravní situaci řidič kamionu při odbočování vpravo",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219019.mp4",
+    "moznosti": [
+      "nedal přednost v jízdě řidiči vozidla z výhledu, který jel po hlavní pozemní komunikaci.",
+      "vjel neoprávněně do protisměru a tím ohrozil protijedoucí vozidlo z výhledu.",
+      "mohl vybočit ze směru své jízdy vlevo s ohledem na rozměry vozidla."
+    ],
+    "spravna": 2
+  },
+  {
+    "id": "22100011",
+    "otazka": "Dodržel řidič vozidla z výhledu bezpečnou vzdálenost a nejvyšší dovolenou rychlost?",
+    "obrazek": "https://www.autoskola-testy.cz/img/single/219020.mp4",
+    "moznosti": [
+      "Nedodržel bezpečnou vzdálenost a překročil nejvyšší dovolenou rychlost.",
+      "Dodržel bezpečnou vzdálenost, ale překročil nejvyšší dovolenou rychlost na železničním přejezdu.",
+      "Dodržel bezpečnou vzdálenost a nepřekročil nejvyšší dovolenou rychlost."
+    ],
+    "spravna": 2
+  }
+]

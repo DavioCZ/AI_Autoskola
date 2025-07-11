@@ -1,0 +1,1217 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "22020011",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1043.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020011",
+            "shrnuti": "Dopravní situace na víceproudé komunikaci s kombinací značek omezujících rychlost a varujících před prací na silnici.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černé číslo '100'"
+                  },
+                  "kod_nazev": "B 20a, Nejvyšší dovolená rychlost",
+                  "umisteni": "Na sloupku vpravo, nejvýše"
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram postavy s lopatou"
+                  },
+                  "kod_nazev": "A 15, Práce na silnici",
+                  "umisteni": "Pod značkou B 20a"
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Bílé pozadí, černý text",
+                    "symbol": "Text '1000 m'"
+                  },
+                  "kod_nazev": "E 3a, Vzdálenost",
+                  "umisteni": "Pod značkou A 15"
+                }
+              ],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára"
+                  },
+                  "kod_nazev": "V 2a, Podélná čára přerušovaná",
+                  "umisteni": "Mezi jízdními pruhy"
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla na víceproudou komunikaci, pravděpodobně dálnici. Vpravo je na sloupku umístěna sestava tří dopravních značek: nahoře 'Nejvyšší dovolená rychlost 100 km/h', pod ní výstražná značka 'Práce na silnici' a zcela dole dodatková tabulka '1000 m'."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka 'Nejvyšší dovolená rychlost 100 km/h' platí okamžitě od místa umístění značky.",
+              "Výstražná značka 'Práce na silnici' s dodatkovou tabulkou '1000 m' informuje, že samotné nebezpečí (práce na silnici) začíná až za 1000 metrů."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nepřizpůsobení rychlosti blížícímu se omezení z důvodu práce na silnici."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020013",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1059.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020013",
+            "shrnuti": "Dopravní situace na křižovatce s vodorovným značením 'Žluté zkřížené čáry'.",
+            "akteri": [
+              {
+                "typ": "osobni_automobil",
+                "popis": "Vozidlo z výhledu (červené).",
+                "umisteni": "Před křižovatkou."
+              },
+              {
+                "typ": "osobni_automobil",
+                "popis": "Kolona stojících vozidel.",
+                "umisteni": "Za křižovatkou."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Ohraničená plocha se zkříženými čarami",
+                    "barva": "Žlutá",
+                    "symbol": "Šrafování"
+                  },
+                  "kod_nazev": "V 12e, Žluté zkřížené čáry",
+                  "umisteni": "V ploše křižovatky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Červené auto se blíží ke křižovatce, jejíž plocha je vyznačena žlutými zkříženými čarami (tzv. 'box'). Za křižovatkou stojí kolona vozidel, takže není možné křižovatku plynule projet."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Na plochu vyznačenou značkou V 12e nesmí řidič vjet, pokud mu situace za touto plochou neumožňuje pokračovat v jízdě a musel by na této ploše zastavit vozidlo."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Zablokování křižovatky vozidlem, které vjelo na žluté čáry a nemohlo pokračovat."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020014",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1060.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020014",
+            "shrnuti": "Zobrazení značky 'Nejvyšší dovolená rychlost' s dodatkovou tabulkou 'Délka úseku'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černé číslo, např. '40'"
+                  },
+                  "kod_nazev": "B 20a, Nejvyšší dovolená rychlost",
+                  "umisteni": "Na sloupku"
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Bílé pozadí, černý symbol a text",
+                    "symbol": "Dvě svislé šipky a text, např. '80 m'."
+                  },
+                  "kod_nazev": "E 4, Délka úseku",
+                  "umisteni": "Pod značkou B 20a"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na kombinaci značek: 'Nejvyšší dovolená rychlost' a pod ní dodatková tabulka 'Délka úseku', která udává, jak dlouho omezení platí."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Platnost značky B 20a je standardně ukončena nejbližší křižovatkou nebo značkou, která ji ruší (např. B 20b, B 26, IZ 4b). Pokud je doplněna tabulkou E 4, platí jen pro uvedený úsek. Křižovatka v tomto případě její platnost neruší."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020020",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1113.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020020",
+            "shrnuti": "Dopravní situace na křižovatce s přikázanými směry jízdy z jednotlivých pruhů.",
+            "akteri": [
+              {
+                "typ": "osobni_automobil",
+                "popis": "Vozidlo z výhledu (modré).",
+                "umisteni": "V pravém jízdním pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercový",
+                    "barva": "Modré pozadí, bílé symboly",
+                    "symbol": "Dvě svislé šipky s vyznačením řazení - levý pruh rovně a vlevo, pravý pruh rovně a vpravo."
+                  },
+                  "kod_nazev": "IP 18c, Řazení v jízdních pruzích",
+                  "umisteni": "Nad vozovkou"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z modrého vozidla, které je v pravém jízdním pruhu před křižovatkou. Nad vozovkou je značka, která ukazuje, že z pravého pruhu lze jet přímo a odbočit vpravo, zatímco z levého pruhu lze jet přímo a odbočit vlevo. Otázka v datech chybně popisuje situaci (uvádí odbočení vlevo nebo jízdu přímo jako možné pro vozidlo z výhledu, které je ale vpravo)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič v pravém pruhu může jet přímo nebo odbočit vpravo. Nemůže odbočit vlevo."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Odbočování z nesprávného jízdního pruhu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020023",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1121.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020023",
+            "shrnuti": "Dopravní situace s vodorovným značením 'Podélná čára souvislá' oddělující tramvajový pás.",
+            "akteri": [
+              {
+                "typ": "osobni_automobil",
+                "popis": "Vozidlo z výhledu.",
+                "umisteni": "V jízdním pruhu vedle tramvajového pásu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Souvislá (plná) čára"
+                  },
+                  "kod_nazev": "V 1a, Podélná čára souvislá",
+                  "umisteni": "Mezi jízdním pruhem a tramvajovým pásem."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla jedoucího podél tramvajového pásu, který je od jízdního pruhu oddělen souvislou bílou čárou. Na tramvajovém pásu je vidět tramvaj."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Souvislou čáru (V 1a) je zakázáno přejíždět nebo ji nákladem přesahovat, pokud to není nutné k objíždění, odbočování na místo ležící mimo komunikaci atd.",
+              "Otáčení přes tuto čáru na tramvajový pás je zakázáno."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nelegální otáčení přes souvislou čáru a střet s tramvají."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020024",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1129.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020024",
+            "shrnuti": "Zobrazení svislé značky 'Společný přechod pro chodce a přejezd pro cyklisty'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercový",
+                    "barva": "Modré pozadí, bílé symboly",
+                    "symbol": "Piktogram chodce a pod ním piktogram cyklisty."
+                  },
+                  "kod_nazev": "IP 7, Společný přechod pro chodce a přejezd pro cyklisty",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na informativní dopravní značku IP 7, která označuje místo, kde vozovku přecházejí chodci a přejíždějí cyklisté. Místo je společné pro obě skupiny."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí být připraven dát přednost jak chodcům, tak cyklistům."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020029",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1150.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020029",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Nebezpečné stoupání'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram automobilu jedoucího do kopce a údaj '10%'."
+                  },
+                  "kod_nazev": "A 5b, Nebezpečné stoupání",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou značku A 5b, která upozorňuje na nebezpečné stoupání se sklonem 10 %."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka varuje před stoupáním, nikoli klesáním."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020030",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1156.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020030",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Cyklisté'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram cyklisty."
+                  },
+                  "kod_nazev": "A 19, Cyklisté",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou značku A 19. Upozorňuje na místo s častým pohybem cyklistů nebo křížením cyklostezky s vozovkou."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka upozorňuje na zvýšený výskyt cyklistů, ale nepřikazuje jim nic ani nevyhrazuje stezku."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020031",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1157.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020031",
+            "shrnuti": "Zobrazení dvojité podélné čáry souvislé.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Dvě rovnoběžné podélné čáry",
+                    "barva": "Bílá",
+                    "symbol": "Obě čáry jsou souvislé (plné)."
+                  },
+                  "kod_nazev": "V 1b, Dvojitá podélná čára souvislá",
+                  "umisteni": "Uprostřed vozovky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na vozovku, kde jsou protisměrné pruhy odděleny dvojitou souvislou bílou čárou."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značku V 1b je zakázáno přejíždět nebo ji nákladem přesahovat. Odbočení vlevo na parkoviště je tedy zakázáno, protože by vyžadovalo přejetí této čáry."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020032",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1158.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020032",
+            "shrnuti": "Zobrazení dvojité podélné čáry souvislé.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Dvě rovnoběžné podélné čáry",
+                    "barva": "Bílá",
+                    "symbol": "Obě čáry jsou souvislé (plné)."
+                  },
+                  "kod_nazev": "V 1b, Dvojitá podélná čára souvislá",
+                  "umisteni": "Uprostřed vozovky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na vozovku, kde jsou protisměrné pruhy odděleny dvojitou souvislou bílou čárou."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značku V 1b je zakázáno přejíždět. Existuje výjimka pro odbočování na místo ležící mimo pozemní komunikaci (např. do garáže, na pole), ale ta platí pouze pro jednoduchou souvislou čáru (V 1a), nikoliv pro dvojitou souvislou (V 1b). Odbočení do garáže je zde tedy zakázáno."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22020038",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1144.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22020038",
+            "shrnuti": "Zobrazení vozidla údržby s přenosnou značkou omezující rychlost.",
+            "akteri": [
+              {
+                "typ": "nakladni_automobil",
+                "popis": "Vozidlo údržby (oranžové barvy) s výstražným zařízením.",
+                "umisteni": "Na silnici."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černé číslo, např. '50'"
+                  },
+                  "kod_nazev": "B 20a, Nejvyšší dovolená rychlost (přenosná)",
+                  "umisteni": "Na zádi vozidla údržby."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Oranžové vozidlo silniční údržby, které se pomalu pohybuje a na své zádi má umístěnou přenosnou dopravní značku omezující rychlost a často i světelnou šipku ukazující směr objíždění."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Platnost přenosné svislé dopravní značky umístěné na vozidle, které označuje pohyblivé pracoviště, končí 100 metrů za tímto vozidlem (nebo za posledním vozidlem skupiny)."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050007",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1003.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050007",
+            "shrnuti": "Zobrazení vodorovného značení 'Podélná čára souvislá'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Souvislá (plná) čára"
+                  },
+                  "kod_nazev": "V 1a, Podélná čára souvislá",
+                  "umisteni": "Uprostřed vozovky"
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na bílou souvislou čáru oddělující protisměrné jízdní pruhy."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tuto čáru je zakázáno přejíždět nebo ji nákladem přesahovat, pokud to není nutné k objíždění, odbočování na místo ležící mimo pozemní komunikaci, vjíždění na pozemní komunikaci z místa ležícího mimo ni, nebo při předjíždění cyklisty."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050009",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1029.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050009",
+            "shrnuti": "Dopravní situace na víceproudé komunikaci před rozdělením směrů.",
+            "akteri": [
+              {
+                "typ": "osobni_automobil",
+                "popis": "Vozidlo z výhledu (modré).",
+                "umisteni": "V pravém jízdním pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Velkoplošná obdélníková tabule",
+                    "barva": "Bílé pozadí, černé symboly a text",
+                    "symbol": "Vyznačení směrů pro jednotlivé pruhy: Levý pruh směr Letiště, pravý pruh směr Centrum, Městský okruh."
+                  },
+                  "kod_nazev": "IS 9b, Návěst před rozdělením",
+                  "umisteni": "Nad vozovkou"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z modrého vozidla, které se nachází v pravém jízdním pruhu na víceproudé komunikaci. Nad vozovkou je velkoplošná návěst, která informuje řidiče o směrech jízdy z jednotlivých pruhů. Vozidlo z výhledu je v pruhu, který vede do centra."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič, který chce jet do centra, je ve správném (pravém) jízdním pruhu a může v něm pokračovat."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050011",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1038.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050011",
+            "shrnuti": "Zobrazení dopravní značky 'Konec obce'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Bílé pozadí, černý okraj a nápis, červená diagonální čára",
+                    "symbol": "Černý nápis s názvem obce, přeškrtnutý červenou čárou."
+                  },
+                  "kod_nazev": "IZ 4b, Konec obce",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na dopravní značku IZ 4b, která označuje konec obce."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka ukončuje platnost pravidel pro provoz v obci. Zejména ukončuje platnost obecného rychlostního limitu 50 km/h. Pokud nebyla rychlost omezena jinou značkou, platí za značkou 'Konec obce' obecný limit mimo obec (90 km/h). Tímto způsobem může být ukončena i platnost značky B 20a, pokud omezovala rychlost v obci."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050012",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1061.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050012",
+            "shrnuti": "Zobrazení zákazové značky 'Jiný zákaz' s nápisem 'PRŮJEZD ZAKÁZÁN'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý nápis 'PRŮJEZD ZAKÁZÁN' uvnitř značky."
+                  },
+                  "kod_nazev": "B 34, Jiný zákaz",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na značku B 34, která obsahuje textový zákaz 'PRŮJEZD ZAKÁZÁN'."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka zakazuje projetí úsekem, pokud cílem jízdy není místo v tomto úseku (např. bydliště, sídlo firmy). Zkrácení cesty nebo objetí kolony není platným důvodem pro vjezd."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050013",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1110.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050013",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Křižovatka'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý symbol kříže."
+                  },
+                  "kod_nazev": "A 3, Křižovatka",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou značku A 3."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka upozorňuje na křižovatku, kde není přednost v jízdě upravena svislými dopravními značkami. Platí zde tedy pravidlo přednosti zprava."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050014",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1147.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050014",
+            "shrnuti": "Zobrazení bílé hole pro nevidomé.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na obrázku je bílá hůl, která slouží jako speciální označení nevidomé osoby."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Speciálním označením osoby nevidomé je bílá hůl. Musí být opatřena alespoň jedním reflexním bílým pruhem o šířce 50 mm. Hůl s červenými pruhy je pro osoby hluchoslepé."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050021",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1228.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050021",
+            "shrnuti": "Zobrazení výstražné dopravní značky 'Nebezpečné klesání'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram automobilu jedoucího z kopce a údaj '12 %'."
+                  },
+                  "kod_nazev": "A 5a, Nebezpečné klesání",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou značku A 5a, která upozorňuje na nebezpečné klesání se sklonem 12 %."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka varuje před klesáním, nikoli stoupáním."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050022",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1232.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050022",
+            "shrnuti": "Dopravní situace v zúženém místě s protijedoucími vozidly.",
+            "akteri": [
+              {
+                "typ": "osobni_automobil",
+                "popis": "Osobní automobil z výhledu."
+              },
+              {
+                "typ": "nakladni_automobil",
+                "popis": "Protijedoucí nákladní automobil."
+              },
+              {
+                "typ": "osobni_automobil",
+                "popis": "Další protijedoucí osobní automobil za nákladním."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Červená šipka vpravo, černá šipka vlevo."
+                  },
+                  "kod_nazev": "P 5, Dát přednost v jízdě protijedoucím vozidlům",
+                  "umisteni": "Na sloupku vpravo před zúžením."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z osobního automobilu blížícího se k zúženému mostu. U vjezdu na most je značka P 5. V protisměru se blíží nákladní automobil následovaný osobním automobilem. V obytné zóně v pozadí je rychlost omezena na 20 km/h, což ale nesouvisí s předností v jízdě v tomto místě."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značka P 5 přikazuje řidiči vozidla z výhledu dát přednost všem protijedoucím vozidlům, pokud se nemohou bezpečně vyhnout. Musí tedy počkat, až projede nákladní i osobní automobil."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050025",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1235.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050025",
+            "shrnuti": "Dopravní situace na železničním přejezdu se světelnou výstrahou.",
+            "akteri": [
+              {
+                "typ": "osobni_automobil",
+                "popis": "Modré vozidlo.",
+                "umisteni": "Před železničním přejezdem."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Dva zkřížené trámy (kříž ve tvaru X)",
+                    "barva": "Bílé pozadí, červené konce trámů"
+                  },
+                  "kod_nazev": "A 32a, Výstražný kříž pro železniční přejezd jednokolejný",
+                  "umisteni": "Na sloupku světelného zařízení."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Světelné zabezpečovací zařízení pro železniční přejezd (PZS)",
+                  "popis_svetel": [
+                    "Horní červené světlo vpravo je ZAPNUTÉ a svítí přerušovaně (bliká).",
+                    "Horní červené světlo vlevo je VYPNUTÉ (ale v reálu by blikalo střídavě s pravým).",
+                    "Případné bílé světlo je VYPNUTÉ."
+                  ],
+                  "souhrnny_stav": "Signál 'Stůj!'. Dvě střídavě přerušovaná červená světla."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Modré vozidlo se blíží k železničnímu přejezdu. Světelné zabezpečovací zařízení dává výstrahu dvěma střídavě přerušovanými červenými světly (na obrázku je zachycen moment, kdy svítí pravé)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Signál dvou vedle sebe umístěných střídavě přerušovaných červených světel znamená pro řidiče povinnost zastavit vozidlo před světelným signalizačním zařízením (před vodorovnou značkou V 6b 'Stop čára')."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nezastavení před přejezdem a střet s vlakem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050026",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1236.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050026",
+            "shrnuti": "Zobrazení výstražné značky 'Železniční přejezd se závorami' s návěstní deskou.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram plotu (závor)."
+                  },
+                  "kod_nazev": "A 29, Železniční přejezd se závorami",
+                  "umisteni": "Na sloupku."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Bílé pozadí, červené šikmé pruhy",
+                    "symbol": "Tři červené šikmé pruhy směřující k vozovce."
+                  },
+                  "kod_nazev": "A 31a, Návěstní deska (240 m)",
+                  "umisteni": "Pod značkou A 29."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na obrázku je kombinace značek. Nahoře je výstražná značka A 29, která upozorňuje na železniční přejezd vybavený závorami. Pod ní je návěstní deska A 31a se třemi pruhy, která signalizuje, že přejezd je ve vzdálenosti 240 m."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Značky dohromady informují o železničním přejezdu se závorami ve vzdálenosti 240 metrů."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050027",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1237.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050027",
+            "shrnuti": "Zobrazení směrovací desky a návěstní desky před nebezpečnou zatáčkou a železničním přejezdem.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková deska se šikmými pruhy",
+                    "barva": "Červené a bílé šikmé pruhy směřující dolů ve směru zatáčky.",
+                    "symbol": "Šikmé pruhy (šipky)"
+                  },
+                  "kod_nazev": "Z 4b, Směrovací deska pravá",
+                  "umisteni": "Ve vnějším okraji pravotočivé zatáčky."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Bílé pozadí, červené šikmé pruhy",
+                    "symbol": "Dva červené šikmé pruhy směřující k vozovce."
+                  },
+                  "kod_nazev": "A 31b, Návěstní deska (160 m)",
+                  "umisteni": "Na sloupku společně se směrovací deskou."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na silnici v pravotočivé zatáčce. Vnější okraj zatáčky je označen směrovací deskou Z 4b. Na stejném sloupku je i návěstní deska A 31b se dvěma pruhy, která signalizuje vzdálenost 160 m k železničnímu přejezdu. Správná odpověď v datech je v rozporu se zobrazenou situací (uvádí přejezd ve vzdálenosti 240 m)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Kombinace značek upozorňuje na nebezpečnou zatáčku vpravo a blížící se železniční přejezd ve vzdálenosti 160 metrů."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050028",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1238.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050028",
+            "shrnuti": "Zobrazení výstražné značky 'Nábřeží'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram automobilu padajícího z okraje do vody."
+                  },
+                  "kod_nazev": "A 21, Nábřeží",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou značku A 21. Upozorňuje na úsek pozemní komunikace směřující na nechráněné nábřeží nebo břeh vodní plochy."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí být připraven na konec komunikace u vody a přizpůsobit tomu rychlost a způsob jízdy."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050029",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1239.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050029",
+            "shrnuti": "Zobrazení výstražné značky 'Pohyblivý most'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelníkový",
+                    "barva": "Červený okraj, bílé pozadí",
+                    "symbol": "Černý piktogram zvedacího mostu."
+                  },
+                  "kod_nazev": "A 34, Pohyblivý most",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na výstražnou značku A 34. Upozorňuje na zvedací nebo jiný pohyblivý most."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí počítat s možností, že most bude zvednutý a provoz bude zastaven, často pomocí světelné signalizace."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22050032",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/1327.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22050032",
+            "shrnuti": "Dopravní situace se značkou 'Doporučená rychlost'.",
+            "akteri": [
+              {
+                "typ": "osobni_automobil",
+                "popis": "Vozidlo z výhledu.",
+                "umisteni": "Na silnici."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercový",
+                    "barva": "Modré pozadí, bílý text",
+                    "symbol": "Bílé číslo '20'."
+                  },
+                  "kod_nazev": "IP 5, Doporučená rychlost",
+                  "umisteni": "Na sloupku vpravo"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla na silnici, kde je umístěna informativní značka IP 5 s hodnotou 20. Značka doporučuje jet rychlostí 20 km/h."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka rychlost nepřikazuje ani nezakazuje. Jde pouze o doporučení, které řidič může, ale nemusí dodržet. Může jet rychleji i pomaleji, pokud to dovolují ostatní pravidla a podmínky."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100015",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209104.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100015",
+            "shrnuti": "Zobrazení značky 'Parkoviště K+R' (Kiss and Ride).",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercový",
+                    "barva": "Modré pozadí, bílé symboly",
+                    "symbol": "Nápis 'K+R'."
+                  },
+                  "kod_nazev": "IP 13d, Parkoviště K+R",
+                  "umisteni": "Na sloupku"
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na informativní značku IP 13d. Označuje parkoviště, které je určeno pro krátké zastavení za účelem vystoupení a nastoupení osob."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Toto místo není určeno pro dlouhodobé stání nebo parkování, ale pro rychlé vysazení/naložení cestujících (typicky u nádraží, škol apod.)."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "22100035",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/2209124.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "22100035",
+            "shrnuti": "Dopravní situace před křižovatkou, kde končí hlavní silnice.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žluté pozadí, bílý okraj, černá diagonální čára",
+                    "symbol": "Žlutý kosočtverec přeškrtnutý černou čárou."
+                  },
+                  "kod_nazev": "P 3, Konec hlavní pozemní komunikace",
+                  "umisteni": "Na sloupku vpravo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na silnici před křižovatkou, kde je umístěna značka P 3."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Tato značka informuje, že na následující křižovatce již řidič není na hlavní komunikaci. Pokud není přednost upravena jinak, platí zde pravidlo přednosti zprava. Řidič tedy musí dát přednost vozidlům, jezdcům na zvířatech atd. přijíždějícím zprava."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 25,
+    "pocet_url_nalezeno": 33,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": false
+}

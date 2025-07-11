@@ -1,0 +1,407 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "06040299",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040308",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040315",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040328",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040342",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040347",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050157",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050309",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050310",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050311",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050313",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050314",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050315",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050316",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050317",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050318",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050319",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050320",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050321",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050322",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050324",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050330",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050331",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050332",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050333",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050334",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0458.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050334",
+            "shrnuti": "Označení nákladu přečnívajícího vozidlo červeným praporkem.",
+            "akteri": [
+              {
+                "typ": "nákladní automobil",
+                "popis": "Zadní část nákladního automobilu.",
+                "cinnost": "Přepravuje náklad, který přečnívá dozadu.",
+                "pozice": "Na silnici."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr na zadní část nákladního vozidla, z něhož dozadu přečnívá náklad (dlouhé předměty, např. trámy nebo trubky). Na konci tohoto přečnívajícího nákladu je připevněn červený praporek o rozměrech cca 30x30 cm, sloužící jako výstraha pro ostatní řidiče."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Otázka se týká označení nákladu přečnívajícího o více než 1 metr za nesnížené viditelnosti.",
+              "Podle § 52 odst. 4 zákona o silničním provozu musí být přečnívající konec nákladu za nesnížené viditelnosti označen červeným praporkem o rozměrech nejméně 30 x 30 cm.",
+              "Zobrazená situace a správná odpověď (2) jsou v souladu s tímto ustanovením."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič jedoucí za vozidlem by mohl praporek přehlédnout, zejména při nedostatečném odstupu, a narazit do nákladu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050339",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050340",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050351",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0460.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050351",
+            "shrnuti": "Dvě vozidla jedoucí po silnici, jedno se chystá předjíždět druhé.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Modrý osobní automobil.",
+                "cinnost": "Je předjížděn.",
+                "pozice": "Pravý jízdní pruh."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče.",
+                "cinnost": "Chystá se předjíždět modré vozidlo.",
+                "pozice": "Za modrým vozidlem, připraven k vybočení do levého pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára"
+                  },
+                  "kod_nazev": "V 2a, Podélná čára přerušovaná",
+                  "umisteni": "Uprostřed vozovky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla jedoucího za modrým automobilem na dvouproudé silnici mimo obec. V protisměru je volno, což umožňuje zahájit předjíždění. Otázka se zaměřuje na chování řidiče předjížděného (modrého) vozidla."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu (§ 17 odst. 3) explicitně ukládá řidiči předjížděného vozidla povinnost nezvyšovat rychlost jízdy ani jinak bránit předjíždění.",
+              "Smyslem je umožnit, aby předjížděcí manévr proběhl co nejrychleji a nejbezpečněji a aby se předjíždějící vozidlo co nejkratší dobu zdržovalo v protisměrném pruhu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Předjížděný řidič zrychlí ('závodění'), čímž prodlouží dobu předjíždění a může vytvořit nebezpečnou situaci, pokud se z protisměru objeví jiné vozidlo.",
+              "Předjížděný řidič může kličkovat a bránit v předjetí."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050352",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050358",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050360",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050362",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050363",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050373",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050384",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050386",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050396",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050398",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050401",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050402",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050409",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050410",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050412",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 45,
+    "pocet_url_nalezeno": 2,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": [],
+    "poznámky": []
+  },
+  "pokracovani": {
+    "dalsi_start_index": 120,
+    "zbyva": 131
+  }
+}

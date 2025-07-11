@@ -1,0 +1,1192 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "06060324",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0376.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060324",
+            "shrnuti": "Na křižovatce tvaru T bez značek má vozidlo na průběžné komunikaci (červené) přednost před vozidlem na komunikaci, která do ní ústí (modré). Oficiální odpověď v testech je chybná.",
+            "akteri": [
+              {
+                "typ": "modré vozidlo",
+                "popis": "Modré vozidlo na komunikaci, která ústí do křižovatky, odbočuje vlevo."
+              },
+              {
+                "typ": "červené vozidlo",
+                "popis": "Červené vozidlo na průběžné komunikaci, odbočuje vlevo (ze svého pohledu)."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Křižovatka tvaru 'T', kde přednost není upravena dopravními značkami. Modré vozidlo přijíždí po komunikaci, která se napojuje na průběžnou komunikaci, po které jede červené vozidlo. Ačkoliv by se mohlo zdát, že platí pravidlo pravé ruky (červené dává přednost modrému), praxe a výklad pro bezpečné řešení je takový, že řidič přijíždějící po končící komunikaci dává přednost vozidlům na průběžné. Zde by tedy mělo mít přednost červené vozidlo. Oficiální odpověď ('Modré vozidlo má přednost v jízdě před červeným.') je v přímém rozporu s tímto principem a je považována za chybnou a nebezpečnou."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Podle pravidel bezpečné jízdy a zvyklostí má červené vozidlo přednost. Testová odpověď je chybná."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vysoké riziko nehody kvůli nejednoznačné a sporně interpretované situaci."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060404",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0251.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060404",
+            "shrnuti": "Na křižovatce se zeleným signálem 'Volno' má řidič jedoucí rovně přednost před protijedoucími odbočujícími vozidly, ale musí jet s opatrností.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí rovně."
+              },
+              {
+                "typ": "odbočující vozidla v protisměru",
+                "popis": "Vozidla odbočující vlevo."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Signál S 2a 'Volno' (plné zelené světlo) je ZAPNUTÝ a svítí nepřerušovaně."
+                  ],
+                  "souhrnny_stav": "Signál 'Volno'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič vozidla z výhledu se blíží ke křižovatce řízené světelnými signály. Svítí zelený signál 'Volno'. Řidič hodlá jet přímo. V protisměru jsou vozidla, která odbočují vlevo. Ačkoliv má řidič jedoucí rovně přednost před těmito odbočujícími vozidly, musí jet s defenzivním přístupem, sledovat jejich chování a být připraven na to, že mu některé z nich nemusí dát přednost."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "I když mám přednost, musím sledovat chování ostatních řidičů a být připraven na jejich případné chyby."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nedání přednosti v jízdě ze strany protijedoucího odbočujícího vozidla."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060414",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/5014.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060414",
+            "shrnuti": "Při míjení dětí hrajících si na chodníku musí řidič zpomalit a být připraven brzdit.",
+            "akteri": [
+              {
+                "typ": "děti",
+                "popis": "Skupina dětí hrajících si s míčem na chodníku."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič projíždí obytnou oblastí. Na chodníku po pravé straně si hraje skupina dětí s míčem. Tato situace představuje vysoké riziko, protože dítě může nepředvídatelně vběhnout do vozovky za míčem. Řidič je povinen výrazně zpomalit, zvýšit pozornost a být v maximální pohotovosti k okamžitému zabrzdění."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "V blízkosti hrajících si dětí je nutné zpomalit a být připraven brzdit."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Náhlé vběhnutí dítěte do jízdní dráhy vozidla."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060420",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0172.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060420",
+            "shrnuti": "Na křižovatce označené značkou 'Křižovatka' platí pravidlo přednosti zprava.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelník s vrcholem nahoru, červený okraj",
+                    "barva": "Bílá, červená, černá",
+                    "symbol": "Černý kříž ve tvaru 'X'"
+                  },
+                  "kod_nazev": "A 30, Křižovatka",
+                  "umisteni": "Vpravo u silnice před křižovatkou."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič se blíží ke křižovatce, která je označena výstražnou značkou A 30 'Křižovatka'. Tato značka pouze upozorňuje na existenci křižovatky, ale neupravuje přednost v jízdě. V takovém případě platí zákonné pravidlo přednosti vozidel přijíždějících zprava."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič musí dát přednost všem vozidlům přijíždějícím zprava."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nerespektování pravidla pravé ruky."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060502",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/5009.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060502",
+            "shrnuti": "Při odbočování vlevo na zelenou musí řidič dát přednost chodcům přecházejícím ve volném směru.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Modrý osobní automobil odbočující vlevo."
+              },
+              {
+                "typ": "chodci",
+                "popis": "Dvě osoby na přechodu pro chodce v ulici, do které vozidlo odbočuje."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé pruhy (zebra)",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Na vozovce v ulici, kam vozidlo odbočuje."
+                }
+              ],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Signál S 2a 'Volno' (plné zelené světlo) je ZAPNUTÝ a svítí nepřerušovaně."
+                  ],
+                  "souhrnny_stav": "Signál 'Volno'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič vozidla z výhledu odbočuje na křižovatce vlevo na signál 'Volno'. Při tomto manévru je povinen dát přednost chodcům přecházejícím na přechodu pro chodce v ulici, do které odbočuje. Na obrázku jsou na přechodu vidět dvě osoby, kterým musí umožnit bezpečné přejití."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Při odbočování musí řidič dát přednost chodcům přecházejícím ve volném směru po přechodu pro chodce."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Ohrožení chodců na přechodu při odbočování."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060505",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/5036.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060505",
+            "shrnuti": "Vozidlo z výhledu opouští hlavní silnici a musí dát přednost vozidlu jedoucímu po hlavní a vozidlu zprava na vedlejší.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Modrý osobní automobil jedoucí rovně (opouští hlavní)."
+              },
+              {
+                "typ": "protijedoucí červené vozidlo",
+                "popis": "Červené vozidlo jedoucí po hlavní silnici (zatáčí vpravo)."
+              },
+              {
+                "typ": "zelené nákladní vozidlo",
+                "popis": "Zelené vozidlo přijíždějící zprava po vedlejší silnici."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Pro vozidlo z výhledu."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková tabulka",
+                    "barva": "Bílá s černým symbolem"
+                  },
+                  "kod_nazev": "E 2b, Tvar křižovatky",
+                  "umisteni": "Pod P1, ukazuje hlavní silnici zatáčející doprava."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Vozidlo z výhledu přijíždí ke křižovatce po hlavní silnici, která ale podle dodatkové tabulky zatáčí doprava. Řidič chce jet rovně, čímž opouští hlavní silnici a vjíždí na vedlejší. Červené vozidlo jede po hlavní silnici a má absolutní přednost. Mezi vozidlem z výhledu a zeleným vozidlem (obě jsou v tu chvíli na vedlejších) platí pravidlo pravé ruky. Protože zelené vozidlo přijíždí zprava, musí mu vozidlo z výhledu dát přednost. Pořadí průjezdu: 1. Červené vozidlo, 2. Zelené nákladní vozidlo, 3. Vaše vozidlo."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Musíte dát přednost v jízdě oběma přijíždějícím vozidlům. Jako první projede křižovatkou protijedoucí červený automobil."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Složitá křižovatka, riziko chybného vyhodnocení přednosti."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08080010",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0298.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "08080010",
+            "shrnuti": "Pokud se řidič na frekventované křižovatce špatně zařadil do odbočovacího pruhu, musí dokončit manévr a najít si cestu zpět.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Vozidlo zařazené v levém odbočovacím pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé šipky na vozovce",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 9a, Směrové šipky",
+                  "umisteni": "V jízdních pruzích, určují povolené směry jízdy."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič vozidla z výhledu stojí v odbočovacím pruhu pro směr vlevo, což potvrzují i směrové šipky na vozovce. V této situaci si uvědomí, že potřeboval jet vpravo. Správné a bezpečné řešení je dokončit odbočení vlevo v souladu se zařazením a dopravním značením a následně najít vhodnou trasu, jak se vrátit nebo dostat do požadovaného cíle. Jakékoli jiné řešení (prudké přejíždění přes pruhy, couvání) by bylo extrémně nebezpečné a zakázané."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Správné řešení je odbočit vlevo a počítat se zajížďkou."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Pokus o změnu jízdního pruhu na poslední chvíli v křižovatce."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08080014",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0300.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "08080014",
+            "shrnuti": "Řidič se zařadil do pruhu pro jízdu rovně, ale dává znamení o změně směru vpravo. Musí se řídit vodorovným značením a jet rovně.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Vozidlo v prostředním pruhu, signalizující vpravo."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé šipky na vozovce",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 9a, Směrové šipky",
+                  "umisteni": "V jízdních pruzích. Prostřední pruh je určen pro jízdu rovně."
+                }
+              ],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Signál S 2a 'Volno' (plné zelené světlo) je ZAPNUTÝ a svítí nepřerušovaně."
+                  ],
+                  "souhrnny_stav": "Signál 'Volno'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič vozidla z výhledu se nachází v prostředním jízdním pruhu, který je podle vodorovného dopravního značení (šipky na vozovce) určen pouze pro jízdu v přímém směru. Přestože řidič dává znamení o změně směru jízdy vpravo, je povinen respektovat značení a pokračovat v jízdě rovně. Odbočení vpravo z tohoto pruhu je zakázáno."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič nesmí odbočit vpravo, protože se zařadil do pruhu, odkud to není povoleno."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Kolize s vozidlem v pravém pruhu, pokud by řidič z výhledu nerespektoval značení a odbočil."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08080016",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/5010b.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "08080016",
+            "shrnuti": "Řidič musí umožnit průjezd vozidlu s právem přednostní jízdy (sanitka s majákem), i když je na vedlejší silnici.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Modrý osobní automobil na vedlejší silnici."
+              },
+              {
+                "typ": "vozidlo zleva",
+                "popis": "Sanitní vůz se zapnutým modrým výstražným světlem (majákem), jedoucí po hlavní silnici."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Trojúhelník s vrcholem dolů",
+                    "barva": "Bílá s červeným okrajem"
+                  },
+                  "kod_nazev": "P 4, Dej přednost v jízdě!",
+                  "umisteni": "Pro vozidlo z výhledu."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková tabulka",
+                    "barva": "Bílá s černým symbolem"
+                  },
+                  "kod_nazev": "E 2b, Tvar křižovatky",
+                  "umisteni": "Pod P4."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič vozidla z výhledu přijíždí ke křižovatce po vedlejší silnici. Zleva po hlavní silnici přijíždí sanitní vůz se zapnutým modrým majákem. Toto vozidlo má právo přednostní jízdy. Řidiči ostatních vozidel mu musí umožnit bezpečný a plynulý průjezd, což znamená, že řidič vozidla z výhledu nesmí vjet do křižovatky, dokud sanitka neprojede."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič nesmí vjet do křižovatky, protože musí umožnit jízdu vozidlu s právem přednostní jízdy."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Neumožnění průjezdu sanitky."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08080018",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/5068.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "08080018",
+            "shrnuti": "Před zúženým místem řízeným světelnou signalizací musí řidič zastavit na signál 'Stůj' a počkat na 'Volno'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály (přenosná)",
+                  "popis_svetel": [
+                    "Horní červené světlo, signál S 1a 'Stůj!', je ZAPNUTÉ a svítí nepřerušovaně."
+                  ],
+                  "souhrnny_stav": "Signál 'Stůj!'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič se nachází před zúženým úsekem (pravděpodobně kvůli práci na silnici), kde je provoz řízen přenosným světelným signalizačním zařízením. Na semaforu svítí červený signál 'Stůj!'. Řidič je povinen zastavit před signalizací (nebo před příčnou čárou souvislou, pokud je vyznačena) a počkat na signál 'Volno', bez ohledu na to, zda je v protisměru volno."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Je nutné zastavit a počkat na signál 'Volno'."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nerespektování červeného signálu a střet s protijedoucím vozidlem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "08110269",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/585b.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "08110269",
+            "shrnuti": "Při objíždění autobusu v zastávce musí řidič počítat s možným vběhnutím chodců do vozovky.",
+            "akteri": [
+              {
+                "typ": "autobus",
+                "popis": "Autobus stojící v zastávce."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercová modrá značka se symbolem autobusu",
+                    "barva": "Modrá, bílá"
+                  },
+                  "kod_nazev": "IJ 4a, Zastávka autobusu",
+                  "umisteni": "Na sloupku u zastávky."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Řidič se chystá objet autobus stojící v zastávce. Tato situace je velmi nebezpečná, protože stojící autobus vytváří slepý úhel. Zpoza autobusu mohou kdykoli do vozovky vstoupit nebo vběhnout vystupující cestující (zejména děti), kteří se snaží přejít silnici. Řidič musí výrazně snížit rychlost jízdy, zvýšit pozornost a být připraven na tuto možnost."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Je nutné snížit rychlost a počítat s náhlým vstoupením osob do vozovky."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Srážka s chodcem, který vyběhne zpoza autobusu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110001",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11001.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110001",
+            "shrnuti": "Na křižovatce má vozidlo z výhledu, jedoucí rovně po hlavní, přednost před tramvajemi a vozidlem na vedlejší.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "tramvaj č. 1",
+                "popis": "Tramvaj odbočující vlevo z hlavní."
+              },
+              {
+                "typ": "tramvaj č. 2",
+                "popis": "Tramvaj jedoucí rovně z vedlejší."
+              },
+              {
+                "typ": "zelené nákladní vozidlo",
+                "popis": "Vozidlo na vedlejší."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Pro vozidlo z výhledu a tramvaj č. 1."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Vozidlo z výhledu a tramvaj č. 1 jsou na hlavní. Tramvaj č. 2 a zelené vozidlo jsou na vedlejší. Vozidlo z výhledu jede rovně, tramvaj č. 1 odbočuje vlevo. Pravidlo říká, že vozidlo jedoucí rovně má přednost před odbočujícím. Toto platí i ve vztahu k tramvaji, pokud jedou po stejné komunikaci. Vozidlo z výhledu má tedy přednost před tramvají č. 1. Tramvaj č. 2 a zelené vozidlo jsou na vedlejší a musí dát přednost všem na hlavní. Vozidlo z výhledu projede jako první."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidlo z výhledu projede křižovatkou jako první."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič tramvaje č. 1 by si mohl chybně myslet, že má přednost."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110002",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11001.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110002",
+            "shrnuti": "Na křižovatce má vozidlo z výhledu, jedoucí rovně po hlavní, přednost před tramvajemi a vozidlem na vedlejší.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "tramvaj č. 1",
+                "popis": "Tramvaj odbočující vlevo z hlavní."
+              },
+              {
+                "typ": "tramvaj č. 2",
+                "popis": "Tramvaj jedoucí rovně z vedlejší."
+              },
+              {
+                "typ": "zelené nákladní vozidlo",
+                "popis": "Vozidlo na vedlejší."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Pro vozidlo z výhledu a tramvaj č. 1."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Stejná situace jako v otázce 10110001. Vozidlo z výhledu jede po hlavní silnici rovně a má přednost před všemi ostatními účastníky v této křižovatce."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidlo z výhledu projede křižovatkou jako první."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič tramvaje č. 1 by si mohl chybně myslet, že má přednost."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110003",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11001.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110003",
+            "shrnuti": "Na křižovatce s hlavní a vedlejší silnicí se určuje pořadí průjezdu tramvají.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "tramvaj č. 1",
+                "popis": "Tramvaj odbočující vlevo z hlavní."
+              },
+              {
+                "typ": "tramvaj č. 2",
+                "popis": "Tramvaj jedoucí rovně z vedlejší."
+              },
+              {
+                "typ": "zelené nákladní vozidlo",
+                "popis": "Vozidlo na vedlejší."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Pro vozidlo z výhledu a tramvaj č. 1."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Stejná situace jako v otázce 10110001. Pořadí průjezdu: 1. Vozidlo z výhledu. 2. Tramvaj č. 1 (je na hlavní). 3. Tramvaj č. 2 (je na vedlejší, ale má přednost před zeleným vozidlem). 4. Zelené nákladní vozidlo. Otázka se ptá na průjezd tramvají. Tramvaj č.1 pojede jako druhá, tramvaj č.2 jako třetí. Nemohou jet současně. Nabízené odpovědi jsou tedy nesprávné."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Všechny odpovědi jsou nesprávné. Tramvaje neprojedou současně ani jako první. Správné pořadí je: Vozidlo z výhledu, pak Tramvaj 1, pak Tramvaj 2."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Chybná otázka může vést k naučení nesprávných pravidel."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110009",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11002.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110009",
+            "shrnuti": "Na křižovatce má vozidlo z výhledu jedoucí po hlavní přednost před tramvajemi na vedlejší.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "zelené vozidlo",
+                "popis": "Zelené vozidlo jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "tramvaj č. 1",
+                "popis": "Tramvaj na vedlejší zprava."
+              },
+              {
+                "typ": "tramvaj č. 2",
+                "popis": "Tramvaj na vedlejší zleva."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Pro vozidlo z výhledu a zelené vozidlo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Vozidlo z výhledu a zelené vozidlo jedou po hlavní silnici rovně a jejich dráhy se nekříží, mohou tedy projet současně a jako první. Tramvaje č. 1 a 2 jsou na vedlejších komunikacích a musí dát přednost vozidlům na hlavní. Vozidlo z výhledu tedy projede jako první."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidlo z výhledu projede křižovatkou jako první."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidiči tramvají by si mohli myslet, že mají přednost."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110010",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11002.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110010",
+            "shrnuti": "Na křižovatce má vozidlo z výhledu jedoucí po hlavní přednost před tramvajemi na vedlejší.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "zelené vozidlo",
+                "popis": "Zelené vozidlo jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "tramvaj č. 1",
+                "popis": "Tramvaj na vedlejší zprava."
+              },
+              {
+                "typ": "tramvaj č. 2",
+                "popis": "Tramvaj na vedlejší zleva."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Pro vozidlo z výhledu a zelené vozidlo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Stejná situace jako v otázce 10110009. Vozidlo z výhledu a zelené vozidlo na hlavní mají přednost před oběma tramvajemi na vedlejších. Vozidlo z výhledu projede jako první."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidlo z výhledu projede křižovatkou jako první."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110011",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11002.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110011",
+            "shrnuti": "Na křižovatce má vozidlo z výhledu jedoucí po hlavní přednost před tramvajemi na vedlejší.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "zelené vozidlo",
+                "popis": "Zelené vozidlo jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "tramvaj č. 1",
+                "popis": "Tramvaj na vedlejší zprava."
+              },
+              {
+                "typ": "tramvaj č. 2",
+                "popis": "Tramvaj na vedlejší zleva."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Pro vozidlo z výhledu a zelené vozidlo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Stejná situace jako v otázce 10110009. Vozidlo z výhledu a zelené vozidlo na hlavní mají přednost před oběma tramvajemi na vedlejších. Vozidlo z výhledu projede jako první."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidlo z výhledu projede křižovatkou jako první."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110016",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11002.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110016",
+            "shrnuti": "Na křižovatce má vozidlo z výhledu jedoucí po hlavní přednost před tramvajemi na vedlejší.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "zelené vozidlo",
+                "popis": "Zelené vozidlo jedoucí rovně po hlavní."
+              },
+              {
+                "typ": "tramvaj č. 1",
+                "popis": "Tramvaj na vedlejší zprava."
+              },
+              {
+                "typ": "tramvaj č. 2",
+                "popis": "Tramvaj na vedlejší zleva."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Pro vozidlo z výhledu a zelené vozidlo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Stejná situace jako v otázce 10110009. Vozidlo z výhledu a zelené vozidlo na hlavní mají přednost, jejich dráhy se nekříží, takže mohou jet současně jako první."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Jako první projede křižovatkou vozidlo z výhledu (společně se zeleným)."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110027",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11003.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110027",
+            "shrnuti": "Na křižovatce řízené světly, kde vozidlo z výhledu odbočuje vlevo, musí dát přednost protijedoucím. Jako poslední projede žluté vozidlo, které dává přednost tramvaji.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil odbočující vlevo."
+              },
+              {
+                "typ": "tramvaj",
+                "popis": "Protijedoucí tramvaj jedoucí rovně."
+              },
+              {
+                "typ": "modré nákladní vozidlo",
+                "popis": "Protijedoucí vozidlo jedoucí rovně."
+              },
+              {
+                "typ": "žluté vozidlo",
+                "popis": "Žluté vozidlo přijíždějící zprava, řízené signály pro chodce a cyklisty (chyba v obrázku), v reálu by mělo signál pro vozidla."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Pro směr vozidla z výhledu i protisměr svítí zelený signál S 2a 'Volno'."
+                  ],
+                  "souhrnny_stav": "Signál 'Volno'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Všichni účastníci mají signál 'Volno'. Vozidlo z výhledu odbočuje vlevo, musí tedy dát přednost protijedoucí tramvaji a modrému nákladnímu vozidlu. Žluté vozidlo zprava odbočuje vpravo, ale jeho dráhu kříží tramvaj jedoucí rovně z protisměru. Tramvaj má v tomto případě přednost. Pořadí průjezdu: 1. Tramvaj a modré nákladní vozidlo. 2. Vaše vozidlo dokončí odbočení. 3. Žluté vozidlo. Jako poslední tedy projede žluté vozidlo."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Jako poslední projede žluté vozidlo."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Velmi složitá křižovatka, vysoké riziko chybného vyhodnocení."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110028",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11003.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110028",
+            "shrnuti": "Na křižovatce řízené světly, kde vozidlo z výhledu odbočuje vlevo, projede až po protijedoucích vozidlech, tedy jako druhé v pořadí.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil odbočující vlevo."
+              },
+              {
+                "typ": "tramvaj",
+                "popis": "Protijedoucí tramvaj jedoucí rovně."
+              },
+              {
+                "typ": "modré nákladní vozidlo",
+                "popis": "Protijedoucí vozidlo jedoucí rovně."
+              },
+              {
+                "typ": "žluté vozidlo",
+                "popis": "Žluté vozidlo přijíždějící zprava."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Pro směr vozidla z výhledu i protisměr svítí zelený signál S 2a 'Volno'."
+                  ],
+                  "souhrnny_stav": "Signál 'Volno'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Stejná situace jako v otázce 10110027. Pořadí průjezdu je: 1. Tramvaj a modré nákladní vozidlo. 2. Vaše vozidlo. 3. Žluté vozidlo. Vozidlo z výhledu tedy projede jako druhé."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidlo z výhledu projede jako druhé."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Složitá situace s vysokým rizikem chyby."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110043",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11004.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110043",
+            "shrnuti": "Na křižovatce bez značek má tramvaj jedoucí rovně přednost před vozidlem z výhledu, které přijíždí zleva.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně."
+              },
+              {
+                "typ": "tramvaj",
+                "popis": "Tramvaj jedoucí rovně zprava."
+              },
+              {
+                "typ": "zelené vozidlo",
+                "popis": "Zelené vozidlo přijíždějící zleva."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Křižovatka bez značek upravujících přednost. Platí tedy obecná pravidla. Tramvaj přijíždí vozidlu z výhledu zprava a jede rovně, má tedy přednost. Zelené vozidlo přijíždí vozidlu z výhledu zleva a musí mu dát přednost. Pořadí: 1. Tramvaj, 2. Vozidlo z výhledu, 3. Zelené vozidlo. Vozidlo z výhledu projede jako druhé."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidlo z výhledu projede křižovatkou jako druhé."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nerespektování přednosti tramvaje."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110044",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11004.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110044",
+            "shrnuti": "Na obrázku je křižovatka, kde není přednost upravena svislými dopravními značkami.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně."
+              },
+              {
+                "typ": "tramvaj",
+                "popis": "Tramvaj jedoucí rovně zprava."
+              },
+              {
+                "typ": "zelené vozidlo",
+                "popis": "Zelené vozidlo přijíždějící zleva."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na obrázku není vidět žádná svislá dopravní značka, která by upravovala přednost v jízdě (např. 'Hlavní pozemní komunikace' nebo 'Dej přednost v jízdě!'). Jedná se tedy o křižovatku, kde se přednost řídí obecnými pravidly (pravidlo pravé ruky, přednost tramvají)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Jedná se o křižovatku, kde není přednost v jízdě upravena svislými dopravními značkami."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "10110045",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/11004.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "10110045",
+            "shrnuti": "Na obrázku je křižovatka, kde není přednost upravena svislými dopravními značkami.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Červený osobní automobil jedoucí rovně."
+              },
+              {
+                "typ": "tramvaj",
+                "popis": "Tramvaj jedoucí rovně zprava."
+              },
+              {
+                "typ": "zelené vozidlo",
+                "popis": "Zelené vozidlo přijíždějící zleva."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na obrázku není vidět žádná svislá dopravní značka, která by upravovala přednost v jízdě (např. 'Hlavní pozemní komunikace' nebo 'Dej přednost v jízdě!'). Jedná se tedy o křižovatku, kde se přednost řídí obecnými pravidly (pravidlo pravé ruky, přednost tramvají)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Na této křižovatce není přednost v jízdě upravena svislými dopravními značkami."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 21,
+    "pocet_url_nalezeno": 21,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": {
+    "další_start_index": 91,
+    "zbývá": 23
+  }
+}

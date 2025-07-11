@@ -1,0 +1,951 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "23030011",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230310.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030011",
+            "shrnuti": "Automobil stojí před železničním přejezdem v noci a svítí, přičemž v protisměru stojí jiné vozidlo.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče, má zapnutá potkávací světla.",
+                "cinnost": "Stojí před železničním přejezdem.",
+                "pozice": "V jízdním pruhu před přejezdem."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Jiné vozidlo v protisměru.",
+                "cinnost": "Stojí před železničním přejezdem.",
+                "pozice": "V protisměrném jízdním pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kříž ve tvaru 'X'",
+                    "barva": "Bílá s červeným okrajem",
+                    "symbol": "Dva zkřížené trámy"
+                  },
+                  "kod_nazev": "A 32a, Výstražný kříž pro železniční přejezd jednokolejný",
+                  "umisteni": "U železničního přejezdu."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Noční scéna z pohledu řidiče stojícího před železničním přejezdem. Světla vlastního vozidla (potkávací) osvětlují silnici a dopravní značku. V protisměru stojí další vozidlo. Situace nastoluje otázku možného oslnění protijedoucího řidiče."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Při zastavení vozidla před železničním přejezdem nesmí řidič užít dálková světla.",
+              "Pokud by potkávacími světly mohl oslnit řidiče vozidla v protisměru, musí je přepnout na obrysová světla.",
+              "Zákon tedy zakazuje oslnění, i kdyby to znamenalo nutnost ztlumit potkávací světla."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Oslnění protijedoucího řidiče, což by mohlo vést k tomu, že přehlédne blížící se vlak po opětovném rozjetí."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030013",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230312.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030013",
+            "shrnuti": "Pohled do kabiny traktoru.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr interiéru kabiny zemědělského traktoru. Je vidět volant, ovládací prvky a výhled dopředu přes velké čelní sklo. Prostor je určen pro obsluhu stroje."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Traktor je klasifikován jako 'zvláštní motorové vozidlo'.",
+              "Zákon o silničním provozu v § 50 odst. 1 zakazuje ve zvláštním motorovém vozidle přepravovat osoby mladší 15 let.",
+              "Použití dětské autosedačky zde nehraje roli, protože zákaz je absolutní a vázaný na typ vozidla a věk osoby."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nelegální přeprava dítěte v traktoru, což je nebezpečné z důvodu konstrukce vozidla, která není uzpůsobena pro bezpečnou přepravu cestujících, zejména dětí."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030014",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23100001",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230314.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23100001",
+            "shrnuti": "Ilustrace jízdní soupravy s vyznačenými hmotnostmi pro posouzení oprávnění skupiny B.",
+            "akteri": [
+              {
+                "typ": "jízdní souprava",
+                "popis": "Osobní automobil a přívěs.",
+                "cinnost": "Stojí, jsou u nich uvedeny hmotnosti.",
+                "pozice": "Stylizovaná silnice."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace zobrazuje osobní automobil a za ním připojený obytný přívěs. U automobilu jsou uvedeny hmotnosti: největší povolená 2 050 kg, provozní 1 500 kg. U přívěsu jsou hmotnosti: největší povolená 1 650 kg, provozní 900 kg."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Pro posouzení oprávnění skupiny B je rozhodující součet největších povolených hmotností vozidel v soupravě.",
+              "V tomto případě je součet 2 050 kg + 1 650 kg = 3 700 kg.",
+              "Standardní oprávnění skupiny B umožňuje řídit soupravu s celkovou největší povolenou hmotností do 3 500 kg.",
+              "Jelikož 3 700 kg > 3 500 kg, řidič s běžným oprávněním skupiny B tuto soupravu řídit nesmí. Bylo by potřeba rozšířené oprávnění B96 (do 4 250 kg) nebo B+E."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řízení soupravy, na kterou řidič nemá oprávnění, je vážným přestupkem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030016",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230315.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030016",
+            "shrnuti": "Ilustrace jízdní soupravy s vyznačenými hmotnostmi pro posouzení oprávnění skupiny B s kódem 96.",
+            "akteri": [
+              {
+                "typ": "jízdní souprava",
+                "popis": "Osobní automobil a přívěs.",
+                "cinnost": "Stojí, jsou u nich uvedeny hmotnosti.",
+                "pozice": "Stylizovaná silnice."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Grafická ilustrace zobrazuje osobní automobil a za ním připojený obytný přívěs. U automobilu jsou uvedeny hmotnosti: největší povolená 3 050 kg, okamžitá 2 500 kg. U přívěsu jsou hmotnosti: největší povolená 1 650 kg, okamžitá 900 kg."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Pro posouzení oprávnění skupiny B s harmonizovaným kódem 96 je rozhodující součet největších povolených hmotností vozidel v soupravě.",
+              "V tomto případě je součet 3 050 kg + 1 650 kg = 4 700 kg.",
+              "Oprávnění B96 umožňuje řídit soupravu s celkovou největší povolenou hmotností nad 3 500 kg, ale maximálně do 4 250 kg.",
+              "Jelikož 4 700 kg > 4 250 kg, řidič ani s oprávněním B96 tuto soupravu řídit nesmí."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řízení soupravy přesahující hmotnostní limit daného řidičského oprávnění."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030017",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230316.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030017",
+            "shrnuti": "Řidič v kabině nákladního automobilu drží a používá vysílačku (mikrofon).",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Řidič nákladního automobilu.",
+                "cinnost": "Drží v ruce mikrofon od vysílačky a mluví do něj.",
+                "pozice": "Za volantem jedoucího vozidla."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled do kabiny nákladního automobilu. Řidič sedí za volantem, sleduje silnici, ale v pravé ruce drží u úst mikrofon od radiostanice (vysílačky) a komunikuje."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu (§ 7 odst. 1 písm. c) zakazuje řidiči při jízdě vozidlem držet v ruce nebo jiným způsobem telefonní přístroj nebo jiné hovorové nebo záznamové zařízení.",
+              "Mikrofon od vysílačky spadá pod definici 'jiného hovorového zařízení'.",
+              "Držení tohoto zařízení za jízdy je tedy zakázáno, stejně jako držení mobilního telefonu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Snížení pozornosti řidiče věnované řízení.",
+              "Omezená schopnost ovládat vozidlo oběma rukama, což je rizikové zejména v krizových situacích."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030024",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230324.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030024",
+            "shrnuti": "Značka označující silnici I. třídy a značka informující o mýtném.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélník",
+                    "barva": "Modrá s bílým číslem",
+                    "symbol": "Číslo '16'"
+                  },
+                  "kod_nazev": "E 14a, Číslo silnice",
+                  "umisteni": "Na sloupku u silnice."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Bílý podklad, červený okraj, černý symbol",
+                    "symbol": "Písmeno 'M' v kruhu"
+                  },
+                  "kod_nazev": "IP 15d, Mýtné",
+                  "umisteni": "Pod značkou E 14a."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Na sloupku u silnice je umístěna značka E 14a s číslem 16, která označuje silnici I. třídy. Pod ní je značka IP 15d 'Mýtné', která informuje, že daný úsek je zpoplatněn mýtem pro určená vozidla."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Otázka se týká jízdy nákladního automobilu o hmotnosti 7490 kg v neděli v 16:00.",
+              "Tato hmotnost je pod limitem 7500 kg, pro který platí zákaz jízdy v neděli odpoledne na silnicích I. třídy. Zákaz jízdy se tedy na toto vozidlo nevztahuje.",
+              "Značka 'Mýtné' znamená, že vozidla s hmotností nad 3,5 tuny musí mít zaplacené mýtné (být registrována v systému a mít palubní jednotku).",
+              "Proto jedinou podmínkou pro pokračování v jízdě je splnění mýtné povinnosti."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič by se mohl mylně domnívat, že se na něj vztahuje nedělní zákaz jízdy.",
+              "Řidič by mohl vjet na zpoplatněný úsek bez registrace v mýtném systému."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030025",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230326.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030025",
+            "shrnuti": "Řidič nákladního automobilu se poutá bezpečnostním pásem.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Řidič v kabině nákladního vozu.",
+                "cinnost": "Zapíná si bezpečnostní pás.",
+                "pozice": "Na sedadle řidiče."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na řidiče nákladního automobilu, který sedí za volantem a právě si zapíná bezpečnostní pás. Obrázek ilustruje povinnost používání bezpečnostních pásů."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič je povinen být za jízdy připoután bezpečnostním pásem, pokud je jím sedadlo vybaveno.",
+              "Zákon stanovuje několik výjimek z této povinnosti. Jednou z nich je couvání vozidla.",
+              "Správná odpověď tedy musí obsahovat jak obecnou povinnost, tak relevantní výjimku."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nepoužití bezpečnostního pásu dramaticky zvyšuje riziko vážného zranění nebo smrti při dopravní nehodě."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030026",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230327.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030026",
+            "shrnuti": "Dítě sedí v dětské autosedačce na sedadle spolujezdce v kabině nákladního automobilu.",
+            "akteri": [
+              {
+                "typ": "dítě",
+                "popis": "Malé dítě.",
+                "cinnost": "Sedí v dětské autosedačce.",
+                "pozice": "Na sedadle spolujezdce v nákladním automobilu."
+              },
+              {
+                "typ": "řidič",
+                "popis": "Ruka řidiče na volantu.",
+                "cinnost": "Řídí.",
+                "pozice": "Na sedadle řidiče."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled do kabiny nákladního vozu. Na sedadle spolujezdce je umístěna dětská autosedačka, ve které sedí malé dítě. Ruka řidiče je vidět na volantu. Obrázek ilustruje možnost přepravy dětí v nákladních vozech za specifických podmínek."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Přeprava dětí v nákladních automobilech je možná, pokud to nezakazují interní předpisy provozovatele.",
+              "Pokud je sedadlo vybaveno bezpečnostními pásy, lze na něj umístit odpovídající dětský zádržný systém (autosedačku) a přepravovat v něm dítě, které splňuje hmotnostní a výškové limity pro danou sedačku.",
+              "Pokud je autosedačka umístěna proti směru jízdy, musí být deaktivován čelní airbag."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nesprávné upevnění autosedačky.",
+              "Neaktivovaný airbag při použití sedačky proti směru jízdy."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030027",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030028",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030029",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230330.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030029",
+            "shrnuti": "Dítě v dětské autosedačce typu 'vajíčko' na předním sedadle automobilu.",
+            "akteri": [
+              {
+                "typ": "dítě",
+                "popis": "Kojenec.",
+                "cinnost": "Sedí/leží v dětské autosedačce.",
+                "pozice": "Na sedadle spolujezdce, v autosedačce orientované proti směru jízdy."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na sedadlo spolujezdce v osobním automobilu. Na sedadle je umístěna dětská autosedačka pro nejmenší děti (tzv. vajíčko), která je orientována proti směru jízdy. V sedačce leží malé dítě. Na palubní desce je vidět varovný piktogram upozorňující na nutnost deaktivace airbagu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Přeprava dítěte v dětském zádržném systému na předním sedadle spolujezdce je zákonem povolena.",
+              "Neexistuje žádný věkový limit, který by to zakazoval. Rozhodující jsou limity výšky (do 150 cm) a hmotnosti (do 36 kg), kdy je zádržný systém povinný.",
+              "Pokud je sedačka umístěna proti směru jízdy, musí být čelní airbag spolujezdce deaktivován."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Neaktivovaný airbag při přepravě dítěte v sedačce proti směru jízdy by v případě nehody dítěti způsobil smrtelná zranění."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060014",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230703.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060014",
+            "shrnuti": "Osoba vede po silnici moped.",
+            "akteri": [
+              {
+                "typ": "chodec",
+                "popis": "Osoba v helmě.",
+                "cinnost": "Vede vedle sebe moped (malý motocykl).",
+                "pozice": "Na krajnici silnice."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Osoba s nasazenou motocyklovou helmou jde po pravém okraji silnice a vede vedle sebe malý motocykl (moped). Silnice vede lesem."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Podle definice v zákoně o silničním provozu (§ 2 písm. j) se za chodce považuje i osoba, která vede jízdní kolo nebo moped.",
+              "Tato osoba se tedy musí chovat jako chodec a platí pro ni příslušná pravidla (např. použití chodníku, pokud je k dispozici)."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060015",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060016",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060017",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060018",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060023",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230713.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060023",
+            "shrnuti": "Dítě jede na jízdním kole po silnici.",
+            "akteri": [
+              {
+                "typ": "cyklista",
+                "popis": "Malé dítě na dětském kole.",
+                "cinnost": "Jede po silnici.",
+                "pozice": "Na pravé straně vozovky."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Malé dítě s helmou jede na dětském jízdním kole po asfaltové silnici vedoucí mezi poli. V pozadí není vidět žádná doprovázející osoba."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu (§ 58 odst. 2) stanoví, že dítě mladší 10 let smí na silnici, místní komunikaci a veřejně přístupné účelové komunikaci jet na jízdním kole jen pod dohledem osoby starší 15 let.",
+              "Tato povinnost se nevztahuje na jízdu na chodníku, cyklostezce, v obytné a pěší zóně.",
+              "Věk, do kterého je dohled nutný, je tedy 10 let."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Dítě bez dozoru na silnici je vystaveno extrémnímu riziku střetu s motorovými vozidly kvůli své nezkušenosti a špatné předvídatelnosti chování."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060024",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060025",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060026",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060027",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060028",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060030",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230720.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060030",
+            "shrnuti": "Automobil předjíždí cyklistu a přejíždí přitom podélnou souvislou čáru.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče.",
+                "cinnost": "Předjíždí cyklistu.",
+                "pozice": "Částečně v protisměrném jízdním pruhu."
+              },
+              {
+                "typ": "cyklista",
+                "popis": "Osoba na jízdním kole.",
+                "cinnost": "Jede u pravého okraje vozovky.",
+                "pozice": "Pravý okraj vozovky."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Nepřerušovaná (plná) čára"
+                  },
+                  "kod_nazev": "V 1a, Podélná čára souvislá",
+                  "umisteni": "Uprostřed vozovky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled přes přední kapotu automobilu, který se nachází v procesu předjíždění cyklisty jedoucího při pravém okraji úzké silnice. Uprostřed silnice je vodorovná dopravní značka 'Podélná čára souvislá'. Automobil tuto čáru přejíždí, aby dodržel bezpečný boční odstup od cyklisty."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Obecně je zakázáno přejíždět podélnou souvislou čáru.",
+              "Zákon o silničním provozu však v § 17 odst. 4 stanovuje výjimku: 'Při předjíždění cyklisty smí řidič přejíždět vodorovnou dopravní značku „Podélná čára souvislá“.'",
+              "Tato výjimka byla zavedena proto, aby řidiči mohli dodržet povinný bezpečný boční odstup (1,5 m / 1 m), což by na úzkých silnicích často nebylo bez přejetí čáry možné.",
+              "Řidič tak smí čáru přejet."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Při přejíždění čáry musí řidič stále dbát na bezpečnost a neohrozit protijedoucí vozidla. Výjimka se týká pouze čáry, nikoli ostatních pravidel pro předjíždění (dostatečný rozhled, neohrožení ostatních)."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060031",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230721.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060031",
+            "shrnuti": "Automobil míjí cyklistu jedoucího ve vyhrazeném jízdním pruhu.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Bílé SUV.",
+                "cinnost": "Jede ve svém jízdním pruhu a míjí cyklistu.",
+                "pozice": "Levý jízdní pruh."
+              },
+              {
+                "typ": "cyklista",
+                "popis": "Osoba na jízdním kole.",
+                "cinnost": "Jede ve vyhrazeném pruhu.",
+                "pozice": "Pravý (vyhrazený) jízdní pruh."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára a symbol",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára a piktogram jízdního kola."
+                  },
+                  "kod_nazev": "V 14, Vyhrazený jízdní pruh",
+                  "umisteni": "Odděluje a označuje vyhrazený jízdní pruh pro cyklisty."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na dvouproudou městskou komunikaci. Pravý pruh je vyhrazen pro cyklisty, což je značeno piktogramem kola na vozovce a přerušovanou čárou. V tomto pruhu jede cyklista. V levém pruhu jede souběžně bílé SUV, které cyklistu míjí."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Povinnost dodržet bezpečný boční odstup (1,5 m nebo 1 m v zóně 30) se vztahuje na manévr 'předjíždění'.",
+              "Pokud automobil a cyklista jedou každý ve svém jízdním pruhu (i když je jeden z nich vyhrazený), jedná se o 'souběžnou jízdu' a míjení, nikoli o předjíždění ve smyslu zákona.",
+              "Povinnost dodržet konkrétní vzdálenost se zde tedy neuplatní. Řidič je však stále povinen dbát zvýšené opatrnosti a neohrozit cyklistu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Cyklista může náhle vybočit (např. kvůli kanálu).",
+              "Řidič auta může jet příliš blízko dělicí čáry a cyklistu ohrozit prouděním vzduchu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060032",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230722.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060032",
+            "shrnuti": "Spolujezdec na motocyklu.",
+            "akteri": [
+              {
+                "typ": "řidič",
+                "popis": "Řidič motocyklu.",
+                "cinnost": "Řídí motocykl.",
+                "pozice": "Vpředu na motocyklu."
+              },
+              {
+                "typ": "spolujezdec",
+                "popis": "Osoba sedící za řidičem.",
+                "cinnost": "Je přepravována.",
+                "pozice": "Na sedadle spolujezdce na motocyklu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Boční pohled na motocykl s řidičem a spolujezdcem. Oba mají helmy a jsou vhodně oblečeni. Jsou v pohybu na silnici."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Definice 'účastník provozu na pozemních komunikacích' (§ 2 písm. a) zahrnuje každého, kdo se přímým způsobem účastní provozu.",
+              "To zahrnuje nejen řidiče, ale i chodce, jezdce na zvířatech a také přepravované osoby (spolujezdce).",
+              "Na spolujezdce se tedy vztahují příslušná ustanovení zákona o silničním provozu (např. povinnost mít helmu, nechovat se způsobem ohrožujícím bezpečnost atd.)."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Spolujezdec by se mohl mylně domnívat, že se na něj žádná pravidla nevztahují, a chovat se rizikově (např. sundat si helmu, vyklánět se)."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060033",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060034",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060036",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060037",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230727.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060037",
+            "shrnuti": "Zobrazení dopravní značky 'Pěší zóna'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Modrý podklad, bílé symboly",
+                    "symbol": "Chodec vedoucí dítě a hrající si dítě s míčem."
+                  },
+                  "kod_nazev": "IP 27a, Pěší zóna",
+                  "umisteni": "Na sloupku."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na svislou dopravní značku IP 27a 'Pěší zóna'. Značka je umístěna na sloupku, v pozadí je rozostřená ulice a zeleň."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu (§ 67) stanovuje výjimky pro držitele parkovacího průkazu pro osoby se zdravotním postižením (O 7).",
+              "Jednou z těchto výjimek je možnost v jednotlivých případech a je-li to naléhavě nutné vjet i do oblasti označené značkou 'Pěší zóna'.",
+              "Musí přitom dbát nejvyšší opatrnosti, aby neohrozili chodce."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Zneužívání této výjimky k běžnému parkování v pěší zóně.",
+              "Ohrožení chodců při jízdě v prostoru primárně určeném pro ně."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23060038",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230727.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23060038",
+            "shrnuti": "Zobrazení dopravní značky 'Pěší zóna'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Modrý podklad, bílé symboly",
+                    "symbol": "Chodec vedoucí dítě a hrající si dítě s míčem."
+                  },
+                  "kod_nazev": "IP 27a, Pěší zóna",
+                  "umisteni": "Na sloupku."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na svislou dopravní značku IP 27a 'Pěší zóna'. Značka je umístěna na sloupku, v pozadí je rozostřená ulice a zeleň."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Další výjimkou pro držitele parkovacího průkazu pro OZP (§ 67) je, že v jednotlivých případech a je-li to naléhavě nutné, nemusí po dobu nezbytně potřebnou dodržovat zákaz stání a zákaz stání vyplývající z dopravní značky 'Zákaz stání'.",
+              "To ovšem neplatí pro zákaz zastavení. Rozdíl je klíčový.",
+              "Při tomto musí dbát na to, aby nebyla ohrožena bezpečnost a plynulost provozu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič by mohl mylně předpokládat, že může ignorovat i zákaz zastavení, nebo že může stát kdekoli bez ohledu na plynulost a bezpečnost provozu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040187",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040223",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040239",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040240",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040251",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040255",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040259",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040268",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040276",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040277",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040278",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040287",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040297",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06040298",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 45,
+    "pocet_url_nalezeno": 22,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": [],
+    "poznámky": []
+  },
+  "pokracovani": {
+    "dalsi_start_index": 75,
+    "zbyva": 176
+  }
+}

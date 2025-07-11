@@ -1,0 +1,1245 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "06050414",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050415",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050419",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050484",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050514",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050553",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050561",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050564",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050566",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050576",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050590",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050591",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050592",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050593",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050594",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050597",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050599",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050602",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050603",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050604",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050607",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0429.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06050607",
+            "shrnuti": "Jízda na víceproudé silnici mimo obec.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče.",
+                "cinnost": "Jede v pravém jízdním pruhu.",
+                "pozice": "Pravý jízdní pruh."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára"
+                  },
+                  "kod_nazev": "V 2a, Podélná čára přerušovaná",
+                  "umisteni": "Mezi jízdními pruhy."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla jedoucího po silnici se dvěma jízdními pruhy v jednom směru jízdy. Komunikace vede mimo obec, v okolí je les. Vozidlo se drží v pravém jízdním pruhu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu (§ 12 odst. 2) stanovuje pravidla pro jízdu v jízdních pruzích.",
+              "Mimo obec se na pozemní komunikaci o dvou nebo více jízdních pruzích v jednom směru jízdy jezdí v pravém jízdním pruhu.",
+              "Ostatní (levé) jízdní pruhy se smí užít, jen jestliže je to nutné k objíždění, předjíždění, otáčení nebo odbočování.",
+              "Na rozdíl od obce, kde lze jet v kterémkoliv pruhu, zde platí povinnost držet se vpravo."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Bezdůvodná jízda v levém pruhu, která brání v předjíždění rychlejším vozidlům."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050621",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050622",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050636",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050637",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06050638",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060049",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0188.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060049",
+            "shrnuti": "Dvě protijedoucí vozidla odbočují vlevo na křižovatce.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Červené vozidlo.",
+                "cinnost": "Odbočuje vlevo.",
+                "pozice": "Na křižovatce."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Modré vozidlo.",
+                "cinnost": "Přijíždí z protisměru a také odbočuje vlevo.",
+                "pozice": "Na křižovatce."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Schéma křižovatky, kde se setkávají dvě protijedoucí vozidla (červené a modré). Obě mají v úmyslu odbočit vlevo. Na schématu je znázorněno, že se vozidla vyhýbají vlevo, tedy projíždějí křižovatkou tak, že se míjejí svými pravými boky a jejich dráhy se nekříží (tzv. 'malý oblouk')."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu (§ 21 odst. 6) stanovuje pravidlo pro vyhýbání při odbočování vlevo.",
+              "Řidiči protijedoucích vozidel odbočující vlevo se vyhýbají vlevo. To znamená, že jedou za středem křižovatky a míjejí se pravými boky.",
+              "Tento způsob je bezpečnější, protože dráhy vozidel se nekříží a řidiči si vzájemně nezakrývají výhled na další případné účastníky provozu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Jeden z řidičů by se mylně pokusil o vyhnutí vpravo ('velký oblouk'), což by vedlo ke zkřížení drah a potenciální kolizi."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060051",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0299.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060051",
+            "shrnuti": "Křižovatka řízená světelnými signály, kde jsou i svislé dopravní značky upravující přednost.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žluté pole s bílým okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 2, Hlavní pozemní komunikace",
+                  "umisteni": "Na sloupu semaforu vpravo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Horní červené světlo je VYPNUTÉ.",
+                    "Prostřední žluté světlo je VYPNUTÉ.",
+                    "Dolní zelené světlo je ZAPNUTÉ a svítí NEPŘERUŠOVANĚ."
+                  ],
+                  "souhrnny_stav": "Signál 'Volno'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na křižovatku, jejíž provoz je řízen světelnou signalizací. Na semaforu svítí zelené světlo 'Volno'. Na stejném sloupu pod semaforem je umístěna i dopravní značka 'Hlavní pozemní komunikace'."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu stanovuje hierarchii řízení provozu.",
+              "Nejvyšší autoritu mají pokyny policisty.",
+              "Následují světelné signály.",
+              "Poté svislé dopravní značky upravující přednost.",
+              "Nakonec obecná pravidla (pravidlo pravé ruky).",
+              "Světelné signály jsou tedy nadřazeny svislým dopravním značkám. Pokud je semafor v provozu, značkami se neřídíme."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič by se mylně řídil značkou a ignoroval světelný signál, což by vedlo ke kolizi."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060061",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060067",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060069",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060070",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060071",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060072",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060074",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060075",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060076",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060079",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060080",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060082",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060083",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060084",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060096",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060097",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060098",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0096.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060098",
+            "shrnuti": "Vozidlo vyjíždí z místa ležícího mimo pozemní komunikaci na silnici.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Žlutý osobní automobil.",
+                "cinnost": "Vyjíždí z areálu (místo mimo pozemní komunikaci).",
+                "pozice": "Na výjezdu, chystá se vjet na silnici."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Modrý osobní automobil.",
+                "cinnost": "Jede po silnici.",
+                "pozice": "Na silnici, v pruhu, do kterého se chystá vjet žluté auto."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ptačí perspektiva na situaci, kdy žluté vozidlo opouští oplocený areál (továrna, sklad,...) a chystá se vjet na přilehlou silnici. Po této silnici se zleva blíží modré vozidlo. Výjezd z areálu není označen žádnou dopravní značkou upravující přednost."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Podle § 23 zákona o silničním provozu musí řidič při vjíždění z místa ležícího mimo pozemní komunikaci na pozemní komunikaci dát přednost v jízdě vozidlům jedoucím po pozemní komunikaci.",
+              "Tato povinnost platí vždy, bez ohledu na to, zda je místo označeno dopravní značkou.",
+              "Řidič žlutého vozidla musí dát přednost modrému vozidlu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič žlutého auta si mylně myslí, že platí pravidlo pravé ruky, a nedá přednost modrému autu, což by vedlo ke kolizi."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060099",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060101",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060102",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060103",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060104",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24020001",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060107",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060108",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060109",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060111",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060113",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060114",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060116",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060117",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060118",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060119",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060120",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060121",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060122",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060125",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060126",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060127",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060128",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060129",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060130",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060133",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060134",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060136",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060137",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060138",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060140",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060141",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060142",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060143",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060144",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060145",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060146",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060150",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060151",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060152",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060153",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060155",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0299.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060155",
+            "shrnuti": "Křižovatka řízená světelnými signály, kde jsou i svislé dopravní značky upravující přednost.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žluté pole s bílým okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 2, Hlavní pozemní komunikace",
+                  "umisteni": "Na sloupu semaforu vpravo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Horní červené světlo je VYPNUTÉ.",
+                    "Prostřední žluté světlo je VYPNUTÉ.",
+                    "Dolní zelené světlo je ZAPNUTÉ a svítí NEPŘERUŠOVANĚ."
+                  ],
+                  "souhrnny_stav": "Signál 'Volno'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na křižovatku, jejíž provoz je řízen světelnou signalizací. Na semaforu svítí zelené světlo 'Volno'. Na stejném sloupu pod semaforem je umístěna i dopravní značka 'Hlavní pozemní komunikace'."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu stanovuje hierarchii řízení provozu (§ 76).",
+              "Nejvyšší jsou pokyny policisty, následují světelné signály, pak svislé dopravní značky a nakonec obecná pravidla.",
+              "Světelné signály jsou tedy nadřazeny svislým dopravním značkám upravujícím přednost. Pokud je světelná signalizace v provozu, dopravní značky upravující přednost jsou pro řidiče v danou chvíli neplatné."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič by se mohl řídit značkou namísto světel, což by vedlo k nedání přednosti a kolizi."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060156",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060157",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060159",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060172",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060173",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060174",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060175",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060176",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060177",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060178",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060179",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060180",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060181",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060182",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060183",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060184",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060185",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060188",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060189",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060190",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060191",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060192",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060193",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060194",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060195",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060196",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060197",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060198",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060199",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060201",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060202",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060203",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060204",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060205",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060206",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060209",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060210",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060211",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060212",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060214",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060215",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060216",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060217",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060218",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060219",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060220",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060221",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060222",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060223",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060224",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060226",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060227",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060229",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060230",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060231",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060232",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060308",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 120,
+    "pocet_url_nalezeno": 5,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": [],
+    "poznámky": []
+  },
+  "pokracovani": {
+    "dalsi_start_index": 240,
+    "zbyva": 11
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "06060315",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0434.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060315",
+            "shrnuti": "Vozidlo přijíždí ke křižovatce po vedlejší silnici.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče.",
+                "cinnost": "Přijíždí ke křižovatce.",
+                "pozice": "Na vedlejší pozemní komunikaci."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obrácený trojúhelník",
+                    "barva": "Bílé pole s červeným okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 4, Dej přednost v jízdě!",
+                  "umisteni": "Vpravo před křižovatkou."
+                }
+              ],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Příčná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára složená z trojúhelníků."
+                  },
+                  "kod_nazev": "V 5, Příčná čára souvislá s trojúhelníky",
+                  "umisteni": "Na vozovce v místě, kde je třeba dát přednost."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla, které se blíží ke křižovatce. Před křižovatkou je umístěna dopravní značka 'Dej přednost v jízdě!' a na vozovce je příslušná vodorovná značka. To jednoznačně signalizuje, že vozidlo se nachází na vedlejší pozemní komunikaci."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič na vedlejší pozemní komunikaci (označené značkou P 4) musí dát přednost v jízdě všem účastníkům provozu jedoucím po hlavní pozemní komunikaci.",
+              "Účastníkem provozu není jen vozidlo, ale i jezdec na zvířeti, organizovaný útvar chodců nebo průvodce hnaných zvířat se zvířaty.",
+              "Proto je řidič povinen dát přednost všem těmto vyjmenovaným skupinám, pokud se pohybují po hlavní komunikaci."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič by si nemusel všimnout např. jezdce na koni a nedal by mu přednost, což by mohlo vést k nehodě."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060316",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0181.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060316",
+            "shrnuti": "Vozidlo jede po hlavní silnici a křižuje se s vedlejší silnicí zprava.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče (z výhledu).",
+                "cinnost": "Jede po hlavní pozemní komunikaci.",
+                "pozice": "Před křižovatkou."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Červené osobní vozidlo.",
+                "cinnost": "Přijíždí zprava po vedlejší komunikaci.",
+                "pozice": "Na vedlejší komunikaci ústící zprava."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žluté pole s bílým okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 2, Hlavní pozemní komunikace",
+                  "umisteni": "Vpravo před křižovatkou, z pohledu vozidla z výhledu."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obrácený trojúhelník",
+                    "barva": "Bílé pole s červeným okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 4, Dej přednost v jízdě!",
+                  "umisteni": "Na vedlejší komunikaci zprava, z pohledu červeného vozidla."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Schéma křižovatky tvaru T. Vozidlo z výhledu jede po hlavní silnici, což je potvrzeno značkou P 2. Zprava se připojuje vedlejší silnice, na které stojí červené vozidlo a má značku P 4 'Dej přednost v jízdě!'."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidlo z výhledu jede po hlavní pozemní komunikaci.",
+              "Červené vozidlo přijíždí z vedlejší pozemní komunikace a má povinnost dát přednost v jízdě.",
+              "Vozidlo z výhledu má tedy přednost a nemusí dávat přednost červenému vozidlu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič červeného vozidla by mohl přehlédnout značku a vjet do křižovatky, čímž by nedal přednost."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060318",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0390.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060318",
+            "shrnuti": "Automobil přejíždí příčně přes oddělený tramvajový pás.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Bílý osobní automobil.",
+                "cinnost": "Přejíždí přes tramvajové koleje.",
+                "pozice": "Na tramvajovém pásu."
+              },
+              {
+                "typ": "tramvaj",
+                "popis": "Tramvaj se blíží zleva.",
+                "cinnost": "Jede po kolejích.",
+                "pozice": "Na tramvajovém pásu, blíží se k automobilu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Žlutá",
+                    "symbol": "Souvislá čára"
+                  },
+                  "kod_nazev": "V 13a, Šikmé rovnoběžné čáry",
+                  "umisteni": "Vyznačuje tramvajový pás oddělený od vozovky."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Dopravní situace na komunikaci s tramvajovým pásem, který je od vozovky oddělen zvýšeným obrubníkem a žlutým vodorovným značením. Bílý automobil přejíždí tento pás příčně, pravděpodobně při odbočování. Zleva se blíží tramvaj."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Oddělený tramvajový pás smí řidič přejíždět pouze příčně, a to na místě k tomu přizpůsobeném.",
+              "Při tomto manévru nesmí ohrozit ani omezit v jízdě tramvaj (§ 13 odst. 2).",
+              "Tramvaj má na tramvajovém pásu absolutní přednost."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič automobilu neodhadne rychlost tramvaje a vjede jí do cesty, což způsobí srážku."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060320",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0434.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060320",
+            "shrnuti": "Vozidlo přijíždí ke křižovatce po vedlejší silnici.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče.",
+                "cinnost": "Přijíždí ke křižovatce.",
+                "pozice": "Na vedlejší pozemní komunikaci."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obrácený trojúhelník",
+                    "barva": "Bílé pole s červeným okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 4, Dej přednost v jízdě!",
+                  "umisteni": "Vpravo před křižovatkou."
+                }
+              ],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Příčná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára složená z trojúhelníků."
+                  },
+                  "kod_nazev": "V 5, Příčná čára souvislá s trojúhelníky",
+                  "umisteni": "Na vozovce v místě, kde je třeba dát přednost."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla, které se blíží ke křižovatce. Před křižovatkou je umístěna dopravní značka 'Dej přednost v jízdě!' a na vozovce je příslušná vodorovná značka. To jednoznačně signalizuje, že vozidlo se nachází na vedlejší pozemní komunikaci a kříží hlavní komunikaci."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič na vedlejší pozemní komunikaci musí dát přednost v jízdě všem vozidlům jedoucím po hlavní pozemní komunikaci.",
+              "To platí pro vozidla přijíždějící zprava i zleva.",
+              "Povinnost dát přednost se týká celé šířky hlavní komunikace."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič se soustředí pouze na vozidla zleva a přehlédne vozidlo přijíždějící zprava (např. v druhém pruhu).",
+              "Nedání přednosti v jízdě."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060322",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0391.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060322",
+            "shrnuti": "Semafor se signálem 'Pozor!' (červená + žlutá).",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Horní červené světlo je ZAPNUTÉ a svítí NEPŘERUŠOVANĚ.",
+                    "Prostřední žluté (oranžové) světlo je ZAPNUTÉ a svítí NEPŘERUŠOVANĚ.",
+                    "Dolní zelené světlo je VYPNUTÉ."
+                  ],
+                  "souhrnny_stav": "Signál 'Pozor!'. Řidič se připraví k jízdě, bude následovat signál 'Volno'."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na semafor pro vozidla. Současně svítí červené a žluté světlo. Tento signál předchází signálu 'Volno' (zelené světlo)."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Signál se současně svítícím červeným a žlutým světlem znamená 'Pozor!'.",
+              "Pro řidiče to znamená povinnost připravit se k jízdě.",
+              "Nesmí ještě vjet do křižovatky, ale může se připravit na rozjezd (např. zařadit rychlostní stupeň)."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Předčasný vjezd do křižovatky ještě před rozsvícením zeleného světla."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060323",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0348.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060323",
+            "shrnuti": "Lesní cesta ústí na zpevněnou silnici.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na místo, kde nezpevněná polní nebo lesní cesta s travnatým středem vyúsťuje na asfaltovou silnici. Na pozadí je les a pole."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Podle definice v § 2 písm. l) zákona o silničním provozu se za křižovatku nepovažuje vyústění účelové pozemní komunikace (např. polní nebo lesní cesty) na jinou pozemní komunikaci.",
+              "Toto místo tedy není křižovatkou a neplatí zde pravidla pro jízdu křižovatkou (např. pravidlo pravé ruky).",
+              "Řidič vyjíždějící z účelové komunikace musí dát přednost všem vozidlům na druhé komunikaci."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič na silnici by si mohl mylně myslet, že se jedná o křižovatku, a dávat přednost vozidlu zprava z polní cesty.",
+              "Řidič z polní cesty by si mohl mylně vynucovat přednost zprava."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060326",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0416.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060326",
+            "shrnuti": "Jízda na víceproudé silnici mimo obec.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče.",
+                "cinnost": "Jede v levém jízdním pruhu, pravděpodobně předjíždí.",
+                "pozice": "Levý jízdní pruh."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára"
+                  },
+                  "kod_nazev": "V 2a, Podélná čára přerušovaná",
+                  "umisteni": "Mezi jízdními pruhy."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla jedoucího v levém jízdním pruhu na silnici se dvěma pruhy v jednom směru mimo obec. Pravý pruh je prázdný. V dálce jsou vidět stromy."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu (§ 12 odst. 2) stanovuje, že mimo obec se na pozemní komunikaci o dvou a více pruzích v jednom směru jezdí v pravém jízdním pruhu.",
+              "Levý (nebo jiné než pravý) jízdní pruh se smí užít jen pro objíždění, předjíždění, otáčení nebo odbočování.",
+              "Na rozdíl od obce zde neplatí pravidlo souběžné jízdy a je povinnost se po dokončení manévru vrátit do pravého pruhu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Bezdůvodná jízda v levém pruhu, která brání v jízdě rychlejším vozidlům."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060327",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0476.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060327",
+            "shrnuti": "Cyklista jede po silnici.",
+            "akteri": [
+              {
+                "typ": "cyklista",
+                "popis": "Muž na jízdním kole.",
+                "cinnost": "Jede po silnici.",
+                "pozice": "U pravého okraje vozovky."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Boční pohled na cyklistu jedoucího po venkovské silnici. Je vhodně oblečen (dres, helma). Silnice vede otevřenou krajinou."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Podle definice v § 2 písm. d) je řidičem ten, kdo řídí motorové nebo nemotorové vozidlo.",
+              "Jízdní kolo je nemotorové vozidlo.",
+              "Cyklista je tedy řidič a vztahují se na něj práva a povinnosti řidiče, pokud není stanoveno jinak (např. ohledně alkoholu, povinné výbavy atd.)."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Cyklista by se mohl mylně domnívat, že pro něj neplatí pravidla silničního provozu (např. dávání přednosti, jízda vpravo).",
+              "Řidič motorového vozidla by mohl cyklistu nepovažovat za plnohodnotného účastníka provozu a nebrat na něj dostatečný ohled."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060328",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0450.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060328",
+            "shrnuti": "Automobil v jednosměrné ulici.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Stříbrné SUV.",
+                "cinnost": "Jede jednosměrnou ulicí.",
+                "pozice": "V jízdním pruhu."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercový",
+                    "barva": "Modrý podklad, bílá šipka",
+                    "symbol": "Šipka směřující rovně nahoru"
+                  },
+                  "kod_nazev": "IP 4b, Jednosměrný provoz",
+                  "umisteni": "Na začátku ulice vpravo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled do ulice označené dopravní značkou 'Jednosměrný provoz'. V ulici jede stříbrné auto, po stranách jsou zaparkovaná vozidla. Otázka se týká couvání v takové ulici."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Na jednosměrné pozemní komunikaci je otáčení a couvání obecně zakázáno.",
+              "Zákon však v § 24 odst. 3 povoluje výjimku: řidič smí couvat, jestliže je to nezbytně nutné, například k zajetí do řady stojících vozidel nebo k vyjetí z ní.",
+              "Couvání pro tento specifický účel je tedy dovoleno, nesmí při něm ale ohrozit ostatní účastníky provozu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Couvání na delší vzdálenost, než je nezbytně nutné.",
+              "Ohrožení chodců nebo jiných vozidel při couvání."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060329",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0425.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060329",
+            "shrnuti": "Jízdní souprava (nákladní auto s přívěsem) jede po dálnici.",
+            "akteri": [
+              {
+                "typ": "jízdní souprava",
+                "popis": "Nákladní automobil s přívěsem.",
+                "cinnost": "Jede v prostředním ze tří jízdních pruhů.",
+                "pozice": "Prostřední jízdní pruh na dálnici."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na tříproudou dálnici. V prostředním pruhu jede jízdní souprava. Otázka se týká nejvyšší povolené rychlosti přívěsu a možnosti jízdy po dálnici."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Na dálnici je provoz povolen motorovým vozidlům a jízdním soupravám, jejichž nejvyšší povolená rychlost není nižší než 80 km/h.",
+              "U jízdní soupravy se posuzuje nejvyšší povolená rychlost každého z vozidel soupravy.",
+              "Pokud má přívěs nejvyšší povolenou rychlost jen 75 km/h, celá souprava nesplňuje podmínku pro vjezd na dálnici (75 km/h < 80 km/h).",
+              "Tato jízdní souprava tedy na dálnici jet nesmí."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nelegální jízda pomalého vozidla po dálnici, což vytváří nebezpečí a omezuje ostatní účastníky provozu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "06060335",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/0474.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "06060335",
+            "shrnuti": "Chodec stojí u přechodu pro chodce a chystá se vstoupit do vozovky, zatímco se blíží auto.",
+            "akteri": [
+              {
+                "typ": "chodec",
+                "popis": "Osoba stojící na chodníku.",
+                "cinnost": "Zjevně hodlá přejít po přechodu pro chodce.",
+                "pozice": "Na okraji chodníku u přechodu."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Vozidlo z pohledu řidiče.",
+                "cinnost": "Přibližuje se k přechodu pro chodce.",
+                "pozice": "V jízdním pruhu před přechodem."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtvercový",
+                    "barva": "Modrý podklad, bílý symbol",
+                    "symbol": "Trojúhelník s postavou chodce"
+                  },
+                  "kod_nazev": "IP 6, Přechod pro chodce",
+                  "umisteni": "Vpravo u přechodu."
+                }
+              ],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Pruhy",
+                    "barva": "Bílá",
+                    "symbol": "Zebra"
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Na vozovce."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla blížícího se k vyznačenému přechodu pro chodce. Na chodníku vpravo stojí chodec a zjevně se chystá vstoupit na přechod. Vozidlo je blízko přechodu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Chodec nesmí vstupovat na přechod pro chodce nebo na vozovku bezprostředně před blížícím se vozidlem (§ 54 odst. 3).",
+              "Chodec nemá absolutní přednost. Musí brát ohled na vzdálenost a rychlost přijíždějících vozidel, aby je nedonutil k náhlé změně směru nebo rychlosti jízdy.",
+              "Vstoupit na přechod smí, jen když je to bezpečné."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Chodec vstoupí na přechod bez rozhlédnutí a vběhne přímo před auto, které již nemá šanci bezpečně zastavit."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 12,
+    "pocet_url_nalezeno": 12,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": [],
+    "poznámky": []
+  },
+  "pokracovani": {
+    "dalsi_start_index": 252,
+    "zbyva": 0
+  }
+}

@@ -1,0 +1,712 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "24070017",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240707.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070017",
+            "shrnuti": "Červené vozidlo vyjíždí z místa ležícího mimo pozemní komunikaci (pravděpodobně parkoviště nebo areál) na hlavní silnici.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Červený osobní automobil, viditelný z boku.",
+                "cinnost": "Chystá se vjet na pozemní komunikaci z místa ležícího mimo ni.",
+                "pozice": "Na výjezdu z areálu/parkoviště, těsně před napojením na silnici."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obrácený trojúhelník",
+                    "barva": "Bílé pole s červeným okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 4, Dej přednost v jízdě!",
+                  "umisteni": "Vpravo u výjezdu, čelem k vyjíždějícímu vozidlu."
+                }
+              ],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Příčná čára",
+                    "barva": "Bílá",
+                    "symbol": "Trojúhelníky"
+                  },
+                  "kod_nazev": "V 5, Příčná čára souvislá s trojúhelníky",
+                  "umisteni": "Na vozovce v místě napojení výjezdu."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled na červené auto, které stojí na výjezdu z místa ležícího mimo komunikaci (např. parkoviště, čerpací stanice, areál firmy). Přímo u výjezdu je umístěna svislá dopravní značka P 4 'Dej přednost v jízdě!' a na vozovce vodorovná značka V 5. Vozidlo se chystá vjet na silnici, kde je vidět provoz v obou směrech. V pozadí je městská zástavba a stromy."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič vyjíždějící z místa ležícího mimo pozemní komunikaci má zákonnou povinnost dát přednost v jízdě všem vozidlům a ostatním účastníkům provozu (jezdcům na zvířatech, organizovaným útvarům chodců) jedoucím po této komunikaci.",
+              "Tato povinnost je navíc zdůrazněna dopravními značkami P 4 a V 5.",
+              "Správná odpověď (2) přesně vystihuje tuto povinnost."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič červeného vozidla nedá přednost v jízdě a vnutí se do cesty vozidlům na hlavní komunikaci.",
+              "Řidič si špatně odhadne rychlost a vzdálenost přijíždějících vozidel."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070018",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070019",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240709.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070019",
+            "shrnuti": "Zobrazení dopravní značky 'Konec všech zákazů'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Bílý podklad, černý šikmý pruh",
+                    "symbol": "Žádný konkrétní symbol, značka ruší všechny předchozí zákazy."
+                  },
+                  "kod_nazev": "B 26, Konec všech zákazů",
+                  "umisteni": "Na sloupku u silnice."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Detailní záběr na svislou dopravní značku B 26 'Konec všech zákazů'. Značka je umístěna na sloupku vedle silnice, v pozadí je vidět travnatý svah a stromy."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákazové dopravní značky (např. omezení rychlosti, zákaz předjíždění) platí standardně k nejbližší křižovatce.",
+              "Jejich platnost může být také ukončena specifickou dopravní značkou, která ruší daný zákaz (např. 'Konec zákazu předjíždění') nebo, jako v tomto případě, značkou 'Konec všech zákazů', která ruší všechny zákazy, které byly předtím stanoveny pro jedoucí vozidla."
+            ],
+            "mozna_rizika_a_konflikty": []
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070020",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240710.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070020",
+            "shrnuti": "Motocyklista stojí před vjezdem do pěší zóny.",
+            "akteri": [
+              {
+                "typ": "motocykl",
+                "popis": "Řidič na motocyklu.",
+                "cinnost": "Zastavil před křižovatkou/vjezdem.",
+                "pozice": "Před dopravní značkou 'Pěší zóna'."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Modrý podklad, bílé symboly",
+                    "symbol": "Chodec vedoucí dítě, hrající si dítě s míčem."
+                  },
+                  "kod_nazev": "IP 27a, Pěší zóna",
+                  "umisteni": "Na začátku pěší zóny."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková dodatková tabulka",
+                    "barva": "Bílý podklad, černý text a symbol",
+                    "symbol": "Text 'MIMO ZÁSOBOVÁNÍ' a časové údaje '6-9h', '18-20h'."
+                  },
+                  "kod_nazev": "E 13, Dodatková tabulka",
+                  "umisteni": "Pod značkou 'Pěší zóna'."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková dodatková tabulka",
+                    "barva": "Bílý podklad, černý text",
+                    "symbol": "Text 'MIMO DOPRAVNÍ OBSLUHU'."
+                  },
+                  "kod_nazev": "E 13, Dodatková tabulka",
+                  "umisteni": "Pod značkou 'Pěší zóna'."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Motocyklista stojí před vjezdem do ulice, která je označena jako pěší zóna (značka IP 27a). Pod značkou jsou dvě dodatkové tabulky, které povolují vjezd pro zásobování a dopravní obsluhu v určených časech. V pozadí je vidět ulice s budovami."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vjezd do pěší zóny je obecně zakázán.",
+              "Výjimky jsou specifikovány na dodatkových tabulkách.",
+              "Řidič motocyklu (pokud neprovádí zásobování nebo dopravní obsluhu v povoleném čase) nespadá do žádné z uvedených výjimek.",
+              "Proto nesmí pokračovat v jízdě přímo do pěší zóny."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Neoprávněný vjezd do pěší zóny a ohrožení chodců."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070022",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240712.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070022",
+            "shrnuti": "Zobrazení dopravní značky 'Silnice pro motorová vozidla'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníkový",
+                    "barva": "Zelený podklad, bílý symbol",
+                    "symbol": "Piktogram osobního automobilu."
+                  },
+                  "kod_nazev": "IP 15a, Silnice pro motorová vozidla",
+                  "umisteni": "Na sloupku u silnice."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Záběr na svislou dopravní značku IP 15a 'Silnice pro motorová vozidla'. Značka je umístěna u okraje komunikace, v pozadí je rozostřená krajina."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Na dálnici a silnici pro motorová vozidla platí specifická pravidla pro rychlost.",
+              "Pokud taková komunikace prochází obcí, je na ní nejvyšší dovolená rychlost stanovena na 80 km/h, pokud není dopravní značkou povolena rychlost vyšší.",
+              "Standardní rychlost 50 km/h pro obec zde neplatí."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Mylná domněnka řidiče, že v obci platí vždy 50 km/h, což by vedlo k nebezpečně pomalé jízdě.",
+              "Mylná domněnka řidiče, že platí 110 km/h jako mimo obec, což by vedlo k překročení rychlosti."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070023",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070026",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240717.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070026",
+            "shrnuti": "Automobil jede vedle vyhrazeného jízdního pruhu pro cyklisty, ve kterém je překážka.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Modrý osobní automobil.",
+                "cinnost": "Jede v levém jízdním pruhu.",
+                "pozice": "Levý jízdní pruh."
+              },
+              {
+                "typ": "cyklista",
+                "popis": "Osoba na jízdním kole.",
+                "cinnost": "Jede ve vyhrazeném jízdním pruhu.",
+                "pozice": "Pravý (vyhrazený) jízdní pruh."
+              },
+              {
+                "typ": "překážka",
+                "popis": "Červené osobní auto zaparkované ve vyhrazeném pruhu.",
+                "cinnost": "Stojí a tvoří překážku.",
+                "pozice": "V pravém (vyhrazeném) jízdním pruhu, před cyklistou."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára a symbol",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára a piktogram jízdního kola."
+                  },
+                  "kod_nazev": "V 14, Vyhrazený jízdní pruh",
+                  "umisteni": "Odděluje a označuje vyhrazený jízdní pruh pro cyklisty."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Dopravní situace na městské komunikaci. V pravé části vozovky je vyznačen vyhrazený jízdní pruh pro cyklisty, ve kterém jede cyklista. Před ním v tomto pruhu stojí zaparkované červené auto, které tvoří překážku. V levém, souběžném pruhu jede modrý automobil. Otázka se týká možnosti vjetí do vyhrazeného pruhu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Do vyhrazeného jízdního pruhu pro cyklisty smí řidič jiného vozidla vjet jen v případech stanovených zákonem, například při objíždění, odbočování, vjíždění na pozemní komunikaci atd.",
+              "Při tomto manévru však nesmí ohrozit ani omezit cyklistu jedoucího ve vyhrazeném pruhu.",
+              "V této situaci by řidič modrého auta mohl vjet do pruhu, pokud by objížděl překážku ve svém pruhu, ale musel by dbát na bezpečnost cyklisty. Otázka je položena obecně, a odpověď (1) správně popisuje zákonné možnosti a omezení."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič automobilu vjede do vyhrazeného pruhu bezdůvodně.",
+              "Řidič automobilu při objíždění ohrozí nebo omezí cyklistu."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070027",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240718.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070027",
+            "shrnuti": "Vozidlo na hlavní silnici, která se stáčí vlevo, jede rovně a opouští tak hlavní silnici.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Modrý osobní automobil z pohledu řidiče.",
+                "cinnost": "Přijíždí ke křižovatce a hodlá jet přímo.",
+                "pozice": "Na hlavní pozemní komunikaci."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žluté pole s bílým okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 2, Hlavní pozemní komunikace",
+                  "umisteni": "Před křižovatkou vpravo."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková dodatková tabulka",
+                    "barva": "Bílá s černým symbolem",
+                    "symbol": "Schéma křižovatky, kde hlavní silnice (tlustá čára) zatáčí doleva."
+                  },
+                  "kod_nazev": "E 2b, Tvar křižovatky",
+                  "umisteni": "Pod značkou P 2."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla přijíždějícího ke křižovatce tvaru T. Vozidlo se nachází na hlavní pozemní komunikaci, která podle dodatkové tabulky zatáčí doleva. Řidič má v úmyslu pokračovat v jízdě přímo, čímž opustí hlavní silnici a vjede na vedlejší."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Znamení o změně směru jízdy se dává při změně směru jízdy nebo při vybočování z něj.",
+              "Pokud řidič jede rovně, nemění směr jízdy, a proto znamení nedává, přestože opouští hlavní komunikaci.",
+              "Znamení by dával, pokud by odbočoval vlevo (a sledoval tak hlavní silnici)."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič by mohl mylně dát znamení vpravo, protože relativně vůči hlavní silnici jede doprava.",
+              "Řidič z vedlejší (zprava) by mohl mylně předpokládat, že vozidlo bude pokračovat po hlavní (doleva) a nedat mu přednost."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070028",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240719.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070028",
+            "shrnuti": "Vozidlo na hlavní silnici, která se stáčí vlevo, odbočuje vlevo a zůstává tak na hlavní.",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Červený osobní automobil z pohledu řidiče.",
+                "cinnost": "Přijíždí ke křižovatce a hodlá jet vlevo.",
+                "pozice": "Na hlavní pozemní komunikaci."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žluté pole s bílým okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 2, Hlavní pozemní komunikace",
+                  "umisteni": "Před křižovatkou vpravo."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková dodatková tabulka",
+                    "barva": "Bílá s černým symbolem",
+                    "symbol": "Schéma křižovatky, kde hlavní silnice (tlustá čára) zatáčí doleva."
+                  },
+                  "kod_nazev": "E 2b, Tvar křižovatky",
+                  "umisteni": "Pod značkou P 2."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z červeného vozidla přijíždějícího ke křižovatce. Vozidlo se nachází na hlavní pozemní komunikaci, která podle dodatkové tabulky zatáčí doleva. Řidič má v úmyslu pokračovat v jízdě vlevo, tedy sledovat hlavní komunikaci."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič odbočuje vlevo a musí dát znamení o změně směru jízdy.",
+              "Vozidlo pokračuje po hlavní komunikaci.",
+              "Případné protijedoucí vozidlo, které by jelo rovně, by opouštělo hlavní komunikaci a vjíždělo na vedlejší. Muselo by tedy dát přednost vozidlu jedoucímu po hlavní.",
+              "Řidič vozidla z výhledu tedy nemusí dávat přednost protijedoucímu vozidlu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Protijedoucí řidič si špatně vyloží situaci a nedá přednost."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070029",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240720.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070029",
+            "shrnuti": "Motocyklista objíždí zaparkovaná vozidla u pravého okraje vozovky.",
+            "akteri": [
+              {
+                "typ": "motocykl",
+                "popis": "Řidič na motocyklu, pohled z jeho perspektivy.",
+                "cinnost": "Jede po silnici a chystá se objet zaparkovaná vozidla.",
+                "pozice": "Pravá část jízdního pruhu."
+              },
+              {
+                "typ": "automobil",
+                "popis": "Několik zaparkovaných osobních automobilů.",
+                "cinnost": "Stojí (parkují).",
+                "pozice": "U pravého okraje vozovky."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Podélná čára",
+                    "barva": "Bílá",
+                    "symbol": "Přerušovaná čára"
+                  },
+                  "kod_nazev": "V 2b, Podélná čára přerušovaná",
+                  "umisteni": "Uprostřed vozovky, odděluje jízdní pruhy pro opačné směry."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z jedoucího motocyklu. Po pravé straně silnice je řada zaparkovaných aut. Motocyklista se k nim přibližuje a aby je mohl bezpečně minout, musí vybočit ze svého původního směru jízdy více do středu vozovky."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Objíždění je jízdní úkon, při kterém řidič vybočuje ze směru své jízdy.",
+              "Při každém vybočení ze směru jízdy (včetně objíždění) je řidič povinen dávat znamení o změně směru jízdy.",
+              "Kromě dávání znamení nesmí ohrozit ostatní účastníky provozu."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Někdo z parkujícího vozidla by mohl náhle otevřít dveře do jízdní dráhy motocyklisty.",
+              "Motocyklista by při objíždění mohl ohrozit protijedoucí vozidla.",
+              "Motocyklista by nedal znamení o změně směru jízdy a mohl by být ohrožen vozidlem jedoucím za ním, které by se ho snažilo předjet."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070034",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240725.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070034",
+            "shrnuti": "Vozidlo na hlavní silnici, která se stáčí vlevo, odbočuje vlevo. Semafor je mimo provoz (bliká žlutě).",
+            "akteri": [
+              {
+                "typ": "automobil",
+                "popis": "Červený osobní automobil z pohledu řidiče.",
+                "cinnost": "Přijíždí ke křižovatce a hodlá jet vlevo.",
+                "pozice": "Na hlavní pozemní komunikaci."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žluté pole s bílým okrajem",
+                    "symbol": "Žádný"
+                  },
+                  "kod_nazev": "P 2, Hlavní pozemní komunikace",
+                  "umisteni": "Před křižovatkou vpravo."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková dodatková tabulka",
+                    "barva": "Bílá s černým symbolem",
+                    "symbol": "Schéma křižovatky, kde hlavní silnice (tlustá čára) zatáčí doleva."
+                  },
+                  "kod_nazev": "E 2b, Tvar křižovatky",
+                  "umisteni": "Pod značkou P 2."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava s plnými signály",
+                  "popis_svetel": [
+                    "Horní červené světlo je VYPNUTÉ.",
+                    "Prostřední žluté (oranžové) světlo je ZAPNUTÉ a svítí PŘERUŠOVANĚ (bliká).",
+                    "Dolní zelené světlo je VYPNUTÉ."
+                  ],
+                  "souhrnny_stav": "Signál 'Pozor!'. Světelná signalizace není v provozu a řízení provozu se řídí svislými dopravními značkami."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z červeného vozidla přijíždějícího ke křižovatce. Nad vozovkou je semafor, na kterém přerušovaně svítí žluté světlo, což značí, že není v činnosti. Řidič se musí řídit dopravními značkami. Značka 'Hlavní pozemní komunikace' s dodatkovou tabulkou ukazuje, že hlavní silnice zatáčí doleva. Řidič chce pokračovat doleva."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Blikající žluté světlo znamená, že se řidič neřídí světly, ale dopravními značkami.",
+              "Řidič jede po hlavní komunikaci a pokračuje po ní (odbočuje vlevo).",
+              "Protijedoucí vozidlo, které by jelo rovně, opouští hlavní komunikaci, a proto musí dát přednost.",
+              "Řidič vozidla z výhledu má přednost v jízdě."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Protijedoucí řidič si špatně vyloží situaci (zejména blikající žlutou) a nedá přednost."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070038",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240729.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070038",
+            "shrnuti": "Směrová návěst před křižovatkou s vyznačením zpoplatněného úseku.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Velkoplošná obdélníková tabule",
+                    "barva": "Modrý a zelený podklad, bílý text a symboly",
+                    "symbol": "Šipky ukazující směry, čísla silnic, názvy měst, symbol dálnice, symbol mýtného."
+                  },
+                  "kod_nazev": "IS 2c, Návěst před křižovatkou",
+                  "umisteni": "Nad vozovkou před křižovatkou."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Bílý podklad, červený okraj, černý symbol",
+                    "symbol": "Písmeno 'M' v kruhu"
+                  },
+                  "kod_nazev": "IP 15d, Mýtné",
+                  "umisteni": "Na směrové návěsti u směru na Chomutov."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Návěst před křižovatkou ukazuje dva hlavní směry. Vlevo směr Chomutov po dálnici D7 (zelené pole), tento směr je označen symbolem 'Mýtné'. Vpravo směr Budyně nad Ohří po silnici č. 118 (modré pole). Otázka se týká nákladního vozidla nad 3,5t bez registrace v mýtném systému."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Vozidla podléhající mýtnému (typicky nad 3,5t) nesmí vjet na zpoplatněný úsek (označený značkou Mýtné), pokud nejsou zaregistrována a nemají funkční palubní jednotku.",
+              "Směr na Chomutov je zpoplatněn.",
+              "Směr na Budyně nad Ohří není označen jako zpoplatněný.",
+              "Řidič takového vozidla tedy nesmí jet směr Chomutov, ale smí jet směr Budyně n. O."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vjetí na zpoplatněný úsek bez zaplaceného mýtného, což vede k vysoké pokutě."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070039",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240730.png",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "24070039",
+            "shrnuti": "Vozidlo se blíží ke křižovatce, před níž je značka 'Nejnižší dovolená rychlost'.",
+            "akteri": [],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kruhový",
+                    "barva": "Modrý podklad, bílý symbol",
+                    "symbol": "Číslo '40'"
+                  },
+                  "kod_nazev": "C 6a, Nejnižší dovolená rychlost",
+                  "umisteni": "Před křižovatkou vpravo."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Pohled z vozidla přijíždějícího k neoznačené křižovatce v obci. Po pravé straně je umístěna příkazová dopravní značka 'Nejnižší dovolená rychlost' s hodnotou 40 km/h. Vozidlo má v úmyslu projet křižovatkou přímo."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Platnost dopravní značky C 6a 'Nejnižší dovolená rychlost' je ukončena nejbližší křižovatkou nebo značkou C 6b 'Konec nejnižší dovolené rychlosti'.",
+              "Po projetí křižovatkou tedy příkaz jet minimálně 40 km/h již neplatí.",
+              "Řidič se řídí obecnými pravidly. Nicméně, řidič nesmí bezdůvodně pomalou jízdou omezovat plynulost provozu. V kontextu autoškolských testů je bezdůvodná jízda rychlostí 35 km/h v úseku, kde se předpokládá rychlost okolo 50 km/h (a předtím byla dokonce nařízena min. 40 km/h), považována za porušení této povinnosti.",
+              "Proto je odpověď 'Ne' považována za správnou.",
+              "Jde o interpretaci obecného pravidla, nikoli o přímý zákaz daný značkou."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vytvoření nebezpečné situace zbržděním plynulosti provozu, což může vést k nehodám za vozidlem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030008",
+      "url": [],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "23030009",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/230307.jpg",
+          "typ_souboru": "obrazek",
+          "analyza": {
+            "id_otazky": "23030009",
+            "shrnuti": "Ilustrace osoby s bolestí hlavy, symbolizující zdravotní indispozici.",
+            "akteri": [
+              {
+                "typ": "osoba",
+                "popis": "Muž držící se za hlavu v gestu bolesti.",
+                "cinnost": "Trpí bolestí.",
+                "pozice": "Není v kontextu vozidla."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "obrazek",
+              "popis": "Ilustrativní obrázek muže, který si oběma rukama drží hlavu a má zavřené oči, což vyjadřuje silnou bolest, nevolnost nebo jiný zdravotní problém, který by mohl ovlivnit jeho schopnosti."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu explicitně zakazuje řídit vozidlo osobě, jejíž schopnost k řízení je snížena v důsledku jejího zdravotního stavu.",
+              "To zahrnuje nejen zjevné nemoci, ale i únavu, nevolnost, silné bolesti atd.",
+              "Řidič je povinen sám zhodnotit svůj stav a pokud není způsobilý k řízení, nesmí řídit.",
+              "Žádná výjimka pro 'dojetí' neexistuje."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Řidič se zdravotní indispozicí může mít zpomalené reakce, může ztratit vědomí nebo jinak selhat při řízení, což může vést k vážné dopravní nehodě."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 15,
+    "pocet_url_nalezeno": 12,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": [],
+    "poznámky": []
+  },
+  "pokracovani": {
+    "dalsi_start_index": 30,
+    "zbyva": 221
+  }
+}

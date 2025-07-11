@@ -1,0 +1,549 @@
+{
+  "výsledky_okruhu": [
+    {
+      "id_otazky": "24070001",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240751.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070001",
+            "shrnuti": "Jízda v městském provozu, kde z řady podélně zaparkovaných vozidel začíná vyjíždět bílý automobil, což vyžaduje zvýšenou pozornost a předvídavost.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí v průběžném jízdním pruhu."
+              },
+              {
+                "typ": "vyjíždějící vozidlo",
+                "popis": "Bílý osobní automobil, který začíná vyjíždět z parkovacího místa u pravého okraje vozovky."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video z pohledu řidiče ukazuje jízdu ulicí s podélně zaparkovanými vozidly po pravé straně. Bílé vozidlo v řadě zaparkovaných aut zapne levý blinkr a začne se pomalu vysouvat do jízdního pruhu. Řidič vozidla z výhledu, ačkoliv jede po hlavní komunikaci a má přednost, musí tuto situaci předvídat a být připraven zpomalit nebo zastavit, protože řidič vyjíždějícího vozidla ho může přehlédnout."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Vozidlo z výhledu jede plynule podél řady zaparkovaných aut."
+              },
+              {
+                "cas": "střed",
+                "popis": "Na bílém zaparkovaném vozidle se rozsvítí levý ukazatel směru."
+              },
+              {
+                "cas": "konec",
+                "popis": "Bílé vozidlo se začíná pohybovat a vyjíždět do jízdního pruhu."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Povinností každého řidiče je chovat se ohleduplně a opatrně a předvídat možná nebezpečí. I když má řidič v průběžném pruhu přednost před vozidlem vyjíždějícím z parkovacího místa, musí sledovat situaci a být připraven reagovat na chybu druhého řidiče."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Střet s vozidlem vyjíždějícím z parkovacího místa, které nedá přednost.",
+              "Náhlé otevření dveří u zaparkovaných vozidel.",
+              "Vyběhnutí chodce zpoza zaparkovaných vozidel."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070002",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240752.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070002",
+            "shrnuti": "Cyklista jede nejprve po chodníku a následně přejíždí přes přechod pro chodce, což je v obou případech porušení pravidel.",
+            "akteri": [
+              {
+                "typ": "cyklista",
+                "popis": "Osoba jedoucí na jízdním kole."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé pruhy (zebra)",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Na vozovce."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Animace ukazuje cyklistu, který jede po chodníku souběžně s vozovkou. Když dojede k přechodu pro chodce, nesesedne z kola, ale plynule na něm přejede na druhou stranu silnice. Obě tyto činnosti jsou pro cyklistu staršího 10 let zakázány (pokud není chodník označen jako stezka pro chodce a cyklisty)."
+            },
+            "casovy_vyvoj": [
+              {
+                "cas": "začátek",
+                "popis": "Cyklista jede po chodníku."
+              },
+              {
+                "cas": "konec",
+                "popis": "Cyklista přejíždí na kole po přechodu pro chodce."
+              }
+            ],
+            "poznatky_relevantni_k_odpovedim": [
+              "Cyklista starší 10 let nesmí k jízdě použít chodník.",
+              "Přechod pro chodce není určen pro jízdu na kole; cyklista je povinen z kola sesednout a vést ho."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Střet cyklisty s chodci na chodníku.",
+              "Střet cyklisty s vozidlem na přechodu, protože řidiči neočekávají rychle se pohybující objekt."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070003",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240753.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070003",
+            "shrnuti": "Řidič oranžového vozidla hrubě porušuje pravidla, když projíždí železniční přejezd, přestože je aktivní výstražná světelná signalizace a je zde značka 'Stůj, dej přednost v jízdě!'.",
+            "akteri": [
+              {
+                "typ": "oranžové vozidlo",
+                "popis": "Osobní automobil, který nerespektuje signalizaci a značení."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Osmiúhelník",
+                    "barva": "Červená s bílým nápisem 'STOP'"
+                  },
+                  "kod_nazev": "P 6, Stůj, dej přednost v jízdě!",
+                  "umisteni": "Na sloupku u přejezdu."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Kříž ve tvaru 'X'",
+                    "barva": "Bílá s červenými konci"
+                  },
+                  "kod_nazev": "A 32a, Výstražný kříž pro železniční přejezd jednokolejný",
+                  "umisteni": "Na sloupku u přejezdu."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Světelné zabezpečovací zařízení pro železniční přejezd (PZS)",
+                  "popis_svetel": [
+                    "Horní červené světlo je ZAPNUTÉ a bliká.",
+                    "Druhé horní červené světlo je ZAPNUTÉ a bliká střídavě s prvním."
+                  ],
+                  "souhrnny_stav": "Signál 'Stůj!' (S 14a, Signál dvou střídavě přerušovaných červených světel)."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Animace ukazuje oranžové vozidlo přijíždějící k železničnímu přejezdu. Na zabezpečovacím zařízení střídavě blikají červená světla, což přikazuje bezpodmínečně zastavit. Navíc je zde umístěna dopravní značka 'Stůj, dej přednost v jízdě!'. Řidič oranžového vozidla oba pokyny ignoruje a vysokou rychlostí projede přejezdem těsně před přijíždějícím vlakem."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič měl povinnost zastavit vozidlo jak na příkaz světelné signalizace, tak na příkaz dopravní značky P 6. Jeho jednání bylo extrémně nebezpečné."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Fatální střet s vlakem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070004",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240754.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070004",
+            "shrnuti": "Řidič v levém jízdním pruhu nezastavuje před přechodem pro chodce, ačkoliv vozidlo v pravém pruhu již stojí, a ohrožuje tak chodce.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil stojící v pravém pruhu před přechodem."
+              },
+              {
+                "typ": "vozidlo v levém pruhu",
+                "popis": "Stříbrné osobní vozidlo, které projíždí bez zastavení."
+              },
+              {
+                "typ": "chodec",
+                "popis": "Osoba stojící na chodníku, která má v úmyslu přejít."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé pruhy (zebra)",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Na vozovce."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video je z pohledu řidiče, který zastavil v pravém jízdním pruhu před přechodem, aby umožnil přecházení chodci. Řidič stříbrného vozidla, jedoucí v souběžném levém pruhu, však svou povinnost zastavit vozidlo nesplní a pokračuje v jízdě přes přechod. Chodec, který správně vyčkává, je tímto jednáním ohrožen."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon stanoví, že snižuje-li rychlost jízdy nebo zastavuje-li vozidlo před přechodem pro chodce řidič vozidla jedoucího v jednom jízdním pruhu, musí snížit rychlost jízdy nebo zastavit vozidlo i řidiči ostatních vozidel jedoucích v souběžných pruzích. Řidič v levém pruhu toto pravidlo hrubě porušil."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Sražení chodce, který by vstoupil do vozovky za stojícím vozidlem v domnění, že je cesta volná."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070005",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240755.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070005",
+            "shrnuti": "Dvě protijedoucí vozidla na křižovatce odbočují vlevo a nesprávně se vyhýbají vpravo (míjejí se pravými boky).",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil odbočující vlevo."
+              },
+              {
+                "typ": "protijedoucí vozidlo",
+                "popis": "Stříbrné osobní vozidlo, které také odbočuje vlevo."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [],
+              "svetelne_signaly": [
+                {
+                  "typ": "Tříbarevná soustava se směrovými signály",
+                  "popis_svetel": [
+                    "Signál S 5c 'Signál se zelenou šipkou' směřující vlevo je ZAPNUTÝ a svítí nepřerušovaně."
+                  ],
+                  "souhrnny_stav": "Signál 'Volno' pro směr odbočení vlevo."
+                }
+              ]
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje křižovatku řízenou světelnými signály. Vozidlo z výhledu i protijedoucí stříbrné vozidlo mají zelenou šipku pro odbočení vlevo. Při samotném manévru se však řidiči vyhýbají nesprávně – míjejí se pravými boky a objíždějí pomyslný střed křižovatky zprava. Správný postup je vyhýbat se vlevo (míjet se levými boky) a projet před středem křižovatky."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Pravidlo pro odbočování vlevo protijedoucích vozidel zní: 'Řidiči protijedoucích vozidel odbočující vlevo se vyhýbají vlevo.' Řidiči v ukázce se vyhýbali vpravo, což je chybné."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Vzájemné omezení výhledu na přecházející chodce nebo jiné účastníky provozu.",
+              "Zbytečné zablokování křižovatky.",
+              "Zvýšené riziko kolize při nečekaném manévru jiného vozidla."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070006",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240756.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070006",
+            "shrnuti": "Černé vozidlo jede po hlavní komunikaci, která na křižovatce tvaru T odbočuje vlevo. Při tomto manévru je povinno dát znamení o změně směru jízdy.",
+            "akteri": [
+              {
+                "typ": "černé vozidlo",
+                "popis": "Osobní automobil jedoucí po hlavní silnici."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Vpravo před křižovatkou."
+                },
+                {
+                  "vizualni_popis": {
+                    "tvar": "Obdélníková tabulka se schematickým znázorněním křižovatky",
+                    "barva": "Bílá s černým symbolem"
+                  },
+                  "kod_nazev": "E 2b, Tvar křižovatky",
+                  "umisteni": "Pod značkou P 1. Ukazuje, že hlavní komunikace zatáčí doleva a zprava ústí vedlejší."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Animace ukazuje křižovatku tvaru 'T', kde hlavní pozemní komunikace, jak je vyznačeno na dodatkové tabulce, pokračuje vlevo. Černé vozidlo, které se pohybuje po této hlavní komunikaci, pokračuje jejím směrem a odbočuje vlevo. Jelikož se jedná o změnu směru jízdy, je řidič povinen dát znamení o změně směru jízdy, i když neopouští hlavní komunikaci."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Povinnost dát znamení o změně směru jízdy se vztahuje na jakékoli odbočování nebo změnu směru, nikoli pouze na opouštění hlavní komunikace. Pokud hlavní silnice zatáčí a řidič jede po ní, mění směr jízdy a musí použít blinkr."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Zmátnutí řidiče na vedlejší komunikaci, který by si mohl myslet, že černé vozidlo pojede rovně (na vedlejší), a mohl by mu tak nesprávně vjet do cesty."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070007",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240757.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070007",
+            "shrnuti": "Bílé osobní vozidlo se otáčí na přechodu pro chodce, což je zákonem zakázaný manévr.",
+            "akteri": [
+              {
+                "typ": "bílé vozidlo",
+                "popis": "Osobní automobil, který se otáčí."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Bílé pruhy (zebra)",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 7, Přechod pro chodce",
+                  "umisteni": "Na vozovce v místě, kde se vozidlo otáčí."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video zachycuje bílý automobil, který na silnici s tramvajovým pásem uprostřed provádí manévr otáčení do protisměru. Tento manévr je však z velké části proveden na ploše vyznačeného přechodu pro chodce."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Zákon o silničním provozu explicitně zakazuje řidiči otáčet se a couvat na přechodu pro chodce."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Ohrožení chodců na přechodu nebo v jeho bezprostřední blízkosti.",
+              "Omezení a ohrožení ostatních vozidel, včetně tramvají."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070008",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240758.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070008",
+            "shrnuti": "Na křižovatce má vozidlo z výhledu jedoucí rovně po hlavní silnici přednost před protijedoucím vozidlem, které odbočuje vlevo.",
+            "akteri": [
+              {
+                "typ": "vozidlo z výhledu",
+                "popis": "Osobní automobil jedoucí rovně."
+              },
+              {
+                "typ": "protijedoucí vozidlo",
+                "popis": "Červené osobní vozidlo odbočující vlevo."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Vpravo před křižovatkou."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Animace ukazuje pohled řidiče, který přijíždí po hlavní silnici ke křižovatce a hodlá jet přímo. Z protisměru přijíždí červené vozidlo, které dává znamení o změně směru jízdy vlevo. V této situaci má vozidlo jedoucí přímo přednost v jízdě před vozidlem odbočujícím vlevo."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Při odbočování vlevo musí dát řidič přednost v jízdě protijedoucím motorovým i nemotorovým vozidlům.",
+              "Vozidlo z výhledu má přednost. Povinnost zastavit na příkaz značky 'Stůj...' se týká jiné situace (např. na vedlejší silnici)."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Nerespektování přednosti v jízdě řidičem červeného vozidla a následný střet."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070009",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240759.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070009",
+            "shrnuti": "Zelené vozidlo se pokouší odbočit vlevo přes podélnou souvislou čáru a zvýšený tramvajový pás, což je zakázáno.",
+            "akteri": [
+              {
+                "typ": "zelené vozidlo",
+                "popis": "Osobní automobil s aktivovaným levým ukazatelem směru."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [],
+              "vodorovne": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Nepřerušovaná čára",
+                    "barva": "Bílá"
+                  },
+                  "kod_nazev": "V 1a, Podélná čára souvislá",
+                  "umisteni": "Odděluje jízdní pruh od tramvajového pásu."
+                }
+              ],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Video ukazuje zelené vozidlo jedoucí v pravém jízdním pruhu víceproudé komunikace. Řidič dává znamení o změně směru jízdy vlevo. Vlevo od jeho pruhu se však nachází zvýšený tramvajový pás, oddělený od vozovky podélnou souvislou čárou. Na takový pás je vjezd zakázán, stejně jako přejíždění souvislé čáry. Odbočení vlevo v tomto místě proto není možné."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič nesmí přejíždět podélnou čáru souvislou.",
+              "Na tramvajový pás zvýšený nad úroveň vozovky je vjezd zakázán.",
+              "Z těchto důvodů řidič zeleného vozidla v tomto místě nesmí odbočit vlevo."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Střet s tramvají.",
+              "Poškození vozidla o obrubník tramvajového pásu.",
+              "Ohrožení vozidel za sebou náhlým a nepředvídatelným manévrem."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    },
+    {
+      "id_otazky": "24070010",
+      "url": [
+        {
+          "adresa": "https://www.autoskola-testy.cz/img/single/240760.mp4",
+          "typ_souboru": "video",
+          "analyza": {
+            "id_otazky": "24070010",
+            "shrnuti": "Na křižovatce řidič osobního vozidla odbočující vlevo nedává přednost v jízdě protijedoucímu motocyklistovi, který jede rovně.",
+            "akteri": [
+              {
+                "typ": "motocyklista",
+                "popis": "Jede rovně po hlavní komunikaci."
+              },
+              {
+                "typ": "protijedoucí vozidlo",
+                "popis": "Stříbrné osobní vozidlo, které odbočuje vlevo z hlavní komunikace."
+              }
+            ],
+            "znaceni_a_zarizeni": {
+              "svisle": [
+                {
+                  "vizualni_popis": {
+                    "tvar": "Čtverec postavený na vrchol",
+                    "barva": "Žlutá s bílým okrajem"
+                  },
+                  "kod_nazev": "P 1, Hlavní pozemní komunikace",
+                  "umisteni": "Před křižovatkou (viditelné z pohledu motocyklisty)."
+                }
+              ],
+              "vodorovne": [],
+              "svetelne_signaly": []
+            },
+            "detailni_popis": {
+              "typ": "video",
+              "popis": "Animace zobrazuje křižovatku tvaru T, kde hlavní silnice vede rovně a zleva se připojuje vedlejší. Motocyklista jede po hlavní silnici v přímém směru. Z protisměru po téže hlavní silnici přijíždí stříbrné osobní auto, které odbočuje vlevo (na vedlejší silnici). Řidič automobilu je povinen dát přednost v jízdě protijedoucímu motocyklistovi, což neučiní a zkříží mu cestu."
+            },
+            "poznatky_relevantni_k_odpovedim": [
+              "Řidič vozidla odbočující vlevo musí dát přednost v jízdě protijedoucím vozidlům. Řidič osobního automobilu toto pravidlo porušil."
+            ],
+            "mozna_rizika_a_konflikty": [
+              "Čelní/boční střet automobilu s motocyklem, který má pro motocyklistu často fatální následky."
+            ]
+          }
+        }
+      ],
+      "validace": {
+        "seznam_id_url": "OK"
+      }
+    }
+  ],
+  "souhrn_okruhu": {
+    "pocet_otazek_v_davce": 10,
+    "pocet_url_nalezeno": 10,
+    "url_chyba_stazeni": [],
+    "nesoulady_seznam_id_url": []
+  },
+  "pokračování": {
+    "další_start_index": 20,
+    "zbývá": 94
+  }
+}
