@@ -10,7 +10,7 @@ import { Checkbox } from "../components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Progress } from "../components/ui/progress";
 import { Textarea } from "../components/ui/textarea";
-import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, Settings, Timer, Book, Library } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Timer, Book, Library, FileText } from "lucide-react";
 import clsx from "clsx";
 import { useAi, ChatMessage } from "./hooks/useAi"; // Přidán import
 
@@ -25,6 +25,19 @@ export type Question = {
   groupId: number;
 };
 
+// Nový typ pro ukládání dat pro podrobnou analýzu
+export type AnalysisEntry = {
+  user: string; // Kdo odpovídal
+  questionId: string;
+  questionText: string;
+  groupId: number;
+  answeredAt: string; // ISO string
+  timeToAnswer: number; // v milisekundách
+  isCorrect: boolean; // Byla finální odpověď správná?
+  isFirstAttemptCorrect: boolean; // Byla první odpověď správná?
+  mode: 'exam' | 'practice';
+};
+
 // Nový typ pro ukládání detailů o odpovědi v režimu procvičování
 export type PracticeAttempt = {
   firstAttemptIndex: number;      // Index odpovědi při prvním pokusu
@@ -32,19 +45,6 @@ export type PracticeAttempt = {
   finalAttemptIndex: number;      // Index odpovědi při finálním (posledním) pokusu
   answered: true;                 // Indikátor, že na otázku bylo odpovězeno
 };
-
-// Typ pro stav responses - může obsahovat buď číslo (pro ostrý test) nebo PracticeAttempt (pro procvičování)
-// Pro jednoduchost zatím ponecháme Record<string, number> a logiku upravíme tak,
-// aby v procvičování responses[q.id] ukládalo PracticeAttempt, ale budeme muset být opatrní s typy.
-// Lepší by bylo mít dva různé stavy nebo sjednocený typ, ale pro začátek zkusíme modifikovat stávající.
-// Alternativně, můžeme responses vždy ukládat jako komplexní objekt, i pro examMode, jen některé fieldy nebudou relevantní.
-
-// Prozatím ponecháme responses: Record<string, number> a budeme ukládat jen první pokus
-// a správnost prvního pokusu si budeme pamatovat jinak, nebo změníme strukturu responses později,
-// pokud se ukáže jako nutné.
-// Pro zjednodušení první iterace:
-// Vytvoříme nový stav pro sledování prvních pokusů v procvičování.
-// responses: Record<string, number> bude nadále ukládat FINÁLNÍ odpověď studenta (pro zobrazení v UI)
 
 const GROUPS = [
   { id: 1, file: "/okruh1.json", name: "Pravidla provozu", quota: 10, points: 2 },
@@ -59,8 +59,6 @@ const GROUPS = [
 const OSTRY_TIME = 30 * 60; // 30 minut v sekundách
 
 /* --------------------------- Statistiky ---------------------------- */
-// Ukládáme do localStorage (klíč `autoskolastats`)
-// Rozlišujeme ostré testy vs. procvičování
 export type Stats = {
   examTaken: number;
   examPassed: number;
@@ -68,7 +66,6 @@ export type Stats = {
   examAvgTime: number; // v sekundách
   practiceAnswered: number;
   practiceCorrect: number;
-  // Statistiky posledního pokusu
   lastExamScore: number | null;
   lastExamTimeSpent: number | null;
   lastExamPassed: boolean | null;
@@ -88,16 +85,56 @@ const DEFAULT_STATS: Stats = {
   lastPracticeAnswered: null,
   lastPracticeCorrect: null,
 };
-function loadStats(): Stats {
+
+const ALLOWED_USERS = ["Tester", "Tanika"];
+
+const getCurrentUser = (): string | null => localStorage.getItem("autoskola-currentUser");
+
+function loadStats(user: string): Stats {
   try {
-    const storedStats = localStorage.getItem("autoskolastats");
+    const storedStats = localStorage.getItem(`autoskolastats-${user}`);
     return storedStats ? JSON.parse(storedStats) : DEFAULT_STATS;
   } catch {
     return DEFAULT_STATS;
   }
 }
-function saveStats(s: Stats) {
-  localStorage.setItem("autoskolastats", JSON.stringify(s));
+function saveStats(user: string, s: Stats) {
+  localStorage.setItem(`autoskolastats-${user}`, JSON.stringify(s));
+}
+
+/* ----------------------- Analytická data ------------------------- */
+async function getAnalysisData(): Promise<AnalysisEntry[]> {
+  try {
+    const res = await fetch("/api/analysis-data");
+    if (!res.ok) {
+      throw new Error(`Server responded with status: ${res.status}`);
+    }
+    return await res.json();
+  } catch (error) {
+    console.error("Could not get analysis data:", error);
+    return [];
+  }
+}
+
+async function appendAnalysisData(entries: AnalysisEntry[]) {
+  if (entries.length === 0) {
+    console.log("[appendAnalysisData] No entries to append. Skipping API call.");
+    return;
+  }
+  try {
+    console.log("[appendAnalysisData] Sending entries to server:", entries);
+    const response = await fetch("/api/save-analysis", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ entries }),
+    });
+    if (!response.ok) {
+      throw new Error(`Server responded with status: ${response.status}`);
+    }
+    console.log("[appendAnalysisData] Successfully sent data.");
+  } catch (error) {
+    console.error("Failed to save analysis data:", error);
+  }
 }
 
 /* ---------------------------- TopNav ------------------------------- */
@@ -107,12 +144,16 @@ function TopNav({
   showStats,
   onResetStats,
   onHome,
+  currentUser,
+  onSetCurrentUser,
 }: {
   label: string;
   timeLeft?: number | null;
   showStats: boolean;
   onResetStats: () => void;
   onHome: () => void;
+  currentUser: string;
+  onSetCurrentUser: (name: string | null) => void;
 }) {
   const mm = timeLeft !== null && timeLeft !== undefined ? Math.floor(timeLeft / 60) : null;
   const ss = timeLeft !== null && timeLeft !== undefined ? timeLeft % 60 : null;
@@ -120,7 +161,10 @@ function TopNav({
   return (
     <header className="w-full bg-white border-b shadow-sm sticky top-0 z-40">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <h1 className="font-semibold text-lg select-none">Autoškola B</h1>
+        <div className="flex items-center gap-2">
+          <Book size={20} className="text-blue-600" />
+          <h1 className="font-semibold text-lg select-none">Autoškola B</h1>
+        </div>
         <div className="flex-1 text-center text-sm font-medium text-gray-600 select-none">
           {label}{" "}
           {timeLeft !== null && timeLeft !== undefined && (
@@ -133,18 +177,19 @@ function TopNav({
             </span>
           )}
         </div>
-        <div className="flex items-center gap-2">
-          {showStats && (
-            <>
-              <Button variant="ghost" size="icon" title="Vymazat statistiky" onClick={onResetStats}>
-                <RefreshCcw size={18} />
+        <div className="flex items-center gap-4">
+          {showStats && currentUser && (
+            <div className="flex items-center gap-2 border-r pr-2">
+              <div className="flex items-center gap-2">
+                <User size={16} className="text-gray-600" />
+                <span className="text-sm font-medium">{currentUser}</span>
+              </div>
+              <Button variant="ghost" size="icon" title="Odhlásit se" onClick={() => onSetCurrentUser(null)}>
+                <LogOut size={18} />
               </Button>
-              <Button variant="ghost" size="icon" title="Nastavení" onClick={() => alert("Nastavení zatím není implementováno.")}>
-                <Settings size={18} />
-              </Button>
-            </>
+            </div>
           )}
-          <Button variant="ghost" onClick={onHome} className="text-sm">
+          <Button variant="ghost" onClick={onHome} className="text-sm font-medium">
             Domů
           </Button>
         </div>
@@ -153,36 +198,112 @@ function TopNav({
   );
 }
 
+/* ----------------------------- Login Screen ------------------------ */
+function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
+  const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = () => {
+    const trimmedName = username.trim();
+    if (ALLOWED_USERS.map(u => u.toLowerCase()).includes(trimmedName.toLowerCase())) {
+      const caseCorrectedName = ALLOWED_USERS.find(u => u.toLowerCase() === trimmedName.toLowerCase())!;
+      onLogin(caseCorrectedName);
+    } else {
+      setError("Neplatné uživatelské jméno.");
+    }
+  };
+
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <Card className="w-full max-w-sm p-6">
+        <CardHeader className="text-center">
+          <h2 className="text-2xl font-bold">Přihlášení</h2>
+          <p className="text-sm text-gray-500 mt-2">Zadejte své uživatelské jméno.</p>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <label htmlFor="username" className="text-sm font-medium">Uživatelské jméno</label>
+            <input
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                if (error) setError("");
+              }}
+              onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Zadejte jméno"
+            />
+            {error && <p className="text-xs text-red-600">{error}</p>}
+          </div>
+          <Button onClick={handleLogin} className="w-full">
+            Přihlásit se
+          </Button>
+          <div className="relative my-4">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-white px-2 text-gray-500">Nebo</span>
+            </div>
+          </div>
+          <Button onClick={() => onLogin("Host")} variant="secondary" className="w-full">
+            Pokračovat jako Host
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
 /* ----------------------------- App -------------------------------- */
 export default function DrivingTestApp() {
-  const [phase, setPhase] = useState<"intro" | "setup" | "test" | "done" | "browse">("intro");
+  const [currentUser, setCurrentUser] = useState<string | null>(getCurrentUser());
+  const [phase, setPhase] = useState<"intro" | "setup" | "test" | "done" | "browse" | "analysis">("intro");
   const [browseState, setBrowseState] = useState<"groups" | "questions">("groups");
   const [originPhase, setOriginPhase] = useState<"intro" | "browse">("intro");
   const [examMode, setExamMode] = useState(true);
   const [selectedGroups, setSelected] = useState<number[]>(GROUPS.map((g) => g.id));
   const [questions, setQuestions] = useState<Question[]>([]);
   const [current, setCurrent] = useState(0);
-  // responses bude nadále ukládat FINÁLNÍ vybraný index odpovědi (pro UI a pro AI kontext)
   const [responses, setResponses] = useState<Record<string, number>>({}); 
-  // Nový stav pro ukládání informací o prvním pokusu v režimu procvičování
-  // Klíč je q.id, hodnota je objekt { firstAttemptIndex: number, isFirstAttemptCorrect: boolean }
   const [practiceFirstAttempts, setPracticeFirstAttempts] = useState<Record<string, { firstAttemptIndex: number; isFirstAttemptCorrect: boolean }>>({});
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
-  const [stats, setStats] = useState<Stats>(loadStats()); // Manage stats in state
+  const [stats, setStats] = useState<Stats>(DEFAULT_STATS);
   const [isLoading, setIsLoading] = useState(false);
-
-  // Použijeme useAi hook pro správu chatu
-  const { ask, loading: aiLoading, answer: aiAnswer, messages, setMessages } = useAi(); // přejmenováno loading a answer, aby se nepletlo
+  const [questionStartTime, setQuestionStartTime] = useState<number>(0);
+  const [sessionAnalysis, setSessionAnalysis] = useState<Record<string, { timeToAnswer: number; firstAttemptCorrect: boolean }>>({});
+  const [analysisData, setAnalysisData] = useState<AnalysisEntry[]>([]);
+  const { ask, loading: aiLoading, answer: aiAnswer, messages, setMessages } = useAi();
   const [draft, setDraft] = useState("");
   const msgEndRef = useRef<HTMLDivElement | null>(null);
 
-  /* --------------------- načítání otázek -------------------------- */
+  const handleLogin = (name: string) => {
+    localStorage.setItem("autoskola-currentUser", name);
+    setCurrentUser(name);
+    setStats(loadStats(name));
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("autoskola-currentUser");
+    setCurrentUser(null);
+    setStats(DEFAULT_STATS);
+  };
+
+  useEffect(() => {
+    if (currentUser) {
+      setStats(loadStats(currentUser));
+    }
+  }, [currentUser]);
+
   async function fetchGroup(gid: number): Promise<Question[]> {
     const g = GROUPS.find((gr) => gr.id === gid)!;
     const res = await fetch(g.file);
     const data = res.ok ? await res.json() : [];
     return (data as Omit<Question, 'points' | 'groupId'>[]).map((q) => ({ ...q, points: g.points, groupId: gid, id: String(q.id) }));
   }
+
   async function buildExam(): Promise<Question[]> {
     const arr: Question[] = [];
     for (const g of GROUPS) {
@@ -194,12 +315,11 @@ export default function DrivingTestApp() {
     }
     return arr.sort(() => Math.random() - 0.5);
   }
-  async function buildPractice(): Promise<Question[]> {
-    // 1. Načteme všechny otázky z vybraných okruhů
+
+  async function buildPractice(groupsToBuild: number[]): Promise<Question[]> {
     const pools = await Promise.all(
-      selectedGroups.map(async (gid) => {
+      groupsToBuild.map(async (gid) => {
         const questions = await fetchGroup(gid);
-        // Náhodně zamícháme otázky v rámci každého okruhu
         for (let i = questions.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [questions[i], questions[j]] = [questions[j], questions[i]];
@@ -208,7 +328,6 @@ export default function DrivingTestApp() {
           gid,
           questions,
           quota: GROUPS.find(g => g.id === gid)!.quota,
-          // Ukazatel, kolik otázek z tohoto okruhu jsme již přidali
           currentIndex: 0, 
         };
       })
@@ -216,8 +335,6 @@ export default function DrivingTestApp() {
 
     const result: Question[] = [];
     const totalQuestions = pools.reduce((sum, p) => sum + p.questions.length, 0);
-    
-    // 2. Vytvoříme vážený seznam ID okruhů podle jejich kvót
     const weightedGroupIds: number[] = [];
     for (const pool of pools) {
       for (let i = 0; i < pool.quota; i++) {
@@ -225,17 +342,13 @@ export default function DrivingTestApp() {
       }
     }
 
-    // 3. Iterujeme, dokud nepřidáme všechny otázky
     while (result.length < totalQuestions) {
-      // Náhodně zamícháme vážený seznam pro každé "kolo" výběru,
-      // aby bylo pořadí různorodé
       for (let i = weightedGroupIds.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [weightedGroupIds[i], weightedGroupIds[j]] = [weightedGroupIds[j], weightedGroupIds[i]];
       }
 
       let addedInThisRound = false;
-      // Projdeme zamíchaný vážený seznam a zkusíme přidat otázku
       for (const gid of weightedGroupIds) {
         const pool = pools.find(p => p.gid === gid);
         if (pool && pool.currentIndex < pool.questions.length) {
@@ -245,8 +358,6 @@ export default function DrivingTestApp() {
         }
       }
 
-      // Pokud v celém kole nepřidáme žádnou otázku (všechny z váženého seznamu jsou vyčerpané),
-      // ale stále zbývají otázky v některých okruzích, přidáme je, abychom nic nevynechali.
       if (!addedInThisRound) {
         for (const pool of pools) {
           while (pool.currentIndex < pool.questions.length) {
@@ -256,26 +367,29 @@ export default function DrivingTestApp() {
         }
       }
     }
-
     return result;
   }
 
-  const startTest = async () => {
+  const initiateTest = async (isExam: boolean, groups: number[]) => {
     setIsLoading(true);
-    setOriginPhase("intro"); // This is a regular test start
-    const qs = examMode ? await buildExam() : await buildPractice();
+    setOriginPhase("intro");
+    const qs = isExam ? await buildExam() : await buildPractice(groups);
     setQuestions(qs);
     setCurrent(0);
     setResponses({});
-    if (!examMode) { // Resetovat i první pokusy pro nový režim procvičování
+    if (!isExam) {
       setPracticeFirstAttempts({});
     }
+    setSessionAnalysis({});
     setPhase("test");
-    setTimeLeft(examMode ? OSTRY_TIME : null);
+    setTimeLeft(isExam ? OSTRY_TIME : null);
     setIsLoading(false);
   };
 
-  /* ------------------------- Časomíra --------------------------- */
+  const startTest = async () => {
+    await initiateTest(examMode, selectedGroups);
+  };
+
   useEffect(() => {
     if (phase !== 'test' || timeLeft === null) return;
     if (timeLeft <= 0) {
@@ -286,24 +400,13 @@ export default function DrivingTestApp() {
     return () => clearInterval(id);
   }, [timeLeft, phase]);
 
-  /* ---------------------- ukončení testu ------------------------- */
-
-  // Funkce pro výpočet a uložení statistik z procvičování
   function calculateAndSavePracticeStats() {
-    const currentStats = loadStats(); // Načteme aktuální celkové statistiky
+    if (!currentUser) return;
+    const currentStats = loadStats(currentUser);
     const answeredQuestionIds = Object.keys(practiceFirstAttempts);
     const answeredCountInSession = answeredQuestionIds.length;
     
-    if (answeredCountInSession === 0) {
-      // Pokud v tomto kole nebyly zodpovězeny žádné otázky, aktualizujeme pouze lastPractice statistiky na null (nebo je necháme)
-      // a neinkrementujeme celkové. Pro konzistenci je lepší je nastavit na null, pokud se nic nedělo.
-      // Avšak pokud chceme zobrazit "Poslední procvičování: 0/0", tak je třeba je nastavit.
-      // Prozatím, pokud nebylo nic zodpovězeno, nebudeme aktualizovat 'lastPractice' statistiky,
-      // aby tam zůstaly hodnoty z opravdu posledního hraného kola.
-      // Pokud by se mělo zobrazit "0/0", museli bychom to řešit jinak.
-      // Hlavní je, že neinkrementujeme celkové statistiky.
-      return; 
-    }
+    if (answeredCountInSession === 0) return; 
 
     let correctCountInSession = 0;
     answeredQuestionIds.forEach(questionId => {
@@ -314,26 +417,65 @@ export default function DrivingTestApp() {
 
     const newStats: Stats = {
       ...currentStats,
-      // Agregované statistiky
       practiceAnswered: currentStats.practiceAnswered + answeredCountInSession,
       practiceCorrect: currentStats.practiceCorrect + correctCountInSession,
-      // Statistiky posledního kola procvičování
       lastPracticeAnswered: answeredCountInSession,
       lastPracticeCorrect: correctCountInSession,
-      // Resetujeme statistiky posledního ostrého testu, protože teď bylo procvičování
-      lastExamScore: currentStats.lastExamScore, // Zachováme, pokud chceme odděleně
+      lastExamScore: currentStats.lastExamScore,
       lastExamTimeSpent: currentStats.lastExamTimeSpent,
       lastExamPassed: currentStats.lastExamPassed,
     };
-    saveStats(newStats);
+    saveStats(currentUser, newStats);
     setStats(newStats); 
   }
 
+  function commitSessionAnalysis() {
+    console.log("[commitSessionAnalysis] Starting.");
+    const entries: AnalysisEntry[] = [];
+    const answeredQuestionIds = Object.keys(responses);
+    console.log(`[/commit] Responded IDs (${answeredQuestionIds.length}):`, answeredQuestionIds);
+    console.log(`[/commit] Session Analysis State (${Object.keys(sessionAnalysis).length} keys):`, sessionAnalysis);
+
+    for (const qId of answeredQuestionIds) {
+      const question = questions.find(q => q.id === qId);
+      const sessionData = sessionAnalysis[qId];
+      const finalAnswerIndex = responses[qId];
+
+      if (!question) {
+        console.warn(`[/commit] SKIPPING: Question not found for id: ${qId}`);
+        continue;
+      }
+      if (!sessionData) {
+        console.warn(`[/commit] SKIPPING: Session analysis data not found for id: ${qId}`);
+        continue;
+      }
+
+      console.log(`[/commit] PROCESSING: id: ${qId}`);
+      entries.push({
+        user: currentUser || "unknown",
+        questionId: qId,
+        questionText: question.otazka,
+        groupId: question.groupId,
+        answeredAt: new Date().toISOString(),
+        timeToAnswer: sessionData.timeToAnswer,
+        isFirstAttemptCorrect: sessionData.firstAttemptCorrect,
+        isCorrect: finalAnswerIndex === question.spravna,
+        mode: examMode ? 'exam' : 'practice',
+      });
+    }
+    console.log("[commitSessionAnalysis] Compiled entries:", entries);
+    appendAnalysisData(entries);
+  }
+
   function finishExam() {
-    setPhase("done"); // Vždy přejdeme na obrazovku výsledků
+    // Okamžitě se pokusíme odeslat data z dokončené session
+    commitSessionAnalysis();
+
+    setPhase("done");
     
     if (examMode) {
-      const currentStats = loadStats();
+      if (!currentUser) return;
+      const currentStats = loadStats(currentUser);
       const score = questions.reduce((acc, qq) => (responses[qq.id] === qq.spravna ? acc + qq.points : acc), 0);
       const passed = score >= 43;
       const newTaken = currentStats.examTaken + 1;
@@ -342,44 +484,47 @@ export default function DrivingTestApp() {
       const newAvgTime = Math.round((currentStats.examAvgTime * currentStats.examTaken + spent) / newTaken);
       const newStats: Stats = {
         ...currentStats,
-        // Agregované statistiky
         examTaken: newTaken,
         examPassed: currentStats.examPassed + (passed ? 1 : 0),
         examAvgScore: newAvgScore,
         examAvgTime: newAvgTime,
-        // Statistiky tohoto posledního ostrého testu
         lastExamScore: score,
         lastExamTimeSpent: spent,
         lastExamPassed: passed,
-        // Resetujeme statistiky posledního procvičování, protože teď byl ostrý test
-        lastPracticeAnswered: currentStats.lastPracticeAnswered, // Zachováme, pokud chceme odděleně
+        lastPracticeAnswered: currentStats.lastPracticeAnswered,
         lastPracticeCorrect: currentStats.lastPracticeCorrect,
       };
-      saveStats(newStats);
+      saveStats(currentUser, newStats);
       setStats(newStats);
     } else {
-      // Pro režim procvičování zavoláme novou funkci pro uložení statistik
       calculateAndSavePracticeStats();
-      // Po dokončení procvičování (přes finishExam) se také zobrazí výsledky,
-      // takže `practiceFirstAttempts` by se mělo vyčistit pro další kolo,
-      // což se děje v `startTest`.
     }
   }
 
-  function handleResetStats() {
-    saveStats(DEFAULT_STATS);
-    setStats(DEFAULT_STATS); // Update state
-    alert("Statistiky vymazány");
+  async function handleResetStats() {
+    if (currentUser && confirm(`Opravdu chcete vymazat všechny statistiky pro uživatele "${currentUser}"? Tato akce je nevratná.`)) {
+      saveStats(currentUser, DEFAULT_STATS);
+      setStats(DEFAULT_STATS);
+      try {
+        const response = await fetch("/api/reset-analysis", { method: "POST" });
+        if (!response.ok) {
+          throw new Error(`Server responded with status: ${response.status}`);
+        }
+        setAnalysisData([]);
+        alert("Statistiky a analytická data byla vymazána.");
+      } catch (error) {
+        console.error("Failed to reset analysis data:", error);
+        alert("Nepodařilo se smazat analytická data na serveru. Zkuste to prosím znovu.");
+      }
+    }
   }
 
-  /* ----------------------------- Chat ---------------------------- */
   const sendMsg = async () => {
     if (!draft.trim()) return;
     const currentQ = questions[current];
     const userMessage = draft.trim();
-    setDraft(""); // Vyčistíme draft hned
+    setDraft("");
 
-    // Detekce, zda student explicitně žádá o odpověď
     const lowerUserMessage = userMessage.toLowerCase();
     const explicitlyAskedForAnswer = 
       lowerUserMessage.includes("řekni mi správnou odpověď") ||
@@ -389,12 +534,10 @@ export default function DrivingTestApp() {
       lowerUserMessage.includes("prozraď správnou odpověď") ||
       lowerUserMessage.includes("chci vědět odpověď");
 
-    const studentSelectedIndex = responses[currentQ.id]; // Může být undefined, pokud nic není vybráno
-
-    // Voláme funkci 'ask' z hooku useAi s novým formátem kontextu
+    const studentSelectedIndex = responses[currentQ.id];
     await ask(userMessage, {
-      question: { ...currentQ, id_otazky: currentQ.id }, // Přidáme pole id_otazky pro kompatibilitu se serverem
-      studentSelected: typeof studentSelectedIndex === 'number' ? studentSelectedIndex : null, // index nebo null
+      question: { ...currentQ, id_otazky: currentQ.id },
+      studentSelected: typeof studentSelectedIndex === 'number' ? studentSelectedIndex : null,
       explicitlyAsked: explicitlyAskedForAnswer 
     });
   };
@@ -406,10 +549,19 @@ export default function DrivingTestApp() {
   const q = questions[current];
 
   useEffect(() => {
-    // Tento hook se stará o inicializaci/resetování zpráv chatu podle aktuální otázky a fáze testu.
+    if (q) {
+      setQuestionStartTime(Date.now());
+    }
+  }, [q]);
+
+  useEffect(() => {
+    if (phase === 'analysis') {
+        getAnalysisData().then(setAnalysisData);
+    }
+  }, [phase]);
+
+  useEffect(() => {
     if (phase === "test") {
-        // Při každé změně otázky resetujeme chat na úvodní zprávu.
-        // Text samotné otázky se již do chatu nevkládá, posílá se v kontextu.
         setMessages([{ role: "assistant", text: `Jsem připraven zodpovědět tvé dotazy k otázce: "${q?.otazka}"` }]);
         setDraft("");
     } else if (phase === "intro" || phase === "setup") {
@@ -417,10 +569,21 @@ export default function DrivingTestApp() {
     }
   }, [q, phase, setMessages]);
 
+  if (!currentUser) {
+    return <LoginScreen onLogin={handleLogin} />;
+  }
+
   if (phase === "intro") {
     return (
       <>
-        <TopNav label="Vítejte!" showStats={true} onResetStats={handleResetStats} onHome={() => setPhase("intro")} />
+        <TopNav 
+          label={`Vítejte, ${currentUser}!`}
+          showStats={true} 
+          onResetStats={handleResetStats} 
+          onHome={() => setPhase("intro")}
+          currentUser={currentUser}
+          onSetCurrentUser={handleLogout}
+        />
         <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 space-y-6">
           <div className="text-center py-12 md:py-16">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl" style={{ lineHeight: '1.3' }}>
@@ -452,6 +615,15 @@ export default function DrivingTestApp() {
                       <span className="font-semibold">Prohlížení otázek</span>
                   </div>
                   <span className="font-normal text-sm text-gray-500 mt-1">Zobrazit všechny otázky podle okruhů</span>
+              </Button>
+            </div>
+            <div className="md:col-span-2">
+              <Button size="lg" variant="secondary" className="w-full h-auto py-6 text-base flex-col" onClick={() => { setPhase("analysis"); }}>
+                  <div className="flex items-center">
+                      <FileText className="mr-2 h-5 w-5" />
+                      <span className="font-semibold">Podrobná analýza</span>
+                  </div>
+                  <span className="font-normal text-sm text-gray-500 mt-1">Zjistěte, kde děláte nejvíce chyb</span>
               </Button>
             </div>
           </div>
@@ -532,6 +704,136 @@ export default function DrivingTestApp() {
     );
   }
 
+  if (phase === "analysis") {
+    const userAnalysisData = analysisData.filter(entry => entry.user === currentUser);
+
+    const analysisByGroup = GROUPS.map(group => {
+      const groupEntries = userAnalysisData.filter(entry => entry.groupId === group.id);
+      const total = groupEntries.length;
+      if (total === 0) {
+        return { ...group, total: 0, successRate: 0, avgTime: 0 };
+      }
+      const correct = groupEntries.filter(e => e.isFirstAttemptCorrect).length;
+      const totalTime = groupEntries.reduce((sum, e) => sum + e.timeToAnswer, 0);
+      return {
+        ...group,
+        total,
+        successRate: (correct / total) * 100,
+        avgTime: totalTime / total / 1000, // v sekundách
+      };
+    });
+
+    const incorrectAnswers = userAnalysisData.filter(e => !e.isFirstAttemptCorrect);
+    const mistakesByQuestion = incorrectAnswers.reduce((acc, entry) => {
+      acc[entry.questionId] = (acc[entry.questionId] || { count: 0, text: entry.questionText });
+      acc[entry.questionId].count++;
+      return acc;
+    }, {} as Record<string, { count: number, text: string }>);
+
+    const sortedMistakes = Object.entries(mistakesByQuestion)
+      .map(([questionId, data]) => ({ questionId, ...data }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10); // Zobrazíme top 10
+
+    return (
+      <>
+        <TopNav 
+          label="Podrobná analýza" 
+          showStats={false} 
+          onResetStats={handleResetStats} 
+          onHome={() => setPhase("intro")}
+          currentUser={currentUser}
+          onSetCurrentUser={handleLogout}
+        />
+        <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Podrobná analýza úspěšnosti</h2>
+          {userAnalysisData.length === 0 ? (
+            <Card className="max-w-3xl mx-auto text-center p-8">
+              <CardHeader><h3 className="font-semibold text-lg">Zatím zde nic není</h3></CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Absolvujte test nebo procvičování, abychom mohli začít sbírat data pro analýzu vašeho pokroku.</p>
+                <Button className="mt-6" onClick={() => setPhase("intro")}>Zpět na hlavní stránku</Button>
+              </CardContent>
+            </Card>
+          ) : (
+            <Card className="max-w-4xl mx-auto">
+              <CardHeader>
+                <h3 className="font-semibold text-lg">Přehled podle okruhů</h3>
+                <p className="text-sm text-gray-500">Údaje jsou založeny na správnosti vaší první odpovědi.</p>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-left">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="p-3 font-medium">Okruh</th>
+                        <th className="p-3 font-medium text-center">Úspěšnost</th>
+                        <th className="p-3 font-medium text-center">Průměrný čas</th>
+                        <th className="p-3 font-medium text-center">Počet odpovědí</th>
+                        <th className="p-3 font-medium text-center">Akce</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {analysisByGroup.map(group => (
+                        <tr key={group.id} className="border-b">
+                          <td className="p-3 font-medium">{group.name}</td>
+                          <td className="p-3 text-center">
+                            {group.total > 0 ? (
+                              <div className="flex items-center justify-center gap-2">
+                                <Progress value={group.successRate} className="h-2 w-24" />
+                                <span>{group.successRate.toFixed(1)}%</span>
+                              </div>
+                            ) : (
+                              <span className="text-gray-400">-</span>
+                            )}
+                          </td>
+                          <td className="p-3 text-center">{group.total > 0 ? `${group.avgTime.toFixed(1)}s` : "-"}</td>
+                          <td className="p-3 text-center">{group.total}</td>
+                          <td className="p-3 text-center">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="text-xs text-gray-400 hover:text-gray-700 transition-colors"
+                              onClick={async () => {
+                                await initiateTest(false, [group.id]);
+                              }}
+                              disabled={isLoading}
+                            >
+                              Procvičit
+                            </Button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {sortedMistakes.length > 0 && (
+            <Card className="max-w-4xl mx-auto mt-8">
+              <CardHeader>
+                <h3 className="font-semibold text-lg">Nejčastější chyby</h3>
+                <p className="text-sm text-gray-500">Otázky, ve kterých nejčastěji chybujete na první pokus.</p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {sortedMistakes.map(({ questionId, text, count }) => (
+                    <div key={questionId} className="p-3 border rounded-md bg-red-50/50">
+                      <p className="font-semibold text-red-800">{count}x nesprávně</p>
+                      <p className="text-sm text-gray-700 mt-1">{text}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+        </div>
+      </>
+    );
+  }
+
   if (phase === "browse") {
     const groupName = browseState === 'questions' && questions.length > 0
         ? GROUPS.find(g => g.id === questions[0].groupId)?.name
@@ -543,14 +845,9 @@ export default function DrivingTestApp() {
                 label={browseState === 'groups' ? "Prohlížení: Výběr okruhu" : `Prohlížení: ${groupName}`}
                 showStats={false} 
                 onResetStats={handleResetStats} 
-                onHome={() => {
-                    if (browseState === 'questions') {
-                        setBrowseState('groups');
-                        setQuestions([]); // Clear questions
-                    } else {
-                        setPhase("intro");
-                    }
-                }} 
+                onHome={() => setPhase("intro")}
+                currentUser={currentUser}
+                onSetCurrentUser={handleLogout}
             />
             <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
                 {isLoading ? (
@@ -585,6 +882,14 @@ export default function DrivingTestApp() {
                     </>
                 ) : ( // browseState === 'questions'
                     <>
+                        <div className="max-w-3xl mx-auto mb-4">
+                            <Button variant="outline" onClick={() => {
+                                setBrowseState('groups');
+                                setQuestions([]); // Clear questions
+                            }}>
+                                &larr; Zpět na výběr okruhů
+                            </Button>
+                        </div>
                         <h2 className="text-2xl font-semibold mb-6 text-center">Vyberte otázku</h2>
                         <div className="space-y-2 max-w-3xl mx-auto">
                             {questions.map((q, index) => (
@@ -615,7 +920,14 @@ export default function DrivingTestApp() {
   if (phase === "setup") {
     return (
       <>
-        <TopNav label={examMode ? "Příprava na ostrý test" : "Nastavení procvičování"} showStats={false} onResetStats={handleResetStats} onHome={() => setPhase("intro")} />
+        <TopNav 
+          label={examMode ? "Příprava na ostrý test" : "Nastavení procvičování"} 
+          showStats={false} 
+          onResetStats={handleResetStats} 
+          onHome={() => setPhase("intro")}
+          currentUser={currentUser}
+          onSetCurrentUser={handleLogout}
+        />
         <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
           <h2 className="text-2xl font-semibold mb-6 text-center">{examMode ? "Ostrý test" : "Procvičování"}</h2>
           {!examMode && (
@@ -665,6 +977,8 @@ export default function DrivingTestApp() {
           timeLeft={timeLeft}
           showStats={false}
           onResetStats={handleResetStats}
+          currentUser={currentUser}
+          onSetCurrentUser={handleLogout}
           onHome={() => {
             if (originPhase === 'browse') {
               setPhase('browse');
@@ -677,6 +991,18 @@ export default function DrivingTestApp() {
           }}
         />
         <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+          {originPhase === 'browse' && (
+            <div className="mb-4">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setPhase('browse');
+                  setBrowseState('questions');
+                }}>
+                &larr; Zpět
+              </Button>
+            </div>
+          )}
           <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
             <main className="space-y-6">
               {examMode && (
@@ -739,19 +1065,30 @@ export default function DrivingTestApp() {
                   )}
                   <RadioGroup
                     key={q.id}
-                    value={responses[q.id]?.toString()}
+                    value={responses[q.id]?.toString() ?? ''}
                     onValueChange={(valStr) => {
                       const val = parseInt(valStr);
-                      setResponses(prev => ({ ...prev, [q.id]: val }));
+                      const isCorrect = val === q.spravna;
+
+                      // Zaznamenat první pokus pro statistiky procvičování
                       if (!examMode && !practiceFirstAttempts[q.id]) {
                         setPracticeFirstAttempts(prev => ({
                           ...prev,
-                          [q.id]: {
-                            firstAttemptIndex: val,
-                            isFirstAttemptCorrect: val === q.spravna,
-                          }
+                          [q.id]: { firstAttemptIndex: val, isFirstAttemptCorrect: isCorrect }
                         }));
                       }
+                      
+                      // Zaznamenat data pro podrobnou analýzu (pouze při prvním pokusu v sezení)
+                      if (!sessionAnalysis[q.id]) {
+                        const timeToAnswer = Date.now() - questionStartTime;
+                        setSessionAnalysis(prev => ({
+                          ...prev,
+                          [q.id]: { timeToAnswer, firstAttemptCorrect: isCorrect }
+                        }));
+                      }
+
+                      // Vždy aktualizovat finální odpověď
+                      setResponses(prev => ({ ...prev, [q.id]: val }));
                     }}
                     className="mt-4 flex flex-col gap-4"
                   >
@@ -804,7 +1141,8 @@ export default function DrivingTestApp() {
                 </CardContent>
               </Card>
               <div className="mt-6 flex justify-between items-center">
-                <div className="flex items-center gap-2">
+                <div className="flex-1"></div> {/* Prázdný div pro zarovnání doleva */}
+                <div className="flex items-center gap-2 justify-center">
                   <Button variant="outline" onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}>
                     Předchozí
                   </Button>
@@ -825,25 +1163,19 @@ export default function DrivingTestApp() {
                     </Button>
                   )}
                 </div>
-                <div>
-                  {!examMode && (
-                    <Button
+                <div className="flex-1 flex justify-end">
+                  {!examMode && originPhase !== 'browse' && (
+                     <Button
                       variant="outline"
-                      className={originPhase === 'browse' ? '' : "border-red-500 text-red-500 hover:bg-red-50 hover:text-red-600"}
                       onClick={() => {
-                        if (originPhase === 'intro') {
-                          calculateAndSavePracticeStats();
-                          setPhase("intro");
-                        } else { // originPhase === 'browse'
-                          setPhase('browse');
-                          setBrowseState('questions');
-                        }
+                        commitSessionAnalysis(); // Uložíme data i při předčasném ukončení
+                        calculateAndSavePracticeStats();
+                        setPhase("intro");
                       }}>
-                      {originPhase === 'browse' ? 'Zpět na seznam' : 'Ukončit'}
+                      Ukončit
                     </Button>
                   )}
                 </div>
-                <span className="text-sm text-gray-600 font-mono">{current + 1} / {questions.length}</span>
               </div>
             </main>
 
@@ -910,7 +1242,14 @@ export default function DrivingTestApp() {
     return (
       <>
         {passed && <Confetti recycle={false} />}
-        <TopNav label="Výsledky testu" showStats={true} onResetStats={handleResetStats} onHome={() => setPhase("intro")} />
+        <TopNav 
+          label="Výsledky testu" 
+          showStats={true} 
+          onResetStats={handleResetStats} 
+          onHome={() => setPhase("intro")}
+          currentUser={currentUser}
+          onSetCurrentUser={handleLogout}
+        />
         <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             {examMode ? (passed ? "Gratulujeme, uspěli jste!" : "Bohužel, neuspěli jste.") : "Procvičování dokončeno"}

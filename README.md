@@ -56,11 +56,13 @@ Backendový server vyžaduje API klíč pro Google Gemini.
 
 ### 2. Spuštění
 
-Otevřete terminál v kořenovém adresáři projektu a spusťte jediný příkaz:
-```bash
-npm run dev
+Projekt je nastaven tak, aby se oba servery (frontend i backend) spustily najednou jediným příkazem. Použijte k tomu připravený PowerShell skript `run_npm.ps1`.
+
+Otevřete terminál a spusťte:
+```powershell
+powershell -ExecutionPolicy Bypass -File run_npm.ps1 run dev
 ```
-Tento příkaz automaticky spustí jak backendový server (na portu 3001), tak frontendovou aplikaci (na portu 5173) najednou. Aplikace bude dostupná na `http://localhost:5173`.
+Tento příkaz spustí oba servery souběžně. Aplikace bude dostupná na adrese `http://localhost:5173`.
 
 ### 3. Produkční sestavení
     ```bash

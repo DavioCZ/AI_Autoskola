@@ -39,3 +39,6 @@ lerna-debug.log*
 
 # Output files from run_vision.js
 *.out.json
+
+# User-generated data
+/data/

@@ -5,7 +5,7 @@
 
 ### 0. Refactor & příprava
 - [ ] 0.1 Oddělit **business logiku** do `/src/services` (testBuilder, statsStore, recommender).
-- [ ] 0.2 Založit **typy** v `/src/types.ts` (Question, Attempt, Session, StatsExtended).
+- [x] 0.2 Založit **typy** v `/src/dataModels.ts` (Student, TestSession, Question, StudentAnswer). ✔️
 
 ### 1. UI/UX revamp
 1.1 Globální téma  
@@ -65,7 +65,15 @@
 - [ ] 5.2 Fáze 2: Veřejné nasazení
   - [ ] 5.2.1 Výběr hostingové platformy (Vercel, Netlify, GitHub Pages)
   - [ ] 5.2.2 Nastavení CI/CD pipeline pro automatický deployment
-  - [ ] 5.2.3 Zřízení domény a konfigurace DNS záznamů
+- [ ] 5.2.3 Zřízení domény a konfigurace DNS záznamů
+
+### 6. Správa uživatelů (přihlašovací obrazovka)
+> **Poznámka:** Implementována přihlašovací obrazovka s whitelistem uživatelů ("Tester", "Tanika") a možností pokračovat jako "Host".
+
+- [x] 6.1 Vytvořit přihlašovací obrazovku jako výchozí fázi aplikace. ✔️
+- [x] 6.2 Implementovat logiku pro ověření jména proti whitelistu. ✔️
+- [x] 6.3 Ukládat přihlášeného uživatele do `localStorage` pro perzistenci. ✔️
+- [x] 6.4 Odstranit pole pro zadání jména z `TopNav` a nahradit ho zobrazením profilu a tlačítkem pro odhlášení. ✔️
 
 ---
 

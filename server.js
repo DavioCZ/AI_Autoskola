@@ -173,6 +173,76 @@ app.post("/api/image-context", (req, res) => {
   });
 });
 
+const ANALYSIS_FILE_PATH = "data/analysis-data.json";
+
+app.post("/api/save-analysis", async (req, res) => {
+  console.log("[/api/save-analysis] Received request.");
+  const { entries } = req.body;
+  console.log("[/api/save-analysis] Entries received:", JSON.stringify(entries, null, 2));
+
+  if (!entries || !Array.isArray(entries) || entries.length === 0) {
+    return res.status(400).json({ error: "No analysis entries provided." });
+  }
+
+  try {
+    let existingData = [];
+    try {
+      const fileContent = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
+      existingData = JSON.parse(fileContent);
+    } catch (error) {
+      if (error.code !== 'ENOENT') { // ENOENT means file doesn't exist, which is fine
+        throw error;
+      }
+    }
+
+    const newData = [...existingData, ...entries];
+    await fs.writeFile(ANALYSIS_FILE_PATH, JSON.stringify(newData, null, 2), "utf8");
+    
+    console.log(`[/api/save-analysis] Successfully wrote ${entries.length} new entries.`);
+
+    // --- DIAGNOSTIC READ ---
+    try {
+      const fileContentAfterWrite = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
+      console.log("[DIAGNOSTIC] File content after write:", fileContentAfterWrite);
+    } catch (diagError) {
+      console.error("[DIAGNOSTIC] Error reading file after write:", diagError);
+    }
+    // --- END DIAGNOSTIC ---
+
+    res.status(200).json({ message: "Analysis data saved successfully." });
+  } catch (e) {
+    console.error("Error in /api/save-analysis:", e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get("/api/analysis-data", async (req, res) => {
+  try {
+    const fileContent = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
+    res.json(JSON.parse(fileContent));
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return res.json([]);
+    }
+    console.error("Error reading analysis data:", error);
+    res.status(500).json({ error: "Failed to read analysis data" });
+  }
+});
+
+app.post("/api/reset-analysis", async (req, res) => {
+  try {
+    await fs.unlink(ANALYSIS_FILE_PATH);
+    res.status(200).json({ message: "Analysis data reset successfully." });
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      // Soubor neexistuje, což je v pořádku
+      return res.status(200).json({ message: "Analysis data was already empty." });
+    }
+    console.error("Error in /api/reset-analysis:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 // Vision API and downloadAndEncode helper are removed.
 
