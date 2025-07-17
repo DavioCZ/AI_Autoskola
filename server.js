@@ -176,9 +176,9 @@ app.post("/api/image-context", (req, res) => {
 const ANALYSIS_FILE_PATH = "data/analysis-data.json";
 
 app.post("/api/save-analysis", async (req, res) => {
-  console.log("[/api/save-analysis] Received request.");
+  // console.log("[/api/save-analysis] Received request.");
   const { entries } = req.body;
-  console.log("[/api/save-analysis] Entries received:", JSON.stringify(entries, null, 2));
+  // console.log("[/api/save-analysis] Entries received:", JSON.stringify(entries, null, 2));
 
   if (!entries || !Array.isArray(entries) || entries.length === 0) {
     return res.status(400).json({ error: "No analysis entries provided." });
@@ -198,16 +198,16 @@ app.post("/api/save-analysis", async (req, res) => {
     const newData = [...existingData, ...entries];
     await fs.writeFile(ANALYSIS_FILE_PATH, JSON.stringify(newData, null, 2), "utf8");
     
-    console.log(`[/api/save-analysis] Successfully wrote ${entries.length} new entries.`);
+    // console.log(`[/api/save-analysis] Successfully wrote ${entries.length} new entries.`);
 
-    // --- DIAGNOSTIC READ ---
-    try {
-      const fileContentAfterWrite = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
-      console.log("[DIAGNOSTIC] File content after write:", fileContentAfterWrite);
-    } catch (diagError) {
-      console.error("[DIAGNOSTIC] Error reading file after write:", diagError);
-    }
-    // --- END DIAGNOSTIC ---
+    // // --- DIAGNOSTIC READ ---
+    // try {
+    //   const fileContentAfterWrite = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
+    //   console.log("[DIAGNOSTIC] File content after write:", fileContentAfterWrite);
+    // } catch (diagError) {
+    //   console.error("[DIAGNOSTIC] Error reading file after write:", diagError);
+    // }
+    // // --- END DIAGNOSTIC ---
 
     res.status(200).json({ message: "Analysis data saved successfully." });
   } catch (e) {

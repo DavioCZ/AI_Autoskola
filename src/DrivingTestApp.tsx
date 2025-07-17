@@ -10,7 +10,7 @@ import { Checkbox } from "../components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Progress } from "../components/ui/progress";
 import { Textarea } from "../components/ui/textarea";
-import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Timer, Book, Library, FileText } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Timer, Book, Library, FileText, PanelLeftClose, PanelRightOpen } from "lucide-react";
 import clsx from "clsx";
 import { useAi, ChatMessage } from "./hooks/useAi"; // Přidán import
 
@@ -36,6 +36,7 @@ export type AnalysisEntry = {
   isCorrect: boolean; // Byla finální odpověď správná?
   isFirstAttemptCorrect: boolean; // Byla první odpověď správná?
   mode: 'exam' | 'practice';
+  isCorrection?: boolean; // Jedná se o pokus o opravu?
 };
 
 // Nový typ pro ukládání detailů o odpovědi v režimu procvičování
@@ -278,6 +279,7 @@ export default function DrivingTestApp() {
   const { ask, loading: aiLoading, answer: aiAnswer, messages, setMessages } = useAi();
   const [draft, setDraft] = useState("");
   const msgEndRef = useRef<HTMLDivElement | null>(null);
+  const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
 
   const handleLogin = (name: string) => {
     localStorage.setItem("autoskola-currentUser", name);
@@ -370,10 +372,11 @@ export default function DrivingTestApp() {
     return result;
   }
 
-  const initiateTest = async (isExam: boolean, groups: number[]) => {
+  const initiateTest = async (isExam: boolean, groups: number[], questionsOverride?: Question[]) => {
     setIsLoading(true);
     setOriginPhase("intro");
-    const qs = isExam ? await buildExam() : await buildPractice(groups);
+    setExamMode(isExam);
+    const qs = questionsOverride ?? (isExam ? await buildExam() : await buildPractice(groups));
     setQuestions(qs);
     setCurrent(0);
     setResponses({});
@@ -724,16 +727,68 @@ export default function DrivingTestApp() {
     });
 
     const incorrectAnswers = userAnalysisData.filter(e => !e.isFirstAttemptCorrect);
-    const mistakesByQuestion = incorrectAnswers.reduce((acc, entry) => {
-      acc[entry.questionId] = (acc[entry.questionId] || { count: 0, text: entry.questionText });
-      acc[entry.questionId].count++;
+    const mistakesByQuestion = userAnalysisData.reduce((acc, entry) => {
+      if (!acc[entry.questionId]) {
+        acc[entry.questionId] = {
+          text: entry.questionText,
+          history: [],
+        };
+      }
+      acc[entry.questionId].history.push({
+        isCorrect: entry.isFirstAttemptCorrect,
+        answeredAt: entry.answeredAt,
+      });
       return acc;
-    }, {} as Record<string, { count: number, text: string }>);
+    }, {} as Record<string, { text: string; history: { isCorrect: boolean; answeredAt: string }[] }>);
 
-    const sortedMistakes = Object.entries(mistakesByQuestion)
-      .map(([questionId, data]) => ({ questionId, ...data }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 10); // Zobrazíme top 10
+    const processedMistakes = Object.entries(mistakesByQuestion)
+      .map(([questionId, data]) => {
+        const incorrectCount = data.history.filter(h => !h.isCorrect).length;
+        const lastAttempt = data.history[data.history.length - 1];
+        const isCorrected = lastAttempt ? lastAttempt.isCorrect : false;
+        return {
+          questionId,
+          text: data.text,
+          incorrectCount,
+          isCorrected,
+        };
+      })
+      .filter(item => item.incorrectCount > 0) // Zobrazíme jen otázky, kde byla alespoň jedna chyba
+      .sort((a, b) => {
+        if (a.isCorrected !== b.isCorrected) {
+          return a.isCorrected ? 1 : -1; // Opravené chyby dáme na konec
+        }
+        return b.incorrectCount - a.incorrectCount; // Řadíme podle počtu chyb
+      });
+
+    const startPracticeFromMistakes = async () => {
+      if (!currentUser) return;
+      
+      const questionsToPracticeIds = processedMistakes
+        .filter(m => !m.isCorrected)
+        .map(m => m.questionId);
+
+      if (questionsToPracticeIds.length === 0) {
+        alert("Nemáte žádné otázky, ve kterých byste chybovali. Skvělá práce!");
+        return;
+      }
+      
+      setIsLoading(true);
+      const allQuestionsPromises = GROUPS.map(g => fetchGroup(g.id));
+      const allQuestionsArrays = await Promise.all(allQuestionsPromises);
+      const allQuestions = allQuestionsArrays.flat();
+      
+      let questionsForPractice = allQuestions.filter(q => questionsToPracticeIds.includes(q.id));
+      
+      // Shuffle
+      for (let i = questionsForPractice.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [questionsForPractice[i], questionsForPractice[j]] = [questionsForPractice[j], questionsForPractice[i]];
+      }
+
+      await initiateTest(false, [], questionsForPractice);
+      setIsLoading(false);
+    };
 
     return (
       <>
@@ -795,7 +850,7 @@ export default function DrivingTestApp() {
                               size="sm"
                               className="text-xs text-gray-400 hover:text-gray-700 transition-colors"
                               onClick={async () => {
-                                await initiateTest(false, [group.id]);
+                                await initiateTest(false, [group.id], undefined);
                               }}
                               disabled={isLoading}
                             >
@@ -811,23 +866,58 @@ export default function DrivingTestApp() {
             </Card>
           )}
 
-          {sortedMistakes.length > 0 && (
+          {processedMistakes.length > 0 && (
             <Card className="max-w-4xl mx-auto mt-8">
               <CardHeader>
-                <h3 className="font-semibold text-lg">Nejčastější chyby</h3>
-                <p className="text-sm text-gray-500">Otázky, ve kterých nejčastěji chybujete na první pokus.</p>
+                <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
+                <p className="text-sm text-gray-500">Otázky, ve kterých jste v minulosti chybovali.</p>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {sortedMistakes.map(({ questionId, text, count }) => (
-                    <div key={questionId} className="p-3 border rounded-md bg-red-50/50">
-                      <p className="font-semibold text-red-800">{count}x nesprávně</p>
+                  {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
+                    <div key={questionId} className={clsx("p-3 border rounded-md", {
+                      "bg-red-50/50 border-red-200": !isCorrected,
+                      "bg-green-50/50 border-green-200": isCorrected,
+                    })}>
+                      <div className="flex justify-between items-center">
+                        <p className={clsx("font-semibold", {
+                          "text-red-800": !isCorrected,
+                          "text-green-800": isCorrected,
+                        })}>
+                          {incorrectCount}x nesprávně
+                        </p>
+                        {isCorrected && (
+                          <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
+                            OPRAVENO
+                          </span>
+                        )}
+                      </div>
                       <p className="text-sm text-gray-700 mt-1">{text}</p>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
+          )}
+
+          {userAnalysisData.length > 0 && (
+            <div className="max-w-4xl mx-auto mt-8 text-center">
+              <Button 
+                size="lg" 
+                onClick={startPracticeFromMistakes}
+                disabled={isLoading || processedMistakes.filter(m => !m.isCorrected).length === 0}
+                isLoading={isLoading}
+                className="bg-orange-500 hover:bg-orange-600 text-white"
+              >
+                <RefreshCcw className="mr-2 h-5 w-5" />
+                {isLoading ? "Připravuji otázky..." : "Vyzkoušet znovu chybné otázky"}
+              </Button>
+              {processedMistakes.filter(m => !m.isCorrected).length === 0 && userAnalysisData.length > 0 && (
+                <p className="text-sm text-gray-500 mt-2">
+                  Skvělá práce! Všechny své chyby jste si již opravili.
+                </p>
+              )}
+            </div>
           )}
         </div>
       </>
@@ -1003,7 +1093,12 @@ export default function DrivingTestApp() {
               </Button>
             </div>
           )}
-          <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <section className={clsx(
+            "grid gap-8 transition-all duration-300",
+            isAiTutorCollapsed
+              ? "lg:grid-cols-[1fr_auto]"
+              : "lg:grid-cols-[minmax(0,1fr)_320px]"
+          )}>
             <main className="space-y-6">
               {examMode && (
                 <header className="space-y-3">
@@ -1179,11 +1274,18 @@ export default function DrivingTestApp() {
               </div>
             </main>
 
-            <aside className="flex flex-col rounded-lg border border-neutral-200 bg-sky-50/50 p-4 sm:p-5 h-fit lg:sticky lg:top-28 space-y-4">
-              <div className="pb-2 border-b">
-                <h3 className="font-medium">Zeptat se AI lektora</h3>
+            <aside className={clsx(
+              "flex flex-col rounded-lg border border-neutral-200 bg-sky-50/50 h-fit lg:sticky lg:top-28 transition-all duration-300 ease-in-out",
+              isAiTutorCollapsed ? "p-2" : "p-4 sm:p-5"
+            )}>
+              <div className="flex items-center justify-between pb-2 border-b">
+                <h3 className={clsx("font-medium", { "hidden": isAiTutorCollapsed })}>Zeptat se AI lektora</h3>
+                <Button variant="ghost" size="icon" onClick={() => setIsAiTutorCollapsed(prev => !prev)} className="shrink-0 -mr-2">
+                  {isAiTutorCollapsed ? <PanelRightOpen size={18} /> : <PanelLeftClose size={18} />}
+                </Button>
               </div>
-              <div className="flex-1 overflow-y-auto p-2 space-y-2 text-sm max-h-[60vh]">
+              <div className={clsx("space-y-4", { "hidden": isAiTutorCollapsed })}>
+                <div className="flex-1 overflow-y-auto p-2 space-y-2 text-sm max-h-[60vh]">
                 {messages.map((msg: ChatMessage, i: number) => (
                   <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto")}>
                     {msg.text.split('\n').map((line: string, j: number) => {
@@ -1214,6 +1316,7 @@ export default function DrivingTestApp() {
                   </Button>
                 </div>
               </div>
+            </div>
             </aside>
           </section>
         </div>

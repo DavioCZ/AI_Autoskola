@@ -42,3 +42,9 @@ lerna-debug.log*
 
 # User-generated data
 /data/
+
+# Development-only files and directories
+/scraper/
+/scripts/
+task-list.md
+task-list-redesign.md
