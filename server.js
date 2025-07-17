@@ -192,6 +192,9 @@ app.post("/api/save-analysis", async (req, res) => {
   }
 
   try {
+    // Zajistit, že adresář existuje, než se do něj pokusíme zapsat
+    await fs.mkdir(path.dirname(ANALYSIS_FILE_PATH), { recursive: true });
+
     let existingData = [];
     try {
       const fileContent = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
