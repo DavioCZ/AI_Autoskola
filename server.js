@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import fetch from "node-fetch";
 import { spawn } from "child_process";
 import fs from "node:fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
 import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
@@ -22,6 +24,11 @@ const genAI   = new GoogleGenerativeAI(GEMINI_API_KEY);
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "8mb" }));   // zvýšeno kvůli base64 médiím
+
+// --- Statické soubory pro produkci ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, "dist")));
 
 /* ---------- 1) klasické textové dotazy /api/ai -------------------------------- */
 // The user's prompt mentioned "… tvůj původní prompt …" and "nechávám tvou poslední logiku"
@@ -264,6 +271,16 @@ async function loadAnalysisIndex() {
     console.log(`✅ Dynamic index built, ${analysisIndex.size} items loaded.`);
   }
 }
+
+// Catch-all pro servírování index.html (pro React Router)
+app.get('*', (req, res) => {
+  // Pokud požadavek směřuje na API, nechej ho propadnout (nebo zpracuj jinak)
+  if (req.originalUrl.startsWith('/api/')) {
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
+  // Jinak pošli hlavní soubor aplikace
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, async () => {

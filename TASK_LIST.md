@@ -122,3 +122,12 @@
 - [ ] **Nasazení do produkce:**
     - [ ] Nasadit novou verzi aplikace.
     - [ ] Sledovat analytiku a zpětnou vazbu.
+
+---
+
+## Fáze 5: Nasazení a dokumentace
+*Cíl: Zdokumentovat a připravit návod pro nasazení aplikace na veřejnou platformu.*
+
+### 5.1 | Vytvořit návod pro nasazení na Render.com
+- [x] **Vytvořen aktuální návod pro nasazení:** Původní instrukce byly zastaralé (pro Python/Flask). Byl vytvořen nový, přesný návod pro nasazení kombinované Node.js + Python aplikace.
+- [x] **Návod je k dispozici v souboru [DEPLOY_GUIDE.md](DEPLOY_GUIDE.md).**
