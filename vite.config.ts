@@ -15,6 +15,8 @@ export default defineConfig({
     proxy: {
       "/api": "http://localhost:3001",
     },
+    // Povolit všechny hosty pro fungování s tunely jako localtunnel/ngrok
+    allowedHosts: ['*'],
   },
   resolve: {
     alias: {

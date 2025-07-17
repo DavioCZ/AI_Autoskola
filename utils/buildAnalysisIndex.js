@@ -1,7 +1,6 @@
 // utils/buildAnalysisIndex.js
 import fg from "fast-glob";
 import fs from "node:fs/promises";
-import "./types.js"; // for JSDoc type hinting
 
 /**
  * @returns {Promise<Map<string, Analysis>>}

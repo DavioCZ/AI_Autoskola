@@ -10,7 +10,8 @@ import { Checkbox } from "../components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Progress } from "../components/ui/progress";
 import { Textarea } from "../components/ui/textarea";
-import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Timer, Book, Library, FileText, PanelLeftClose, PanelRightOpen } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Timer, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse } from "lucide-react";
+import { Popover, PopoverTrigger, PopoverContent } from "../components/ui/popover";
 import clsx from "clsx";
 import { useAi, ChatMessage } from "./hooks/useAi"; // Přidán import
 
@@ -48,13 +49,13 @@ export type PracticeAttempt = {
 };
 
 const GROUPS = [
-  { id: 1, file: "/okruh1.json", name: "Pravidla provozu", quota: 10, points: 2 },
-  { id: 2, file: "/okruh2.json", name: "Dopravní značky", quota: 3, points: 1 },
-  { id: 3, file: "/okruh3.json", name: "Zásady bezpečné jízdy", quota: 4, points: 2 },
-  { id: 4, file: "/okruh4.json", name: "Dopravní situace", quota: 3, points: 4 },
-  { id: 5, file: "/okruh5.json", name: "Předpisy o vozidlech", quota: 2, points: 1 },
-  { id: 6, file: "/okruh6.json", name: "Předpisy související", quota: 2, points: 2 },
-  { id: 7, file: "/okruh7.json", name: "Zdravotnická příprava", quota: 1, points: 1 },
+  { id: 1, file: "/okruh1.json", name: "Pravidla provozu", quota: 10, points: 2, Icon: Car },
+  { id: 2, file: "/okruh2.json", name: "Dopravní značky", quota: 3, points: 1, Icon: TrafficCone },
+  { id: 3, file: "/okruh3.json", name: "Zásady bezpečné jízdy", quota: 4, points: 2, Icon: Shield },
+  { id: 4, file: "/okruh4.json", name: "Dopravní situace", quota: 3, points: 4, Icon: GitFork },
+  { id: 5, file: "/okruh5.json", name: "Předpisy o vozidlech", quota: 2, points: 1, Icon: Wrench },
+  { id: 6, file: "/okruh6.json", name: "Předpisy související", quota: 2, points: 2, Icon: FileText },
+  { id: 7, file: "/okruh7.json", name: "Zdravotnická příprava", quota: 1, points: 1, Icon: HeartPulse },
 ] as const;
 
 const OSTRY_TIME = 30 * 60; // 30 minut v sekundách
@@ -263,7 +264,7 @@ export default function DrivingTestApp() {
   const [currentUser, setCurrentUser] = useState<string | null>(getCurrentUser());
   const [phase, setPhase] = useState<"intro" | "setup" | "test" | "done" | "browse" | "analysis">("intro");
   const [browseState, setBrowseState] = useState<"groups" | "questions">("groups");
-  const [originPhase, setOriginPhase] = useState<"intro" | "browse">("intro");
+  const [originPhase, setOriginPhase] = useState<"intro" | "browse" | "analysis">("intro");
   const [examMode, setExamMode] = useState(true);
   const [selectedGroups, setSelected] = useState<number[]>(GROUPS.map((g) => g.id));
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -280,6 +281,7 @@ export default function DrivingTestApp() {
   const [draft, setDraft] = useState("");
   const msgEndRef = useRef<HTMLDivElement | null>(null);
   const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
+  const [showFinishConfirm, setShowFinishConfirm] = useState(false);
 
   const handleLogin = (name: string) => {
     localStorage.setItem("autoskola-currentUser", name);
@@ -587,29 +589,29 @@ export default function DrivingTestApp() {
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
         />
-        <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 space-y-6">
-          <div className="text-center py-12 md:py-16">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl" style={{ lineHeight: '1.3' }}>
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 space-y-6">
+          <div className="text-center py-10 md:py-12">
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl">
               Otestujte si své znalosti
             </h1>
-            <p className="mt-6 text-base leading-7 text-gray-600 max-w-2xl mx-auto md:text-lg md:leading-8">
-              Připravte se na zkoušky v autoškole. Vyberte si mezi ostrým testem nanečisto nebo volným procvičováním.
+            <p className="mt-4 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
+              Připravte se na zkoušky v autoškole.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <Button size="lg" className="w-full h-auto py-6 text-base flex-col" onClick={() => { setExamMode(true); setPhase("setup"); }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <Button size="lg" className="w-full h-auto py-8 text-lg flex-col bg-blue-600 hover:bg-blue-700 text-white shadow-lg" onClick={() => { setExamMode(true); setPhase("setup"); }}>
               <div className="flex items-center">
-                <Timer className="mr-2 h-5 w-5" />
-                <span className="font-semibold">Ostrý test</span>
+                <span className="text-2xl mr-3">⏱️</span>
+                <span className="font-bold">Ostrý test</span>
               </div>
-              <span className="font-normal text-sm text-gray-200 mt-1">Časomíra, 25 otázek, 50 bodů</span>
+              <span className="font-normal text-sm text-blue-200 mt-1.5">Časomíra, 25 otázek, 50 bodů</span>
             </Button>
-            <Button size="lg" variant="outline" className="w-full h-auto py-6 text-base flex-col" onClick={() => { setExamMode(false); setPhase("setup"); }}>
+            <Button size="lg" variant="outline" className="w-full h-auto py-8 text-lg flex-col border-2" onClick={() => { setExamMode(false); setPhase("setup"); }}>
                <div className="flex items-center">
-                <Book className="mr-2 h-5 w-5" />
+                <span className="text-2xl mr-3">📚</span>
                 <span className="font-semibold">Procvičování</span>
               </div>
-              <span className="font-normal text-sm text-gray-500 mt-1">Vlastní výběr okruhů</span>
+              <span className="font-normal text-sm text-gray-500 mt-1.5">Vlastní výběr okruhů</span>
             </Button>
             <div className="md:col-span-2">
               <Button size="lg" variant="secondary" className="w-full h-auto py-6 text-base flex-col" onClick={() => { setPhase("browse"); setBrowseState("groups"); }}>
@@ -641,23 +643,29 @@ export default function DrivingTestApp() {
                   <h4 className="font-semibold text-lg">Ostré testy</h4>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-600">Celková úspěšnost</p>
-                  <div className="flex items-center gap-4 mt-2">
-                    <Progress value={stats.examTaken > 0 ? (stats.examPassed / stats.examTaken) * 100 : 0} className="h-3" />
-                    <span className="font-bold text-lg">
-                      {stats.examTaken > 0 ? ((stats.examPassed / stats.examTaken) * 100).toFixed(1) : "0.0"}%
-                    </span>
-                  </div>
-                  {stats.lastExamScore !== null && (
-                    <div className="mt-4 pt-4 border-t">
-                      <p className="text-xs text-gray-500 uppercase font-medium">Poslední pokus</p>
-                      <p className="text-sm mt-1">
-                        <span className={clsx(stats.lastExamPassed ? "text-green-600" : "text-red-600", "font-semibold")}>
-                          {stats.lastExamPassed ? "Úspěšně" : "Neúspěšně"}
+                  {stats.examTaken === 0 ? (
+                    <p className="text-sm text-gray-500 text-center py-4">Ještě jste nezkoušeli žádný ostrý test. Začněte a sledujte zde svůj pokrok!</p>
+                  ) : (
+                    <>
+                      <p className="text-sm text-gray-600">Celková úspěšnost</p>
+                      <div className="flex items-center gap-4 mt-2">
+                        <Progress value={(stats.examPassed / stats.examTaken) * 100} className="h-3" />
+                        <span className="font-bold text-lg">
+                          {((stats.examPassed / stats.examTaken) * 100).toFixed(1)}%
                         </span>
-                        <span className="text-gray-600"> ({stats.lastExamScore} b.)</span>
-                      </p>
-                    </div>
+                      </div>
+                      {stats.lastExamScore !== null && (
+                        <div className="mt-4 pt-4 border-t">
+                          <p className="text-xs text-gray-500 uppercase font-medium">Poslední pokus</p>
+                          <p className="text-sm mt-1">
+                            <span className={clsx(stats.lastExamPassed ? "text-green-600" : "text-red-600", "font-semibold")}>
+                              {stats.lastExamPassed ? "Úspěšně" : "Neúspěšně"}
+                            </span>
+                            <span className="text-gray-600"> ({stats.lastExamScore} b.)</span>
+                          </p>
+                        </div>
+                      )}
+                    </>
                   )}
                 </CardContent>
               </Card>
@@ -666,21 +674,27 @@ export default function DrivingTestApp() {
                   <h4 className="font-semibold text-lg">Procvičování</h4>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-600">Správnost na 1. pokus</p>
-                  <div className="flex items-center gap-4 mt-2">
-                    <Progress value={stats.practiceAnswered > 0 ? (stats.practiceCorrect / stats.practiceAnswered) * 100 : 0} className="h-3" />
-                    <span className="font-bold text-lg">
-                      {stats.practiceAnswered > 0 ? ((stats.practiceCorrect / stats.practiceAnswered) * 100).toFixed(1) : "0.0"}%
-                    </span>
-                  </div>
-                   {stats.lastPracticeAnswered !== null && stats.lastPracticeCorrect !== null && (
-                    <div className="mt-4 pt-4 border-t">
-                      <p className="text-xs text-gray-500 uppercase font-medium">Poslední kolo</p>
-                      <p className="text-sm mt-1">
-                        <span className="font-semibold">{stats.lastPracticeCorrect} / {stats.lastPracticeAnswered}</span>
-                        <span className="text-gray-600"> správně</span>
-                      </p>
-                    </div>
+                  {stats.practiceAnswered === 0 ? (
+                     <p className="text-sm text-gray-500 text-center py-4">Ještě jste nic neprocvičovali. Začněte a sledujte zde svůj pokrok!</p>
+                  ) : (
+                    <>
+                      <p className="text-sm text-gray-600">Správnost na 1. pokus</p>
+                      <div className="flex items-center gap-4 mt-2">
+                        <Progress value={(stats.practiceCorrect / stats.practiceAnswered) * 100} className="h-3" />
+                        <span className="font-bold text-lg">
+                          {((stats.practiceCorrect / stats.practiceAnswered) * 100).toFixed(1)}%
+                        </span>
+                      </div>
+                      {stats.lastPracticeAnswered !== null && stats.lastPracticeCorrect !== null && (
+                        <div className="mt-4 pt-4 border-t">
+                          <p className="text-xs text-gray-500 uppercase font-medium">Poslední kolo</p>
+                          <p className="text-sm mt-1">
+                            <span className="font-semibold">{stats.lastPracticeCorrect} / {stats.lastPracticeAnswered}</span>
+                            <span className="text-gray-600"> správně</span>
+                          </p>
+                        </div>
+                      )}
+                    </>
                   )}
                 </CardContent>
               </Card>
@@ -708,6 +722,12 @@ export default function DrivingTestApp() {
   }
 
   if (phase === "analysis") {
+    const getSuccessRateColor = (rate: number) => {
+      if (rate >= 90) return "bg-green-500";
+      if (rate >= 60) return "bg-yellow-400";
+      return "bg-red-500";
+    };
+
     const userAnalysisData = analysisData.filter(entry => entry.user === currentUser);
 
     const analysisByGroup = GROUPS.map(group => {
@@ -825,25 +845,36 @@ export default function DrivingTestApp() {
                         <th className="p-3 font-medium text-center">Úspěšnost</th>
                         <th className="p-3 font-medium text-center">Průměrný čas</th>
                         <th className="p-3 font-medium text-center">Počet odpovědí</th>
-                        <th className="p-3 font-medium text-center">Akce</th>
+                        <th className="p-3 font-medium text-center"></th>
                       </tr>
                     </thead>
                     <tbody>
                       {analysisByGroup.map(group => (
                         <tr key={group.id} className="border-b">
-                          <td className="p-3 font-medium">{group.name}</td>
-                          <td className="p-3 text-center">
-                            {group.total > 0 ? (
-                              <div className="flex items-center justify-center gap-2">
-                                <Progress value={group.successRate} className="h-2 w-24" />
-                                <span>{group.successRate.toFixed(1)}%</span>
-                              </div>
-                            ) : (
-                              <span className="text-gray-400">-</span>
-                            )}
+                          <td className="p-3 font-medium flex items-center gap-2">
+                            <group.Icon size={16} className="text-gray-500" />
+                            {group.name}
                           </td>
-                          <td className="p-3 text-center">{group.total > 0 ? `${group.avgTime.toFixed(1)}s` : "-"}</td>
-                          <td className="p-3 text-center">{group.total}</td>
+                          {group.total > 0 ? (
+                            <>
+                              <td className="p-3 text-center">
+                                <div className="flex items-center justify-center gap-2">
+                                  <Progress 
+                                    value={group.successRate} 
+                                    className="h-3 w-16" 
+                                    indicatorClassName={getSuccessRateColor(group.successRate)} 
+                                  />
+                                  <span>{group.successRate.toFixed(1)}%</span>
+                                </div>
+                              </td>
+                              <td className="p-3 text-center">{`${group.avgTime.toFixed(1)}s`}</td>
+                              <td className="p-3 text-center">{group.total}</td>
+                            </>
+                          ) : (
+                            <td colSpan={3} className="p-3 text-center text-sm text-gray-500 italic">
+                              Zatím bez odpovědí. Začněte procvičovat!
+                            </td>
+                          )}
                           <td className="p-3 text-center">
                             <Button
                               variant="ghost"
@@ -853,6 +884,7 @@ export default function DrivingTestApp() {
                                 await initiateTest(false, [group.id], undefined);
                               }}
                               disabled={isLoading}
+                              isLoading={isLoading}
                             >
                               Procvičit
                             </Button>
@@ -913,9 +945,12 @@ export default function DrivingTestApp() {
                 {isLoading ? "Připravuji otázky..." : "Vyzkoušet znovu chybné otázky"}
               </Button>
               {processedMistakes.filter(m => !m.isCorrected).length === 0 && userAnalysisData.length > 0 && (
-                <p className="text-sm text-gray-500 mt-2">
-                  Skvělá práce! Všechny své chyby jste si již opravili.
-                </p>
+                <div className="mt-4 text-center text-green-600 bg-green-50 p-4 rounded-lg flex items-center justify-center gap-3">
+                  <CheckCircle2 size={24} />
+                  <p className="font-semibold text-lg">
+                    Skvělá práce! Všechny své chyby jste si již opravili.
+                  </p>
+                </div>
               )}
             </div>
           )}
@@ -1046,7 +1081,7 @@ export default function DrivingTestApp() {
             size="lg" 
             className="w-full mt-6" 
             onClick={startTest} 
-            disabled={!examMode && selectedGroups.length === 0}
+            disabled={(!examMode && selectedGroups.length === 0) || isLoading}
             isLoading={isLoading}
           >
             {isLoading ? "Načítám otázky..." : (examMode ? "Spustit ostrý test" : "Spustit procvičování")}
@@ -1075,7 +1110,15 @@ export default function DrivingTestApp() {
               setBrowseState('questions');
               return;
             }
-            if (confirm("Opravdu chcete opustit test? Průběh nebude uložen.")) {
+            // Chceme potvrzení jen u ostrého testu
+            if (examMode) {
+              if (confirm("Opravdu chcete test ukončit? Váš postup nebude uložen.")) {
+                setPhase("intro");
+              }
+            } else {
+              // U procvičování rovnou ukončíme a uložíme statistiky
+              commitSessionAnalysis();
+              calculateAndSavePracticeStats();
               setPhase("intro");
             }
           }}
@@ -1095,7 +1138,9 @@ export default function DrivingTestApp() {
           )}
           <section className={clsx(
             "grid gap-8 transition-all duration-300",
-            isAiTutorCollapsed
+            examMode
+              ? "lg:grid-cols-1"
+              : isAiTutorCollapsed
               ? "lg:grid-cols-[1fr_auto]"
               : "lg:grid-cols-[minmax(0,1fr)_320px]"
           )}>
@@ -1246,16 +1291,34 @@ export default function DrivingTestApp() {
                       Další
                     </Button>
                   ) : (
-                    originPhase !== 'browse' &&
-                    <Button 
-                      onClick={finishExam} 
-                      className={clsx(
-                        "text-white",
-                        examMode ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700"
-                      )}
-                    >
-                      {examMode ? "Dokončit test" : "Vyhodnotit procvičování"}
-                    </Button>
+                    originPhase !== 'browse' && (
+                      examMode ? (
+                        <Popover open={showFinishConfirm} onOpenChange={setShowFinishConfirm}>
+                          <PopoverTrigger asChild>
+                            <Button className="text-white bg-green-600 hover:bg-green-700">Dokončit test</Button>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-auto p-4" side="top" align="end">
+                            <div className="space-y-3 text-center">
+                              <p className="text-sm font-medium">Opravdu chcete dokončit a vyhodnotit test?</p>
+                              <div className="flex justify-center gap-2">
+                                <Button variant="outline" size="sm" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
+                                <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white" onClick={() => {
+                                  finishExam();
+                                  setShowFinishConfirm(false);
+                                }}>Potvrdit</Button>
+                              </div>
+                            </div>
+                          </PopoverContent>
+                        </Popover>
+                      ) : (
+                        <Button 
+                          onClick={finishExam} 
+                          className="text-white bg-blue-600 hover:bg-blue-700"
+                        >
+                          Vyhodnotit procvičování
+                        </Button>
+                      )
+                    )
                   )}
                 </div>
                 <div className="flex-1 flex justify-end">
@@ -1263,7 +1326,8 @@ export default function DrivingTestApp() {
                      <Button
                       variant="outline"
                       onClick={() => {
-                        commitSessionAnalysis(); // Uložíme data i při předčasném ukončení
+                        // U procvičování se neptáme a rovnou ukládáme a končíme.
+                        commitSessionAnalysis();
                         calculateAndSavePracticeStats();
                         setPhase("intro");
                       }}>
@@ -1274,50 +1338,52 @@ export default function DrivingTestApp() {
               </div>
             </main>
 
-            <aside className={clsx(
-              "flex flex-col rounded-lg border border-neutral-200 bg-sky-50/50 h-fit lg:sticky lg:top-28 transition-all duration-300 ease-in-out",
-              isAiTutorCollapsed ? "p-2" : "p-4 sm:p-5"
-            )}>
-              <div className="flex items-center justify-between pb-2 border-b">
-                <h3 className={clsx("font-medium", { "hidden": isAiTutorCollapsed })}>Zeptat se AI lektora</h3>
-                <Button variant="ghost" size="icon" onClick={() => setIsAiTutorCollapsed(prev => !prev)} className="shrink-0 -mr-2">
-                  {isAiTutorCollapsed ? <PanelRightOpen size={18} /> : <PanelLeftClose size={18} />}
-                </Button>
-              </div>
-              <div className={clsx("space-y-4", { "hidden": isAiTutorCollapsed })}>
-                <div className="flex-1 overflow-y-auto p-2 space-y-2 text-sm max-h-[60vh]">
-                {messages.map((msg: ChatMessage, i: number) => (
-                  <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto")}>
-                    {msg.text.split('\n').map((line: string, j: number) => {
-                      const isImageUrl = /\.(jpeg|jpg|gif|png)$/i.test(line.trim());
-                      if (isImageUrl && msg.role === "assistant") { 
-                        return <img key={j} src={line.trim()} alt="Odpověď AI" className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow"/>;
-                      }
-                      return <p key={j} className="break-words">{line}</p>;
-                    })}
-                  </div>
-                ))}
-                {aiLoading && <div className="p-2.5 rounded-lg shadow-sm max-w-[90%] bg-blue-100 self-start opacity-70">Přemýšlím...</div>}
-                <div ref={msgEndRef} />
-              </div>
-              <div className="pt-2 border-t">
-                <div className="flex items-center gap-2">
-                  <Textarea
-                    value={draft}
-                    onChange={(e) => setDraft(e.target.value)}
-                    placeholder="Napište dotaz..."
-                    rows={2}
-                    className="flex-1 text-sm resize-none"
-                    onKeyPress={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }}}
-                    disabled={aiLoading}
-                  />
-                  <Button onClick={sendMsg} size="icon" disabled={!draft.trim()} isLoading={aiLoading}>
-                    <Send size={16} />
+            {!examMode && (
+              <aside className={clsx(
+                "flex flex-col rounded-lg border border-neutral-200 bg-sky-50/50 h-fit lg:sticky lg:top-28 transition-all duration-300 ease-in-out",
+                isAiTutorCollapsed ? "p-2" : "p-4 sm:p-5"
+              )}>
+                <div className="flex items-center justify-between pb-2 border-b">
+                  <h3 className={clsx("font-medium", { "hidden": isAiTutorCollapsed })}>Zeptat se AI lektora</h3>
+                  <Button variant="ghost" size="icon" onClick={() => setIsAiTutorCollapsed(prev => !prev)} className="shrink-0 -mr-2">
+                    {isAiTutorCollapsed ? <PanelRightOpen size={18} /> : <PanelLeftClose size={18} />}
                   </Button>
                 </div>
+                <div className={clsx("space-y-4", { "hidden": isAiTutorCollapsed })}>
+                  <div className="flex-1 overflow-y-auto p-2 space-y-2 text-sm max-h-[60vh]">
+                  {messages.map((msg: ChatMessage, i: number) => (
+                    <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto")}>
+                      {msg.text.split('\n').map((line: string, j: number) => {
+                        const isImageUrl = /\.(jpeg|jpg|gif|png)$/i.test(line.trim());
+                        if (isImageUrl && msg.role === "assistant") { 
+                          return <img key={j} src={line.trim()} alt="Odpověď AI" className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow"/>;
+                        }
+                        return <p key={j} className="break-words">{line}</p>;
+                      })}
+                    </div>
+                  ))}
+                  {aiLoading && <div className="p-2.5 rounded-lg shadow-sm max-w-[90%] bg-blue-100 self-start opacity-70">Přemýšlím...</div>}
+                  <div ref={msgEndRef} />
+                </div>
+                <div className="pt-2 border-t">
+                  <div className="flex items-center gap-2">
+                    <Textarea
+                      value={draft}
+                      onChange={(e) => setDraft(e.target.value)}
+                      placeholder="Napište dotaz..."
+                      rows={2}
+                      className="flex-1 text-sm resize-none"
+                      onKeyPress={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }}}
+                      disabled={aiLoading}
+                    />
+                    <Button onClick={sendMsg} size="icon" disabled={!draft.trim()} isLoading={aiLoading}>
+                      <Send size={16} />
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
-            </aside>
+              </aside>
+            )}
           </section>
         </div>
       </div>
@@ -1328,6 +1394,38 @@ export default function DrivingTestApp() {
     const score = examMode ? questions.reduce((acc, qq) => (responses[qq.id] === qq.spravna ? acc + qq.points : acc), 0) : 0;
     const totalPoints = examMode ? questions.reduce((acc, qq) => acc + qq.points, 0) : 0;
     const passed = examMode && score >= 43;
+
+    const resultsByGroup = GROUPS.map(group => {
+      const groupQuestions = questions.filter(q => q.groupId === group.id);
+      if (groupQuestions.length === 0) {
+        return null;
+      }
+
+      const answeredQuestions = groupQuestions.map(q => {
+        const userAnswer = responses[q.id];
+        const isAnswered = userAnswer !== undefined;
+        const isCorrect = isAnswered && userAnswer === q.spravna;
+        const questionIndex = questions.findIndex(qs => qs.id === q.id);
+        return {
+          id: q.id,
+          index: questionIndex + 1,
+          isCorrect,
+          isAnswered,
+          points: q.points,
+          userAnswer,
+        };
+      });
+
+      const totalPointsInGroup = groupQuestions.reduce((sum, q) => sum + q.points, 0);
+      const scoredPointsInGroup = answeredQuestions.reduce((sum, aq) => (aq.isCorrect ? sum + aq.points : sum), 0);
+
+      return {
+        ...group,
+        questions: answeredQuestions,
+        totalPoints: totalPointsInGroup,
+        scoredPoints: scoredPointsInGroup,
+      };
+    }).filter((g): g is NonNullable<typeof g> => g !== null);
 
     // Pro zobrazení výsledků aktuálního kola procvičování použijeme practiceFirstAttempts
     let answeredInCurrentPracticeSession = 0;
@@ -1343,7 +1441,7 @@ export default function DrivingTestApp() {
     }
 
     return (
-      <>
+      <div className="flex flex-col h-screen bg-gray-50">
         {passed && <Confetti recycle={false} />}
         <TopNav 
           label="Výsledky testu" 
@@ -1353,67 +1451,141 @@ export default function DrivingTestApp() {
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
         />
-        <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            {examMode ? (passed ? "Gratulujeme, uspěli jste!" : "Bohužel, neuspěli jste.") : "Procvičování dokončeno"}
-          </h2>
-          {examMode && (
-            <div className="text-lg md:text-xl mb-6">
-              Získali jste <span className="font-bold">{score}</span> z {totalPoints > 0 ? totalPoints : 50} bodů.
-              (Minimum pro úspěch: 43 bodů)
-            </div>
-          )}
-          {!examMode && (
-            <div className="text-lg md:text-xl mb-6">
-              V tomto kole procvičování jste odpověděli na {answeredInCurrentPracticeSession} otázek, z toho {correctInCurrentPracticeSession} správně na první pokus.
-              {answeredInCurrentPracticeSession > 0 && (
-                <span> (Úspěšnost na první pokus: {((correctInCurrentPracticeSession / answeredInCurrentPracticeSession) * 100).toFixed(1)}%)</span>
-              )}
-            </div>
-          )}
-          
-          <h3 className="text-lg font-semibold mt-8 mb-4">Přehled odpovědí:</h3>
-          <div className="space-y-3 text-left max-h-[50vh] overflow-y-auto border p-3 md:p-4 rounded-md shadow">
-            {questions.map((q_item, index) => {
-              const userAnswer = responses[q_item.id];
-              const isCorrect = userAnswer === q_item.spravna;
-              const isAnswered = userAnswer !== undefined;
-              return (
-                <div key={q_item.id} className={clsx("p-3 border rounded-md text-sm", {
-                  "bg-green-50 border-green-400": isAnswered && isCorrect,
-                  "bg-red-50 border-red-400": isAnswered && !isCorrect,
-                  "bg-gray-50 border-gray-300": !isAnswered,
-                })}>
-                  <p className="font-medium">{index + 1}. {q_item.otazka}</p>
-                  {q_item.obrazek && (
-                    q_item.obrazek.endsWith('.mp4')
-                      ? <video src={q_item.obrazek} autoPlay loop muted playsInline controls className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow" />
-                      : <img src={q_item.obrazek} alt={`Otázka ${index + 1}`} className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow"/>
-                  )}
-                  <p className="mt-1">Správná odpověď: {
-                    /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[q_item.spravna])
-                    ? <img src={q_item.moznosti[q_item.spravna]} alt="Správná odpověď" className="my-2 rounded max-h-48 md:max-h-60 shadow"/>
-                    : <span className="font-semibold">{q_item.moznosti[q_item.spravna]}</span>
-                  }</p>
-                  {isAnswered ? (
-                    <p className="mt-0.5">Vaše odpověď: {
-                      /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[userAnswer])
-                      ? <img src={q_item.moznosti[userAnswer]} alt="Vaše odpověď" className="my-2 rounded max-h-48 md:max-h-60 shadow"/>
-                      : <span className={clsx(isCorrect ? "text-green-700" : "text-red-700", "font-semibold")}>{q_item.moznosti[userAnswer]}</span>
-                    } {isCorrect ? "✓" : "✗"}</p>
-                  ) : (
-                    <p className="mt-0.5 text-gray-500">Bez odpovědi</p>
-                  )}
+        <main className="flex-1 overflow-y-auto">
+          <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              {examMode ? (passed ? "Gratulujeme, uspěli jste!" : "Bohužel, neuspěli jste.") : "Procvičování dokončeno"}
+            </h2>
+            {examMode && (
+              <>
+                <div className="text-lg md:text-xl mb-2">
+                  Získali jste <span className="font-bold">{score}</span> z {totalPoints > 0 ? totalPoints : 50} bodů. (Minimum pro úspěch: 43 bodů)
                 </div>
-              );
-            })}
-          </div>
 
-          <Button size="lg" className="mt-8 w-full" onClick={() => setPhase("intro")}>
-            Zpět na hlavní stránku
-          </Button>
-        </div>
-      </>
+              </>
+            )}
+            {!examMode && (
+              <div className="text-lg md:text-xl mb-6">
+                V tomto kole procvičování jste odpověděli na {answeredInCurrentPracticeSession} otázek, z toho {correctInCurrentPracticeSession} správně na první pokus.
+                {answeredInCurrentPracticeSession > 0 && (
+                  <span> (Úspěšnost na první pokus: {((correctInCurrentPracticeSession / answeredInCurrentPracticeSession) * 100).toFixed(1)}%)</span>
+                )}
+              </div>
+            )}
+
+            {examMode && (
+              <div className="my-8 text-left">
+                <div className="relative pt-5 pb-8 mb-4">
+                  <div className="flex justify-between text-sm text-gray-600 mb-1 absolute w-full -top-0 px-1">
+                    <span>0%</span>
+                    <span>100%</span>
+                  </div>
+                  <div className="relative">
+                    <Progress
+                      value={(score / (totalPoints > 0 ? totalPoints : 50)) * 100}
+                      className="h-6 border-2 border-gray-300 bg-gray-200"
+                      indicatorClassName={passed ? "bg-green-500" : "bg-red-500"}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="font-bold text-sm text-gray-800">
+                        {((score / (totalPoints > 0 ? totalPoints : 50)) * 100).toFixed(0)}% ({score} bodů)
+                      </span>
+                    </div>
+                    <div
+                      className="absolute top-0 bottom-0 w-0.5 bg-slate-700"
+                      style={{ left: `86%` }}
+                      title="Minimální hranice pro úspěch (86%)"
+                    >
+                      <div
+                        className="absolute -bottom-6 text-xs text-slate-700 font-semibold"
+                        style={{ transform: 'translateX(-50%)' }}
+                      >
+                        86%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-4">Přehled podle okruhů</h3>
+                <div className="space-y-3">
+                  {resultsByGroup.map(group => (
+                    <div key={group.id} className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm flex flex-col sm:flex-row items-center gap-4">
+                      <div className="flex-none flex items-center gap-3 w-full sm:w-48">
+                        <group.Icon size={24} className="text-gray-500" />
+                        <p className="font-semibold text-gray-800 leading-tight">{group.name}</p>
+                      </div>
+                      <div className="flex-1 w-full">
+                        <div className="flex flex-wrap gap-1.5">
+                          {group.questions.map(q => (
+                            <div
+                              key={q.id}
+                              title={`Otázka ${q.index}`}
+                              className={`w-7 h-7 flex items-center justify-center rounded-full font-bold text-xs text-white ${
+                                q.isAnswered ? (q.isCorrect ? 'bg-green-500' : 'bg-red-500') : 'bg-gray-400'
+                              }`}
+                            >
+                              {q.index}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="flex-none w-full sm:w-24 text-left sm:text-right mt-3 sm:mt-0">
+                        <span className="text-2xl font-bold text-gray-800">{group.scoredPoints}</span>
+                        <span className="text-gray-500"> / {group.totalPoints} b.</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            <div className="text-left">
+              <h3 className="text-lg font-semibold mt-8 mb-4">Detailní přehled odpovědí:</h3>
+              <div className="space-y-3 text-left border p-3 md:p-4 rounded-md shadow bg-white">
+                {questions.map((q_item, index) => {
+                  const userAnswer = responses[q_item.id];
+                  const isCorrect = userAnswer === q_item.spravna;
+                  const isAnswered = userAnswer !== undefined;
+                  return (
+                    <div key={q_item.id} className={clsx("p-3 border rounded-md text-sm", {
+                      "bg-green-50 border-green-400": isAnswered && isCorrect,
+                      "bg-red-50 border-red-400": isAnswered && !isCorrect,
+                      "bg-gray-50 border-gray-300": !isAnswered,
+                    })}>
+                      <p className="font-medium">{index + 1}. {q_item.otazka}</p>
+                      {q_item.obrazek && (
+                        q_item.obrazek.endsWith('.mp4')
+                          ? <video src={q_item.obrazek} autoPlay loop muted playsInline controls className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow" />
+                          : <img src={q_item.obrazek} alt={`Otázka ${index + 1}`} className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow"/>
+                      )}
+                      <p className="mt-1">Správná odpověď: {
+                        /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[q_item.spravna])
+                        ? <img src={q_item.moznosti[q_item.spravna]} alt="Správná odpověď" className="my-2 rounded max-h-48 md:max-h-60 shadow"/>
+                        : <span className="font-semibold">{q_item.moznosti[q_item.spravna]}</span>
+                      }</p>
+                      {isAnswered ? (
+                        <p className="mt-0.5">Vaše odpověď: {
+                          /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[userAnswer])
+                          ? <img src={q_item.moznosti[userAnswer]} alt="Vaše odpověď" className="my-2 rounded max-h-48 md:max-h-60 shadow"/>
+                          : <span className={clsx(isCorrect ? "text-green-700" : "text-red-700", "font-semibold")}>{q_item.moznosti[userAnswer]}</span>
+                        } {isCorrect ? "✓" : "✗"}</p>
+                      ) : (
+                        <p className="mt-0.5 text-gray-500">Bez odpovědi</p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer className="sticky bottom-0 bg-white border-t p-4 shadow-md z-10">
+            <div className="w-full max-w-screen-xl mx-auto">
+                <Button size="lg" className="w-full" onClick={() => setPhase("intro")}>
+                    Zpět na hlavní stránku
+                </Button>
+            </div>
+        </footer>
+      </div>
     );
   }
 
