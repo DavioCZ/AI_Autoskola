@@ -209,7 +209,7 @@ const BADGES_KEY = "unlocked-badges";   // Klíč pro odznaky
 const checkAndAwardBadges = async (allEntries, lastTestEntries) => {
   const awardedBadges = new Set();
   const existingBadgesRaw = await redis.get(BADGES_KEY);
-  const existingBadges = existingBadgesRaw ? JSON.parse(existingBadgesRaw) : [];
+  const existingBadges = typeof existingBadgesRaw === 'string' ? JSON.parse(existingBadgesRaw) : (existingBadgesRaw || []);
   const existingBadgeIds = new Set(existingBadges.map(b => b.id));
 
   // 1. Odznak: První dokončený test
@@ -261,7 +261,7 @@ app.post("/api/save-analysis", async (req, res) => {
 
   try {
     const existingDataRaw = await redis.get(ANALYSIS_KEY);
-    const existingData = existingDataRaw ? JSON.parse(existingDataRaw) : [];
+    const existingData = typeof existingDataRaw === 'string' ? JSON.parse(existingDataRaw) : (existingDataRaw || []);
     const newData = [...existingData, ...entries];
     await redis.set(ANALYSIS_KEY, JSON.stringify(newData));
 
@@ -283,8 +283,8 @@ app.get("/api/analysis-data", async (req, res) => {
     const analysisDataRaw = await redis.get(ANALYSIS_KEY);
     const badgesDataRaw = await redis.get(BADGES_KEY);
 
-    const analysisData = analysisDataRaw ? JSON.parse(analysisDataRaw) : [];
-    const unlockedBadges = badgesDataRaw ? JSON.parse(badgesDataRaw) : [];
+    const analysisData = typeof analysisDataRaw === 'string' ? JSON.parse(analysisDataRaw) : (analysisDataRaw || []);
+    const unlockedBadges = typeof badgesDataRaw === 'string' ? JSON.parse(badgesDataRaw) : (badgesDataRaw || []);
 
     res.json({ analysisData, unlockedBadges });
   } catch (error) {
