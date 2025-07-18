@@ -4,18 +4,19 @@ import {
   Card,
   CardContent,
   CardHeader,
-} from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Checkbox } from "../components/ui/checkbox";
-import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
-import { Progress } from "../components/ui/progress";
-import { Textarea } from "../components/ui/textarea";
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Progress } from "@/components/ui/progress";
+import { CircularProgress } from "@/src/components/ui/circular-progress";
+import { Textarea } from "@/components/ui/textarea";
 import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Timer, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse } from "lucide-react";
-import { Popover, PopoverTrigger, PopoverContent } from "../components/ui/popover";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import clsx from "clsx";
-import { useAi, ChatMessage } from "./hooks/useAi"; // Přidán import
-import { UnlockedBadge } from "./badges";
-import { BadgesDisplay } from "./components/Badges";
+import { useAi, ChatMessage } from "@/src/hooks/useAi";
+import { UnlockedBadge } from "@/src/badges";
+import { BadgesDisplay } from "@/src/components/Badges";
 
 /* ----------------------- Data typy a konstanty ---------------------- */
 export type Question = {
@@ -674,12 +675,9 @@ export default function DrivingTestApp() {
                     <p className="text-sm text-gray-500 text-center py-4">Ještě jste nezkoušeli žádný ostrý test. Začněte a sledujte zde svůj pokrok!</p>
                   ) : (
                     <>
-                      <p className="text-sm text-gray-600">Celková úspěšnost</p>
-                      <div className="flex items-center gap-4 mt-2">
-                        <Progress value={(stats.examPassed / stats.examTaken) * 100} className="h-3" />
-                        <span className="font-bold text-lg">
-                          {((stats.examPassed / stats.examTaken) * 100).toFixed(1)}%
-                        </span>
+                      <div className="flex flex-col items-center justify-center gap-2 mt-2">
+                        <CircularProgress value={(stats.examPassed / stats.examTaken) * 100} size={100} strokeWidth={10} />
+                        <p className="text-sm text-gray-600 mt-2">Celková úspěšnost</p>
                       </div>
                       {stats.lastExamScore !== null && (
                         <div className="mt-4 pt-4 border-t">
@@ -705,12 +703,9 @@ export default function DrivingTestApp() {
                      <p className="text-sm text-gray-500 text-center py-4">Ještě jste nic neprocvičovali. Začněte a sledujte zde svůj pokrok!</p>
                   ) : (
                     <>
-                      <p className="text-sm text-gray-600">Správnost na 1. pokus</p>
-                      <div className="flex items-center gap-4 mt-2">
-                        <Progress value={(stats.practiceCorrect / stats.practiceAnswered) * 100} className="h-3" />
-                        <span className="font-bold text-lg">
-                          {((stats.practiceCorrect / stats.practiceAnswered) * 100).toFixed(1)}%
-                        </span>
+                      <div className="flex flex-col items-center justify-center gap-2 mt-2">
+                        <CircularProgress value={(stats.practiceCorrect / stats.practiceAnswered) * 100} size={100} strokeWidth={10} />
+                        <p className="text-sm text-gray-600 mt-2">Správnost na 1. pokus</p>
                       </div>
                       {stats.lastPracticeAnswered !== null && stats.lastPracticeCorrect !== null && (
                         <div className="mt-4 pt-4 border-t">
