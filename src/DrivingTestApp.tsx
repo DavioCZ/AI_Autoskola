@@ -176,7 +176,7 @@ function TopNav({
   return (
     <header className="w-full bg-white border-b shadow-sm sticky top-0 z-40">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 cursor-pointer" onClick={onHome}>
           <Book size={20} className="text-blue-600" />
           <h1 className="font-semibold text-lg select-none">Autoškola B</h1>
         </div>
