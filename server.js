@@ -8,15 +8,36 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { Redis } from "@upstash/redis";
 
 dotenv.config();
 let analysisIndex;
-const { GEMINI_API_KEY }  = process.env;
+const { GEMINI_API_KEY, UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN } = process.env;
 const MODEL_CHAT          = "gemini-1.5-flash-latest"; // Changed to a valid, recent model
 
 if (!GEMINI_API_KEY) { console.error("❌  Chybí GEMINI_API_KEY v .env"); process.exit(1); }
 
 const genAI   = new GoogleGenerativeAI(GEMINI_API_KEY);
+
+// --- Připojení k Upstash Redis ---
+let redis;
+if (UPSTASH_REDIS_REST_URL && UPSTASH_REDIS_REST_TOKEN) {
+  redis = new Redis({
+    url: UPSTASH_REDIS_REST_URL,
+    token: UPSTASH_REDIS_REST_TOKEN,
+  });
+  console.log("✅ Připojeno k Upstash Redis.");
+} else {
+  console.warn("⚠️ Upstash Redis proměnné nenalezeny. Ukládání dat bude pouze dočasné (v paměti).");
+  // Fallback na dočasné ukládání v paměti, pokud Redis není nakonfigurován
+  const memoryStorage = new Map();
+  redis = {
+    get: async (key) => memoryStorage.get(key),
+    set: async (key, value) => memoryStorage.set(key, value),
+    del: async (key) => memoryStorage.delete(key),
+  };
+}
+
 // const vision model initialization is removed
 
 // The SDK will handle the endpoint, so the manual URL is no longer needed.
@@ -180,44 +201,24 @@ app.post("/api/image-context", (req, res) => {
   });
 });
 
-const ANALYSIS_FILE_PATH = "data/analysis-data.json";
+const ANALYSIS_KEY = "analysis-data"; // Klíč pro Redis
 
 app.post("/api/save-analysis", async (req, res) => {
-  // console.log("[/api/save-analysis] Received request.");
   const { entries } = req.body;
-  // console.log("[/api/save-analysis] Entries received:", JSON.stringify(entries, null, 2));
-
   if (!entries || !Array.isArray(entries) || entries.length === 0) {
     return res.status(400).json({ error: "No analysis entries provided." });
   }
 
   try {
-    // Zajistit, že adresář existuje, než se do něj pokusíme zapsat
-    await fs.mkdir(path.dirname(ANALYSIS_FILE_PATH), { recursive: true });
+    // Získání stávajících dat z Redis
+    const existingDataRaw = await redis.get(ANALYSIS_KEY);
+    const existingData = existingDataRaw ? JSON.parse(existingDataRaw) : [];
 
-    let existingData = [];
-    try {
-      const fileContent = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
-      existingData = JSON.parse(fileContent);
-    } catch (error) {
-      if (error.code !== 'ENOENT') { // ENOENT means file doesn't exist, which is fine
-        throw error;
-      }
-    }
-
+    // Přidání nových záznamů
     const newData = [...existingData, ...entries];
-    await fs.writeFile(ANALYSIS_FILE_PATH, JSON.stringify(newData, null, 2), "utf8");
-    
-    // console.log(`[/api/save-analysis] Successfully wrote ${entries.length} new entries.`);
 
-    // // --- DIAGNOSTIC READ ---
-    // try {
-    //   const fileContentAfterWrite = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
-    //   console.log("[DIAGNOSTIC] File content after write:", fileContentAfterWrite);
-    // } catch (diagError) {
-    //   console.error("[DIAGNOSTIC] Error reading file after write:", diagError);
-    // }
-    // // --- END DIAGNOSTIC ---
+    // Uložení zpět do Redis
+    await redis.set(ANALYSIS_KEY, JSON.stringify(newData));
 
     res.status(200).json({ message: "Analysis data saved successfully." });
   } catch (e) {
@@ -228,12 +229,12 @@ app.post("/api/save-analysis", async (req, res) => {
 
 app.get("/api/analysis-data", async (req, res) => {
   try {
-    const fileContent = await fs.readFile(ANALYSIS_FILE_PATH, "utf8");
-    res.json(JSON.parse(fileContent));
-  } catch (error) {
-    if (error.code === 'ENOENT') {
-      return res.json([]);
+    const dataRaw = await redis.get(ANALYSIS_KEY);
+    if (!dataRaw) {
+      return res.json([]); // Pokud žádná data neexistují, vrátí prázdné pole
     }
+    res.json(JSON.parse(dataRaw));
+  } catch (error) {
     console.error("Error reading analysis data:", error);
     res.status(500).json({ error: "Failed to read analysis data" });
   }
@@ -241,13 +242,9 @@ app.get("/api/analysis-data", async (req, res) => {
 
 app.post("/api/reset-analysis", async (req, res) => {
   try {
-    await fs.unlink(ANALYSIS_FILE_PATH);
+    await redis.del(ANALYSIS_KEY);
     res.status(200).json({ message: "Analysis data reset successfully." });
   } catch (error) {
-    if (error.code === 'ENOENT') {
-      // Soubor neexistuje, což je v pořádku
-      return res.status(200).json({ message: "Analysis data was already empty." });
-    }
     console.error("Error in /api/reset-analysis:", error);
     res.status(500).json({ error: error.message });
   }
