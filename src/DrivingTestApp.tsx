@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Confetti from "react-confetti";
 import {
   Card,
@@ -11,7 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { CircularProgress } from "@/src/components/ui/circular-progress";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Timer, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import clsx from "clsx";
 import { useAi, ChatMessage } from "@/src/hooks/useAi";
@@ -159,7 +159,6 @@ function TopNav({
   label,
   timeLeft,
   showStats,
-  onResetStats,
   onHome,
   currentUser,
   onSetCurrentUser,
@@ -167,7 +166,6 @@ function TopNav({
   label: string;
   timeLeft?: number | null;
   showStats: boolean;
-  onResetStats: () => void;
   onHome: () => void;
   currentUser: string;
   onSetCurrentUser: (name: string | null) => void;
@@ -293,7 +291,7 @@ export default function DrivingTestApp() {
   const [sessionAnalysis, setSessionAnalysis] = useState<Record<string, { timeToAnswer: number; firstAttemptCorrect: boolean }>>({});
   const [analysisData, setAnalysisData] = useState<AnalysisEntry[]>([]);
   const [unlockedBadges, setUnlockedBadges] = useState<UnlockedBadge[]>([]);
-  const { ask, loading: aiLoading, answer: aiAnswer, messages, setMessages } = useAi();
+  const { ask, loading: aiLoading, messages, setMessages } = useAi();
   const [draft, setDraft] = useState("");
   const msgEndRef = useRef<HTMLDivElement | null>(null);
   const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
@@ -531,24 +529,6 @@ export default function DrivingTestApp() {
     }
   }
 
-  async function handleResetStats() {
-    if (currentUser && confirm(`Opravdu chcete vymazat všechny statistiky pro uživatele "${currentUser}"? Tato akce je nevratná.`)) {
-      saveStats(currentUser, DEFAULT_STATS);
-      setStats(DEFAULT_STATS);
-      try {
-        const response = await fetch("/api/reset-analysis", { method: "POST" });
-        if (!response.ok) {
-          throw new Error(`Server responded with status: ${response.status}`);
-        }
-        setAnalysisData([]);
-        alert("Statistiky a analytická data byla vymazána.");
-      } catch (error) {
-        console.error("Failed to reset analysis data:", error);
-        alert("Nepodařilo se smazat analytická data na serveru. Zkuste to prosím znovu.");
-      }
-    }
-  }
-
   const sendMsg = async () => {
     if (!draft.trim()) return;
     const currentQ = questions[current];
@@ -612,7 +592,6 @@ export default function DrivingTestApp() {
         <TopNav 
           label={`Vítejte, ${currentUser}!`}
           showStats={true} 
-          onResetStats={handleResetStats} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
@@ -769,7 +748,6 @@ export default function DrivingTestApp() {
       };
     });
 
-    const incorrectAnswers = userAnalysisData.filter(e => !e.isFirstAttemptCorrect);
     const mistakesByQuestion = userAnalysisData.reduce((acc, entry) => {
       if (!acc[entry.questionId]) {
         acc[entry.questionId] = {
@@ -838,7 +816,6 @@ export default function DrivingTestApp() {
         <TopNav 
           label="Podrobná analýza" 
           showStats={false} 
-          onResetStats={handleResetStats} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
@@ -992,7 +969,6 @@ export default function DrivingTestApp() {
             <TopNav 
                 label={browseState === 'groups' ? "Prohlížení: Výběr okruhu" : `Prohlížení: ${groupName}`}
                 showStats={false} 
-                onResetStats={handleResetStats} 
                 onHome={() => setPhase("intro")}
                 currentUser={currentUser}
                 onSetCurrentUser={handleLogout}
@@ -1071,7 +1047,6 @@ export default function DrivingTestApp() {
         <TopNav 
           label={examMode ? "Příprava na ostrý test" : "Nastavení procvičování"} 
           showStats={false} 
-          onResetStats={handleResetStats} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
@@ -1124,7 +1099,6 @@ export default function DrivingTestApp() {
           label={examMode ? "Ostrý test" : (originPhase === 'browse' ? 'Prohlížení otázky' : 'Procvičování')}
           timeLeft={timeLeft}
           showStats={false}
-          onResetStats={handleResetStats}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
           onHome={() => {
@@ -1471,7 +1445,6 @@ export default function DrivingTestApp() {
         <TopNav 
           label="Výsledky testu" 
           showStats={true} 
-          onResetStats={handleResetStats} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
