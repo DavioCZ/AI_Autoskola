@@ -821,6 +821,11 @@ export default function DrivingTestApp() {
           onSetCurrentUser={handleLogout}
         />
         <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+          <div className="max-w-4xl mx-auto mb-4">
+            <Button variant="outline" onClick={() => setPhase("intro")}>
+                &larr; Zpět na hlavní stránku
+            </Button>
+          </div>
           <h2 className="text-2xl font-semibold mb-6 text-center">Podrobná analýza úspěšnosti</h2>
           {userAnalysisData.length === 0 ? (
             <Card className="max-w-3xl mx-auto text-center p-8">
@@ -981,6 +986,11 @@ export default function DrivingTestApp() {
                     </div>
                 ) : browseState === 'groups' ? (
                     <>
+                        <div className="max-w-3xl mx-auto mb-4">
+                            <Button variant="outline" onClick={() => setPhase("intro")}>
+                                &larr; Zpět na hlavní stránku
+                            </Button>
+                        </div>
                         <h2 className="text-2xl font-semibold mb-6 text-center">Vyberte okruh k prohlížení</h2>
                         <div className="mb-6 space-y-3 max-w-2xl mx-auto">
                             {GROUPS.map((g) => (
@@ -1052,6 +1062,11 @@ export default function DrivingTestApp() {
           onSetCurrentUser={handleLogout}
         />
         <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+          <div className="max-w-3xl mx-auto mb-4">
+              <Button variant="outline" onClick={() => setPhase("intro")}>
+                  &larr; Zpět na hlavní stránku
+              </Button>
+          </div>
           <h2 className="text-2xl font-semibold mb-6 text-center">{examMode ? "Ostrý test" : "Procvičování"}</h2>
           {!examMode && (
             <div className="mb-6 space-y-3">
@@ -1122,18 +1137,31 @@ export default function DrivingTestApp() {
           }}
         />
         <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
-          {originPhase === 'browse' && (
-            <div className="mb-4">
-              <Button
-                variant="outline"
-                onClick={() => {
+          <div className="mb-4">
+            <Button
+              variant="outline"
+              onClick={() => {
+                if (originPhase === 'browse') {
                   setPhase('browse');
                   setBrowseState('questions');
-                }}>
-                &larr; Zpět
-              </Button>
-            </div>
-          )}
+                  return;
+                }
+                // Chceme potvrzení jen u ostrého testu
+                if (examMode) {
+                  if (confirm("Opravdu chcete test ukončit? Váš postup nebude uložen.")) {
+                    setPhase("intro");
+                  }
+                } else {
+                  // U procvičování rovnou ukončíme a uložíme statistiky
+                  commitSessionAnalysis().then(() => {
+                    calculateAndSavePracticeStats();
+                    setPhase("intro");
+                  });
+                }
+              }}>
+              &larr; {originPhase === 'browse' ? 'Zpět na výběr otázek' : 'Zpět na hlavní stránku'}
+            </Button>
+          </div>
           <section className={clsx(
             "grid gap-8 transition-all duration-300",
             examMode
@@ -1451,6 +1479,11 @@ export default function DrivingTestApp() {
         />
         <main className="flex-1 overflow-y-auto">
           <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-center">
+            <div className="max-w-4xl mx-auto mb-4 text-left">
+                <Button variant="outline" onClick={() => setPhase("intro")}>
+                    &larr; Zpět na hlavní stránku
+                </Button>
+            </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">
               {examMode ? (passed ? "Gratulujeme, uspěli jste!" : "Bohužel, neuspěli jste.") : "Procvičování dokončeno"}
             </h2>
