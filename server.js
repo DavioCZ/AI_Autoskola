@@ -9,7 +9,17 @@ import { fileURLToPath } from "url";
 import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Redis } from "@upstash/redis";
-import { allBadges } from "./src/badges.js";
+// import { allBadges } from "./src/badges.js";
+
+let allBadges;
+try {
+  const badgesModule = await import("./src/badges.js");
+  allBadges = badgesModule.allBadges;
+} catch (e) {
+  console.warn("Could not load badges from ./src/badges.js, trying ./badges.js");
+  const badgesModule = await import("./badges.js");
+  allBadges = badgesModule.allBadges;
+}
 
 dotenv.config();
 let analysisIndex;
