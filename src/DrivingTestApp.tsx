@@ -14,6 +14,8 @@ import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Timer
 import { Popover, PopoverTrigger, PopoverContent } from "../components/ui/popover";
 import clsx from "clsx";
 import { useAi, ChatMessage } from "./hooks/useAi"; // Přidán import
+import { UnlockedBadge } from "./badges";
+import { BadgesDisplay } from "./components/Badges";
 
 /* ----------------------- Data typy a konstanty ---------------------- */
 export type Question = {
@@ -105,23 +107,32 @@ function saveStats(user: string, s: Stats) {
 }
 
 /* ----------------------- Analytická data ------------------------- */
-async function getAnalysisData(): Promise<AnalysisEntry[]> {
+type UserData = {
+  analysisData: AnalysisEntry[];
+  unlockedBadges: UnlockedBadge[];
+};
+
+async function loadUserData(): Promise<UserData> {
   try {
     const res = await fetch("/api/analysis-data");
     if (!res.ok) {
       throw new Error(`Server responded with status: ${res.status}`);
     }
-    return await res.json();
+    const data = await res.json();
+    return {
+      analysisData: data.analysisData || [],
+      unlockedBadges: data.unlockedBadges || [],
+    };
   } catch (error) {
-    console.error("Could not get analysis data:", error);
-    return [];
+    console.error("Could not get user data:", error);
+    return { analysisData: [], unlockedBadges: [] };
   }
 }
 
-async function appendAnalysisData(entries: AnalysisEntry[]) {
+async function appendAnalysisData(entries: AnalysisEntry[]): Promise<UnlockedBadge[]> {
   if (entries.length === 0) {
     console.log("[appendAnalysisData] No entries to append. Skipping API call.");
-    return;
+    return [];
   }
   try {
     console.log("[appendAnalysisData] Sending entries to server:", entries);
@@ -133,9 +144,12 @@ async function appendAnalysisData(entries: AnalysisEntry[]) {
     if (!response.ok) {
       throw new Error(`Server responded with status: ${response.status}`);
     }
-    console.log("[appendAnalysisData] Successfully sent data.");
+    const result = await response.json();
+    console.log("[appendAnalysisData] Successfully sent data. Newly awarded badges:", result.newlyAwardedBadges);
+    return result.newlyAwardedBadges || [];
   } catch (error) {
     console.error("Failed to save analysis data:", error);
+    return [];
   }
 }
 
@@ -277,6 +291,7 @@ export default function DrivingTestApp() {
   const [questionStartTime, setQuestionStartTime] = useState<number>(0);
   const [sessionAnalysis, setSessionAnalysis] = useState<Record<string, { timeToAnswer: number; firstAttemptCorrect: boolean }>>({});
   const [analysisData, setAnalysisData] = useState<AnalysisEntry[]>([]);
+  const [unlockedBadges, setUnlockedBadges] = useState<UnlockedBadge[]>([]);
   const { ask, loading: aiLoading, answer: aiAnswer, messages, setMessages } = useAi();
   const [draft, setDraft] = useState("");
   const msgEndRef = useRef<HTMLDivElement | null>(null);
@@ -298,6 +313,10 @@ export default function DrivingTestApp() {
   useEffect(() => {
     if (currentUser) {
       setStats(loadStats(currentUser));
+      loadUserData().then(data => {
+        setAnalysisData(data.analysisData);
+        setUnlockedBadges(data.unlockedBadges);
+      });
     }
   }, [currentUser]);
 
@@ -434,7 +453,7 @@ export default function DrivingTestApp() {
     setStats(newStats); 
   }
 
-  function commitSessionAnalysis() {
+  async function commitSessionAnalysis() {
     console.log("[commitSessionAnalysis] Starting.");
     const entries: AnalysisEntry[] = [];
     const answeredQuestionIds = Object.keys(responses);
@@ -469,12 +488,17 @@ export default function DrivingTestApp() {
       });
     }
     console.log("[commitSessionAnalysis] Compiled entries:", entries);
-    appendAnalysisData(entries);
+    const newBadges = await appendAnalysisData(entries);
+    if (newBadges.length > 0) {
+      setUnlockedBadges(prev => [...prev, ...newBadges]);
+      // Zde by mohla být notifikace pro uživatele
+      alert(`Získali jste ${newBadges.length} nových odznaků!`);
+    }
   }
 
-  function finishExam() {
+  async function finishExam() {
     // Okamžitě se pokusíme odeslat data z dokončené session
-    commitSessionAnalysis();
+    await commitSessionAnalysis();
 
     setPhase("done");
     
@@ -560,10 +584,13 @@ export default function DrivingTestApp() {
   }, [q]);
 
   useEffect(() => {
-    if (phase === 'analysis') {
-        getAnalysisData().then(setAnalysisData);
+    if (phase === 'analysis' && currentUser) {
+        loadUserData().then(data => {
+          setAnalysisData(data.analysisData);
+          setUnlockedBadges(data.unlockedBadges);
+        });
     }
-  }, [phase]);
+  }, [phase, currentUser]);
 
   useEffect(() => {
     if (phase === "test") {
@@ -715,6 +742,7 @@ export default function DrivingTestApp() {
                 </div>
               </CardContent>
             </Card>
+            <BadgesDisplay unlockedBadges={unlockedBadges} />
           </div>
         </div>
       </>
@@ -1117,9 +1145,10 @@ export default function DrivingTestApp() {
               }
             } else {
               // U procvičování rovnou ukončíme a uložíme statistiky
-              commitSessionAnalysis();
-              calculateAndSavePracticeStats();
-              setPhase("intro");
+              commitSessionAnalysis().then(() => {
+                calculateAndSavePracticeStats();
+                setPhase("intro");
+              });
             }
           }}
         />
@@ -1327,9 +1356,10 @@ export default function DrivingTestApp() {
                       variant="outline"
                       onClick={() => {
                         // U procvičování se neptáme a rovnou ukládáme a končíme.
-                        commitSessionAnalysis();
-                        calculateAndSavePracticeStats();
-                        setPhase("intro");
+                        commitSessionAnalysis().then(() => {
+                          calculateAndSavePracticeStats();
+                          setPhase("intro");
+                        });
                       }}>
                       Ukončit
                     </Button>

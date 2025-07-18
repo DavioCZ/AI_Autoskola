@@ -9,6 +9,7 @@ import { fileURLToPath } from "url";
 import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Redis } from "@upstash/redis";
+import { allBadges } from "./src/badges.js";
 
 dotenv.config();
 let analysisIndex;
@@ -201,7 +202,56 @@ app.post("/api/image-context", (req, res) => {
   });
 });
 
-const ANALYSIS_KEY = "analysis-data"; // Klíč pro Redis
+const ANALYSIS_KEY = "analysis-data"; // Klíč pro statistiky
+const BADGES_KEY = "unlocked-badges";   // Klíč pro odznaky
+
+// Helper funkce pro kontrolu a udělení odznaků
+const checkAndAwardBadges = async (allEntries, lastTestEntries) => {
+  const awardedBadges = new Set();
+  const existingBadgesRaw = await redis.get(BADGES_KEY);
+  const existingBadges = existingBadgesRaw ? JSON.parse(existingBadgesRaw) : [];
+  const existingBadgeIds = new Set(existingBadges.map(b => b.id));
+
+  // 1. Odznak: První dokončený test
+  if (!existingBadgeIds.has('first_test_completed')) {
+    awardedBadges.add('first_test_completed');
+  }
+
+  // 2. Odznak: První úspěšně složený test
+  if (!existingBadgeIds.has('first_test_passed')) {
+    const wasSuccessful = lastTestEntries.every(e => e.isCorrect); // Zjednodušená logika
+    if (wasSuccessful) {
+      awardedBadges.add('first_test_passed');
+    }
+  }
+  
+  // 3. Odznak: Dokončeno 10 testů
+  if (!existingBadgeIds.has('ten_tests_completed')) {
+      // Logika pro zjištění počtu unikátních testů
+      const testTimestamps = new Set(allEntries.map(e => e.timestamp));
+      if (testTimestamps.size >= 10) {
+          awardedBadges.add('ten_tests_completed');
+      }
+  }
+
+  // 4. Odznak: Test bez chyb
+  if (!existingBadgeIds.has('no_mistakes_test')) {
+      if (lastTestEntries.every(e => e.isCorrect)) {
+          awardedBadges.add('no_mistakes_test');
+      }
+  }
+
+  // Přidání nových odznaků
+  if (awardedBadges.size > 0) {
+    const newBadges = [...awardedBadges]
+      .map(id => ({ id, unlockedAt: new Date().toISOString() }));
+    const updatedBadges = [...existingBadges, ...newBadges];
+    await redis.set(BADGES_KEY, JSON.stringify(updatedBadges));
+    return newBadges; // Vrací jen nově získané
+  }
+  return [];
+};
+
 
 app.post("/api/save-analysis", async (req, res) => {
   const { entries } = req.body;
@@ -210,17 +260,18 @@ app.post("/api/save-analysis", async (req, res) => {
   }
 
   try {
-    // Získání stávajících dat z Redis
     const existingDataRaw = await redis.get(ANALYSIS_KEY);
     const existingData = existingDataRaw ? JSON.parse(existingDataRaw) : [];
-
-    // Přidání nových záznamů
     const newData = [...existingData, ...entries];
-
-    // Uložení zpět do Redis
     await redis.set(ANALYSIS_KEY, JSON.stringify(newData));
 
-    res.status(200).json({ message: "Analysis data saved successfully." });
+    // Logika pro udělení odznaků
+    const newlyAwardedBadges = await checkAndAwardBadges(newData, entries);
+
+    res.status(200).json({ 
+      message: "Analysis data saved successfully.",
+      newlyAwardedBadges: newlyAwardedBadges
+    });
   } catch (e) {
     console.error("Error in /api/save-analysis:", e);
     res.status(500).json({ error: e.message });
@@ -229,21 +280,24 @@ app.post("/api/save-analysis", async (req, res) => {
 
 app.get("/api/analysis-data", async (req, res) => {
   try {
-    const dataRaw = await redis.get(ANALYSIS_KEY);
-    if (!dataRaw) {
-      return res.json([]); // Pokud žádná data neexistují, vrátí prázdné pole
-    }
-    res.json(JSON.parse(dataRaw));
+    const analysisDataRaw = await redis.get(ANALYSIS_KEY);
+    const badgesDataRaw = await redis.get(BADGES_KEY);
+
+    const analysisData = analysisDataRaw ? JSON.parse(analysisDataRaw) : [];
+    const unlockedBadges = badgesDataRaw ? JSON.parse(badgesDataRaw) : [];
+
+    res.json({ analysisData, unlockedBadges });
   } catch (error) {
-    console.error("Error reading analysis data:", error);
-    res.status(500).json({ error: "Failed to read analysis data" });
+    console.error("Error reading user data:", error);
+    res.status(500).json({ error: "Failed to read user data" });
   }
 });
 
 app.post("/api/reset-analysis", async (req, res) => {
   try {
     await redis.del(ANALYSIS_KEY);
-    res.status(200).json({ message: "Analysis data reset successfully." });
+    await redis.del(BADGES_KEY); // Smazat i odznaky
+    res.status(200).json({ message: "Analysis and badge data reset successfully." });
   } catch (error) {
     console.error("Error in /api/reset-analysis:", error);
     res.status(500).json({ error: error.message });
