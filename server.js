@@ -9,18 +9,7 @@ import { fileURLToPath } from "url";
 import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Redis } from "@upstash/redis";
-// import { allBadges } from "./src/badges.js";
-
-// Dynamic import for badges to handle different environments (local vs. Render)
-let allBadges;
-try {
-  const badgesModule = await import("./src/badges.js");
-  allBadges = badgesModule.allBadges;
-} catch (e) {
-  console.warn("Could not load badges from ./src/badges.js, trying ./badges.js");
-  const badgesModule = await import("./badges.js");
-  allBadges = badgesModule.allBadges;
-}
+import { allBadges } from "./src/badges.js";
 
 dotenv.config();
 let analysisIndex;
