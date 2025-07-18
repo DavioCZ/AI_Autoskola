@@ -176,10 +176,10 @@ function TopNav({
   return (
     <header className="w-full bg-white border-b shadow-sm sticky top-0 z-40">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-2 cursor-pointer" onClick={onHome}>
+        <Button variant="ghost" onClick={onHome} className="flex items-center gap-2 px-1 hover:bg-gray-100">
           <Book size={20} className="text-blue-600" />
           <h1 className="font-semibold text-lg select-none">Autoškola B</h1>
-        </div>
+        </Button>
         <div className="flex-1 text-center text-sm font-medium text-gray-600 select-none">
           {label}{" "}
           {timeLeft !== null && timeLeft !== undefined && (
