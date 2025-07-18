@@ -47,7 +47,7 @@
 
 ### 3.1 | Gamifikace
 - [x] **Systém odznaků:** Navrhnout a implementovat systém odemykatelných odznaků za dosažené milníky (např. "První úspěšný test", "Mistr křižovatek", "100 správných odpovědí v řadě").
-- [ ] **Vizuální progress na hlavní stránce:** Místo prostého progress baru zvážit implementaci progresního kruhu u statistik, který by vizuálně atraktivněji znázorňoval pokrok.
+- [x] **Vizuální progress na hlavní stránce:** Místo prostého progress baru zvážit implementaci progresního kruhu u statistik, který by vizuálně atraktivněji znázorňoval pokrok.
 
 ### 3.2 | Nové funkce pro komfort a učení
 - [ ] **Tmavý režim (Dark Mode):** Přidat do hlavičky aplikace přepínač pro snadné přepnutí mezi světlým a tmavým režimem.
