@@ -11,6 +11,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Redis } from "@upstash/redis";
 // import { allBadges } from "./src/badges.js";
 
+// Dynamic import for badges to handle different environments (local vs. Render)
 let allBadges;
 try {
   const badgesModule = await import("./src/badges.js");
