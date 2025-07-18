@@ -50,7 +50,8 @@ app.use(express.json({ limit: "8mb" }));   // zvýšeno kvůli base64 médiím
 // --- Statické soubory pro produkci ---
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(express.static(path.join(__dirname, "dist")));
+// Upravená cesta: směřuje o úroveň výš z `build` do `dist`
+app.use(express.static(path.join(__dirname, "..", "dist")));
 
 /* ---------- 1) klasické textové dotazy /api/ai -------------------------------- */
 // The user's prompt mentioned "… tvůj původní prompt …" and "nechávám tvou poslední logiku"
