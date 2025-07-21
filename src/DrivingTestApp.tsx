@@ -177,7 +177,7 @@ function TopNav({
   currentUser: string;
   onSetCurrentUser: (name: string | null) => void;
 }) {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const mm = timeLeft !== null && timeLeft !== undefined ? Math.floor(timeLeft / 60) : null;
   const ss = timeLeft !== null && timeLeft !== undefined ? timeLeft % 60 : null;
   const timeFmt = (mm !== null && ss !== null) ? `${mm}:${ss.toString().padStart(2, "0")}` : "";
@@ -214,13 +214,18 @@ function TopNav({
                   <User className="mr-2 h-4 w-4" />
                   <span>Nastavení</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("light")}>
-                  <Sun className="mr-2 h-4 w-4" />
-                  <span>Světlý režim</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                  <Moon className="mr-2 h-4 w-4" />
-                  <span>Tmavý režim</span>
+                <DropdownMenuItem onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                  {theme === 'dark' ? (
+                    <>
+                      <Sun className="mr-2 h-4 w-4" />
+                      <span>Světlý režim</span>
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="mr-2 h-4 w-4" />
+                      <span>Tmavý režim</span>
+                    </>
+                  )}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => onSetCurrentUser(null)}>
                   <LogOut className="mr-2 h-4 w-4" />
