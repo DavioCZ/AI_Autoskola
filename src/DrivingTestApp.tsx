@@ -327,7 +327,7 @@ function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
                 if (error) setError("");
               }}
               onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-3 py-2 border rounded-md bg-background text-foreground"
               placeholder="Zadejte jméno"
             />
             {error && <p className="text-xs text-red-600">{error}</p>}
