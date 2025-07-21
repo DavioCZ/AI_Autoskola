@@ -290,7 +290,7 @@ function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-2 text-gray-500">Nebo</span>
+              <span className="bg-card px-2 text-muted-foreground">Nebo</span>
             </div>
           </div>
           <Button onClick={() => onLogin("Host")} variant="secondary" className="w-full">
@@ -637,19 +637,19 @@ export default function DrivingTestApp() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <Button size="lg" className="w-full h-auto py-8 text-lg flex-col bg-blue-600 hover:bg-blue-700 text-white shadow-lg" onClick={() => { setExamMode(true); setPhase("setup"); }}>
+            <Button size="lg" className="w-full h-auto py-8 text-lg flex-col bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg" onClick={() => { setExamMode(true); setPhase("setup"); }}>
               <div className="flex items-center">
                 <span className="text-2xl mr-3">⏱️</span>
                 <span className="font-bold">Ostrý test</span>
               </div>
-              <span className="font-normal text-sm text-blue-200 mt-1.5">Časomíra, 25 otázek, 50 bodů</span>
+              <span className="font-normal text-sm text-primary-foreground/80 mt-1.5">Časomíra, 25 otázek, 50 bodů</span>
             </Button>
             <Button size="lg" variant="outline" className="w-full h-auto py-8 text-lg flex-col border-2" onClick={() => { setExamMode(false); setPhase("setup"); }}>
                <div className="flex items-center">
                 <span className="text-2xl mr-3">📚</span>
                 <span className="font-semibold">Procvičování</span>
               </div>
-              <span className="font-normal text-sm text-gray-500 mt-1.5">Vlastní výběr okruhů</span>
+              <span className="font-normal text-sm text-muted-foreground mt-1.5">Vlastní výběr okruhů</span>
             </Button>
             <div className="md:col-span-2">
               <Button size="lg" variant="secondary" className="w-full h-auto py-6 text-base flex-col" onClick={() => { setPhase("browse"); setBrowseState("groups"); }}>
@@ -657,7 +657,7 @@ export default function DrivingTestApp() {
                       <Library className="mr-2 h-5 w-5" />
                       <span className="font-semibold">Prohlížení otázek</span>
                   </div>
-                  <span className="font-normal text-sm text-gray-500 mt-1">Zobrazit všechny otázky podle okruhů</span>
+                  <span className="font-normal text-sm text-muted-foreground mt-1">Zobrazit všechny otázky podle okruhů</span>
               </Button>
             </div>
             <div className="md:col-span-2">
@@ -666,7 +666,7 @@ export default function DrivingTestApp() {
                       <FileText className="mr-2 h-5 w-5" />
                       <span className="font-semibold">Podrobná analýza</span>
                   </div>
-                  <span className="font-normal text-sm text-gray-500 mt-1">Zjistěte, kde děláte nejvíce chyb</span>
+                  <span className="font-normal text-sm text-muted-foreground mt-1">Zjistěte, kde děláte nejvíce chyb</span>
               </Button>
             </div>
           </div>
@@ -682,21 +682,21 @@ export default function DrivingTestApp() {
                 </CardHeader>
                 <CardContent>
                   {stats.examTaken === 0 ? (
-                    <p className="text-sm text-gray-500 text-center py-4">Ještě jste nezkoušeli žádný ostrý test. Začněte a sledujte zde svůj pokrok!</p>
+                    <p className="text-sm text-muted-foreground text-center py-4">Ještě jste nezkoušeli žádný ostrý test. Začněte a sledujte zde svůj pokrok!</p>
                   ) : (
                     <>
                       <div className="flex flex-col items-center justify-center gap-2 mt-2">
                         <CircularProgress value={(stats.examPassed / stats.examTaken) * 100} size={100} strokeWidth={10} />
-                        <p className="text-sm text-gray-600 mt-2">Celková úspěšnost</p>
+                        <p className="text-sm text-muted-foreground mt-2">Celková úspěšnost</p>
                       </div>
                       {stats.lastExamScore !== null && (
                         <div className="mt-4 pt-4 border-t">
-                          <p className="text-xs text-gray-500 uppercase font-medium">Poslední pokus</p>
+                          <p className="text-xs text-muted-foreground uppercase font-medium">Poslední pokus</p>
                           <p className="text-sm mt-1">
                             <span className={clsx(stats.lastExamPassed ? "text-green-600" : "text-red-600", "font-semibold")}>
                               {stats.lastExamPassed ? "Úspěšně" : "Neúspěšně"}
                             </span>
-                            <span className="text-gray-600"> ({stats.lastExamScore} b.)</span>
+                            <span className="text-muted-foreground"> ({stats.lastExamScore} b.)</span>
                           </p>
                         </div>
                       )}
@@ -710,19 +710,19 @@ export default function DrivingTestApp() {
                 </CardHeader>
                 <CardContent>
                   {stats.practiceAnswered === 0 ? (
-                     <p className="text-sm text-gray-500 text-center py-4">Ještě jste nic neprocvičovali. Začněte a sledujte zde svůj pokrok!</p>
+                     <p className="text-sm text-muted-foreground text-center py-4">Ještě jste nic neprocvičovali. Začněte a sledujte zde svůj pokrok!</p>
                   ) : (
                     <>
                       <div className="flex flex-col items-center justify-center gap-2 mt-2">
                         <CircularProgress value={(stats.practiceCorrect / stats.practiceAnswered) * 100} size={100} strokeWidth={10} />
-                        <p className="text-sm text-gray-600 mt-2">Správnost na 1. pokus</p>
+                        <p className="text-sm text-muted-foreground mt-2">Správnost na 1. pokus</p>
                       </div>
                       {stats.lastPracticeAnswered !== null && stats.lastPracticeCorrect !== null && (
                         <div className="mt-4 pt-4 border-t">
-                          <p className="text-xs text-gray-500 uppercase font-medium">Poslední kolo</p>
+                          <p className="text-xs text-muted-foreground uppercase font-medium">Poslední kolo</p>
                           <p className="text-sm mt-1">
                             <span className="font-semibold">{stats.lastPracticeCorrect} / {stats.lastPracticeAnswered}</span>
-                            <span className="text-gray-600"> správně</span>
+                            <span className="text-muted-foreground"> správně</span>
                           </p>
                         </div>
                       )}
@@ -731,17 +731,17 @@ export default function DrivingTestApp() {
                 </CardContent>
               </Card>
             </div>
-            <Card className="mt-8 text-left bg-gray-50/50">
+            <Card className="mt-8 text-left bg-muted/50">
               <CardHeader><h3 className="font-semibold">Detailní statistiky</h3></CardHeader>
               <CardContent className="text-sm space-y-2 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                 <div>
-                  <h4 className="font-medium text-xs text-gray-500 uppercase">Ostré testy</h4>
+                  <h4 className="font-medium text-xs text-muted-foreground uppercase">Ostré testy</h4>
                   <p>Absolvované: <span className="font-medium">{stats.examTaken}</span></p>
                   <p>Průměrné skóre: <span className="font-medium">{stats.examAvgScore > 0 ? stats.examAvgScore.toFixed(1) : "0.0"} / 50</span></p>
                   <p>Průměrný čas: <span className="font-medium">{stats.examAvgTime > 0 ? `${Math.floor(stats.examAvgTime / 60)}m ${stats.examAvgTime % 60}s` : "0m 0s"}</span></p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-xs text-gray-500 uppercase">Procvičování</h4>
+                  <h4 className="font-medium text-xs text-muted-foreground uppercase">Procvičování</h4>
                   <p>Zodpovězeno otázek: <span className="font-medium">{stats.practiceAnswered}</span></p>
                   <p>Správně na 1. pokus: <span className="font-medium">{stats.practiceCorrect}</span></p>
                 </div>
@@ -862,7 +862,7 @@ export default function DrivingTestApp() {
             <Card className="max-w-3xl mx-auto text-center p-8">
               <CardHeader><h3 className="font-semibold text-lg">Zatím zde nic není</h3></CardHeader>
               <CardContent>
-                <p className="text-gray-600">Absolvujte test nebo procvičování, abychom mohli začít sbírat data pro analýzu vašeho pokroku.</p>
+                <p className="text-muted-foreground">Absolvujte test nebo procvičování, abychom mohli začít sbírat data pro analýzu vašeho pokroku.</p>
                 <Button className="mt-6" onClick={() => setPhase("intro")}>Zpět na hlavní stránku</Button>
               </CardContent>
             </Card>
@@ -870,12 +870,12 @@ export default function DrivingTestApp() {
             <Card className="max-w-4xl mx-auto">
               <CardHeader>
                 <h3 className="font-semibold text-lg">Přehled podle okruhů</h3>
-                <p className="text-sm text-gray-500">Údaje jsou založeny na správnosti vaší první odpovědi.</p>
+                <p className="text-sm text-muted-foreground">Údaje jsou založeny na správnosti vaší první odpovědi.</p>
               </CardHeader>
               <CardContent>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm text-left">
-                    <thead className="bg-gray-50">
+                    <thead className="bg-muted/50">
                       <tr>
                         <th className="p-3 font-medium">Okruh</th>
                         <th className="p-3 font-medium text-center">Úspěšnost</th>
@@ -888,7 +888,7 @@ export default function DrivingTestApp() {
                       {analysisByGroup.map(group => (
                         <tr key={group.id} className="border-b">
                           <td className="p-3 font-medium flex items-center gap-2">
-                            <group.Icon size={16} className="text-gray-500" />
+                            <group.Icon size={16} className="text-muted-foreground" />
                             {group.name}
                           </td>
                           {group.total > 0 ? (
@@ -907,7 +907,7 @@ export default function DrivingTestApp() {
                               <td className="p-3 text-center">{group.total}</td>
                             </>
                           ) : (
-                            <td colSpan={3} className="p-3 text-center text-sm text-gray-500 italic">
+                            <td colSpan={3} className="p-3 text-center text-sm text-muted-foreground italic">
                               Zatím bez odpovědí. Začněte procvičovat!
                             </td>
                           )}
@@ -915,7 +915,7 @@ export default function DrivingTestApp() {
                             <Button
                               variant="ghost"
                               size="sm"
-                              className="text-xs text-gray-400 hover:text-gray-700 transition-colors"
+                              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                               onClick={async () => {
                                 await initiateTest(false, [group.id], undefined);
                               }}
@@ -938,7 +938,7 @@ export default function DrivingTestApp() {
             <Card className="max-w-4xl mx-auto mt-8">
               <CardHeader>
                 <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
-                <p className="text-sm text-gray-500">Otázky, ve kterých jste v minulosti chybovali.</p>
+                <p className="text-sm text-muted-foreground">Otázky, ve kterých jste v minulosti chybovali.</p>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -960,7 +960,7 @@ export default function DrivingTestApp() {
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-gray-700 mt-1">{text}</p>
+                      <p className="text-sm text-foreground/90 mt-1">{text}</p>
                     </div>
                   ))}
                 </div>
@@ -1012,8 +1012,8 @@ export default function DrivingTestApp() {
             <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
                 {isLoading ? (
                     <div className="text-center p-10">
-                        <RefreshCcw size={32} className="text-blue-500 animate-spin mx-auto" />
-                        <p className="mt-4 text-gray-600">Načítám...</p>
+                        <RefreshCcw size={32} className="text-primary animate-spin mx-auto" />
+                        <p className="mt-4 text-muted-foreground">Načítám...</p>
                     </div>
                 ) : browseState === 'groups' ? (
                     <>
@@ -1027,7 +1027,7 @@ export default function DrivingTestApp() {
                             {GROUPS.map((g) => (
                                 <div 
                                     key={g.id} 
-                                    className="flex items-center space-x-2 p-3 border rounded-md hover:bg-gray-50 cursor-pointer transition-colors"
+                                    className="flex items-center space-x-2 p-3 border rounded-md hover:bg-muted/50 cursor-pointer transition-colors"
                                     onClick={async () => {
                                         setIsLoading(true);
                                         const qs = await fetchGroup(g.id);
@@ -1060,7 +1060,7 @@ export default function DrivingTestApp() {
                             {questions.map((q, index) => (
                                 <div 
                                     key={q.id} 
-                                    className="p-3 border rounded-md hover:bg-gray-50 cursor-pointer transition-colors"
+                                    className="p-3 border rounded-md hover:bg-muted/50 cursor-pointer transition-colors"
                                     onClick={() => {
                                         setCurrent(index);
                                         setExamMode(false); // Use practice UI
@@ -1070,7 +1070,7 @@ export default function DrivingTestApp() {
                                         setPhase("test");
                                     }}
                                 >
-                                    <p className="font-mono text-xs text-gray-500">ID: {q.id}</p>
+                                    <p className="font-mono text-xs text-muted-foreground">ID: {q.id}</p>
                                     <p>{q.otazka}</p>
                                 </div>
                             ))}
@@ -1103,7 +1103,7 @@ export default function DrivingTestApp() {
             <div className="mb-6 space-y-3">
               <h3 className="font-medium mb-2">Vyberte okruhy otázek:</h3>
               {GROUPS.map((g) => (
-                <div key={g.id} className="flex items-center space-x-2 p-2 border rounded-md hover:bg-gray-50">
+                <div key={g.id} className="flex items-center space-x-2 p-2 border rounded-md hover:bg-muted/50">
                   <Checkbox
                     id={`group-${g.id}`}
                     checked={selectedGroups.includes(g.id)}
@@ -1216,9 +1216,9 @@ export default function DrivingTestApp() {
                           className={clsx(
                             "h-8 w-8 rounded-full text-sm font-medium border",
                             {
-                              "bg-slate-600 hover:bg-slate-700 text-white border-slate-600": isAnswered && !isCurrent,
-                              "border-blue-500 ring-2 ring-blue-500 ring-offset-1": isCurrent,
-                              "bg-white hover:bg-slate-100 text-slate-700 border-slate-300": !isAnswered && !isCurrent,
+                              "bg-secondary hover:bg-secondary/80 text-secondary-foreground border-secondary": isAnswered && !isCurrent,
+                              "border-primary ring-2 ring-primary ring-offset-background": isCurrent,
+                              "bg-background hover:bg-muted text-foreground": !isAnswered && !isCurrent,
                             }
                           )}
                           onClick={() => setCurrent(idx)}
@@ -1228,27 +1228,27 @@ export default function DrivingTestApp() {
                       );
                     })}
                   </ul>
-                  <div className="h-1.5 w-full rounded-full bg-neutral-200 overflow-hidden">
+                  <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
                     <div
-                      className="h-full bg-blue-500 transition-all duration-150"
+                      className="h-full bg-primary transition-all duration-150"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
-                  <p className="text-xs text-neutral-600">
+                  <p className="text-xs text-muted-foreground">
                     {answeredCount} / {questions.length} hotovo
                   </p>
                 </header>
               )}
               {!examMode && <Progress value={progress} className="mb-4 h-2" />}
 
-              <Card className="w-full rounded-xl border border-neutral-200 bg-white shadow-sm p-5 sm:p-6 space-y-6">
+              <Card className="w-full rounded-xl p-5 sm:p-6 space-y-6">
                 <CardHeader className="p-0">
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-muted-foreground">
                     Otázka {current + 1} / {questions.length}
                   </div>
                   <h3 className="text-base sm:text-lg font-semibold mt-1" style={{ lineHeight: '1.4' }}>
                     {q.otazka}
-                    <span className="ml-2 text-sm font-normal text-gray-500">
+                    <span className="ml-2 text-sm font-normal text-muted-foreground">
                       ({q.points} {q.points === 1 ? "bod" : q.points <= 4 ? "body" : "bodů"}){" "}
                       {GROUPS.find((g) => g.id === q.groupId)?.name}
                     </span>
@@ -1310,7 +1310,7 @@ export default function DrivingTestApp() {
                           className={clsx(
                             "flex items-start gap-3 p-3 border rounded-md transition-colors cursor-pointer",
                             itemSpecificClasses,
-                            !itemSpecificClasses && "hover:bg-gray-50"
+                            !itemSpecificClasses && "hover:bg-muted/50"
                           )}
                         >
                           <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} className="mt-1" />
@@ -1352,14 +1352,14 @@ export default function DrivingTestApp() {
                       examMode ? (
                         <Popover open={showFinishConfirm} onOpenChange={setShowFinishConfirm}>
                           <PopoverTrigger asChild>
-                            <Button className="text-white bg-green-600 hover:bg-green-700">Dokončit test</Button>
+                            <Button className="text-destructive-foreground bg-destructive hover:bg-destructive/90">Dokončit test</Button>
                           </PopoverTrigger>
                           <PopoverContent className="w-auto p-4" side="top" align="end">
                             <div className="space-y-3 text-center">
                               <p className="text-sm font-medium">Opravdu chcete dokončit a vyhodnotit test?</p>
                               <div className="flex justify-center gap-2">
                                 <Button variant="outline" size="sm" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
-                                <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white" onClick={() => {
+                                <Button size="sm" className="bg-destructive hover:bg-destructive/90 text-destructive-foreground" onClick={() => {
                                   finishExam();
                                   setShowFinishConfirm(false);
                                 }}>Potvrdit</Button>
@@ -1370,7 +1370,7 @@ export default function DrivingTestApp() {
                       ) : (
                         <Button 
                           onClick={finishExam} 
-                          className="text-white bg-blue-600 hover:bg-blue-700"
+                          className="text-primary-foreground bg-primary hover:bg-primary/90"
                         >
                           Vyhodnotit procvičování
                         </Button>
@@ -1398,7 +1398,7 @@ export default function DrivingTestApp() {
 
             {!examMode && (
               <aside className={clsx(
-                "flex flex-col rounded-lg border border-neutral-200 bg-sky-50/50 h-fit lg:sticky lg:top-28 transition-all duration-300 ease-in-out",
+                "flex flex-col rounded-lg border bg-muted/40 h-fit lg:sticky lg:top-28 transition-all duration-300 ease-in-out",
                 isAiTutorCollapsed ? "p-2" : "p-4 sm:p-5"
               )}>
                 <div className="flex items-center justify-between pb-2 border-b">
@@ -1410,7 +1410,7 @@ export default function DrivingTestApp() {
                 <div className={clsx("space-y-4", { "hidden": isAiTutorCollapsed })}>
                   <div className="flex-1 overflow-y-auto p-2 space-y-2 text-sm max-h-[60vh]">
                   {messages.map((msg: ChatMessage, i: number) => (
-                    <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto")}>
+                    <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto text-gray-800")}>
                       {msg.text.split('\n').map((line: string, j: number) => {
                         const isImageUrl = /\.(jpeg|jpg|gif|png)$/i.test(line.trim());
                         if (isImageUrl && msg.role === "assistant") { 
@@ -1420,7 +1420,7 @@ export default function DrivingTestApp() {
                       })}
                     </div>
                   ))}
-                  {aiLoading && <div className="p-2.5 rounded-lg shadow-sm max-w-[90%] bg-blue-100 self-start opacity-70">Přemýšlím...</div>}
+                  {aiLoading && <div className="p-2.5 rounded-lg shadow-sm max-w-[90%] bg-blue-100 self-start opacity-70 text-gray-800">Přemýšlím...</div>}
                   <div ref={msgEndRef} />
                 </div>
                 <div className="pt-2 border-t">
@@ -1499,7 +1499,7 @@ export default function DrivingTestApp() {
     }
 
     return (
-      <div className="flex flex-col h-screen bg-gray-50">
+      <div className="flex flex-col h-screen bg-background">
         {passed && <Confetti recycle={false} />}
         <TopNav 
           label="Výsledky testu" 
@@ -1538,28 +1538,28 @@ export default function DrivingTestApp() {
             {examMode && (
               <div className="my-8 text-left">
                 <div className="relative pt-5 pb-8 mb-4">
-                  <div className="flex justify-between text-sm text-gray-600 mb-1 absolute w-full -top-0 px-1">
+                  <div className="flex justify-between text-sm text-muted-foreground mb-1 absolute w-full -top-0 px-1">
                     <span>0%</span>
                     <span>100%</span>
                   </div>
                   <div className="relative">
                     <Progress
                       value={(score / (totalPoints > 0 ? totalPoints : 50)) * 100}
-                      className="h-6 border-2 border-gray-300 bg-gray-200"
-                      indicatorClassName={passed ? "bg-green-500" : "bg-red-500"}
+                      className="h-6 border-2 border-border bg-muted"
+                      indicatorClassName={passed ? "bg-green-500" : "bg-destructive"}
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="font-bold text-sm text-gray-800">
+                      <span className="font-bold text-sm text-foreground">
                         {((score / (totalPoints > 0 ? totalPoints : 50)) * 100).toFixed(0)}% ({score} bodů)
                       </span>
                     </div>
                     <div
-                      className="absolute top-0 bottom-0 w-0.5 bg-slate-700"
+                      className="absolute top-0 bottom-0 w-0.5 bg-foreground/80"
                       style={{ left: `86%` }}
                       title="Minimální hranice pro úspěch (86%)"
                     >
                       <div
-                        className="absolute -bottom-6 text-xs text-slate-700 font-semibold"
+                        className="absolute -bottom-6 text-xs text-foreground/80 font-semibold"
                         style={{ transform: 'translateX(-50%)' }}
                       >
                         86%
@@ -1570,10 +1570,10 @@ export default function DrivingTestApp() {
                 <h3 className="text-lg font-semibold mb-4">Přehled podle okruhů</h3>
                 <div className="space-y-3">
                   {resultsByGroup.map(group => (
-                    <div key={group.id} className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm flex flex-col sm:flex-row items-center gap-4">
+                    <div key={group.id} className="bg-card border p-4 rounded-lg shadow-sm flex flex-col sm:flex-row items-center gap-4">
                       <div className="flex-none flex items-center gap-3 w-full sm:w-48">
-                        <group.Icon size={24} className="text-gray-500" />
-                        <p className="font-semibold text-gray-800 leading-tight">{group.name}</p>
+                        <group.Icon size={24} className="text-muted-foreground" />
+                        <p className="font-semibold text-card-foreground leading-tight">{group.name}</p>
                       </div>
                       <div className="flex-1 w-full">
                         <div className="flex flex-wrap gap-1.5">
@@ -1582,7 +1582,7 @@ export default function DrivingTestApp() {
                               key={q.id}
                               title={`Otázka ${q.index}`}
                               className={`w-7 h-7 flex items-center justify-center rounded-full font-bold text-xs text-white ${
-                                q.isAnswered ? (q.isCorrect ? 'bg-green-500' : 'bg-red-500') : 'bg-gray-400'
+                                q.isAnswered ? (q.isCorrect ? 'bg-green-500' : 'bg-destructive') : 'bg-muted-foreground'
                               }`}
                             >
                               {q.index}
@@ -1591,8 +1591,8 @@ export default function DrivingTestApp() {
                         </div>
                       </div>
                       <div className="flex-none w-full sm:w-24 text-left sm:text-right mt-3 sm:mt-0">
-                        <span className="text-2xl font-bold text-gray-800">{group.scoredPoints}</span>
-                        <span className="text-gray-500"> / {group.totalPoints} b.</span>
+                        <span className="text-2xl font-bold text-card-foreground">{group.scoredPoints}</span>
+                        <span className="text-muted-foreground"> / {group.totalPoints} b.</span>
                       </div>
                     </div>
                   ))}
@@ -1602,7 +1602,7 @@ export default function DrivingTestApp() {
             
             <div className="text-left">
               <h3 className="text-lg font-semibold mt-8 mb-4">Detailní přehled odpovědí:</h3>
-              <div className="space-y-3 text-left border p-3 md:p-4 rounded-md shadow bg-white">
+              <div className="space-y-3 text-left border p-3 md:p-4 rounded-md shadow bg-card">
                 {questions.map((q_item, index) => {
                   const userAnswer = responses[q_item.id];
                   const isCorrect = userAnswer === q_item.spravna;
@@ -1610,8 +1610,8 @@ export default function DrivingTestApp() {
                   return (
                     <div key={q_item.id} className={clsx("p-3 border rounded-md text-sm", {
                       "bg-green-50 border-green-400": isAnswered && isCorrect,
-                      "bg-red-50 border-red-400": isAnswered && !isCorrect,
-                      "bg-gray-50 border-gray-300": !isAnswered,
+                      "bg-red-500/10 border-destructive": isAnswered && !isCorrect,
+                      "bg-muted/50 border-border": !isAnswered,
                     })}>
                       <p className="font-medium">{index + 1}. {q_item.otazka}</p>
                       {q_item.obrazek && (
@@ -1628,10 +1628,10 @@ export default function DrivingTestApp() {
                         <p className="mt-0.5">Vaše odpověď: {
                           /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[userAnswer])
                           ? <img src={q_item.moznosti[userAnswer]} alt="Vaše odpověď" className="my-2 rounded max-h-48 md:max-h-60 shadow"/>
-                          : <span className={clsx(isCorrect ? "text-green-700" : "text-red-700", "font-semibold")}>{q_item.moznosti[userAnswer]}</span>
+                          : <span className={clsx(isCorrect ? "text-green-600" : "text-destructive", "font-semibold")}>{q_item.moznosti[userAnswer]}</span>
                         } {isCorrect ? "✓" : "✗"}</p>
                       ) : (
-                        <p className="mt-0.5 text-gray-500">Bez odpovědi</p>
+                        <p className="mt-0.5 text-muted-foreground">Bez odpovědi</p>
                       )}
                     </div>
                   );
@@ -1640,7 +1640,7 @@ export default function DrivingTestApp() {
             </div>
           </div>
         </main>
-        <footer className="sticky bottom-0 bg-white border-t p-4 shadow-md z-10">
+        <footer className="sticky bottom-0 bg-background border-t p-4 shadow-md z-10">
             <div className="w-full max-w-screen-xl mx-auto">
                 <Button size="lg" className="w-full" onClick={() => setPhase("intro")}>
                     Zpět na hlavní stránku
@@ -1662,10 +1662,10 @@ export default function DrivingTestApp() {
 
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center bg-gray-100">
-      <RefreshCcw size={48} className="text-blue-500 animate-spin mb-4" />
-      <p className="text-xl text-gray-700 mb-2">Načítám aplikaci...</p>
-      <p className="text-sm text-gray-500 mb-6">Pokud načítání trvá příliš dlouho, zkuste obnovit stránku.</p>
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center bg-background">
+      <RefreshCcw size={48} className="text-primary animate-spin mb-4" />
+      <p className="text-xl text-foreground mb-2">Načítám aplikaci...</p>
+      <p className="text-sm text-muted-foreground mb-6">Pokud načítání trvá příliš dlouho, zkuste obnovit stránku.</p>
       <Button onClick={() => setPhase("intro")} variant="outline">
         Zkusit znovu / Přejít na úvod
       </Button>
