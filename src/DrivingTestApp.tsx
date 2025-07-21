@@ -324,6 +324,7 @@ export default function DrivingTestApp() {
   const msgEndRef = useRef<HTMLDivElement | null>(null);
   const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
+  const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
   const { setTheme } = useTheme();
 
   const handleLogin = (name: string) => {
@@ -802,7 +803,13 @@ export default function DrivingTestApp() {
           isCorrected,
         };
       })
-      .filter(item => item.incorrectCount > 0) // Zobrazíme jen otázky, kde byla alespoň jedna chyba
+      .filter(item => {
+        if (item.incorrectCount === 0) return false;
+        if (mistakesFilter === 'uncorrected') {
+          return !item.isCorrected;
+        }
+        return true;
+      })
       .sort((a, b) => {
         if (a.isCorrected !== b.isCorrected) {
           return a.isCorrected ? 1 : -1; // Opravené chyby dáme na konec
@@ -930,36 +937,65 @@ export default function DrivingTestApp() {
             </Card>
           )}
 
-          {processedMistakes.length > 0 && (
+          {userAnalysisData.filter(e => !e.isFirstAttemptCorrect).length > 0 && (
             <Card className="max-w-4xl mx-auto mt-8">
               <CardHeader>
-                <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
-                <p className="text-sm text-muted-foreground">Otázky, ve kterých jste v minulosti chybovali.</p>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
+                    <p className="text-sm text-muted-foreground">Otázky, ve kterých jste v minulosti chybovali.</p>
+                  </div>
+                  <div className="flex items-center gap-1 bg-muted p-1 rounded-md">
+                    <Button 
+                      variant={mistakesFilter === 'all' ? 'secondary' : 'ghost'} 
+                      size="sm" 
+                      onClick={() => setMistakesFilter('all')}
+                      className="text-xs h-7"
+                    >
+                      Všechny
+                    </Button>
+                    <Button 
+                      variant={mistakesFilter === 'uncorrected' ? 'secondary' : 'ghost'} 
+                      size="sm" 
+                      onClick={() => setMistakesFilter('uncorrected')}
+                      className="text-xs h-7"
+                    >
+                      Neopravené
+                    </Button>
+                  </div>
+                </div>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
-                    <div key={questionId} className={clsx("p-3 border rounded-md", {
-                      "bg-red-50/50 border-red-200": !isCorrected,
-                      "bg-green-50/50 border-green-200": isCorrected,
-                    })}>
-                      <div className="flex justify-between items-center">
-                        <p className={clsx("font-semibold", {
-                          "text-red-800": !isCorrected,
-                          "text-green-800": isCorrected,
-                        })}>
-                          {incorrectCount}x nesprávně
-                        </p>
-                        {isCorrected && (
-                          <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
-                            OPRAVENO
-                          </span>
-                        )}
+                {processedMistakes.length > 0 ? (
+                  <div className="space-y-4">
+                    {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
+                      <div key={questionId} className={clsx("p-3 border rounded-md", {
+                        "bg-red-50/50 border-red-200 dark:bg-red-900/20 dark:border-red-800": !isCorrected,
+                        "bg-green-50/50 border-green-200 dark:bg-green-900/20 dark:border-green-800": isCorrected,
+                      })}>
+                        <div className="flex justify-between items-center">
+                          <p className={clsx("font-semibold", {
+                            "text-red-800 dark:text-red-300": !isCorrected,
+                            "text-green-800 dark:text-green-300": isCorrected,
+                          })}>
+                            {incorrectCount}x nesprávně
+                          </p>
+                          {isCorrected && (
+                            <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
+                              OPRAVENO
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-foreground/90 mt-1">{text}</p>
                       </div>
-                      <p className="text-sm text-foreground/90 mt-1">{text}</p>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-8 text-muted-foreground">
+                    <p>Žádné chyby k zobrazení v tomto filtru.</p>
+                    <p className="text-xs mt-1">Zkuste změnit filtr na "Všechny".</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           )}

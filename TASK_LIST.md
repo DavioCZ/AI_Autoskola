@@ -51,7 +51,7 @@
 
 ### 3.2 | Nové funkce pro komfort a učení
 - [x] **Tmavý režim (Dark Mode):** Přidat do hlavičky aplikace přepínač pro snadné přepnutí mezi světlým a tmavým režimem.
-- [ ] **Filtrování v přehledu chyb:** Na stránce "Podrobná analýza" do sekce "Přehled chybovosti" přidat filtr/přepínač pro zobrazení: Všechny chyby / Pouze neopravené.
+- [x] **Filtrování v přehledu chyb:** Na stránce "Podrobná analýza" do sekce "Přehled chybovosti" přidat filtr/přepínač pro zobrazení: Všechny chyby / Pouze neopravené.
 - [x] **Banka otázek s filtry:** Vytvořit novou sekci "Prohlížet otázky", kde si uživatel bude moci zobrazit všechny otázky a filtrovat je podle jednotlivých témat (např. "Dopravní značky", "Pravidla provozu").
 
 ### 3.3 | Responzivita a přístupnost (Technical Debt)
