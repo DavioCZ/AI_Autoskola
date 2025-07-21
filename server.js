@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Redis } from "@upstash/redis";
-import { allBadges } from "./build/src/badges.js";
+import { allBadges } from "./src/badges.js";
 
 dotenv.config();
 let analysisIndex;
