@@ -263,7 +263,7 @@ function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
       <Card className="w-full max-w-sm p-6">
         <CardHeader className="text-center">
           <h2 className="text-2xl font-bold">Přihlášení</h2>
-          <p className="text-sm text-gray-500 mt-2">Zadejte své uživatelské jméno.</p>
+          <p className="text-sm text-muted-foreground mt-2">Zadejte své uživatelské jméno.</p>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -1410,7 +1410,7 @@ export default function DrivingTestApp() {
                 <div className={clsx("space-y-4", { "hidden": isAiTutorCollapsed })}>
                   <div className="flex-1 overflow-y-auto p-2 space-y-2 text-sm max-h-[60vh]">
                   {messages.map((msg: ChatMessage, i: number) => (
-                    <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-blue-100 self-start" : "bg-green-100 self-end ml-auto text-gray-800")}>
+                    <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-accent text-accent-foreground self-start" : "bg-muted self-end ml-auto text-foreground")}>
                       {msg.text.split('\n').map((line: string, j: number) => {
                         const isImageUrl = /\.(jpeg|jpg|gif|png)$/i.test(line.trim());
                         if (isImageUrl && msg.role === "assistant") { 
@@ -1420,7 +1420,7 @@ export default function DrivingTestApp() {
                       })}
                     </div>
                   ))}
-                  {aiLoading && <div className="p-2.5 rounded-lg shadow-sm max-w-[90%] bg-blue-100 self-start opacity-70 text-gray-800">Přemýšlím...</div>}
+                  {aiLoading && <div className="p-2.5 rounded-lg shadow-sm max-w-[90%] bg-accent text-accent-foreground self-start opacity-70">Přemýšlím...</div>}
                   <div ref={msgEndRef} />
                 </div>
                 <div className="pt-2 border-t">
