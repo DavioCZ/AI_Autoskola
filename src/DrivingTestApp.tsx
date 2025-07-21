@@ -165,14 +165,12 @@ async function appendAnalysisData(entries: AnalysisEntry[]): Promise<UnlockedBad
 function TopNav({
   label,
   timeLeft,
-  showStats,
   onHome,
   currentUser,
   onSetCurrentUser,
 }: {
   label: string;
   timeLeft?: number | null;
-  showStats: boolean;
   onHome: () => void;
   currentUser: string;
   onSetCurrentUser: (name: string | null) => void;
@@ -201,7 +199,7 @@ function TopNav({
           )}
         </div>
         <div className="flex items-center gap-4">
-          {showStats && currentUser && (
+          {currentUser && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="flex items-center gap-2">
@@ -622,7 +620,6 @@ export default function DrivingTestApp() {
       <>
         <TopNav 
           label={`Vítejte, ${currentUser}!`}
-          showStats={true} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
@@ -846,7 +843,6 @@ export default function DrivingTestApp() {
       <>
         <TopNav 
           label="Podrobná analýza" 
-          showStats={false} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
@@ -1004,7 +1000,6 @@ export default function DrivingTestApp() {
         <>
             <TopNav 
                 label={browseState === 'groups' ? "Prohlížení: Výběr okruhu" : `Prohlížení: ${groupName}`}
-                showStats={false} 
                 onHome={() => setPhase("intro")}
                 currentUser={currentUser}
                 onSetCurrentUser={handleLogout}
@@ -1087,7 +1082,6 @@ export default function DrivingTestApp() {
       <>
         <TopNav 
           label={examMode ? "Příprava na ostrý test" : "Nastavení procvičování"} 
-          showStats={false} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
@@ -1144,7 +1138,6 @@ export default function DrivingTestApp() {
         <TopNav
           label={examMode ? "Ostrý test" : (originPhase === 'browse' ? 'Prohlížení otázky' : 'Procvičování')}
           timeLeft={timeLeft}
-          showStats={false}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
           onHome={() => {
@@ -1503,7 +1496,6 @@ export default function DrivingTestApp() {
         {passed && <Confetti recycle={false} />}
         <TopNav 
           label="Výsledky testu" 
-          showStats={true} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
