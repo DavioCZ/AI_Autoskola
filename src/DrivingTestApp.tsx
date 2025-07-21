@@ -24,9 +24,15 @@ import clsx from "clsx";
 import { useAi, ChatMessage } from "@/src/hooks/useAi";
 import { UnlockedBadge } from "@/src/badges";
 import { BadgesDisplay } from "@/src/components/Badges";
+import { db, Event as DbEvent, cleanupExpiredEvents } from "@/src/db";
+import { getGuestSessionId } from "@/src/session";
+import { Stats, DEFAULT_STATS, getTodayDateString, DEFAULT_PROGRESS_STATS } from "@/src/dataModels";
+import { calculateGuestStats } from "@/src/guestStats";
+import AnalysisWorker from "@/src/workers/analysis.worker.ts?worker";
+import { QRCodeCanvas } from 'qrcode.react';
 
 /* ----------------------- Data typy a konstanty ---------------------- */
-export type Question = {
+type Question = {
   id: string;
   otazka: string;
   obrazek?: string;
@@ -51,7 +57,7 @@ export type AnalysisEntry = {
 };
 
 // Nový typ pro ukládání detailů o odpovědi v režimu procvičování
-export type PracticeAttempt = {
+type PracticeAttempt = {
   firstAttemptIndex: number;      // Index odpovědi při prvním pokusu
   isFirstAttemptCorrect: boolean; // Zda byl první pokus správný
   finalAttemptIndex: number;      // Index odpovědi při finálním (posledním) pokusu
@@ -71,41 +77,25 @@ const GROUPS = [
 const OSTRY_TIME = 30 * 60; // 30 minut v sekundách
 
 /* --------------------------- Statistiky ---------------------------- */
-export type Stats = {
-  examTaken: number;
-  examPassed: number;
-  examAvgScore: number;
-  examAvgTime: number; // v sekundách
-  practiceAnswered: number;
-  practiceCorrect: number;
-  lastExamScore: number | null;
-  lastExamTimeSpent: number | null;
-  lastExamPassed: boolean | null;
-  lastPracticeAnswered: number | null;
-  lastPracticeCorrect: number | null;
-};
-const DEFAULT_STATS: Stats = {
-  examTaken: 0,
-  examPassed: 0,
-  examAvgScore: 0,
-  examAvgTime: 0,
-  practiceAnswered: 0,
-  practiceCorrect: 0,
-  lastExamScore: null,
-  lastExamTimeSpent: null,
-  lastExamPassed: null,
-  lastPracticeAnswered: null,
-  lastPracticeCorrect: null,
-};
-
 const ALLOWED_USERS = ["Tester", "Tanika"];
 
 const getCurrentUser = (): string | null => localStorage.getItem("autoskola-currentUser");
 
 function loadStats(user: string): Stats {
   try {
-    const storedStats = localStorage.getItem(`autoskolastats-${user}`);
-    return storedStats ? JSON.parse(storedStats) : DEFAULT_STATS;
+    const storedStatsRaw = localStorage.getItem(`autoskolastats-${user}`);
+    if (!storedStatsRaw) return DEFAULT_STATS;
+
+    const storedStats = JSON.parse(storedStatsRaw) as Stats;
+
+    // Reset denních statistik, pokud je potřeba
+    if (storedStats.today.lastReset !== getTodayDateString()) {
+      console.log("Resetting daily stats for new day.");
+      storedStats.today = { ...DEFAULT_PROGRESS_STATS, lastReset: getTodayDateString() };
+      saveStats(user, storedStats);
+    }
+
+    return storedStats;
   } catch {
     return DEFAULT_STATS;
   }
@@ -115,49 +105,109 @@ function saveStats(user: string, s: Stats) {
 }
 
 /* ----------------------- Analytická data ------------------------- */
+type SummaryData = Record<string, {
+    questionId: string;
+    questionText: string;
+    groupId: number;
+    attempts: number;
+    correct: number;
+    totalTimeToAnswer: number;
+    history: { answeredAt: string; isCorrect: boolean; timeToAnswer: number }[];
+    avgTime: number;
+    successRate: number;
+}>;
+
 type UserData = {
   analysisData: AnalysisEntry[];
   unlockedBadges: UnlockedBadge[];
+  summaryData: SummaryData;
 };
 
-async function loadUserData(): Promise<UserData> {
-  try {
-    const res = await fetch("/api/analysis-data");
-    if (!res.ok) {
-      throw new Error(`Server responded with status: ${res.status}`);
+async function loadUserData(currentUser: string | null): Promise<UserData> {
+  if (currentUser && currentUser !== "Host") {
+    try {
+      const res = await fetch(`/api/analysis-data?userId=${encodeURIComponent(currentUser)}`);
+      if (!res.ok) {
+        throw new Error(`Server responded with status: ${res.status}`);
+      }
+      const data = await res.json();
+      return {
+        analysisData: data.analysisData || [],
+        unlockedBadges: data.unlockedBadges || [],
+        summaryData: data.summaryData || {},
+      };
+    } catch (error) {
+      console.error("Could not get user data from server:", error);
+      return { analysisData: [], unlockedBadges: [], summaryData: {} };
     }
-    const data = await res.json();
-    return {
-      analysisData: data.analysisData || [],
-      unlockedBadges: data.unlockedBadges || [],
-    };
-  } catch (error) {
-    console.error("Could not get user data:", error);
-    return { analysisData: [], unlockedBadges: [] };
+  } else {
+    // Logika pro hosta - načtení z IndexedDB
+    try {
+      const sessionId = getGuestSessionId();
+      const events = await db.events.where({ sessionId }).toArray();
+      const analysisData: AnalysisEntry[] = events.map(e => ({
+        user: "Host",
+        questionId: e.qid,
+        questionText: "", // Bude potřeba doplnit, pokud chceme plnou analýzu
+        groupId: 0, // Bude potřeba doplnit
+        answeredAt: new Date(e.ts).toISOString(),
+        timeToAnswer: 0, // V DB zatím nemáme
+        isCorrect: e.correct,
+        isFirstAttemptCorrect: e.correct, // Zjednodušení prozatím
+        mode: 'practice',
+      }));
+      // Odznaky a souhrnná data pro hosta zatím neřešíme
+      return { analysisData, unlockedBadges: [], summaryData: {} };
+    } catch (error) {
+      console.error("Could not get user data from IndexedDB:", error);
+      return { analysisData: [], unlockedBadges: [], summaryData: {} };
+    }
   }
 }
 
-async function appendAnalysisData(entries: AnalysisEntry[]): Promise<UnlockedBadge[]> {
+async function appendAnalysisData(entries: AnalysisEntry[], currentUser: string | null): Promise<UnlockedBadge[]> {
   if (entries.length === 0) {
-    console.log("[appendAnalysisData] No entries to append. Skipping API call.");
+    console.log("[appendAnalysisData] No entries to append. Skipping.");
     return [];
   }
-  try {
-    console.log("[appendAnalysisData] Sending entries to server:", entries);
-    const response = await fetch("/api/save-analysis", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ entries }),
-    });
-    if (!response.ok) {
-      throw new Error(`Server responded with status: ${response.status}`);
+
+  if (currentUser && currentUser !== "Host") {
+    try {
+      console.log("[appendAnalysisData] Sending entries to server for user", currentUser, ":", entries);
+      const response = await fetch("/api/save-analysis", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ entries, userId: currentUser }),
+      });
+      if (!response.ok) {
+        throw new Error(`Server responded with status: ${response.status}`);
+      }
+      const result = await response.json();
+      console.log("[appendAnalysisData] Successfully sent data. Newly awarded badges:", result.newlyAwardedBadges);
+      return result.newlyAwardedBadges || [];
+    } catch (error) {
+      console.error("Failed to save analysis data to server:", error);
+      return [];
     }
-    const result = await response.json();
-    console.log("[appendAnalysisData] Successfully sent data. Newly awarded badges:", result.newlyAwardedBadges);
-    return result.newlyAwardedBadges || [];
-  } catch (error) {
-    console.error("Failed to save analysis data:", error);
-    return [];
+  } else {
+    // Logika pro hosta - uložení do IndexedDB
+    try {
+      const now = Date.now();
+      const ttl = 24 * 60 * 60 * 1000; // 24 hodin v ms
+      const sessionId = getGuestSessionId();
+      const dbEvents: DbEvent[] = entries.map(entry => ({
+        ts: new Date(entry.answeredAt).getTime(),
+        qid: entry.questionId,
+        correct: entry.isCorrect,
+        expiresAt: now + ttl,
+        sessionId: sessionId,
+      }));
+      await db.events.bulkAdd(dbEvents);
+      console.log(`[appendAnalysisData] Successfully saved ${dbEvents.length} events to IndexedDB for guest session ${sessionId}.`);
+    } catch (error) {
+      console.error("Failed to save analysis data to IndexedDB:", error);
+    }
+    return []; // Pro hosta nevracíme odznaky
   }
 }
 
@@ -224,6 +274,10 @@ function TopNav({
                       <span>Tmavý režim</span>
                     </>
                   )}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => window.location.href = `/api/export-data?userId=${encodeURIComponent(currentUser)}`}>
+                  <FileText className="mr-2 h-4 w-4" />
+                  <span>Stáhnout moje data</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => onSetCurrentUser(null)}>
                   <LogOut className="mr-2 h-4 w-4" />
@@ -318,6 +372,7 @@ export default function DrivingTestApp() {
   const [questionStartTime, setQuestionStartTime] = useState<number>(0);
   const [sessionAnalysis, setSessionAnalysis] = useState<Record<string, { timeToAnswer: number; firstAttemptCorrect: boolean }>>({});
   const [analysisData, setAnalysisData] = useState<AnalysisEntry[]>([]);
+  const [summaryData, setSummaryData] = useState<SummaryData>({});
   const [unlockedBadges, setUnlockedBadges] = useState<UnlockedBadge[]>([]);
   const { ask, loading: aiLoading, messages, setMessages } = useAi();
   const [draft, setDraft] = useState("");
@@ -326,6 +381,22 @@ export default function DrivingTestApp() {
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
   const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
   const { setTheme } = useTheme();
+  const [transferToken, setTransferToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Inicializujeme Web Worker pro zpracování na pozadí pro hosty
+    const worker = new AnalysisWorker();
+    console.log("[DrivingTestApp] Analysis worker started for guest data processing.");
+
+    // Spustíme úklid starých dat pro hosty
+    cleanupExpiredEvents();
+
+    // Uklidíme worker, když se komponenta odpojí
+    return () => {
+      worker.terminate();
+      console.log("[DrivingTestApp] Analysis worker terminated.");
+    };
+  }, []);
 
   const handleLogin = (name: string) => {
     localStorage.setItem("autoskola-currentUser", name);
@@ -341,10 +412,16 @@ export default function DrivingTestApp() {
 
   useEffect(() => {
     if (currentUser) {
-      setStats(loadStats(currentUser));
-      loadUserData().then(data => {
+      if (currentUser === "Host") {
+        calculateGuestStats().then(setStats);
+      } else {
+        setStats(loadStats(currentUser));
+      }
+      
+      loadUserData(currentUser).then(data => {
         setAnalysisData(data.analysisData);
         setUnlockedBadges(data.unlockedBadges);
+        setSummaryData(data.summaryData);
       });
     }
   }, [currentUser]);
@@ -470,13 +547,18 @@ export default function DrivingTestApp() {
 
     const newStats: Stats = {
       ...currentStats,
-      practiceAnswered: currentStats.practiceAnswered + answeredCountInSession,
-      practiceCorrect: currentStats.practiceCorrect + correctCountInSession,
+      total: {
+        ...currentStats.total,
+        practiceAnswered: currentStats.total.practiceAnswered + answeredCountInSession,
+        practiceCorrect: currentStats.total.practiceCorrect + correctCountInSession,
+      },
+      today: {
+        ...currentStats.today,
+        practiceAnswered: currentStats.today.practiceAnswered + answeredCountInSession,
+        practiceCorrect: currentStats.today.practiceCorrect + correctCountInSession,
+      },
       lastPracticeAnswered: answeredCountInSession,
       lastPracticeCorrect: correctCountInSession,
-      lastExamScore: currentStats.lastExamScore,
-      lastExamTimeSpent: currentStats.lastExamTimeSpent,
-      lastExamPassed: currentStats.lastExamPassed,
     };
     saveStats(currentUser, newStats);
     setStats(newStats); 
@@ -517,7 +599,7 @@ export default function DrivingTestApp() {
       });
     }
     console.log("[commitSessionAnalysis] Compiled entries:", entries);
-    const newBadges = await appendAnalysisData(entries);
+    const newBadges = await appendAnalysisData(entries, currentUser);
     if (newBadges.length > 0) {
       setUnlockedBadges(prev => [...prev, ...newBadges]);
       // Zde by mohla být notifikace pro uživatele
@@ -536,21 +618,28 @@ export default function DrivingTestApp() {
       const currentStats = loadStats(currentUser);
       const score = questions.reduce((acc, qq) => (responses[qq.id] === qq.spravna ? acc + qq.points : acc), 0);
       const passed = score >= 43;
-      const newTaken = currentStats.examTaken + 1;
-      const newAvgScore = parseFloat(((currentStats.examAvgScore * currentStats.examTaken + score) / newTaken).toFixed(1));
+      const newTakenTotal = currentStats.total.examTaken + 1;
+      const newAvgScore = parseFloat(((currentStats.examAvgScore * currentStats.total.examTaken + score) / newTakenTotal).toFixed(1));
       const spent = OSTRY_TIME - (timeLeft ?? 0);
-      const newAvgTime = Math.round((currentStats.examAvgTime * currentStats.examTaken + spent) / newTaken);
+      const newAvgTime = Math.round((currentStats.examAvgTime * currentStats.total.examTaken + spent) / newTakenTotal);
+      
       const newStats: Stats = {
         ...currentStats,
-        examTaken: newTaken,
-        examPassed: currentStats.examPassed + (passed ? 1 : 0),
+        total: {
+          ...currentStats.total,
+          examTaken: newTakenTotal,
+          examPassed: currentStats.total.examPassed + (passed ? 1 : 0),
+        },
+        today: {
+          ...currentStats.today,
+          examTaken: currentStats.today.examTaken + 1,
+          examPassed: currentStats.today.examPassed + (passed ? 1 : 0),
+        },
         examAvgScore: newAvgScore,
         examAvgTime: newAvgTime,
         lastExamScore: score,
         lastExamTimeSpent: spent,
         lastExamPassed: passed,
-        lastPracticeAnswered: currentStats.lastPracticeAnswered,
-        lastPracticeCorrect: currentStats.lastPracticeCorrect,
       };
       saveStats(currentUser, newStats);
       setStats(newStats);
@@ -596,9 +685,10 @@ export default function DrivingTestApp() {
 
   useEffect(() => {
     if (phase === 'analysis' && currentUser) {
-        loadUserData().then(data => {
+        loadUserData(currentUser).then(data => {
           setAnalysisData(data.analysisData);
           setUnlockedBadges(data.unlockedBadges);
+          setSummaryData(data.summaryData);
         });
     }
   }, [phase, currentUser]);
@@ -671,82 +761,92 @@ export default function DrivingTestApp() {
           <div className="mt-16">
             <h3 className="text-xl font-bold text-center mb-6 flex items-center justify-center gap-2">
               <BarChart2 size={24} className="text-primary" />
-              Váš pokrok
+              Dnešní pokrok
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
-                  <h4 className="font-semibold text-lg">Ostré testy</h4>
+                  <h4 className="font-semibold text-lg">Ostré testy (dnes)</h4>
                 </CardHeader>
                 <CardContent>
-                  {stats.examTaken === 0 ? (
-                    <p className="text-sm text-muted-foreground text-center py-4">Ještě jste nezkoušeli žádný ostrý test. Začněte a sledujte zde svůj pokrok!</p>
+                  {stats.today.examTaken === 0 ? (
+                    <p className="text-sm text-muted-foreground text-center py-4">Dnes jste ještě nezkoušeli žádný ostrý test.</p>
                   ) : (
-                    <>
-                      <div className="flex flex-col items-center justify-center gap-2 mt-2">
-                        <CircularProgress value={(stats.examPassed / stats.examTaken) * 100} size={100} strokeWidth={10} />
-                        <p className="text-sm text-muted-foreground mt-2">Celková úspěšnost</p>
-                      </div>
-                      {stats.lastExamScore !== null && (
-                        <div className="mt-4 pt-4 border-t">
-                          <p className="text-xs text-muted-foreground uppercase font-medium">Poslední pokus</p>
-                          <p className="text-sm mt-1">
-                            <span className={clsx(stats.lastExamPassed ? "text-green-600" : "text-red-600", "font-semibold")}>
-                              {stats.lastExamPassed ? "Úspěšně" : "Neúspěšně"}
-                            </span>
-                            <span className="text-muted-foreground"> ({stats.lastExamScore} b.)</span>
-                          </p>
-                        </div>
-                      )}
-                    </>
+                    <div className="flex flex-col items-center justify-center gap-2 mt-2">
+                      <CircularProgress value={(stats.today.examPassed / stats.today.examTaken) * 100} size={100} strokeWidth={10} />
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Úspěšnost dnes: {stats.today.examPassed} / {stats.today.examTaken}
+                      </p>
+                    </div>
                   )}
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
-                  <h4 className="font-semibold text-lg">Procvičování</h4>
+                  <h4 className="font-semibold text-lg">Procvičování (dnes)</h4>
                 </CardHeader>
                 <CardContent>
-                  {stats.practiceAnswered === 0 ? (
-                     <p className="text-sm text-muted-foreground text-center py-4">Ještě jste nic neprocvičovali. Začněte a sledujte zde svůj pokrok!</p>
+                  {stats.today.practiceAnswered === 0 ? (
+                     <p className="text-sm text-muted-foreground text-center py-4">Dnes jste ještě nic neprocvičovali.</p>
                   ) : (
-                    <>
-                      <div className="flex flex-col items-center justify-center gap-2 mt-2">
-                        <CircularProgress value={(stats.practiceCorrect / stats.practiceAnswered) * 100} size={100} strokeWidth={10} />
-                        <p className="text-sm text-muted-foreground mt-2">Správnost na 1. pokus</p>
-                      </div>
-                      {stats.lastPracticeAnswered !== null && stats.lastPracticeCorrect !== null && (
-                        <div className="mt-4 pt-4 border-t">
-                          <p className="text-xs text-muted-foreground uppercase font-medium">Poslední kolo</p>
-                          <p className="text-sm mt-1">
-                            <span className="font-semibold">{stats.lastPracticeCorrect} / {stats.lastPracticeAnswered}</span>
-                            <span className="text-muted-foreground"> správně</span>
-                          </p>
-                        </div>
-                      )}
-                    </>
+                    <div className="flex flex-col items-center justify-center gap-2 mt-2">
+                      <CircularProgress value={(stats.today.practiceCorrect / stats.today.practiceAnswered) * 100} size={100} strokeWidth={10} />
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Správnost dnes: {stats.today.practiceCorrect} / {stats.today.practiceAnswered}
+                      </p>
+                    </div>
                   )}
                 </CardContent>
               </Card>
             </div>
-            <Card className="mt-8 text-left bg-muted/50">
-              <CardHeader><h3 className="font-semibold">Detailní statistiky</h3></CardHeader>
+
+            <Card className="mt-12 text-left bg-muted/50">
+              <CardHeader><h3 className="font-semibold">Celkové statistiky</h3></CardHeader>
               <CardContent className="text-sm space-y-2 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                 <div>
-                  <h4 className="font-medium text-xs text-muted-foreground uppercase">Ostré testy</h4>
-                  <p>Absolvované: <span className="font-medium">{stats.examTaken}</span></p>
+                  <h4 className="font-medium text-xs text-muted-foreground uppercase">Ostré testy (celkem)</h4>
+                  <p>Absolvováno: <span className="font-medium">{stats.total.examTaken}</span></p>
+                  <p>Úspěšně složeno: <span className="font-medium">{stats.total.examPassed}</span></p>
                   <p>Průměrné skóre: <span className="font-medium">{stats.examAvgScore > 0 ? stats.examAvgScore.toFixed(1) : "0.0"} / 50</span></p>
                   <p>Průměrný čas: <span className="font-medium">{stats.examAvgTime > 0 ? `${Math.floor(stats.examAvgTime / 60)}m ${stats.examAvgTime % 60}s` : "0m 0s"}</span></p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-xs text-muted-foreground uppercase">Procvičování</h4>
-                  <p>Zodpovězeno otázek: <span className="font-medium">{stats.practiceAnswered}</span></p>
-                  <p>Správně na 1. pokus: <span className="font-medium">{stats.practiceCorrect}</span></p>
+                  <h4 className="font-medium text-xs text-muted-foreground uppercase">Procvičování (celkem)</h4>
+                  <p>Zodpovězeno otázek: <span className="font-medium">{stats.total.practiceAnswered}</span></p>
+                  <p>Správně na 1. pokus: <span className="font-medium">{stats.total.practiceCorrect}</span></p>
+                  {stats.total.practiceAnswered > 0 && (
+                    <p>Celková úspěšnost: <span className="font-medium">{((stats.total.practiceCorrect / stats.total.practiceAnswered) * 100).toFixed(1)}%</span></p>
+                  )}
                 </div>
               </CardContent>
             </Card>
             <BadgesDisplay unlockedBadges={unlockedBadges} />
+            {currentUser === "Host" && (
+              <div className="mt-8 text-center">
+                <Button variant="outline" onClick={async () => {
+                  const sessionId = getGuestSessionId();
+                  const res = await fetch('/api/generate-transfer-token', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sessionId }),
+                  });
+                  const { token } = await res.json();
+                  setTransferToken(token);
+                }}>
+                  Přihlásit se a přenést data
+                </Button>
+              </div>
+            )}
           </div>
+          {transferToken && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+              <div className="bg-white p-8 rounded-lg text-center">
+                <h3 className="text-lg font-bold mb-4">Naskenujte pro přenos dat</h3>
+                <QRCodeCanvas value={transferToken} size={256} />
+                <Button variant="outline" className="mt-4" onClick={() => setTransferToken(null)}>Zavřít</Button>
+              </div>
+            </div>
+          )}
         </div>
       </>
     );
@@ -759,35 +859,31 @@ export default function DrivingTestApp() {
       return "bg-red-500";
     };
 
-    const userAnalysisData = analysisData.filter(entry => entry.user === currentUser);
+    const userAnalysisData = analysisData.filter(entry => entry.user === currentUser); // Stále potřeba pro celkový počet
+    const summaryValues = Object.values(summaryData);
 
     const analysisByGroup = GROUPS.map(group => {
-      const groupEntries = userAnalysisData.filter(entry => entry.groupId === group.id);
-      const total = groupEntries.length;
-      if (total === 0) {
+      const groupSummaries = summaryValues.filter(summary => summary.groupId === group.id);
+      const totalAttempts = groupSummaries.reduce((sum, s) => sum + s.attempts, 0);
+      if (totalAttempts === 0) {
         return { ...group, total: 0, successRate: 0, avgTime: 0 };
       }
-      const correct = groupEntries.filter(e => e.isFirstAttemptCorrect).length;
-      const totalTime = groupEntries.reduce((sum, e) => sum + e.timeToAnswer, 0);
+      const totalCorrect = groupSummaries.reduce((sum, s) => sum + s.correct, 0);
+      const totalTime = groupSummaries.reduce((sum, s) => sum + s.totalTimeToAnswer, 0);
+      
       return {
         ...group,
-        total,
-        successRate: (correct / total) * 100,
-        avgTime: totalTime / total / 1000, // v sekundách
+        total: totalAttempts,
+        successRate: (totalCorrect / totalAttempts) * 100,
+        avgTime: totalTime / totalAttempts / 1000, // v sekundách
       };
     });
 
-    const mistakesByQuestion = userAnalysisData.reduce((acc, entry) => {
-      if (!acc[entry.questionId]) {
-        acc[entry.questionId] = {
-          text: entry.questionText,
-          history: [],
+    const mistakesByQuestion = summaryValues.reduce((acc, summary) => {
+        acc[summary.questionId] = {
+          text: summary.questionText,
+          history: summary.history.map(h => ({ isCorrect: h.isCorrect, answeredAt: h.answeredAt })),
         };
-      }
-      acc[entry.questionId].history.push({
-        isCorrect: entry.isFirstAttemptCorrect,
-        answeredAt: entry.answeredAt,
-      });
       return acc;
     }, {} as Record<string, { text: string; history: { isCorrect: boolean; answeredAt: string }[] }>);
 

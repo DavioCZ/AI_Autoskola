@@ -9,6 +9,7 @@ import { fileURLToPath } from "url";
 import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Redis } from "@upstash/redis";
+import { Ratelimit } from "@upstash/ratelimit";
 import { allBadges } from "./src/badges.js";
 
 dotenv.config();
@@ -42,6 +43,17 @@ if (UPSTASH_REDIS_REST_URL && UPSTASH_REDIS_REST_TOKEN) {
 // const vision model initialization is removed
 
 // The SDK will handle the endpoint, so the manual URL is no longer needed.
+
+// --- Rate Limiter ---
+let ratelimit;
+if (redis) {
+  ratelimit = new Ratelimit({
+    redis: redis,
+    limiter: Ratelimit.slidingWindow(10, "10 s"), // Max 10 requests per 10 seconds
+    analytics: true,
+    prefix: "@upstash/ratelimit",
+  });
+}
 
 const app = express();
 app.use(cors());
@@ -203,13 +215,18 @@ app.post("/api/image-context", (req, res) => {
   });
 });
 
-const ANALYSIS_KEY = "analysis-data"; // Klíč pro statistiky
-const BADGES_KEY = "unlocked-badges";   // Klíč pro odznaky
+// Klíče pro Redis budou nyní dynamické, např. "user:123:analysis"
+// const ANALYSIS_KEY = "analysis-data"; // Klíč pro statistiky - nahrazeno
+// const BADGES_KEY = "unlocked-badges";   // Klíč pro odznaky - nahrazeno
 
 // Helper funkce pro kontrolu a udělení odznaků
-const checkAndAwardBadges = async (allEntries, lastTestEntries) => {
+const checkAndAwardBadges = async (userId, allEntries, lastTestEntries) => {
+  if (!userId) return []; // Bezpečnostní pojistka
+
+  const badgesKey = `user:${userId}:badges`;
+  const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
   const awardedBadges = new Set();
-  const existingBadgesRaw = await redis.get(BADGES_KEY);
+  const existingBadgesRaw = await redis.get(badgesKey);
   const existingBadges = typeof existingBadgesRaw === 'string' ? JSON.parse(existingBadgesRaw) : (existingBadgesRaw || []);
   const existingBadgeIds = new Set(existingBadges.map(b => b.id));
 
@@ -247,7 +264,7 @@ const checkAndAwardBadges = async (allEntries, lastTestEntries) => {
     const newBadges = [...awardedBadges]
       .map(id => ({ id, unlockedAt: new Date().toISOString() }));
     const updatedBadges = [...existingBadges, ...newBadges];
-    await redis.set(BADGES_KEY, JSON.stringify(updatedBadges));
+    await redis.set(badgesKey, JSON.stringify(updatedBadges), { ex: TWO_YEARS_IN_SECONDS });
     return newBadges; // Vrací jen nově získané
   }
   return [];
@@ -255,21 +272,37 @@ const checkAndAwardBadges = async (allEntries, lastTestEntries) => {
 
 
 app.post("/api/save-analysis", async (req, res) => {
-  const { entries } = req.body;
+  const { entries, userId } = req.body;
+
+  // Rate limiting
+  if (ratelimit) {
+    const identifier = userId || req.ip;
+    const { success } = await ratelimit.limit(identifier);
+    if (!success) {
+      return res.status(429).json({ error: "Too many requests. Please try again later." });
+    }
+  }
+
   if (!entries || !Array.isArray(entries) || entries.length === 0) {
     return res.status(400).json({ error: "No analysis entries provided." });
   }
+  if (!userId) {
+    return res.status(400).json({ error: "User ID is required." });
+  }
+
+  const analysisKey = `user:${userId}:analysis`;
 
   try {
-    const existingDataRaw = await redis.get(ANALYSIS_KEY);
+    const existingDataRaw = await redis.get(analysisKey);
     const existingData = typeof existingDataRaw === 'string' ? JSON.parse(existingDataRaw) : (existingDataRaw || []);
     const newData = [...existingData, ...entries];
-    await redis.set(ANALYSIS_KEY, JSON.stringify(newData));
+    const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
+    await redis.set(analysisKey, JSON.stringify(newData), { ex: TWO_YEARS_IN_SECONDS });
 
     // Logika pro udělení odznaků
-    const newlyAwardedBadges = await checkAndAwardBadges(newData, entries);
+    const newlyAwardedBadges = await checkAndAwardBadges(userId, newData, entries);
 
-    res.status(200).json({ 
+    res.status(200).json({
       message: "Analysis data saved successfully.",
       newlyAwardedBadges: newlyAwardedBadges
     });
@@ -280,14 +313,27 @@ app.post("/api/save-analysis", async (req, res) => {
 });
 
 app.get("/api/analysis-data", async (req, res) => {
+  const { userId } = req.query;
+  if (!userId) {
+    return res.status(400).json({ error: "User ID is required." });
+  }
+
+  const analysisKey = `user:${userId}:analysis`;
+  const badgesKey = `user:${userId}:badges`;
+  const summaryKey = `user:${userId}:summary`;
+
   try {
-    const analysisDataRaw = await redis.get(ANALYSIS_KEY);
-    const badgesDataRaw = await redis.get(BADGES_KEY);
+    const [analysisDataRaw, badgesDataRaw, summaryDataRaw] = await Promise.all([
+      redis.get(analysisKey),
+      redis.get(badgesKey),
+      redis.get(summaryKey)
+    ]);
 
     const analysisData = typeof analysisDataRaw === 'string' ? JSON.parse(analysisDataRaw) : (analysisDataRaw || []);
     const unlockedBadges = typeof badgesDataRaw === 'string' ? JSON.parse(badgesDataRaw) : (badgesDataRaw || []);
+    const summaryData = typeof summaryDataRaw === 'string' ? JSON.parse(summaryDataRaw) : (summaryDataRaw || {});
 
-    res.json({ analysisData, unlockedBadges });
+    res.json({ analysisData, unlockedBadges, summaryData });
   } catch (error) {
     console.error("Error reading user data:", error);
     res.status(500).json({ error: "Failed to read user data" });
@@ -295,13 +341,95 @@ app.get("/api/analysis-data", async (req, res) => {
 });
 
 app.post("/api/reset-analysis", async (req, res) => {
+  const { userId } = req.body;
+  if (!userId) {
+    return res.status(400).json({ error: "User ID is required." });
+  }
+
+  const analysisKey = `user:${userId}:analysis`;
+  const badgesKey = `user:${userId}:badges`;
+
   try {
-    await redis.del(ANALYSIS_KEY);
-    await redis.del(BADGES_KEY); // Smazat i odznaky
-    res.status(200).json({ message: "Analysis and badge data reset successfully." });
+    await redis.del(analysisKey);
+    await redis.del(badgesKey); // Smazat i odznaky
+    res.status(200).json({ message: "Analysis and badge data for user " + userId + " reset successfully." });
   } catch (error) {
     console.error("Error in /api/reset-analysis:", error);
     res.status(500).json({ error: error.message });
+  }
+});
+
+app.get("/api/export-data", async (req, res) => {
+  const { userId } = req.query;
+  if (!userId) {
+    return res.status(400).json({ error: "User ID is required." });
+  }
+
+  const analysisKey = `user:${userId}:analysis`;
+  const badgesKey = `user:${userId}:badges`;
+
+  try {
+    const [analysisDataRaw, badgesDataRaw] = await Promise.all([
+      redis.get(analysisKey),
+      redis.get(badgesKey),
+    ]);
+
+    const analysisData = typeof analysisDataRaw === 'string' ? JSON.parse(analysisDataRaw) : (analysisDataRaw || []);
+    const unlockedBadges = typeof badgesDataRaw === 'string' ? JSON.parse(badgesDataRaw) : (badgesDataRaw || []);
+
+    const exportData = {
+      userId,
+      exportedAt: new Date().toISOString(),
+      analysisData,
+      unlockedBadges,
+    };
+
+    res.setHeader('Content-Disposition', `attachment; filename="autoskola-data-${userId}.json"`);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(exportData, null, 2));
+
+  } catch (error) {
+    console.error("Error exporting user data:", error);
+    res.status(500).json({ error: "Failed to export user data" });
+  }
+});
+
+app.post("/api/generate-transfer-token", async (req, res) => {
+  const { sessionId } = req.body;
+  if (!sessionId) {
+    return res.status(400).json({ error: "Session ID is required." });
+  }
+  // Simple token generation for this example
+  const token = `transfer-${sessionId}-${Date.now()}`;
+  // Store the token with a short TTL, linking it to the session ID
+  await redis.set(token, sessionId, { ex: 300 }); // 5-minute expiry
+  res.json({ token });
+});
+
+app.post("/api/claim-guest-data", async (req, res) => {
+  const { token, userId } = req.body;
+  if (!token || !userId) {
+    return res.status(400).json({ error: "Token and User ID are required." });
+  }
+
+  try {
+    const sessionId = await redis.get(token);
+    if (!sessionId) {
+      return res.status(404).json({ error: "Invalid or expired token." });
+    }
+
+    // This is a placeholder for the actual data migration logic.
+    // In a real application, you would fetch the guest data using the sessionId
+    // and merge it with the logged-in user's data.
+    console.log(`Migrating data from session ${sessionId} to user ${userId}`);
+
+    // Delete the token to ensure it's single-use
+    await redis.del(token);
+
+    res.json({ message: "Data transfer successful." });
+  } catch (error) {
+    console.error("Error claiming guest data:", error);
+    res.status(500).json({ error: "Failed to claim guest data." });
   }
 });
 

@@ -62,3 +62,46 @@ export interface StudentAnswer {
   questionOrderInTest: number; // Pořadí otázky v testu (analyzovat vliv únavy).
   markedForLaterReview: boolean; // Signál studentovy nejistoty.
 }
+
+/* --------------------------- Statistiky ---------------------------- */
+export type ProgressStats = {
+  examTaken: number;
+  examPassed: number;
+  practiceAnswered: number;
+  practiceCorrect: number;
+};
+
+export type Stats = {
+  total: ProgressStats;
+  today: ProgressStats & { lastReset: string };
+  // Agregované statistiky, které se nepočítají denně
+  examAvgScore: number;
+  examAvgTime: number;
+  // Statistiky poslední session
+  lastExamScore: number | null;
+  lastExamTimeSpent: number | null;
+  lastExamPassed: boolean | null;
+  lastPracticeAnswered: number | null;
+  lastPracticeCorrect: number | null;
+};
+
+export const getTodayDateString = () => new Date().toISOString().split('T')[0];
+
+export const DEFAULT_PROGRESS_STATS: ProgressStats = {
+  examTaken: 0,
+  examPassed: 0,
+  practiceAnswered: 0,
+  practiceCorrect: 0,
+};
+
+export const DEFAULT_STATS: Stats = {
+  total: { ...DEFAULT_PROGRESS_STATS },
+  today: { ...DEFAULT_PROGRESS_STATS, lastReset: getTodayDateString() },
+  examAvgScore: 0,
+  examAvgTime: 0,
+  lastExamScore: null,
+  lastExamTimeSpent: null,
+  lastExamPassed: null,
+  lastPracticeAnswered: null,
+  lastPracticeCorrect: null,
+};

@@ -132,3 +132,48 @@
 ### 5.1 | Vytvořit návod pro nasazení na Render.com
 - [x] **Vytvořen aktuální návod pro nasazení:** Původní instrukce byly zastaralé (pro Python/Flask). Byl vytvořen nový, přesný návod pro nasazení kombinované Node.js + Python aplikace.
 - [x] **Návod je k dispozici v souboru [DEPLOY_GUIDE.md](DEPLOY_GUIDE.md).**
+
+---
+
+## Fáze 6: Refactoring datového úložiště a vylepšení analytiky
+*Cíl: Optimalizovat ukládání a zpracování dat pro přihlášené i nepřihlášené uživatele, zlepšit výkon a škálovatelnost.*
+
+### 6.1 | Datové úložiště
+- [x] **Oddělit data uživatelů v Redis:**
+    - [x] Migrovat ze společného klíče `analysis-data` na per-user namespace (`user:{id}:events`, `user:{id}:summary`, `user:{id}:badges`).
+    - [x] Vytvořit migrační skript pro přesun existujících dat.
+- [x] **Implementovat lokální úložiště pro hosty (IndexedDB):**
+    - [x] Zavést `Dexie.js` pro správu IndexedDB.
+    - [x] Vytvořit DB schéma: `events: '++id, ts, qid, correct'`, `summary: '&qid, attempts, corrects'`, `meta: '&key'`.
+    - [x] Oddělit data hostů pomocí `sessionId` a implementovat TTL.
+        - [x] Implementovat TTL ~24h pro automatické mazání starých dat hostů.
+        - [x] Přidat `sessionId` do tabulky `events` a filtrovat data podle něj.
+
+### 6.2 | Zpracování a agregace dat
+- [x] **Zavést Web Worker pro analýzu na straně klienta:**
+    - [x] Vytvořit `analysis.worker.ts` pro výpočty statistik hosta.
+    - [x] Přepočítávat `summary` po každém novém záznamu v IndexedDB, aby se neblokoval hlavní thread.
+- [x] **Implementovat server-side agregaci pro přihlášené:**
+    - [x] Vytvořit cron job nebo worker, který bude agregovat surová data z `user:{id}:events` do `user:{id}:summary`.
+    - [x] Upravit frontend tak, aby načítal pouze předpočítané metriky.
+
+### 6.3 | Dashboard a UI
+- [x] **Rozdělit dashboard na "Dnes" vs. "Celkově":**
+    - [x] Horní část (kroužky) bude zobrazovat pouze dnešní pokrok (reset v 0:00).
+    - [x] Dolní část bude zobrazovat celkové statistiky od začátku.
+    - [x] Sjednotit logiku pro přihlášené uživatele i hosty.
+- [ ] **Přidat nové vizualizace:**
+    - [ ] Implementovat heat-mapu úspěšnosti v čase.
+    - [ ] Vytvořit "spaced-repetition" balíčky otázek s úspěšností pod 80 %.
+
+### 6.4 | Údržba a bezpečnost
+- [x] **Nastavit TTL a automatický úklid:**
+    - [x] Pro hosty v IndexedDB implementovat `expiresAt` a denní garbage-collector.
+    - [x] Pro přihlášené uživatele nastavit archivaci/mazání dat po 2 letech.
+- [x] **Zavést Rate Limiting:**
+    - [x] Implementovat `Upstash Ratelimit` na `write` endpointy (`/api/events`).
+
+### 6.5 | Správa dat
+- [x] **Implementovat export a migraci dat:**
+    - [x] Umožnit stažení uživatelských dat ve formátu JSON/CSV.
+    - [x] Vytvořit workflow pro přenos dat hosta na přihlášený účet pomocí QR kódu.
