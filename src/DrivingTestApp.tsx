@@ -1010,13 +1010,13 @@ export default function DrivingTestApp() {
                   onClick={startPracticeFromMistakes}
                   disabled={isLoading || processedMistakes.filter(m => !m.isCorrected).length === 0}
                   isLoading={isLoading}
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
                 >
                   <RefreshCcw className="mr-2 h-5 w-5" />
                   {isLoading ? "Připravuji otázky..." : "Vyzkoušet znovu chybné otázky"}
                 </Button>
                 {processedMistakes.filter(m => !m.isCorrected).length === 0 && userAnalysisData.length > 0 && (
-                  <div className="mt-4 text-center text-green-600 bg-green-50 p-4 rounded-lg flex items-center justify-center gap-3">
+                  <div className="mt-4 text-center text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 p-4 rounded-lg flex items-center justify-center gap-3">
                     <CheckCircle2 size={24} />
                     <p className="font-semibold text-lg">
                       Skvělá práce! Všechny své chyby jste si již opravili.

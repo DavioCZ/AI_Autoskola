@@ -58,6 +58,7 @@
 - [ ] **Optimalizace pro mobilní zařízení:** Zkontrolovat, zda jsou všechny interaktivní prvky na mobilu dostatečně velké (minimálně 48x48px dotyková plocha) a zda se obsah správně zalamuje.
 - [ ] **Přístupnost z klávesnice:** Projít celou aplikaci pomocí klávesy Tab a zajistit, že je focus stav (obrys) vždy viditelný a pořadí prvků je logické.
 - [ ] **Kontrola kontrastu:** Použít online nástroj pro kontrolu kontrastu textu vůči pozadí a zajistit splnění standardu WCAG AA (kontrastní poměr ≥ 4.5:1).
+- [ ] **Konzistence režimů:** Každý nový prvek nebo funkce musí být vizuálně přizpůsobena pro světlý i tmavý režim.
 
 ---
 
