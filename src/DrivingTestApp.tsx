@@ -18,7 +18,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/src/components/ui/dropdown-menu";
 import { useTheme } from "@/src/hooks/useTheme";
 import clsx from "clsx";
 import { useAi, ChatMessage } from "@/src/hooks/useAi";
