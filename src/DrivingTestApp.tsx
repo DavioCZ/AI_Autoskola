@@ -1061,7 +1061,9 @@ export default function DrivingTestApp() {
                             {GROUPS.map((g) => (
                                 <div 
                                     key={g.id} 
-                                    className="flex items-center space-x-2 p-3 border rounded-md hover:bg-muted/50 cursor-pointer transition-colors"
+                                    role="button"
+                                    tabIndex={0}
+                                    className="flex items-center space-x-2 p-3 border rounded-md hover:bg-muted/50 cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                                     onClick={async () => {
                                         setIsLoading(true);
                                         const qs = await fetchGroup(g.id);
@@ -1072,6 +1074,20 @@ export default function DrivingTestApp() {
                                         }));
                                         setBrowseState("questions");
                                         setIsLoading(false);
+                                    }}
+                                    onKeyDown={async (e) => {
+                                      if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        setIsLoading(true);
+                                        const qs = await fetchGroup(g.id);
+                                        setQuestions(qs.sort((a, b) => {
+                                          const idA = parseInt(a.id.replace(/\D/g, ''), 10);
+                                          const idB = parseInt(b.id.replace(/\D/g, ''), 10);
+                                          return idA - idB;
+                                        }));
+                                        setBrowseState("questions");
+                                        setIsLoading(false);
+                                      }
                                     }}
                                 >
                                     <label className="text-sm cursor-pointer flex-1">{g.name}</label>
@@ -1094,7 +1110,9 @@ export default function DrivingTestApp() {
                             {questions.map((q, index) => (
                                 <div 
                                     key={q.id} 
-                                    className="p-3 border rounded-md hover:bg-muted/50 cursor-pointer transition-colors"
+                                    role="button"
+                                    tabIndex={0}
+                                    className="p-3 border rounded-md hover:bg-muted/50 cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                                     onClick={() => {
                                         setCurrent(index);
                                         setExamMode(false); // Use practice UI
@@ -1102,6 +1120,17 @@ export default function DrivingTestApp() {
                                         setPracticeFirstAttempts({});
                                         setOriginPhase("browse"); // Remember where we came from
                                         setPhase("test");
+                                    }}
+                                    onKeyDown={(e) => {
+                                      if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        setCurrent(index);
+                                        setExamMode(false); // Use practice UI
+                                        setResponses({});
+                                        setPracticeFirstAttempts({});
+                                        setOriginPhase("browse"); // Remember where we came from
+                                        setPhase("test");
+                                      }
                                     }}
                                 >
                                     <p className="font-mono text-xs text-muted-foreground">ID: {q.id}</p>
