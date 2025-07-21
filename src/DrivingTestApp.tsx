@@ -11,7 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { CircularProgress } from "@/src/components/ui/circular-progress";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse, Moon, Sun } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse, Moon, Sun, Settings, Trash2, Download } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import {
   DropdownMenu,
@@ -218,12 +218,14 @@ function TopNav({
   onHome,
   currentUser,
   onSetCurrentUser,
+  onOpenSettings,
 }: {
   label: string;
   timeLeft?: number | null;
   onHome: () => void;
   currentUser: string;
   onSetCurrentUser: (name: string | null) => void;
+  onOpenSettings: () => void;
 }) {
   const { theme, setTheme } = useTheme();
   const mm = timeLeft !== null && timeLeft !== undefined ? Math.floor(timeLeft / 60) : null;
@@ -258,8 +260,8 @@ function TopNav({
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end">
-                <DropdownMenuItem disabled>
-                  <User className="mr-2 h-4 w-4" />
+                <DropdownMenuItem onClick={onOpenSettings}>
+                  <Settings className="mr-2 h-4 w-4" />
                   <span>Nastavení</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
@@ -274,10 +276,6 @@ function TopNav({
                       <span>Tmavý režim</span>
                     </>
                   )}
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => window.location.href = `/api/export-data?userId=${encodeURIComponent(currentUser)}`}>
-                  <FileText className="mr-2 h-4 w-4" />
-                  <span>Stáhnout moje data</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => onSetCurrentUser(null)}>
                   <LogOut className="mr-2 h-4 w-4" />
@@ -382,6 +380,7 @@ export default function DrivingTestApp() {
   const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
   const { setTheme } = useTheme();
   const [transferToken, setTransferToken] = useState<string | null>(null);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   useEffect(() => {
     // Inicializujeme Web Worker pro zpracování na pozadí pro hosty
@@ -714,8 +713,61 @@ export default function DrivingTestApp() {
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
+          onOpenSettings={() => setIsSettingsOpen(true)}
         />
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 space-y-6">
+          {isSettingsOpen && (
+            <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={() => setIsSettingsOpen(false)}>
+              <Card className="w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+                <CardHeader>
+                  <h3 className="text-lg font-semibold">Nastavení</h3>
+                  <p className="text-sm text-muted-foreground">Správa vašich dat a předvoleb.</p>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start gap-2"
+                    onClick={() => window.location.href = `/api/export-data?userId=${encodeURIComponent(currentUser)}`}
+                  >
+                    <Download size={16} />
+                    Stáhnout moje data (JSON)
+                  </Button>
+                  <Button 
+                    variant="destructive" 
+                    className="w-full justify-start gap-2"
+                    onClick={async () => {
+                      if (confirm("Opravdu si přejete trvale smazat veškerá vaše analytická data? Tato akce je nevratná.")) {
+                        try {
+                          const response = await fetch('/api/reset-analysis', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ userId: currentUser }),
+                          });
+                          if (!response.ok) throw new Error('Server error');
+                          alert('Vaše data byla úspěšně smazána.');
+                          // Reset local state
+                          setAnalysisData([]);
+                          setUnlockedBadges([]);
+                          setSummaryData({});
+                          setStats(loadStats(currentUser)); // Reload stats to reset values
+                          setIsSettingsOpen(false);
+                        } catch (error) {
+                          alert('Došlo k chybě při mazání dat. Zkuste to prosím znovu.');
+                          console.error('Failed to delete analysis data:', error);
+                        }
+                      }
+                    }}
+                  >
+                    <Trash2 size={16} />
+                    Vymazat analytická data
+                  </Button>
+                  <Button variant="secondary" className="w-full mt-4" onClick={() => setIsSettingsOpen(false)}>
+                    Zavřít
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          )}
           <div className="text-center py-10 md:py-12">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">
               Otestujte si své znalosti
@@ -949,6 +1001,7 @@ export default function DrivingTestApp() {
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
+          onOpenSettings={() => setIsSettingsOpen(true)}
         />
         <main className="flex-1 overflow-y-auto">
           <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
@@ -1138,6 +1191,7 @@ export default function DrivingTestApp() {
                 onHome={() => setPhase("intro")}
                 currentUser={currentUser}
                 onSetCurrentUser={handleLogout}
+                onOpenSettings={() => setIsSettingsOpen(true)}
             />
             <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
                 {isLoading ? (
@@ -1249,6 +1303,7 @@ export default function DrivingTestApp() {
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
+          onOpenSettings={() => setIsSettingsOpen(true)}
         />
         <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
           <div className="max-w-3xl mx-auto mb-4">
@@ -1304,6 +1359,7 @@ export default function DrivingTestApp() {
           timeLeft={timeLeft}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
+          onOpenSettings={() => setIsSettingsOpen(true)}
           onHome={() => {
             // Chceme potvrzení jen u ostrého testu
             if (examMode) {
@@ -1562,7 +1618,7 @@ export default function DrivingTestApp() {
                 <div className={clsx("space-y-4", { "hidden": isAiTutorCollapsed })}>
                   <div className="flex-1 overflow-y-auto p-2 space-y-2 text-sm max-h-[60vh]">
                   {messages.map((msg: ChatMessage, i: number) => (
-                    <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-accent text-accent-foreground self-start" : "bg-muted self-end ml-auto text-foreground")}>
+                    <div key={i} className={clsx("p-2.5 rounded-lg shadow-sm max-w-[90%]", msg.role === "assistant" ? "bg-accent text-accent-foreground self-start" : "bg-blue-500 text-white dark:bg-blue-600 self-end ml-auto")}>
                       {msg.text.split('\n').map((line: string, j: number) => {
                         const isImageUrl = /\.(jpeg|jpg|gif|png)$/i.test(line.trim());
                         if (isImageUrl && msg.role === "assistant") { 
@@ -1658,6 +1714,7 @@ export default function DrivingTestApp() {
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
+          onOpenSettings={() => setIsSettingsOpen(true)}
         />
         <main className="flex-1 overflow-y-auto">
           <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-center">

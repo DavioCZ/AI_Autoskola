@@ -348,11 +348,13 @@ app.post("/api/reset-analysis", async (req, res) => {
 
   const analysisKey = `user:${userId}:analysis`;
   const badgesKey = `user:${userId}:badges`;
+  const summaryKey = `user:${userId}:summary`;
 
   try {
     await redis.del(analysisKey);
-    await redis.del(badgesKey); // Smazat i odznaky
-    res.status(200).json({ message: "Analysis and badge data for user " + userId + " reset successfully." });
+    await redis.del(badgesKey);
+    await redis.del(summaryKey);
+    res.status(200).json({ message: "Analysis, badge, and summary data for user " + userId + " reset successfully." });
   } catch (error) {
     console.error("Error in /api/reset-analysis:", error);
     res.status(500).json({ error: error.message });
