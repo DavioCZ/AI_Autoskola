@@ -1180,18 +1180,13 @@ export default function DrivingTestApp() {
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
           onHome={() => {
-            if (originPhase === 'browse') {
-              setPhase('browse');
-              setBrowseState('questions');
-              return;
-            }
             // Chceme potvrzení jen u ostrého testu
             if (examMode) {
-              if (confirm("Opravdu chcete test ukončit? Váš postup nebude uložen.")) {
+              if (confirm("Opravdu chcete opustit test a vrátit se na hlavní stránku? Váš postup nebude uložen.")) {
                 setPhase("intro");
               }
             } else {
-              // U procvičování rovnou ukončíme a uložíme statistiky
+              // U procvičování (včetně prohlížení) rovnou ukončíme a uložíme statistiky, pak se vrátíme na úvod
               commitSessionAnalysis().then(() => {
                 calculateAndSavePracticeStats();
                 setPhase("intro");
