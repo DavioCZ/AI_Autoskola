@@ -847,183 +847,186 @@ export default function DrivingTestApp() {
     };
 
     return (
-      <>
+      <div className="flex flex-col h-screen bg-background">
         <TopNav 
           label="Podrobná analýza" 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
         />
-        <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
-          <div className="max-w-4xl mx-auto mb-4">
-            <Button variant="outline" onClick={() => setPhase("intro")}>
-                &larr; Zpět na hlavní stránku
-            </Button>
-          </div>
-          <h2 className="text-2xl font-semibold mb-6 text-center">Podrobná analýza úspěšnosti</h2>
-          {userAnalysisData.length === 0 ? (
-            <Card className="max-w-3xl mx-auto text-center p-8">
-              <CardHeader><h3 className="font-semibold text-lg">Zatím zde nic není</h3></CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Absolvujte test nebo procvičování, abychom mohli začít sbírat data pro analýzu vašeho pokroku.</p>
-                <Button className="mt-6" onClick={() => setPhase("intro")}>Zpět na hlavní stránku</Button>
-              </CardContent>
-            </Card>
-          ) : (
-            <Card className="max-w-4xl mx-auto">
-              <CardHeader>
-                <h3 className="font-semibold text-lg">Přehled podle okruhů</h3>
-                <p className="text-sm text-muted-foreground">Údaje jsou založeny na správnosti vaší první odpovědi.</p>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm text-left">
-                    <thead className="bg-muted/50">
-                      <tr>
-                        <th className="p-3 font-medium">Okruh</th>
-                        <th className="p-3 font-medium text-center">Úspěšnost</th>
-                        <th className="p-3 font-medium text-center">Průměrný čas</th>
-                        <th className="p-3 font-medium text-center">Počet odpovědí</th>
-                        <th className="p-3 font-medium text-center"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {analysisByGroup.map(group => (
-                        <tr key={group.id} className="border-b">
-                          <td className="p-3 font-medium flex items-center gap-2">
-                            <group.Icon size={16} className="text-muted-foreground" />
-                            {group.name}
-                          </td>
-                          {group.total > 0 ? (
-                            <>
-                              <td className="p-3 text-center">
-                                <div className="flex items-center justify-center gap-2">
-                                  <Progress 
-                                    value={group.successRate} 
-                                    className="h-3 w-16" 
-                                    indicatorClassName={getSuccessRateColor(group.successRate)} 
-                                  />
-                                  <span>{group.successRate.toFixed(1)}%</span>
-                                </div>
-                              </td>
-                              <td className="p-3 text-center">{`${group.avgTime.toFixed(1)}s`}</td>
-                              <td className="p-3 text-center">{group.total}</td>
-                            </>
-                          ) : (
-                            <td colSpan={3} className="p-3 text-center text-sm text-muted-foreground italic">
-                              Zatím bez odpovědí. Začněte procvičovat!
-                            </td>
-                          )}
-                          <td className="p-3 text-center">
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-                              onClick={async () => {
-                                await initiateTest(false, [group.id], undefined);
-                              }}
-                              disabled={isLoading}
-                              isLoading={isLoading}
-                            >
-                              Procvičit
-                            </Button>
-                          </td>
+        <main className="flex-1 overflow-y-auto">
+          <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+            <div className="max-w-4xl mx-auto mb-4">
+              <Button variant="outline" onClick={() => setPhase("intro")}>
+                  &larr; Zpět na hlavní stránku
+              </Button>
+            </div>
+            <h2 className="text-2xl font-semibold mb-6 text-center">Podrobná analýza úspěšnosti</h2>
+            {userAnalysisData.length === 0 ? (
+              <Card className="max-w-3xl mx-auto text-center p-8">
+                <CardHeader><h3 className="font-semibold text-lg">Zatím zde nic není</h3></CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Absolvujte test nebo procvičování, abychom mohli začít sbírat data pro analýzu vašeho pokroku.</p>
+                  <Button className="mt-6" onClick={() => setPhase("intro")}>Zpět na hlavní stránku</Button>
+                </CardContent>
+              </Card>
+            ) : (
+              <Card className="max-w-4xl mx-auto">
+                <CardHeader>
+                  <h3 className="font-semibold text-lg">Přehled podle okruhů</h3>
+                  <p className="text-sm text-muted-foreground">Údaje jsou založeny na správnosti vaší první odpovědi.</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm text-left">
+                      <thead className="bg-muted/50">
+                        <tr>
+                          <th className="p-3 font-medium">Okruh</th>
+                          <th className="p-3 font-medium text-center">Úspěšnost</th>
+                          <th className="p-3 font-medium text-center">Průměrný čas</th>
+                          <th className="p-3 font-medium text-center">Počet odpovědí</th>
+                          <th className="p-3 font-medium text-center"></th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
-          )}
+                      </thead>
+                      <tbody>
+                        {analysisByGroup.map(group => (
+                          <tr key={group.id} className="border-b">
+                            <td className="p-3 font-medium flex items-center gap-2">
+                              <group.Icon size={16} className="text-muted-foreground" />
+                              {group.name}
+                            </td>
+                            {group.total > 0 ? (
+                              <>
+                                <td className="p-3 text-center">
+                                  <div className="flex items-center justify-center gap-2">
+                                    <Progress 
+                                      value={group.successRate} 
+                                      className="h-3 w-16" 
+                                      indicatorClassName={getSuccessRateColor(group.successRate)} 
+                                    />
+                                    <span>{group.successRate.toFixed(1)}%</span>
+                                  </div>
+                                </td>
+                                <td className="p-3 text-center">{`${group.avgTime.toFixed(1)}s`}</td>
+                                <td className="p-3 text-center">{group.total}</td>
+                              </>
+                            ) : (
+                              <td colSpan={3} className="p-3 text-center text-sm text-muted-foreground italic">
+                                Zatím bez odpovědí. Začněte procvičovat!
+                              </td>
+                            )}
+                            <td className="p-3 text-center">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                                onClick={async () => {
+                                  await initiateTest(false, [group.id], undefined);
+                                }}
+                                disabled={isLoading}
+                                isLoading={isLoading}
+                              >
+                                Procvičit
+                              </Button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
-          {userAnalysisData.filter(e => !e.isFirstAttemptCorrect).length > 0 && (
-            <Card className="max-w-4xl mx-auto mt-8">
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
-                    <p className="text-sm text-muted-foreground">Otázky, ve kterých jste v minulosti chybovali.</p>
+            {userAnalysisData.filter(e => !e.isFirstAttemptCorrect).length > 0 && (
+              <Card className="max-w-4xl mx-auto mt-8">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
+                      <p className="text-sm text-muted-foreground">Otázky, ve kterých jste v minulosti chybovali.</p>
+                    </div>
+                    <div className="flex items-center gap-1 bg-muted p-1 rounded-md">
+                      <Button 
+                        variant={mistakesFilter === 'all' ? 'secondary' : 'ghost'} 
+                        size="sm" 
+                        onClick={() => setMistakesFilter('all')}
+                        className="text-xs h-7"
+                      >
+                        Všechny
+                      </Button>
+                      <Button 
+                        variant={mistakesFilter === 'uncorrected' ? 'secondary' : 'ghost'} 
+                        size="sm" 
+                        onClick={() => setMistakesFilter('uncorrected')}
+                        className="text-xs h-7"
+                      >
+                        Neopravené
+                      </Button>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1 bg-muted p-1 rounded-md">
-                    <Button 
-                      variant={mistakesFilter === 'all' ? 'secondary' : 'ghost'} 
-                      size="sm" 
-                      onClick={() => setMistakesFilter('all')}
-                      className="text-xs h-7"
-                    >
-                      Všechny
-                    </Button>
-                    <Button 
-                      variant={mistakesFilter === 'uncorrected' ? 'secondary' : 'ghost'} 
-                      size="sm" 
-                      onClick={() => setMistakesFilter('uncorrected')}
-                      className="text-xs h-7"
-                    >
-                      Neopravené
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                {processedMistakes.length > 0 ? (
-                  <div className="space-y-4">
-                    {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
-                      <div key={questionId} className={clsx("p-3 border rounded-md", {
-                        "bg-red-50/50 border-red-200 dark:bg-red-900/20 dark:border-red-800": !isCorrected,
-                        "bg-green-50/50 border-green-200 dark:bg-green-900/20 dark:border-green-800": isCorrected,
-                      })}>
-                        <div className="flex justify-between items-center">
-                          <p className={clsx("font-semibold", {
-                            "text-red-800 dark:text-red-300": !isCorrected,
-                            "text-green-800 dark:text-green-300": isCorrected,
-                          })}>
-                            {incorrectCount}x nesprávně
-                          </p>
-                          {isCorrected && (
-                            <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
-                              OPRAVENO
-                            </span>
-                          )}
+                </CardHeader>
+                <CardContent>
+                  {processedMistakes.length > 0 ? (
+                    <div className="space-y-4">
+                      {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
+                        <div key={questionId} className={clsx("p-3 border rounded-md", {
+                          "bg-red-50/50 border-red-200 dark:bg-red-900/20 dark:border-red-800": !isCorrected,
+                          "bg-green-50/50 border-green-200 dark:bg-green-900/20 dark:border-green-800": isCorrected,
+                        })}>
+                          <div className="flex justify-between items-center">
+                            <p className={clsx("font-semibold", {
+                              "text-red-800 dark:text-red-300": !isCorrected,
+                              "text-green-800 dark:text-green-300": isCorrected,
+                            })}>
+                              {incorrectCount}x nesprávně
+                            </p>
+                            {isCorrected && (
+                              <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
+                                OPRAVENO
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-sm text-foreground/90 mt-1">{text}</p>
                         </div>
-                        <p className="text-sm text-foreground/90 mt-1">{text}</p>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center py-8 text-muted-foreground">
-                    <p>Žádné chyby k zobrazení v tomto filtru.</p>
-                    <p className="text-xs mt-1">Zkuste změnit filtr na "Všechny".</p>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-8 text-muted-foreground">
+                      <p>Žádné chyby k zobrazení v tomto filtru.</p>
+                      <p className="text-xs mt-1">Zkuste změnit filtr na "Všechny".</p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </main>
+        {userAnalysisData.length > 0 && (
+          <footer className="sticky bottom-0 bg-background border-t p-4 shadow-md z-10">
+            <div className="w-full max-w-4xl mx-auto text-center">
+                <Button 
+                  size="lg" 
+                  onClick={startPracticeFromMistakes}
+                  disabled={isLoading || processedMistakes.filter(m => !m.isCorrected).length === 0}
+                  isLoading={isLoading}
+                  className="bg-orange-500 hover:bg-orange-600 text-white"
+                >
+                  <RefreshCcw className="mr-2 h-5 w-5" />
+                  {isLoading ? "Připravuji otázky..." : "Vyzkoušet znovu chybné otázky"}
+                </Button>
+                {processedMistakes.filter(m => !m.isCorrected).length === 0 && userAnalysisData.length > 0 && (
+                  <div className="mt-4 text-center text-green-600 bg-green-50 p-4 rounded-lg flex items-center justify-center gap-3">
+                    <CheckCircle2 size={24} />
+                    <p className="font-semibold text-lg">
+                      Skvělá práce! Všechny své chyby jste si již opravili.
+                    </p>
                   </div>
                 )}
-              </CardContent>
-            </Card>
-          )}
-
-          {userAnalysisData.length > 0 && (
-            <div className="max-w-4xl mx-auto mt-8 text-center">
-              <Button 
-                size="lg" 
-                onClick={startPracticeFromMistakes}
-                disabled={isLoading || processedMistakes.filter(m => !m.isCorrected).length === 0}
-                isLoading={isLoading}
-                className="bg-orange-500 hover:bg-orange-600 text-white"
-              >
-                <RefreshCcw className="mr-2 h-5 w-5" />
-                {isLoading ? "Připravuji otázky..." : "Vyzkoušet znovu chybné otázky"}
-              </Button>
-              {processedMistakes.filter(m => !m.isCorrected).length === 0 && userAnalysisData.length > 0 && (
-                <div className="mt-4 text-center text-green-600 bg-green-50 p-4 rounded-lg flex items-center justify-center gap-3">
-                  <CheckCircle2 size={24} />
-                  <p className="font-semibold text-lg">
-                    Skvělá práce! Všechny své chyby jste si již opravili.
-                  </p>
-                </div>
-              )}
             </div>
-          )}
-        </div>
-      </>
+          </footer>
+        )}
+      </div>
     );
   }
 
