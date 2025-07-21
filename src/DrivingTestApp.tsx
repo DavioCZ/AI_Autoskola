@@ -11,8 +11,15 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { CircularProgress } from "@/src/components/ui/circular-progress";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse, Moon, Sun } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useTheme } from "@/src/hooks/useTheme";
 import clsx from "clsx";
 import { useAi, ChatMessage } from "@/src/hooks/useAi";
 import { UnlockedBadge } from "@/src/badges";
@@ -170,17 +177,18 @@ function TopNav({
   currentUser: string;
   onSetCurrentUser: (name: string | null) => void;
 }) {
+  const { setTheme } = useTheme();
   const mm = timeLeft !== null && timeLeft !== undefined ? Math.floor(timeLeft / 60) : null;
   const ss = timeLeft !== null && timeLeft !== undefined ? timeLeft % 60 : null;
   const timeFmt = (mm !== null && ss !== null) ? `${mm}:${ss.toString().padStart(2, "0")}` : "";
   return (
-    <header className="w-full bg-white border-b shadow-sm sticky top-0 z-40">
+    <header className="w-full bg-background border-b shadow-sm sticky top-0 z-40">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Button variant="ghost" onClick={onHome} className="flex items-center gap-2 px-1 hover:bg-gray-100">
+        <Button variant="ghost" onClick={onHome} className="flex items-center gap-2 px-1 hover:bg-accent">
           <Book size={20} className="text-blue-600" />
           <h1 className="font-semibold text-lg select-none">Autoškola B</h1>
         </Button>
-        <div className="flex-1 text-center text-sm font-medium text-gray-600 select-none">
+        <div className="flex-1 text-center text-sm font-medium text-muted-foreground select-none">
           {label}{" "}
           {timeLeft !== null && timeLeft !== undefined && (
             <span
@@ -194,15 +202,32 @@ function TopNav({
         </div>
         <div className="flex items-center gap-4">
           {showStats && currentUser && (
-            <div className="flex items-center gap-2 border-r pr-2">
-              <div className="flex items-center gap-2">
-                <User size={16} className="text-gray-600" />
-                <span className="text-sm font-medium">{currentUser}</span>
-              </div>
-              <Button variant="ghost" size="icon" title="Odhlásit se" onClick={() => onSetCurrentUser(null)}>
-                <LogOut size={18} />
-              </Button>
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="flex items-center gap-2">
+                  <User size={16} />
+                  <span className="text-sm font-medium">{currentUser}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="end">
+                <DropdownMenuItem disabled>
+                  <User className="mr-2 h-4 w-4" />
+                  <span>Nastavení</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("light")}>
+                  <Sun className="mr-2 h-4 w-4" />
+                  <span>Světlý režim</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                  <Moon className="mr-2 h-4 w-4" />
+                  <span>Tmavý režim</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => onSetCurrentUser(null)}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span>Odhlásit se</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           )}
           <Button variant="ghost" onClick={onHome} className="text-sm font-medium">
             Domů
@@ -229,7 +254,7 @@ function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-background">
       <Card className="w-full max-w-sm p-6">
         <CardHeader className="text-center">
           <h2 className="text-2xl font-bold">Přihlášení</h2>
@@ -296,6 +321,7 @@ export default function DrivingTestApp() {
   const msgEndRef = useRef<HTMLDivElement | null>(null);
   const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
+  const { setTheme } = useTheme();
 
   const handleLogin = (name: string) => {
     localStorage.setItem("autoskola-currentUser", name);
@@ -598,10 +624,10 @@ export default function DrivingTestApp() {
         />
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 space-y-6">
           <div className="text-center py-10 md:py-12">
-            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl">
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">
               Otestujte si své znalosti
             </h1>
-            <p className="mt-4 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
               Připravte se na zkoušky v autoškole.
             </p>
           </div>
