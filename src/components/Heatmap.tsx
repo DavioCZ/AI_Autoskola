@@ -42,7 +42,7 @@ const Heatmap: React.FC<HeatmapProps> = ({ userId }) => {
     const fetchHeatmapData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/api/heatmap?userId=${userId}`);
+        const response = await fetch(`/api/heatmap?userId=${userId.toLowerCase()}`);
         if (!response.ok) {
           throw new Error('Nepodařilo se načíst data pro heatmapu.');
         }

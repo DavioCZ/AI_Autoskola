@@ -276,23 +276,24 @@ const checkAndAwardBadges = async (userId, allEntries, lastTestEntries) => {
 app.post("/api/save-analysis", async (req, res) => {
   const { entries, userId } = req.body;
 
-  // Rate limiting
-  if (ratelimit) {
-    const identifier = userId || req.ip;
-    const { success } = await ratelimit.limit(identifier);
-    if (!success) {
-      return res.status(429).json({ error: "Too many requests. Please try again later." });
-    }
-  }
-
   if (!entries || !Array.isArray(entries) || entries.length === 0) {
     return res.status(400).json({ error: "No analysis entries provided." });
   }
   if (!userId) {
     return res.status(400).json({ error: "User ID is required." });
   }
+  const uid = userId.toLowerCase();
 
-  const analysisKey = `user:${userId}:analysis`;
+  // Rate limiting
+  if (ratelimit) {
+    const identifier = uid || req.ip;
+    const { success } = await ratelimit.limit(identifier);
+    if (!success) {
+      return res.status(429).json({ error: "Too many requests. Please try again later." });
+    }
+  }
+
+  const analysisKey = `user:${uid}:analysis`;
 
   try {
     // --- Heatmap Stats Update ---
@@ -317,8 +318,8 @@ app.post("/api/save-analysis", async (req, res) => {
         const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
 
         for (const [yyyymmdd, increments] of dailyIncrements.entries()) {
-            const statsKey = `stats:${userId}:${yyyymmdd}`;
-            const indexKey = `stats:index:${userId}`;
+            const statsKey = `stats:${uid}:${yyyymmdd}`;
+            const indexKey = `stats:index:${uid}`;
             // Použijeme poledne daného dne pro konzistentní timestamp
             const timestamp = new Date(`${yyyymmdd}T12:00:00Z`).getTime();
 
@@ -342,11 +343,11 @@ app.post("/api/save-analysis", async (req, res) => {
     await redis.set(analysisKey, newData, { ex: TWO_YEARS_IN_SECONDS });
 
     // Logika pro udělení odznaků
-    const newlyAwardedBadges = await checkAndAwardBadges(userId, newData, entries);
+    const newlyAwardedBadges = await checkAndAwardBadges(uid, newData, entries);
 
     // Vypočítat a uložit nový souhrn
     const summaryData = calculateSummary(newData);
-    const summaryKey = `user:${userId}:summary`;
+    const summaryKey = `user:${uid}:summary`;
     await redis.set(summaryKey, summaryData, { ex: TWO_YEARS_IN_SECONDS });
 
 
@@ -484,10 +485,11 @@ app.get("/api/analysis-data", async (req, res) => {
   if (!userId) {
     return res.status(400).json({ error: "User ID is required." });
   }
+  const uid = userId.toLowerCase();
 
-  const analysisKey = `user:${userId}:analysis`;
-  const badgesKey = `user:${userId}:badges`;
-  const summaryKey = `user:${userId}:summary`;
+  const analysisKey = `user:${uid}:analysis`;
+  const badgesKey = `user:${uid}:badges`;
+  const summaryKey = `user:${uid}:summary`;
 
   try {
     const [analysisDataRaw, badgesDataRaw, summaryDataRaw] = await Promise.all([
@@ -514,16 +516,17 @@ app.post("/api/reset-analysis", async (req, res) => {
   if (!userId) {
     return res.status(400).json({ error: "User ID is required." });
   }
+  const uid = userId.toLowerCase();
 
-  const analysisKey = `user:${userId}:analysis`;
-  const badgesKey = `user:${userId}:badges`;
-  const summaryKey = `user:${userId}:summary`;
+  const analysisKey = `user:${uid}:analysis`;
+  const badgesKey = `user:${uid}:badges`;
+  const summaryKey = `user:${uid}:summary`;
 
   try {
     await redis.del(analysisKey);
     await redis.del(badgesKey);
     await redis.del(summaryKey);
-    res.status(200).json({ message: "Analysis, badge, and summary data for user " + userId + " reset successfully." });
+    res.status(200).json({ message: "Analysis, badge, and summary data for user " + uid + " reset successfully." });
   } catch (error) {
     console.error("Error in /api/reset-analysis:", error);
     res.status(500).json({ error: error.message });
@@ -536,9 +539,10 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
   if (!userId) {
     return res.status(400).json({ error: "User ID is required." });
   }
+  const uid = userId.toLowerCase();
 
   try {
-    const summaryKey = `user:${userId}:summary`;
+    const summaryKey = `user:${uid}:summary`;
     const summaryDataRaw = await redis.get(summaryKey);
     const summaryData = typeof summaryDataRaw === 'string' ? JSON.parse(summaryDataRaw) : (summaryDataRaw || {});
 
@@ -549,7 +553,7 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
     res.json({ questionIds: weakQuestions });
 
   } catch (error) {
-    console.error(`Error fetching spaced repetition deck for user ${userId}:`, error);
+    console.error(`Error fetching spaced repetition deck for user ${uid}:`, error);
     res.status(500).json({ error: "Failed to fetch spaced repetition deck." });
   }
 });
@@ -559,9 +563,10 @@ app.get("/api/export-data", async (req, res) => {
   if (!userId) {
     return res.status(400).json({ error: "User ID is required." });
   }
+  const uid = userId.toLowerCase();
 
-  const analysisKey = `user:${userId}:analysis`;
-  const badgesKey = `user:${userId}:badges`;
+  const analysisKey = `user:${uid}:analysis`;
+  const badgesKey = `user:${uid}:badges`;
 
   try {
     const [analysisDataRaw, badgesDataRaw] = await Promise.all([
@@ -573,13 +578,13 @@ app.get("/api/export-data", async (req, res) => {
     const unlockedBadges = typeof badgesDataRaw === 'string' ? JSON.parse(badgesDataRaw) : (badgesDataRaw || []);
 
     const exportData = {
-      userId,
+      userId: uid,
       exportedAt: new Date().toISOString(),
       analysisData,
       unlockedBadges,
     };
 
-    res.setHeader('Content-Disposition', `attachment; filename="autoskola-data-${userId}.json"`);
+    res.setHeader('Content-Disposition', `attachment; filename="autoskola-data-${uid}.json"`);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(exportData, null, 2));
 
@@ -698,10 +703,11 @@ app.get("/api/heatmap", async (req, res) => {
     if (!userId) {
         return res.status(400).json({ error: "User ID is required." });
     }
+    const uid = userId.toLowerCase();
 
     try {
-        const cacheKey = `heatmap:${userId}:${days}`;
-        const lastRecalcKey = `heatmap:${userId}:lastRecalc`;
+        const cacheKey = `heatmap:${uid}:${days}`;
+        const lastRecalcKey = `heatmap:${uid}:lastRecalc`;
 
         // 1. Zkusit načíst data z cache
         const [cachedData, lastRecalc] = await redis.mget(cacheKey, lastRecalcKey);
@@ -715,12 +721,12 @@ app.get("/api/heatmap", async (req, res) => {
         // 2. Pokud je potřeba, přepočítat úrovně
         let thresholds;
         if (isRecalcNeeded) {
-            const result = await updateActivityLevels(userId);
+            const result = await updateActivityLevels(uid);
             thresholds = result.thresholds;
             await redis.set(lastRecalcKey, Date.now());
         } else {
             // redis.get také automaticky deserializuje
-            const thresholdsRaw = await redis.get(`stats:thresholds:${userId}`);
+            const thresholdsRaw = await redis.get(`stats:thresholds:${uid}`);
             thresholds = thresholdsRaw || { q1: 0, q2: 0, q3: 0 };
         }
 
@@ -729,11 +735,11 @@ app.get("/api/heatmap", async (req, res) => {
         const startDate = new Date();
         startDate.setDate(today.getDate() - (parseInt(days, 10) - 1));
 
-        const dateStrings = await redis.zrange(`stats:index:${userId}`, startDate.getTime(), today.getTime(), { byScore: true });
+        const dateStrings = await redis.zrange(`stats:index:${uid}`, startDate.getTime(), today.getTime(), { byScore: true });
         
         const data = [];
         if (dateStrings.length > 0) {
-            const statKeys = dateStrings.map(d => `stats:${userId}:${d}`);
+            const statKeys = dateStrings.map(d => `stats:${uid}:${d}`);
             const dailyStats = await redis.mget(...statKeys);
 
             dailyStats.forEach((stat, i) => {
@@ -756,7 +762,7 @@ app.get("/api/heatmap", async (req, res) => {
         res.json(responsePayload);
 
     } catch (error) {
-        console.error(`Error fetching heatmap for user ${userId}:`, error);
+        console.error(`Error fetching heatmap for user ${uid}:`, error);
         res.status(500).json({ error: "Failed to fetch heatmap data." });
     }
 });
