@@ -293,6 +293,46 @@ app.post("/api/save-analysis", async (req, res) => {
   const analysisKey = `user:${userId}:analysis`;
 
   try {
+    // --- Heatmap Stats Update ---
+    const dailyIncrements = new Map(); // Key: YYYY-MM-DD, Value: { total: number, correct: number }
+
+    entries.forEach(entry => {
+        const date = new Date(entry.answeredAt);
+        const yyyymmdd = date.toISOString().split('T')[0];
+
+        if (!dailyIncrements.has(yyyymmdd)) {
+            dailyIncrements.set(yyyymmdd, { total: 0, correct: 0 });
+        }
+        const dayStats = dailyIncrements.get(yyyymmdd);
+        dayStats.total += 1;
+        if (entry.isCorrect) {
+            dayStats.correct += 1;
+        }
+    });
+
+    if (dailyIncrements.size > 0 && redis) {
+        const pipe = redis.pipeline();
+        const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
+
+        for (const [yyyymmdd, increments] of dailyIncrements.entries()) {
+            const statsKey = `stats:${userId}:${yyyymmdd}`;
+            const indexKey = `stats:index:${userId}`;
+            // Použijeme poledne daného dne pro konzistentní timestamp
+            const timestamp = new Date(`${yyyymmdd}T12:00:00Z`).getTime();
+
+            // Add date to sorted set for easy scanning
+            pipe.zadd(indexKey, { score: timestamp, member: yyyymmdd });
+            pipe.expire(indexKey, TWO_YEARS_IN_SECONDS);
+
+            // Increment daily counts
+            pipe.hincrby(statsKey, 'total', increments.total);
+            pipe.hincrby(statsKey, 'correct', increments.correct);
+            pipe.expire(statsKey, TWO_YEARS_IN_SECONDS);
+        }
+        await pipe.exec();
+    }
+    // --- End of Heatmap Stats Update ---
+
     const existingDataRaw = await redis.get(analysisKey);
     const existingData = typeof existingDataRaw === 'string' ? JSON.parse(existingDataRaw) : (existingDataRaw || []);
     const newData = [...existingData, ...entries];
@@ -588,6 +628,135 @@ app.post("/api/claim-guest-data", async (req, res) => {
 
 
 // Vision API and downloadAndEncode helper are removed.
+
+// --- Heatmap-related Functions ---
+
+const calculateQuartiles = (values) => {
+    if (values.length === 0) return { q1: 0, q2: 0, q3: 0 };
+    // Odstraníme outliery (např. horní 5 %) pro realističtější kvartily
+    const sorted = [...values].sort((a, b) => a - b);
+    const outlierIndex = Math.floor(sorted.length * 0.95);
+    const filteredValues = sorted.slice(0, outlierIndex);
+
+    if (filteredValues.length === 0) return { q1: 0, q2: 0, q3: 0 };
+
+    const q1Index = Math.floor(filteredValues.length / 4);
+    const q2Index = Math.floor(filteredValues.length / 2);
+    const q3Index = Math.floor(3 * filteredValues.length / 4);
+    return {
+        q1: filteredValues[q1Index] || 0,
+        q2: filteredValues[q2Index] || 0,
+        q3: filteredValues[q3Index] || 0,
+    };
+};
+
+const levelFor = (total, quartiles) => {
+    if (!total || total === 0) return 0;
+    if (total <= quartiles.q1) return 1;
+    if (total <= quartiles.q2) return 2;
+    if (total <= quartiles.q3) return 3;
+    return 4;
+};
+
+// Simulace CRON jobu - v reálu by běžela nezávisle jednou denně
+const updateActivityLevels = async (userId) => {
+    if (!redis) return { thresholds: { q1: 0, q2: 0, q3: 0 } };
+
+    const indexKey = `stats:index:${userId}`;
+    const today = new Date();
+    const oneYearAgo = new Date();
+    oneYearAgo.setFullYear(today.getFullYear() - 1);
+
+    const dateStrings = await redis.zrange(indexKey, oneYearAgo.getTime(), today.getTime(), { byScore: true });
+    if (dateStrings.length === 0) return { thresholds: { q1: 0, q2: 0, q3: 0 } };
+
+    const statKeys = dateStrings.map(d => `stats:${userId}:${d}`);
+    const dailyStats = await redis.mget(...statKeys);
+
+    const totals = dailyStats.map(stat => stat?.total || 0).filter(t => t > 0);
+    const quartiles = calculateQuartiles(totals);
+
+    const pipe = redis.pipeline();
+    dateStrings.forEach((dateString, i) => {
+        const total = dailyStats[i]?.total || 0;
+        const level = levelFor(total, quartiles);
+        pipe.hset(`stats:${userId}:${dateString}`, { level });
+    });
+    await pipe.exec();
+
+    const thresholdsKey = `stats:thresholds:${userId}`;
+    await redis.set(thresholdsKey, JSON.stringify(quartiles), { ex: 86400 }); // Cache na 24h
+
+    return { thresholds: quartiles };
+};
+
+
+app.get("/api/heatmap", async (req, res) => {
+    const { userId, days = 365 } = req.query;
+    if (!userId) {
+        return res.status(400).json({ error: "User ID is required." });
+    }
+
+    try {
+        const cacheKey = `heatmap:${userId}:${days}`;
+        const lastRecalcKey = `heatmap:${userId}:lastRecalc`;
+
+        // 1. Zkusit načíst data z cache
+        const [cachedDataRaw, lastRecalc] = await redis.mget(cacheKey, lastRecalcKey);
+        const isRecalcNeeded = !lastRecalc || (Date.now() - parseInt(lastRecalc, 10)) > 24 * 60 * 60 * 1000;
+
+        if (cachedDataRaw && !isRecalcNeeded) {
+            return res.json(JSON.parse(cachedDataRaw));
+        }
+
+        // 2. Pokud je potřeba, přepočítat úrovně
+        let thresholds;
+        if (isRecalcNeeded) {
+            const result = await updateActivityLevels(userId);
+            thresholds = result.thresholds;
+            await redis.set(lastRecalcKey, Date.now());
+        } else {
+            const thresholdsRaw = await redis.get(`stats:thresholds:${userId}`);
+            thresholds = thresholdsRaw ? JSON.parse(thresholdsRaw) : { q1: 0, q2: 0, q3: 0 };
+        }
+
+        // 3. Načíst čerstvá data pro heatmapu
+        const today = new Date();
+        const startDate = new Date();
+        startDate.setDate(today.getDate() - (parseInt(days, 10) - 1));
+
+        const dateStrings = await redis.zrange(`stats:index:${userId}`, startDate.getTime(), today.getTime(), { byScore: true });
+        
+        const data = [];
+        if (dateStrings.length > 0) {
+            const statKeys = dateStrings.map(d => `stats:${userId}:${d}`);
+            const dailyStats = await redis.mget(...statKeys);
+
+            dailyStats.forEach((stat, i) => {
+                if (stat) {
+                    data.push({
+                        date: dateStrings[i],
+                        total: stat.total || 0,
+                        correct: stat.correct || 0,
+                        level: stat.level ?? 0,
+                    });
+                }
+            });
+        }
+        
+        const responsePayload = { data, thresholds };
+
+        // 4. Uložit nová data do cache
+        await redis.set(cacheKey, JSON.stringify(responsePayload), { ex: 300 }); // Cache na 5 minut
+
+        res.json(responsePayload);
+
+    } catch (error) {
+        console.error(`Error fetching heatmap for user ${userId}:`, error);
+        res.status(500).json({ error: "Failed to fetch heatmap data." });
+    }
+});
+
 
 /**
  * Loads the analysis index from the static JSON file.

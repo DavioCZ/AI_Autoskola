@@ -162,9 +162,21 @@
     - [x] Horní část (kroužky) bude zobrazovat pouze dnešní pokrok (reset v 0:00).
     - [x] Dolní část bude zobrazovat celkové statistiky od začátku.
     - [x] Sjednotit logiku pro přihlášené uživatele i hosty.
-- [x] **Přidat nové vizualizace a personalizované učení:**
-    - [x] **1. Heat-mapa úspěšnosti v čase:**
-        - [x] **Poznámka:** Funkce byla implementována, ale následně odstraněna z celé aplikace, protože se v praxi neosvědčila a zbytečně komplikovala UI.
+- [ ] **Přidat nové vizualizace a personalizované učení:**
+- [x] **1. Revitalizace Heat-mapy (dle vzoru GitHub):**
+    - [x] **Cíl:** Nahradit neúspěšnou implementaci heat-mapy novým, vysoce optimalizovaným řešením, které minimalizuje počet Redis operací a poskytuje srozumitelnou vizualizaci.
+    - [x] **Backend: Datový model a agregace**
+        - [x] **Redis Schéma:** Implementovat denní statistiky (`stats:{user}:{YYYY-MM-DD}`) a index pro rychlé skenování (`stats:index:{user}`).
+        - [x] **CRON Job (Agregace):** Vytvořit denní job, který vypočítá kvartily aktivity a uloží `activityLevel` (0-4) pro každý den.
+    - [x] **Backend: API Endpoint**
+        - [x] Vytvořit nový endpoint `GET /api/heatmap`, který vrací předpočítaná data za 365 dní.
+        - [x] Implementovat server-side cache (Redis) a HTTP caching (ETag, Cache-Control).
+    - [x] **Frontend: Vizuální komponenta**
+        - [x] Znovu aktivovat UI pro heat-mapu na dashboardu.
+        - [x] Implementovat React komponentu (např. `react-activity-calendar`) napojenou na nové API.
+        - [x] Definovat barevné schéma: **Odstín** = úspěšnost (Č/Ž/Z), **Sytost** = úroveň aktivity.
+        - [x] Zobrazit detailní tooltipy (`"6/8 správně"`).
+    - [x] **Monitoring:** Sledovat Redis `commandstats` pro ověření snížení zátěže.
     - [x] **2. Spaced-repetition balíčky (pro otázky < 80 % úspěšnosti):**
         - [x] **Výběr otázek:** Implementována logika na serveru (`/api/spaced-repetition-deck`) pro výběr otázek s `attempts >= 3` a `successRate < 80`.
         - [ ] **Plánování opakování (Pragmatický mix):**

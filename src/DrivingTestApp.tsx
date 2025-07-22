@@ -27,6 +27,7 @@ import { useAi, ChatMessage } from "@/src/hooks/useAi";
 import { UnlockedBadge } from "@/src/badges";
 import { BadgesDisplay } from "@/src/components/Badges";
 import WeakestTopics from "@/src/components/WeakestTopics";
+import Heatmap from "@/src/components/Heatmap"; // Import heatmapy
 import { db, Event as DbEvent, cleanupExpiredEvents } from "@/src/db";
 import { getGuestSessionId } from "@/src/session";
 import { Stats, DEFAULT_STATS, getTodayDateString, DEFAULT_PROGRESS_STATS } from "@/src/dataModels";
@@ -924,7 +925,11 @@ export default function DrivingTestApp() {
               </CardContent>
             </Card>
             
-            
+            {currentUser !== "Host" && (
+              <div className="mt-8">
+                <Heatmap userId={currentUser} />
+              </div>
+            )}
 
             <BadgesDisplay unlockedBadges={unlockedBadges} />
             {currentUser === "Host" && (
