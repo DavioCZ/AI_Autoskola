@@ -579,9 +579,12 @@ app.get("/api/stats/heatmap", async (req, res) => {
           correct += stat.exam_correct;
         }
 
+        const count = (stat.practice_total || 0) + (stat.exam_total || 0);
+
         return {
           date: stat.date,
           accuracy: total > 0 ? correct / total : null,
+          count: count,
         };
       });
 
