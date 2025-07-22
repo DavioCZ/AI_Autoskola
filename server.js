@@ -227,6 +227,7 @@ const checkAndAwardBadges = async (userId, allEntries, lastTestEntries) => {
   const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
   const awardedBadges = new Set();
   const existingBadgesRaw = await redis.get(badgesKey);
+  // Zpětná kompatibilita: pokud jsou data string, parsujeme je
   const existingBadges = typeof existingBadgesRaw === 'string' ? JSON.parse(existingBadgesRaw) : (existingBadgesRaw || []);
   const existingBadgeIds = new Set(existingBadges.map(b => b.id));
 
@@ -264,7 +265,8 @@ const checkAndAwardBadges = async (userId, allEntries, lastTestEntries) => {
     const newBadges = [...awardedBadges]
       .map(id => ({ id, unlockedAt: new Date().toISOString() }));
     const updatedBadges = [...existingBadges, ...newBadges];
-    await redis.set(badgesKey, JSON.stringify(updatedBadges), { ex: TWO_YEARS_IN_SECONDS });
+    // Odstraněno JSON.stringify, necháme to na klientovi
+    await redis.set(badgesKey, updatedBadges, { ex: TWO_YEARS_IN_SECONDS });
     return newBadges; // Vrací jen nově získané
   }
   return [];
@@ -337,7 +339,7 @@ app.post("/api/save-analysis", async (req, res) => {
     const existingData = typeof existingDataRaw === 'string' ? JSON.parse(existingDataRaw) : (existingDataRaw || []);
     const newData = [...existingData, ...entries];
     const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
-    await redis.set(analysisKey, JSON.stringify(newData), { ex: TWO_YEARS_IN_SECONDS });
+    await redis.set(analysisKey, newData, { ex: TWO_YEARS_IN_SECONDS });
 
     // Logika pro udělení odznaků
     const newlyAwardedBadges = await checkAndAwardBadges(userId, newData, entries);
@@ -345,7 +347,7 @@ app.post("/api/save-analysis", async (req, res) => {
     // Vypočítat a uložit nový souhrn
     const summaryData = calculateSummary(newData);
     const summaryKey = `user:${userId}:summary`;
-    await redis.set(summaryKey, JSON.stringify(summaryData), { ex: TWO_YEARS_IN_SECONDS });
+    await redis.set(summaryKey, summaryData, { ex: TWO_YEARS_IN_SECONDS });
 
 
     res.status(200).json({
@@ -685,7 +687,7 @@ const updateActivityLevels = async (userId) => {
     await pipe.exec();
 
     const thresholdsKey = `stats:thresholds:${userId}`;
-    await redis.set(thresholdsKey, JSON.stringify(quartiles), { ex: 86400 }); // Cache na 24h
+    await redis.set(thresholdsKey, quartiles, { ex: 86400 }); // Cache na 24h
 
     return { thresholds: quartiles };
 };
@@ -702,11 +704,12 @@ app.get("/api/heatmap", async (req, res) => {
         const lastRecalcKey = `heatmap:${userId}:lastRecalc`;
 
         // 1. Zkusit načíst data z cache
-        const [cachedDataRaw, lastRecalc] = await redis.mget(cacheKey, lastRecalcKey);
+        const [cachedData, lastRecalc] = await redis.mget(cacheKey, lastRecalcKey);
         const isRecalcNeeded = !lastRecalc || (Date.now() - parseInt(lastRecalc, 10)) > 24 * 60 * 60 * 1000;
 
-        if (cachedDataRaw && !isRecalcNeeded) {
-            return res.json(JSON.parse(cachedDataRaw));
+        if (cachedData && !isRecalcNeeded) {
+            // Data z mget jsou již automaticky deserializována
+            return res.json(cachedData);
         }
 
         // 2. Pokud je potřeba, přepočítat úrovně
@@ -716,8 +719,9 @@ app.get("/api/heatmap", async (req, res) => {
             thresholds = result.thresholds;
             await redis.set(lastRecalcKey, Date.now());
         } else {
+            // redis.get také automaticky deserializuje
             const thresholdsRaw = await redis.get(`stats:thresholds:${userId}`);
-            thresholds = thresholdsRaw ? JSON.parse(thresholdsRaw) : { q1: 0, q2: 0, q3: 0 };
+            thresholds = thresholdsRaw || { q1: 0, q2: 0, q3: 0 };
         }
 
         // 3. Načíst čerstvá data pro heatmapu
@@ -746,8 +750,8 @@ app.get("/api/heatmap", async (req, res) => {
         
         const responsePayload = { data, thresholds };
 
-        // 4. Uložit nová data do cache
-        await redis.set(cacheKey, JSON.stringify(responsePayload), { ex: 300 }); // Cache na 5 minut
+        // 4. Uložit nová data do cache (bez manuálního stringify)
+        await redis.set(cacheKey, responsePayload, { ex: 300 }); // Cache na 5 minut
 
         res.json(responsePayload);
 
