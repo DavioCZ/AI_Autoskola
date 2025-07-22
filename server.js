@@ -309,7 +309,7 @@ app.post("/api/save-analysis", async (req, res) => {
 
 
     // Asynchronně spustíme aktualizaci heatmapy, nečekáme na dokončení
-    updateUserHeatmap(userId);
+    updateUserHeatmap(userId, entries);
 
     res.status(200).json({
       message: "Analysis data saved successfully.",
@@ -358,54 +358,56 @@ const calculateSummary = (analysisData) => {
 };
 
 // --- Funkce pro agregaci dat pro heatmapu ---
-async function updateUserHeatmap(userId) {
-  if (!userId) return;
+async function updateUserHeatmap(userId, entries) {
+  if (!userId || !entries || entries.length === 0) return;
 
-  console.log(`🔥 Starting heatmap aggregation for user: ${userId}`);
+  console.log(`🔥 Incrementally updating heatmap for user: ${userId} with ${entries.length} entries.`);
   try {
-    const userKey = `user:${userId}:analysis`;
-    const analysisDataRaw = await redis.get(userKey);
-    const analysisData = typeof analysisDataRaw === 'string' ? JSON.parse(analysisDataRaw) : (analysisDataRaw || []);
+    const pipeline = redis.pipeline();
+    const dailyIncrements = {};
 
-    if (analysisData.length === 0) {
-      console.log(`  -> No analysis data for user ${userId}, skipping heatmap update.`);
-      return;
-    }
-
-    const dailyStats = {};
-
-    for (const entry of analysisData) {
+    // Group increments by day
+    for (const entry of entries) {
       const date = new Date(entry.answeredAt).toISOString().split('T')[0]; // YYYY-MM-DD
-
-      if (!dailyStats[date]) {
-        dailyStats[date] = {
-          date: date,
-          practice_total: 0,
-          practice_correct: 0,
-          exam_total: 0,
-          exam_correct: 0,
-        };
+      if (!dailyIncrements[date]) {
+        dailyIncrements[date] = { practice_total: 0, practice_correct: 0, exam_total: 0, exam_correct: 0 };
       }
-
       if (entry.mode === 'practice') {
-        dailyStats[date].practice_total++;
+        dailyIncrements[date].practice_total++;
         if (entry.isCorrect) {
-          dailyStats[date].practice_correct++;
+          dailyIncrements[date].practice_correct++;
         }
       } else if (entry.mode === 'exam') {
-        dailyStats[date].exam_total++;
+        dailyIncrements[date].exam_total++;
         if (entry.isCorrect) {
-          dailyStats[date].exam_correct++;
+          dailyIncrements[date].exam_correct++;
         }
       }
     }
 
-    const statsArray = Object.values(dailyStats);
-    const statsKey = `user:${userId}:day_stats`;
     const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
 
-    await redis.set(statsKey, JSON.stringify(statsArray), { ex: TWO_YEARS_IN_SECONDS });
-    console.log(`  -> ✅ Saved ${statsArray.length} daily stat entries for user ${userId}.`);
+    // Add all increments to the pipeline
+    for (const date in dailyIncrements) {
+      const increments = dailyIncrements[date];
+      const dayStatsKey = `user:${userId}:day_stats:${date}`;
+      
+      if (increments.practice_total > 0) {
+        pipeline.hincrby(dayStatsKey, 'practice_total', increments.practice_total);
+        pipeline.hincrby(dayStatsKey, 'practice_correct', increments.practice_correct);
+      }
+      if (increments.exam_total > 0) {
+        pipeline.hincrby(dayStatsKey, 'exam_total', increments.exam_total);
+        pipeline.hincrby(dayStatsKey, 'exam_correct', increments.exam_correct);
+      }
+      // Set expiration on the key
+      pipeline.expire(dayStatsKey, TWO_YEARS_IN_SECONDS);
+    }
+
+    if (Object.keys(dailyIncrements).length > 0) {
+        await pipeline.exec();
+        console.log(`  -> ✅ Incremented heatmap stats for ${Object.keys(dailyIncrements).length} day(s) for user ${userId}.`);
+    }
 
   } catch (error) {
     console.error(`  -> ❌ Failed to process heatmap data for user ${userId}:`, error);
@@ -552,43 +554,54 @@ app.get("/api/stats/heatmap", async (req, res) => {
   }
 
   try {
-    const statsKey = `user:${userId}:day_stats`;
-    const dailyStatsRaw = await redis.get(statsKey);
-    const dailyStats = typeof dailyStatsRaw === 'string' ? JSON.parse(dailyStatsRaw) : (dailyStatsRaw || []);
-
-    if (dailyStats.length === 0) {
-      return res.json([]);
+    const periodDays = parseInt(period, 10);
+    const today = new Date();
+    const pipeline = redis.pipeline();
+    
+    const dates = [];
+    for (let i = 0; i < periodDays; i++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() - i);
+      const dateString = date.toISOString().split('T')[0]; // YYYY-MM-DD
+      dates.push(dateString);
+      const dayStatsKey = `user:${userId}:day_stats:${dateString}`;
+      pipeline.hgetall(dayStatsKey);
     }
 
-    const periodDays = parseInt(period, 10);
-    const startDate = new Date();
-    startDate.setDate(startDate.getDate() - periodDays);
+    const results = await pipeline.exec();
 
-    const filteredData = dailyStats
-      .filter(stat => new Date(stat.date) >= startDate)
-      .map(stat => {
-        let total = 0;
-        let correct = 0;
+    const heatmapData = results.map((stat, i) => {
+      const dateString = dates[i];
 
-        if (mode === 'practice' || mode === 'all') {
-          total += stat.practice_total;
-          correct += stat.practice_correct;
-        }
-        if (mode === 'exam' || mode === 'all') {
-          total += stat.exam_total;
-          correct += stat.exam_correct;
-        }
+      if (!stat || Object.keys(stat).length === 0) {
+        return { date: dateString, total: 0, correct: 0 };
+      }
 
-        const count = (stat.practice_total || 0) + (stat.exam_total || 0);
+      const practice_total = parseInt(stat.practice_total || '0', 10);
+      const practice_correct = parseInt(stat.practice_correct || '0', 10);
+      const exam_total = parseInt(stat.exam_total || '0', 10);
+      const exam_correct = parseInt(stat.exam_correct || '0', 10);
 
-        return {
-          date: stat.date,
-          accuracy: total > 0 ? correct / total : null,
-          count: count,
-        };
-      });
+      let total = 0;
+      let correct = 0;
 
-    res.json(filteredData);
+      if (mode === 'practice' || mode === 'all') {
+        total += practice_total;
+        correct += practice_correct;
+      }
+      if (mode === 'exam' || mode === 'all') {
+        total += exam_total;
+        correct += exam_correct;
+      }
+
+      return {
+        date: dateString,
+        total: total,
+        correct: correct,
+      };
+    }).filter(d => d.total > 0);
+
+    res.json(heatmapData);
 
   } catch (error) {
     console.error(`Error fetching heatmap data for user ${userId}:`, error);

@@ -106,22 +106,25 @@ const ProgressHeatmap = ({ currentUser }: { currentUser: string | null }) => {
                 weekdayLabels={expanded ? ['Po', 'Út', 'St', 'Čt', 'Pá', 'So', 'Ne'] : undefined}
                 showMonthLabels={expanded}
                 classForValue={(value) => {
-                  if (!value || value.total === 0) return "empty";
+                  if (!value || !value.total) return "empty";
                   const rate = value.correct / value.total;
                   return `${hue(rate)}-${shade(value.total)}`;
                 }}
-                titleForValue={(value) =>
-                  value
-                    ? `${new Date(value.date).toLocaleDateString('cs-CZ')}: správně ${value.correct}/${value.total} (${Math.round((value.correct / value.total) * 100)} %)`
-                    : "Žádná aktivita"
-                }
+                titleForValue={(value) => {
+                  if (!value || !value.date || !value.total) {
+                    return "Žádná aktivita";
+                  }
+                  const rate = value.total > 0 ? (value.correct / value.total) * 100 : 0;
+                  return `${new Date(value.date).toLocaleDateString('cs-CZ')}: správně ${value.correct}/${value.total} (${Math.round(rate)} %)`;
+                }}
                 horizontal={true}
                 showOutOfRangeDays={false}
                 transformDayElement={(rect, value, index) => {
-                  const daySize = Math.max(Math.floor(width / (expanded ? 53 : 8) - 2), 10);
+                  const daySize = Math.max(Math.floor(width / (expanded ? 53 : 4.5) - 2), 8);
                   // rect is a plain object with SVG props, not a React element
                   return (
                     <rect
+                      key={index}
                       {...rect}
                       width={daySize}
                       height={daySize}
