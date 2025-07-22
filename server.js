@@ -308,9 +308,6 @@ app.post("/api/save-analysis", async (req, res) => {
     await redis.set(summaryKey, JSON.stringify(summaryData), { ex: TWO_YEARS_IN_SECONDS });
 
 
-    // Asynchronně spustíme aktualizaci heatmapy, nečekáme na dokončení
-    updateUserHeatmap(userId, entries);
-
     res.status(200).json({
       message: "Analysis data saved successfully.",
       newlyAwardedBadges: newlyAwardedBadges
@@ -357,62 +354,6 @@ const calculateSummary = (analysisData) => {
   return summary;
 };
 
-// --- Funkce pro agregaci dat pro heatmapu ---
-async function updateUserHeatmap(userId, entries) {
-  if (!userId || !entries || entries.length === 0) return;
-
-  console.log(`🔥 Incrementally updating heatmap for user: ${userId} with ${entries.length} entries.`);
-  try {
-    const pipeline = redis.pipeline();
-    const dailyIncrements = {};
-
-    // Group increments by day
-    for (const entry of entries) {
-      const date = new Date(entry.answeredAt).toISOString().split('T')[0]; // YYYY-MM-DD
-      if (!dailyIncrements[date]) {
-        dailyIncrements[date] = { practice_total: 0, practice_correct: 0, exam_total: 0, exam_correct: 0 };
-      }
-      if (entry.mode === 'practice') {
-        dailyIncrements[date].practice_total++;
-        if (entry.isCorrect) {
-          dailyIncrements[date].practice_correct++;
-        }
-      } else if (entry.mode === 'exam') {
-        dailyIncrements[date].exam_total++;
-        if (entry.isCorrect) {
-          dailyIncrements[date].exam_correct++;
-        }
-      }
-    }
-
-    const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
-
-    // Add all increments to the pipeline
-    for (const date in dailyIncrements) {
-      const increments = dailyIncrements[date];
-      const dayStatsKey = `user:${userId}:day_stats:${date}`;
-      
-      if (increments.practice_total > 0) {
-        pipeline.hincrby(dayStatsKey, 'practice_total', increments.practice_total);
-        pipeline.hincrby(dayStatsKey, 'practice_correct', increments.practice_correct);
-      }
-      if (increments.exam_total > 0) {
-        pipeline.hincrby(dayStatsKey, 'exam_total', increments.exam_total);
-        pipeline.hincrby(dayStatsKey, 'exam_correct', increments.exam_correct);
-      }
-      // Set expiration on the key
-      pipeline.expire(dayStatsKey, TWO_YEARS_IN_SECONDS);
-    }
-
-    if (Object.keys(dailyIncrements).length > 0) {
-        await pipeline.exec();
-        console.log(`  -> ✅ Incremented heatmap stats for ${Object.keys(dailyIncrements).length} day(s) for user ${userId}.`);
-    }
-
-  } catch (error) {
-    console.error(`  -> ❌ Failed to process heatmap data for user ${userId}:`, error);
-  }
-}
 
 
 const getTodayDateString = () => new Date().toLocaleDateString('sv'); // YYYY-MM-DD format
@@ -547,67 +488,6 @@ app.post("/api/reset-analysis", async (req, res) => {
   }
 });
 
-app.get("/api/stats/heatmap", async (req, res) => {
-  const { userId, mode = 'all', period = '365' } = req.query;
-  if (!userId) {
-    return res.status(400).json({ error: "User ID is required." });
-  }
-
-  try {
-    const periodDays = parseInt(period, 10);
-    const today = new Date();
-    const pipeline = redis.pipeline();
-    
-    const dates = [];
-    for (let i = 0; i < periodDays; i++) {
-      const date = new Date(today);
-      date.setDate(today.getDate() - i);
-      const dateString = date.toISOString().split('T')[0]; // YYYY-MM-DD
-      dates.push(dateString);
-      const dayStatsKey = `user:${userId}:day_stats:${dateString}`;
-      pipeline.hgetall(dayStatsKey);
-    }
-
-    const results = await pipeline.exec();
-
-    const heatmapData = results.map((stat, i) => {
-      const dateString = dates[i];
-
-      if (!stat || Object.keys(stat).length === 0) {
-        return { date: dateString, total: 0, correct: 0 };
-      }
-
-      const practice_total = parseInt(stat.practice_total || '0', 10);
-      const practice_correct = parseInt(stat.practice_correct || '0', 10);
-      const exam_total = parseInt(stat.exam_total || '0', 10);
-      const exam_correct = parseInt(stat.exam_correct || '0', 10);
-
-      let total = 0;
-      let correct = 0;
-
-      if (mode === 'practice' || mode === 'all') {
-        total += practice_total;
-        correct += practice_correct;
-      }
-      if (mode === 'exam' || mode === 'all') {
-        total += exam_total;
-        correct += exam_correct;
-      }
-
-      return {
-        date: dateString,
-        total: total,
-        correct: correct,
-      };
-    }).filter(d => d.total > 0);
-
-    res.json(heatmapData);
-
-  } catch (error) {
-    console.error(`Error fetching heatmap data for user ${userId}:`, error);
-    res.status(500).json({ error: "Failed to fetch heatmap data." });
-  }
-});
 
 app.get("/api/spaced-repetition-deck", async (req, res) => {
   const { userId } = req.query;

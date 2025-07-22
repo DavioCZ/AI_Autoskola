@@ -67,24 +67,4 @@ body {
   @apply bg-background text-foreground;
 }
 
-/* React Calendar Heatmap Styles */
-.react-calendar-heatmap .empty { @apply fill-gray-200 dark:fill-gray-800; }
-
-/* GREEN – good */
-.react-calendar-heatmap .g-1 { @apply fill-green-300 dark:fill-green-900; }
-.react-calendar-heatmap .g-2 { @apply fill-green-400 dark:fill-green-700; }
-.react-calendar-heatmap .g-3 { @apply fill-green-500 dark:fill-green-500; }
-.react-calendar-heatmap .g-4 { @apply fill-green-600 dark:fill-green-300; }
-
-/* YELLOW – average */
-.react-calendar-heatmap .y-1 { @apply fill-amber-300 dark:fill-amber-900; }
-.react-calendar-heatmap .y-2 { @apply fill-amber-400 dark:fill-amber-700; }
-.react-calendar-heatmap .y-3 { @apply fill-amber-500 dark:fill-amber-500; }
-.react-calendar-heatmap .y-4 { @apply fill-amber-600 dark:fill-amber-300; }
-
-/* RED – poor */
-.react-calendar-heatmap .r-1 { @apply fill-red-300 dark:fill-red-900; }
-.react-calendar-heatmap .r-2 { @apply fill-red-400 dark:fill-red-700; }
-.react-calendar-heatmap .r-3 { @apply fill-red-500 dark:fill-red-500; }
-.react-calendar-heatmap .r-4 { @apply fill-red-600 dark:fill-red-300; }
 }

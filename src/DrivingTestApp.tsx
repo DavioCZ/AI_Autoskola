@@ -26,7 +26,6 @@ import clsx from "clsx";
 import { useAi, ChatMessage } from "@/src/hooks/useAi";
 import { UnlockedBadge } from "@/src/badges";
 import { BadgesDisplay } from "@/src/components/Badges";
-import StatsHeatmap from "@/src/components/StatsHeatmap";
 import WeakestTopics from "@/src/components/WeakestTopics";
 import { db, Event as DbEvent, cleanupExpiredEvents } from "@/src/db";
 import { getGuestSessionId } from "@/src/session";
@@ -375,7 +374,6 @@ export default function DrivingTestApp() {
   const [practiceFirstAttempts, setPracticeFirstAttempts] = useState<Record<string, { firstAttemptIndex: number; isFirstAttemptCorrect: boolean }>>({});
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [stats, setStats] = useState<Stats>(DEFAULT_STATS);
-  const [heatmapKey, setHeatmapKey] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [questionStartTime, setQuestionStartTime] = useState<number>(0);
   const [sessionAnalysis, setSessionAnalysis] = useState<Record<string, { timeToAnswer: number; firstAttemptCorrect: boolean }>>({});
@@ -426,7 +424,6 @@ export default function DrivingTestApp() {
     localStorage.removeItem("autoskola-currentUser");
     setCurrentUser(null);
     setStats(DEFAULT_STATS);
-    setHeatmapKey(k => k + 1);
   };
 
   useEffect(() => {
@@ -436,7 +433,6 @@ export default function DrivingTestApp() {
         setUnlockedBadges(data.unlockedBadges);
         setSummaryData(data.summaryData);
         setStats(data.stats);
-        setHeatmapKey(k => k + 1);
       });
 
       // Načtení balíčku pro opakování
@@ -564,7 +560,6 @@ export default function DrivingTestApp() {
         // Pro hosta se statistiky počítají a ukládají lokálně při každém načtení
         const guestStats = await calculateGuestStats();
         setStats(guestStats);
-        setHeatmapKey(k => k + 1);
         return;
     }
     // Pro přihlášené uživatele se data jen odešlou, server je přepočítá při dalším načtení
@@ -627,7 +622,6 @@ export default function DrivingTestApp() {
             setUnlockedBadges(data.unlockedBadges);
             setSummaryData(data.summaryData);
             setStats(data.stats);
-            setHeatmapKey(k => k + 1);
         });
     } else if (currentUser === "Host") {
         // Pro hosta přepočítáme lokálně
@@ -926,9 +920,7 @@ export default function DrivingTestApp() {
               </CardContent>
             </Card>
             
-            <div className="mt-12">
-              <StatsHeatmap currentUser={currentUser} key={heatmapKey} />
-            </div>
+            
 
             <BadgesDisplay unlockedBadges={unlockedBadges} />
             {currentUser === "Host" && (

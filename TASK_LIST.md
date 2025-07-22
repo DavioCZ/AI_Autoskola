@@ -164,10 +164,7 @@
     - [x] Sjednotit logiku pro přihlášené uživatele i hosty.
 - [x] **Přidat nové vizualizace a personalizované učení:**
     - [x] **1. Heat-mapa úspěšnosti v čase:**
-        - [x] **Databáze:** Vytvořen skript (`scripts/aggregate_heatmap_data.js`) pro denní agregaci a plnění `user:{id}:day_stats`.
-        - [x] **API:** Implementován endpoint `GET /stats/heatmap`, který vrací agregovaná data.
-        - [x] **Frontend:** Integrována komponenta `react-calendar-heatmap` pro zobrazení dat.
-        - [x] **UX:** Implementován základní tooltip zobrazující denní úspěšnost.
+        - [x] **Poznámka:** Funkce byla implementována, ale následně odstraněna z celé aplikace, protože se v praxi neosvědčila a zbytečně komplikovala UI.
     - [x] **2. Spaced-repetition balíčky (pro otázky < 80 % úspěšnosti):**
         - [x] **Výběr otázek:** Implementována logika na serveru (`/api/spaced-repetition-deck`) pro výběr otázek s `attempts >= 3` a `successRate < 80`.
         - [ ] **Plánování opakování (Pragmatický mix):**
