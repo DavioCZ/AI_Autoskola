@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import CalendarHeatmap from 'react-calendar-heatmap';
+import HeatMap from 'react-calendar-heatmap';
+import AutoSizer from 'react-virtualized-auto-sizer';
+import { subDays } from 'date-fns';
 import 'react-calendar-heatmap/dist/styles.css';
-const today = new Date();
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-type HeatmapValue = {
+type DayStat = {
   date: string;
-  accuracy: number | null;
-  count: number;
+  total: number;
+  correct: number;
 };
 
-const StatsHeatmap = ({ currentUser }: { currentUser: string | null }) => {
-  const [values, setValues] = useState<HeatmapValue[]>([]);
+const hue = (rate: number) => {
+  if (rate >= 0.7) return "g"; // green
+  if (rate >= 0.4) return "y"; // yellow
+  return "r"; // red
+};
+
+const shade = (total: number) => {
+  if (total >= 26) return 4;
+  if (total >= 11) return 3;
+  if (total >= 3) return 2;
+  return 1;
+};
+
+const ProgressHeatmap = ({ currentUser }: { currentUser: string | null }) => {
+  const [stats, setStats] = useState<DayStat[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,14 +40,15 @@ const StatsHeatmap = ({ currentUser }: { currentUser: string | null }) => {
         const res = await fetch(`/api/stats/heatmap?userId=${encodeURIComponent(currentUser)}`);
         const data = await res.json();
         if (res.ok) {
-          setValues(data);
+          // Assuming the API returns data in DayStat format { date, total, correct }
+          setStats(data);
         } else {
           console.error("Failed to fetch heatmap data:", data.error);
-          setValues([]); // Reset to empty on error
+          setStats([]);
         }
       } catch (error) {
         console.error("Error fetching heatmap data:", error);
-        setValues([]); // Reset to empty on error
+        setStats([]);
       } finally {
         setIsLoading(false);
       }
@@ -40,69 +57,90 @@ const StatsHeatmap = ({ currentUser }: { currentUser: string | null }) => {
     fetchData();
   }, [currentUser]);
 
+  const today = new Date();
+  const daysToShow = expanded ? 365 : 28;
+  const startDate = subDays(today, daysToShow - 1);
+
+  const slicedStats = stats.filter(d => new Date(d.date) >= startDate);
+
   if (isLoading) {
     return (
-      <div className="p-4 bg-card text-card-foreground rounded-lg shadow text-center">
-        <p className="text-muted-foreground">Načítám heat-mapu...</p>
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Heat-mapa úspěšnosti</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center">
+          <p className="text-muted-foreground">Načítám heat-mapu...</p>
+        </CardContent>
+      </Card>
     );
   }
-  
-  if (values.length === 0) {
-     return (
-      <div className="p-4 bg-card text-card-foreground rounded-lg shadow text-center">
-        <h2 className="text-lg font-semibold mb-4">Heat-mapa úspěšnosti</h2>
-        <p className="text-muted-foreground">Pro zobrazení heat-mapy zatím není dostatek dat.</p>
-      </div>
+
+  if (stats.length === 0) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>Heat-mapa úspěšnosti</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center">
+          <p className="text-muted-foreground">Pro zobrazení heat-mapy zatím není dostatek dat.</p>
+        </CardContent>
+      </Card>
     );
   }
 
   return (
-    <div className="p-4 bg-card text-card-foreground rounded-lg shadow">
-      <h2 className="text-lg font-semibold mb-4">Heat-mapa úspěšnosti</h2>
-      <div style={{ maxWidth: '680px', margin: '0 auto' }}>
-        <CalendarHeatmap
-          startDate={shiftDate(today, -120)}
-          endDate={today}
-        values={values}
-        classForValue={(value) => {
-          if (!value || value.accuracy === null) {
-            return 'color-empty';
-          }
-          
-          const accuracy = value.accuracy * 100;
-          const count = value.count || 0;
-          let intensity = 1;
-          if (count > 5) intensity = 2;
-          if (count > 10) intensity = 3;
-          if (count > 20) intensity = 4;
-
-          if (accuracy <= 75) return `color-scale-red-${intensity}`;
-          if (accuracy <= 90) return `color-scale-yellow-${intensity}`;
-          return `color-scale-green-${intensity}`;
-        }}
-        titleForValue={(value: any) => {
-          if (!value || !value.date) {
-            return 'Žádná aktivita';
-          }
-          const date = new Date(value.date).toLocaleDateString('cs-CZ');
-          if (value.accuracy === null) {
-            return `${date}: Žádná aktivita`;
-          }
-          const accuracyText = `${Math.round(value.accuracy * 100)}% úspěšnost`;
-          const countText = `${value.count} ${value.count === 1 ? 'aktivita' : value.count <= 4 ? 'aktivity' : 'aktivit'}`;
-          return `${date}: ${accuracyText} (${countText})`;
-        }}
-        />
-      </div>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Heat-mapa úspěšnosti</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="relative w-full h-[120px] md:h-[180px]">
+          <AutoSizer>
+            {({ width, height }) => (
+              <HeatMap
+                startDate={startDate}
+                endDate={today}
+                values={slicedStats}
+                gutterSize={1}
+                weekdayLabels={expanded ? ['Po', 'Út', 'St', 'Čt', 'Pá', 'So', 'Ne'] : undefined}
+                showMonthLabels={expanded}
+                classForValue={(value) => {
+                  if (!value || value.total === 0) return "empty";
+                  const rate = value.correct / value.total;
+                  return `${hue(rate)}-${shade(value.total)}`;
+                }}
+                titleForValue={(value) =>
+                  value
+                    ? `${new Date(value.date).toLocaleDateString('cs-CZ')}: správně ${value.correct}/${value.total} (${Math.round((value.correct / value.total) * 100)} %)`
+                    : "Žádná aktivita"
+                }
+                horizontal={true}
+                showOutOfRangeDays={false}
+                transformDayElement={(rect, value, index) => {
+                  const daySize = Math.max(Math.floor(width / (expanded ? 53 : 8) - 2), 10);
+                  // rect is a plain object with SVG props, not a React element
+                  return (
+                    <rect
+                      {...rect}
+                      width={daySize}
+                      height={daySize}
+                    />
+                  );
+                }}
+              />
+            )}
+          </AutoSizer>
+        </div>
+        <button
+          className="text-sm text-primary mt-2 hover:underline"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? "Skrýt historii" : "Zobrazit celou historii"}
+        </button>
+      </CardContent>
+    </Card>
   );
 };
 
-function shiftDate(date: Date, numDays: number): Date {
-  const newDate = new Date(date);
-  newDate.setDate(newDate.getDate() + numDays);
-  return newDate;
-}
-
-export default StatsHeatmap;
+export default ProgressHeatmap;
