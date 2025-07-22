@@ -20,7 +20,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
-import { QuestionImage } from "@/src/components/QuestionImage";
 import { useTheme } from "@/src/hooks/useTheme";
 import clsx from "clsx";
 import { useAi, ChatMessage } from "@/src/hooks/useAi";
@@ -1363,11 +1362,10 @@ export default function DrivingTestApp() {
             }
           }}
         />
-        <div className="flex-1 overflow-y-auto pb-24"> {/* Přidán padding dole kvůli sticky footeru */}
-          <div className="w-full max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
-            <div className="mb-4">
-              <Button
-                variant="outline"
+        <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+          <div className="mb-4">
+            <Button
+              variant="outline"
               onClick={() => {
                 if (originPhase === 'browse') {
                   setPhase('browse');
@@ -1455,7 +1453,14 @@ export default function DrivingTestApp() {
                   {q.obrazek && (
                     q.obrazek.endsWith('.mp4')
                       ? <video src={q.obrazek} autoPlay loop muted playsInline controls className="my-3 rounded max-h-64 md:max-h-80 lg:max-h-[45vh] mx-auto shadow-md" />
-                      : <QuestionImage src={q.obrazek} />
+                      : (
+                        <div className="relative group cursor-pointer mx-auto my-3 w-fit" onClick={() => setFullscreenImage(q.obrazek!)}>
+                          <img src={q.obrazek} alt="Dopravní situace" className="rounded max-h-64 md:max-h-80 lg:max-h-[45vh] mx-auto shadow-md" />
+                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded">
+                              <Expand size={48} className="text-white" />
+                          </div>
+                        </div>
+                      )
                   )}
                   <RadioGroup
                     key={q.id}
@@ -1502,19 +1507,19 @@ export default function DrivingTestApp() {
                       }
 
                       return (
-                        <label
+                        <div
                           key={idx}
                           className={clsx(
-                            "flex items-start gap-3 p-4 rounded-xl border transition-colors cursor-pointer",
-                            "border-neutral-700 bg-neutral-800 hover:border-indigo-500 active:scale-[.98]",
-                            itemSpecificClasses
+                            "flex items-start gap-3 p-3 border rounded-md transition-colors cursor-pointer",
+                            itemSpecificClasses,
+                            !itemSpecificClasses && "hover:bg-muted/50"
                           )}
                         >
-                          <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} className="mt-1 accent-indigo-500" />
-                          <div className="flex-1 text-sm leading-snug flex items-center justify-between w-full">
+                          <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} className="mt-1" />
+                          <label htmlFor={`opt-${q.id}-${idx}`} className="flex-1 text-sm md:text-base cursor-pointer flex items-center justify-between w-full">
                             {/\.(jpeg|jpg|gif|png)$/i.test(opt)
                               ? <img src={opt} alt={`Možnost ${idx + 1}`} className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
-                              : <span className="text-sm leading-snug">{opt}</span>
+                              : <span>{opt}</span>
                             }
                             {!examMode && anAnswerIsSelectedForThisQuestion && isSelected && (
                               isCorrect ? (
@@ -1527,13 +1532,70 @@ export default function DrivingTestApp() {
                                 </span>
                               )
                             )}
-                          </div>
-                        </label>
+                          </label>
+                        </div>
                       );
                     })}
                   </RadioGroup>
                 </CardContent>
               </Card>
+              <div className="mt-6 flex justify-between items-center">
+                <div className="flex-1"></div> {/* Prázdný div pro zarovnání doleva */}
+                <div className="flex items-center gap-2 justify-center">
+                  <Button variant="outline" onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}>
+                    Předchozí
+                  </Button>
+                  {current < questions.length - 1 ? (
+                    <Button variant="outline" onClick={() => setCurrent(c => Math.min(questions.length - 1, c + 1))}>
+                      Další
+                    </Button>
+                  ) : (
+                    originPhase !== 'browse' && (
+                      examMode ? (
+                        <Popover open={showFinishConfirm} onOpenChange={setShowFinishConfirm}>
+                          <PopoverTrigger asChild>
+                            <Button className="text-destructive-foreground bg-destructive hover:bg-destructive/90">Dokončit test</Button>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-auto p-4" side="top" align="end">
+                            <div className="space-y-3 text-center">
+                              <p className="text-sm font-medium">Opravdu chcete dokončit a vyhodnotit test?</p>
+                              <div className="flex justify-center gap-2">
+                                <Button variant="outline" size="sm" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
+                                <Button size="sm" className="bg-destructive hover:bg-destructive/90 text-destructive-foreground" onClick={() => {
+                                  finishExam();
+                                  setShowFinishConfirm(false);
+                                }}>Potvrdit</Button>
+                              </div>
+                            </div>
+                          </PopoverContent>
+                        </Popover>
+                      ) : (
+                        <Button 
+                          onClick={finishExam} 
+                          className="text-primary-foreground bg-primary hover:bg-primary/90"
+                        >
+                          Vyhodnotit procvičování
+                        </Button>
+                      )
+                    )
+                  )}
+                </div>
+                <div className="flex-1 flex justify-end">
+                  {!examMode && originPhase !== 'browse' && (
+                     <Button
+                      variant="outline"
+                      onClick={() => {
+                        // U procvičování se neptáme a rovnou ukládáme a končíme.
+                        commitSessionAnalysis().then(() => {
+                          calculateAndSavePracticeStats();
+                          setPhase("intro");
+                        });
+                      }}>
+                      Ukončit
+                    </Button>
+                  )}
+                </div>
+              </div>
             </main>
 
             {isTutorVisible && (
@@ -1583,58 +1645,6 @@ export default function DrivingTestApp() {
               </aside>
             )}
           </section>
-          </div>
-        </div>
-        <div className="fixed inset-x-0 bottom-0 bg-neutral-900/80 backdrop-blur-md px-4 py-3 flex gap-2 border-t border-neutral-700">
-          <Button variant="ghost" onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}>
-            Předchozí
-          </Button>
-          {current < questions.length - 1 ? (
-            <Button className="flex-1" onClick={() => setCurrent(c => Math.min(questions.length - 1, c + 1))}>
-              Další
-            </Button>
-          ) : (
-            originPhase !== 'browse' && (
-              examMode ? (
-                <Popover open={showFinishConfirm} onOpenChange={setShowFinishConfirm}>
-                  <PopoverTrigger asChild>
-                    <Button className="flex-1 text-destructive-foreground bg-destructive hover:bg-destructive/90">Dokončit test</Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-4" side="top" align="end">
-                    <div className="space-y-3 text-center">
-                      <p className="text-sm font-medium">Opravdu chcete dokončit a vyhodnotit test?</p>
-                      <div className="flex justify-center gap-2">
-                        <Button variant="outline" size="sm" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
-                        <Button size="sm" className="bg-destructive hover:bg-destructive/90 text-destructive-foreground" onClick={() => {
-                          finishExam();
-                          setShowFinishConfirm(false);
-                        }}>Potvrdit</Button>
-                      </div>
-                    </div>
-                  </PopoverContent>
-                </Popover>
-              ) : (
-                <Button 
-                  onClick={finishExam} 
-                  className="flex-1 text-primary-foreground bg-primary hover:bg-primary/90"
-                >
-                  Vyhodnotit procvičování
-                </Button>
-              )
-            )
-          )}
-          {!examMode && originPhase !== 'browse' && (
-             <Button
-              variant="destructive"
-              onClick={() => {
-                commitSessionAnalysis().then(() => {
-                  calculateAndSavePracticeStats();
-                  setPhase("intro");
-                });
-              }}>
-              Ukončit
-            </Button>
-          )}
         </div>
         {fullscreenImage && (
           <div 
