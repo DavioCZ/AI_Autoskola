@@ -293,10 +293,21 @@ function TopNav({
   );
 }
 
+/* ----------------------------- Footer ---------------------------- */
+function Footer() {
+  return (
+    <footer className="w-full py-4 mt-8 text-center text-xs text-muted-foreground">
+      <p>© {new Date().getFullYear()} DavioCZ. Všechna práva vyhrazena.</p>
+      <p>Vytvořeno pro účely autoškoly.</p>
+    </footer>
+  );
+}
+
 /* ----------------------------- Login Screen ------------------------ */
 function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
+  const { theme, setTheme } = useTheme();
 
   const handleLogin = () => {
     const trimmedName = username.trim();
@@ -346,8 +357,21 @@ function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
           <Button onClick={() => onLogin("Host")} variant="secondary" className="w-full">
             Pokračovat jako Host
           </Button>
+          <div className="mt-4 text-center">
+            <Button variant="ghost" size="sm" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+              {theme === 'dark' ? (
+                <Sun className="mr-2 h-4 w-4" />
+              ) : (
+                <Moon className="mr-2 h-4 w-4" />
+              )}
+              Změnit motiv
+            </Button>
+          </div>
         </CardContent>
       </Card>
+      <div className="absolute bottom-0 w-full">
+        <Footer />
+      </div>
     </div>
   );
 }
@@ -715,7 +739,8 @@ export default function DrivingTestApp() {
           onSetCurrentUser={handleLogout}
           onOpenSettings={() => setIsSettingsOpen(true)}
         />
-        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 space-y-6">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 space-y-6 flex flex-col min-h-[calc(100vh-61px)]">
+          <div className="flex-grow">
           {isSettingsOpen && (
             <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={() => setIsSettingsOpen(false)}>
               <Card className="w-full max-w-md" onClick={(e) => e.stopPropagation()}>
@@ -899,6 +924,8 @@ export default function DrivingTestApp() {
               </div>
             </div>
           )}
+          </div>
+          <Footer />
         </div>
       </>
     );
