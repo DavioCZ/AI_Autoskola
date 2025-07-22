@@ -1507,7 +1507,7 @@ export default function DrivingTestApp() {
                           className={clsx(
                             "flex items-start gap-3 p-4 sm:p-3 border rounded-xl transition-colors cursor-pointer active:scale-[.98]",
                             itemSpecificClasses,
-                            !itemSpecificClasses && "border-neutral-700 bg-neutral-800 hover:border-indigo-500"
+                            !itemSpecificClasses && "bg-card hover:bg-muted/50 border-border"
                           )}
                         >
                           <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} className="mt-1 accent-indigo-500" />
