@@ -12,7 +12,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { CircularProgress } from "@/src/components/ui/circular-progress";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse, Moon, Sun, Settings, Trash2, Download } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse, Moon, Sun, Settings, Trash2, Download, Expand } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import {
   DropdownMenu,
@@ -82,28 +82,7 @@ const ALLOWED_USERS = ["Tester", "Tanika"];
 
 const getCurrentUser = (): string | null => localStorage.getItem("autoskola-currentUser");
 
-function loadStats(user: string): Stats {
-  try {
-    const storedStatsRaw = localStorage.getItem(`autoskolastats-${user}`);
-    if (!storedStatsRaw) return DEFAULT_STATS;
-
-    const storedStats = JSON.parse(storedStatsRaw) as Stats;
-
-    // Reset denních statistik, pokud je potřeba
-    if (storedStats.today.lastReset !== getTodayDateString()) {
-      console.log("Resetting daily stats for new day.");
-      storedStats.today = { ...DEFAULT_PROGRESS_STATS, lastReset: getTodayDateString() };
-      saveStats(user, storedStats);
-    }
-
-    return storedStats;
-  } catch {
-    return DEFAULT_STATS;
-  }
-}
-function saveStats(user: string, s: Stats) {
-  localStorage.setItem(`autoskolastats-${user}`, JSON.stringify(s));
-}
+// Funkce saveStats a loadStats byly odstraněny, protože se statistiky počítají na serveru
 
 /* ----------------------- Analytická data ------------------------- */
 type SummaryData = Record<string, {
@@ -124,7 +103,7 @@ type UserData = {
   summaryData: SummaryData;
 };
 
-async function loadUserData(currentUser: string | null): Promise<UserData> {
+async function loadUserData(currentUser: string | null): Promise<UserData & { stats: Stats }> {
   if (currentUser && currentUser !== "Host") {
     try {
       const res = await fetch(`/api/analysis-data?userId=${encodeURIComponent(currentUser)}`);
@@ -136,10 +115,11 @@ async function loadUserData(currentUser: string | null): Promise<UserData> {
         analysisData: data.analysisData || [],
         unlockedBadges: data.unlockedBadges || [],
         summaryData: data.summaryData || {},
+        stats: data.stats || DEFAULT_STATS,
       };
     } catch (error) {
       console.error("Could not get user data from server:", error);
-      return { analysisData: [], unlockedBadges: [], summaryData: {} };
+      return { analysisData: [], unlockedBadges: [], summaryData: {}, stats: DEFAULT_STATS };
     }
   } else {
     // Logika pro hosta - načtení z IndexedDB
@@ -157,11 +137,12 @@ async function loadUserData(currentUser: string | null): Promise<UserData> {
         isFirstAttemptCorrect: e.correct, // Zjednodušení prozatím
         mode: 'practice',
       }));
-      // Odznaky a souhrnná data pro hosta zatím neřešíme
-      return { analysisData, unlockedBadges: [], summaryData: {} };
+      // Pro hosta načteme statistiky z lokálního úložiště
+      const guestStats = await calculateGuestStats();
+      return { analysisData, unlockedBadges: [], summaryData: {}, stats: guestStats };
     } catch (error) {
       console.error("Could not get user data from IndexedDB:", error);
-      return { analysisData: [], unlockedBadges: [], summaryData: {} };
+      return { analysisData: [], unlockedBadges: [], summaryData: {}, stats: DEFAULT_STATS };
     }
   }
 }
@@ -403,12 +384,13 @@ export default function DrivingTestApp() {
   const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
   const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const { setTheme } = useTheme();
   const [transferToken, setTransferToken] = useState<string | null>(null);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [showAiTutorInExam, setShowAiTutorInExam] = useState<boolean>(() => {
     const saved = localStorage.getItem("autoskola-showAiTutorInExam");
-    return saved ? JSON.parse(saved) : false;
+    return saved ? JSON.parse(saved) : true;
   });
 
   useEffect(() => {
@@ -433,7 +415,6 @@ export default function DrivingTestApp() {
   const handleLogin = (name: string) => {
     localStorage.setItem("autoskola-currentUser", name);
     setCurrentUser(name);
-    setStats(loadStats(name));
   };
 
   const handleLogout = () => {
@@ -444,16 +425,11 @@ export default function DrivingTestApp() {
 
   useEffect(() => {
     if (currentUser) {
-      if (currentUser === "Host") {
-        calculateGuestStats().then(setStats);
-      } else {
-        setStats(loadStats(currentUser));
-      }
-      
       loadUserData(currentUser).then(data => {
         setAnalysisData(data.analysisData);
         setUnlockedBadges(data.unlockedBadges);
         setSummaryData(data.summaryData);
+        setStats(data.stats);
       });
     }
   }, [currentUser]);
@@ -562,38 +538,15 @@ export default function DrivingTestApp() {
     return () => clearInterval(id);
   }, [timeLeft, phase]);
 
-  function calculateAndSavePracticeStats() {
-    if (!currentUser) return;
-    const currentStats = loadStats(currentUser);
-    const answeredQuestionIds = Object.keys(practiceFirstAttempts);
-    const answeredCountInSession = answeredQuestionIds.length;
-    
-    if (answeredCountInSession === 0) return; 
-
-    let correctCountInSession = 0;
-    answeredQuestionIds.forEach(questionId => {
-      if (practiceFirstAttempts[questionId]?.isFirstAttemptCorrect) {
-        correctCountInSession++;
-      }
-    });
-
-    const newStats: Stats = {
-      ...currentStats,
-      total: {
-        ...currentStats.total,
-        practiceAnswered: currentStats.total.practiceAnswered + answeredCountInSession,
-        practiceCorrect: currentStats.total.practiceCorrect + correctCountInSession,
-      },
-      today: {
-        ...currentStats.today,
-        practiceAnswered: currentStats.today.practiceAnswered + answeredCountInSession,
-        practiceCorrect: currentStats.today.practiceCorrect + correctCountInSession,
-      },
-      lastPracticeAnswered: answeredCountInSession,
-      lastPracticeCorrect: correctCountInSession,
-    };
-    saveStats(currentUser, newStats);
-    setStats(newStats); 
+  async function calculateAndSavePracticeStats() {
+    if (!currentUser || currentUser === "Host") {
+        // Pro hosta se statistiky počítají a ukládají lokálně při každém načtení
+        const guestStats = await calculateGuestStats();
+        setStats(guestStats);
+        return;
+    }
+    // Pro přihlášené uživatele se data jen odešlou, server je přepočítá při dalším načtení
+    console.log("Practice stats for logged-in user will be recalculated on next data load.");
   }
 
   async function commitSessionAnalysis() {
@@ -642,41 +595,17 @@ export default function DrivingTestApp() {
   async function finishExam() {
     // Okamžitě se pokusíme odeslat data z dokončené session
     await commitSessionAnalysis();
-
     setPhase("done");
-    
-    if (examMode) {
-      if (!currentUser) return;
-      const currentStats = loadStats(currentUser);
-      const score = questions.reduce((acc, qq) => (responses[qq.id] === qq.spravna ? acc + qq.points : acc), 0);
-      const passed = score >= 43;
-      const newTakenTotal = currentStats.total.examTaken + 1;
-      const newAvgScore = parseFloat(((currentStats.examAvgScore * currentStats.total.examTaken + score) / newTakenTotal).toFixed(1));
-      const spent = OSTRY_TIME - (timeLeft ?? 0);
-      const newAvgTime = Math.round((currentStats.examAvgTime * currentStats.total.examTaken + spent) / newTakenTotal);
-      
-      const newStats: Stats = {
-        ...currentStats,
-        total: {
-          ...currentStats.total,
-          examTaken: newTakenTotal,
-          examPassed: currentStats.total.examPassed + (passed ? 1 : 0),
-        },
-        today: {
-          ...currentStats.today,
-          examTaken: currentStats.today.examTaken + 1,
-          examPassed: currentStats.today.examPassed + (passed ? 1 : 0),
-        },
-        examAvgScore: newAvgScore,
-        examAvgTime: newAvgTime,
-        lastExamScore: score,
-        lastExamTimeSpent: spent,
-        lastExamPassed: passed,
-      };
-      saveStats(currentUser, newStats);
-      setStats(newStats);
-    } else {
-      calculateAndSavePracticeStats();
+
+    // Po odeslání dat znovu načteme všechna data ze serveru,
+    // včetně nově vypočítaných statistik.
+    if (currentUser && currentUser !== "Host") {
+        loadUserData(currentUser).then(data => {
+            setStats(data.stats);
+        });
+    } else if (currentUser === "Host") {
+        // Pro hosta přepočítáme lokálně
+        await calculateAndSavePracticeStats();
     }
   }
 
@@ -738,6 +667,74 @@ export default function DrivingTestApp() {
     return <LoginScreen onLogin={handleLogin} />;
   }
 
+  const SettingsModal = () => (
+    isSettingsOpen && (
+      <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={() => setIsSettingsOpen(false)}>
+        <Card className="w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+          <CardHeader>
+            <h3 className="text-lg font-semibold">Nastavení</h3>
+            <p className="text-sm text-muted-foreground">Správa vašich dat a předvoleb.</p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Button 
+              variant="outline" 
+              className="w-full justify-start gap-2"
+              onClick={() => window.location.href = `/api/export-data?userId=${encodeURIComponent(currentUser!)}`}
+            >
+              <Download size={16} />
+              Stáhnout moje data (JSON)
+            </Button>
+            <Button 
+              variant="destructive" 
+              className="w-full justify-start gap-2"
+              onClick={async () => {
+                if (confirm("Opravdu si přejete trvale smazat veškerá vaše analytická data? Tato akce je nevratná.")) {
+                  try {
+                    const response = await fetch('/api/reset-analysis', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ userId: currentUser }),
+                    });
+                    if (!response.ok) throw new Error('Server error');
+                    alert('Vaše data byla úspěšně smazána.');
+                    // Reset local state
+                    setAnalysisData([]);
+                          setUnlockedBadges([]);
+                          setSummaryData({});
+                          setStats(DEFAULT_STATS); // Reset stats to default
+                          setIsSettingsOpen(false);
+                        } catch (error) {
+                    alert('Došlo k chybě při mazání dat. Zkuste to prosím znovu.');
+                    console.error('Failed to delete analysis data:', error);
+                  }
+                }
+              }}
+            >
+              <Trash2 size={16} />
+              Vymazat analytická data
+            </Button>
+            <div className="flex items-center justify-between pt-4 border-t">
+              <label
+                htmlFor="ai-tutor-exam"
+                className="text-sm font-medium leading-none"
+              >
+                AI lektor v ostrém testu
+              </label>
+              <Switch
+                id="ai-tutor-exam"
+                checked={showAiTutorInExam}
+                onCheckedChange={(checked: boolean) => setShowAiTutorInExam(checked)}
+              />
+            </div>
+            <Button variant="secondary" className="w-full mt-4" onClick={() => setIsSettingsOpen(false)}>
+              Zavřít
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  );
+
   if (phase === "intro") {
     return (
       <>
@@ -750,71 +747,7 @@ export default function DrivingTestApp() {
         />
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 space-y-6 flex flex-col min-h-[calc(100vh-61px)]">
           <div className="flex-grow">
-          {isSettingsOpen && (
-            <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={() => setIsSettingsOpen(false)}>
-              <Card className="w-full max-w-md" onClick={(e) => e.stopPropagation()}>
-                <CardHeader>
-                  <h3 className="text-lg font-semibold">Nastavení</h3>
-                  <p className="text-sm text-muted-foreground">Správa vašich dat a předvoleb.</p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <Button 
-                    variant="outline" 
-                    className="w-full justify-start gap-2"
-                    onClick={() => window.location.href = `/api/export-data?userId=${encodeURIComponent(currentUser)}`}
-                  >
-                    <Download size={16} />
-                    Stáhnout moje data (JSON)
-                  </Button>
-                  <Button 
-                    variant="destructive" 
-                    className="w-full justify-start gap-2"
-                    onClick={async () => {
-                      if (confirm("Opravdu si přejete trvale smazat veškerá vaše analytická data? Tato akce je nevratná.")) {
-                        try {
-                          const response = await fetch('/api/reset-analysis', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ userId: currentUser }),
-                          });
-                          if (!response.ok) throw new Error('Server error');
-                          alert('Vaše data byla úspěšně smazána.');
-                          // Reset local state
-                          setAnalysisData([]);
-                          setUnlockedBadges([]);
-                          setSummaryData({});
-                          setStats(loadStats(currentUser)); // Reload stats to reset values
-                          setIsSettingsOpen(false);
-                        } catch (error) {
-                          alert('Došlo k chybě při mazání dat. Zkuste to prosím znovu.');
-                          console.error('Failed to delete analysis data:', error);
-                        }
-                      }
-                    }}
-                  >
-                    <Trash2 size={16} />
-                    Vymazat analytická data
-                  </Button>
-                  <div className="flex items-center justify-between pt-4 border-t">
-                    <label
-                      htmlFor="ai-tutor-exam"
-                      className="text-sm font-medium leading-none"
-                    >
-                      AI lektor v ostrém testu
-                    </label>
-                    <Switch
-                      id="ai-tutor-exam"
-                      checked={showAiTutorInExam}
-                      onCheckedChange={(checked: boolean) => setShowAiTutorInExam(checked)}
-                    />
-                  </div>
-                  <Button variant="secondary" className="w-full mt-4" onClick={() => setIsSettingsOpen(false)}>
-                    Zavřít
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          )}
+          <SettingsModal />
           <div className="text-center py-10 md:py-12">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">
               Otestujte si své znalosti
@@ -1045,6 +978,7 @@ export default function DrivingTestApp() {
 
     return (
       <div className="flex flex-col h-screen bg-background">
+        <SettingsModal />
         <TopNav 
           label="Podrobná analýza" 
           onHome={() => setPhase("intro")}
@@ -1235,6 +1169,7 @@ export default function DrivingTestApp() {
 
     return (
         <>
+            <SettingsModal />
             <TopNav 
                 label={browseState === 'groups' ? "Prohlížení: Výběr okruhu" : `Prohlížení: ${groupName}`}
                 onHome={() => setPhase("intro")}
@@ -1347,6 +1282,7 @@ export default function DrivingTestApp() {
   if (phase === "setup") {
     return (
       <>
+        <SettingsModal />
         <TopNav 
           label={examMode ? "Příprava na ostrý test" : "Nastavení procvičování"} 
           onHome={() => setPhase("intro")}
@@ -1404,6 +1340,7 @@ export default function DrivingTestApp() {
     
     return (
       <div className="flex flex-col h-screen">
+        <SettingsModal />
         <TopNav
           label={examMode ? "Ostrý test" : (originPhase === 'browse' ? 'Prohlížení otázky' : 'Procvičování')}
           timeLeft={timeLeft}
@@ -1515,8 +1452,15 @@ export default function DrivingTestApp() {
                 <CardContent className="p-0">
                   {q.obrazek && (
                     q.obrazek.endsWith('.mp4')
-                      ? <video src={q.obrazek} autoPlay loop muted playsInline controls className="my-3 rounded max-h-48 md:max-h-64 mx-auto shadow-md" />
-                      : <img src={q.obrazek} alt="Dopravní situace" className="my-3 rounded max-h-48 md:max-h-64 mx-auto shadow-md" />
+                      ? <video src={q.obrazek} autoPlay loop muted playsInline controls className="my-3 rounded max-h-64 md:max-h-80 lg:max-h-[45vh] mx-auto shadow-md" />
+                      : (
+                        <div className="relative group cursor-pointer mx-auto my-3 w-fit" onClick={() => setFullscreenImage(q.obrazek!)}>
+                          <img src={q.obrazek} alt="Dopravní situace" className="rounded max-h-64 md:max-h-80 lg:max-h-[45vh] mx-auto shadow-md" />
+                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded">
+                              <Expand size={48} className="text-white" />
+                          </div>
+                        </div>
+                      )
                   )}
                   <RadioGroup
                     key={q.id}
@@ -1574,7 +1518,7 @@ export default function DrivingTestApp() {
                           <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} className="mt-1" />
                           <label htmlFor={`opt-${q.id}-${idx}`} className="flex-1 text-sm md:text-base cursor-pointer flex items-center justify-between w-full">
                             {/\.(jpeg|jpg|gif|png)$/i.test(opt)
-                              ? <img src={opt} alt={`Možnost ${idx + 1}`} className="my-2 rounded max-h-48 md:max-h-60 shadow"/>
+                              ? <img src={opt} alt={`Možnost ${idx + 1}`} className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
                               : <span>{opt}</span>
                             }
                             {!examMode && anAnswerIsSelectedForThisQuestion && isSelected && (
@@ -1702,6 +1646,29 @@ export default function DrivingTestApp() {
             )}
           </section>
         </div>
+        {fullscreenImage && (
+          <div 
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-[100] cursor-zoom-out"
+            onClick={() => setFullscreenImage(null)}
+          >
+            <img 
+              src={fullscreenImage} 
+              alt="Fullscreen" 
+              className="max-w-[95vw] max-h-[95vh] object-contain"
+            />
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="absolute top-4 right-4 text-white hover:text-white/80"
+              onClick={(e) => {
+                e.stopPropagation();
+                setFullscreenImage(null);
+              }}
+            >
+              <XCircle size={32} />
+            </Button>
+          </div>
+        )}
       </div>
     );
   }
@@ -1758,6 +1725,7 @@ export default function DrivingTestApp() {
 
     return (
       <div className="flex flex-col h-screen bg-background">
+        <SettingsModal />
         {passed && <Confetti recycle={false} />}
         <TopNav 
           label="Výsledky testu" 
@@ -1874,18 +1842,18 @@ export default function DrivingTestApp() {
                       <p className="font-medium">{index + 1}. {q_item.otazka}</p>
                       {q_item.obrazek && (
                         q_item.obrazek.endsWith('.mp4')
-                          ? <video src={q_item.obrazek} autoPlay loop muted playsInline controls className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow" />
-                          : <img src={q_item.obrazek} alt={`Otázka ${index + 1}`} className="my-2 rounded max-h-48 md:max-h-60 mx-auto shadow"/>
+                          ? <video src={q_item.obrazek} autoPlay loop muted playsInline controls className="my-2 rounded max-h-64 md:max-h-80 lg:max-h-[45vh] mx-auto shadow" />
+                          : <img src={q_item.obrazek} alt={`Otázka ${index + 1}`} className="my-2 rounded max-h-64 md:max-h-80 lg:max-h-[45vh] mx-auto shadow"/>
                       )}
                       <p className="mt-1">Správná odpověď: {
                         /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[q_item.spravna])
-                        ? <img src={q_item.moznosti[q_item.spravna]} alt="Správná odpověď" className="my-2 rounded max-h-48 md:max-h-60 shadow"/>
+                        ? <img src={q_item.moznosti[q_item.spravna]} alt="Správná odpověď" className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
                         : <span className="font-semibold">{q_item.moznosti[q_item.spravna]}</span>
                       }</p>
                       {isAnswered ? (
                         <p className="mt-0.5">Vaše odpověď: {
                           /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[userAnswer])
-                          ? <img src={q_item.moznosti[userAnswer]} alt="Vaše odpověď" className="my-2 rounded max-h-48 md:max-h-60 shadow"/>
+                          ? <img src={q_item.moznosti[userAnswer]} alt="Vaše odpověď" className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
                           : <span className={clsx(isCorrect ? "text-green-600" : "text-destructive", "font-semibold")}>{q_item.moznosti[userAnswer]}</span>
                         } {isCorrect ? "✓" : "✗"}</p>
                       ) : (

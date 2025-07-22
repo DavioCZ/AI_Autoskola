@@ -302,6 +302,12 @@ app.post("/api/save-analysis", async (req, res) => {
     // Logika pro udělení odznaků
     const newlyAwardedBadges = await checkAndAwardBadges(userId, newData, entries);
 
+    // Vypočítat a uložit nový souhrn
+    const summaryData = calculateSummary(newData);
+    const summaryKey = `user:${userId}:summary`;
+    await redis.set(summaryKey, JSON.stringify(summaryData), { ex: TWO_YEARS_IN_SECONDS });
+
+
     res.status(200).json({
       message: "Analysis data saved successfully.",
       newlyAwardedBadges: newlyAwardedBadges
@@ -311,6 +317,123 @@ app.post("/api/save-analysis", async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 });
+
+const calculateSummary = (analysisData) => {
+  const summary = {};
+  analysisData.forEach(entry => {
+    if (!summary[entry.questionId]) {
+      summary[entry.questionId] = {
+        questionId: entry.questionId,
+        questionText: entry.questionText,
+        groupId: entry.groupId,
+        attempts: 0,
+        correct: 0,
+        totalTimeToAnswer: 0,
+        history: [],
+      };
+    }
+    const questionSummary = summary[entry.questionId];
+    questionSummary.attempts++;
+    if (entry.isCorrect) {
+      questionSummary.correct++;
+    }
+    questionSummary.totalTimeToAnswer += entry.timeToAnswer;
+    questionSummary.history.push({
+      answeredAt: entry.answeredAt,
+      isCorrect: entry.isCorrect,
+      timeToAnswer: entry.timeToAnswer,
+    });
+  });
+
+  // Doplňkové výpočty
+  Object.values(summary).forEach(s => {
+    s.avgTime = s.totalTimeToAnswer / s.attempts;
+    s.successRate = (s.correct / s.attempts) * 100;
+  });
+
+  return summary;
+};
+
+const getTodayDateString = () => new Date().toLocaleDateString('sv'); // YYYY-MM-DD format
+
+const calculateStatsFromAnalysis = (analysisData) => {
+    const stats = {
+        total: { examTaken: 0, examPassed: 0, practiceAnswered: 0, practiceCorrect: 0 },
+        today: { examTaken: 0, examPassed: 0, practiceAnswered: 0, practiceCorrect: 0, lastReset: getTodayDateString() },
+        examAvgScore: 0,
+        examAvgTime: 0,
+        lastExamScore: null,
+        lastExamTimeSpent: null,
+        lastExamPassed: null,
+        lastPracticeAnswered: 0,
+        lastPracticeCorrect: 0,
+    };
+
+    if (!analysisData || analysisData.length === 0) {
+        return stats;
+    }
+
+    const todayStr = getTodayDateString();
+    const examSessions = new Map();
+    
+    analysisData.forEach(entry => {
+        const entryDate = new Date(entry.answeredAt).toLocaleDateString('sv');
+        const isToday = entryDate === todayStr;
+
+        if (entry.mode === 'practice') {
+            stats.total.practiceAnswered++;
+            if (isToday) stats.today.practiceAnswered++;
+            if (entry.isFirstAttemptCorrect) {
+                stats.total.practiceCorrect++;
+                if (isToday) stats.today.practiceCorrect++;
+            }
+        } else if (entry.mode === 'exam') {
+            const sessionId = entry.answeredAt.substring(0, 16); // Group by minute to identify a session
+            if (!examSessions.has(sessionId)) {
+                examSessions.set(sessionId, { score: 0, time: 0, questionIds: new Set(), isToday: isToday });
+            }
+            const session = examSessions.get(sessionId);
+            if (!session.questionIds.has(entry.questionId)) {
+                session.questionIds.add(entry.questionId);
+                if (entry.isCorrect) {
+                    // Assuming points are not stored in analysis, so we'll count correct answers
+                    // This is a simplification. For real scores, points would need to be in the analysis entry.
+                    session.score += 1; // Simplified score
+                }
+                session.time += entry.timeToAnswer;
+            }
+        }
+    });
+
+    const examScores = [];
+    const examTimes = [];
+
+    examSessions.forEach((session, sessionId) => {
+        stats.total.examTaken++;
+        if (session.isToday) stats.today.examTaken++;
+        
+        // Simplified pass condition (e.g., >85% correct)
+        const passed = (session.score / session.questionIds.size) > 0.85; 
+        if (passed) {
+            stats.total.examPassed++;
+            if (session.isToday) stats.today.examPassed++;
+        }
+        examScores.push(session.score);
+        examTimes.push(session.time / 1000); // in seconds
+    });
+
+    if (examScores.length > 0) {
+        stats.examAvgScore = examScores.reduce((a, b) => a + b, 0) / examScores.length;
+        stats.examAvgTime = examTimes.reduce((a, b) => a + b, 0) / examTimes.length;
+        const lastSession = Array.from(examSessions.values()).pop();
+        stats.lastExamScore = lastSession.score;
+        stats.lastExamTimeSpent = lastSession.time / 1000;
+        stats.lastExamPassed = (lastSession.score / lastSession.questionIds.size) > 0.85;
+    }
+
+    return stats;
+};
+
 
 app.get("/api/analysis-data", async (req, res) => {
   const { userId } = req.query;
@@ -332,8 +455,10 @@ app.get("/api/analysis-data", async (req, res) => {
     const analysisData = typeof analysisDataRaw === 'string' ? JSON.parse(analysisDataRaw) : (analysisDataRaw || []);
     const unlockedBadges = typeof badgesDataRaw === 'string' ? JSON.parse(badgesDataRaw) : (badgesDataRaw || []);
     const summaryData = typeof summaryDataRaw === 'string' ? JSON.parse(summaryDataRaw) : (summaryDataRaw || {});
+    
+    const calculatedStats = calculateStatsFromAnalysis(analysisData);
 
-    res.json({ analysisData, unlockedBadges, summaryData });
+    res.json({ analysisData, unlockedBadges, summaryData, stats: calculatedStats });
   } catch (error) {
     console.error("Error reading user data:", error);
     res.status(500).json({ error: "Failed to read user data" });
