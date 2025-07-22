@@ -843,7 +843,11 @@ export default function DrivingTestApp() {
                           await initiateTest(false, [], questionsForPractice);
                           setIsLoading(false);
                       }}>
-                          Spustit opakování ({spacedRepetitionDeck.length} {spacedRepetitionDeck.length === 1 ? "otázka" : spacedRepetitionDeck.length <= 4 ? "otázky" : "otázek"})
+                          {(() => {
+                            const n = Math.min(spacedRepetitionDeck.length, 20);
+                            const plural = n === 1 ? "otázka" : (n >= 2 && n <= 4) ? "otázky" : "otázek";
+                            return `Spustit opakování (${n} ${plural})`;
+                          })()}
                       </Button>
                   </CardContent>
               </Card>
