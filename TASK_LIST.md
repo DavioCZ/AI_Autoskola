@@ -162,9 +162,26 @@
     - [x] Horní část (kroužky) bude zobrazovat pouze dnešní pokrok (reset v 0:00).
     - [x] Dolní část bude zobrazovat celkové statistiky od začátku.
     - [x] Sjednotit logiku pro přihlášené uživatele i hosty.
-- [ ] **Přidat nové vizualizace:**
-    - [ ] Implementovat heat-mapu úspěšnosti v čase.
-    - [ ] Vytvořit "spaced-repetition" balíčky otázek s úspěšností pod 80 %.
+- [ ] **Přidat nové vizualizace a personalizované učení:**
+    - [ ] **1. Heat-mapa úspěšnosti v čase:**
+        - [ ] **Databáze:** Vytvořit tabulku `user_day_stats` (`user_id`, `date`, `practice_total`, `practice_correct`, `exam_total`, `exam_correct`). Plnit pomocí denního cronu nebo materializovaného pohledu.
+        - [ ] **API:** Implementovat endpoint `GET /stats/heatmap?mode=[practice|exam|all]&period=[days]` vracející JSON `[{"date":"YYYY-MM-DD","accuracy":0.82}, ...]`.
+        - [ ] **Frontend:** Integrovat komponentu `react-calendar-heatmap` pro responzivní zobrazení SVG grafu. Nastavit barevnou škálu (0-50% červená, 50-80% žlutá, 80-95% světle zelená, 95-100% tmavě zelená).
+        - [ ] **UX:** Implementovat přepínač režimů ("Procvičování" / "Ostré testy" / "Vše"), tooltip zobrazující detailní skóre ("18/22 správně — 82 %") a proklik na den pro zobrazení detailu otázek.
+    - [ ] **2. Spaced-repetition balíčky (pro otázky < 80 % úspěšnosti):**
+        - [ ] **Výběr otázek:** Implementovat logiku pro výběr otázek s `total_count >= 3` a `success_rate < 0.8`.
+        - [ ] **Plánování opakování (Pragmatický mix):**
+            - [ ] Otázky < 80 % začínají v "Boxu 1" (denní opakování).
+            - [ ] Po dosažení úspěšnosti ≥ 80 % v posledních 5 pokusech přejde karta do standardního režimu řízeného algoritmem SM-2.
+            - [ ] Ukládat potřebná data pro SM-2 (`ease`, `interval`, `next_due`).
+        - [ ] **UI a Interakce:**
+            - [ ] Na dashboardu zobrazit widget "Balíček na dnes" s počtem karet k procvičení (max. 20).
+            - [ ] Po zodpovězení karty umožnit hodnocení (0-5) pro aktualizaci SM-2 intervalu.
+            - [ ] Na dashboardu zobrazit widget "Slabá místa" s top 3 okruhy s nejnižší úspěšností.
+    - [ ] **3. Integrace s odznaky a motivací:**
+        - [ ] **Odznak "Zachráněná karta":** Přidělit za zlepšení karty z <80 % na ≥90 % ve 3 po sobě jdoucích opakováních (s úrovněmi Bronz, Stříbro, Zlato, Platina).
+        - [ ] **Odznak "Heat-map streak":** Přidělit za udržení úspěšnosti ≥ 80 % po dobu 7, 14, 30 a 100 dní v řadě.
+        - [ ] **Odznak "Reviewer":** Přidělit za dokončení 50, 200, 500 a 1000 karet v režimu spaced-repetition.
 
 ### 6.4 | Údržba a bezpečnost
 - [x] **Nastavit TTL a automatický úklid:**
@@ -177,3 +194,62 @@
 - [x] **Implementovat export a migraci dat:**
     - [x] Umožnit stažení uživatelských dat ve formátu JSON/CSV.
     - [x] Vytvořit workflow pro přenos dat hosta na přihlášený účet pomocí QR kódu.
+
+---
+
+## Fáze 7: Rozšířený systém gamifikace (Odznaky)
+*Cíl: Implementovat propracovaný systém odznaků pro zvýšení dlouhodobé motivace uživatelů napříč všemi režimy aplikace.*
+
+### 7.1 | Návrh a definice metrik
+- [ ] **Definovat kategorie a úrovně odznaků:**
+    - [ ] **Procvičování:** Celkový počet otázek, přesnost v okruzích, série správných odpovědí.
+    - [ ] **Ostré testy:** Průměrné skóre, počet testů s plným skóre, rychlost vyplnění.
+    - [ ] **Teorie:** Počet dokončených kapitol.
+    - [ ] **Konzistence:** Počet aktivních dnů v řadě.
+    - [ ] **Trend zlepšení:** Zvýšení průměrného skóre.
+- [ ] **Zpracovat tabulku metrik a prahových hodnot:**
+    ```markdown
+    | Kategorie                                       | Co se sleduje                                | Bronz    | Stříbro | Zlato  | Platina | Smysl                                               |
+    | ----------------------------------------------- | -------------------------------------------- | -------- | ------- | ------ | ------- | --------------------------------------------------- |
+    | **Procvičování** *(Režim „Procvičuj“)*          | Celkový počet zodpovězených cvičných otázek  | 100      | 500     | 1 000  | 5 000   | Odměna za vytrvalost a objem                        |
+    |                                                 | Přesnost v konkrétním okruhu                 | ≥ 50 %   | ≥ 70 %  | ≥ 85 % | ≥ 95 %  | Uživatel vidí pokrok v tématu, kde začínal na ≪0 %≫ |
+    |                                                 | Streak správných odpovědí                    | 10       | 25      | 50     | 100     | Krátkodobé soustředění                              |
+    | **Ostré testy** *(Režim „Plný test 50 otázek“)* | Průměrné skóre z posledních 5 testů          | ≥ 35/50  | ≥ 40    | ≥ 45   | 50/50   | Jasně ukazuje zlepšení v „exam mode“                |
+    |                                                 | Počet testů s plným skóre                    | 1        | 5       | 10     | 25      | Extrémní meta pro **hard-core** uživatele           |
+    |                                                 | Rychlost vyplnění (čas ≤ xx min)             | 1×       | 5×      | 15×    | 30×     | Odmění, když se přestane příliš váhat               |
+    | **Prohlížení / Teorie**                         | Dokončené kapitoly pravidel                  | 3        | 6       | 10     | 14      | Nutí pročíst i pasáže, kde se nedělají testy        |
+    | **Konzistence**                                 | Aktivní dny po sobě *(libovolný režim)*      | 3        | 7       | 14     | 30      | Buduje návyk                                        |
+    | **Zlepšení Trend**                              | Zvýšení průměrného skóre proti prvnímu týdnu | +5 p. b. | +10     | +15    | +20     | „Vidíš, rosteš!“                                    |
+    ```
+
+### 7.2 | Adaptivní trend zlepšení
+- [ ] **Implementovat dynamický výchozí bod (`baseline`):**
+    - [ ] Určit `baseline` po prvních 3-5 ostrých testech.
+    - [ ] Při průměru ≥ 45/50 rovnou přidělit bronzový odznak a nastavit `baseline` na tuto hodnotu.
+- [ ] **Implementovat adaptivní prahy:**
+    - [ ] Počítat zvýšení procentuálně z "volného stropu" do 100 % (`needed = pct_of(100 − baseline)`).
+    - [ ] Bronz: +20 %, Stříbro: +40 %, Zlato: +60 %, Platina: +80 %.
+- [ ] **Přepnout na režim "Udržení formy":**
+    - [ ] Při dosažení a udržení skóre ≥ 98 % v posledních 10 testech nahradit osu "Zlepšení" osou "Udržení formy" s vlastními prahy (10, 25, 50, 100 testů).
+
+### 7.3 | Technická implementace
+- [ ] **Vytvořit Badge Engine řízený událostmi:**
+    - [ ] Zpracovávat události: `practice_answered`, `exam_finished`, `chapter_viewed`, `session_start`.
+    - [ ] Po každé události přepočítat pouze relevantní metriky.
+- [ ] **Rozšířit datový model:**
+    - [ ] Pro každý odznak ukládat: `level` (0–4), `progress` (0–1), `unlocked_at`.
+    - [ ] Ukládat metriku `trend` s atributy `baseline`, `mode` ('improvement'/'consistency'), `level`, `progress`.
+    - [ ] Načítat prahové hodnoty z konfiguračního souboru (JSON).
+- [ ] **Implementovat migraci pro stávající uživatele:**
+    - [ ] Při prvním spuštění dopočítat historická data a přiřadit již zasloužené odznaky.
+    - [ ] Rozdělit stávající odznak "100 % ve všech okruzích" na nové úrovně přesnosti.
+
+### 7.4 | Uživatelské rozhraní (UI)
+- [ ] **Vizuální stav odznaků:**
+    - [ ] Zamčené odznaky zobrazit šedě s tooltipem vysvětlujícím podmínky odemčení.
+    - [ ] Přidat kruhový indikátor progresu (SVG) k ikonám odznaků.
+- [ ] **Dashboard Widget:**
+    - [ ] Přidat na hlavní stránku widget "Nejbližší odznak" s progress-barem.
+- [ ] **Vylepšit UX pro trend:**
+    - [ ] Tooltipy musí dynamicky vysvětlovat aktuální cíl (např. "+20 % z chybějících bodů do 100 %").
+    - [ ] Zobrazit notifikaci při automatickém přidělení bronzového odznaku za vysoký start.

@@ -63,7 +63,24 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground leading-relaxed;
-  }
+body {
+  @apply bg-background text-foreground;
+}
+
+/* React Calendar Heatmap Styles */
+.react-calendar-heatmap .color-empty {
+  fill: hsl(var(--muted));
+}
+.react-calendar-heatmap .color-scale-red {
+  fill: #ef4444; /* red-500 */
+}
+.react-calendar-heatmap .color-scale-yellow {
+  fill: #f59e0b; /* amber-500 */
+}
+.react-calendar-heatmap .color-scale-light-green {
+  fill: #84cc16; /* lime-500 */
+}
+.react-calendar-heatmap .color-scale-dark-green {
+  fill: #22c55e; /* green-500 */
+}
 }

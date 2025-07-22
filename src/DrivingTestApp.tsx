@@ -26,6 +26,8 @@ import clsx from "clsx";
 import { useAi, ChatMessage } from "@/src/hooks/useAi";
 import { UnlockedBadge } from "@/src/badges";
 import { BadgesDisplay } from "@/src/components/Badges";
+import StatsHeatmap from "@/src/components/StatsHeatmap";
+import WeakestTopics from "@/src/components/WeakestTopics";
 import { db, Event as DbEvent, cleanupExpiredEvents } from "@/src/db";
 import { getGuestSessionId } from "@/src/session";
 import { Stats, DEFAULT_STATS, getTodayDateString, DEFAULT_PROGRESS_STATS } from "@/src/dataModels";
@@ -393,6 +395,7 @@ export default function DrivingTestApp() {
     const saved = localStorage.getItem("autoskola-showAiTutorInExam");
     return saved ? JSON.parse(saved) : true;
   });
+  const [spacedRepetitionDeck, setSpacedRepetitionDeck] = useState<string[]>([]);
 
   useEffect(() => {
     localStorage.setItem("autoskola-showAiTutorInExam", JSON.stringify(showAiTutorInExam));
@@ -432,6 +435,20 @@ export default function DrivingTestApp() {
         setSummaryData(data.summaryData);
         setStats(data.stats);
       });
+
+      // Načtení balíčku pro opakování
+      const fetchDeck = async () => {
+        if (currentUser && currentUser !== "Host") {
+          try {
+            const res = await fetch(`/api/spaced-repetition-deck?userId=${encodeURIComponent(currentUser)}`);
+            const { questionIds } = await res.json();
+            setSpacedRepetitionDeck(questionIds || []);
+          } catch (error) {
+            console.error("Failed to fetch spaced repetition deck:", error);
+          }
+        }
+      };
+      fetchDeck();
     }
   }, [currentUser]);
 
@@ -791,6 +808,53 @@ export default function DrivingTestApp() {
               </Button>
             </div>
           </div>
+
+          {/* Spaced Repetition a Slabá místa */}
+          <div className="mt-8 max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <Card>
+                  <CardHeader>
+                      <h3 className="font-semibold">Balíček na dnes</h3>
+                  </CardHeader>
+                  <CardContent>
+                      <p className="text-sm text-muted-foreground mb-4">
+                          Automaticky vybrané otázky, ve kterých často chybujete, abyste si je mohli zopakovat.
+                      </p>
+                      <Button className="w-full" disabled={spacedRepetitionDeck.length === 0} onClick={async () => {
+                          if (spacedRepetitionDeck.length === 0) {
+                              alert("Skvělá práce! Nemáte žádné otázky, které by vyžadovaly opakování.");
+                              return;
+                          }
+                          
+                          setIsLoading(true);
+                          const allQuestionsPromises = GROUPS.map(g => fetchGroup(g.id));
+                          const allQuestionsArrays = await Promise.all(allQuestionsPromises);
+                          const allQuestions = allQuestionsArrays.flat();
+                          
+                          let questionsForPractice = allQuestions.filter(q => spacedRepetitionDeck.includes(q.id));
+                          
+                          // Omezit na max 20 otázek a zamíchat
+                          questionsForPractice.sort(() => Math.random() - 0.5);
+                          if (questionsForPractice.length > 20) {
+                            questionsForPractice = questionsForPractice.slice(0, 20);
+                          }
+
+                          await initiateTest(false, [], questionsForPractice);
+                          setIsLoading(false);
+                      }}>
+                          Spustit opakování ({spacedRepetitionDeck.length} {spacedRepetitionDeck.length === 1 ? "otázka" : spacedRepetitionDeck.length <= 4 ? "otázky" : "otázek"})
+                      </Button>
+                  </CardContent>
+              </Card>
+              <WeakestTopics 
+                summaryData={summaryData} 
+                onPracticeTopic={async (groupId) => {
+                  setIsLoading(true);
+                  await initiateTest(false, [groupId]);
+                  setIsLoading(false);
+                }} 
+              />
+          </div>
+
           <div className="mt-16">
             <h3 className="text-xl font-bold text-center mb-6 flex items-center justify-center gap-2">
               <BarChart2 size={24} className="text-primary" />
@@ -853,6 +917,11 @@ export default function DrivingTestApp() {
                 </div>
               </CardContent>
             </Card>
+            
+            <div className="mt-12">
+              <StatsHeatmap currentUser={currentUser} />
+            </div>
+
             <BadgesDisplay unlockedBadges={unlockedBadges} />
             {currentUser === "Host" && (
               <div className="mt-8 text-center">
@@ -1645,7 +1714,7 @@ export default function DrivingTestApp() {
         </div>
 
         {/* Mobile Sticky Navigation */}
-        <div className="md:hidden fixed inset-x-0 bottom-0 bg-neutral-900/80 backdrop-blur-md px-4 py-3 flex gap-2 border-t border-neutral-700">
+        <div className="md:hidden fixed inset-x-0 bottom-0 bg-background/80 backdrop-blur-md px-4 py-3 flex gap-2 border-t border-border">
           <Button variant="ghost" onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}>
             Předchozí
           </Button>

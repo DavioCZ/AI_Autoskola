@@ -486,6 +486,77 @@ app.post("/api/reset-analysis", async (req, res) => {
   }
 });
 
+app.get("/api/stats/heatmap", async (req, res) => {
+  const { userId, mode = 'all', period = '365' } = req.query;
+  if (!userId) {
+    return res.status(400).json({ error: "User ID is required." });
+  }
+
+  try {
+    const statsKey = `user:${userId}:day_stats`;
+    const dailyStatsRaw = await redis.get(statsKey);
+    const dailyStats = typeof dailyStatsRaw === 'string' ? JSON.parse(dailyStatsRaw) : (dailyStatsRaw || []);
+
+    if (dailyStats.length === 0) {
+      return res.json([]);
+    }
+
+    const periodDays = parseInt(period, 10);
+    const startDate = new Date();
+    startDate.setDate(startDate.getDate() - periodDays);
+
+    const filteredData = dailyStats
+      .filter(stat => new Date(stat.date) >= startDate)
+      .map(stat => {
+        let total = 0;
+        let correct = 0;
+
+        if (mode === 'practice' || mode === 'all') {
+          total += stat.practice_total;
+          correct += stat.practice_correct;
+        }
+        if (mode === 'exam' || mode === 'all') {
+          total += stat.exam_total;
+          correct += stat.exam_correct;
+        }
+
+        return {
+          date: stat.date,
+          accuracy: total > 0 ? correct / total : null,
+        };
+      });
+
+    res.json(filteredData);
+
+  } catch (error) {
+    console.error(`Error fetching heatmap data for user ${userId}:`, error);
+    res.status(500).json({ error: "Failed to fetch heatmap data." });
+  }
+});
+
+app.get("/api/spaced-repetition-deck", async (req, res) => {
+  const { userId } = req.query;
+  if (!userId) {
+    return res.status(400).json({ error: "User ID is required." });
+  }
+
+  try {
+    const summaryKey = `user:${userId}:summary`;
+    const summaryDataRaw = await redis.get(summaryKey);
+    const summaryData = typeof summaryDataRaw === 'string' ? JSON.parse(summaryDataRaw) : (summaryDataRaw || {});
+
+    const weakQuestions = Object.values(summaryData)
+      .filter(q => q.attempts >= 3 && q.successRate < 80)
+      .map(q => q.questionId);
+
+    res.json({ questionIds: weakQuestions });
+
+  } catch (error) {
+    console.error(`Error fetching spaced repetition deck for user ${userId}:`, error);
+    res.status(500).json({ error: "Failed to fetch spaced repetition deck." });
+  }
+});
+
 app.get("/api/export-data", async (req, res) => {
   const { userId } = req.query;
   if (!userId) {
