@@ -1561,12 +1561,15 @@ export default function DrivingTestApp() {
                       const anAnswerIsSelectedForThisQuestion = responses[q.id] !== undefined;
 
                       let itemSpecificClasses = "";
+                      let radioItemClasses = "";
                       if (!examMode && anAnswerIsSelectedForThisQuestion) {
                         if (isCorrect) {
-                          itemSpecificClasses = "bg-green-50 border-green-400 text-green-700";
+                          itemSpecificClasses = "bg-green-100 border-green-400 text-green-800 dark:bg-green-900/30 dark:border-green-700 dark:text-green-300";
+                          radioItemClasses = "text-green-600 dark:text-green-400";
                         }
                         if (isSelected && !isCorrect) {
-                          itemSpecificClasses = "bg-red-50 border-red-400 text-red-700";
+                          itemSpecificClasses = "bg-red-100 border-red-400 text-red-800 dark:bg-red-900/30 dark:border-red-700 dark:text-red-300";
+                          radioItemClasses = "text-red-600 dark:text-red-400";
                         }
                       }
 
@@ -1579,7 +1582,7 @@ export default function DrivingTestApp() {
                             !itemSpecificClasses && "bg-card hover:bg-muted/50 border-border"
                           )}
                         >
-                          <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} className="mt-1 accent-indigo-500" />
+                          <RadioGroupItem value={idx.toString()} id={`opt-${q.id}-${idx}`} className={clsx("mt-1 accent-indigo-500", radioItemClasses)} />
                           <div className="flex-1 text-sm leading-snug flex items-center justify-between w-full">
                             {/\.(jpeg|jpg|gif|png)$/i.test(opt)
                               ? <img src={opt} alt={`Možnost ${idx + 1}`} className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
