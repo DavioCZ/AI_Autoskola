@@ -6,6 +6,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
@@ -794,18 +795,18 @@ export default function DrivingTestApp() {
                     <Trash2 size={16} />
                     Vymazat analytická data
                   </Button>
-                  <div className="flex items-center space-x-2 pt-4 border-t">
-                    <Checkbox
-                      id="ai-tutor-exam"
-                      checked={showAiTutorInExam}
-                      onCheckedChange={(checked) => setShowAiTutorInExam(Boolean(checked))}
-                    />
+                  <div className="flex items-center justify-between pt-4 border-t">
                     <label
                       htmlFor="ai-tutor-exam"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      className="text-sm font-medium leading-none"
                     >
-                      Zobrazit AI lektora v ostrém testu
+                      AI lektor v ostrém testu
                     </label>
+                    <Switch
+                      id="ai-tutor-exam"
+                      checked={showAiTutorInExam}
+                      onCheckedChange={(checked: boolean) => setShowAiTutorInExam(checked)}
+                    />
                   </div>
                   <Button variant="secondary" className="w-full mt-4" onClick={() => setIsSettingsOpen(false)}>
                     Zavřít
