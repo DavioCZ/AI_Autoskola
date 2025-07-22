@@ -308,6 +308,9 @@ app.post("/api/save-analysis", async (req, res) => {
     await redis.set(summaryKey, JSON.stringify(summaryData), { ex: TWO_YEARS_IN_SECONDS });
 
 
+    // Asynchronně spustíme aktualizaci heatmapy, nečekáme na dokončení
+    updateUserHeatmap(userId);
+
     res.status(200).json({
       message: "Analysis data saved successfully.",
       newlyAwardedBadges: newlyAwardedBadges
@@ -353,6 +356,62 @@ const calculateSummary = (analysisData) => {
 
   return summary;
 };
+
+// --- Funkce pro agregaci dat pro heatmapu ---
+async function updateUserHeatmap(userId) {
+  if (!userId) return;
+
+  console.log(`🔥 Starting heatmap aggregation for user: ${userId}`);
+  try {
+    const userKey = `user:${userId}:analysis`;
+    const analysisDataRaw = await redis.get(userKey);
+    const analysisData = typeof analysisDataRaw === 'string' ? JSON.parse(analysisDataRaw) : (analysisDataRaw || []);
+
+    if (analysisData.length === 0) {
+      console.log(`  -> No analysis data for user ${userId}, skipping heatmap update.`);
+      return;
+    }
+
+    const dailyStats = {};
+
+    for (const entry of analysisData) {
+      const date = new Date(entry.answeredAt).toISOString().split('T')[0]; // YYYY-MM-DD
+
+      if (!dailyStats[date]) {
+        dailyStats[date] = {
+          date: date,
+          practice_total: 0,
+          practice_correct: 0,
+          exam_total: 0,
+          exam_correct: 0,
+        };
+      }
+
+      if (entry.mode === 'practice') {
+        dailyStats[date].practice_total++;
+        if (entry.isCorrect) {
+          dailyStats[date].practice_correct++;
+        }
+      } else if (entry.mode === 'exam') {
+        dailyStats[date].exam_total++;
+        if (entry.isCorrect) {
+          dailyStats[date].exam_correct++;
+        }
+      }
+    }
+
+    const statsArray = Object.values(dailyStats);
+    const statsKey = `user:${userId}:day_stats`;
+    const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
+
+    await redis.set(statsKey, JSON.stringify(statsArray), { ex: TWO_YEARS_IN_SECONDS });
+    console.log(`  -> ✅ Saved ${statsArray.length} daily stat entries for user ${userId}.`);
+
+  } catch (error) {
+    console.error(`  -> ❌ Failed to process heatmap data for user ${userId}:`, error);
+  }
+}
+
 
 const getTodayDateString = () => new Date().toLocaleDateString('sv'); // YYYY-MM-DD format
 

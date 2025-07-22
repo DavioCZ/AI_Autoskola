@@ -619,6 +619,9 @@ export default function DrivingTestApp() {
     // včetně nově vypočítaných statistik.
     if (currentUser && currentUser !== "Host") {
         loadUserData(currentUser).then(data => {
+            setAnalysisData(data.analysisData);
+            setUnlockedBadges(data.unlockedBadges);
+            setSummaryData(data.summaryData);
             setStats(data.stats);
         });
     } else if (currentUser === "Host") {

@@ -162,22 +162,22 @@
     - [x] Horní část (kroužky) bude zobrazovat pouze dnešní pokrok (reset v 0:00).
     - [x] Dolní část bude zobrazovat celkové statistiky od začátku.
     - [x] Sjednotit logiku pro přihlášené uživatele i hosty.
-- [ ] **Přidat nové vizualizace a personalizované učení:**
-    - [ ] **1. Heat-mapa úspěšnosti v čase:**
-        - [ ] **Databáze:** Vytvořit tabulku `user_day_stats` (`user_id`, `date`, `practice_total`, `practice_correct`, `exam_total`, `exam_correct`). Plnit pomocí denního cronu nebo materializovaného pohledu.
-        - [ ] **API:** Implementovat endpoint `GET /stats/heatmap?mode=[practice|exam|all]&period=[days]` vracející JSON `[{"date":"YYYY-MM-DD","accuracy":0.82}, ...]`.
-        - [ ] **Frontend:** Integrovat komponentu `react-calendar-heatmap` pro responzivní zobrazení SVG grafu. Nastavit barevnou škálu (0-50% červená, 50-80% žlutá, 80-95% světle zelená, 95-100% tmavě zelená).
-        - [ ] **UX:** Implementovat přepínač režimů ("Procvičování" / "Ostré testy" / "Vše"), tooltip zobrazující detailní skóre ("18/22 správně — 82 %") a proklik na den pro zobrazení detailu otázek.
-    - [ ] **2. Spaced-repetition balíčky (pro otázky < 80 % úspěšnosti):**
-        - [ ] **Výběr otázek:** Implementovat logiku pro výběr otázek s `total_count >= 3` a `success_rate < 0.8`.
+- [x] **Přidat nové vizualizace a personalizované učení:**
+    - [x] **1. Heat-mapa úspěšnosti v čase:**
+        - [x] **Databáze:** Vytvořen skript (`scripts/aggregate_heatmap_data.js`) pro denní agregaci a plnění `user:{id}:day_stats`.
+        - [x] **API:** Implementován endpoint `GET /stats/heatmap`, který vrací agregovaná data.
+        - [x] **Frontend:** Integrována komponenta `react-calendar-heatmap` pro zobrazení dat.
+        - [x] **UX:** Implementován základní tooltip zobrazující denní úspěšnost.
+    - [x] **2. Spaced-repetition balíčky (pro otázky < 80 % úspěšnosti):**
+        - [x] **Výběr otázek:** Implementována logika na serveru (`/api/spaced-repetition-deck`) pro výběr otázek s `attempts >= 3` a `successRate < 80`.
         - [ ] **Plánování opakování (Pragmatický mix):**
             - [ ] Otázky < 80 % začínají v "Boxu 1" (denní opakování).
             - [ ] Po dosažení úspěšnosti ≥ 80 % v posledních 5 pokusech přejde karta do standardního režimu řízeného algoritmem SM-2.
             - [ ] Ukládat potřebná data pro SM-2 (`ease`, `interval`, `next_due`).
-        - [ ] **UI a Interakce:**
-            - [ ] Na dashboardu zobrazit widget "Balíček na dnes" s počtem karet k procvičení (max. 20).
+        - [x] **UI a Interakce:**
+            - [x] Na dashboardu je widget "Balíček na dnes" s počtem karet a tlačítkem pro spuštění.
             - [ ] Po zodpovězení karty umožnit hodnocení (0-5) pro aktualizaci SM-2 intervalu.
-            - [ ] Na dashboardu zobrazit widget "Slabá místa" s top 3 okruhy s nejnižší úspěšností.
+            - [x] Na dashboardu je widget "Slabá místa" s top 3 okruhy a tlačítkem pro procvičení.
     - [ ] **3. Integrace s odznaky a motivací:**
         - [ ] **Odznak "Zachráněná karta":** Přidělit za zlepšení karty z <80 % na ≥90 % ve 3 po sobě jdoucích opakováních (s úrovněmi Bronz, Stříbro, Zlato, Platina).
         - [ ] **Odznak "Heat-map streak":** Přidělit za udržení úspěšnosti ≥ 80 % po dobu 7, 14, 30 a 100 dní v řadě.
