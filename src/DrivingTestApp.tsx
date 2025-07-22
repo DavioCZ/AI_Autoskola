@@ -405,6 +405,14 @@ export default function DrivingTestApp() {
   const { setTheme } = useTheme();
   const [transferToken, setTransferToken] = useState<string | null>(null);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [showAiTutorInExam, setShowAiTutorInExam] = useState<boolean>(() => {
+    const saved = localStorage.getItem("autoskola-showAiTutorInExam");
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("autoskola-showAiTutorInExam", JSON.stringify(showAiTutorInExam));
+  }, [showAiTutorInExam]);
 
   useEffect(() => {
     // Inicializujeme Web Worker pro zpracování na pozadí pro hosty
@@ -786,6 +794,19 @@ export default function DrivingTestApp() {
                     <Trash2 size={16} />
                     Vymazat analytická data
                   </Button>
+                  <div className="flex items-center space-x-2 pt-4 border-t">
+                    <Checkbox
+                      id="ai-tutor-exam"
+                      checked={showAiTutorInExam}
+                      onCheckedChange={(checked) => setShowAiTutorInExam(Boolean(checked))}
+                    />
+                    <label
+                      htmlFor="ai-tutor-exam"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Zobrazit AI lektora v ostrém testu
+                    </label>
+                  </div>
                   <Button variant="secondary" className="w-full mt-4" onClick={() => setIsSettingsOpen(false)}>
                     Zavřít
                   </Button>
@@ -1378,6 +1399,7 @@ export default function DrivingTestApp() {
   if (phase === "test" && q) {
     const answeredCount = Object.keys(responses).length;
     const progress = questions.length > 0 ? (answeredCount / questions.length) * 100 : 0;
+    const isTutorVisible = !examMode || showAiTutorInExam;
     
     return (
       <div className="flex flex-col h-screen">
@@ -1430,7 +1452,7 @@ export default function DrivingTestApp() {
           </div>
           <section className={clsx(
             "grid gap-8 transition-all duration-300",
-            examMode
+            !isTutorVisible
               ? "lg:grid-cols-1"
               : isAiTutorCollapsed
               ? "lg:grid-cols-[1fr_auto]"
@@ -1631,7 +1653,7 @@ export default function DrivingTestApp() {
               </div>
             </main>
 
-            {!examMode && (
+            {isTutorVisible && (
               <aside className={clsx(
                 "flex flex-col rounded-lg border bg-muted/40 h-fit lg:sticky lg:top-28 transition-all duration-300 ease-in-out",
                 isAiTutorCollapsed ? "p-2" : "p-4 sm:p-5"
