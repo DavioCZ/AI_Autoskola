@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ActivityCalendar, { type Activity, type BlockElement } from 'react-activity-calendar';
-import Tooltip from 'react-tooltip'; // Změna na default import
+import ActivityCalendar, { type Activity, type ThemeInput } from 'react-activity-calendar';
 
 // Rozšíření typu Activity o vlastní data
 type CustomActivity = Activity & {
@@ -10,6 +9,7 @@ type CustomActivity = Activity & {
 
 interface HeatmapData {
   date: string;
+  count: number; // Přidáno pro kompatibilitu
   total: number;
   correct: number;
   level: number;
@@ -48,15 +48,15 @@ const Heatmap: React.FC<HeatmapProps> = ({ userId }) => {
         }
         const apiResponse: ApiResponse = await response.json();
         
-        const transformedData: CustomActivity[] = apiResponse.data.map(item => ({
-          date: item.date,
-          count: item.level,
-          level: item.level,
-          total: item.total,
-          correct: item.correct,
+        const transformedData = apiResponse.data.map(d => ({
+          date: d.date,
+          count: d.count,     // POVINNÉ
+          level: d.level,     // 0-4, volitelné
+          total: d.total,     // Vlastní data pro tooltip
+          correct: d.correct, // Vlastní data pro tooltip
         }));
 
-        setData(transformedData);
+        setData(transformedData as CustomActivity[]);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Neznámá chyba');
       } finally {
@@ -79,7 +79,7 @@ const Heatmap: React.FC<HeatmapProps> = ({ userId }) => {
     return <div>Zatím žádná aktivita pro zobrazení v heatmapě.</div>;
   }
 
-  const theme = {
+  const myTheme: ThemeInput = {
     light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
     dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
   };
@@ -88,46 +88,14 @@ const Heatmap: React.FC<HeatmapProps> = ({ userId }) => {
     <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
         <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Přehled aktivity</h2>
         <ActivityCalendar
-            data={data}
-            theme={theme}
-            showWeekdayLabels
-            renderBlock={(block: BlockElement, activity: Activity) => {
-                const customActivity = activity as CustomActivity;
-                const successRate = customActivity.total > 0 ? (customActivity.correct / customActivity.total) * 100 : 0;
-                let color = '';
-
-                if (customActivity.level > 0) {
-                    if (successRate >= 90) color = 'hsl(120, 70%, 40%)'; // Green
-                    else if (successRate >= 60) color = 'hsl(45, 80%, 50%)'; // Yellow
-                    else color = 'hsl(0, 70%, 50%)'; // Red
-                } else {
-                    const themeColor = document.documentElement.classList.contains('dark')
-                        ? theme.dark[0]
-                        : theme.light[0];
-                    color = themeColor;
-                }
-
-                const opacity = 0.4 + (customActivity.level * 0.15);
-
-                const style = {
-                    ...block.props.style,
-                    backgroundColor: color,
-                    opacity: customActivity.level > 0 ? opacity : 1,
-                };
-
-                const tooltipContent = `<strong>${new Date(customActivity.date).toLocaleDateString('cs-CZ')}</strong><br />Otázek: ${customActivity.total}<br />Správně: ${customActivity.correct} (${Math.round(successRate)}%)`;
-
-                return (
-                    <div
-                        data-tip={tooltipContent}
-                        data-for="heatmap-tooltip"
-                    >
-                        {React.cloneElement(block, { style })}
-                    </div>
-                );
-            }}
+          data={data}
+          labels={{
+            legend: { less: 'Méně', more: 'Více' },
+            totalCount: '{{count}} otázek v roce {{year}}'
+          }}
+          theme={myTheme}
+          showWeekdayLabels
         />
-        <Tooltip id="heatmap-tooltip" html={true} />
     </div>
   );
 };

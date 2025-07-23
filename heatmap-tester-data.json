@@ -1,0 +1,111 @@
+{
+  "data": [
+    {
+      "date": "2025-06-23",
+      "total": 5,
+      "correct": 4,
+      "level": 1
+    },
+    {
+      "date": "2025-06-24",
+      "total": 12,
+      "correct": 10,
+      "level": 2
+    },
+    {
+      "date": "2025-06-26",
+      "total": 25,
+      "correct": 22,
+      "level": 3
+    },
+    {
+      "date": "2025-06-28",
+      "total": 8,
+      "correct": 8,
+      "level": 1
+    },
+    {
+      "date": "2025-07-01",
+      "total": 15,
+      "correct": 11,
+      "level": 2
+    },
+    {
+      "date": "2025-07-02",
+      "total": 30,
+      "correct": 28,
+      "level": 4
+    },
+    {
+      "date": "2025-07-03",
+      "total": 18,
+      "correct": 15,
+      "level": 3
+    },
+    {
+      "date": "2025-07-05",
+      "total": 3,
+      "correct": 1,
+      "level": 1
+    },
+    {
+      "date": "2025-07-08",
+      "total": 22,
+      "correct": 20,
+      "level": 3
+    },
+    {
+      "date": "2025-07-10",
+      "total": 11,
+      "correct": 9,
+      "level": 2
+    },
+    {
+      "date": "2025-07-11",
+      "total": 14,
+      "correct": 14,
+      "level": 2
+    },
+    {
+      "date": "2025-07-14",
+      "total": 40,
+      "correct": 35,
+      "level": 4
+    },
+    {
+      "date": "2025-07-15",
+      "total": 19,
+      "correct": 12,
+      "level": 3
+    },
+    {
+      "date": "2025-07-18",
+      "total": 7,
+      "correct": 7,
+      "level": 1
+    },
+    {
+      "date": "2025-07-20",
+      "total": 16,
+      "correct": 15,
+      "level": 2
+    },
+    {
+      "date": "2025-07-21",
+      "total": 28,
+      "correct": 25,
+      "level": 4
+    },
+    {
+      "date": "2025-07-22",
+      "total": 10,
+      "correct": 8,
+      "level": 2
+    }
+  ],
+  "thresholds": {
+    "q1": 9,
+    "q2": 17,
+    "q3": 26
+  }
+}

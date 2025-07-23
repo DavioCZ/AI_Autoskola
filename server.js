@@ -749,6 +749,7 @@ app.get("/api/heatmap", async (req, res) => {
                         total: stat.total || 0,
                         correct: stat.correct || 0,
                         level: stat.level ?? 0,
+                        count: stat.total || 0,
                     });
                 }
             });
