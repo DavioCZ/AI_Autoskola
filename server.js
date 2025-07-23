@@ -330,6 +330,7 @@ app.post("/api/save-analysis", async (req, res) => {
             // Increment daily counts
             pipe.hincrby(statsKey, 'total', increments.total);
             pipe.hincrby(statsKey, 'correct', increments.correct);
+            pipe.hincrby(statsKey, 'count', increments.total); // Přidáno pro heatmap
             pipe.expire(statsKey, TWO_YEARS_IN_SECONDS);
         }
         await pipe.exec();
