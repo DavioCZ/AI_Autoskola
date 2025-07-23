@@ -14,6 +14,13 @@ interface Props {
 }
 
 export const Heatmap: React.FC<Props> = ({ payload }) => {
+  // Než se data načtou, payload.data může být prázdné pole.
+  // Komponenta ActivityCalendar by v takovém případě spadla s chybou.
+  // Proto ji renderujeme, až když máme data k dispozici.
+  if (!payload || !payload.data || payload.data.length === 0) {
+    return <p className="text-sm text-gray-500">Načítám aktivitu…</p>;
+  }
+
   const data = payload.data.map((d) => ({
     date:  d.date,
     count: Number(d.count ?? 0),   // knihovna vyžaduje number
