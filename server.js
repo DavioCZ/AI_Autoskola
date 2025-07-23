@@ -296,46 +296,39 @@ app.post("/api/save-analysis", async (req, res) => {
   const analysisKey = `user:${uid}:analysis`;
 
   try {
-    // --- Heatmap Stats Update ---
-    const dailyIncrements = new Map(); // Key: YYYY-MM-DD, Value: { total: number, correct: number }
-
-    entries.forEach(entry => {
-        const date = new Date(entry.answeredAt);
-        const yyyymmdd = date.toISOString().split('T')[0];
-
-        if (!dailyIncrements.has(yyyymmdd)) {
-            dailyIncrements.set(yyyymmdd, { total: 0, correct: 0 });
-        }
-        const dayStats = dailyIncrements.get(yyyymmdd);
-        dayStats.total += 1;
-        if (entry.isCorrect) {
-            dayStats.correct += 1;
-        }
-    });
-
-    if (dailyIncrements.size > 0 && redis) {
+    // --- Statistiky odpovědí (pro heatmapu a denní přehledy) ---
+    if (redis && entries.length > 0) {
         const pipe = redis.pipeline();
         const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
 
-        for (const [yyyymmdd, increments] of dailyIncrements.entries()) {
-            const statsKey = `stats:${uid}:${yyyymmdd}`;
+        // Zpracujeme každou odpověď individuálně, abychom přesně splnili zadání
+        entries.forEach(entry => {
+            const date = new Date(entry.answeredAt);
+            const y = date.getUTCFullYear();
+            const m = date.getUTCMonth(); // 0-11
+            const d = date.getUTCDate();
+            
+            const yyyymmdd = `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+            const key = `stats:${uid}:${yyyymmdd}`;
+            
+            // Unix timestamp půlnoci v UTC, v sekundách
+            const score = Math.floor(Date.UTC(y, m, d) / 1000);
+            
+            // 1. Inkrementace denních statistik
+            pipe.hincrby(key, 'total', 1);
+            pipe.hincrby(key, 'correct', entry.isCorrect ? 1 : 0);
+            pipe.hincrby(key, 'count', 1); // Alias pro 'total' kvůli heatmapě
+            pipe.expire(key, TWO_YEARS_IN_SECONDS);
+
+            // 2. Zaindexování dne pro snadné vyhledávání
             const indexKey = `stats:index:${uid}`;
-            // Použijeme poledne daného dne pro konzistentní timestamp
-            const timestamp = new Date(`${yyyymmdd}T12:00:00Z`).getTime();
-
-            // Add date to sorted set for easy scanning
-            pipe.zadd(indexKey, { score: timestamp, member: yyyymmdd });
+            pipe.zadd(indexKey, { score, member: key });
             pipe.expire(indexKey, TWO_YEARS_IN_SECONDS);
+        });
 
-            // Increment daily counts
-            pipe.hincrby(statsKey, 'total', increments.total);
-            pipe.hincrby(statsKey, 'correct', increments.correct);
-            pipe.hincrby(statsKey, 'count', increments.total); // Přidáno pro heatmap
-            pipe.expire(statsKey, TWO_YEARS_IN_SECONDS);
-        }
         await pipe.exec();
     }
-    // --- End of Heatmap Stats Update ---
+    // --- Konec statistik odpovědí ---
 
     const existingDataRaw = await redis.get(analysisKey);
     const existingData = typeof existingDataRaw === 'string' ? JSON.parse(existingDataRaw) : (existingDataRaw || []);
