@@ -199,6 +199,7 @@
 
 ### 6.6 | Režim Hosta (Guest Mode) - Testování funkcí
 - [ ] **Zpřístupnit pokročilé funkce pro "Host" uživatele v testovacím režimu:**
+    - [x] **Opraveno:** Balíček pro opakování ("Balíček na dnes") se pro hosty neaktualizoval dynamicky. Nyní se přepočítává po každé změně statistik.
     - [ ] Všechny funkce dostupné přihlášeným (Spaced Repetition, Heatmapa, Odznaky atd.) budou pro hosty aktivní.
     - [ ] Veškerá data generovaná v tomto režimu se budou ukládat pouze lokálně do prohlížeče (IndexedDB).
     - [ ] Vizuálně odlišit tento režim podtitulem nebo vodoznakem "Test funkcí", aby bylo jasné, že se nejedná o trvalý postup.
