@@ -9,5 +9,5 @@
     "isolatedModules": false,
     "allowImportingTsExtensions": false
   },
-  "include": ["server.js", "src/badges.ts", "utils/buildAnalysisIndex.js"]
+  "include": ["server.js", "src/badges.js", "src/badges.d.ts", "utils/buildAnalysisIndex.js"]
 }
