@@ -449,9 +449,16 @@ export default function DrivingTestApp() {
             // Lokální logika pro hosta
             loadUserData("Host").then(data => {
                 const guestSummary = data.summaryData;
-                const questionsToReview = Object.values(guestSummary)
+                let questionsToReview = Object.values(guestSummary)
                     .filter(s => s.attempts > 0 && (s.correct / s.attempts) < 0.8)
+                    .sort((a, b) => a.successRate - b.successRate) // Seřadíme od nejhorší úspěšnosti
                     .map(s => s.questionId);
+                
+                // Omezíme na 20 otázek
+                if (questionsToReview.length > 20) {
+                    questionsToReview = questionsToReview.slice(0, 20);
+                }
+                
                 setSpacedRepetitionDeck(questionsToReview);
             });
         }
