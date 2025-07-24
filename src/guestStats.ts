@@ -98,6 +98,9 @@ export async function calculateGuestStats(): Promise<{ stats: Stats; summaryData
     }
   };
 
+  // Nejdříve seřadíme události podle času, abychom měli správnou historii
+  allEvents.sort((a, b) => a.ts - b.ts);
+
   const summaryData: SummaryData = allEvents.reduce((acc, event) => {
     const questionInfo = questionsMap.get(event.qid);
     if (!acc[event.qid]) {
@@ -105,12 +108,26 @@ export async function calculateGuestStats(): Promise<{ stats: Stats; summaryData
         questionId: event.qid,
         questionText: questionInfo?.otazka || "Neznámá otázka",
         groupId: questionInfo?.groupId || 0,
-        attempts: 0, correct: 0, totalTimeToAnswer: 0,
-        history: [], avgTime: 0, successRate: 0
+        attempts: 0,
+        correct: 0,
+        totalTimeToAnswer: 0,
+        history: [],
+        avgTime: 0,
+        successRate: 0,
       };
     }
+
+    // Přidáme záznam do historie odpovědí
+    acc[event.qid].history.push({
+      answeredAt: new Date(event.ts).toISOString(),
+      isCorrect: event.correct,
+      timeToAnswer: 0, // Čas odpovědi pro hosta zatím nesledujeme
+    });
+
     acc[event.qid].attempts++;
-    if (event.correct) acc[event.qid].correct++;
+    if (event.correct) {
+      acc[event.qid].correct++;
+    }
     return acc;
   }, {} as SummaryData);
 

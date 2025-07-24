@@ -1237,24 +1237,25 @@ export default function DrivingTestApp() {
         {userAnalysisData.length > 0 && (
           <footer className="sticky bottom-0 bg-background border-t p-4 shadow-md z-10">
             <div className="w-full max-w-4xl mx-auto text-center">
+              {processedMistakes.filter(m => !m.isCorrected).length > 0 ? (
                 <Button 
                   size="lg" 
                   onClick={startPracticeFromMistakes}
-                  disabled={isLoading || processedMistakes.filter(m => !m.isCorrected).length === 0}
+                  disabled={isLoading}
                   isLoading={isLoading}
                   className="bg-primary hover:bg-primary/90 text-primary-foreground"
                 >
                   <RefreshCcw className="mr-2 h-5 w-5" />
                   {isLoading ? "Připravuji otázky..." : "Vyzkoušet znovu chybné otázky"}
                 </Button>
-                {processedMistakes.filter(m => !m.isCorrected).length === 0 && userAnalysisData.length > 0 && (
-                  <div className="mt-4 text-center text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 p-4 rounded-lg flex items-center justify-center gap-3">
-                    <CheckCircle2 size={24} />
-                    <p className="font-semibold text-lg">
-                      Skvělá práce! Všechny své chyby jste si již opravili.
-                    </p>
-                  </div>
-                )}
+              ) : (
+                <div className="mt-4 text-center text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 p-4 rounded-lg flex items-center justify-center gap-3">
+                  <CheckCircle2 size={24} />
+                  <p className="font-semibold text-lg">
+                    Skvělá práce! Všechny své chyby jste si již opravili.
+                  </p>
+                </div>
+              )}
             </div>
           </footer>
         )}
