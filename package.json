@@ -9,6 +9,7 @@
     "dev:backend": "node server.js",
     "build:server": "npx tsc -p tsconfig.server.json",
     "build": "npm run build:server && vite build",
+    "postbuild": "mkdir -p build/src && cp src/badges.js build/src/badges.js && cp src/badges.d.ts build/src/badges.d.ts",
     "preview": "vite preview",
     "server": "node build/server.js",
     "start": "concurrently \"npm run dev\" \"npm run server\"",

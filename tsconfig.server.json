@@ -7,13 +7,7 @@
     "moduleResolution": "NodeNext",
     "allowJs": true,
     "isolatedModules": false,
-    "allowImportingTsExtensions": false,
-    "rootDir": "."
+    "allowImportingTsExtensions": false
   },
-  "include": [
-    "server.js",
-    "src/**/*.js",
-    "src/**/*.d.ts",
-    "utils/**/*.js"
-  ]
+  "include": ["server.js", "utils/buildAnalysisIndex.js"]
 }
