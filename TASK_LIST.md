@@ -165,7 +165,7 @@
 - [ ] **Přidat nové vizualizace a personalizované učení:**
 - [ ] heatmapa
     - [x] **2. Spaced-repetition balíčky (pro otázky < 80 % úspěšnosti):**
-        - [x] **Výběr otázek (Vylepšená logika):** Implementována víceúrovňová logika na serveru (`/api/spaced-repetition-deck`):
+        - [ ] **Výběr otázek (Vylepšená logika):** Implementována víceúrovňová logika na serveru (`/api/spaced-repetition-deck`):
             - **Priorita 1:** Otázky s úspěšností < 80 % (při >= 2 pokusech).
             - **Priorita 2:** Otázky z nejméně úspěšných okruhů.
             - **Priorita 3:** Náhodné otázky pro doplnění balíčku na 20 položek.
@@ -196,6 +196,13 @@
 - [x] **Implementovat export a migraci dat:**
     - [x] Umožnit stažení uživatelských dat ve formátu JSON/CSV.
     - [x] Vytvořit workflow pro přenos dat hosta na přihlášený účet pomocí QR kódu.
+
+### 6.6 | Režim Hosta (Guest Mode) - Testování funkcí
+- [ ] **Zpřístupnit pokročilé funkce pro "Host" uživatele v testovacím režimu:**
+    - [ ] Všechny funkce dostupné přihlášeným (Spaced Repetition, Heatmapa, Odznaky atd.) budou pro hosty aktivní.
+    - [ ] Veškerá data generovaná v tomto režimu se budou ukládat pouze lokálně do prohlížeče (IndexedDB).
+    - [ ] Vizuálně odlišit tento režim podtitulem nebo vodoznakem "Test funkcí", aby bylo jasné, že se nejedná o trvalý postup.
+    - [ ] Po přihlášení nebo registraci se lokální data nesynchronizují, aby nedošlo ke konfliktu s daty na serveru.
 
 ---
 

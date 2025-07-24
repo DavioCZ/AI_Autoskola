@@ -140,8 +140,8 @@ async function loadUserData(currentUser: string | null): Promise<UserData & { st
         mode: 'practice',
       }));
       // Pro hosta načteme statistiky z lokálního úložiště
-      const guestStats = await calculateGuestStats();
-      return { analysisData, unlockedBadges: [], summaryData: {}, stats: guestStats };
+      const { stats: guestStats, summaryData: guestSummary, unlockedBadges: guestBadges } = await calculateGuestStats();
+      return { analysisData, unlockedBadges: guestBadges, summaryData: guestSummary, stats: guestStats };
     } catch (error) {
       console.error("Could not get user data from IndexedDB:", error);
       return { analysisData: [], unlockedBadges: [], summaryData: {}, stats: DEFAULT_STATS };
@@ -445,6 +445,15 @@ export default function DrivingTestApp() {
           } catch (error) {
             console.error("Failed to fetch spaced repetition deck:", error);
           }
+        } else if (currentUser === "Host") {
+            // Lokální logika pro hosta
+            loadUserData("Host").then(data => {
+                const guestSummary = data.summaryData;
+                const questionsToReview = Object.values(guestSummary)
+                    .filter(s => s.attempts > 0 && (s.correct / s.attempts) < 0.8)
+                    .map(s => s.questionId);
+                setSpacedRepetitionDeck(questionsToReview);
+            });
         }
       };
       fetchDeck();
@@ -811,6 +820,7 @@ export default function DrivingTestApp() {
               <Card>
                   <CardHeader>
                       <h3 className="font-semibold">Balíček na dnes</h3>
+                      {currentUser === "Host" && <p className="text-xs text-blue-500 font-bold">Test funkcí</p>}
                   </CardHeader>
                   <CardContent>
                       <p className="text-sm text-muted-foreground mb-4">
@@ -846,14 +856,19 @@ export default function DrivingTestApp() {
                       </Button>
                   </CardContent>
               </Card>
-              <WeakestTopics 
-                summaryData={summaryData} 
-                onPracticeTopic={async (groupId: number) => {
-                  setIsLoading(true);
-                  await initiateTest('practice', [groupId]);
-                  setIsLoading(false);
-                }} 
-              />
+              <div className="relative">
+                {currentUser === "Host" && 
+                  <div className="absolute top-4 right-4 text-xs text-blue-500 font-bold z-10">Test funkcí</div>
+                }
+                <WeakestTopics 
+                  summaryData={summaryData} 
+                  onPracticeTopic={async (groupId: number) => {
+                    setIsLoading(true);
+                    await initiateTest('practice', [groupId]);
+                    setIsLoading(false);
+                  }} 
+                />
+              </div>
           </div>
 
           <div className="mt-16">
@@ -919,7 +934,12 @@ export default function DrivingTestApp() {
               </CardContent>
             </Card>
             
-            <BadgesDisplay unlockedBadges={unlockedBadges} />
+            <div className="relative">
+              {currentUser === "Host" && unlockedBadges.length > 0 &&
+                  <div className="absolute top-4 right-4 text-xs text-blue-500 font-bold z-10">Test funkcí</div>
+              }
+              <BadgesDisplay unlockedBadges={unlockedBadges} />
+            </div>
             {currentUser === "Host" && (
               <div className="mt-8 text-center">
                 <Button variant="outline" onClick={async () => {
