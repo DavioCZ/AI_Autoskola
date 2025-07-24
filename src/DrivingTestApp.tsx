@@ -804,7 +804,12 @@ export default function DrivingTestApp() {
                   <span className="font-normal text-sm text-muted-foreground mt-1">Zobrazit všechny otázky podle okruhů</span>
               </Button>
             </div>
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 relative overflow-hidden">
+                {currentUser === "Host" && (
+                    <div className="absolute inset-0 flex items-center justify-center z-0">
+                        <p className="text-6xl font-black text-blue-500/10 dark:text-blue-400/10 transform -rotate-12 select-none">Test funkcí</p>
+                    </div>
+                )}
               <Button size="lg" variant="secondary" className="w-full h-auto py-6 text-base flex-col" onClick={() => { setPhase("analysis"); }}>
                   <div className="flex items-center">
                       <FileText className="mr-2 h-5 w-5" />
