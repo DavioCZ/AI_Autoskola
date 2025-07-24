@@ -609,6 +609,12 @@ export default function DrivingTestApp() {
     }
   }
 
+  const endPracticeAndGoHome = async () => {
+    await commitSessionAnalysis();
+    await calculateAndSavePracticeStats();
+    setPhase("intro");
+  };
+
   async function finishExam() {
     // Okamžitě se pokusíme odeslat data z dokončené session
     await commitSessionAnalysis();
@@ -1427,10 +1433,7 @@ export default function DrivingTestApp() {
               }
             } else {
               // U procvičování (včetně prohlížení) rovnou ukončíme a uložíme statistiky, pak se vrátíme na úvod
-              commitSessionAnalysis().then(() => {
-                calculateAndSavePracticeStats();
-                setPhase("intro");
-              });
+              endPracticeAndGoHome();
             }
           }}
         />
@@ -1451,10 +1454,7 @@ export default function DrivingTestApp() {
                   }
                 } else {
                   // U procvičování rovnou ukončíme a uložíme statistiky
-                  commitSessionAnalysis().then(() => {
-                    calculateAndSavePracticeStats();
-                    setPhase("intro");
-                  });
+                  endPracticeAndGoHome();
                 }
               }}>
               &larr; {originPhase === 'browse' ? 'Zpět na výběr otázek' : 'Zpět na hlavní stránku'}
@@ -1654,13 +1654,7 @@ export default function DrivingTestApp() {
                   {mode === 'practice' && originPhase !== 'browse' && (
                      <Button
                       variant="destructive"
-                      onClick={() => {
-                        // U procvičování se neptáme a rovnou ukládáme a končíme.
-                        commitSessionAnalysis().then(() => {
-                          calculateAndSavePracticeStats();
-                          setPhase("intro");
-                        });
-                      }}>
+                      onClick={endPracticeAndGoHome}>
                       Ukončit
                     </Button>
                   )}
@@ -1760,12 +1754,7 @@ export default function DrivingTestApp() {
           {mode === 'practice' && originPhase !== 'browse' && (
              <Button
               variant="destructive"
-              onClick={() => {
-                commitSessionAnalysis().then(() => {
-                  calculateAndSavePracticeStats();
-                  setPhase("intro");
-                });
-              }}>
+              onClick={endPracticeAndGoHome}>
               Ukončit
             </Button>
           )}
