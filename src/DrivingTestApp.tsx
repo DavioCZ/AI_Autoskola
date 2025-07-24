@@ -261,7 +261,7 @@ function TopNav({
                     </>
                   )}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => onSetCurrentUser(null)} className="text-destructive focus:text-destructive">
+                <DropdownMenuItem onClick={() => onSetCurrentUser(null)} className="text-red-600 dark:text-red-400 focus:text-red-700 dark:focus:text-red-500">
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Odhlásit se</span>
                 </DropdownMenuItem>
@@ -671,7 +671,7 @@ export default function DrivingTestApp() {
 
   useEffect(() => {
     if (phase === "test") {
-        setMessages([{ role: "assistant", text: `Jsem připraven zodpovědět tvé dotazy k otázce: "${q?.otazka}"` }]);
+        setMessages([{ role: "assistant", text: `Jsem připraven zodpovědět tvé dotazy k otázce.` }]);
         setDraft("");
     } else if (phase === "intro" || phase === "setup") {
         setMessages([{ role: "assistant", text: "Ahoj! Zeptej se na cokoliv k testu nebo si vyber režim." }]);
