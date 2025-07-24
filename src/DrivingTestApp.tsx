@@ -27,7 +27,6 @@ import { useAi, ChatMessage } from "@/src/hooks/useAi";
 import { UnlockedBadge } from "@/src/badges";
 import { BadgesDisplay } from "@/src/components/Badges";
 import WeakestTopics from "@/src/components/WeakestTopics";
-import { Heatmap, HeatPayload } from "@/src/components/Heatmap"; // Import heatmapy
 import { db, Event as DbEvent, cleanupExpiredEvents } from "@/src/db";
 import { getGuestSessionId } from "@/src/session";
 import { Stats, DEFAULT_STATS, getTodayDateString, DEFAULT_PROGRESS_STATS } from "@/src/dataModels";
@@ -396,7 +395,6 @@ export default function DrivingTestApp() {
     return saved ? JSON.parse(saved) : true;
   });
   const [spacedRepetitionDeck, setSpacedRepetitionDeck] = useState<string[]>([]);
-  const [heatmapData, setHeatmapData] = useState<HeatPayload>({ data: [] });
 
   useEffect(() => {
     localStorage.setItem("autoskola-showAiTutorInExam", JSON.stringify(showAiTutorInExam));
@@ -436,14 +434,6 @@ export default function DrivingTestApp() {
         setSummaryData(data.summaryData);
         setStats(data.stats);
       });
-
-      // Načtení dat pro heatmapu
-      if (currentUser !== "Host") {
-        fetch(`/api/heatmap?userId=${encodeURIComponent(currentUser)}`)
-          .then(res => res.json())
-          .then(data => setHeatmapData(data))
-          .catch(err => console.error("Failed to load heatmap data", err));
-      }
 
       // Načtení balíčku pro opakování
       const fetchDeck = async () => {
@@ -934,12 +924,6 @@ export default function DrivingTestApp() {
               </CardContent>
             </Card>
             
-            {currentUser !== "Host" && (
-              <div className="mt-8">
-                <Heatmap payload={heatmapData} />
-              </div>
-            )}
-
             <BadgesDisplay unlockedBadges={unlockedBadges} />
             {currentUser === "Host" && (
               <div className="mt-8 text-center">

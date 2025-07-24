@@ -1,11 +1,4 @@
-export interface Badge {
-  id: string;
-  name: string;
-  description: string;
-  icon: string; // Emoji or icon name
-}
-
-export const allBadges: Badge[] = [
+export const allBadges = [
   {
     id: 'first_test_completed',
     name: 'Zkušební jezdec',
@@ -43,8 +36,3 @@ export const allBadges: Badge[] = [
     icon: '🚦',
   },
 ];
-
-export type UnlockedBadge = {
-  id: string;
-  unlockedAt: string; // ISO date string
-};

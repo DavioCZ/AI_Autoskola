@@ -296,39 +296,7 @@ app.post("/api/save-analysis", async (req, res) => {
   const analysisKey = `user:${uid}:analysis`;
 
   try {
-    // --- Statistiky odpovědí (pro heatmapu a denní přehledy) ---
-    if (redis && entries.length > 0) {
-        const pipe = redis.pipeline();
-        const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
-
-        // Zpracujeme každou odpověď individuálně, abychom přesně splnili zadání
-        entries.forEach(entry => {
-            const date = new Date(entry.answeredAt);
-            const y = date.getUTCFullYear();
-            const m = date.getUTCMonth(); // 0-11
-            const d = date.getUTCDate();
-            
-            const yyyymmdd = `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-            const key = `stats:${uid}:${yyyymmdd}`;
-            
-            // Unix timestamp půlnoci v UTC, v sekundách
-            const score = Math.floor(Date.UTC(y, m, d) / 1000);
-            
-            // 1. Inkrementace denních statistik
-            pipe.hincrby(key, 'total', 1);
-            pipe.hincrby(key, 'correct', entry.isCorrect ? 1 : 0);
-            pipe.hincrby(key, 'count', 1); // Alias pro 'total' kvůli heatmapě
-            pipe.expire(key, TWO_YEARS_IN_SECONDS);
-
-            // 2. Zaindexování dne pro snadné vyhledávání
-            const indexKey = `stats:index:${uid}`;
-            pipe.zadd(indexKey, { score, member: key });
-            pipe.expire(indexKey, TWO_YEARS_IN_SECONDS);
-        });
-
-        await pipe.exec();
-    }
-    // --- Konec statistik odpovědí ---
+    // Zde byla odstraněna logika pro statistiky odpovědí (dříve pro heatmapu)
 
     const existingDataRaw = await redis.get(analysisKey);
     const existingData = typeof existingDataRaw === 'string' ? JSON.parse(existingDataRaw) : (existingDataRaw || []);
@@ -630,106 +598,7 @@ app.post("/api/claim-guest-data", async (req, res) => {
 
 // Vision API and downloadAndEncode helper are removed.
 
-// --- Heatmap-related Functions ---
-
-/**
- * Recalculates and caches the heatmap data for a specific user.
- * Fetches the last 365 days of activity from Redis, processes it,
- * and stores the result back in Redis.
- * @param {string} uid - The user ID.
- */
-const recalcHeatmap = async (uid) => {
-  const indexKey = `stats:index:${uid}`;
-
-  // Get the keys for the last 365 days
-  const dayKeys = await redis.zrange(indexKey, -365, -1);
-  if (!dayKeys || dayKeys.length === 0) {
-    console.log(`No daily keys found for user ${uid}. Skipping heatmap recalc.`);
-    return; // No data to process
-  }
-
-  // Fetch all hash data in a single pipeline for efficiency
-  const pipeline = redis.pipeline();
-  dayKeys.forEach(key => pipeline.hgetall(key));
-  const rows = await pipeline.exec();
-
-  const data = dayKeys.map((key, i) => {
-    const rowData = rows[i];
-    // If a key expired between ZRANGE and HGETALL, rowData might be null
-    if (!rowData) return null;
-
-    const total = Number(rowData.total) || 0;
-    const correct = Number(rowData.correct) || 0;
-    // 'count' is the primary field; fallback to 'total' for backward compatibility
-    const count = Number(rowData.count) || total;
-    const date = key.split(':').pop(); // Extract YYYY-MM-DD from the key
-
-    // Calculate performance level, avoiding division by zero
-    const level = total > 0 ? Math.min(4, Math.ceil((correct / total) * 4)) : 0;
-
-    return { date, total, correct, count, level };
-  }).filter(d => d && d.count > 0); // Filter out days with no activity
-
-  // If all days had zero activity, don't create an empty heatmap
-  if (data.length === 0) {
-    console.log(`No activity data found for user ${uid} in the last 365 days.`);
-    return;
-  }
-
-  const heatKey = `heatmap:${uid}:365`;
-  const lastRecalcKey = `heatmap:${uid}:lastRecalc`;
-
-  // Atomically set the new heatmap data and the last recalculation timestamp
-  await redis
-    .multi()
-    .set(heatKey, JSON.stringify({ data }), { ex: 86400 }) // Cache for 24 hours
-    .set(lastRecalcKey, Date.now())
-    .exec();
-  
-  console.log(`Heatmap recalculated and cached for user ${uid}.`);
-};
-
-
-app.get("/api/heatmap", async (req, res) => {
-    const { userId, days = 365 } = req.query;
-    if (!userId) {
-        return res.status(400).json({ error: "User ID is required." });
-    }
-    const uid = userId.toLowerCase();
-
-    try {
-        const cacheKey = `heatmap:${uid}:${days}`;
-        const lastRecalcKey = `heatmap:${uid}:lastRecalc`;
-
-        // 1. Check for cached data and when it was last recalculated
-        const [cachedDataRaw, lastRecalc] = await redis.mget(cacheKey, lastRecalcKey);
-
-        // Recalculate if data is missing or older than 24 hours
-        const isRecalcNeeded = !cachedDataRaw || !lastRecalc || (Date.now() - parseInt(lastRecalc, 10)) > 24 * 60 * 60 * 1000;
-
-        if (cachedDataRaw && !isRecalcNeeded) {
-            return res.json(JSON.parse(cachedDataRaw));
-        }
-
-        // 2. If needed, trigger the recalculation
-        await recalcHeatmap(uid);
-
-        // 3. Fetch the newly calculated data (or the old one if recalc produced nothing)
-        const freshDataRaw = await redis.get(cacheKey);
-
-        if (freshDataRaw) {
-            res.json(JSON.parse(freshDataRaw));
-        } else {
-            // If there's no data even after a recalc attempt, it means the user has no activity.
-            // Return a valid structure with empty data.
-            res.json({ data: [] });
-        }
-
-    } catch (error) {
-        console.error(`Error fetching heatmap for user ${uid}:`, error);
-        res.status(500).json({ error: "Failed to fetch heatmap data." });
-    }
-});
+// --- Heatmap-related Functions (REMOVED) ---
 
 
 /**
