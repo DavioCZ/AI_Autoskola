@@ -26,7 +26,7 @@ import clsx from "clsx";
 import { useAi, ChatMessage } from "@/src/hooks/useAi";
 import { UnlockedBadge } from "@/src/badges";
 import { BadgesDisplay } from "@/src/components/Badges";
-import WeakestTopics from "@/src/components/WeakestTopics";
+import WeakestTopics from "./components/WeakestTopics";
 import { db, Event as DbEvent, cleanupExpiredEvents } from "@/src/db";
 import { getGuestSessionId } from "@/src/session";
 import { Stats, DEFAULT_STATS, getTodayDateString, DEFAULT_PROGRESS_STATS } from "@/src/dataModels";
@@ -817,10 +817,14 @@ export default function DrivingTestApp() {
 
           {/* Spaced Repetition a Slabá místa */}
           <div className="mt-8 max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card>
+              <Card className="relative overflow-hidden">
+                  {currentUser === "Host" && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="text-5xl font-black text-blue-500/10 dark:text-blue-400/10 transform -rotate-12 select-none">Test funkcí</p>
+                    </div>
+                  )}
                   <CardHeader>
                       <h3 className="font-semibold">Balíček na dnes</h3>
-                      {currentUser === "Host" && <p className="text-xs text-blue-500 font-bold">Test funkcí</p>}
                   </CardHeader>
                   <CardContent>
                       <p className="text-sm text-muted-foreground mb-4">
@@ -856,10 +860,12 @@ export default function DrivingTestApp() {
                       </Button>
                   </CardContent>
               </Card>
-              <div className="relative">
-                {currentUser === "Host" && 
-                  <div className="absolute top-4 right-4 text-xs text-blue-500 font-bold z-10">Test funkcí</div>
-                }
+              <div className="relative overflow-hidden">
+                {currentUser === "Host" && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="text-5xl font-black text-blue-500/10 dark:text-blue-400/10 transform -rotate-12 select-none">Test funkcí</p>
+                    </div>
+                )}
                 <WeakestTopics 
                   summaryData={summaryData} 
                   onPracticeTopic={async (groupId: number) => {
@@ -934,10 +940,12 @@ export default function DrivingTestApp() {
               </CardContent>
             </Card>
             
-            <div className="relative">
-              {currentUser === "Host" && unlockedBadges.length > 0 &&
-                  <div className="absolute top-4 right-4 text-xs text-blue-500 font-bold z-10">Test funkcí</div>
-              }
+            <div className="relative overflow-hidden">
+              {currentUser === "Host" && unlockedBadges.length > 0 && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <p className="text-6xl font-black text-blue-500/10 dark:text-blue-400/10 transform -rotate-12 select-none">Test funkcí</p>
+                  </div>
+              )}
               <BadgesDisplay unlockedBadges={unlockedBadges} />
             </div>
             {currentUser === "Host" && (

@@ -46,32 +46,34 @@ const WeakestTopics = ({ summaryData, onPracticeTopic }: WeakestTopicsProps) => 
     .sort((a, b) => a.avgSuccess - b.avgSuccess)
     .slice(0, 3);
 
-  if (topics.length === 0) {
-    return null; // Nezobrazovat nic, pokud nejsou žádná slabá místa
-  }
-
   return (
     <Card>
       <CardHeader>
         <h3 className="font-semibold">Slabá místa</h3>
       </CardHeader>
       <CardContent className="space-y-4">
-        {topics.map(({ groupId, avgSuccess }) => {
-          const Icon = ICONS[groupId];
-          return (
-            <div key={groupId} className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                {Icon && <Icon size={16} className="text-muted-foreground" />}
-                <span className="text-sm font-medium">Okruh {groupId}</span>
+        {topics.length > 0 ? (
+          topics.map(({ groupId, avgSuccess }) => {
+            const Icon = ICONS[groupId];
+            return (
+              <div key={groupId} className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  {Icon && <Icon size={16} className="text-muted-foreground" />}
+                  <span className="text-sm font-medium">Okruh {groupId}</span>
+                </div>
+                <div className="flex items-center gap-2 w-1/2">
+                  <Progress value={avgSuccess} className="h-2" />
+                  <span className="text-xs text-muted-foreground">{avgSuccess.toFixed(0)}%</span>
+                  <Button size="sm" variant="ghost" onClick={() => onPracticeTopic(groupId)}>Procvičit</Button>
+                </div>
               </div>
-              <div className="flex items-center gap-2 w-1/2">
-                <Progress value={avgSuccess} className="h-2" />
-                <span className="text-xs text-muted-foreground">{avgSuccess.toFixed(0)}%</span>
-                <Button size="sm" variant="ghost" onClick={() => onPracticeTopic(groupId)}>Procvičit</Button>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <p className="text-sm text-muted-foreground text-center py-4">
+            Zatím nemáte žádná slabá místa. Jen tak dál!
+          </p>
+        )}
       </CardContent>
     </Card>
   );
