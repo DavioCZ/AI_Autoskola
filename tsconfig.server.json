@@ -10,5 +10,10 @@
     "allowImportingTsExtensions": false,
     "rootDir": "."
   },
-  "include": ["server.js", "src/badges.js", "src/badges.d.ts", "utils/buildAnalysisIndex.js"]
+  "include": [
+    "server.js",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "utils/**/*.js"
+  ]
 }
