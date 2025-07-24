@@ -7,7 +7,8 @@
     "moduleResolution": "NodeNext",
     "allowJs": true,
     "isolatedModules": false,
-    "allowImportingTsExtensions": false
+    "allowImportingTsExtensions": false,
+    "rootDir": "."
   },
   "include": ["server.js", "src/badges.js", "src/badges.d.ts", "utils/buildAnalysisIndex.js"]
 }
