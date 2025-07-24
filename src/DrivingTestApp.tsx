@@ -451,6 +451,19 @@ export default function DrivingTestApp() {
     }
   }, [currentUser]);
 
+  // Efekt pro znovunačtení dat při návratu na hlavní obrazovku
+  useEffect(() => {
+    if (phase === 'intro' && currentUser) {
+      console.log("[Phase Change] Intro screen loaded, refetching all user data.");
+      loadUserData(currentUser).then(data => {
+        setAnalysisData(data.analysisData);
+        setUnlockedBadges(data.unlockedBadges);
+        setSummaryData(data.summaryData);
+        setStats(data.stats);
+      });
+    }
+  }, [phase, currentUser]);
+
   async function fetchGroup(gid: number): Promise<Question[]> {
     const g = GROUPS.find((gr) => gr.id === gid)!;
     const res = await fetch(g.file);
@@ -555,17 +568,6 @@ export default function DrivingTestApp() {
     return () => clearInterval(id);
   }, [timeLeft, phase]);
 
-  async function calculateAndSavePracticeStats() {
-    if (!currentUser || currentUser === "Host") {
-        // Pro hosta se statistiky počítají a ukládají lokálně při každém načtení
-        const guestStats = await calculateGuestStats();
-        setStats(guestStats);
-        return;
-    }
-    // Pro přihlášené uživatele se data jen odešlou, server je přepočítá při dalším načtení
-    console.log("Practice stats for logged-in user will be recalculated on next data load.");
-  }
-
   async function commitSessionAnalysis() {
     console.log("[commitSessionAnalysis] Starting.");
     const entries: AnalysisEntry[] = [];
@@ -611,7 +613,6 @@ export default function DrivingTestApp() {
 
   const endPracticeAndGoHome = async () => {
     await commitSessionAnalysis();
-    await calculateAndSavePracticeStats();
     setPhase("intro");
   };
 
@@ -619,20 +620,8 @@ export default function DrivingTestApp() {
     // Okamžitě se pokusíme odeslat data z dokončené session
     await commitSessionAnalysis();
     setPhase("done");
-
-    // Po odeslání dat znovu načteme všechna data ze serveru,
-    // včetně nově vypočítaných statistik.
-    if (currentUser && currentUser !== "Host") {
-        loadUserData(currentUser).then(data => {
-            setAnalysisData(data.analysisData);
-            setUnlockedBadges(data.unlockedBadges);
-            setSummaryData(data.summaryData);
-            setStats(data.stats);
-        });
-    } else if (currentUser === "Host") {
-        // Pro hosta přepočítáme lokálně
-        await calculateAndSavePracticeStats();
-    }
+    // Znovunačtení dat je nyní řízeno useEffectem, který reaguje na změnu `phase` na `intro`,
+    // když se uživatel vrátí z obrazovky s výsledky.
   }
 
   const sendMsg = async () => {
