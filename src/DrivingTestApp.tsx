@@ -261,7 +261,7 @@ function TopNav({
                     </>
                   )}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => onSetCurrentUser(null)}>
+                <DropdownMenuItem onClick={() => onSetCurrentUser(null)} className="text-destructive focus:text-destructive">
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Odhlásit se</span>
                 </DropdownMenuItem>
@@ -848,7 +848,7 @@ export default function DrivingTestApp() {
               </Card>
               <WeakestTopics 
                 summaryData={summaryData} 
-                onPracticeTopic={async (groupId) => {
+                onPracticeTopic={async (groupId: number) => {
                   setIsLoading(true);
                   await initiateTest('practice', [groupId]);
                   setIsLoading(false);
@@ -1147,7 +1147,7 @@ export default function DrivingTestApp() {
                     </div>
                     <div className="flex items-center gap-1 bg-muted p-1 rounded-md">
                       <Button 
-                        variant={mistakesFilter === 'all' ? 'secondary' : 'ghost'} 
+                        variant={mistakesFilter === 'all' ? 'default' : 'ghost'} 
                         size="sm" 
                         onClick={() => setMistakesFilter('all')}
                         className="text-xs h-7"
@@ -1155,7 +1155,7 @@ export default function DrivingTestApp() {
                         Všechny
                       </Button>
                       <Button 
-                        variant={mistakesFilter === 'uncorrected' ? 'secondary' : 'ghost'} 
+                        variant={mistakesFilter === 'uncorrected' ? 'default' : 'ghost'} 
                         size="sm" 
                         onClick={() => setMistakesFilter('uncorrected')}
                         className="text-xs h-7"
@@ -1276,7 +1276,7 @@ export default function DrivingTestApp() {
                                         setBrowseState("questions");
                                         setIsLoading(false);
                                     }}
-                                    onKeyDown={async (e) => {
+                                    onKeyDown={async (e: React.KeyboardEvent) => {
                                       if (e.key === 'Enter' || e.key === ' ') {
                                         e.preventDefault();
                                         setIsLoading(true);
@@ -1322,7 +1322,7 @@ export default function DrivingTestApp() {
                                         setOriginPhase("browse"); // Remember where we came from
                                         setPhase("test");
                                     }}
-                                    onKeyDown={(e) => {
+                                    onKeyDown={(e: React.KeyboardEvent) => {
                                       if (e.key === 'Enter' || e.key === ' ') {
                                         e.preventDefault();
                                         setCurrent(index);
