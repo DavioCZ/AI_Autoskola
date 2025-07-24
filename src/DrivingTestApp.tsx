@@ -366,7 +366,7 @@ export default function DrivingTestApp() {
   const [phase, setPhase] = useState<"intro" | "setup" | "test" | "done" | "browse" | "analysis">("intro");
   const [browseState, setBrowseState] = useState<"groups" | "questions">("groups");
   const [originPhase, setOriginPhase] = useState<"intro" | "browse" | "analysis">("intro");
-  const [examMode, setExamMode] = useState(true);
+  const [mode, setMode] = useState<'exam' | 'practice'>('exam');
   const [selectedGroups, setSelected] = useState<number[]>(GROUPS.map((g) => g.id));
   const [questions, setQuestions] = useState<Question[]>([]);
   const [current, setCurrent] = useState(0);
@@ -524,25 +524,25 @@ export default function DrivingTestApp() {
     return result;
   }
 
-  const initiateTest = async (isExam: boolean, groups: number[], questionsOverride?: Question[]) => {
+  const initiateTest = async (newMode: 'exam' | 'practice', groups: number[], questionsOverride?: Question[]) => {
     setIsLoading(true);
     setOriginPhase("intro");
-    setExamMode(isExam);
-    const qs = questionsOverride ?? (isExam ? await buildExam() : await buildPractice(groups));
+    setMode(newMode);
+    const qs = questionsOverride ?? (newMode === 'exam' ? await buildExam() : await buildPractice(groups));
     setQuestions(qs);
     setCurrent(0);
     setResponses({});
-    if (!isExam) {
+    if (newMode === 'practice') {
       setPracticeFirstAttempts({});
     }
     setSessionAnalysis({});
     setPhase("test");
-    setTimeLeft(isExam ? OSTRY_TIME : null);
+    setTimeLeft(newMode === 'exam' ? OSTRY_TIME : null);
     setIsLoading(false);
   };
 
   const startTest = async () => {
-    await initiateTest(examMode, selectedGroups);
+    await initiateTest(mode, selectedGroups);
   };
 
   useEffect(() => {
@@ -597,7 +597,7 @@ export default function DrivingTestApp() {
         timeToAnswer: sessionData.timeToAnswer,
         isFirstAttemptCorrect: sessionData.firstAttemptCorrect,
         isCorrect: finalAnswerIndex === question.spravna,
-        mode: examMode ? 'exam' : 'practice',
+        mode: mode,
       });
     }
     console.log("[commitSessionAnalysis] Compiled entries:", entries);
@@ -777,14 +777,14 @@ export default function DrivingTestApp() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <Button size="lg" className="w-full h-auto py-8 text-lg flex-col bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg" onClick={() => { setExamMode(true); setPhase("setup"); }}>
+            <Button size="lg" className="w-full h-auto py-8 text-lg flex-col bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg" onClick={() => { setMode('exam'); setPhase("setup"); }}>
               <div className="flex items-center">
                 <span className="text-2xl mr-3">⏱️</span>
                 <span className="font-bold">Ostrý test</span>
               </div>
               <span className="font-normal text-sm text-primary-foreground/80 mt-1.5">Časomíra, 25 otázek, 50 bodů</span>
             </Button>
-            <Button size="lg" variant="outline" className="w-full h-auto py-8 text-lg flex-col border-2" onClick={() => { setExamMode(false); setPhase("setup"); }}>
+            <Button size="lg" variant="outline" className="w-full h-auto py-8 text-lg flex-col border-2" onClick={() => { setMode('practice'); setPhase("setup"); }}>
                <div className="flex items-center">
                 <span className="text-2xl mr-3">📚</span>
                 <span className="font-semibold">Procvičování</span>
@@ -840,7 +840,7 @@ export default function DrivingTestApp() {
                             questionsForPractice = questionsForPractice.slice(0, 20);
                           }
 
-                          await initiateTest(false, [], questionsForPractice);
+                          await initiateTest('practice', [], questionsForPractice);
                           setIsLoading(false);
                       }}>
                           {(() => {
@@ -855,7 +855,7 @@ export default function DrivingTestApp() {
                 summaryData={summaryData} 
                 onPracticeTopic={async (groupId) => {
                   setIsLoading(true);
-                  await initiateTest(false, [groupId]);
+                  await initiateTest('practice', [groupId]);
                   setIsLoading(false);
                 }} 
               />
@@ -1044,7 +1044,7 @@ export default function DrivingTestApp() {
         [questionsForPractice[i], questionsForPractice[j]] = [questionsForPractice[j], questionsForPractice[i]];
       }
 
-      await initiateTest(false, [], questionsForPractice);
+      await initiateTest('practice', [], questionsForPractice);
       setIsLoading(false);
     };
 
@@ -1125,7 +1125,7 @@ export default function DrivingTestApp() {
                                 size="sm"
                                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                                 onClick={async () => {
-                                  await initiateTest(false, [group.id], undefined);
+                                  await initiateTest('practice', [group.id], undefined);
                                 }}
                                 disabled={isLoading}
                                 isLoading={isLoading}
@@ -1321,7 +1321,7 @@ export default function DrivingTestApp() {
                                     className="p-3 border rounded-md hover:bg-muted/50 cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                                     onClick={() => {
                                         setCurrent(index);
-                                        setExamMode(false); // Use practice UI
+                                        setMode('practice'); // Use practice UI
                                         setResponses({});
                                         setPracticeFirstAttempts({});
                                         setOriginPhase("browse"); // Remember where we came from
@@ -1331,7 +1331,7 @@ export default function DrivingTestApp() {
                                       if (e.key === 'Enter' || e.key === ' ') {
                                         e.preventDefault();
                                         setCurrent(index);
-                                        setExamMode(false); // Use practice UI
+                                        setMode('practice'); // Use practice UI
                                         setResponses({});
                                         setPracticeFirstAttempts({});
                                         setOriginPhase("browse"); // Remember where we came from
@@ -1356,7 +1356,7 @@ export default function DrivingTestApp() {
       <>
         <SettingsModal />
         <TopNav 
-          label={examMode ? "Příprava na ostrý test" : "Nastavení procvičování"} 
+          label={mode === 'exam' ? "Příprava na ostrý test" : "Nastavení procvičování"} 
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
@@ -1368,8 +1368,8 @@ export default function DrivingTestApp() {
                   &larr; Zpět na hlavní stránku
               </Button>
           </div>
-          <h2 className="text-2xl font-semibold mb-6 text-center">{examMode ? "Ostrý test" : "Procvičování"}</h2>
-          {!examMode && (
+          <h2 className="text-2xl font-semibold mb-6 text-center">{mode === 'exam' ? "Ostrý test" : "Procvičování"}</h2>
+          {mode === 'practice' && (
             <div className="mb-6 space-y-3">
               <h3 className="font-medium mb-2">Vyberte okruhy otázek:</h3>
               {GROUPS.map((g) => (
@@ -1388,17 +1388,17 @@ export default function DrivingTestApp() {
               ))}
             </div>
           )}
-          {examMode && (
+          {mode === 'exam' && (
             <p className="text-center mb-6">Test obsahuje 25 náhodně vybraných otázek ze všech okruhů. Časový limit je 30 minut. Pro úspěšné složení je potřeba získat alespoň 43 bodů z 50.</p>
           )}
           <Button 
             size="lg" 
             className="w-full mt-6" 
             onClick={startTest} 
-            disabled={(!examMode && selectedGroups.length === 0) || isLoading}
+            disabled={(mode === 'practice' && selectedGroups.length === 0) || isLoading}
             isLoading={isLoading}
           >
-            {isLoading ? "Načítám otázky..." : (examMode ? "Spustit ostrý test" : "Spustit procvičování")}
+            {isLoading ? "Načítám otázky..." : (mode === 'exam' ? "Spustit ostrý test" : "Spustit procvičování")}
           </Button>
         </div>
       </>
@@ -1408,20 +1408,20 @@ export default function DrivingTestApp() {
   if (phase === "test" && q) {
     const answeredCount = Object.keys(responses).length;
     const progress = questions.length > 0 ? (answeredCount / questions.length) * 100 : 0;
-    const isTutorVisible = !examMode || showAiTutorInExam;
+    const isTutorVisible = mode === 'practice' || showAiTutorInExam;
     
     return (
       <div className="flex flex-col h-screen">
         <SettingsModal />
         <TopNav
-          label={examMode ? "Ostrý test" : (originPhase === 'browse' ? 'Prohlížení otázky' : 'Procvičování')}
+          label={mode === 'exam' ? "Ostrý test" : (originPhase === 'browse' ? 'Prohlížení otázky' : 'Procvičování')}
           timeLeft={timeLeft}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
           onOpenSettings={() => setIsSettingsOpen(true)}
           onHome={() => {
             // Chceme potvrzení jen u ostrého testu
-            if (examMode) {
+            if (mode === 'exam') {
               if (confirm("Opravdu chcete opustit test a vrátit se na hlavní stránku? Váš postup nebude uložen.")) {
                 setPhase("intro");
               }
@@ -1445,7 +1445,7 @@ export default function DrivingTestApp() {
                   return;
                 }
                 // Chceme potvrzení jen u ostrého testu
-                if (examMode) {
+                if (mode === 'exam') {
                   if (confirm("Opravdu chcete test ukončit? Váš postup nebude uložen.")) {
                     setPhase("intro");
                   }
@@ -1470,7 +1470,7 @@ export default function DrivingTestApp() {
           )}>
             <main className="space-y-6 lg:pb-24">
               <div className="mx-auto w-full max-w-screen-md">
-                {examMode && (
+                {mode === 'exam' && (
                   <header className="space-y-3">
                   <ul className="flex flex-wrap gap-2 justify-center sm:justify-start">
                     {questions.map((questionItem, idx) => {
@@ -1507,7 +1507,7 @@ export default function DrivingTestApp() {
                   </p>
                 </header>
               )}
-              {!examMode && <Progress value={progress} className="mb-4 h-2" />}
+              {mode === 'practice' && <Progress value={progress} className="mb-4 h-2" />}
 
               <Card className="w-full rounded-xl p-5 sm:p-6 space-y-6">
                 <CardHeader className="p-0">
@@ -1536,7 +1536,7 @@ export default function DrivingTestApp() {
                       const isCorrect = val === q.spravna;
 
                       // Zaznamenat první pokus pro statistiky procvičování
-                      if (!examMode && !practiceFirstAttempts[q.id]) {
+                      if (mode === 'practice' && !practiceFirstAttempts[q.id]) {
                         setPracticeFirstAttempts(prev => ({
                           ...prev,
                           [q.id]: { firstAttemptIndex: val, isFirstAttemptCorrect: isCorrect }
@@ -1564,7 +1564,7 @@ export default function DrivingTestApp() {
 
                       let itemSpecificClasses = "";
                       let radioItemClasses = "";
-                      if (!examMode && anAnswerIsSelectedForThisQuestion) {
+                      if (mode === 'practice' && anAnswerIsSelectedForThisQuestion) {
                         if (isCorrect) {
                           itemSpecificClasses = "bg-green-100 border-green-400 text-green-800 dark:bg-green-900/30 dark:border-green-700 dark:text-green-300";
                           radioItemClasses = "text-green-600 dark:text-green-400";
@@ -1590,7 +1590,7 @@ export default function DrivingTestApp() {
                               ? <img src={opt} alt={`Možnost ${idx + 1}`} className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
                               : <span className="text-sm leading-snug">{opt}</span>
                             }
-                            {!examMode && anAnswerIsSelectedForThisQuestion && isSelected && (
+                            {mode === 'practice' && anAnswerIsSelectedForThisQuestion && isSelected && (
                               isCorrect ? (
                                 <span className="ml-2 flex items-center text-green-600 font-medium">
                                   <CheckCircle2 size={18} className="mr-1" /> Správně
@@ -1621,7 +1621,7 @@ export default function DrivingTestApp() {
                     </Button>
                   ) : (
                     originPhase !== 'browse' && (
-                      examMode ? (
+                      mode === 'exam' ? (
                         <Popover open={showFinishConfirm} onOpenChange={setShowFinishConfirm}>
                           <PopoverTrigger asChild>
                             <Button className="text-destructive-foreground bg-destructive hover:bg-destructive/90">Dokončit test</Button>
@@ -1651,7 +1651,7 @@ export default function DrivingTestApp() {
                   )}
                 </div>
                 <div className="flex-1 flex justify-end">
-                  {!examMode && originPhase !== 'browse' && (
+                  {mode === 'practice' && originPhase !== 'browse' && (
                      <Button
                       variant="destructive"
                       onClick={() => {
@@ -1729,7 +1729,7 @@ export default function DrivingTestApp() {
             </Button>
           ) : (
             originPhase !== 'browse' && (
-              examMode ? (
+              mode === 'exam' ? (
                 <Popover open={showFinishConfirm} onOpenChange={setShowFinishConfirm}>
                   <PopoverTrigger asChild>
                     <Button className="flex-1 text-destructive-foreground bg-destructive hover:bg-destructive/90">Dokončit</Button>
@@ -1757,7 +1757,7 @@ export default function DrivingTestApp() {
               )
             )
           )}
-          {!examMode && originPhase !== 'browse' && (
+          {mode === 'practice' && originPhase !== 'browse' && (
              <Button
               variant="destructive"
               onClick={() => {
@@ -1799,9 +1799,9 @@ export default function DrivingTestApp() {
   }
 
   if (phase === "done") {
-    const score = examMode ? questions.reduce((acc, qq) => (responses[qq.id] === qq.spravna ? acc + qq.points : acc), 0) : 0;
-    const totalPoints = examMode ? questions.reduce((acc, qq) => acc + qq.points, 0) : 0;
-    const passed = examMode && score >= 43;
+    const score = mode === 'exam' ? questions.reduce((acc, qq) => (responses[qq.id] === qq.spravna ? acc + qq.points : acc), 0) : 0;
+    const totalPoints = mode === 'exam' ? questions.reduce((acc, qq) => acc + qq.points, 0) : 0;
+    const passed = mode === 'exam' && score >= 43;
 
     const resultsByGroup = GROUPS.map(group => {
       const groupQuestions = questions.filter(q => q.groupId === group.id);
@@ -1838,7 +1838,7 @@ export default function DrivingTestApp() {
     // Pro zobrazení výsledků aktuálního kola procvičování použijeme practiceFirstAttempts
     let answeredInCurrentPracticeSession = 0;
     let correctInCurrentPracticeSession = 0;
-    if (!examMode) {
+    if (mode === 'practice') {
       const attemptedQuestionIdsInSession = Object.keys(practiceFirstAttempts);
       answeredInCurrentPracticeSession = attemptedQuestionIdsInSession.length;
       attemptedQuestionIdsInSession.forEach(id => {
@@ -1867,9 +1867,9 @@ export default function DrivingTestApp() {
                 </Button>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">
-              {examMode ? (passed ? "Gratulujeme, uspěli jste!" : "Bohužel, neuspěli jste.") : "Procvičování dokončeno"}
+              {mode === 'exam' ? (passed ? "Gratulujeme, uspěli jste!" : "Bohužel, neuspěli jste.") : "Procvičování dokončeno"}
             </h2>
-            {examMode && (
+            {mode === 'exam' && (
               <>
                 <div className="text-lg md:text-xl mb-2">
                   Získali jste <span className="font-bold">{score}</span> z {totalPoints > 0 ? totalPoints : 50} bodů. (Minimum pro úspěch: 43 bodů)
@@ -1877,7 +1877,7 @@ export default function DrivingTestApp() {
 
               </>
             )}
-            {!examMode && (
+            {mode === 'practice' && (
               <div className="text-lg md:text-xl mb-6">
                 V tomto kole procvičování jste odpověděli na {answeredInCurrentPracticeSession} otázek, z toho {correctInCurrentPracticeSession} správně na první pokus.
                 {answeredInCurrentPracticeSession > 0 && (
@@ -1886,7 +1886,7 @@ export default function DrivingTestApp() {
               </div>
             )}
 
-            {examMode && (
+            {mode === 'exam' && (
               <div className="my-8 text-left">
                 <div className="relative pt-5 pb-8 mb-4">
                   <div className="flex justify-between text-sm text-muted-foreground mb-1 absolute w-full -top-0 px-1">
