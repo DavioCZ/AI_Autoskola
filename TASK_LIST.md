@@ -165,7 +165,10 @@
 - [ ] **Přidat nové vizualizace a personalizované učení:**
 - [ ] heatmapa
     - [x] **2. Spaced-repetition balíčky (pro otázky < 80 % úspěšnosti):**
-        - [x] **Výběr otázek:** Implementována logika na serveru (`/api/spaced-repetition-deck`) pro výběr otázek s `attempts >= 3` a `successRate < 80`.
+        - [x] **Výběr otázek (Vylepšená logika):** Implementována víceúrovňová logika na serveru (`/api/spaced-repetition-deck`):
+            - **Priorita 1:** Otázky s úspěšností < 80 % (při >= 2 pokusech).
+            - **Priorita 2:** Otázky z nejméně úspěšných okruhů.
+            - **Priorita 3:** Náhodné otázky pro doplnění balíčku na 20 položek.
         - [ ] **Plánování opakování (Pragmatický mix):**
             - [ ] Otázky < 80 % začínají v "Boxu 1" (denní opakování).
             - [ ] Po dosažení úspěšnosti ≥ 80 % v posledních 5 pokusech přejde karta do standardního režimu řízeného algoritmem SM-2.
@@ -174,6 +177,9 @@
             - [x] Na dashboardu je widget "Balíček na dnes" s počtem karet a tlačítkem pro spuštění.
             - [ ] Po zodpovězení karty umožnit hodnocení (0-5) pro aktualizaci SM-2 intervalu.
             - [x] Na dashboardu je widget "Slabá místa" s top 3 okruhy a tlačítkem pro procvičení.
+        - [ ] **Funkce více balíčků denně:**
+            - [x] **Backend:** API je připraveno přijímat `exclude` parametr pro vyloučení již viděných otázek.
+            - [ ] **Frontend:** Implementovat UI pro žádost o další balíček a posílání vyloučených ID.
     - [ ] **3. Integrace s odznaky a motivací:**
         - [ ] **Odznak "Zachráněná karta":** Přidělit za zlepšení karty z <80 % na ≥90 % ve 3 po sobě jdoucích opakováních (s úrovněmi Bronz, Stříbro, Zlato, Platina).
         - [ ] **Odznak "Heat-map streak":** Přidělit za udržení úspěšnosti ≥ 80 % po dobu 7, 14, 30 a 100 dní v řadě.
