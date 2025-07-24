@@ -502,17 +502,68 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
     return res.status(400).json({ error: "User ID is required." });
   }
   const uid = userId.toLowerCase();
+  const DECK_SIZE = 20;
 
   try {
     const summaryKey = `user:${uid}:summary`;
     const summaryDataRaw = await redis.get(summaryKey);
     const summaryData = typeof summaryDataRaw === 'string' ? JSON.parse(summaryDataRaw) : (summaryDataRaw || {});
+    const allUserQuestions = Object.values(summaryData);
 
-    const weakQuestions = Object.values(summaryData)
-      .filter(q => q.attempts >= 3 && q.successRate < 80)
+    // Priorita 1: Otázky s úspěšností < 80 % (při >= 2 pokusech)
+    const priority1_questions = allUserQuestions
+      .filter(q => q.attempts >= 2 && q.successRate < 80)
+      .sort((a, b) => a.successRate - b.successRate) // Seřadit od nejhorší
       .map(q => q.questionId);
 
-    res.json({ questionIds: weakQuestions });
+    const deck = new Set(priority1_questions);
+
+    // Priorita 2: Otázky z nejméně úspěšných okruhů
+    if (deck.size < DECK_SIZE) {
+      const topicStats = {};
+      allUserQuestions.forEach(q => {
+        if (!q.groupId) return;
+        if (!topicStats[q.groupId]) {
+          topicStats[q.groupId] = { totalSuccess: 0, count: 0, questions: [] };
+        }
+        topicStats[q.groupId].totalSuccess += q.successRate;
+        topicStats[q.groupId].count++;
+        topicStats[q.groupId].questions.push(q.questionId);
+      });
+
+      const avgTopicSuccess = Object.entries(topicStats).map(([groupId, data]) => ({
+        groupId,
+        avgSuccess: data.count > 0 ? data.totalSuccess / data.count : 0,
+        questions: data.questions
+      }));
+
+      avgTopicSuccess.sort((a, b) => a.avgSuccess - b.avgSuccess); // Seřadit od nejhoršího okruhu
+
+      for (const topic of avgTopicSuccess) {
+        if (deck.size >= DECK_SIZE) break;
+        const shuffledQuestions = topic.questions.sort(() => 0.5 - Math.random());
+        for (const questionId of shuffledQuestions) {
+          if (deck.size >= DECK_SIZE) break;
+          if (!deck.has(questionId)) {
+            deck.add(questionId);
+          }
+        }
+      }
+    }
+
+    // Priorita 3: Náhodné otázky pro doplnění balíčku
+    if (deck.size < DECK_SIZE) {
+      const allQuestionIds = Array.from(analysisIndex.keys());
+      const remainingQuestions = allQuestionIds.filter(id => !deck.has(id));
+      const shuffledRemaining = remainingQuestions.sort(() => 0.5 - Math.random());
+
+      while (deck.size < DECK_SIZE && shuffledRemaining.length > 0) {
+        deck.add(shuffledRemaining.pop());
+      }
+    }
+
+    const finalDeck = Array.from(deck).slice(0, DECK_SIZE);
+    res.json({ questionIds: finalDeck });
 
   } catch (error) {
     console.error(`Error fetching spaced repetition deck for user ${uid}:`, error);
