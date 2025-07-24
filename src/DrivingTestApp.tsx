@@ -465,7 +465,7 @@ export default function DrivingTestApp() {
       };
       fetchDeck();
     }
-  }, [currentUser]);
+  }, [currentUser, phase]);
 
   // Efekt pro znovunačtení dat při návratu na hlavní obrazovku
   useEffect(() => {
