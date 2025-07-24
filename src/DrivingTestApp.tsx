@@ -806,7 +806,7 @@ export default function DrivingTestApp() {
             </div>
             <div className="md:col-span-2 relative overflow-hidden">
                 {currentUser === "Host" && (
-                    <div className="absolute inset-0 flex items-center justify-center z-0">
+                    <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
                         <p className="text-6xl font-black text-blue-500/10 dark:text-blue-400/10 transform -rotate-12 select-none">Test funkcí</p>
                     </div>
                 )}
@@ -824,7 +824,7 @@ export default function DrivingTestApp() {
           <div className="mt-8 max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Card className="relative overflow-hidden">
                   {currentUser === "Host" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <p className="text-5xl font-black text-blue-500/10 dark:text-blue-400/10 transform -rotate-12 select-none">Test funkcí</p>
                     </div>
                   )}
@@ -867,7 +867,7 @@ export default function DrivingTestApp() {
               </Card>
               <div className="relative overflow-hidden">
                 {currentUser === "Host" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <p className="text-5xl font-black text-blue-500/10 dark:text-blue-400/10 transform -rotate-12 select-none">Test funkcí</p>
                     </div>
                 )}
@@ -947,7 +947,7 @@ export default function DrivingTestApp() {
             
             <div className="relative overflow-hidden">
               {currentUser === "Host" && unlockedBadges.length > 0 && (
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <p className="text-6xl font-black text-blue-500/10 dark:text-blue-400/10 transform -rotate-12 select-none">Test funkcí</p>
                   </div>
               )}
