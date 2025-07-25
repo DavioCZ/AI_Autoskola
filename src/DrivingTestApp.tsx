@@ -1975,8 +1975,8 @@ export default function DrivingTestApp() {
                   const isAnswered = userAnswer !== undefined;
                   return (
                     <div key={q_item.id} className={clsx("p-3 border rounded-md text-sm", {
-                      "bg-green-50 border-green-400 dark:bg-green-900/20 dark:border-green-700": isAnswered && isCorrect,
-                      "bg-red-50 border-red-400 dark:bg-red-900/20 dark:border-red-700": isAnswered && !isCorrect,
+                      "bg-green-100 border-green-400 text-green-800 dark:bg-green-900/30 dark:border-green-700 dark:text-green-300": isAnswered && isCorrect,
+                      "bg-red-100 border-red-400 text-red-800 dark:bg-red-900/30 dark:border-red-700 dark:text-red-300": isAnswered && !isCorrect,
                       "bg-muted/50 border-border": !isAnswered,
                     })}>
                       <p className="font-medium">{index + 1}. {q_item.otazka}</p>
@@ -1985,17 +1985,17 @@ export default function DrivingTestApp() {
                           ? <video src={q_item.obrazek} autoPlay loop muted playsInline controls className="my-2 rounded max-h-64 md:max-h-80 lg:max-h-[45vh] mx-auto shadow" />
                           : <img src={q_item.obrazek} alt={`Otázka ${index + 1}`} className="my-2 rounded max-h-64 md:max-h-80 lg:max-h-[45vh] mx-auto shadow"/>
                       )}
-                      <p className="mt-1">Správná odpověď: {
+                      <p className="mt-1"><span className="font-normal">Správná odpověď:</span> {
                         /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[q_item.spravna])
                         ? <img src={q_item.moznosti[q_item.spravna]} alt="Správná odpověď" className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
                         : <span className="font-semibold">{q_item.moznosti[q_item.spravna]}</span>
                       }</p>
                       {isAnswered ? (
-                        <p className="mt-0.5">Vaše odpověď: {
+                        <p className="mt-0.5"><span className="font-normal">Vaše odpověď:</span> {
                           /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[userAnswer])
                           ? <img src={q_item.moznosti[userAnswer]} alt="Vaše odpověď" className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
-                          : <span className={clsx(isCorrect ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300", "font-semibold")}>{q_item.moznosti[userAnswer]}</span>
-                        } {isCorrect ? <CheckCircle2 className="inline-block ml-1 text-green-600" size={16} /> : <XCircle className="inline-block ml-1 text-red-600" size={16} />}</p>
+                          : <span className="font-semibold">{q_item.moznosti[userAnswer]}</span>
+                        } {isCorrect ? <CheckCircle2 className="inline-block ml-1 text-green-500" size={16} /> : <XCircle className="inline-block ml-1 text-red-500" size={16} />}</p>
                       ) : (
                         <p className="mt-0.5 text-muted-foreground">Bez odpovědi</p>
                       )}
