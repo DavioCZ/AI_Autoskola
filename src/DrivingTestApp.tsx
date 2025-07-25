@@ -1651,12 +1651,20 @@ export default function DrivingTestApp() {
                   ) : (
                     originPhase !== 'browse' && (
                       mode === 'exam' ? (
-                        <Button onClick={finishExam} className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                        <Button onClick={() => {
+                          if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
+                            finishExam();
+                          }
+                        }} className="bg-primary hover:bg-primary/90 text-primary-foreground">
                           Dokončit test
                         </Button>
                       ) : (
                         <Button 
-                          onClick={finishExam} 
+                          onClick={() => {
+                            if (confirm("Opravdu si přejete dokončit a vyhodnotit procvičování?")) {
+                              finishExam();
+                            }
+                          }} 
                           className="text-primary-foreground bg-primary hover:bg-primary/90"
                         >
                           Vyhodnotit procvičování
@@ -1739,12 +1747,20 @@ export default function DrivingTestApp() {
           ) : (
             originPhase !== 'browse' && (
               mode === 'exam' ? (
-                <Button onClick={finishExam} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button onClick={() => {
+                  if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
+                    finishExam();
+                  }
+                }} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
                   Dokončit
                 </Button>
               ) : (
                 <Button 
-                  onClick={finishExam} 
+                  onClick={() => {
+                    if (confirm("Opravdu si přejete dokončit a vyhodnotit procvičování?")) {
+                      finishExam();
+                    }
+                  }} 
                   className="flex-1 text-primary-foreground bg-primary hover:bg-primary/90"
                 >
                   Vyhodnotit
