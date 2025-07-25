@@ -698,6 +698,33 @@ export default function DrivingTestApp() {
     return <LoginScreen onLogin={handleLogin} />;
   }
 
+  const FinishTestModal = () => (
+    showFinishConfirm && (
+      <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={() => setShowFinishConfirm(false)}>
+        <Card className="w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
+          <CardHeader>
+            <h3 className="text-lg font-semibold text-center">Dokončit test?</h3>
+          </CardHeader>
+          <CardContent className="space-y-4 text-center">
+            <p className="text-sm text-muted-foreground">Opravdu chcete dokončit a vyhodnotit test?</p>
+            <div className="flex justify-center gap-4">
+              <Button variant="outline" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
+              <Button 
+                className="bg-destructive hover:bg-destructive/90 text-destructive-foreground" 
+                onClick={() => {
+                  finishExam();
+                  setShowFinishConfirm(false);
+                }}
+              >
+                Potvrdit a dokončit
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  );
+
   const SettingsModal = () => (
     isSettingsOpen && (
       <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={() => setIsSettingsOpen(false)}>
@@ -1448,6 +1475,7 @@ export default function DrivingTestApp() {
     
     return (
       <div className="flex flex-col h-screen">
+        <FinishTestModal />
         <SettingsModal />
         <TopNav
           label={mode === 'exam' ? "Ostrý test" : (originPhase === 'browse' ? 'Prohlížení otázky' : 'Procvičování')}
@@ -1652,23 +1680,9 @@ export default function DrivingTestApp() {
                   ) : (
                     originPhase !== 'browse' && (
                       mode === 'exam' ? (
-                        <Popover open={showFinishConfirm} onOpenChange={setShowFinishConfirm}>
-                          <PopoverTrigger asChild>
-                            <Button className="text-destructive-foreground bg-destructive hover:bg-destructive/90">Dokončit test</Button>
-                          </PopoverTrigger>
-                          <PopoverContent className="w-auto p-4" side="top" align="end">
-                            <div className="space-y-3 text-center">
-                              <p className="text-sm font-medium">Opravdu chcete dokončit a vyhodnotit test?</p>
-                              <div className="flex justify-center gap-2">
-                                <Button variant="outline" size="sm" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
-                                <Button size="sm" className="bg-destructive hover:bg-destructive/90 text-destructive-foreground" onClick={() => {
-                                  finishExam();
-                                  setShowFinishConfirm(false);
-                                }}>Potvrdit</Button>
-                              </div>
-                            </div>
-                          </PopoverContent>
-                        </Popover>
+                        <Button onClick={() => setShowFinishConfirm(true)} className="text-destructive-foreground bg-destructive hover:bg-destructive/90">
+                          Dokončit test
+                        </Button>
                       ) : (
                         <Button 
                           onClick={finishExam} 
@@ -1754,23 +1768,9 @@ export default function DrivingTestApp() {
           ) : (
             originPhase !== 'browse' && (
               mode === 'exam' ? (
-                <Popover open={showFinishConfirm} onOpenChange={setShowFinishConfirm}>
-                  <PopoverTrigger asChild>
-                    <Button className="flex-1 text-destructive-foreground bg-destructive hover:bg-destructive/90">Dokončit</Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-4" side="top" align="center">
-                    <div className="space-y-3 text-center">
-                      <p className="text-sm font-medium">Opravdu chcete dokončit a vyhodnotit test?</p>
-                      <div className="flex justify-center gap-2">
-                        <Button variant="outline" size="sm" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
-                        <Button size="sm" className="bg-destructive hover:bg-destructive/90 text-destructive-foreground" onClick={() => {
-                          finishExam();
-                          setShowFinishConfirm(false);
-                        }}>Potvrdit</Button>
-                      </div>
-                    </div>
-                  </PopoverContent>
-                </Popover>
+                <Button onClick={() => setShowFinishConfirm(true)} className="flex-1 text-destructive-foreground bg-destructive hover:bg-destructive/90">
+                  Dokončit
+                </Button>
               ) : (
                 <Button 
                   onClick={finishExam} 
