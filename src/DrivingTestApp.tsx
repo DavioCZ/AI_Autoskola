@@ -1513,7 +1513,7 @@ export default function DrivingTestApp() {
                           className={clsx(
                             "h-8 w-8 rounded-full text-sm font-medium border",
                             {
-                              "bg-secondary hover:bg-secondary/80 text-secondary-foreground border-secondary": isAnswered && !isCurrent,
+                              "bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-secondary-foreground border-slate-300 dark:border-slate-600": isAnswered && !isCurrent,
                               "border-primary ring-2 ring-primary ring-offset-background": isCurrent,
                               "bg-background hover:bg-muted text-foreground": !isAnswered && !isCurrent,
                             }
