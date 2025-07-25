@@ -700,7 +700,7 @@ export default function DrivingTestApp() {
 
   const FinishTestModal = () => (
     showFinishConfirm && (
-      <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={() => setShowFinishConfirm(false)}>
+      <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[999]" onClick={() => setShowFinishConfirm(false)}>
         <Card className="w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
           <CardHeader>
             <h3 className="text-lg font-semibold text-center">Dokončit test?</h3>
@@ -710,7 +710,7 @@ export default function DrivingTestApp() {
             <div className="flex justify-center gap-4">
               <Button variant="outline" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
               <Button 
-                className="bg-destructive hover:bg-destructive/90 text-destructive-foreground" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground" 
                 onClick={() => {
                   finishExam();
                   setShowFinishConfirm(false);
@@ -1680,7 +1680,7 @@ export default function DrivingTestApp() {
                   ) : (
                     originPhase !== 'browse' && (
                       mode === 'exam' ? (
-                        <Button onClick={() => setShowFinishConfirm(true)} className="text-destructive-foreground bg-destructive hover:bg-destructive/90">
+                        <Button onClick={() => setShowFinishConfirm(true)} className="bg-primary hover:bg-primary/90 text-primary-foreground">
                           Dokončit test
                         </Button>
                       ) : (
@@ -1768,7 +1768,7 @@ export default function DrivingTestApp() {
           ) : (
             originPhase !== 'browse' && (
               mode === 'exam' ? (
-                <Button onClick={() => setShowFinishConfirm(true)} className="flex-1 text-destructive-foreground bg-destructive hover:bg-destructive/90">
+                <Button onClick={() => setShowFinishConfirm(true)} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
                   Dokončit
                 </Button>
               ) : (
