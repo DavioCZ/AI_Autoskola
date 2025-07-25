@@ -1975,8 +1975,8 @@ export default function DrivingTestApp() {
                   const isAnswered = userAnswer !== undefined;
                   return (
                     <div key={q_item.id} className={clsx("p-3 border rounded-md text-sm", {
-                      "bg-green-50 border-green-400": isAnswered && isCorrect,
-                      "bg-red-500/10 border-destructive": isAnswered && !isCorrect,
+                      "bg-green-50 border-green-400 dark:bg-green-900/20 dark:border-green-700": isAnswered && isCorrect,
+                      "bg-red-50 border-red-400 dark:bg-red-900/20 dark:border-red-700": isAnswered && !isCorrect,
                       "bg-muted/50 border-border": !isAnswered,
                     })}>
                       <p className="font-medium">{index + 1}. {q_item.otazka}</p>
@@ -1994,8 +1994,8 @@ export default function DrivingTestApp() {
                         <p className="mt-0.5">Vaše odpověď: {
                           /\.(jpeg|jpg|gif|png)$/i.test(q_item.moznosti[userAnswer])
                           ? <img src={q_item.moznosti[userAnswer]} alt="Vaše odpověď" className="my-2 rounded max-h-32 md:max-h-48 shadow"/>
-                          : <span className={clsx(isCorrect ? "text-green-600" : "text-destructive", "font-semibold")}>{q_item.moznosti[userAnswer]}</span>
-                        } {isCorrect ? "✓" : "✗"}</p>
+                          : <span className={clsx(isCorrect ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300", "font-semibold")}>{q_item.moznosti[userAnswer]}</span>
+                        } {isCorrect ? <CheckCircle2 className="inline-block ml-1 text-green-600" size={16} /> : <XCircle className="inline-block ml-1 text-red-600" size={16} />}</p>
                       ) : (
                         <p className="mt-0.5 text-muted-foreground">Bez odpovědi</p>
                       )}
