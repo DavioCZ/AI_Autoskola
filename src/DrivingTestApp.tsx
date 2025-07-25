@@ -1681,6 +1681,15 @@ export default function DrivingTestApp() {
                       Ukončit
                     </Button>
                   )}
+                  {mode === 'exam' && answeredCount === questions.length && current < questions.length - 1 && (
+                    <Button onClick={() => {
+                      if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
+                        finishExam();
+                      }
+                    }} className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                      Dokončit test
+                    </Button>
+                  )}
                 </div>
               </div>
               </div>
