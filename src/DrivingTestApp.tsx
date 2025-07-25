@@ -385,6 +385,7 @@ export default function DrivingTestApp() {
   const msgEndRef = useRef<HTMLDivElement | null>(null);
   const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
+  const finishDialogRef = useRef<HTMLDialogElement>(null);
   const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const { setTheme } = useTheme();
@@ -694,35 +695,44 @@ export default function DrivingTestApp() {
     }
   }, [q, phase, setMessages]);
 
+  useEffect(() => {
+    const dialog = finishDialogRef.current;
+    if (dialog) {
+      if (showFinishConfirm) {
+        dialog.showModal();
+      } else {
+        dialog.close();
+      }
+    }
+  }, [showFinishConfirm]);
+
   if (!currentUser) {
     return <LoginScreen onLogin={handleLogin} />;
   }
 
-  const FinishTestModal = () => (
-    showFinishConfirm && (
-      <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[999]" onClick={() => setShowFinishConfirm(false)}>
-        <Card className="w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
-          <CardHeader>
-            <h3 className="text-lg font-semibold text-center">Dokončit test?</h3>
-          </CardHeader>
-          <CardContent className="space-y-4 text-center">
-            <p className="text-sm text-muted-foreground">Opravdu chcete dokončit a vyhodnotit test?</p>
-            <div className="flex justify-center gap-4">
-              <Button variant="outline" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
-              <Button 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground" 
-                onClick={() => {
-                  finishExam();
-                  setShowFinishConfirm(false);
-                }}
-              >
-                Potvrdit a dokončit
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    )
+  const FinishTestDialog = () => (
+    <dialog ref={finishDialogRef} className="bg-transparent p-0 backdrop:bg-black/60" onCancel={() => setShowFinishConfirm(false)}>
+      <Card className="w-full max-w-sm">
+        <CardHeader>
+          <h3 className="text-lg font-semibold text-center">Dokončit test?</h3>
+        </CardHeader>
+        <CardContent className="space-y-4 text-center">
+          <p className="text-sm text-muted-foreground">Opravdu chcete dokončit a vyhodnotit test?</p>
+          <form method="dialog" className="flex justify-center gap-4">
+            <Button variant="outline" onClick={() => setShowFinishConfirm(false)}>Zrušit</Button>
+            <Button
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => {
+                finishExam();
+                setShowFinishConfirm(false);
+              }}
+            >
+              Potvrdit a dokončit
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
+    </dialog>
   );
 
   const SettingsModal = () => (
@@ -1475,7 +1485,7 @@ export default function DrivingTestApp() {
     
     return (
       <div className="flex flex-col h-screen">
-        <FinishTestModal />
+        <FinishTestDialog />
         <SettingsModal />
         <TopNav
           label={mode === 'exam' ? "Ostrý test" : (originPhase === 'browse' ? 'Prohlížení otázky' : 'Procvičování')}
