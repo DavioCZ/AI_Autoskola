@@ -3,9 +3,8 @@ import { supabase } from '../supabase';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { useTheme } from '../hooks/useTheme';
-import { Moon, Sun, LogIn } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 
-// Jednoduchý Footer, aby odpovídal původní struktuře
 function Footer() {
   return (
     <footer className="w-full py-4 mt-8 text-center text-xs text-muted-foreground">
@@ -15,47 +14,43 @@ function Footer() {
   );
 }
 
-
-
-export default function Login({ onLogin, onSwitchToSignUp }: { onLogin: (name: string) => void; onSwitchToSignUp: () => void; }) {
-  const [identifier, setIdentifier] = useState('');
+export default function SignUp({ onSwitchToLogin }: { onSwitchToLogin: () => void }) {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
+    setSuccess('');
 
-    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier);
-    let email = identifier;
-
-    if (!isEmail) {
-      // If it's not an email, assume it's a username and get the email from the profiles table
-      const { data: profile, error: profileError } = await supabase
-        .from('profiles')
-        .select('email')
-        .eq('username', identifier)
-        .single();
-
-      if (profileError || !profile) {
-        setError('Uživatel s tímto jménem neexistuje nebo se nepodařilo načíst profil.');
-        setLoading(false);
-        return;
-      }
-      email = profile.email;
-    }
-
-    const { error: signInError } = await supabase.auth.signInWithPassword({
+    // 1. Sign up the user in Supabase Auth
+    const { data: authData, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        data: {
+          username: username,
+        },
+      },
     });
 
-    if (signInError) {
-      setError(signInError.message);
+    if (signUpError) {
+      setError(signUpError.message);
+      setLoading(false);
+      return;
     }
+
+    if (authData.user) {
+      // The profile is now created by a database trigger, so we just show success.
+      setSuccess('Registrace byla úspěšná! Pokud je vyžadováno, zkontrolujte svůj e-mail pro ověření.');
+    }
+    
     setLoading(false);
   };
 
@@ -63,20 +58,32 @@ export default function Login({ onLogin, onSwitchToSignUp }: { onLogin: (name: s
     <div className="flex items-center justify-center min-h-screen bg-background">
       <Card className="w-full max-w-sm p-6">
         <CardHeader className="text-center">
-          <h2 className="text-2xl font-bold">Přihlášení</h2>
-          <p className="text-sm text-muted-foreground mt-2">Vítejte zpět!</p>
+          <h2 className="text-2xl font-bold">Registrace</h2>
+          <p className="text-sm text-muted-foreground mt-2">Vytvořte si nový účet.</p>
         </CardHeader>
         <CardContent className="space-y-4">
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleSignUp} className="space-y-4">
             <div className="space-y-2">
-              <label htmlFor="identifier" className="text-sm font-medium">E-mail nebo uživatelské jméno</label>
+              <label htmlFor="username" className="text-sm font-medium">Uživatelské jméno</label>
               <input
-                id="identifier"
+                id="username"
                 type="text"
-                value={identifier}
-                onChange={(e) => setIdentifier(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-3 py-2 border rounded-md bg-background text-foreground"
-                placeholder="jmeno nebo vas@email.cz"
+                placeholder="Tester"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-medium">E-mail</label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-3 py-2 border rounded-md bg-background text-foreground"
+                placeholder="vas@email.cz"
                 required
               />
             </div>
@@ -93,8 +100,9 @@ export default function Login({ onLogin, onSwitchToSignUp }: { onLogin: (name: s
               />
             </div>
             {error && <p className="text-xs text-red-600">{error}</p>}
+            {success && <p className="text-xs text-green-600">{success}</p>}
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Přihlašuji...' : 'Přihlásit se'}
+              {loading ? 'Registruji...' : 'Zaregistrovat se'}
             </Button>
           </form>
 
@@ -107,18 +115,9 @@ export default function Login({ onLogin, onSwitchToSignUp }: { onLogin: (name: s
             </div>
           </div>
 
-
-          <Button onClick={() => onLogin("Host")} variant="secondary" className="w-full" disabled={loading}>
-            <LogIn className="mr-2 h-4 w-4" />
-            Pokračovat jako Host
+          <Button onClick={onSwitchToLogin} variant="secondary" className="w-full" disabled={loading}>
+            Zpět na přihlášení
           </Button>
-
-          <div className="mt-4 text-center text-sm">
-            Nemáte účet?{' '}
-            <Button variant="link" onClick={onSwitchToSignUp} className="p-0 h-auto">
-              Zaregistrujte se
-            </Button>
-          </div>
 
           <div className="mt-4 text-center">
             <Button variant="ghost" size="sm" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>

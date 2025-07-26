@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Confetti from "react-confetti";
 import { useAuth } from "./Auth";
 import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 import { supabase } from './supabase';
 import {
   Card,
@@ -207,7 +208,7 @@ function TopNav({
   timeLeft?: number | null;
   onHome: () => void;
   currentUser: string;
-  onSetCurrentUser: () => void;
+  onSetCurrentUser: (name?: string | null) => void;
   onOpenSettings: () => void;
 }) {
   const { theme, setTheme } = useTheme();
@@ -260,7 +261,7 @@ function TopNav({
                     </>
                   )}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={onSetCurrentUser} className="text-red-600 dark:text-red-400 focus:text-red-700 dark:focus:text-red-500">
+                <DropdownMenuItem onClick={() => onSetCurrentUser()} className="text-red-600 dark:text-red-400 focus:text-red-700 dark:focus:text-red-500">
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Odhlásit se</span>
                 </DropdownMenuItem>
@@ -290,7 +291,10 @@ function Footer() {
 /* ----------------------------- App -------------------------------- */
 export default function DrivingTestApp() {
   const { session, user } = useAuth();
-  const currentUser = user?.email || (user ? user.id : "Host");
+  const [isGuest, setIsGuest] = useState(() => localStorage.getItem("isGuest") === "true");
+  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
+
+  const currentUser = isGuest ? "Host" : user?.email || user?.id || null;
   const [phase, setPhase] = useState<"intro" | "setup" | "test" | "done" | "browse" | "analysis">("intro");
   const [browseState, setBrowseState] = useState<"groups" | "questions">("groups");
   const [originPhase, setOriginPhase] = useState<"intro" | "browse" | "analysis">("intro");
@@ -342,12 +346,18 @@ export default function DrivingTestApp() {
     };
   }, []);
 
+  const handleLoginAsGuest = () => {
+    localStorage.setItem("isGuest", "true");
+    setIsGuest(true);
+  };
+
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
       console.error("Error logging out:", error);
     }
-    // The onAuthStateChange listener in Auth.tsx will handle setting user to null
+    localStorage.removeItem("isGuest");
+    setIsGuest(false);
   };
 
   useEffect(() => {
@@ -621,8 +631,11 @@ export default function DrivingTestApp() {
     }
   }, [q, phase, setMessages]);
 
-  if (!session) {
-    return <Login />;
+  if (!session && !isGuest) {
+    if (authMode === 'signup') {
+      return <SignUp onSwitchToLogin={() => setAuthMode('login')} />;
+    }
+    return <Login onLogin={handleLoginAsGuest} onSwitchToSignUp={() => setAuthMode('signup')} />;
   }
 
   const SettingsModal = () => (
@@ -694,6 +707,7 @@ export default function DrivingTestApp() {
   );
 
   if (phase === "intro") {
+    if (!currentUser) return null; // Or a loading spinner
     return (
       <>
         <TopNav 
@@ -921,6 +935,7 @@ export default function DrivingTestApp() {
   }
 
   if (phase === "analysis") {
+    if (!currentUser) return null; // Or a loading spinner
     const getSuccessRateColor = (rate: number) => {
       if (rate >= 90) return "bg-green-500";
       if (rate >= 60) return "bg-yellow-400";
@@ -1198,6 +1213,7 @@ export default function DrivingTestApp() {
   }
 
   if (phase === "browse") {
+    if (!currentUser) return null; // Or a loading spinner
     const groupName = browseState === 'questions' && questions.length > 0
         ? GROUPS.find(g => g.id === questions[0].groupId)?.name
         : "okruh";
@@ -1315,6 +1331,7 @@ export default function DrivingTestApp() {
   }
 
   if (phase === "setup") {
+    if (!currentUser) return null; // Or a loading spinner
     return (
       <>
         <SettingsModal />
@@ -1369,6 +1386,7 @@ export default function DrivingTestApp() {
   }
 
   if (phase === "test" && q) {
+    if (!currentUser) return null; // Or a loading spinner
     const answeredCount = Object.keys(responses).length;
     const progress = questions.length > 0 ? (answeredCount / questions.length) * 100 : 0;
     const isTutorVisible = mode === 'practice' || showAiTutorInExam;
@@ -1742,6 +1760,7 @@ export default function DrivingTestApp() {
   }
 
   if (phase === "done") {
+    if (!currentUser) return null; // Or a loading spinner
     const score = mode === 'exam' ? questions.reduce((acc, qq) => (responses[qq.id] === qq.spravna ? acc + qq.points : acc), 0) : 0;
     const totalPoints = mode === 'exam' ? questions.reduce((acc, qq) => acc + qq.points, 0) : 0;
     const passed = mode === 'exam' && score >= 43;
