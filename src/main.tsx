@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import DrivingTestApp from './DrivingTestApp';
+import { AuthProvider } from './Auth';
 
 // Spuštění Web Workeru pro analýzu na pozadí
 if (window.Worker) {
@@ -19,6 +20,8 @@ if (window.Worker) {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <DrivingTestApp />
+    <AuthProvider>
+      <DrivingTestApp />
+    </AuthProvider>
   </React.StrictMode>,
 );

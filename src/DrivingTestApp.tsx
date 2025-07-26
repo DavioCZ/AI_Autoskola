@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Confetti from "react-confetti";
+import { useAuth } from "./Auth";
+import Login from "./components/Login";
+import { supabase } from './supabase';
 import {
   Card,
   CardContent,
@@ -80,10 +83,6 @@ const GROUPS = [
 const OSTRY_TIME = 30 * 60; // 30 minut v sekundách
 
 /* --------------------------- Statistiky ---------------------------- */
-const ALLOWED_USERS = ["Tester", "Tanika"];
-
-const getCurrentUser = (): string | null => localStorage.getItem("autoskola-currentUser");
-
 // Funkce saveStats a loadStats byly odstraněny, protože se statistiky počítají na serveru
 
 /* ----------------------- Analytická data ------------------------- */
@@ -208,7 +207,7 @@ function TopNav({
   timeLeft?: number | null;
   onHome: () => void;
   currentUser: string;
-  onSetCurrentUser: (name: string | null) => void;
+  onSetCurrentUser: () => void;
   onOpenSettings: () => void;
 }) {
   const { theme, setTheme } = useTheme();
@@ -261,7 +260,7 @@ function TopNav({
                     </>
                   )}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => onSetCurrentUser(null)} className="text-red-600 dark:text-red-400 focus:text-red-700 dark:focus:text-red-500">
+                <DropdownMenuItem onClick={onSetCurrentUser} className="text-red-600 dark:text-red-400 focus:text-red-700 dark:focus:text-red-500">
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Odhlásit se</span>
                 </DropdownMenuItem>
@@ -288,81 +287,10 @@ function Footer() {
 }
 
 /* ----------------------------- Login Screen ------------------------ */
-function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
-  const [username, setUsername] = useState("");
-  const [error, setError] = useState("");
-  const { theme, setTheme } = useTheme();
-
-  const handleLogin = () => {
-    const trimmedName = username.trim();
-    if (ALLOWED_USERS.map(u => u.toLowerCase()).includes(trimmedName.toLowerCase())) {
-      const caseCorrectedName = ALLOWED_USERS.find(u => u.toLowerCase() === trimmedName.toLowerCase())!;
-      onLogin(caseCorrectedName);
-    } else {
-      setError("Neplatné uživatelské jméno.");
-    }
-  };
-
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-background">
-      <Card className="w-full max-w-sm p-6">
-        <CardHeader className="text-center">
-          <h2 className="text-2xl font-bold">Přihlášení</h2>
-          <p className="text-sm text-muted-foreground mt-2">Zadejte své uživatelské jméno.</p>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <label htmlFor="username" className="text-sm font-medium">Uživatelské jméno</label>
-            <input
-              id="username"
-              type="text"
-              value={username}
-              onChange={(e) => {
-                setUsername(e.target.value);
-                if (error) setError("");
-              }}
-              onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
-              className="w-full px-3 py-2 border rounded-md bg-background text-foreground"
-              placeholder="Zadejte jméno"
-            />
-            {error && <p className="text-xs text-red-600">{error}</p>}
-          </div>
-          <Button onClick={handleLogin} className="w-full">
-            Přihlásit se
-          </Button>
-          <div className="relative my-4">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t" />
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-card px-2 text-muted-foreground">Nebo</span>
-            </div>
-          </div>
-          <Button onClick={() => onLogin("Host")} variant="secondary" className="w-full">
-            Pokračovat jako Host
-          </Button>
-          <div className="mt-4 text-center">
-            <Button variant="ghost" size="sm" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-              {theme === 'dark' ? (
-                <Sun className="mr-2 h-4 w-4" />
-              ) : (
-                <Moon className="mr-2 h-4 w-4" />
-              )}
-              Změnit motiv
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-      <div className="absolute bottom-0 w-full">
-        <Footer />
-      </div>
-    </div>
-  );
-}
-
 /* ----------------------------- App -------------------------------- */
 export default function DrivingTestApp() {
-  const [currentUser, setCurrentUser] = useState<string | null>(getCurrentUser());
+  const { session, user } = useAuth();
+  const currentUser = user?.email || (user ? user.id : "Host");
   const [phase, setPhase] = useState<"intro" | "setup" | "test" | "done" | "browse" | "analysis">("intro");
   const [browseState, setBrowseState] = useState<"groups" | "questions">("groups");
   const [originPhase, setOriginPhase] = useState<"intro" | "browse" | "analysis">("intro");
@@ -414,20 +342,18 @@ export default function DrivingTestApp() {
     };
   }, []);
 
-  const handleLogin = (name: string) => {
-    localStorage.setItem("autoskola-currentUser", name);
-    setCurrentUser(name);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("autoskola-currentUser");
-    setCurrentUser(null);
-    setStats(DEFAULT_STATS);
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error("Error logging out:", error);
+    }
+    // The onAuthStateChange listener in Auth.tsx will handle setting user to null
   };
 
   useEffect(() => {
-    if (currentUser) {
-      loadUserData(currentUser).then(data => {
+    const currentUserId = user ? user.id : "Host";
+    if (currentUserId) {
+      loadUserData(currentUserId).then(data => {
         setAnalysisData(data.analysisData);
         setUnlockedBadges(data.unlockedBadges);
         setSummaryData(data.summaryData);
@@ -436,16 +362,15 @@ export default function DrivingTestApp() {
 
       // Načtení balíčku pro opakování
       const fetchDeck = async () => {
-        if (currentUser && currentUser !== "Host") {
+        if (user) {
           try {
-            const res = await fetch(`/api/spaced-repetition-deck?userId=${encodeURIComponent(currentUser)}`);
+            const res = await fetch(`/api/spaced-repetition-deck?userId=${encodeURIComponent(user.id)}`);
             const { questionIds } = await res.json();
             setSpacedRepetitionDeck(questionIds || []);
           } catch (error) {
             console.error("Failed to fetch spaced repetition deck:", error);
           }
-        } else if (currentUser === "Host") {
-            // Lokální logika pro hosta
+        } else { // Host
             loadUserData("Host").then(data => {
                 const guestSummary = data.summaryData;
                 let questionsToReview = Object.values(guestSummary)
@@ -464,20 +389,21 @@ export default function DrivingTestApp() {
       };
       fetchDeck();
     }
-  }, [currentUser, phase]);
+  }, [user, phase]);
 
   // Efekt pro znovunačtení dat při návratu na hlavní obrazovku
   useEffect(() => {
-    if (phase === 'intro' && currentUser) {
+    const currentUserId = user ? user.id : "Host";
+    if (phase === 'intro' && currentUserId) {
       console.log("[Phase Change] Intro screen loaded, refetching all user data.");
-      loadUserData(currentUser).then(data => {
+      loadUserData(currentUserId).then(data => {
         setAnalysisData(data.analysisData);
         setUnlockedBadges(data.unlockedBadges);
         setSummaryData(data.summaryData);
         setStats(data.stats);
       });
     }
-  }, [phase, currentUser]);
+  }, [phase, user]);
 
   async function fetchGroup(gid: number): Promise<Question[]> {
     const g = GROUPS.find((gr) => gr.id === gid)!;
@@ -587,6 +513,7 @@ export default function DrivingTestApp() {
     console.log("[commitSessionAnalysis] Starting.");
     const entries: AnalysisEntry[] = [];
     const answeredQuestionIds = Object.keys(responses);
+    const currentUserId = user ? user.id : "Host";
     console.log(`[/commit] Responded IDs (${answeredQuestionIds.length}):`, answeredQuestionIds);
     console.log(`[/commit] Session Analysis State (${Object.keys(sessionAnalysis).length} keys):`, sessionAnalysis);
 
@@ -606,7 +533,7 @@ export default function DrivingTestApp() {
 
       console.log(`[/commit] PROCESSING: id: ${qId}`);
       entries.push({
-        user: currentUser || "unknown",
+        user: currentUserId,
         questionId: qId,
         questionText: question.otazka,
         groupId: question.groupId,
@@ -618,7 +545,7 @@ export default function DrivingTestApp() {
       });
     }
     console.log("[commitSessionAnalysis] Compiled entries:", entries);
-    const newBadges = await appendAnalysisData(entries, currentUser);
+    const newBadges = await appendAnalysisData(entries, user ? user.id : "Host");
     if (newBadges.length > 0) {
       setUnlockedBadges(prev => [...prev, ...newBadges]);
       // Zde by mohla být notifikace pro uživatele
@@ -675,14 +602,15 @@ export default function DrivingTestApp() {
   }, [q]);
 
   useEffect(() => {
-    if (phase === 'analysis' && currentUser) {
-        loadUserData(currentUser).then(data => {
+    const currentUserId = user ? user.id : "Host";
+    if (phase === 'analysis' && currentUserId) {
+        loadUserData(currentUserId).then(data => {
           setAnalysisData(data.analysisData);
           setUnlockedBadges(data.unlockedBadges);
           setSummaryData(data.summaryData);
         });
     }
-  }, [phase, currentUser]);
+  }, [phase, user]);
 
   useEffect(() => {
     if (phase === "test") {
@@ -693,8 +621,8 @@ export default function DrivingTestApp() {
     }
   }, [q, phase, setMessages]);
 
-  if (!currentUser) {
-    return <LoginScreen onLogin={handleLogin} />;
+  if (!session) {
+    return <Login />;
   }
 
   const SettingsModal = () => (
@@ -709,7 +637,7 @@ export default function DrivingTestApp() {
             <Button 
               variant="outline" 
               className="w-full justify-start gap-2"
-              onClick={() => window.location.href = `/api/export-data?userId=${encodeURIComponent(currentUser!)}`}
+              onClick={() => window.location.href = `/api/export-data?userId=${encodeURIComponent(user!.id)}`}
             >
               <Download size={16} />
               Stáhnout moje data (JSON)
@@ -723,7 +651,7 @@ export default function DrivingTestApp() {
                     const response = await fetch('/api/reset-analysis', {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ userId: currentUser }),
+                      body: JSON.stringify({ userId: user!.id }),
                     });
                     if (!response.ok) throw new Error('Server error');
                     alert('Vaše data byla úspěšně smazána.');
@@ -999,7 +927,7 @@ export default function DrivingTestApp() {
       return "bg-red-500";
     };
 
-    const userAnalysisData = analysisData.filter(entry => entry.user === currentUser); // Stále potřeba pro celkový počet
+    const userAnalysisData = analysisData.filter(entry => entry.user === (user ? user.id : "Host")); // Stále potřeba pro celkový počet
     const summaryValues = Object.values(summaryData);
 
     const analysisByGroup = GROUPS.map(group => {
@@ -1054,7 +982,7 @@ export default function DrivingTestApp() {
       });
 
     const startPracticeFromMistakes = async () => {
-      if (!currentUser) return;
+      if (!user) return;
       
       const questionsToPracticeIds = processedMistakes
         .filter(m => !m.isCorrected)

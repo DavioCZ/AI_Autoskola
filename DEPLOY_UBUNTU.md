@@ -55,8 +55,9 @@ sudo apt install python3 python3-pip python3-venv -y
     ```
 
 2.  **Nainstalujte Node.js a Python závislosti.**
+    *Použijeme `--prefix` pro `npm`, abychom zajistili, že se balíčky nainstalují do správného adresáře, i kdyby se `npm` pokoušelo hledat jinde.*
     ```bash
-    npm install
+    npm install --prefix /var/repo/
     pip install -r requirements.txt
     ```
 

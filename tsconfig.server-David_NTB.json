@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "build",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowJs": true,
+    "isolatedModules": false,
+    "allowImportingTsExtensions": false
+  },
+  "include": ["server.js", "src/badges.ts", "utils/buildAnalysisIndex.js"]
+}
