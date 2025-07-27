@@ -10,12 +10,22 @@ import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Redis } from "@upstash/redis";
 import { Ratelimit } from "@upstash/ratelimit";
+import { createClient } from "@supabase/supabase-js";
 import { allBadges } from "./src/badges.js";
 
 dotenv.config();
 let analysisIndex;
-const { GEMINI_API_KEY, UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN } = process.env;
+const { 
+  GEMINI_API_KEY, 
+  UPSTASH_REDIS_REST_URL, 
+  UPSTASH_REDIS_REST_TOKEN,
+  VITE_SUPABASE_URL, 
+  VITE_SUPABASE_ANON_KEY,
+  TURNSTILE_SECRET_KEY 
+} = process.env;
 const MODEL_CHAT          = "gemini-1.5-flash-latest"; // Changed to a valid, recent model
+
+const supabase = createClient(VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY);
 
 if (!GEMINI_API_KEY) { console.error("❌  Chybí GEMINI_API_KEY v .env"); process.exit(1); }
 
@@ -64,6 +74,95 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // Upravená cesta: směřuje o úroveň výš z `build` do `dist`
 app.use(express.static(path.join(__dirname, "..", "dist")));
+
+// --- CAPTCHA Verification Helper ---
+async function verifyCaptcha(token) {
+  if (!TURNSTILE_SECRET_KEY) {
+    console.error("TURNSTILE_SECRET_KEY is not set.");
+    // In development, you might want to bypass this check
+    // return true; 
+    return false;
+  }
+  const response = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        secret: TURNSTILE_SECRET_KEY,
+        response: token,
+      }),
+    }
+  );
+  const data = await response.json();
+  return data.success;
+}
+
+// --- Auth Endpoints ---
+
+app.post("/api/signup", async (req, res) => {
+  const { email, password, username, captchaToken } = req.body;
+
+  const captchaVerified = await verifyCaptcha(captchaToken);
+  if (!captchaVerified) {
+    return res.status(403).json({ message: "Ověření CAPTCHA selhalo." });
+  }
+
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        username: username,
+      },
+    },
+  });
+
+  if (error) {
+    return res.status(400).json({ message: error.message });
+  }
+  res.status(200).json({ user: data.user });
+});
+
+app.post("/api/login", async (req, res) => {
+  const { identifier, password, captchaToken } = req.body;
+
+  const captchaVerified = await verifyCaptcha(captchaToken);
+  if (!captchaVerified) {
+    return res.status(403).json({ message: "Ověření CAPTCHA selhalo." });
+  }
+
+  let email = identifier;
+  const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier);
+
+  if (!isEmail) {
+    const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('email')
+      .eq('username', identifier)
+      .single();
+
+    if (profileError || !profile) {
+      return res.status(404).json({ message: 'Uživatel s tímto jménem neexistuje.' });
+    }
+    email = profile.email;
+  }
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    return res.status(401).json({ message: error.message });
+  }
+
+  // Send back the session to the client
+  res.status(200).json({ session: data.session });
+});
+
 
 /* ---------- 1) klasické textové dotazy /api/ai -------------------------------- */
 // The user's prompt mentioned "… tvůj původní prompt …" and "nechávám tvou poslední logiku"

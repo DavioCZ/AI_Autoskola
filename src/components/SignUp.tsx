@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { supabase } from '../supabase';
 import TurnstileWidget from '@/src/components/Turnstile.tsx';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { useTheme } from '../hooks/useTheme';
+import { Button } from '@/components/ui/button.tsx';
+import { Card, CardContent, CardHeader } from '@/components/ui/card.tsx';
+import { useTheme } from '@/src/hooks/useTheme';
 import { Moon, Sun } from 'lucide-react';
 
 function Footer() {
