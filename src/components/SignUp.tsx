@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../supabase';
+import TurnstileWidget from './Turnstile';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { useTheme } from '../hooks/useTheme';
@@ -21,6 +22,7 @@ export default function SignUp({ onSwitchToLogin }: { onSwitchToLogin: () => voi
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const { theme, setTheme } = useTheme();
 
   const handleSignUp = async (e: React.FormEvent) => {
@@ -29,29 +31,28 @@ export default function SignUp({ onSwitchToLogin }: { onSwitchToLogin: () => voi
     setError('');
     setSuccess('');
 
-    // 1. Sign up the user in Supabase Auth
-    const { data: authData, error: signUpError } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          username: username,
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-      },
-    });
+        body: JSON.stringify({ email, password, username, captchaToken }),
+      });
 
-    if (signUpError) {
-      setError(signUpError.message);
-      setLoading(false);
-      return;
-    }
+      const data = await response.json();
 
-    if (authData.user) {
-      // The profile is now created by a database trigger, so we just show success.
+      if (!response.ok) {
+        throw new Error(data.message || 'Neznámá chyba při registraci.');
+      }
+
       setSuccess('Registrace byla úspěšná! Pokud je vyžadováno, zkontrolujte svůj e-mail pro ověření.');
+
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
-    
-    setLoading(false);
   };
 
   return (
@@ -101,9 +102,16 @@ export default function SignUp({ onSwitchToLogin }: { onSwitchToLogin: () => voi
             </div>
             {error && <p className="text-xs text-red-600">{error}</p>}
             {success && <p className="text-xs text-green-600">{success}</p>}
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Registruji...' : 'Zaregistrovat se'}
-            </Button>
+            
+            <div className="flex justify-center items-center my-4 h-[65px]">
+              {!captchaToken ? (
+                <TurnstileWidget onSuccess={setCaptchaToken} />
+              ) : (
+                <Button type="submit" className="w-full" disabled={loading}>
+                  {loading ? 'Registruji...' : 'Zaregistrovat se'}
+                </Button>
+              )}
+            </div>
           </form>
 
           <div className="relative my-4">

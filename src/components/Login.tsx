@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../supabase';
+import TurnstileWidget from './Turnstile';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { useTheme } from '../hooks/useTheme';
@@ -22,6 +23,7 @@ export default function Login({ onLogin, onSwitchToSignUp }: { onLogin: (name: s
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const { theme, setTheme } = useTheme();
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -29,34 +31,38 @@ export default function Login({ onLogin, onSwitchToSignUp }: { onLogin: (name: s
     setLoading(true);
     setError('');
 
-    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier);
-    let email = identifier;
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ identifier, password, captchaToken }),
+      });
 
-    if (!isEmail) {
-      // If it's not an email, assume it's a username and get the email from the profiles table
-      const { data: profile, error: profileError } = await supabase
-        .from('profiles')
-        .select('email')
-        .eq('username', identifier)
-        .single();
+      const data = await response.json();
 
-      if (profileError || !profile) {
-        setError('Uživatel s tímto jménem neexistuje nebo se nepodařilo načíst profil.');
-        setLoading(false);
-        return;
+      if (!response.ok) {
+        throw new Error(data.message || 'Neznámá chyba při přihlašování.');
       }
-      email = profile.email;
-    }
 
-    const { error: signInError } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    if (signInError) {
-      setError(signInError.message);
+      // After a successful server-side login, set the session on the client
+      const { session } = data;
+      if (session) {
+        await supabase.auth.setSession(session);
+      } else {
+        // Fallback or error if session is not returned
+        await supabase.auth.refreshSession();
+      }
+      
+      // The onLogin callback might need to be adjusted depending on what it does
+      // For now, we assume it triggers a state change in the parent component
+      
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -93,9 +99,16 @@ export default function Login({ onLogin, onSwitchToSignUp }: { onLogin: (name: s
               />
             </div>
             {error && <p className="text-xs text-red-600">{error}</p>}
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Přihlašuji...' : 'Přihlásit se'}
-            </Button>
+            
+            <div className="flex justify-center items-center my-4 h-[65px]">
+              {!captchaToken ? (
+                <TurnstileWidget onSuccess={setCaptchaToken} />
+              ) : (
+                <Button type="submit" className="w-full" disabled={loading}>
+                  {loading ? 'Přihlašuji...' : 'Přihlásit se'}
+                </Button>
+              )}
+            </div>
           </form>
 
           <div className="relative my-4">
@@ -108,10 +121,14 @@ export default function Login({ onLogin, onSwitchToSignUp }: { onLogin: (name: s
           </div>
 
 
-          <Button onClick={() => onLogin("Host")} variant="secondary" className="w-full" disabled={loading}>
-            <LogIn className="mr-2 h-4 w-4" />
-            Pokračovat jako Host
-          </Button>
+          <div className="min-h-[40px]">
+            {captchaToken && (
+              <Button onClick={() => onLogin("Host")} variant="secondary" className="w-full" disabled={loading}>
+                <LogIn className="mr-2 h-4 w-4" />
+                Pokračovat jako Host
+              </Button>
+            )}
+          </div>
 
           <div className="mt-4 text-center text-sm">
             Nemáte účet?{' '}
