@@ -17,7 +17,8 @@ const ICONS: { [key: number]: ForwardRefExoticComponent<Omit<LucideProps, "ref">
 
 type SummaryData = Record<string, {
     groupId: number;
-    successRate: number;
+    attempts: number;
+    correct: number;
 }>;
 
 type WeakestTopicsProps = {
@@ -26,21 +27,22 @@ type WeakestTopicsProps = {
 };
 
 const WeakestTopics = ({ summaryData, onPracticeTopic }: WeakestTopicsProps) => {
-  const topicsStats = Object.values(summaryData).reduce((acc, item) => {
+  const topicsStats = Object.values(summaryData)
+    .filter(item => item.groupId !== -1) // Ignorovat speciální záznamy
+    .reduce((acc, item) => {
     const groupId = item.groupId;
     if (!acc[groupId]) {
-      acc[groupId] = { total: 0, successSum: 0, count: 0 };
+      acc[groupId] = { totalAttempts: 0, totalCorrect: 0 };
     }
-    acc[groupId].total++;
-    acc[groupId].successSum += item.successRate;
-    acc[groupId].count++;
+    acc[groupId].totalAttempts += item.attempts;
+    acc[groupId].totalCorrect += item.correct;
     return acc;
-  }, {} as Record<number, { total: number; successSum: number; count: number }>);
+  }, {} as Record<number, { totalAttempts: number; totalCorrect: number }>);
 
   const topics = Object.entries(topicsStats)
     .map(([groupId, data]) => ({
       groupId: parseInt(groupId),
-      avgSuccess: data.successSum / data.count,
+      avgSuccess: data.totalAttempts > 0 ? (data.totalCorrect / data.totalAttempts) * 100 : 0,
     }))
     .filter(topic => topic.avgSuccess < 80)
     .sort((a, b) => a.avgSuccess - b.avgSuccess)
