@@ -1,14 +1,27 @@
-import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
+import { useState, useEffect } from 'react';
 
-export const QuestionImage = ({ src }: { src: string }) => (
-  <Zoom>
+export const QuestionImage = ({ src }: { src: string }) => {
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  useEffect(() => {
+    setIsZoomed(false);
+  }, [src]);
+
+  const handleImageClick = () => {
+    setIsZoomed(!isZoomed);
+  };
+
+  return (
     <img
       src={src}
       alt="Obrázek k otázce"
-      className="w-full h-auto rounded-lg mb-4 object-contain
-                 cursor-zoom-in select-none"
+      className={`block mx-auto rounded-lg mb-4 object-contain select-none transition-all duration-300 ${
+        isZoomed
+          ? 'w-full cursor-zoom-out'
+          : 'max-w-full md:max-w-md cursor-zoom-in'
+      }`}
       style={{ imageRendering: 'pixelated' }} // udrží „ostré“ pixely
+      onClick={handleImageClick}
     />
-  </Zoom>
-);
+  );
+};

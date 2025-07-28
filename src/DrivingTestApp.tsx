@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Confetti from "react-confetti";
 import { useAuth } from "./Auth";
 import Login from "./components/Login";
@@ -16,8 +16,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { CircularProgress } from "@/src/components/ui/circular-progress";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse, Moon, Sun, Settings, Trash2, Download, Expand } from "lucide-react";
+import { Send, BarChart2, RefreshCcw, CheckCircle2, XCircle, User, LogOut, Book, Library, FileText, PanelLeftClose, PanelRightOpen, Car, TrafficCone, Shield, GitFork, Wrench, HeartPulse, Moon, Sun, Settings, Trash2, Download, Expand, ChevronsUpDown } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -59,8 +64,10 @@ export type AnalysisEntry = {
   timeToAnswer: number; // v milisekundách
   isCorrect: boolean; // Byla finální odpověď správná?
   isFirstAttemptCorrect: boolean; // Byla první odpověď správná?
+  answerIndex: number; // Index odpovědi, kterou uživatel zvolil
   mode: 'exam' | 'practice';
   isCorrection?: boolean; // Jedná se o pokus o opravu?
+  sessionStatus?: 'dokončený' | 'nedokončený' | 'nestihnutý';
 };
 
 // Nový typ pro ukládání detailů o odpovědi v režimu procvičování
@@ -69,6 +76,17 @@ type PracticeAttempt = {
   isFirstAttemptCorrect: boolean; // Zda byl první pokus správný
   finalAttemptIndex: number;      // Index odpovědi při finálním (posledním) pokusu
   answered: true;                 // Indikátor, že na otázku bylo odpovězeno
+};
+
+type TestSession = {
+  date: string;
+  entries: AnalysisEntry[];
+  score: number;
+  totalPoints: number;
+  passed: boolean;
+  status: 'dokončený' | 'nedokončený' | 'nestihnutý';
+  correctAnswers: number;
+  totalQuestions: number;
 };
 
 const GROUPS = [
@@ -137,6 +155,7 @@ async function loadUserData(currentUser: string | null): Promise<UserData & { st
         timeToAnswer: 0, // V DB zatím nemáme
         isCorrect: e.correct,
         isFirstAttemptCorrect: e.correct, // Zjednodušení prozatím
+        answerIndex: 0, // V DB zatím nemáme
         mode: 'practice',
       }));
       // Pro hosta načteme statistiky z lokálního úložiště
@@ -203,13 +222,15 @@ function TopNav({
   currentUser,
   onSetCurrentUser,
   onOpenSettings,
+  isTestView,
 }: {
-  label: string;
+  label: React.ReactNode;
   timeLeft?: number | null;
   onHome: () => void;
   currentUser: string;
   onSetCurrentUser: (name?: string | null) => void;
   onOpenSettings: () => void;
+  isTestView?: boolean;
 }) {
   const { theme, setTheme } = useTheme();
   const mm = timeLeft !== null && timeLeft !== undefined ? Math.floor(timeLeft / 60) : null;
@@ -238,9 +259,13 @@ function TopNav({
           {currentUser && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-2">
+                <Button variant="ghost" className="flex items-center gap-2 px-2">
                   <User size={16} />
-                  <span className="text-sm font-medium">{currentUser}</span>
+                  <span className={clsx("text-sm font-medium", {
+                    "hidden sm:inline": isTestView
+                  })}>
+                    {currentUser}
+                  </span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end">
@@ -268,9 +293,6 @@ function TopNav({
               </DropdownMenuContent>
             </DropdownMenu>
           )}
-          <Button variant="ghost" onClick={onHome} className="text-sm font-medium">
-            Domů
-          </Button>
         </div>
       </div>
     </header>
@@ -317,6 +339,8 @@ export default function DrivingTestApp() {
   const msgEndRef = useRef<HTMLDivElement | null>(null);
   const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
   const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
+  const [isMistakesOpen, setIsMistakesOpen] = useState(true);
+  const [isTestsOpen, setIsTestsOpen] = useState(true);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const { setTheme } = useTheme();
   const [transferToken, setTransferToken] = useState<string | null>(null);
@@ -325,11 +349,171 @@ export default function DrivingTestApp() {
     const saved = localStorage.getItem("autoskola-showAiTutorInExam");
     return saved ? JSON.parse(saved) : true;
   });
+  const [autoAdvance, setAutoAdvance] = useState<boolean>(() => {
+    const saved = localStorage.getItem("autoskola-autoAdvance");
+    return saved ? JSON.parse(saved) : true;
+  });
   const [spacedRepetitionDeck, setSpacedRepetitionDeck] = useState<string[]>([]);
+
+  const summaryValues = Object.values(summaryData);
+  const testSessions = useMemo((): TestSession[] => {
+    const examEntries = analysisData
+      .filter(e => e.mode === 'exam')
+      .sort((a, b) => new Date(a.answeredAt).getTime() - new Date(b.answeredAt).getTime());
+
+    if (examEntries.length === 0) return [];
+
+    const sessions: AnalysisEntry[][] = [];
+    let currentSession: AnalysisEntry[] = [];
+    const TIME_THRESHOLD = 35 * 60 * 1000; // 35 minut
+
+    examEntries.forEach((entry, index) => {
+      if (index === 0) {
+        currentSession.push(entry);
+        return;
+      }
+      const prevEntry = examEntries[index - 1];
+      const timeDiff = new Date(entry.answeredAt).getTime() - new Date(prevEntry.answeredAt).getTime();
+
+      if (timeDiff > TIME_THRESHOLD) {
+        sessions.push(currentSession);
+        currentSession = [entry];
+      } else {
+        currentSession.push(entry);
+      }
+    });
+    sessions.push(currentSession);
+
+    return sessions.map(sessionEntries => {
+      // Najdeme a odstraníme speciální záznam o ukončení
+      const sessionEndEntry = sessionEntries.find(e => e.questionId.startsWith('SESSION_END'));
+      const realEntries = sessionEntries.filter(e => !e.questionId.startsWith('SESSION_END'));
+
+      const correctAnswers = realEntries.filter(e => e.isCorrect).length;
+      const score = realEntries.reduce((acc, e) => {
+        const questionInfo = summaryValues.find(q => q.questionId === e.questionId);
+        const points = GROUPS.find(g => g.id === questionInfo?.groupId)?.points || 0;
+        return acc + (e.isCorrect ? points : 0);
+      }, 0);
+      
+      const totalPoints = realEntries.reduce((acc, e) => {
+        const questionInfo = summaryValues.find(q => q.questionId === e.questionId);
+        return acc + (GROUPS.find(g => g.id === questionInfo?.groupId)?.points || 0);
+      }, 0);
+
+      const totalQuestions = realEntries.length;
+      const isCompleted = totalQuestions === 25;
+      
+      let status: 'dokončený' | 'nedokončený' | 'nestihnutý';
+      if (sessionEndEntry?.sessionStatus) {
+        status = sessionEndEntry.sessionStatus;
+      } else {
+        // Fallback pro stará data
+        status = isCompleted ? 'dokončený' : 'nedokončený';
+      }
+
+      return {
+        date: new Date(realEntries.length > 0 ? realEntries[0].answeredAt : sessionEndEntry!.answeredAt).toISOString(),
+        entries: realEntries,
+        score,
+        totalPoints: isCompleted ? 50 : totalPoints,
+        passed: score >= 43,
+        status,
+        correctAnswers,
+        totalQuestions,
+      };
+    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, [analysisData, summaryValues]);
+
+  const analysisByGroup = useMemo(() => GROUPS.map(group => {
+    const groupSummaries = summaryValues.filter(summary => summary.groupId === group.id);
+    const totalAttempts = groupSummaries.reduce((sum, s) => sum + s.attempts, 0);
+    if (totalAttempts === 0) {
+      return { ...group, total: 0, successRate: 0, avgTime: 0 };
+    }
+    const totalCorrect = groupSummaries.reduce((sum, s) => sum + s.correct, 0);
+    const totalTime = groupSummaries.reduce((sum, s) => sum + s.totalTimeToAnswer, 0);
+    
+    return {
+      ...group,
+      total: totalAttempts,
+      successRate: (totalCorrect / totalAttempts) * 100,
+      avgTime: totalTime / totalAttempts / 1000, // v sekundách
+    };
+  }), [summaryValues]);
+
+  const processedMistakes = useMemo(() => {
+    const mistakesByQuestion = summaryValues.reduce((acc, summary) => {
+        acc[summary.questionId] = {
+          text: summary.questionText,
+          history: summary.history.map(h => ({ isCorrect: h.isCorrect, answeredAt: h.answeredAt })),
+        };
+      return acc;
+    }, {} as Record<string, { text: string; history: { isCorrect: boolean; answeredAt: string }[] }>);
+
+    return Object.entries(mistakesByQuestion)
+      .map(([questionId, data]) => {
+        const incorrectCount = data.history.filter(h => !h.isCorrect).length;
+        const lastAttempt = data.history[data.history.length - 1];
+        const isCorrected = lastAttempt ? lastAttempt.isCorrect : false;
+        return {
+          questionId,
+          text: data.text,
+          incorrectCount,
+          isCorrected,
+        };
+      })
+      .filter(item => {
+        if (item.incorrectCount === 0) return false;
+        if (mistakesFilter === 'uncorrected') {
+          return !item.isCorrected;
+        }
+        return true;
+      })
+      .sort((a, b) => {
+        if (a.isCorrected !== b.isCorrected) {
+          return a.isCorrected ? 1 : -1; // Opravené chyby dáme na konec
+        }
+        return b.incorrectCount - a.incorrectCount; // Řadíme podle počtu chyb
+      });
+  }, [summaryValues, mistakesFilter]);
+
+  const startPracticeFromMistakes = async () => {
+    if (!user) return;
+    
+    const questionsToPracticeIds = processedMistakes
+      .filter(m => !m.isCorrected)
+      .map(m => m.questionId);
+
+    if (questionsToPracticeIds.length === 0) {
+      alert("Nemáte žádné otázky, ve kterých byste chybovali. Skvělá práce!");
+      return;
+    }
+    
+    setIsLoading(true);
+    const allQuestionsPromises = GROUPS.map(g => fetchGroup(g.id));
+    const allQuestionsArrays = await Promise.all(allQuestionsPromises);
+    const allQuestions = allQuestionsArrays.flat();
+    
+    let questionsForPractice = allQuestions.filter(q => questionsToPracticeIds.includes(q.id));
+    
+    // Shuffle
+    for (let i = questionsForPractice.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questionsForPractice[i], questionsForPractice[j]] = [questionsForPractice[j], questionsForPractice[i]];
+    }
+
+    await initiateTest('practice', [], questionsForPractice);
+    setIsLoading(false);
+  };
 
   useEffect(() => {
     localStorage.setItem("autoskola-showAiTutorInExam", JSON.stringify(showAiTutorInExam));
   }, [showAiTutorInExam]);
+
+  useEffect(() => {
+    localStorage.setItem("autoskola-autoAdvance", JSON.stringify(autoAdvance));
+  }, [autoAdvance]);
 
   useEffect(() => {
     // Inicializujeme Web Worker pro zpracování na pozadí pro hosty
@@ -512,36 +696,34 @@ export default function DrivingTestApp() {
   useEffect(() => {
     if (phase !== 'test' || timeLeft === null) return;
     if (timeLeft <= 0) {
-      finishExam();
+      finishExam('timeup');
       return;
     }
     const id = setInterval(() => setTimeLeft((t) => (t !== null ? t - 1 : null)), 1000);
     return () => clearInterval(id);
   }, [timeLeft, phase]);
 
-  async function commitSessionAnalysis() {
-    console.log("[commitSessionAnalysis] Starting.");
+  async function commitSessionAnalysis(reason: 'manual' | 'timeup' | 'aborted' = 'manual') {
+    console.log(`[commitSessionAnalysis] Starting with reason: ${reason}.`);
     const entries: AnalysisEntry[] = [];
     const answeredQuestionIds = Object.keys(responses);
     const currentUserId = user ? user.id : "Host";
-    console.log(`[/commit] Responded IDs (${answeredQuestionIds.length}):`, answeredQuestionIds);
-    console.log(`[/commit] Session Analysis State (${Object.keys(sessionAnalysis).length} keys):`, sessionAnalysis);
+    
+    if (answeredQuestionIds.length === 0 && reason !== 'timeup') {
+      console.log("[commitSessionAnalysis] No questions answered, skipping commit.");
+      return;
+    }
 
     for (const qId of answeredQuestionIds) {
       const question = questions.find(q => q.id === qId);
       const sessionData = sessionAnalysis[qId];
       const finalAnswerIndex = responses[qId];
 
-      if (!question) {
-        console.warn(`[/commit] SKIPPING: Question not found for id: ${qId}`);
-        continue;
-      }
-      if (!sessionData) {
-        console.warn(`[/commit] SKIPPING: Session analysis data not found for id: ${qId}`);
+      if (!question || !sessionData) {
+        console.warn(`[/commit] SKIPPING: Missing data for question id: ${qId}`);
         continue;
       }
 
-      console.log(`[/commit] PROCESSING: id: ${qId}`);
       entries.push({
         user: currentUserId,
         questionId: qId,
@@ -551,14 +733,37 @@ export default function DrivingTestApp() {
         timeToAnswer: sessionData.timeToAnswer,
         isFirstAttemptCorrect: sessionData.firstAttemptCorrect,
         isCorrect: finalAnswerIndex === question.spravna,
+        answerIndex: finalAnswerIndex,
         mode: mode,
       });
     }
+
+    const statusMap: Record<typeof reason, 'dokončený' | 'nedokončený' | 'nestihnutý'> = {
+      manual: 'dokončený',
+      aborted: 'nedokončený',
+      timeup: 'nestihnutý',
+    };
+    const sessionStatus = statusMap[reason];
+
+    // Přidáme speciální záznam o ukončení session
+    entries.push({
+      user: currentUserId,
+      questionId: `SESSION_END_${new Date().getTime()}`,
+      questionText: 'Session End Marker',
+      groupId: -1,
+      answeredAt: new Date().toISOString(),
+      timeToAnswer: 0,
+      isCorrect: false,
+      isFirstAttemptCorrect: false,
+      answerIndex: -1,
+      mode: 'exam',
+      sessionStatus: sessionStatus,
+    });
+
     console.log("[commitSessionAnalysis] Compiled entries:", entries);
     const newBadges = await appendAnalysisData(entries, user ? user.id : "Host");
     if (newBadges.length > 0) {
       setUnlockedBadges(prev => [...prev, ...newBadges]);
-      // Zde by mohla být notifikace pro uživatele
       alert(`Získali jste ${newBadges.length} nových odznaků!`);
     }
   }
@@ -568,9 +773,9 @@ export default function DrivingTestApp() {
     setPhase("intro");
   };
 
-  async function finishExam() {
+  async function finishExam(reason: 'manual' | 'timeup' | 'aborted' = 'manual') {
     // Okamžitě se pokusíme odeslat data z dokončené session
-    await commitSessionAnalysis();
+    await commitSessionAnalysis(reason);
     setPhase("done");
     // Znovunačtení dat je nyní řízeno useEffectem, který reaguje na změnu `phase` na `intro`,
     // když se uživatel vrátí z obrazovky s výsledky.
@@ -610,6 +815,22 @@ export default function DrivingTestApp() {
       setQuestionStartTime(Date.now());
     }
   }, [q]);
+
+  // Efekt pro automatický přechod na další otázku
+  useEffect(() => {
+    // Aktivuje se pouze v testovací fázi, pokud je povoleno a odpověď byla právě zaznamenána
+    if (phase === 'test' && autoAdvance && responses[q?.id] !== undefined) {
+      // A pouze pokud to není poslední otázka
+      if (current < questions.length - 1) {
+        const timer = setTimeout(() => {
+          setCurrent(c => c + 1);
+        }, 700); // Zpoždění, aby uživatel viděl výsledek odpovědi
+
+        // Vyčistit časovač, pokud se změní závislosti před jeho spuštěním
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [responses, autoAdvance, current, questions.length, phase, q]);
 
   useEffect(() => {
     const currentUserId = user ? user.id : "Host";
@@ -697,6 +918,19 @@ export default function DrivingTestApp() {
                 onCheckedChange={(checked: boolean) => setShowAiTutorInExam(checked)}
               />
             </div>
+            <div className="flex items-center justify-between pt-4 border-t">
+              <label
+                htmlFor="auto-advance"
+                className="text-sm font-medium leading-none"
+              >
+                Automatický přechod na další otázku
+              </label>
+              <Switch
+                id="auto-advance"
+                checked={autoAdvance}
+                onCheckedChange={(checked: boolean) => setAutoAdvance(checked)}
+              />
+            </div>
             <Button variant="secondary" className="w-full mt-4" onClick={() => setIsSettingsOpen(false)}>
               Zavřít
             </Button>
@@ -711,7 +945,7 @@ export default function DrivingTestApp() {
     return (
       <>
         <TopNav 
-          label={`Vítejte, ${currentUser}!`}
+          label={<span className="hidden md:inline">Vítejte</span>}
           onHome={() => setPhase("intro")}
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
@@ -942,88 +1176,7 @@ export default function DrivingTestApp() {
       return "bg-red-500";
     };
 
-    const userAnalysisData = analysisData.filter(entry => entry.user === (user ? user.id : "Host")); // Stále potřeba pro celkový počet
-    const summaryValues = Object.values(summaryData);
-
-    const analysisByGroup = GROUPS.map(group => {
-      const groupSummaries = summaryValues.filter(summary => summary.groupId === group.id);
-      const totalAttempts = groupSummaries.reduce((sum, s) => sum + s.attempts, 0);
-      if (totalAttempts === 0) {
-        return { ...group, total: 0, successRate: 0, avgTime: 0 };
-      }
-      const totalCorrect = groupSummaries.reduce((sum, s) => sum + s.correct, 0);
-      const totalTime = groupSummaries.reduce((sum, s) => sum + s.totalTimeToAnswer, 0);
-      
-      return {
-        ...group,
-        total: totalAttempts,
-        successRate: (totalCorrect / totalAttempts) * 100,
-        avgTime: totalTime / totalAttempts / 1000, // v sekundách
-      };
-    });
-
-    const mistakesByQuestion = summaryValues.reduce((acc, summary) => {
-        acc[summary.questionId] = {
-          text: summary.questionText,
-          history: summary.history.map(h => ({ isCorrect: h.isCorrect, answeredAt: h.answeredAt })),
-        };
-      return acc;
-    }, {} as Record<string, { text: string; history: { isCorrect: boolean; answeredAt: string }[] }>);
-
-    const processedMistakes = Object.entries(mistakesByQuestion)
-      .map(([questionId, data]) => {
-        const incorrectCount = data.history.filter(h => !h.isCorrect).length;
-        const lastAttempt = data.history[data.history.length - 1];
-        const isCorrected = lastAttempt ? lastAttempt.isCorrect : false;
-        return {
-          questionId,
-          text: data.text,
-          incorrectCount,
-          isCorrected,
-        };
-      })
-      .filter(item => {
-        if (item.incorrectCount === 0) return false;
-        if (mistakesFilter === 'uncorrected') {
-          return !item.isCorrected;
-        }
-        return true;
-      })
-      .sort((a, b) => {
-        if (a.isCorrected !== b.isCorrected) {
-          return a.isCorrected ? 1 : -1; // Opravené chyby dáme na konec
-        }
-        return b.incorrectCount - a.incorrectCount; // Řadíme podle počtu chyb
-      });
-
-    const startPracticeFromMistakes = async () => {
-      if (!user) return;
-      
-      const questionsToPracticeIds = processedMistakes
-        .filter(m => !m.isCorrected)
-        .map(m => m.questionId);
-
-      if (questionsToPracticeIds.length === 0) {
-        alert("Nemáte žádné otázky, ve kterých byste chybovali. Skvělá práce!");
-        return;
-      }
-      
-      setIsLoading(true);
-      const allQuestionsPromises = GROUPS.map(g => fetchGroup(g.id));
-      const allQuestionsArrays = await Promise.all(allQuestionsPromises);
-      const allQuestions = allQuestionsArrays.flat();
-      
-      let questionsForPractice = allQuestions.filter(q => questionsToPracticeIds.includes(q.id));
-      
-      // Shuffle
-      for (let i = questionsForPractice.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [questionsForPractice[i], questionsForPractice[j]] = [questionsForPractice[j], questionsForPractice[i]];
-      }
-
-      await initiateTest('practice', [], questionsForPractice);
-      setIsLoading(false);
-    };
+    const userAnalysisData = analysisData.filter(entry => entry.user === (user ? user.id : "Host"));
 
     return (
       <div className="flex flex-col h-screen bg-background">
@@ -1119,67 +1272,174 @@ export default function DrivingTestApp() {
               </Card>
             )}
 
+            {testSessions.length > 0 && (
+              <Collapsible open={isTestsOpen} onOpenChange={setIsTestsOpen} className="max-w-4xl mx-auto mt-8">
+                <Card>
+                  <CardHeader>
+                    <CollapsibleTrigger asChild>
+                      <div className="flex items-center gap-3 cursor-pointer">
+                        <h3 className="font-semibold text-lg">Přehled testů</h3>
+                        <ChevronsUpDown size={18} className="text-muted-foreground transition-transform data-[state=open]:-rotate-180" />
+                      </div>
+                    </CollapsibleTrigger>
+                    <p className="text-sm text-muted-foreground mt-1">Historie vašich pokusů v ostrém testu.</p>
+                  </CardHeader>
+                  <CollapsibleContent>
+                    <CardContent>
+                      <table className="w-full text-sm text-left">
+                        <thead className="bg-muted/50">
+                          <tr>
+                            <th className="p-3 font-medium">Kdy</th>
+                            <th className="p-3 font-medium text-center">Stav</th>
+                            <th className="p-3 font-medium text-center">Výsledek</th>
+                            <th className="p-3 font-medium">Úspěšnost</th>
+                            <th className="p-3 font-medium text-center">Akce</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {testSessions.map((session: TestSession, index: number) => (
+                            <tr key={index} className="border-b">
+                              <td className="p-3">
+                                {new Date(session.date).toLocaleDateString('cs-CZ', {
+                                  day: 'numeric', month: 'long', year: 'numeric'
+                                })}
+                                <span className="text-muted-foreground text-xs block">
+                                  {new Date(session.date).toLocaleTimeString('cs-CZ', {
+                                    hour: '2-digit', minute: '2-digit'
+                                  })}
+                                </span>
+                              </td>
+                              <td className="p-3 text-center capitalize">{session.status}</td>
+                              <td className="p-3 text-center">
+                                {session.passed ? (
+                                  <span className="font-semibold text-green-600">SPLNĚNO</span>
+                                ) : (
+                                  <span className="font-semibold text-red-600">NESPLNĚNO</span>
+                                )}
+                              </td>
+                              <td className="p-3">
+                                <span className="font-mono">{session.score} bodů = {session.totalPoints > 0 ? ((session.score / session.totalPoints) * 100).toFixed(0) : 0}%</span>
+                                <span className="text-muted-foreground text-xs block">({session.correctAnswers} z {session.totalQuestions})</span>
+                              </td>
+                              <td className="p-3 text-center">
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  disabled={isLoading}
+                                  isLoading={isLoading}
+                                  onClick={async () => {
+                                    setIsLoading(true);
+                                    // 1. Načteme všechny otázky, abychom měli kompletní data
+                                    const allQuestionsPromises = GROUPS.map(g => fetchGroup(g.id));
+                                    const allQuestionsArrays = await Promise.all(allQuestionsPromises);
+                                    const allQuestionsMap = new Map(allQuestionsArrays.flat().map(q => [q.id, q]));
+
+                                    // 2. Sestavíme pole otázek pro danou session s kompletními daty
+                                    const questionsForSession = session.entries
+                                      .map(entry => allQuestionsMap.get(entry.questionId))
+                                      .filter((q): q is Question => q !== undefined);
+
+                                    if (questionsForSession.length !== session.entries.length) {
+                                      console.error("Některé otázky ze session se nepodařilo najít v aktuálních datech!");
+                                      // I přesto pokračujeme s tím, co máme
+                                    }
+
+                                    setQuestions(questionsForSession);
+
+                                    // 3. Sestavíme odpovědi pro danou session
+                                    const sessionResponses = session.entries.reduce((acc, e) => {
+                                      acc[e.questionId] = e.answerIndex;
+                                      return acc;
+                                    }, {} as Record<string, number>);
+                                    setResponses(sessionResponses);
+                                    
+                                    // 4. Přepneme na obrazovku s výsledky
+                                    setMode('exam');
+                                    setPhase('done');
+                                    setIsLoading(false);
+                                  }}
+                                >
+                                  Vyhodnocení
+                                </Button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </CardContent>
+                  </CollapsibleContent>
+                </Card>
+              </Collapsible>
+            )}
+
             {userAnalysisData.filter(e => !e.isFirstAttemptCorrect).length > 0 && (
-              <Card className="max-w-4xl mx-auto mt-8">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
-                      <p className="text-sm text-muted-foreground">Otázky, ve kterých jste v minulosti chybovali.</p>
-                    </div>
-                    <div className="flex items-center gap-1 bg-muted p-1 rounded-md">
-                      <Button 
-                        variant={mistakesFilter === 'all' ? 'default' : 'ghost'} 
-                        size="sm" 
-                        onClick={() => setMistakesFilter('all')}
-                        className="text-xs h-7"
-                      >
-                        Všechny
-                      </Button>
-                      <Button 
-                        variant={mistakesFilter === 'uncorrected' ? 'default' : 'ghost'} 
-                        size="sm" 
-                        onClick={() => setMistakesFilter('uncorrected')}
-                        className="text-xs h-7"
-                      >
-                        Neopravené
-                      </Button>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  {processedMistakes.length > 0 ? (
-                    <div className="space-y-4">
-                      {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
-                        <div key={questionId} className={clsx("p-3 border rounded-md", {
-                          "bg-red-50/50 border-red-200 dark:bg-red-900/20 dark:border-red-800": !isCorrected,
-                          "bg-green-50/50 border-green-200 dark:bg-green-900/20 dark:border-green-800": isCorrected,
-                        })}>
-                          <div className="flex justify-between items-center">
-                            <p className={clsx("font-semibold", {
-                              "text-red-800 dark:text-red-300": !isCorrected,
-                              "text-green-800 dark:text-green-300": isCorrected,
-                            })}>
-                              {incorrectCount}x nesprávně
-                            </p>
-                            {isCorrected && (
-                              <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
-                                OPRAVENO
-                              </span>
-                            )}
-                          </div>
-                          <p className="text-sm text-foreground/90 mt-1">{text}</p>
+              <Collapsible open={isMistakesOpen} onOpenChange={setIsMistakesOpen} className="max-w-4xl mx-auto mt-8">
+                <Card>
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <CollapsibleTrigger asChild>
+                        <div className="flex items-center gap-3 cursor-pointer flex-1">
+                          <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
+                          <ChevronsUpDown size={18} className="text-muted-foreground transition-transform data-[state=open]:-rotate-180" />
                         </div>
-                      ))}
+                      </CollapsibleTrigger>
+                      <div className="flex items-center gap-1 bg-muted p-1 rounded-md">
+                        <Button
+                          variant={mistakesFilter === 'all' ? 'default' : 'ghost'}
+                          size="sm"
+                          onClick={() => setMistakesFilter('all')}
+                          className="text-xs h-7"
+                        >
+                          Všechny
+                        </Button>
+                        <Button
+                          variant={mistakesFilter === 'uncorrected' ? 'default' : 'ghost'}
+                          size="sm"
+                          onClick={() => setMistakesFilter('uncorrected')}
+                          className="text-xs h-7"
+                        >
+                          Neopravené
+                        </Button>
+                      </div>
                     </div>
-                  ) : (
-                    <div className="text-center py-8 text-muted-foreground">
-                      <p>Žádné chyby k zobrazení v tomto filtru.</p>
-                      <p className="text-xs mt-1">Zkuste změnit filtr na "Všechny".</p>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+                    <p className="text-sm text-muted-foreground mt-1">Otázky, ve kterých jste v minulosti chybovali.</p>
+                  </CardHeader>
+                  <CollapsibleContent>
+                    <CardContent>
+                      {processedMistakes.length > 0 ? (
+                        <div className="space-y-4">
+                          {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
+                            <div key={questionId} className={clsx("p-3 border rounded-md", {
+                              "bg-red-50/50 border-red-200 dark:bg-red-900/20 dark:border-red-800": !isCorrected,
+                              "bg-green-50/50 border-green-200 dark:bg-green-900/20 dark:border-green-800": isCorrected,
+                            })}>
+                              <div className="flex justify-between items-center">
+                                <p className={clsx("font-semibold", {
+                                  "text-red-800 dark:text-red-300": !isCorrected,
+                                  "text-green-800 dark:text-green-300": isCorrected,
+                                })}>
+                                  {incorrectCount}x nesprávně
+                                </p>
+                                {isCorrected && (
+                                  <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
+                                    OPRAVENO
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-sm text-foreground/90 mt-1">{text}</p>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="text-center py-8 text-muted-foreground">
+                          <p>Žádné chyby k zobrazení v tomto filtru.</p>
+                          <p className="text-xs mt-1">Zkuste změnit filtr na "Všechny".</p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </CollapsibleContent>
+                </Card>
+              </Collapsible>
             )}
           </div>
         </main>
@@ -1304,6 +1564,7 @@ export default function DrivingTestApp() {
                                         setResponses({});
                                         setPracticeFirstAttempts({});
                                         setOriginPhase("browse"); // Remember where we came from
+                                        setTimeLeft(null); // Vynulovat časovač pro prohlížení
                                         setPhase("test");
                                     }}
                                     onKeyDown={(e: React.KeyboardEvent) => {
@@ -1314,6 +1575,7 @@ export default function DrivingTestApp() {
                                         setResponses({});
                                         setPracticeFirstAttempts({});
                                         setOriginPhase("browse"); // Remember where we came from
+                                        setTimeLeft(null); // Vynulovat časovač pro prohlížení
                                         setPhase("test");
                                       }
                                     }}
@@ -1400,14 +1662,13 @@ export default function DrivingTestApp() {
           currentUser={currentUser}
           onSetCurrentUser={handleLogout}
           onOpenSettings={() => setIsSettingsOpen(true)}
+          isTestView={true}
           onHome={() => {
-            // Chceme potvrzení jen u ostrého testu
             if (mode === 'exam') {
-              if (confirm("Opravdu chcete opustit test a vrátit se na hlavní stránku? Váš postup nebude uložen.")) {
-                setPhase("intro");
+              if (confirm("Opravdu chcete opustit test? Váš dosavadní postup bude uložen jako nedokončený pokus.")) {
+                finishExam('aborted');
               }
             } else {
-              // U procvičování (včetně prohlížení) rovnou ukončíme a uložíme statistiky, pak se vrátíme na úvod
               endPracticeAndGoHome();
             }
           }}
@@ -1422,13 +1683,11 @@ export default function DrivingTestApp() {
                   setBrowseState('questions');
                   return;
                 }
-                // Chceme potvrzení jen u ostrého testu
                 if (mode === 'exam') {
-                  if (confirm("Opravdu chcete test ukončit? Váš postup nebude uložen.")) {
-                    setPhase("intro");
+                  if (confirm("Opravdu chcete opustit test? Váš dosavadní postup bude uložen jako nedokončený pokus.")) {
+                    finishExam();
                   }
                 } else {
-                  // U procvičování rovnou ukončíme a uložíme statistiky
                   endPracticeAndGoHome();
                 }
               }}>
@@ -1447,7 +1706,7 @@ export default function DrivingTestApp() {
               <div className="mx-auto w-full max-w-screen-md">
                 {mode === 'exam' && (
                   <header className="space-y-3">
-                  <ul className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                  <ul className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                     {questions.map((questionItem, idx) => {
                       const isAnswered = responses.hasOwnProperty(questionItem.id);
                       const isCurrent = idx === current;
@@ -1457,7 +1716,7 @@ export default function DrivingTestApp() {
                           variant={isCurrent ? "default" : isAnswered ? "secondary" : "outline"}
                           size="sm"
                           className={clsx(
-                            "h-8 w-8 rounded-full text-sm font-medium border",
+                            "h-7 w-7 rounded-full text-xs font-medium border",
                             {
                               "bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-secondary-foreground border-slate-300 dark:border-slate-600": isAnswered && !isCurrent,
                               "border-primary ring-2 ring-primary ring-offset-background": isCurrent,
@@ -1599,7 +1858,7 @@ export default function DrivingTestApp() {
                       mode === 'exam' ? (
                         <Button onClick={() => {
                           if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
-                            finishExam();
+                            finishExam('manual');
                           }
                         }} className="bg-primary hover:bg-primary/90 text-primary-foreground">
                           Dokončit test
@@ -1608,7 +1867,7 @@ export default function DrivingTestApp() {
                         <Button 
                           onClick={() => {
                             if (confirm("Opravdu si přejete dokončit a vyhodnotit procvičování?")) {
-                              finishExam();
+                              finishExam('manual');
                             }
                           }} 
                           className="text-primary-foreground bg-primary hover:bg-primary/90"
@@ -1630,7 +1889,7 @@ export default function DrivingTestApp() {
                   {mode === 'exam' && answeredCount === questions.length && current < questions.length - 1 && (
                     <Button onClick={() => {
                       if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
-                        finishExam();
+                        finishExam('manual');
                       }
                     }} className="bg-primary hover:bg-primary/90 text-primary-foreground">
                       Dokončit test
@@ -1704,7 +1963,7 @@ export default function DrivingTestApp() {
               mode === 'exam' ? (
                 <Button onClick={() => {
                   if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
-                    finishExam();
+                    finishExam('manual');
                   }
                 }} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
                   Dokončit
@@ -1713,7 +1972,7 @@ export default function DrivingTestApp() {
                 <Button 
                   onClick={() => {
                     if (confirm("Opravdu si přejete dokončit a vyhodnotit procvičování?")) {
-                      finishExam();
+                      finishExam('manual');
                     }
                   }} 
                   className="flex-1 text-primary-foreground bg-primary hover:bg-primary/90"
