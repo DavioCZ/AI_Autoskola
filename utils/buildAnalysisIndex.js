@@ -11,7 +11,7 @@ import fs from "node:fs/promises";
  * @returns {Promise<Map<string, Analysis & { otazka?: string, groupId?: number }>>}
  */
 export async function buildAnalysisIndex() {
-  console.log("Building analysis index...");
+  // console.log("Building analysis index...");
 
   // 1. Načteme všechny texty otázek a jejich groupId
   const questionFiles = await fg("public/okruh[0-9].json"); // Zpřesněný vzor, aby se nenačítaly soubory _seznam_URL
@@ -27,15 +27,15 @@ export async function buildAnalysisIndex() {
       const groupId = groupIdMatch ? parseInt(groupIdMatch[1], 10) : 0;
 
       for (const q of questions) {
-        if (q.id_otazky && q.otazka) {
-          questionTextMap.set(q.id_otazky, { text: q.otazka, groupId });
+        if (q.id && q.otazka) {
+          questionTextMap.set(String(q.id), { text: q.otazka, groupId });
         }
       }
     } catch (e) {
       console.error(`Error processing question file ${file}:`, e);
     }
   }
-  console.log(`Loaded ${questionTextMap.size} question texts.`);
+  // console.log(`Loaded ${questionTextMap.size} question texts.`);
 
   // 2. Načteme všechny analýzy
   const analysisFiles = await fg("public/analyza_okruh*/*_analyza_URL_*.json");
@@ -67,7 +67,7 @@ export async function buildAnalysisIndex() {
       console.error(`Error processing analysis file ${file}:`, e);
     }
   }
-  console.log(`Indexed ${index.size} analyses.`);
+  // console.log(`Indexed ${index.size} analyses.`);
 
   // 3. Důležité: Přidáme i otázky, které nemají analýzu, aby měly alespoň text
   for (const [id, data] of questionTextMap.entries()) {
@@ -84,7 +84,7 @@ export async function buildAnalysisIndex() {
       });
     }
   }
-  console.log(`Index complete with ${index.size} total items.`);
+  // console.log(`Index complete with ${index.size} total items.`);
 
   return index;
 }

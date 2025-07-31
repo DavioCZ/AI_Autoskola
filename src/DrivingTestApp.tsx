@@ -135,7 +135,7 @@ async function loadUserData(currentUser: string | null): Promise<UserData & { st
         throw new Error(`Server responded with status: ${res.status}`);
       }
       const data = await res.json();
-      console.log("[DEBUG] Data received from /api/analysis-data:", JSON.stringify(data.summaryData, null, 2));
+      // console.log("[DEBUG] Data received from /api/analysis-data:", JSON.stringify(data.summaryData, null, 2));
       // Map server data to frontend TestSession type to handle inconsistencies
       const mappedSessions = (data.testSessions || []).map((s: any) => {
         // Ensure date is treated as UTC. MySQL DATETIME format is 'YYYY-MM-DD HH:MM:SS'.

@@ -506,7 +506,7 @@ app.get("/api/analysis-data", async (req, res) => {
 
       acc[summary.question_id] = {
         questionId: summary.question_id,
-        questionText: questionInfo.otazka || '',
+        questionText: questionInfo.otazka || 'Text otázky nebyl nalezen',
         groupId: summary.topic_id || questionInfo.groupId, // Priorita pro DB
         attempts: summary.attempts,
         correct: summary.correct_attempts,
