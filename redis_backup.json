@@ -1,0 +1,17 @@
+{
+  "result": [
+    "5640620736143109016",
+    [
+      "@upstash/ratelimit:events:1753264800000",
+      "@upstash/ratelimit:events:1753351200000",
+      "@upstash/ratelimit:events:1753354800000",
+      "@upstash/ratelimit:events:1753358400000",
+      "@upstash/ratelimit:events:1753362000000",
+      "@upstash/ratelimit:events:1753383600000",
+      "@upstash/ratelimit:events:1753430400000",
+      "@upstash/ratelimit:events:1753448400000",
+      "@upstash/ratelimit:events:1753452000000",
+      "@upstash/ratelimit:events:1753549200000"
+    ]
+  ]
+}

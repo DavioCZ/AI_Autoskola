@@ -53,10 +53,10 @@
 - [x] **Tmavý režim (Dark Mode):** Přidat do hlavičky aplikace přepínač pro snadné přepnutí mezi světlým a tmavým režimem.
 - [x] **Filtrování v přehledu chyb:** Na stránce "Podrobná analýza" do sekce "Přehled chybovosti" přidat filtr/přepínač pro zobrazení: Všechny chyby / Pouze neopravené.
 - [x] **Banka otázek s filtry:** Vytvořit novou sekci "Prohlížet otázky", kde si uživatel bude moci zobrazit všechny otázky a filtrovat je podle jednotlivých témat (např. "Dopravní značky", "Pravidla provozu").
-- [ ] **Opravit automatický přechod na další otázku:**
-    - [ ] **Problém:** Funkce automaticky přeskočí na další otázku i tehdy, když se uživatel vrátí na již zodpovězenou otázku, což mu brání v její kontrole.
-    - [ ] **Řešení:** Přeskok se smí aktivovat pouze bezprostředně po zodpovězení otázky, nikoli při pouhém zobrazení již zodpovězené otázky.
-    - [ ] **Omezení:** V režimu "Procvičování" by tato funkce měla být zcela deaktivována.
+- [x] **Opravit automatický přechod na další otázku:**
+    - [x] **Problém:** Funkce automaticky přeskočí na další otázku i tehdy, když se uživatel vrátí na již zodpovězenou otázku, což mu brání v její kontrole.
+    - [x] **Řešení:** Přeskok se smí aktivovat pouze bezprostředně po zodpovězení otázky, nikoli při pouhém zobrazení již zodpovězené otázky.
+    - [x] **Omezení:** V režimu "Procvičování" by tato funkce měla být zcela deaktivována.
 
 ### 3.3 | Responzivita a přístupnost (Technical Debt)
 - [x] **Optimalizace pro mobilní zařízení:** Zkontrolovat, zda jsou všechny interaktivní prvky na mobilu dostatečně velké (minimálně 48x48px dotyková plocha) a zda se obsah správně zalamuje.
@@ -289,19 +289,61 @@
 *Cíl: Zlepšit přehlednost a interaktivitu stránky s podrobnou analýzou výsledků.*
 
 ### 9.1 | Implementace komponenty "Přehled testů"
-- [ ] **Vytvořit novou, minimalizovatelnou sekci "Přehled testů":**
-    - [ ] Na stránce "Podrobná analýza" implementovat komponentu `Collapsible` (např. ze ShadCN/UI), která bude obsahovat tabulku s historií testů.
-    - [ ] **Struktura tabulky:**
-        - [ ] **Sloupec "Kdy":** Zobrazí datum a čas zahájení testu (např. "17. července 2025 (12:08)").
-        - [ ] **Sloupec "Stav":** Zobrazí stav testu (`dokončený`, `nestihnutý`).
-        - [ ] **Sloupec "Výsledek":** Zobrazí výsledek (`SPLNĚNO` / `NESPLNĚNO`) barevně odlišený.
-        - [ ] **Sloupec "Úspěšnost":** Zobrazí dosažené body a procentuální úspěšnost (např. "44 bodů = 88% (21 z 25)").
-        - [ ] **Sloupec "Akce":** Bude obsahovat tlačítko "Vyhodnocení", které po kliknutí přesměruje uživatele na stránku s detailními výsledky konkrétního testu.
-    - [ ] **Načítání dat:**
-        - [ ] Implementovat logiku pro načtení historie testů z datového zdroje (IndexedDB pro hosty, API endpoint pro přihlášené).
-        - [ ] Zobrazit loading stav během načítání a prázdný stav, pokud uživatel ještě žádné testy neabsolvoval.
+- [x] **Vytvořit novou, minimalizovatelnou sekci "Přehled testů":**
+    - [x] Na stránce "Podrobná analýza" implementovat komponentu `Collapsible` (např. ze ShadCN/UI), která bude obsahovat tabulku s historií testů.
+    - [x] **Struktura tabulky:**
+        - [x] **Sloupec "Kdy":** Zobrazí datum a čas zahájení testu (např. "17. července 2025 (12:08)").
+        - [x] **Sloupec "Stav":** Zobrazí stav testu (`dokončený`, `nestihnutý`).
+        - [x] **Sloupec "Výsledek":** Zobrazí výsledek (`SPLNĚNO` / `NESPLNĚNO`) barevně odlišený.
+        - [x] **Sloupec "Úspěšnost":** Zobrazí dosažené body a procentuální úspěšnost (např. "44 bodů = 88% (21 z 25)").
+        - [x] **Sloupec "Akce":** Bude obsahovat tlačítko "Vyhodnocení", které po kliknutí přesměruje uživatele na stránku s detailními výsledky konkrétního testu.
+    - [x] **Načítání dat:**
+        - [x] Implementovat logiku pro načtení historie testů z datového zdroje (IndexedDB pro hosty, API endpoint pro přihlášené).
+        - [x] Zobrazit loading stav během načítání a prázdný stav, pokud uživatel ještě žádné testy neabsolvoval.
 
 ### 9.2 | Vylepšení interaktivity stránky
-- [ ] **Aplikovat minimalizaci na "Přehled chybovosti":**
-    - [ ] "Obalit" stávající sekci "Přehled chybovosti" do stejné `Collapsible` komponenty, aby bylo možné ji také skrýt a ušetřit tak místo na stránce.
-    - [ ] Zajistit, aby obě sekce byly ve výchozím stavu zabalené.
+- [x] **Aplikovat minimalizaci na "Přehled chybovosti":**
+    - [x] "Obalit" stávající sekci "Přehled chybovosti" do stejné `Collapsible` komponenty, aby bylo možné ji také skrýt a ušetřit tak místo na stránce.
+    - [x] Zajistit, aby obě sekce byly ve výchozím stavu zabalené.
+
+---
+
+## Fáze 10: Cílová funkčnost (dle V3 databáze)
+*Cíl: Implementovat a ověřit všechny klíčové funkce popsané uživatelem po přechodu na novou datovou architekturu.*
+
+### 10.1 | Dashboard
+- [ ] **Balíček na dnes:**
+    - [ ] Sestavit balíček 20 otázek dle logiky v `TASK_LIST.md` (Fáze 6.3).
+    - [ ] Po dokončení umožnit generování dalšího balíčku.
+    - [ ] Do nového balíčku volitelně zařadit až 5 špatně zodpovězených otázek z předchozího.
+    - [ ] Občasně zařadit i již opravené otázky z přehledu chybovosti pro ověření znalostí.
+- [ ] **Slabá místa:**
+    - [ ] Zobrazit 3 nejméně úspěšné okruhy z podrobné analýzy.
+    - [ ] Nabídnout možnost procvičení daného okruhu.
+    - [ ] Nezobrazovat okruhy s úspěšností ≥ 86 %.
+- [x] **Dnešní pokrok:**
+    - [x] Zobrazit odděleně počet a úspěšnost pro "Ostré testy" a "Procvičování".
+    - [x] "Procvičování" zahrnuje všechny ostatní režimy (prohlížení, balíčky atd.).
+- [x] **Celkové statistiky:**
+    - [x] Zobrazit odděleně celkový počet a úspěšnost pro "Ostré testy" a "Procvičování".
+    - [x] Vizuálně sjednotit s "Dnešním pokrokem".
+- [ ] **Moje odznaky:**
+    - [ ] Zobrazit získané a nezískané odznaky dle definice v `TASK_LIST.md` (Fáze 7).
+- [ ] **Heatmapa:**
+    - [ ] Zobrazit aktivitu uživatele v časovém horizontu (styl GitHub).
+    - [ ] Odstíny barev odlišit podle počtu aktivit a úspěšnosti v daný den.
+
+### 10.2 | Podrobná analýza
+- [ ] **Přehled podle okruhů:**
+    - [ ] Zachovat stávající funkci, ale optimalizovat načítání dat z nové databáze.
+- [x] **Přehled testů:**
+    - [x] Zobrazit historii jednotlivých ostrých testů.
+    - [x] U každého testu zobrazit i čas potřebný k jeho dokončení.
+    - [x] Zajistit striktní oddělení jednotlivých testovacích sessions, aby nedocházelo k jejich slučování.
+    - [x] Přidat možnost rozkliknout detailní vyhodnocení pro každý test.
+    - [ ] **(Budoucí):** Implementovat graf závislosti úspěšnosti na počtu provedených testů.
+- [x] **Přehled chybovosti:**
+    - [x] Zobrazit všechny otázky, na které uživatel kdykoliv odpověděl špatně.
+    - [x] Umožnit opravu chybných otázek.
+    - [x] Pokud uživatel správně odpoví na chybnou otázku v jakémkoliv režimu, přesunout ji do sekce "Opraveno".
+    - [x] Pokud na ni znovu odpoví špatně, zvýšit počítadlo chyb pro danou otázku.

@@ -8,13 +8,26 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { buildAnalysisIndex } from "./utils/buildAnalysisIndex.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { Redis } from "@upstash/redis";
-import { Ratelimit } from "@upstash/ratelimit";
+// import { Redis } from "@upstash/redis"; // Dočasně deaktivováno
+// import { Ratelimit } from "@upstash/ratelimit"; // Dočasně deaktivováno
 import { createClient } from "@supabase/supabase-js";
 import { allBadges } from "./src/badges.js";
+import { 
+  mysqlPool,
+  ensureUserExists,
+  saveEventAndUpdateSummaries,
+  saveTestSession,
+  getQuestionSummaries,
+  getTopicSummaries,
+  getTestSessions,
+  getDailyProgress,
+  getUserBadges,
+  deleteAllUserData,
+  getAllEvents
+} from "./src/mysql.js";
 
 dotenv.config();
-let analysisIndex;
+// let analysisIndex; // Odstraněno cachování, bude se generovat za běhu
 const { 
   GEMINI_API_KEY, 
   UPSTASH_REDIS_REST_URL, 
@@ -31,39 +44,28 @@ if (!GEMINI_API_KEY) { console.error("❌  Chybí GEMINI_API_KEY v .env"); proce
 
 const genAI   = new GoogleGenerativeAI(GEMINI_API_KEY);
 
-// --- Připojení k Upstash Redis ---
-let redis;
-if (UPSTASH_REDIS_REST_URL && UPSTASH_REDIS_REST_TOKEN) {
-  redis = new Redis({
-    url: UPSTASH_REDIS_REST_URL,
-    token: UPSTASH_REDIS_REST_TOKEN,
-  });
-  console.log("✅ Připojeno k Upstash Redis.");
-} else {
-  console.warn("⚠️ Upstash Redis proměnné nenalezeny. Ukládání dat bude pouze dočasné (v paměti).");
-  // Fallback na dočasné ukládání v paměti, pokud Redis není nakonfigurován
-  const memoryStorage = new Map();
-  redis = {
-    get: async (key) => memoryStorage.get(key),
-    set: async (key, value) => memoryStorage.set(key, value),
-    del: async (key) => memoryStorage.delete(key),
-  };
-}
+// --- Připojení k Upstash Redis (DEAKTIVOVÁNO) ---
+// let redis;
+// if (UPSTASH_REDIS_REST_URL && UPSTASH_REDIS_REST_TOKEN) {
+//   redis = new Redis({
+//     url: UPSTASH_REDIS_REST_URL,
+//     token: UPSTASH_REDIS_REST_TOKEN,
+//   });
+//   console.log("✅ Připojeno k Upstash Redis.");
+// } else {
+//   console.warn("⚠️ Upstash Redis proměnné nenalezeny.");
+// }
 
-// const vision model initialization is removed
-
-// The SDK will handle the endpoint, so the manual URL is no longer needed.
-
-// --- Rate Limiter ---
-let ratelimit;
-if (redis) {
-  ratelimit = new Ratelimit({
-    redis: redis,
-    limiter: Ratelimit.slidingWindow(10, "10 s"), // Max 10 requests per 10 seconds
-    analytics: true,
-    prefix: "@upstash/ratelimit",
-  });
-}
+// --- Rate Limiter (DEAKTIVOVÁNO) ---
+let ratelimit = null; // Deaktivováno
+// if (redis) {
+//   ratelimit = new Ratelimit({
+//     redis: redis,
+//     limiter: Ratelimit.slidingWindow(10, "10 s"),
+//     analytics: true,
+//     prefix: "@upstash/ratelimit",
+//   });
+// }
 
 const app = express();
 app.use(cors());
@@ -98,6 +100,14 @@ async function verifyCaptcha(token) {
   );
   const data = await response.json();
   return data.success;
+}
+
+function getTodayDateString() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
 // --- Auth Endpoints ---
@@ -318,68 +328,80 @@ app.post("/api/image-context", (req, res) => {
 // const ANALYSIS_KEY = "analysis-data"; // Klíč pro statistiky - nahrazeno
 // const BADGES_KEY = "unlocked-badges";   // Klíč pro odznaky - nahrazeno
 
-// Helper funkce pro kontrolu a udělení odznaků
-const checkAndAwardBadges = async (userId, allEntries, lastTestEntries) => {
-  if (!userId) return []; // Bezpečnostní pojistka
+// Logika pro odznaky bude dočasně zjednodušena a později reimplementována
+// const checkAndAwardBadges = ...
 
-  const badgesKey = `user:${userId}:badges`;
-  const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
-  const awardedBadges = new Set();
-  const existingBadgesRaw = await redis.get(badgesKey);
-  // Zpětná kompatibilita: pokud jsou data string, parsujeme je
-  const existingBadges = typeof existingBadgesRaw === 'string' ? JSON.parse(existingBadgesRaw) : (existingBadgesRaw || []);
-  const existingBadgeIds = new Set(existingBadges.map(b => b.id));
-
-  // 1. Odznak: První dokončený test
-  if (!existingBadgeIds.has('first_test_completed')) {
-    awardedBadges.add('first_test_completed');
-  }
-
-  // 2. Odznak: První úspěšně složený test
-  if (!existingBadgeIds.has('first_test_passed')) {
-    const wasSuccessful = lastTestEntries.every(e => e.isCorrect); // Zjednodušená logika
-    if (wasSuccessful) {
-      awardedBadges.add('first_test_passed');
-    }
-  }
-  
-  // 3. Odznak: Dokončeno 10 testů
-  if (!existingBadgeIds.has('ten_tests_completed')) {
-      // Logika pro zjištění počtu unikátních testů
-      const testTimestamps = new Set(allEntries.map(e => e.timestamp));
-      if (testTimestamps.size >= 10) {
-          awardedBadges.add('ten_tests_completed');
-      }
-  }
-
-  // 4. Odznak: Test bez chyb
-  if (!existingBadgeIds.has('no_mistakes_test')) {
-      if (lastTestEntries.every(e => e.isCorrect)) {
-          awardedBadges.add('no_mistakes_test');
-      }
-  }
-
-  // Přidání nových odznaků
-  if (awardedBadges.size > 0) {
-    const newBadges = [...awardedBadges]
-      .map(id => ({ id, unlockedAt: new Date().toISOString() }));
-    const updatedBadges = [...existingBadges, ...newBadges];
-    // Odstraněno JSON.stringify, necháme to na klientovi
-    await redis.set(badgesKey, updatedBadges, { ex: TWO_YEARS_IN_SECONDS });
-    return newBadges; // Vrací jen nově získané
-  }
-  return [];
-};
-
-
-app.post("/api/save-analysis", async (req, res) => {
-  const { entries, userId } = req.body;
+app.post("/api/ingest", async (req, res) => {
+  const { entries, session, userId, userEmail } = req.body;
 
   if (!entries || !Array.isArray(entries) || entries.length === 0) {
     return res.status(400).json({ error: "No analysis entries provided." });
   }
-  if (!userId) {
-    return res.status(400).json({ error: "User ID is required." });
+  if (!userId || !userEmail) {
+    return res.status(400).json({ error: "User ID and Email are required." });
+  }
+  const uid = userId.toLowerCase();
+
+  if (ratelimit) {
+    const identifier = uid || req.ip;
+    const { success } = await ratelimit.limit(identifier);
+    if (!success) {
+      return res.status(429).json({ error: "Too many requests." });
+    }
+  }
+
+  let conn;
+  try {
+    await ensureUserExists(uid, userEmail);
+
+    conn = await mysqlPool.getConnection();
+    await conn.beginTransaction();
+
+    const sessionId = session?.sessionId || `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+
+    for (const entry of entries) {
+      const eventData = {
+        sessionId,
+        questionId: entry.questionId,
+        topicId: entry.groupId, // FIX: Map groupId from client to topicId
+        answeredCorrectly: entry.isCorrect, // FIX: Map isCorrect from client
+        userAnswer: entry.selectedAnswer, // FIX: Map selectedAnswer from client
+        mode: entry.mode || 'practice',
+      };
+      await saveEventAndUpdateSummaries(conn, uid, eventData);
+    }
+
+    // Oprava: Kontrolujeme 'dokončený' status z frontendu a voláme v transakci
+    if (session && (session.status === 'dokončený' || session.status === 'nestihnutý' || session.status === 'nedokončený')) {
+      const fullSessionData = {
+        userId: uid,
+        ...session,
+      };
+      await saveTestSession(conn, fullSessionData);
+    }
+
+    await conn.commit();
+    res.json({ ok: true, message: "Data successfully saved." });
+
+  } catch (e) {
+    if (conn) await conn.rollback();
+    console.error("Error in /api/ingest:", e);
+    res.status(500).json({ error: e.message });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+
+
+// DEPRECATED: Bude odstraněno po 14 dnech. Použijte /api/ingest
+app.post("/api/save-analysis", async (req, res) => {
+  const { entries, userId, userEmail, sessionData } = req.body;
+
+  if (!entries || !Array.isArray(entries) || entries.length === 0) {
+    return res.status(400).json({ error: "No analysis entries provided." });
+  }
+  if (!userId || !userEmail) {
+    return res.status(400).json({ error: "User ID and Email are required." });
   }
   const uid = userId.toLowerCase();
 
@@ -392,154 +414,47 @@ app.post("/api/save-analysis", async (req, res) => {
     }
   }
 
-  const analysisKey = `user:${uid}:analysis`;
-
   try {
-    // Zde byla odstraněna logika pro statistiky odpovědí (dříve pro heatmapu)
+    // Zajistíme, že uživatel existuje v naší databázi
+    await ensureUserExists(uid, userEmail);
 
-    const existingDataRaw = await redis.get(analysisKey);
-    const existingData = typeof existingDataRaw === 'string' ? JSON.parse(existingDataRaw) : (existingDataRaw || []);
-    const newData = [...existingData, ...entries];
-    const TWO_YEARS_IN_SECONDS = 2 * 365 * 24 * 60 * 60;
-    await redis.set(analysisKey, newData, { ex: TWO_YEARS_IN_SECONDS });
+    const sessionId = sessionData?.sessionId || `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
 
-    // Logika pro udělení odznaků
-    const newlyAwardedBadges = await checkAndAwardBadges(uid, newData, entries);
+    // Uložíme každou odpověď jako samostatnou událost
+    for (const entry of entries) {
+      const eventData = {
+        sessionId,
+        questionId: entry.questionId,
+        topicId: entry.groupId, // Předpokládáme, že groupId je topicId
+        answeredCorrectly: entry.isCorrect,
+        userAnswer: entry.selectedAnswer, // Předpokládáme tento název pole
+        mode: entry.mode || 'practice', // 'test', 'practice', 'review', 'deck'
+      };
+      await saveEventAndUpdateSummaries(uid, eventData);
+    }
 
-    // Vypočítat a uložit nový souhrn
-    const summaryData = calculateSummary(newData);
-    const summaryKey = `user:${uid}:summary`;
-    await redis.set(summaryKey, summaryData, { ex: TWO_YEARS_IN_SECONDS });
+    // Pokud byla ukončena testovací session (obsahuje sessionData), uložíme její výsledek.
+    // To se děje pouze pro 'exam' mode, jak je definováno na klientovi.
+    if (sessionData) {
+      const fullSessionData = {
+        userId: uid,
+        ...sessionData,
+      };
+      await saveTestSession(fullSessionData);
+    }
 
+    // TODO: Reimplementovat logiku pro odznaky na základě nových dat
+    const newlyAwardedBadges = [];
 
     res.status(200).json({
       message: "Analysis data saved successfully.",
-      newlyAwardedBadges: newlyAwardedBadges
+      newlyAwardedBadges,
     });
   } catch (e) {
     console.error("Error in /api/save-analysis:", e);
     res.status(500).json({ error: e.message });
   }
 });
-
-const calculateSummary = (analysisData) => {
-  const summary = {};
-  analysisData.forEach(entry => {
-    if (!summary[entry.questionId]) {
-      summary[entry.questionId] = {
-        questionId: entry.questionId,
-        questionText: entry.questionText,
-        groupId: entry.groupId,
-        attempts: 0,
-        correct: 0,
-        totalTimeToAnswer: 0,
-        history: [],
-      };
-    }
-    const questionSummary = summary[entry.questionId];
-    questionSummary.attempts++;
-    if (entry.isCorrect) {
-      questionSummary.correct++;
-    }
-    questionSummary.totalTimeToAnswer += entry.timeToAnswer;
-    questionSummary.history.push({
-      answeredAt: entry.answeredAt,
-      isCorrect: entry.isCorrect,
-      timeToAnswer: entry.timeToAnswer,
-    });
-  });
-
-  // Doplňkové výpočty
-  Object.values(summary).forEach(s => {
-    s.avgTime = s.totalTimeToAnswer / s.attempts;
-    s.successRate = (s.correct / s.attempts) * 100;
-  });
-
-  return summary;
-};
-
-
-
-const getTodayDateString = () => new Date().toLocaleDateString('sv'); // YYYY-MM-DD format
-
-const calculateStatsFromAnalysis = (analysisData) => {
-    const stats = {
-        total: { examTaken: 0, examPassed: 0, practiceAnswered: 0, practiceCorrect: 0 },
-        today: { examTaken: 0, examPassed: 0, practiceAnswered: 0, practiceCorrect: 0, lastReset: getTodayDateString() },
-        examAvgScore: 0,
-        examAvgTime: 0,
-        lastExamScore: null,
-        lastExamTimeSpent: null,
-        lastExamPassed: null,
-        lastPracticeAnswered: 0,
-        lastPracticeCorrect: 0,
-    };
-
-    if (!analysisData || analysisData.length === 0) {
-        return stats;
-    }
-
-    const todayStr = getTodayDateString();
-    const examSessions = new Map();
-    
-    analysisData.forEach(entry => {
-        const entryDate = new Date(entry.answeredAt).toLocaleDateString('sv');
-        const isToday = entryDate === todayStr;
-
-        if (entry.mode === 'practice') {
-            stats.total.practiceAnswered++;
-            if (isToday) stats.today.practiceAnswered++;
-            if (entry.isFirstAttemptCorrect) {
-                stats.total.practiceCorrect++;
-                if (isToday) stats.today.practiceCorrect++;
-            }
-        } else if (entry.mode === 'exam') {
-            const sessionId = entry.answeredAt.substring(0, 16); // Group by minute to identify a session
-            if (!examSessions.has(sessionId)) {
-                examSessions.set(sessionId, { score: 0, time: 0, questionIds: new Set(), isToday: isToday });
-            }
-            const session = examSessions.get(sessionId);
-            if (!session.questionIds.has(entry.questionId)) {
-                session.questionIds.add(entry.questionId);
-                if (entry.isCorrect) {
-                    // Assuming points are not stored in analysis, so we'll count correct answers
-                    // This is a simplification. For real scores, points would need to be in the analysis entry.
-                    session.score += 1; // Simplified score
-                }
-                session.time += entry.timeToAnswer;
-            }
-        }
-    });
-
-    const examScores = [];
-    const examTimes = [];
-
-    examSessions.forEach((session, sessionId) => {
-        stats.total.examTaken++;
-        if (session.isToday) stats.today.examTaken++;
-        
-        // Simplified pass condition (e.g., >85% correct)
-        const passed = (session.score / session.questionIds.size) > 0.85; 
-        if (passed) {
-            stats.total.examPassed++;
-            if (session.isToday) stats.today.examPassed++;
-        }
-        examScores.push(session.score);
-        examTimes.push(session.time / 1000); // in seconds
-    });
-
-    if (examScores.length > 0) {
-        stats.examAvgScore = examScores.reduce((a, b) => a + b, 0) / examScores.length;
-        stats.examAvgTime = examTimes.reduce((a, b) => a + b, 0) / examTimes.length;
-        const lastSession = Array.from(examSessions.values()).pop();
-        stats.lastExamScore = lastSession.score;
-        stats.lastExamTimeSpent = lastSession.time / 1000;
-        stats.lastExamPassed = (lastSession.score / lastSession.questionIds.size) > 0.85;
-    }
-
-    return stats;
-};
-
 
 app.get("/api/analysis-data", async (req, res) => {
   const { userId } = req.query;
@@ -548,24 +463,131 @@ app.get("/api/analysis-data", async (req, res) => {
   }
   const uid = userId.toLowerCase();
 
-  const analysisKey = `user:${uid}:analysis`;
-  const badgesKey = `user:${uid}:badges`;
-  const summaryKey = `user:${uid}:summary`;
-
   try {
-    const [analysisDataRaw, badgesDataRaw, summaryDataRaw] = await Promise.all([
-      redis.get(analysisKey),
-      redis.get(badgesKey),
-      redis.get(summaryKey)
+    // Vždy znovu sestavíme index pro zajištění čerstvých dat
+    const analysisIndex = await buildAnalysisIndex();
+
+    const [
+      questionSummaries,
+      testSessions,
+      dailyProgress,
+      userBadges,
+      allEvents,
+    ] = await Promise.all([
+      getQuestionSummaries(uid),
+      getTestSessions(uid),
+      getDailyProgress(uid),
+      getUserBadges(uid),
+      getAllEvents(uid),
     ]);
 
-    const analysisData = typeof analysisDataRaw === 'string' ? JSON.parse(analysisDataRaw) : (analysisDataRaw || []);
-    const unlockedBadges = typeof badgesDataRaw === 'string' ? JSON.parse(badgesDataRaw) : (badgesDataRaw || []);
-    const summaryData = typeof summaryDataRaw === 'string' ? JSON.parse(summaryDataRaw) : (summaryDataRaw || {});
-    
-    const calculatedStats = calculateStatsFromAnalysis(analysisData);
+    const analysisData = allEvents.map(event => {
+      const questionInfo = analysisIndex.get(event.question_id) || {};
+      return {
+        user: uid,
+        questionId: event.question_id,
+        questionText: questionInfo.otazka || '',
+        groupId: questionInfo.groupId || event.topic_id,
+        answeredAt: new Date(event.created_at).toISOString(),
+        isCorrect: !!event.answered_correctly,
+        timeToAnswer: 0, // This is not stored in the DB
+        isFirstAttemptCorrect: !!event.answered_correctly, // Simplification
+        answerIndex: event.user_answer,
+        mode: event.mode,
+        sessionStatus: event.session_status,
+      };
+    });
 
-    res.json({ analysisData, unlockedBadges, summaryData, stats: calculatedStats });
+    const summaryData = Object.values(questionSummaries).reduce((acc, summary) => {
+      const questionInfo = analysisIndex.get(summary.question_id) || {};
+      
+      // Najdeme všechny relevantní události pro tuto otázku
+      const historyEvents = allEvents.filter(event => event.question_id === summary.question_id);
+
+      acc[summary.question_id] = {
+        questionId: summary.question_id,
+        questionText: questionInfo.otazka || '',
+        groupId: summary.topic_id || questionInfo.groupId, // Priorita pro DB
+        attempts: summary.attempts,
+        correct: summary.correct_attempts,
+        totalTimeToAnswer: 0, // Not in DB
+        history: historyEvents.map(e => ({ // Sestavíme historii
+          answeredAt: e.created_at,
+          isCorrect: !!e.answered_correctly,
+          selectedAnswer: e.user_answer,
+          mode: e.mode,
+        })),
+        avgTime: 0, // Not in DB
+        successRate: summary.success_rate,
+      };
+      return acc;
+    }, {});
+    
+    // Helper to get a YYYY-MM-DD string from a Date object, respecting local timezone
+    const toLocalDateString = (date) => {
+        const d = new Date(date);
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    };
+
+    const today = toLocalDateString(new Date());
+    const todayProgress = dailyProgress.find(d => toLocalDateString(d.activity_date) === today);
+
+    const todaysEvents = allEvents.filter(e => toLocalDateString(e.created_at) === today);
+    const practiceModes = ['practice', 'review', 'deck'];
+    const todaysPracticeEvents = todaysEvents.filter(e => practiceModes.includes(e.mode) && !e.question_id.startsWith('SESSION_END'));
+    
+    const totalPracticeEvents = allEvents.filter(e => practiceModes.includes(e.mode) && !e.question_id.startsWith('SESSION_END'));
+    const totalPracticeCorrect = totalPracticeEvents.filter(e => e.answered_correctly).length;
+
+    const stats = {
+      today: {
+        examTaken: todayProgress?.tests_completed || 0,
+        examPassed: testSessions.filter(s => new Date(s.finished_at).toISOString().slice(0, 10) === today && s.score >= 43).length,
+        practiceAnswered: todaysPracticeEvents.length,
+        practiceCorrect: todaysPracticeEvents.filter(e => e.answered_correctly).length,
+      },
+      total: {
+        examTaken: testSessions.length,
+        examPassed: testSessions.filter(s => s.score >= 43).length,
+        practiceAnswered: totalPracticeEvents.length,
+        practiceCorrect: totalPracticeCorrect,
+      },
+      examAvgScore: testSessions.length > 0 ? testSessions.reduce((sum, s) => sum + s.score, 0) / testSessions.length : 0,
+      examAvgTime: testSessions.length > 0 ? testSessions.reduce((sum, s) => sum + s.time_spent_seconds, 0) / testSessions.length : 0,
+    };
+
+    const mappedTestSessions = testSessions.map(s => {
+      const sessionEvents = allEvents.filter(e => e.session_id === s.session_id);
+      return {
+        date: s.started_at,
+        entries: sessionEvents.map(e => ({
+          questionId: e.question_id,
+          answerIndex: e.user_answer,
+        })),
+        score: s.score,
+        totalPoints: s.max_score,
+        passed: s.score >= 43,
+        status: s.status,
+        correctAnswers: s.correct_answers_count,
+        totalQuestions: (s.question_ids || []).length || s.total_questions_count,
+        questionIds: s.question_ids,
+        timeSpentSeconds: s.time_spent_seconds,
+      };
+    });
+
+    const allQuestions = Array.from(analysisIndex.values());
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.json({
+      analysisData,
+      summaryData,
+      stats,
+      unlockedBadges: userBadges,
+      testSessions: mappedTestSessions,
+      allQuestions, // Přidáno
+    });
   } catch (error) {
     console.error("Error reading user data:", error);
     res.status(500).json({ error: "Failed to read user data" });
@@ -579,21 +601,14 @@ app.post("/api/reset-analysis", async (req, res) => {
   }
   const uid = userId.toLowerCase();
 
-  const analysisKey = `user:${uid}:analysis`;
-  const badgesKey = `user:${uid}:badges`;
-  const summaryKey = `user:${uid}:summary`;
-
   try {
-    await redis.del(analysisKey);
-    await redis.del(badgesKey);
-    await redis.del(summaryKey);
-    res.status(200).json({ message: "Analysis, badge, and summary data for user " + uid + " reset successfully." });
+    await deleteAllUserData(uid);
+    res.status(200).json({ message: "All data for user " + uid + " reset successfully." });
   } catch (error) {
     console.error("Error in /api/reset-analysis:", error);
     res.status(500).json({ error: error.message });
   }
 });
-
 
 app.get("/api/spaced-repetition-deck", async (req, res) => {
   const { userId } = req.query;
@@ -604,50 +619,39 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
   const DECK_SIZE = 20;
 
   try {
-    const summaryKey = `user:${uid}:summary`;
-    const summaryDataRaw = await redis.get(summaryKey);
-    const summaryData = typeof summaryDataRaw === 'string' ? JSON.parse(summaryDataRaw) : (summaryDataRaw || {});
-    const allUserQuestions = Object.values(summaryData);
+    const questionSummaries = await getQuestionSummaries(uid);
+    const allUserQuestions = Object.values(questionSummaries);
 
     // Priorita 1: Otázky s úspěšností < 80 % (při >= 2 pokusech)
     const priority1_questions = allUserQuestions
-      .filter(q => q.attempts >= 2 && q.successRate < 80)
-      .sort((a, b) => a.successRate - b.successRate) // Seřadit od nejhorší
-      .map(q => q.questionId);
+      .filter(q => q.attempts >= 2 && q.success_rate < 80)
+      .sort((a, b) => a.success_rate - b.success_rate)
+      .map(q => q.question_id);
 
     const deck = new Set(priority1_questions);
 
     // Priorita 2: Otázky z nejméně úspěšných okruhů
     if (deck.size < DECK_SIZE) {
-      const topicStats = {};
-      allUserQuestions.forEach(q => {
-        if (!q.groupId) return;
-        if (!topicStats[q.groupId]) {
-          topicStats[q.groupId] = { totalSuccess: 0, count: 0, questions: [] };
+        const topicSummaries = await getTopicSummaries(uid); // Načteme seřazené od nejhoršího
+        const allQuestionsInTopics = allUserQuestions.reduce((acc, q) => {
+            if(q.topic_id) {
+                if(!acc[q.topic_id]) acc[q.topic_id] = [];
+                acc[q.topic_id].push(q.question_id);
+            }
+            return acc;
+        }, {});
+
+        for (const topic of topicSummaries) {
+            if (deck.size >= DECK_SIZE) break;
+            const questionsInTopic = allQuestionsInTopics[topic.topic_id] || [];
+            const shuffledQuestions = questionsInTopic.sort(() => 0.5 - Math.random());
+            for (const questionId of shuffledQuestions) {
+                if (deck.size >= DECK_SIZE) break;
+                if (!deck.has(questionId)) {
+                    deck.add(questionId);
+                }
+            }
         }
-        topicStats[q.groupId].totalSuccess += q.successRate;
-        topicStats[q.groupId].count++;
-        topicStats[q.groupId].questions.push(q.questionId);
-      });
-
-      const avgTopicSuccess = Object.entries(topicStats).map(([groupId, data]) => ({
-        groupId,
-        avgSuccess: data.count > 0 ? data.totalSuccess / data.count : 0,
-        questions: data.questions
-      }));
-
-      avgTopicSuccess.sort((a, b) => a.avgSuccess - b.avgSuccess); // Seřadit od nejhoršího okruhu
-
-      for (const topic of avgTopicSuccess) {
-        if (deck.size >= DECK_SIZE) break;
-        const shuffledQuestions = topic.questions.sort(() => 0.5 - Math.random());
-        for (const questionId of shuffledQuestions) {
-          if (deck.size >= DECK_SIZE) break;
-          if (!deck.has(questionId)) {
-            deck.add(questionId);
-          }
-        }
-      }
     }
 
     // Priorita 3: Náhodné otázky pro doplnění balíčku
@@ -661,7 +665,9 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
       }
     }
 
-    const finalDeck = Array.from(deck).slice(0, DECK_SIZE);
+    const existingQuestionIds = Array.from(deck).filter(id => analysisIndex.has(id));
+    
+    const finalDeck = existingQuestionIds.slice(0, DECK_SIZE);
     res.json({ questionIds: finalDeck });
 
   } catch (error) {
@@ -670,6 +676,7 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
   }
 });
 
+// Tento endpoint je dočasně zjednodušen, protože nemáme přímý přístup k `events`
 app.get("/api/export-data", async (req, res) => {
   const { userId } = req.query;
   if (!userId) {
@@ -677,23 +684,18 @@ app.get("/api/export-data", async (req, res) => {
   }
   const uid = userId.toLowerCase();
 
-  const analysisKey = `user:${uid}:analysis`;
-  const badgesKey = `user:${uid}:badges`;
-
   try {
-    const [analysisDataRaw, badgesDataRaw] = await Promise.all([
-      redis.get(analysisKey),
-      redis.get(badgesKey),
+    // Prozatímní řešení: exportujeme souhrny místo surových událostí
+    const [questionSummaries, userBadges] = await Promise.all([
+        getQuestionSummaries(uid),
+        getUserBadges(uid),
     ]);
-
-    const analysisData = typeof analysisDataRaw === 'string' ? JSON.parse(analysisDataRaw) : (analysisDataRaw || []);
-    const unlockedBadges = typeof badgesDataRaw === 'string' ? JSON.parse(badgesDataRaw) : (badgesDataRaw || []);
 
     const exportData = {
       userId: uid,
       exportedAt: new Date().toISOString(),
-      analysisData,
-      unlockedBadges,
+      questionSummaries,
+      unlockedBadges: userBadges,
     };
 
     res.setHeader('Content-Disposition', `attachment; filename="autoskola-data-${uid}.json"`);
@@ -706,44 +708,9 @@ app.get("/api/export-data", async (req, res) => {
   }
 });
 
-app.post("/api/generate-transfer-token", async (req, res) => {
-  const { sessionId } = req.body;
-  if (!sessionId) {
-    return res.status(400).json({ error: "Session ID is required." });
-  }
-  // Simple token generation for this example
-  const token = `transfer-${sessionId}-${Date.now()}`;
-  // Store the token with a short TTL, linking it to the session ID
-  await redis.set(token, sessionId, { ex: 300 }); // 5-minute expiry
-  res.json({ token });
-});
-
-app.post("/api/claim-guest-data", async (req, res) => {
-  const { token, userId } = req.body;
-  if (!token || !userId) {
-    return res.status(400).json({ error: "Token and User ID are required." });
-  }
-
-  try {
-    const sessionId = await redis.get(token);
-    if (!sessionId) {
-      return res.status(404).json({ error: "Invalid or expired token." });
-    }
-
-    // This is a placeholder for the actual data migration logic.
-    // In a real application, you would fetch the guest data using the sessionId
-    // and merge it with the logged-in user's data.
-    console.log(`Migrating data from session ${sessionId} to user ${userId}`);
-
-    // Delete the token to ensure it's single-use
-    await redis.del(token);
-
-    res.json({ message: "Data transfer successful." });
-  } catch (error) {
-    console.error("Error claiming guest data:", error);
-    res.status(500).json({ error: "Failed to claim guest data." });
-  }
-});
+// Endpointy pro přenos dat hosta jsou deaktivovány, protože vyžadují Redis
+// app.post("/api/generate-transfer-token", ...);
+// app.post("/api/claim-guest-data", ...);
 
 
 // Vision API and downloadAndEncode helper are removed.
@@ -755,20 +722,12 @@ app.post("/api/claim-guest-data", async (req, res) => {
  * Loads the analysis index from the static JSON file.
  * Falls back to building it dynamically if the file doesn't exist.
  */
-async function loadAnalysisIndex() {
-  try {
-    console.log("🛠️  Loading static analysis index from public/analysisIndex.json...");
-    const jsonContent = await fs.readFile("public/analysisIndex.json", "utf8");
-    const jsonObject = JSON.parse(jsonContent);
-    analysisIndex = new Map(Object.entries(jsonObject));
-    console.log(`✅ Index loaded, ${analysisIndex.size} items ready.`);
-  } catch (error) {
-    console.error("❌ Failed to load static analysis index.", error.message);
-    console.log("ℹ️ Falling back to dynamic index building...");
-    analysisIndex = await buildAnalysisIndex();
-    console.log(`✅ Dynamic index built, ${analysisIndex.size} items loaded.`);
-  }
-}
+// Funkce loadAnalysisIndex se již nepoužívá, můžeme ji odstranit nebo zakomentovat
+// async function loadAnalysisIndex() {
+//   console.log("ℹ️  Building dynamic analysis index on startup...");
+//   analysisIndex = await buildAnalysisIndex();
+//   console.log(`✅ Dynamic index built, ${analysisIndex.size} items loaded.`);
+// }
 
 // Catch-all pro servírování index.html (pro React Router)
 app.get('*', (req, res) => {
@@ -780,8 +739,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, async () => {
-  await loadAnalysisIndex();
+  // await loadAnalysisIndex(); // Již se nenačítá při startu
   console.log(`AI proxy běží na :${PORT} (chat=${MODEL_CHAT})`);
 });

@@ -7,6 +7,8 @@ export interface Event {
   correct: boolean;
   expiresAt?: number; // Čas expirace v ms
   sessionId?: string; // ID session pro hosta
+  mode?: 'exam' | 'practice';
+  sessionStatus?: 'dokončený' | 'nedokončený' | 'nestihnutý';
 }
 
 export interface Summary {
@@ -44,6 +46,10 @@ export class AppDB extends Dexie {
     // Nová verze pro session-specific summary
     this.version(4).stores({
       summary: '&[sessionId+qid]',
+    });
+    // Nová verze pro ukládání kontextu session
+    this.version(5).stores({
+      events: '++id, ts, qid, correct, expiresAt, sessionId, mode, sessionStatus',
     });
   }
 }

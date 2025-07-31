@@ -68,3 +68,35 @@ body {
 }
 
 }
+
+.action-bar{
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  transition: transform .25s ease;
+  background: hsl(var(--card) / 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: .5rem 1rem;
+  border-radius: .75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  z-index: 50;
+}
+
+.action-bar--visible{
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Prázdné místo na konci obsahu, aby plovoucí lišta nepřekrývala text */
+.content-bottom-spacer {
+  height: 120px;
+}
+/* Kontejner pro statické tlačítko na konci stránky */
+.static-footer-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  /* Tento placeholder zajistí, že se obsah neskryje pod plovoucí lištu */
+  min-height: 96px; 
+}

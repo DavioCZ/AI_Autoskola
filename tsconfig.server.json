@@ -9,5 +9,5 @@
     "isolatedModules": false,
     "allowImportingTsExtensions": false
   },
-  "include": ["server.js", "utils/buildAnalysisIndex.js"]
+  "include": ["server.js", "utils/buildAnalysisIndex.js", "scripts/**/*.ts", "scripts/**/*.js"]
 }

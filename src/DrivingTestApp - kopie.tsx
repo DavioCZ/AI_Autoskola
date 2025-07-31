@@ -36,7 +36,6 @@ import { useAi, ChatMessage } from "@/src/hooks/useAi";
 import { UnlockedBadge } from "@/src/badges";
 import { BadgesDisplay } from "@/src/components/Badges";
 import WeakestTopics from "./components/WeakestTopics";
-import { MistakesOverview } from "./components/MistakesOverview";
 import { db, Event as DbEvent, cleanupExpiredEvents } from "@/src/db";
 import { getGuestSessionId } from "@/src/session";
 import { Stats, DEFAULT_STATS, getTodayDateString, DEFAULT_PROGRESS_STATS } from "@/src/dataModels";
@@ -53,7 +52,6 @@ type Question = {
   spravna: number;
   points: number;
   groupId: number;
-  id_otazky?: string; // Přidáno pro kompatibilitu s daty ze serveru
 };
 
 // Nový typ pro ukládání dat pro podrobnou analýzu
@@ -108,7 +106,7 @@ const OSTRY_TIME = 30 * 60; // 30 minut v sekundách
 // Funkce saveStats a loadStats byly odstraněny, protože se statistiky počítají na serveru
 
 /* ----------------------- Analytická data ------------------------- */
-export type SummaryData = Record<string, {
+type SummaryData = Record<string, {
     questionId: string;
     questionText: string;
     groupId: number;
@@ -124,10 +122,9 @@ type UserData = {
   analysisData: AnalysisEntry[];
   unlockedBadges: UnlockedBadge[];
   summaryData: SummaryData;
-  allQuestions?: Question[]; // Přidáno
 };
 
-async function loadUserData(currentUser: string | null): Promise<UserData & { stats: Stats; testSessions: TestSession[]; allQuestions: Question[] }> {
+async function loadUserData(currentUser: string | null): Promise<UserData & { stats: Stats; testSessions: TestSession[] }> {
   if (currentUser && currentUser !== "Host") {
     try {
       const res = await fetch(`/api/analysis-data?userId=${encodeURIComponent(currentUser)}`);
@@ -135,7 +132,6 @@ async function loadUserData(currentUser: string | null): Promise<UserData & { st
         throw new Error(`Server responded with status: ${res.status}`);
       }
       const data = await res.json();
-      console.log("[DEBUG] Data received from /api/analysis-data:", JSON.stringify(data.summaryData, null, 2));
       // Map server data to frontend TestSession type to handle inconsistencies
       const mappedSessions = (data.testSessions || []).map((s: any) => {
         // Ensure date is treated as UTC. MySQL DATETIME format is 'YYYY-MM-DD HH:MM:SS'.
@@ -160,11 +156,10 @@ async function loadUserData(currentUser: string | null): Promise<UserData & { st
         summaryData: data.summaryData || {},
         stats: data.stats || DEFAULT_STATS,
         testSessions: mappedSessions,
-        allQuestions: data.allQuestions || [],
       };
     } catch (error) {
       console.error("Could not get user data from server:", error);
-      return { analysisData: [], unlockedBadges: [], summaryData: {}, stats: DEFAULT_STATS, testSessions: [], allQuestions: [] };
+      return { analysisData: [], unlockedBadges: [], summaryData: {}, stats: DEFAULT_STATS, testSessions: [] };
     }
   } else {
     // Logika pro hosta - načtení z IndexedDB
@@ -186,10 +181,10 @@ async function loadUserData(currentUser: string | null): Promise<UserData & { st
       // Pro hosta načteme statistiky z lokálního úložiště
       const { stats: guestStats, summaryData: guestSummary, unlockedBadges: guestBadges } = await calculateGuestStats();
       // Host nemá server-side sessions, takže vracíme prázdné pole
-      return { analysisData, unlockedBadges: guestBadges, summaryData: guestSummary, stats: guestStats, testSessions: [], allQuestions: [] };
+      return { analysisData, unlockedBadges: guestBadges, summaryData: guestSummary, stats: guestStats, testSessions: [] };
     } catch (error) {
       console.error("Could not get user data from IndexedDB:", error);
-      return { analysisData: [], unlockedBadges: [], summaryData: {}, stats: DEFAULT_STATS, testSessions: [], allQuestions: [] };
+      return { analysisData: [], unlockedBadges: [], summaryData: {}, stats: DEFAULT_STATS, testSessions: [] };
     }
   }
 }
@@ -356,11 +351,6 @@ export default function DrivingTestApp() {
   const { session, user } = useAuth();
   const [isGuest, setIsGuest] = useState(() => localStorage.getItem("isGuest") === "true");
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
-  const [isActionBarVisible, setIsActionBarVisible] = useState(false);
-  const lastScrollY = useRef(0);
-  const [mainEl, setMainEl] = useState<HTMLElement | null>(null);
-  const footerRef = useRef<HTMLDivElement | null>(null);
-  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   const currentUser = isGuest ? "Host" : user?.email || user?.id || null;
   const [phase, setPhase] = useState<"intro" | "setup" | "test" | "done" | "browse" | "analysis">("intro");
@@ -370,7 +360,8 @@ export default function DrivingTestApp() {
   const [selectedGroups, setSelected] = useState<number[]>(GROUPS.map((g) => g.id));
   const [questions, setQuestions] = useState<Question[]>([]);
   const [current, setCurrent] = useState(0);
-  const [responses, setResponses] = useState<Record<string, number>>({});
+  const [responses, setResponses] = useState<Record<string, number>>({}); 
+  const [practiceFirstAttempts, setPracticeFirstAttempts] = useState<Record<string, { firstAttemptIndex: number; isFirstAttemptCorrect: boolean }>>({});
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [stats, setStats] = useState<Stats>(DEFAULT_STATS);
   const [isLoading, setIsLoading] = useState(false);
@@ -378,12 +369,13 @@ export default function DrivingTestApp() {
   const [sessionAnalysis, setSessionAnalysis] = useState<Record<string, { timeToAnswer: number; firstAttemptCorrect: boolean }>>({});
   const [analysisData, setAnalysisData] = useState<AnalysisEntry[]>([]);
   const [summaryData, setSummaryData] = useState<SummaryData>({});
-  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [unlockedBadges, setUnlockedBadges] = useState<UnlockedBadge[]>([]);
   const { ask, loading: aiLoading, messages, setMessages } = useAi();
   const [draft, setDraft] = useState("");
   const msgEndRef = useRef<HTMLDivElement | null>(null);
   const [isAiTutorCollapsed, setIsAiTutorCollapsed] = useState(false);
+  const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
+  const [isMistakesOpen, setIsMistakesOpen] = useState(true);
   const [isTestsOpen, setIsTestsOpen] = useState(true);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const { setTheme } = useTheme();
@@ -419,9 +411,51 @@ export default function DrivingTestApp() {
     };
   }), [summaryValues]);
 
-  const startPracticeFromMistakeIds = async (questionIds: string[]) => {
-    if (questionIds.length === 0) {
-      alert("Nemáte žádné otázky k procvičení. Skvělá práce!");
+  const processedMistakes = useMemo(() => {
+    const mistakesByQuestion = summaryValues.reduce((acc, summary) => {
+        acc[summary.questionId] = {
+          text: summary.questionText,
+          history: (summary.history || []).map(h => ({ isCorrect: h.isCorrect, answeredAt: h.answeredAt })),
+        };
+      return acc;
+    }, {} as Record<string, { text: string; history: { isCorrect: boolean; answeredAt: string }[] }>);
+
+    return Object.entries(mistakesByQuestion)
+      .map(([questionId, data]) => {
+        const incorrectCount = data.history.filter(h => !h.isCorrect).length;
+        const lastAttempt = data.history[data.history.length - 1];
+        const isCorrected = lastAttempt ? lastAttempt.isCorrect : false;
+        return {
+          questionId,
+          text: data.text,
+          incorrectCount,
+          isCorrected,
+        };
+      })
+      .filter(item => {
+        if (item.incorrectCount === 0) return false;
+        if (mistakesFilter === 'uncorrected') {
+          return !item.isCorrected;
+        }
+        return true;
+      })
+      .sort((a, b) => {
+        if (a.isCorrected !== b.isCorrected) {
+          return a.isCorrected ? 1 : -1; // Opravené chyby dáme na konec
+        }
+        return b.incorrectCount - a.incorrectCount; // Řadíme podle počtu chyb
+      });
+  }, [summaryValues, mistakesFilter]);
+
+  const startPracticeFromMistakes = async () => {
+    if (!user) return;
+    
+    const questionsToPracticeIds = processedMistakes
+      .filter(m => !m.isCorrected)
+      .map(m => m.questionId);
+
+    if (questionsToPracticeIds.length === 0) {
+      alert("Nemáte žádné otázky, ve kterých byste chybovali. Skvělá práce!");
       return;
     }
     
@@ -430,7 +464,7 @@ export default function DrivingTestApp() {
     const allQuestionsArrays = await Promise.all(allQuestionsPromises);
     const allQuestions = allQuestionsArrays.flat();
     
-    let questionsForPractice = allQuestions.filter(q => questionIds.includes(q.id));
+    let questionsForPractice = allQuestions.filter(q => questionsToPracticeIds.includes(q.id));
     
     // Shuffle
     for (let i = questionsForPractice.length - 1; i > 0; i--) {
@@ -495,7 +529,6 @@ export default function DrivingTestApp() {
       setSummaryData(data.summaryData);
       setStats(data.stats);
       setTestSessions(data.testSessions); // Nastavíme sessions ze serveru
-      setAllQuestions(data.allQuestions); // Uložíme všechny otázky
       console.log(`[DataLoad] Data pro ${currentUserId} byla načtena.`);
     });
   }, [user, phase]);
@@ -582,6 +615,9 @@ export default function DrivingTestApp() {
       setQuestions(qs);
       setCurrent(0);
       setResponses({});
+      if (newMode === 'practice') {
+        setPracticeFirstAttempts({});
+      }
       setSessionAnalysis({});
       setPhase("test");
       setTimeLeft(newMode === 'exam' ? OSTRY_TIME : null);
@@ -698,8 +734,8 @@ export default function DrivingTestApp() {
   }
 
   const endPracticeAndGoHome = async () => {
-    // V režimu procvičování se data ukládají průběžně, takže zde není potřeba volat commit.
-    // Jen znovu načteme data pro jistotu, kdyby se něco změnilo.
+    await commitSessionAnalysis();
+    // Po odeslání dat znovu načteme všechna data, abychom měli aktuální stav
     const currentUserId = user ? user.id : "Host";
     const data = await loadUserData(currentUserId);
     setAnalysisData(data.analysisData);
@@ -712,12 +748,8 @@ export default function DrivingTestApp() {
 
   async function finishExam(reason: 'manual' | 'timeup' | 'aborted' = 'manual') {
     setViewedSession(null); // Reset viewed session, we are finishing a live one
-    
-    // Ukládáme session pouze pro ostrý test. Procvičování se ukládá průběžně.
-    if (mode === 'exam') {
-      await commitSessionAnalysis(reason);
-    }
-
+    // Okamžitě se pokusíme odeslat data z dokončené session
+    await commitSessionAnalysis(reason);
     // Po odeslání dat znovu načteme všechna data, abychom měli aktuální stav
     const currentUserId = user ? user.id : "Host";
     const data = await loadUserData(currentUserId);
@@ -763,6 +795,21 @@ export default function DrivingTestApp() {
     }
   }, [q]);
 
+  // Efekt pro automatický přechod na další otázku
+  useEffect(() => {
+    // Aktivuje se pouze v testovací fázi, v ostrém testu, pokud je povoleno a odpověď byla právě zaznamenána
+    if (phase === 'test' && autoAdvance && mode === 'exam' && responses[q?.id] !== undefined) {
+      // A pouze pokud to není poslední otázka
+      if (current < questions.length - 1) {
+        const timer = setTimeout(() => {
+          setCurrent(c => c + 1);
+        }, 700); // Zpoždění, aby uživatel viděl výsledek odpovědi
+
+        // Vyčistit časovač, pokud se změní závislosti před jeho spuštěním
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [responses, autoAdvance, current, questions.length, phase, q, mode]);
 
   useEffect(() => {
     const currentUserId = user ? user.id : "Host";
@@ -783,62 +830,6 @@ export default function DrivingTestApp() {
         setMessages([{ role: "assistant", text: "Ahoj! Zeptej se na cokoliv k testu nebo si vyber režim." }]);
     }
   }, [q, phase, setMessages]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsFooterVisible(entry.isIntersecting);
-      },
-      { root: mainEl, threshold: 0.1 }
-    );
-
-    const currentFooterRef = footerRef.current;
-    if (phase === 'done' && currentFooterRef) {
-      observer.observe(currentFooterRef);
-    }
-
-    return () => {
-      if (currentFooterRef) {
-        observer.unobserve(currentFooterRef);
-      }
-    };
-  }, [phase, mainEl]);
-
-  useEffect(() => {
-    if (phase === 'done' && mainEl) {
-      const handleScroll = () => {
-        const { scrollTop } = mainEl;
-        
-        if (scrollTop > lastScrollY.current && scrollTop > 50) {
-          setIsActionBarVisible(true);
-        } else if (scrollTop < lastScrollY.current) {
-          setIsActionBarVisible(false);
-        }
-        
-        lastScrollY.current = scrollTop <= 0 ? 0 : scrollTop;
-      };
-
-      const timeoutId = setTimeout(() => {
-        if (mainEl.scrollHeight <= mainEl.clientHeight) {
-          setIsActionBarVisible(false);
-          setIsFooterVisible(true);
-        } else {
-          setIsFooterVisible(false);
-        }
-        lastScrollY.current = mainEl.scrollTop;
-      }, 100);
-      
-      mainEl.addEventListener('scroll', handleScroll, { passive: true });
-
-      return () => {
-        clearTimeout(timeoutId);
-        mainEl.removeEventListener('scroll', handleScroll);
-      };
-    } else {
-      setIsActionBarVisible(false);
-      setIsFooterVisible(false);
-    }
-  }, [phase, mainEl]);
 
   if (!session && !isGuest) {
     if (authMode === 'signup') {
@@ -1354,13 +1345,102 @@ export default function DrivingTestApp() {
               </Collapsible>
             )}
 
-            <MistakesOverview
-              summaryData={summaryData}
-              onStartPractice={startPracticeFromMistakeIds}
-              isLoading={isLoading}
-            />
+            {userAnalysisData.filter(e => !e.isFirstAttemptCorrect).length > 0 && (
+              <Collapsible open={isMistakesOpen} onOpenChange={setIsMistakesOpen} className="max-w-4xl mx-auto mt-8">
+                <Card>
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <CollapsibleTrigger asChild>
+                        <div className="flex items-center gap-3 cursor-pointer flex-1">
+                          <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
+                          <ChevronsUpDown size={18} className="text-muted-foreground transition-transform data-[state=open]:-rotate-180" />
+                        </div>
+                      </CollapsibleTrigger>
+                      <div className="flex items-center gap-1 bg-muted p-1 rounded-md">
+                        <Button
+                          variant={mistakesFilter === 'all' ? 'default' : 'ghost'}
+                          size="sm"
+                          onClick={() => setMistakesFilter('all')}
+                          className="text-xs h-7"
+                        >
+                          Všechny
+                        </Button>
+                        <Button
+                          variant={mistakesFilter === 'uncorrected' ? 'default' : 'ghost'}
+                          size="sm"
+                          onClick={() => setMistakesFilter('uncorrected')}
+                          className="text-xs h-7"
+                        >
+                          Neopravené
+                        </Button>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-1">Otázky, ve kterých jste v minulosti chybovali.</p>
+                  </CardHeader>
+                  <CollapsibleContent>
+                    <CardContent>
+                      {processedMistakes.length > 0 ? (
+                        <div className="space-y-4">
+                          {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
+                            <div key={questionId} className={clsx("p-3 border rounded-md", {
+                              "bg-red-50/50 border-red-200 dark:bg-red-900/20 dark:border-red-800": !isCorrected,
+                              "bg-green-50/50 border-green-200 dark:bg-green-900/20 dark:border-green-800": isCorrected,
+                            })}>
+                              <div className="flex justify-between items-center">
+                                <p className={clsx("font-semibold", {
+                                  "text-red-800 dark:text-red-300": !isCorrected,
+                                  "text-green-800 dark:text-green-300": isCorrected,
+                                })}>
+                                  {incorrectCount}x nesprávně
+                                </p>
+                                {isCorrected && (
+                                  <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
+                                    OPRAVENO
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-sm text-foreground/90 mt-1">{text}</p>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="text-center py-8 text-muted-foreground">
+                          <p>Žádné chyby k zobrazení v tomto filtru.</p>
+                          <p className="text-xs mt-1">Zkuste změnit filtr na "Všechny".</p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </CollapsibleContent>
+                </Card>
+              </Collapsible>
+            )}
           </div>
         </main>
+        {summaryValues.length > 0 && (
+          <footer className="sticky bottom-0 bg-background/80 backdrop-blur-md border-t p-4 shadow-md z-10">
+            <div className="w-full max-w-4xl mx-auto text-center">
+              {processedMistakes.filter(m => !m.isCorrected).length > 0 ? (
+                <Button 
+                  size="lg" 
+                  onClick={startPracticeFromMistakes}
+                  disabled={isLoading}
+                  isLoading={isLoading}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                >
+                  <RefreshCcw className="mr-2 h-5 w-5" />
+                  {isLoading ? "Připravuji otázky..." : "Vyzkoušet znovu chybné otázky"}
+                </Button>
+              ) : (
+                <div className="mt-4 text-center text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 p-4 rounded-lg flex items-center justify-center gap-3">
+                  <CheckCircle2 size={24} />
+                  <p className="font-semibold text-lg">
+                    Skvělá práce! Všechny své chyby jste si již opravili.
+                  </p>
+                </div>
+              )}
+            </div>
+        </footer>
+      )}
       </div>
     );
   }
@@ -1455,6 +1535,7 @@ export default function DrivingTestApp() {
                                         setCurrent(index);
                                         setMode('practice'); // Use practice UI
                                         setResponses({});
+                                        setPracticeFirstAttempts({});
                                         setOriginPhase("browse"); // Remember where we came from
                                         setTimeLeft(null); // Vynulovat časovač pro prohlížení
                                         setPhase("test");
@@ -1465,6 +1546,7 @@ export default function DrivingTestApp() {
                                         setCurrent(index);
                                         setMode('practice'); // Use practice UI
                                         setResponses({});
+                                        setPracticeFirstAttempts({});
                                         setOriginPhase("browse"); // Remember where we came from
                                         setTimeLeft(null); // Vynulovat časovač pro prohlížení
                                         setPhase("test");
@@ -1656,56 +1738,29 @@ export default function DrivingTestApp() {
                   <RadioGroup
                     key={q.id}
                     value={responses[q.id]?.toString() ?? ''}
-                    onValueChange={async (valStr) => {
+                    onValueChange={(valStr) => {
                       const val = parseInt(valStr);
                       const isCorrect = val === q.spravna;
-                      const isFirstAnswer = responses[q.id] === undefined;
-                      const timeToAnswer = Date.now() - questionStartTime;
 
-                      // Vždy aktualizovat finální odpověď v lokálním stavu
+                      // Zaznamenat první pokus pro statistiky procvičování
+                      if (mode === 'practice' && !practiceFirstAttempts[q.id]) {
+                        setPracticeFirstAttempts(prev => ({
+                          ...prev,
+                          [q.id]: { firstAttemptIndex: val, isFirstAttemptCorrect: isCorrect }
+                        }));
+                      }
+                      
+                      // Zaznamenat data pro podrobnou analýzu (pouze při prvním pokusu v sezení)
+                      if (!sessionAnalysis[q.id]) {
+                        const timeToAnswer = Date.now() - questionStartTime;
+                        setSessionAnalysis(prev => ({
+                          ...prev,
+                          [q.id]: { timeToAnswer, firstAttemptCorrect: isCorrect }
+                        }));
+                      }
+
+                      // Vždy aktualizovat finální odpověď
                       setResponses(prev => ({ ...prev, [q.id]: val }));
-
-                      if (mode === 'practice') {
-                        // V režimu procvičování okamžitě zaznamenáme odpověď
-                        const entry: AnalysisEntry = {
-                          user: currentUser!,
-                          questionId: q.id,
-                          questionText: q.otazka,
-                          groupId: q.groupId,
-                          answeredAt: new Date().toISOString(),
-                          timeToAnswer,
-                          isFirstAttemptCorrect: isCorrect,
-                          isCorrect,
-                          answerIndex: val,
-                          selectedAnswer: val,
-                          mode: 'practice',
-                        };
-                        
-                        await appendAnalysisData([entry], user);
-                        
-                        // A okamžitě aktualizujeme statistiky, aby se změna projevila
-                        const data = await loadUserData(currentUser);
-                        setSummaryData(data.summaryData);
-                        setStats(data.stats);
-
-                      } else { // Režim 'exam'
-                        // Jen si poznamenáme data pro pozdější hromadné uložení
-                        if (!sessionAnalysis[q.id]) {
-                          setSessionAnalysis(prev => ({
-                            ...prev,
-                            [q.id]: { timeToAnswer, firstAttemptCorrect: isCorrect }
-                          }));
-                        }
-                      }
-
-                      // Automatický přechod na další otázku POUZE při první odpovědi v ostrém testu
-                      if (isFirstAnswer && phase === 'test' && autoAdvance && mode === 'exam') {
-                        if (current < questions.length - 1) {
-                          setTimeout(() => {
-                            setCurrent(c => c + 1);
-                          }, 700);
-                        }
-                      }
                     }}
                     className="mt-4 flex flex-col gap-4"
                   >
@@ -1762,14 +1817,16 @@ export default function DrivingTestApp() {
               </Card>
               </div>
               {/* Desktop Navigation */}
-              <div className="mt-6 hidden md:grid grid-cols-3 items-center gap-2">
-                <div />
-                <div className="flex justify-center items-center gap-2">
+              <div className="mt-6 hidden md:flex justify-between items-center">
+                <div className="flex-1"></div> {/* Prázdný div pro zarovnání doleva */}
+                <div className="flex items-center gap-2 justify-center">
                   <Button variant="outline" onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}>
                     Předchozí
                   </Button>
                   {current < questions.length - 1 ? (
-                    <Button onClick={() => setCurrent(c => c + 1)}>Další</Button>
+                    <Button variant="outline" onClick={() => setCurrent(c => Math.min(questions.length - 1, c + 1))}>
+                      Další
+                    </Button>
                   ) : (
                     originPhase !== 'browse' && (
                       mode === 'exam' ? (
@@ -1795,12 +1852,21 @@ export default function DrivingTestApp() {
                     )
                   )}
                 </div>
-                <div className="flex justify-end">
-                  {mode === 'practice' && (
+                <div className="flex-1 flex justify-end">
+                  {mode === 'practice' && originPhase !== 'browse' && (
                      <Button
                       variant="destructive"
                       onClick={endPracticeAndGoHome}>
                       Ukončit
+                    </Button>
+                  )}
+                  {mode === 'exam' && answeredCount === questions.length && current < questions.length - 1 && (
+                    <Button onClick={() => {
+                      if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
+                        finishExam('manual');
+                      }
+                    }} className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                      Dokončit test
                     </Button>
                   )}
                 </div>
@@ -1857,50 +1923,45 @@ export default function DrivingTestApp() {
         </div>
 
         {/* Mobile Sticky Navigation */}
-        <div className="md:hidden fixed inset-x-0 bottom-0 bg-background/80 backdrop-blur-md px-4 py-3 flex justify-between items-center gap-2 border-t border-border">
-          <Button variant="outline" onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}>
+        <div className="md:hidden fixed inset-x-0 bottom-0 bg-background/80 backdrop-blur-md px-4 py-3 flex gap-2 border-t border-border">
+          <Button variant="ghost" onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}>
             Předchozí
           </Button>
-          
-          <div className="flex-shrink-0">
-            {current < questions.length - 1 ? (
-              <Button onClick={() => setCurrent(c => c + 1)}>Další</Button>
-            ) : (
-              originPhase !== 'browse' && (
-                mode === 'exam' ? (
-                  <Button onClick={() => {
-                    if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
+          {current < questions.length - 1 ? (
+            <Button className="flex-1" onClick={() => setCurrent(c => Math.min(questions.length - 1, c + 1))}>
+              Další
+            </Button>
+          ) : (
+            originPhase !== 'browse' && (
+              mode === 'exam' ? (
+                <Button onClick={() => {
+                  if (confirm("Opravdu si přejete dokončit a vyhodnotit test?")) {
+                    finishExam('manual');
+                  }
+                }} className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
+                  Dokončit
+                </Button>
+              ) : (
+                <Button 
+                  onClick={() => {
+                    if (confirm("Opravdu si přejete dokončit a vyhodnotit procvičování?")) {
                       finishExam('manual');
                     }
-                  }} className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Dokončit test
-                  </Button>
-                ) : (
-                  <Button 
-                    onClick={() => {
-                      if (confirm("Opravdu si přejete dokončit a vyhodnotit procvičování?")) {
-                        finishExam('manual');
-                      }
-                    }} 
-                    className="text-primary-foreground bg-primary hover:bg-primary/90"
-                  >
-                    Vyhodnotit
-                  </Button>
-                )
+                  }} 
+                  className="flex-1 text-primary-foreground bg-primary hover:bg-primary/90"
+                >
+                  Vyhodnotit
+                </Button>
               )
-            )}
-          </div>
-
-          <div className="flex-shrink-0">
-            {mode === 'practice' ? (
-              <Button
-                variant="destructive"
-                size="icon"
-                onClick={endPracticeAndGoHome}>
-                <LogOut size={16} />
-              </Button>
-            ) : <div style={{ width: '40px' }} /> /* Placeholder to balance layout */}
-          </div>
+            )
+          )}
+          {mode === 'practice' && originPhase !== 'browse' && (
+             <Button
+              variant="destructive"
+              onClick={endPracticeAndGoHome}>
+              Ukončit
+            </Button>
+          )}
         </div>
 
         {fullscreenImage && (
@@ -1980,18 +2041,17 @@ export default function DrivingTestApp() {
       };
     }).filter((g): g is NonNullable<typeof g> => g !== null);
 
-    // Pro zobrazení výsledků aktuálního kola procvičování použijeme `sessionAnalysis`
+    // Pro zobrazení výsledků aktuálního kola procvičování použijeme practiceFirstAttempts
     let answeredInCurrentPracticeSession = 0;
     let correctInCurrentPracticeSession = 0;
     if (mode === 'practice') {
-        const attemptedQuestionIdsInSession = Object.keys(responses);
-        answeredInCurrentPracticeSession = attemptedQuestionIdsInSession.length;
-        attemptedQuestionIdsInSession.forEach(id => {
-            const question = questions.find(q => q.id === id);
-            if (question && responses[id] === question.spravna) {
-                correctInCurrentPracticeSession++;
-            }
-        });
+      const attemptedQuestionIdsInSession = Object.keys(practiceFirstAttempts);
+      answeredInCurrentPracticeSession = attemptedQuestionIdsInSession.length;
+      attemptedQuestionIdsInSession.forEach(id => {
+        if (practiceFirstAttempts[id]?.isFirstAttemptCorrect) {
+          correctInCurrentPracticeSession++;
+        }
+      });
     }
 
     return (
@@ -2005,7 +2065,7 @@ export default function DrivingTestApp() {
           onSetCurrentUser={handleLogout}
           onOpenSettings={() => setIsSettingsOpen(true)}
         />
-        <main ref={setMainEl} className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto">
           <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-center">
             <div className="max-w-4xl mx-auto mb-4 text-left">
                 <Button variant="outline" onClick={backButtonAction}>
@@ -2134,14 +2194,15 @@ export default function DrivingTestApp() {
                 })}
               </div>
             </div>
-            <div className="h-16" /> {/* Spacer for action bar */}
           </div>
         </main>
-        <div id="actionBar" className={clsx("action-bar", { "action-bar--visible": isActionBarVisible && !isFooterVisible })}>
-            <Button size="lg" className="w-full" onClick={backButtonAction}>
-                {backButtonText}
-            </Button>
-        </div>
+        <footer className="sticky bottom-0 bg-background/80 backdrop-blur-md border-t p-4 shadow-md z-10">
+            <div className="w-full max-w-screen-xl mx-auto">
+                <Button size="lg" className="w-full" onClick={backButtonAction}>
+                    {backButtonText}
+                </Button>
+            </div>
+        </footer>
       </div>
     );
   }
