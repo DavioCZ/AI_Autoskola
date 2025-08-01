@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import {
   Collapsible,
   CollapsibleContent,
@@ -19,6 +19,52 @@ type MistakesOverviewProps = {
 export function MistakesOverview({ summaryData, onStartPractice, isLoading }: MistakesOverviewProps) {
   const [isMistakesOpen, setIsMistakesOpen] = useState(true);
   const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
+  const [isActionBarVisible, setIsActionBarVisible] = useState(false);
+  const [isComponentInView, setIsComponentInView] = useState(false);
+  const lastScrollY = useRef(0);
+  const componentRootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+        ([entry]) => setIsComponentInView(entry.isIntersecting),
+        { threshold: 0.1 }
+    );
+    const currentRef = componentRootRef.current;
+    if (currentRef) observer.observe(currentRef);
+    return () => {
+        if (currentRef) observer.unobserve(currentRef);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isComponentInView) {
+        setIsActionBarVisible(false);
+        return;
+    }
+
+    const scrollContainer = componentRootRef.current?.closest('main.overflow-y-auto');
+    if (!scrollContainer) return;
+
+    const handleScroll = () => {
+        const { scrollTop } = scrollContainer;
+        // Zobrazíme tlačítko, když uživatel posouvá dolů
+        if (scrollTop > lastScrollY.current && scrollTop > 50) {
+            setIsActionBarVisible(true); 
+        // Skryjeme ho, když posouvá nahoru
+        } else if (scrollTop < lastScrollY.current) {
+            setIsActionBarVisible(false); 
+        }
+        lastScrollY.current = scrollTop <= 0 ? 0 : scrollTop;
+    };
+    
+    setIsActionBarVisible(true);
+    lastScrollY.current = scrollContainer.scrollTop;
+    
+    scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+        scrollContainer.removeEventListener('scroll', handleScroll);
+    };
+  }, [isComponentInView]);
 
   const summaryValues = Object.values(summaryData);
 
@@ -66,7 +112,7 @@ export function MistakesOverview({ summaryData, onStartPractice, isLoading }: Mi
   }
 
   return (
-    <>
+    <div ref={componentRootRef}>
       <Collapsible open={isMistakesOpen} onOpenChange={setIsMistakesOpen} className="max-w-4xl mx-auto mt-8">
         <Card>
           <CardHeader>
@@ -135,28 +181,28 @@ export function MistakesOverview({ summaryData, onStartPractice, isLoading }: Mi
         </Card>
       </Collapsible>
       
-      <footer className="sticky bottom-0 bg-background/80 backdrop-blur-md border-t p-4 shadow-md z-10 mt-8">
-        <div className="w-full max-w-4xl mx-auto text-center">
-          {uncorrectedMistakes.length > 0 ? (
-            <Button 
-              size="lg" 
-              onClick={() => onStartPractice(uncorrectedMistakes.map(m => m.questionId))}
-              disabled={isLoading}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              <RefreshCcw className="mr-2 h-5 w-5" />
-              {isLoading ? "Připravuji otázky..." : `Opravit ${uncorrectedMistakes.length} chyb`}
-            </Button>
-          ) : (
-            <div className="text-center text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 p-4 rounded-lg flex items-center justify-center gap-3">
-              <CheckCircle2 size={24} />
-              <p className="font-semibold text-lg">
-                Skvělá práce! Všechny své chyby jste si již opravili.
-              </p>
-            </div>
-          )}
-        </div>
-      </footer>
-    </>
+      <div className="h-24" /> {/* Spacer for floating action bar */}
+
+      <div className={clsx("action-bar", { "action-bar--visible": isActionBarVisible && isComponentInView })}>
+        {uncorrectedMistakes.length > 0 ? (
+          <Button 
+            size="lg" 
+            onClick={() => onStartPractice(uncorrectedMistakes.map(m => m.questionId))}
+            disabled={isLoading}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground"
+          >
+            <RefreshCcw className="mr-2 h-5 w-5" />
+            {isLoading ? "Připravuji otázky..." : `Opravit ${uncorrectedMistakes.length} chyb`}
+          </Button>
+        ) : (
+          <div className="text-center text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 p-3 rounded-lg flex items-center justify-center gap-3 text-sm">
+            <CheckCircle2 size={20} />
+            <p className="font-semibold">
+              Všechny chyby opraveny!
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
