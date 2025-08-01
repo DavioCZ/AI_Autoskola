@@ -45,7 +45,7 @@ import AnalysisWorker from "@/src/workers/analysis.worker.ts?worker";
 import { QRCodeCanvas } from 'qrcode.react';
 
 /* ----------------------- Data typy a konstanty ---------------------- */
-type Question = {
+export type Question = {
   id: string;
   otazka: string;
   obrazek?: string;
@@ -380,6 +380,23 @@ export default function DrivingTestApp() {
   const [summaryData, setSummaryData] = useState<SummaryData>({});
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [unlockedBadges, setUnlockedBadges] = useState<UnlockedBadge[]>([]);
+
+  useEffect(() => {
+    const loadAllQuestionsIfNeeded = async () => {
+      if (allQuestions.length === 0) {
+        console.log("[DataLoad] All questions are missing, loading from JSON files.");
+        const allQuestionsPromises = GROUPS.map(g => fetchGroup(g.id));
+        const allQuestionsArrays = await Promise.all(allQuestionsPromises);
+        setAllQuestions(allQuestionsArrays.flat());
+        console.log("[DataLoad] All questions loaded from JSON files.");
+      }
+    };
+
+    // Načteme otázky, pokud je potřebujeme pro analýzu nebo úvodní obrazovku
+    if (phase === 'analysis' || phase === 'intro') {
+      loadAllQuestionsIfNeeded();
+    }
+  }, [phase, allQuestions.length]);
   const { ask, loading: aiLoading, messages, setMessages } = useAi();
   const [draft, setDraft] = useState("");
   const msgEndRef = useRef<HTMLDivElement | null>(null);
@@ -495,7 +512,9 @@ export default function DrivingTestApp() {
       setSummaryData(data.summaryData);
       setStats(data.stats);
       setTestSessions(data.testSessions); // Nastavíme sessions ze serveru
-      setAllQuestions(data.allQuestions); // Uložíme všechny otázky
+      if (data.allQuestions && data.allQuestions.length > 0) {
+        setAllQuestions(data.allQuestions); // Uložíme všechny otázky
+      }
       console.log(`[DataLoad] Data pro ${currentUserId} byla načtena.`);
     });
   }, [user, phase]);
@@ -1356,6 +1375,7 @@ export default function DrivingTestApp() {
 
             <MistakesOverview
               summaryData={summaryData}
+              allQuestions={allQuestions}
               onStartPractice={startPracticeFromMistakeIds}
               isLoading={isLoading}
             />

@@ -8,15 +8,17 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronsUpDown, CheckCircle2, RefreshCcw } from "lucide-react";
 import clsx from "clsx";
-import type { SummaryData } from "../DrivingTestApp"; // Import typu
+import type { SummaryData, Question } from "../DrivingTestApp"; // Import typu
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 type MistakesOverviewProps = {
   summaryData: SummaryData;
+  allQuestions: Question[];
   onStartPractice: (questionIds: string[]) => void;
   isLoading: boolean;
 };
 
-export function MistakesOverview({ summaryData, onStartPractice, isLoading }: MistakesOverviewProps) {
+export function MistakesOverview({ summaryData, allQuestions, onStartPractice, isLoading }: MistakesOverviewProps) {
   const [isMistakesOpen, setIsMistakesOpen] = useState(true);
   const [mistakesFilter, setMistakesFilter] = useState<'all' | 'uncorrected'>('all');
   const [isActionBarVisible, setIsActionBarVisible] = useState(false);
@@ -71,12 +73,13 @@ export function MistakesOverview({ summaryData, onStartPractice, isLoading }: Mi
   const processedMistakes = useMemo(() => {
     const mistakesByQuestion = summaryValues.reduce((acc, summary) => {
       if (!summary.questionId) return acc;
-        acc[summary.questionId] = {
-          text: summary.questionText,
-          history: (summary.history || []).map(h => ({ isCorrect: h.isCorrect, answeredAt: h.answeredAt })),
-        };
+      acc[summary.questionId] = {
+        text: summary.questionText,
+        groupId: summary.groupId,
+        history: (summary.history || []).map(h => ({ isCorrect: h.isCorrect, answeredAt: h.answeredAt })),
+      };
       return acc;
-    }, {} as Record<string, { text: string; history: { isCorrect: boolean; answeredAt: string }[] }>);
+    }, {} as Record<string, { text: string; groupId: number; history: { isCorrect: boolean; answeredAt: string }[] }>);
 
     return Object.entries(mistakesByQuestion)
       .map(([questionId, data]) => {
@@ -86,6 +89,7 @@ export function MistakesOverview({ summaryData, onStartPractice, isLoading }: Mi
         return {
           questionId,
           text: data.text,
+          groupId: data.groupId,
           incorrectCount,
           isCorrected,
         };
@@ -109,6 +113,22 @@ export function MistakesOverview({ summaryData, onStartPractice, isLoading }: Mi
 
   if (summaryValues.length === 0 || summaryValues.every(s => s.history.every(h => h.isCorrect))) {
     return null; // Nezobrazovat nic, pokud nejsou žádná data nebo žádné chyby
+  }
+
+  // Zobrazit loading stav, pokud nejsou načteny všechny otázky, ale jsou chyby k zobrazení
+  if (allQuestions.length === 0 && processedMistakes.length > 0) {
+    return (
+      <div className="max-w-4xl mx-auto mt-8">
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold text-lg">Přehled chybovosti</h3>
+          </CardHeader>
+          <CardContent className="text-center py-8 text-muted-foreground">
+            <p>Načítám data otázek...</p>
+          </CardContent>
+        </Card>
+      </div>
+    );
   }
 
   return (
@@ -148,26 +168,37 @@ export function MistakesOverview({ summaryData, onStartPractice, isLoading }: Mi
             <CardContent>
               {processedMistakes.length > 0 ? (
                 <div className="space-y-4">
-                  {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected }) => (
-                    <div key={questionId} className={clsx("p-3 border rounded-md", {
-                      "bg-red-50/50 border-red-200 dark:bg-red-900/20 dark:border-red-800": !isCorrected,
-                      "bg-green-50/50 border-green-200 dark:bg-green-900/20 dark:border-green-800": isCorrected,
-                    })}>
-                      <div className="flex justify-between items-center">
-                        <p className={clsx("font-semibold", {
-                          "text-red-800 dark:text-red-300": !isCorrected,
-                          "text-green-800 dark:text-green-300": isCorrected,
+                  {processedMistakes.map(({ questionId, text, incorrectCount, isCorrected, groupId }) => (
+                    <Popover key={questionId}>
+                      <PopoverTrigger asChild>
+                        <div className={clsx("p-3 border rounded-md cursor-pointer hover:bg-muted/50", {
+                          "bg-red-50/50 border-red-200 dark:bg-red-900/20 dark:border-red-800": !isCorrected,
+                          "bg-green-50/50 border-green-200 dark:bg-green-900/20 dark:border-green-800": isCorrected,
                         })}>
-                          {incorrectCount}x nesprávně
-                        </p>
-                        {isCorrected && (
-                          <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
-                            OPRAVENO
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-sm text-foreground/90 mt-1">{text}</p>
-                    </div>
+                          <div className="flex justify-between items-center">
+                            <p className={clsx("font-semibold", {
+                              "text-red-800 dark:text-red-300": !isCorrected,
+                              "text-green-800 dark:text-green-300": isCorrected,
+                            })}>
+                              {incorrectCount}x nesprávně
+                            </p>
+                            {isCorrected && (
+                              <span className="text-xs font-medium text-white bg-green-600 px-2 py-1 rounded-full">
+                                OPRAVENO
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-sm text-foreground/90 mt-1">{text}</p>
+                        </div>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-80">
+                        <CorrectAnswerDisplay
+                          questionId={questionId}
+                          groupId={groupId}
+                          allQuestions={allQuestions}
+                        />
+                      </PopoverContent>
+                    </Popover>
                   ))}
                 </div>
               ) : (
@@ -203,6 +234,58 @@ export function MistakesOverview({ summaryData, onStartPractice, isLoading }: Mi
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+// Nová sub-komponenta pro zobrazení správné odpovědi
+function CorrectAnswerDisplay({ questionId, groupId, allQuestions }: { questionId: string; groupId: number; allQuestions: Question[] }) {
+  const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const findAnswer = async () => {
+      setIsLoading(true);
+      // 1. Pokus najít v již načtených otázkách
+      const questionFromProp = allQuestions.find(q => q.id === questionId);
+      if (questionFromProp) {
+        setCorrectAnswer(questionFromProp.moznosti[questionFromProp.spravna]);
+        setIsLoading(false);
+        return;
+      }
+
+      // 2. Pokud se nenajde, načíst data z příslušného JSON souboru
+      if (groupId > 0) {
+        try {
+          const res = await fetch(`/okruh${groupId}.json`);
+          if (!res.ok) throw new Error(`Failed to fetch okruh${groupId}.json`);
+          const questions: Question[] = await res.json();
+          const questionData = questions.find(q => String(q.id) === questionId);
+          if (questionData) {
+            setCorrectAnswer(questionData.moznosti[questionData.spravna]);
+          } else {
+            setCorrectAnswer("Odpověď nenalezena.");
+          }
+        } catch (error) {
+          console.error("Error fetching correct answer:", error);
+          setCorrectAnswer("Chyba při načítání odpovědi.");
+        }
+      } else {
+        setCorrectAnswer("Neznámý okruh otázky.");
+      }
+      
+      setIsLoading(false);
+    };
+
+    findAnswer();
+  }, [questionId, groupId, allQuestions]);
+
+  return (
+    <div className="space-y-2">
+      <h4 className="font-medium leading-none">Správná odpověď</h4>
+      <p className="text-sm text-muted-foreground">
+        {isLoading ? "Načítám..." : correctAnswer}
+      </p>
     </div>
   );
 }
