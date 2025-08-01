@@ -1,5 +1,5 @@
 import { Turnstile } from '@marsidev/react-turnstile';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 interface TurnstileWidgetProps {
   onSuccess: (token: string) => void;
@@ -22,7 +22,7 @@ const TurnstileWidget: FC<TurnstileWidgetProps> = ({ onSuccess, onExpire, onErro
       onExpire={onExpire}
       onError={onError}
       options={{
-        theme: 'light', // can be 'light', 'dark', or 'auto'
+        theme: 'light',
       }}
     />
   );

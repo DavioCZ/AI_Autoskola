@@ -347,3 +347,86 @@
     - [x] Umožnit opravu chybných otázek.
     - [x] Pokud uživatel správně odpoví na chybnou otázku v jakémkoliv režimu, přesunout ji do sekce "Opraveno".
     - [x] Pokud na ni znovu odpoví špatně, zvýšit počítadlo chyb pro danou otázku.
+
+---
+
+## Fáze 11: Údržba a dočasné úpravy
+*Cíl: Dokumentovat postupy pro dočasné změny a jejich navrácení do původního stavu.*
+
+### 11.1 | Obnovení Cloudflare Captcha (Turnstile)
+- [ ] **Krok 1: Obnovení na straně klienta (`src/components/Turnstile.tsx`)**
+    - [ ] **Odstranit dočasný kód:** Smazat nebo zakomentovat `useEffect` blok, který automaticky volá `onSuccess`.
+    - [ ] **Obnovit původní kód:** Odkomentovat původní logiku komponenty, která renderuje `<Turnstile>`.
+    - **Před:**
+      ```typescript
+      const TurnstileWidget: FC<TurnstileWidgetProps> = ({ onSuccess, onExpire, onError }) => {
+        // Dočasné vypnutí Captcha pro testování
+        useEffect(() => {
+          onSuccess("captcha-disabled-for-testing");
+        }, [onSuccess]);
+
+        return null;
+
+        /*
+        const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+        // ... zbytek původního kódu
+        */
+      };
+      ```
+    - **Po:**
+      ```typescript
+      const TurnstileWidget: FC<TurnstileWidgetProps> = ({ onSuccess, onExpire, onError }) => {
+        const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+
+        if (!siteKey) {
+          console.error("VITE_TURNSTILE_SITE_KEY is not set in .env file.");
+          return <div>Captcha configuration error.</div>;
+        }
+
+        return (
+          <Turnstile
+            siteKey={siteKey}
+            onSuccess={onSuccess}
+            onExpire={onExpire}
+            onError={onError}
+            options={{
+              theme: 'light',
+            }}
+          />
+        );
+      };
+      ```
+
+- [ ] **Krok 2: Obnovení na straně serveru (`server.js`)**
+    - [ ] **Odstranit podmínku pro testovací token:** Smazat `if` blok, který kontroluje `token === "captcha-disabled-for-testing"`.
+    - **Před:**
+      ```javascript
+      async function verifyCaptcha(token) {
+        // Dočasné vypnutí Captcha pro testování
+        if (token === "captcha-disabled-for-testing") {
+          console.log("✅ CAPTCHA ověření přeskočeno (testovací režim).");
+          return true;
+        }
+
+        if (!TURNSTILE_SECRET_KEY) {
+        // ... zbytek původního kódu
+        }
+      }
+      ```
+    - **Po:**
+      ```javascript
+      async function verifyCaptcha(token) {
+        if (!TURNSTILE_SECRET_KEY) {
+          console.error("TURNSTILE_SECRET_KEY is not set.");
+          return false;
+        }
+        const response = await fetch(
+          "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+          // ... zbytek původního kódu
+        );
+        const data = await response.json();
+        return data.success;
+      }
+      ```
+- [ ] **Krok 3: Restartovat server**
+    - [ ] Po uložení změn v `server.js` je nutné restartovat Node.js server, aby se nová logika načetla.
