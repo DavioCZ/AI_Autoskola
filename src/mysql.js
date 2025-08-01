@@ -74,9 +74,9 @@ export async function saveEventAndUpdateSummaries(conn, userId, eventData) {
     `INSERT INTO question_summaries (user_id, question_id, topic_id, attempts, correct_attempts, success_rate, last_attempt_at)
      VALUES (?, ?, ?, 1, ?, ?, NOW())
      ON DUPLICATE KEY UPDATE
+       success_rate = ROUND(100 * (correct_attempts + VALUES(correct_attempts)) / (attempts + 1), 1),
        attempts = attempts + 1,
        correct_attempts = correct_attempts + VALUES(correct_attempts),
-       success_rate = ROUND(100 * (correct_attempts) / (attempts), 1),
        last_attempt_at = NOW()`,
     [userId, questionId, topicId, answeredCorrectly, answeredCorrectly * 100]
   );
@@ -86,9 +86,9 @@ export async function saveEventAndUpdateSummaries(conn, userId, eventData) {
     `INSERT INTO topic_summaries (user_id, topic_id, attempts, correct_attempts, success_rate)
      VALUES (?, ?, 1, ?, ?)
      ON DUPLICATE KEY UPDATE
+       success_rate = ROUND(100 * (correct_attempts + VALUES(correct_attempts)) / (attempts + 1), 1),
        attempts = attempts + 1,
-       correct_attempts = correct_attempts + VALUES(correct_attempts),
-       success_rate = ROUND(100 * (correct_attempts) / (attempts), 1)`,
+       correct_attempts = correct_attempts + VALUES(correct_attempts)`,
     [userId, topicId, answeredCorrectly, answeredCorrectly * 100]
   );
 
@@ -131,7 +131,31 @@ export async function saveTestSession(conn, sessionData) {
 export async function getQuestionSummaries(userId) {
   if (!mysqlPool) return {};
   try {
-    const [rows] = await mysqlPool.query('SELECT * FROM question_summaries WHERE user_id = ?', [userId]);
+    // Optimalizovaný dotaz: Místo pomalých sub-selectů použijeme jeden join
+    // na před-agregovaná data z tabulky `events`.
+    const [rows] = await mysqlPool.query(`
+      SELECT
+        qs.*,
+        le.last_correct_at,
+        le.last_incorrect_at
+      FROM
+        question_summaries qs
+      LEFT JOIN (
+        SELECT
+          question_id,
+          MAX(CASE WHEN answered_correctly = 1 THEN created_at END) as last_correct_at,
+          MAX(CASE WHEN answered_correctly = 0 THEN created_at END) as last_incorrect_at
+        FROM
+          events
+        WHERE
+          user_id = ?
+        GROUP BY
+          question_id
+      ) le ON qs.question_id = le.question_id
+      WHERE
+        qs.user_id = ?
+    `, [userId, userId]);
+    
     const summary = {};
     for (const row of rows) {
       summary[row.question_id] = row;

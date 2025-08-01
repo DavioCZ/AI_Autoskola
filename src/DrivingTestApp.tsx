@@ -415,9 +415,8 @@ export default function DrivingTestApp() {
   const [viewedSession, setViewedSession] = useState<TestSession | null>(null);
   const [testSessions, setTestSessions] = useState<TestSession[]>([]);
   const [dailyDeck, setDailyDeck] = useState<Question[]>([]);
+  const [activeDeckId, setActiveDeckId] = useState<number | null>(null);
   const [isDeckMode, setIsDeckMode] = useState(false);
-  const [deckCompletedIds, setDeckCompletedIds] = useState<string[]>([]);
-  const [incorrectIdsFromLastDeck, setIncorrectIdsFromLastDeck] = useState<string[]>([]);
 
   const summaryValues = Object.values(summaryData);
 
@@ -525,9 +524,9 @@ export default function DrivingTestApp() {
   useEffect(() => {
     if (phase === 'intro' && currentUser && allQuestions.length > 0 && dailyDeck.length === 0) {
         console.log("[Deck] Načítám denní balíček.");
-        fetchDailyDeck(deckCompletedIds, incorrectIdsFromLastDeck);
+        fetchDailyDeck();
     }
-  }, [phase, currentUser, allQuestions.length, dailyDeck.length]); // Přidána závislost na dailyDeck.length
+  }, [phase, currentUser, allQuestions.length]);
 
   async function fetchGroup(gid: number): Promise<Question[]> {
     const g = GROUPS.find((gr) => gr.id === gid)!;
@@ -548,49 +547,42 @@ export default function DrivingTestApp() {
     return arr.sort(() => Math.random() - 0.5);
   }
 
-  async function fetchDailyDeck(excludeIds: string[] = [], incorrectIds: string[] = []) {
+  async function fetchDailyDeck() {
     if (!currentUser) return;
     setIsLoading(true);
     try {
         let questionsToFilter = allQuestions;
-        // If allQuestions is not loaded yet, load it now.
         if (questionsToFilter.length === 0) {
             console.log("[Deck] `allQuestions` not found, loading them for deck generation.");
             const allQuestionsPromises = GROUPS.map(g => fetchGroup(g.id));
             const allQuestionsArrays = await Promise.all(allQuestionsPromises);
             questionsToFilter = allQuestionsArrays.flat();
-            setAllQuestions(questionsToFilter); // Save them for later use
+            setAllQuestions(questionsToFilter);
         }
 
-        const params = new URLSearchParams({ userId: currentUser });
-        if (excludeIds.length > 0) {
-            params.append('exclude', excludeIds.join(','));
-        }
-        // max 5 chyb z minulého balíčku
-        if (incorrectIds.length) {
-          params.append("includeIncorrectFromPrevious", incorrectIds.slice(0,5).join(','));
-        }
-        
-        const res = await fetch(`/api/spaced-repetition-deck?${params.toString()}`);
+        const res = await fetch(`/api/decks/daily?user=${encodeURIComponent(currentUser)}`);
         if (!res.ok) throw new Error('Failed to fetch daily deck');
         
-        const { questionIds } = await res.json();
+        const { deckId, questions: questionIds } = await res.json();
 
         if (questionIds && questionIds.length > 0) {
-            const deckQuestions = questionsToFilter.filter(q =>
-                          questionIds.includes(String(q.id))); // sjednocení typu
-            deckQuestions.sort((a, b) => {
-                const indexA = questionIds.indexOf(String(a.id));
-                const indexB = questionIds.indexOf(String(b.id));
-                return indexA - indexB;
-            });
+            const deckQuestions = questionsToFilter
+                .filter(q => questionIds.includes(String(q.id)))
+                .sort((a, b) => {
+                    const indexA = questionIds.indexOf(String(a.id));
+                    const indexB = questionIds.indexOf(String(b.id));
+                    return indexA - indexB;
+                });
             setDailyDeck(deckQuestions);
+            setActiveDeckId(deckId);
         } else {
             setDailyDeck([]);
+            setActiveDeckId(null);
         }
     } catch (error) {
         console.error("Error fetching daily deck:", error);
-        setDailyDeck([]); // Reset on error
+        setDailyDeck([]);
+        setActiveDeckId(null);
     } finally {
         setIsLoading(false);
     }
@@ -797,16 +789,9 @@ export default function DrivingTestApp() {
     }
 
     if (isDeckMode) {
-        // Najdeme ID špatně zodpovězených otázek z právě dokončeného balíčku
-        const incorrectIds = questions
-            .filter(q => responses[q.id] !== q.spravna)
-            .map(q => q.id);
-        setIncorrectIdsFromLastDeck(incorrectIds);
-
-        // Add all questions from the completed deck to the list of completed IDs
-        setDeckCompletedIds(prev => [...new Set([...prev, ...questions.map(q => q.id)])]);
         setDailyDeck([]); // Clear the current deck so the user can fetch a new one
         setIsDeckMode(false); // Reset deck mode
+        setActiveDeckId(null);
     }
 
     // Po odeslání dat znovu načteme všechna data, abychom měli aktuální stav
@@ -1112,15 +1097,15 @@ export default function DrivingTestApp() {
                       ) : (
                           <>
                               <p className="text-sm text-muted-foreground mb-4">
-                                  {deckCompletedIds.length > 0 ? "Skvělá práce! Chcete si vygenerovat další balíček?" : "Pro dnešek nemáte žádné otázky k opakování. Můžete si ale vygenerovat náhodný balíček."}
+                                  Pro dnešek nemáte žádné otázky k opakování. Můžete si ale vygenerovat náhodný balíček.
                               </p>
                               <Button 
                                   className="w-full" 
-                                  onClick={() => fetchDailyDeck(deckCompletedIds, incorrectIdsFromLastDeck)}
+                                  onClick={() => fetchDailyDeck()}
                                   disabled={isLoading}
                                   isLoading={isLoading}
                               >
-                                  Vygenerovat další balíček
+                                  Vygenerovat nový balíček
                               </Button>
                           </>
                       )}
