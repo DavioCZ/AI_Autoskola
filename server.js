@@ -616,7 +616,7 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
     return res.status(400).json({ error: "User ID is required." });
   }
   const uid = userId.toLowerCase();
-  const DECK_SIZE = 20;
+  const DECK_SIZE = 20;         // ⬅ limit jedné dávky
   const excludedIds = exclude ? exclude.split(',') : [];
   const incorrectFromPrevious = includeIncorrectFromPrevious ? includeIncorrectFromPrevious.split(',') : [];
 
@@ -630,8 +630,10 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
     const deck = new Set();
 
     const addToDeck = (questionId) => {
-      const id = String(questionId); // <<< sjednocení typu
-      if (deck.size < DECK_SIZE && !deck.has(id) && !excludedIds.includes(id)) {
+      const id = String(questionId);                     // sjednotíme na text
+      if (deck.size < DECK_SIZE &&
+          !deck.has(id) &&
+          !excludedIds.includes(id)) {
           deck.add(id);
       }
     };
@@ -668,20 +670,20 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
 
     // 4. Priorita 2: Otázky z nejméně úspěšných okruhů (< 86% úspěšnost)
     if (deck.size < DECK_SIZE) {
-      const topicSummaries = (await getTopicSummaries(uid))
+      const topicSummaries = (await getTopicSummaries(uid) || [])
         .filter(t => t.success_rate < 86)
         .sort((a, b) => a.success_rate - b.success_rate);
 
-      const questionsByTopic = {};
+      const allByTopic = {};
       analysisIndex.forEach((q, id) => {
-        if (!questionsByTopic[q.groupId]) questionsByTopic[q.groupId] = [];
-        questionsByTopic[q.groupId].push(id);
+        if (!allByTopic[q.groupId]) allByTopic[q.groupId] = [];
+        allByTopic[q.groupId].push(id);
       });
 
       for (const topic of topicSummaries) {
         if (deck.size >= DECK_SIZE) break;
         const questionsInTopic =
-              (questionsByTopic[topic.topic_id] || []).sort(() => 0.5 - Math.random());
+              (allByTopic[topic.topic_id] || []).sort(() => 0.5 - Math.random());
         questionsInTopic.forEach(addToDeck);
       }
     }

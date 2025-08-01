@@ -566,8 +566,9 @@ export default function DrivingTestApp() {
         if (excludeIds.length > 0) {
             params.append('exclude', excludeIds.join(','));
         }
+        // max 5 chyb z minulého balíčku
         if (incorrectIds.length) {
-          params.append("includeIncorrectFromPrevious", incorrectIds.join(","));
+          params.append("includeIncorrectFromPrevious", incorrectIds.slice(0,5).join(','));
         }
         
         const res = await fetch(`/api/spaced-repetition-deck?${params.toString()}`);
@@ -576,7 +577,8 @@ export default function DrivingTestApp() {
         const { questionIds } = await res.json();
 
         if (questionIds && questionIds.length > 0) {
-            const deckQuestions = questionsToFilter.filter(q => questionIds.includes(String(q.id)));
+            const deckQuestions = questionsToFilter.filter(q =>
+                          questionIds.includes(String(q.id))); // sjednocení typu
             deckQuestions.sort((a, b) => {
                 const indexA = questionIds.indexOf(String(a.id));
                 const indexB = questionIds.indexOf(String(b.id));
