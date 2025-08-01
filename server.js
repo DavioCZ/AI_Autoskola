@@ -611,67 +611,120 @@ app.post("/api/reset-analysis", async (req, res) => {
 });
 
 app.get("/api/spaced-repetition-deck", async (req, res) => {
-  const { userId } = req.query;
+  const { userId, exclude, includeIncorrectFromPrevious } = req.query;
   if (!userId) {
     return res.status(400).json({ error: "User ID is required." });
   }
   const uid = userId.toLowerCase();
   const DECK_SIZE = 20;
+  const excludedIds = exclude ? exclude.split(',') : [];
+  const incorrectFromPrevious = includeIncorrectFromPrevious ? includeIncorrectFromPrevious.split(',') : [];
+
+  console.log(`[DeckBuilder] Start for user: ${uid}, exclude: ${excludedIds.length}, incorrectFromPrev: ${incorrectFromPrevious.length}`);
 
   try {
+    const analysisIndex = await buildAnalysisIndex();
     const questionSummaries = await getQuestionSummaries(uid);
-    const allUserQuestions = Object.values(questionSummaries);
+    const allUserQuestions = Object.values(questionSummaries || {});
 
-    // Priorita 1: Otázky s úspěšností < 80 % (při >= 2 pokusech)
-    const priority1_questions = allUserQuestions
-      .filter(q => q.attempts >= 2 && q.success_rate < 80)
-      .sort((a, b) => a.success_rate - b.success_rate)
-      .map(q => q.question_id);
+    const deck = new Set();
 
-    const deck = new Set(priority1_questions);
+    const addToDeck = (questionId) => {
+      // Důsledně pracujeme s řetězci, abychom předešli chybám z nekonzistentních typů (číslo vs. řetězec).
+      const strId = String(questionId);
+      if (deck.size < DECK_SIZE && !deck.has(strId) && !excludedIds.includes(strId)) {
+        deck.add(strId);
+      }
+    };
 
-    // Priorita 2: Otázky z nejméně úspěšných okruhů
-    if (deck.size < DECK_SIZE) {
-        const topicSummaries = await getTopicSummaries(uid); // Načteme seřazené od nejhoršího
-        const allQuestionsInTopics = allUserQuestions.reduce((acc, q) => {
-            if(q.topic_id) {
-                if(!acc[q.topic_id]) acc[q.topic_id] = [];
-                acc[q.topic_id].push(q.question_id);
-            }
-            return acc;
-        }, {});
+    // 1. Zařadit až 5 špatně zodpovězených otázek z předchozího balíčku
+    incorrectFromPrevious
+      .filter(id => analysisIndex.has(String(id)))
+      .slice(0, 5)
+      .forEach(addToDeck);
+    console.log(`[DeckBuilder] Step 1 (Incorrect from Prev): ${deck.size} questions`);
 
-        for (const topic of topicSummaries) {
-            if (deck.size >= DECK_SIZE) break;
-            const questionsInTopic = allQuestionsInTopics[topic.topic_id] || [];
-            const shuffledQuestions = questionsInTopic.sort(() => 0.5 - Math.random());
-            for (const questionId of shuffledQuestions) {
-                if (deck.size >= DECK_SIZE) break;
-                if (!deck.has(questionId)) {
-                    deck.add(questionId);
-                }
-            }
+    // 2. Priorita 1: Otázky, které nejsou opraveny v "Přehledu chybovosti"
+    const allEvents = await getAllEvents(uid);
+    const eventsByQuestion = allEvents.reduce((acc, event) => {
+        if (!acc[event.question_id]) {
+            acc[event.question_id] = [];
         }
-    }
+        acc[event.question_id].push(event);
+        return acc;
+    }, {});
 
-    // Priorita 3: Náhodné otázky pro doplnění balíčku
+    const uncorrectedMistakes = allUserQuestions
+      .filter(q => {
+          const history = eventsByQuestion[q.question_id] || [];
+          if (history.length === 0) return false;
+          const lastAttempt = history[history.length - 1];
+          return !lastAttempt.answered_correctly;
+      })
+      .sort((a, b) => {
+          const historyA = eventsByQuestion[a.question_id] || [];
+          const historyB = eventsByQuestion[b.question_id] || [];
+          const lastAttemptA = historyA.length > 0 ? new Date(historyA[historyA.length - 1].created_at) : 0;
+          const lastAttemptB = historyB.length > 0 ? new Date(historyB[historyB.length - 1].created_at) : 0;
+          return lastAttemptA - lastAttemptB; // Starší chyby první
+      });
+    
+    uncorrectedMistakes.forEach(q => addToDeck(q.question_id));
+    console.log(`[DeckBuilder] Step 2 (Uncorrected Mistakes): ${deck.size} questions`);
+
+    // 3. Ověření: Občasně přidat 1-2 již opravené otázky (pouze pokud je místo)
     if (deck.size < DECK_SIZE) {
-      const allQuestionIds = Array.from(analysisIndex.keys());
-      const remainingQuestions = allQuestionIds.filter(id => !deck.has(id));
-      const shuffledRemaining = remainingQuestions.sort(() => 0.5 - Math.random());
+      const correctedMistakes = allUserQuestions
+        .filter(q => {
+          const lastCorrect = q.last_correct_at ? new Date(q.last_correct_at) : null;
+          const lastIncorrect = q.last_incorrect_at ? new Date(q.last_incorrect_at) : null;
+          return lastIncorrect && lastCorrect && lastCorrect > lastIncorrect;
+        })
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 2);
+        
+      correctedMistakes.forEach(q => addToDeck(q.question_id));
+    }
+    console.log(`[DeckBuilder] Step 3 (Verification): ${deck.size} questions`);
 
-      while (deck.size < DECK_SIZE && shuffledRemaining.length > 0) {
-        deck.add(shuffledRemaining.pop());
+    // 4. Priorita 2: Otázky z nejméně úspěšných okruhů (< 86% úspěšnost)
+    if (deck.size < DECK_SIZE) {
+      const topicSummaries = await getTopicSummaries(uid) || [];
+      // Omezení pouze na okruhy s úspěšností pod 86 %
+      const weakTopics = topicSummaries.filter(t => t.success_rate < 86);
+
+      const questionsByTopic = allUserQuestions.reduce((acc, q) => {
+        const topicId = q.topic_id;
+        if (topicId) {
+          if (!acc[topicId]) acc[topicId] = [];
+          acc[topicId].push(q.question_id);
+        }
+        return acc;
+      }, {});
+
+      // Procházíme jen slabé okruhy
+      for (const topic of weakTopics) {
+        if (deck.size >= DECK_SIZE) break;
+        const questionsInTopic = (questionsByTopic[topic.topic_id] || []).sort(() => 0.5 - Math.random());
+        questionsInTopic.forEach(addToDeck);
       }
     }
+    console.log(`[DeckBuilder] Step 4 (Weakest Topics): ${deck.size} questions`);
 
-    const existingQuestionIds = Array.from(deck).filter(id => analysisIndex.has(id));
-    
-    const finalDeck = existingQuestionIds.slice(0, DECK_SIZE);
-    res.json({ questionIds: finalDeck });
+    // 5. Priorita 3: Náhodné otázky pro doplnění balíčku
+    if (deck.size < DECK_SIZE) {
+      const allPossibleQuestions = Array.from(analysisIndex.keys());
+      const shuffledRemaining = allPossibleQuestions.sort(() => 0.5 - Math.random());
+      shuffledRemaining.forEach(addToDeck);
+    }
+    console.log(`[DeckBuilder] Step 5 (Random Fill): ${deck.size} questions`);
+
+    const finalDeck = Array.from(deck);
+    console.log(`[DeckBuilder] Final deck size for user ${uid}: ${finalDeck.length}`);
+    res.json({ questionIds: finalDeck.slice(0, DECK_SIZE) });
 
   } catch (error) {
-    console.error(`Error fetching spaced repetition deck for user ${uid}:`, error);
+    console.error(`[DeckBuilder] FATAL ERROR for user ${uid}:`, error);
     res.status(500).json({ error: "Failed to fetch spaced repetition deck." });
   }
 });

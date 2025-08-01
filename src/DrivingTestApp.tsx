@@ -208,7 +208,6 @@ async function appendAnalysisData(
 
   if (currentUser && currentUser !== "Host" && user) {
     try {
-      console.log("[appendAnalysisData] Sending entries to /api/ingest for user", currentUser, ":", entries, "with session data:", sessionData);
       const bodyPayload = {
         entries,
         userId: user.id,
@@ -226,7 +225,6 @@ async function appendAnalysisData(
       const result = await response.json();
       // The new endpoint doesn't return badges directly, this logic might need adjustment later.
       // For now, we assume it might return something similar or we handle it differently.
-      console.log("[appendAnalysisData] Successfully sent data via /api/ingest. Server response:", result);
       return result.newlyAwardedBadges || [];
     } catch (error) {
       console.error("Failed to save analysis data to server via /api/ingest:", error);
@@ -416,6 +414,10 @@ export default function DrivingTestApp() {
   });
   const [viewedSession, setViewedSession] = useState<TestSession | null>(null);
   const [testSessions, setTestSessions] = useState<TestSession[]>([]);
+  const [dailyDeck, setDailyDeck] = useState<Question[]>([]);
+  const [isDeckMode, setIsDeckMode] = useState(false);
+  const [deckCompletedIds, setDeckCompletedIds] = useState<string[]>([]);
+  const [incorrectIdsFromLastDeck, setIncorrectIdsFromLastDeck] = useState<string[]>([]);
 
   const summaryValues = Object.values(summaryData);
 
@@ -519,6 +521,14 @@ export default function DrivingTestApp() {
     });
   }, [user, phase]);
 
+  // Separate effect to fetch deck when allQuestions is ready
+  useEffect(() => {
+    if (phase === 'intro' && currentUser && allQuestions.length > 0 && dailyDeck.length === 0) {
+        console.log("[Deck] Načítám denní balíček.");
+        fetchDailyDeck(deckCompletedIds, incorrectIdsFromLastDeck);
+    }
+  }, [phase, currentUser, allQuestions.length, dailyDeck.length]); // Přidána závislost na dailyDeck.length
+
   async function fetchGroup(gid: number): Promise<Question[]> {
     const g = GROUPS.find((gr) => gr.id === gid)!;
     const res = await fetch(g.file);
@@ -536,6 +546,54 @@ export default function DrivingTestApp() {
       }
     }
     return arr.sort(() => Math.random() - 0.5);
+  }
+
+  async function fetchDailyDeck(excludeIds: string[] = [], incorrectIds: string[] = []) {
+    if (!currentUser) return;
+    setIsLoading(true);
+    try {
+        let questionsToFilter = allQuestions;
+        // If allQuestions is not loaded yet, load it now.
+        if (questionsToFilter.length === 0) {
+            console.log("[Deck] `allQuestions` not found, loading them for deck generation.");
+            const allQuestionsPromises = GROUPS.map(g => fetchGroup(g.id));
+            const allQuestionsArrays = await Promise.all(allQuestionsPromises);
+            questionsToFilter = allQuestionsArrays.flat();
+            setAllQuestions(questionsToFilter); // Save them for later use
+        }
+
+        const params = new URLSearchParams({ userId: currentUser });
+        if (excludeIds.length > 0) {
+            params.append('exclude', excludeIds.join(','));
+        }
+        // Přidání chyb z minulého balíčku
+        if (incorrectIds.length > 0) {
+            params.append('includeIncorrectFromPrevious', incorrectIds.join(','));
+        }
+        
+        const res = await fetch(`/api/spaced-repetition-deck?${params.toString()}`);
+        if (!res.ok) throw new Error('Failed to fetch daily deck');
+        
+        const { questionIds } = await res.json();
+
+        if (questionIds && questionIds.length > 0) {
+            // Sjednocení typů: porovnáváme Number(q.id) s číselnými ID ze serveru
+            const deckQuestions = questionsToFilter.filter(q => questionIds.includes(Number(q.id)) || questionIds.includes(String(q.id)));
+            deckQuestions.sort((a, b) => {
+                const indexA = questionIds.indexOf(String(a.id)) !== -1 ? questionIds.indexOf(String(a.id)) : questionIds.indexOf(Number(a.id));
+                const indexB = questionIds.indexOf(String(b.id)) !== -1 ? questionIds.indexOf(String(b.id)) : questionIds.indexOf(Number(b.id));
+                return indexA - indexB;
+            });
+            setDailyDeck(deckQuestions);
+        } else {
+            setDailyDeck([]);
+        }
+    } catch (error) {
+        console.error("Error fetching daily deck:", error);
+        setDailyDeck([]); // Reset on error
+    } finally {
+        setIsLoading(false);
+    }
   }
 
   async function buildPractice(groupsToBuild: number[]): Promise<Question[]> {
@@ -592,9 +650,10 @@ export default function DrivingTestApp() {
     return result;
   }
 
-  const initiateTest = async (newMode: 'exam' | 'practice', groups: number[], questionsOverride?: Question[]) => {
+  const initiateTest = async (newMode: 'exam' | 'practice', groups: number[], questionsOverride?: Question[], isDeck: boolean = false) => {
     setIsLoading(true);
     try {
+      setIsDeckMode(isDeck);
       setOriginPhase("intro");
       setMode(newMode);
       const qs = questionsOverride ?? (newMode === 'exam' ? await buildExam() : await buildPractice(groups));
@@ -735,6 +794,19 @@ export default function DrivingTestApp() {
     // Ukládáme session pouze pro ostrý test. Procvičování se ukládá průběžně.
     if (mode === 'exam') {
       await commitSessionAnalysis(reason);
+    }
+
+    if (isDeckMode) {
+        // Najdeme ID špatně zodpovězených otázek z právě dokončeného balíčku
+        const incorrectIds = questions
+            .filter(q => responses[q.id] !== q.spravna)
+            .map(q => q.id);
+        setIncorrectIdsFromLastDeck(incorrectIds);
+
+        // Add all questions from the completed deck to the list of completed IDs
+        setDeckCompletedIds(prev => [...new Set([...prev, ...questions.map(q => q.id)])]);
+        setDailyDeck([]); // Clear the current deck so the user can fetch a new one
+        setIsDeckMode(false); // Reset deck mode
     }
 
     // Po odeslání dat znovu načteme všechna data, abychom měli aktuální stav
@@ -1018,15 +1090,40 @@ export default function DrivingTestApp() {
                     </div>
                   )}
                   <CardHeader>
-                      <h3 className="font-semibold">Balíček na dnes <span className="text-xs font-normal text-muted-foreground">(Mimo provoz)</span></h3>
+                      <h3 className="font-semibold">Balíček na dnes</h3>
                   </CardHeader>
                   <CardContent>
-                      <p className="text-sm text-muted-foreground mb-4">
-                          Tato funkce se připravuje. Brzy zde najdete automaticky vybrané otázky k opakování.
-                      </p>
-                      <Button className="w-full" disabled={true}>
-                          Spustit opakování
-                      </Button>
+                      {dailyDeck.length > 0 ? (
+                          <>
+                              <p className="text-sm text-muted-foreground mb-4">
+                                  Připravili jsme pro vás {dailyDeck.length} otázek k zopakování na základě vašich předchozích odpovědí.
+                              </p>
+                              <Button 
+                                  className="w-full" 
+                                  onClick={async () => {
+                                      await initiateTest('practice', [], dailyDeck, true);
+                                  }}
+                                  disabled={isLoading}
+                                  isLoading={isLoading}
+                              >
+                                  Spustit opakování ({dailyDeck.length} karet)
+                              </Button>
+                          </>
+                      ) : (
+                          <>
+                              <p className="text-sm text-muted-foreground mb-4">
+                                  {deckCompletedIds.length > 0 ? "Skvělá práce! Chcete si vygenerovat další balíček?" : "Pro dnešek nemáte žádné otázky k opakování. Můžete si ale vygenerovat náhodný balíček."}
+                              </p>
+                              <Button 
+                                  className="w-full" 
+                                  onClick={() => fetchDailyDeck(deckCompletedIds, incorrectIdsFromLastDeck)}
+                                  disabled={isLoading}
+                                  isLoading={isLoading}
+                              >
+                                  Vygenerovat další balíček
+                              </Button>
+                          </>
+                      )}
                   </CardContent>
               </Card>
               <div className="relative overflow-hidden">
@@ -1704,9 +1801,27 @@ export default function DrivingTestApp() {
                         await appendAnalysisData([entry], user);
                         
                         // A okamžitě aktualizujeme statistiky, aby se změna projevila
-                        const data = await loadUserData(currentUser);
-                        setSummaryData(data.summaryData);
-                        setStats(data.stats);
+                        // This is inefficient, let's update stats locally for now.
+                        // A full reload can happen when returning to the main screen.
+                        setSummaryData(prev => {
+                            const newSummary = { ...prev };
+                            const qSummary = newSummary[q.id] || {
+                                questionId: q.id,
+                                questionText: q.otazka,
+                                groupId: q.groupId,
+                                attempts: 0,
+                                correct: 0,
+                                totalTimeToAnswer: 0,
+                                history: [],
+                                avgTime: 0,
+                                successRate: 0,
+                            };
+                            qSummary.attempts += 1;
+                            if (isCorrect) qSummary.correct += 1;
+                            qSummary.successRate = (qSummary.correct / qSummary.attempts) * 100;
+                            newSummary[q.id] = qSummary;
+                            return newSummary;
+                        });
 
                       } else { // Režim 'exam'
                         // Jen si poznamenáme data pro pozdější hromadné uložení
