@@ -644,29 +644,9 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
     console.log(`[DeckBuilder] Step 1 (Incorrect from Prev): ${deck.size} questions`);
 
     // 2. Priorita 1: Otázky, které nejsou opraveny v "Přehledu chybovosti"
-    const allEvents = await getAllEvents(uid);
-    const eventsByQuestion = allEvents.reduce((acc, event) => {
-        if (!acc[event.question_id]) {
-            acc[event.question_id] = [];
-        }
-        acc[event.question_id].push(event);
-        return acc;
-    }, {});
-
     const uncorrectedMistakes = allUserQuestions
-      .filter(q => {
-          const history = eventsByQuestion[q.question_id] || [];
-          if (history.length === 0) return false;
-          const lastAttempt = history[history.length - 1];
-          return !lastAttempt.answered_correctly;
-      })
-      .sort((a, b) => {
-          const historyA = eventsByQuestion[a.question_id] || [];
-          const historyB = eventsByQuestion[b.question_id] || [];
-          const lastAttemptA = historyA.length > 0 ? new Date(historyA[historyA.length - 1].created_at) : 0;
-          const lastAttemptB = historyB.length > 0 ? new Date(historyB[historyB.length - 1].created_at) : 0;
-          return lastAttemptA - lastAttemptB; // Starší chyby první
-      });
+      .filter(q => q.success_rate < 100)
+      .sort((a, b) => a.success_rate - b.success_rate);
     
     uncorrectedMistakes.forEach(q => addToDeck(q.question_id));
     console.log(`[DeckBuilder] Step 2 (Uncorrected Mistakes): ${deck.size} questions`);
@@ -688,28 +668,20 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
 
     // 4. Priorita 2: Otázky z nejméně úspěšných okruhů (< 86% úspěšnost)
     if (deck.size < DECK_SIZE) {
-      const topicSummaries = await getTopicSummaries(uid) || [];
-      // jen okruhy < 86 % úspěšnosti, nejdřív ty úplně nejslabší
-      const weakTopics = topicSummaries
-            .filter(t => t.success_rate < 86)
-            .sort((a, b) => a.success_rate - b.success_rate);
+      const topicSummaries = (await getTopicSummaries(uid))
+        .filter(t => t.success_rate < 86)
+        .sort((a, b) => a.success_rate - b.success_rate);
 
-      // připrav mapu všech otázek podle okruhu z analysisIndex,
-      // nejen těch, co už máš v question_summaries
-      const allByTopic = {};
-      for (const [qid, meta] of analysisIndex.entries()) {
-        // V analysisIndex je groupId, v DB je topic_id. Musíme to sjednotit.
-        const topicId = meta.groupId || meta.topic_id; 
-        if (topicId) {
-            if (!allByTopic[topicId]) allByTopic[topicId] = [];
-            allByTopic[topicId].push(qid);
-        }
-      }
+      const questionsByTopic = {};
+      analysisIndex.forEach((q, id) => {
+        if (!questionsByTopic[q.groupId]) questionsByTopic[q.groupId] = [];
+        questionsByTopic[q.groupId].push(id);
+      });
 
-      for (const topic of weakTopics) {
+      for (const topic of topicSummaries) {
         if (deck.size >= DECK_SIZE) break;
         const questionsInTopic =
-              (allByTopic[topic.topic_id] || []).sort(() => 0.5 - Math.random());
+              (questionsByTopic[topic.topic_id] || []).sort(() => 0.5 - Math.random());
         questionsInTopic.forEach(addToDeck);
       }
     }

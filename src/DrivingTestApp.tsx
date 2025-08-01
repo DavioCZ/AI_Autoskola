@@ -566,9 +566,8 @@ export default function DrivingTestApp() {
         if (excludeIds.length > 0) {
             params.append('exclude', excludeIds.join(','));
         }
-        // vezmi 1-5 posledních špatně zodpovězených ID
         if (incorrectIds.length) {
-          params.append("includeIncorrectFromPrevious", incorrectIds.slice(0, 5).join(","));
+          params.append("includeIncorrectFromPrevious", incorrectIds.join(","));
         }
         
         const res = await fetch(`/api/spaced-repetition-deck?${params.toString()}`);

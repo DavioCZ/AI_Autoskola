@@ -169,8 +169,8 @@
 - [ ] **Přidat nové vizualizace a personalizované učení:**
 - [ ] heatmapa
     - [x] **2. Spaced-repetition balíčky (pro otázky < 80 % úspěšnosti):**
-        - [ ] **Výběr otázek (Vylepšená logika):** Implementována víceúrovňová logika na serveru (`/api/spaced-repetition-deck`):
-            - **Priorita 1:** Otázky s úspěšností < 80 % (při >= 2 pokusech).
+        - [x] **Výběr otázek (Vylepšená logika):** Implementována víceúrovňová logika na serveru (`/api/spaced-repetition-deck`):
+            - **Priorita 1:** Otázky, ktere nejsou opraveny v sekci přehled chybovosti.
             - **Priorita 2:** Otázky z nejméně úspěšných okruhů.
             - **Priorita 3:** Náhodné otázky pro doplnění balíčku na 20 položek.
         - [ ] **Plánování opakování (Pragmatický mix):**
@@ -181,9 +181,9 @@
             - [x] Na dashboardu je widget "Balíček na dnes" s počtem karet a tlačítkem pro spuštění.
             - [ ] Po zodpovězení karty umožnit hodnocení (0-5) pro aktualizaci SM-2 intervalu.
             - [x] Na dashboardu je widget "Slabá místa" s top 3 okruhy a tlačítkem pro procvičení.
-        - [ ] **Funkce více balíčků denně:**
+        - [x] **Funkce více balíčků denně:**
             - [x] **Backend:** API je připraveno přijímat `exclude` parametr pro vyloučení již viděných otázek.
-            - [ ] **Frontend:** Implementovat UI pro žádost o další balíček a posílání vyloučených ID.
+            - [x] **Frontend:** Implementovat UI pro žádost o další balíček a posílání vyloučených ID.
     - [ ] **3. Integrace s odznaky a motivací:**
         - [ ] **Odznak "Zachráněná karta":** Přidělit za zlepšení karty z <80 % na ≥90 % ve 3 po sobě jdoucích opakováních (s úrovněmi Bronz, Stříbro, Zlato, Platina).
         - [ ] **Odznak "Heat-map streak":** Přidělit za udržení úspěšnosti ≥ 80 % po dobu 7, 14, 30 a 100 dní v řadě.
@@ -312,11 +312,11 @@
 *Cíl: Implementovat a ověřit všechny klíčové funkce popsané uživatelem po přechodu na novou datovou architekturu.*
 
 ### 10.1 | Dashboard
-- [ ] **Balíček na dnes:**
-    - [ ] Sestavit balíček 20 otázek dle logiky v `TASK_LIST.md` (Fáze 6.3).
-    - [ ] Po dokončení umožnit generování dalšího balíčku.
-    - [ ] Do nového balíčku volitelně zařadit až 5 špatně zodpovězených otázek z předchozího.
-    - [ ] Občasně zařadit i již opravené otázky z přehledu chybovosti pro ověření znalostí.
+- [x] **Balíček na dnes:**
+    - [x] Sestavit balíček 20 otázek dle logiky v `TASK_LIST.md` (Fáze 6.3).
+    - [x] Po dokončení umožnit generování dalšího balíčku.
+    - [x] Do nového balíčku volitelně zařadit až 5 špatně zodpovězených otázek z předchozího.
+    - [x] Občasně zařadit i již opravené otázky z přehledu chybovosti pro ověření znalostí.
 - [ ] **Slabá místa:**
     - [ ] Zobrazit 3 nejméně úspěšné okruhy z podrobné analýzy.
     - [ ] Nabídnout možnost procvičení daného okruhu.
