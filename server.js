@@ -630,10 +630,9 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
     const deck = new Set();
 
     const addToDeck = (questionId) => {
-      // Důsledně pracujeme s řetězci, abychom předešli chybám z nekonzistentních typů (číslo vs. řetězec).
-      const strId = String(questionId);
-      if (deck.size < DECK_SIZE && !deck.has(strId) && !excludedIds.includes(strId)) {
-        deck.add(strId);
+      const id = String(questionId); // <<< sjednocení typu
+      if (deck.size < DECK_SIZE && !deck.has(id) && !excludedIds.includes(id)) {
+          deck.add(id);
       }
     };
 
@@ -690,22 +689,27 @@ app.get("/api/spaced-repetition-deck", async (req, res) => {
     // 4. Priorita 2: Otázky z nejméně úspěšných okruhů (< 86% úspěšnost)
     if (deck.size < DECK_SIZE) {
       const topicSummaries = await getTopicSummaries(uid) || [];
-      // Omezení pouze na okruhy s úspěšností pod 86 %
-      const weakTopics = topicSummaries.filter(t => t.success_rate < 86);
+      // jen okruhy < 86 % úspěšnosti, nejdřív ty úplně nejslabší
+      const weakTopics = topicSummaries
+            .filter(t => t.success_rate < 86)
+            .sort((a, b) => a.success_rate - b.success_rate);
 
-      const questionsByTopic = allUserQuestions.reduce((acc, q) => {
-        const topicId = q.topic_id;
+      // připrav mapu všech otázek podle okruhu z analysisIndex,
+      // nejen těch, co už máš v question_summaries
+      const allByTopic = {};
+      for (const [qid, meta] of analysisIndex.entries()) {
+        // V analysisIndex je groupId, v DB je topic_id. Musíme to sjednotit.
+        const topicId = meta.groupId || meta.topic_id; 
         if (topicId) {
-          if (!acc[topicId]) acc[topicId] = [];
-          acc[topicId].push(q.question_id);
+            if (!allByTopic[topicId]) allByTopic[topicId] = [];
+            allByTopic[topicId].push(qid);
         }
-        return acc;
-      }, {});
+      }
 
-      // Procházíme jen slabé okruhy
       for (const topic of weakTopics) {
         if (deck.size >= DECK_SIZE) break;
-        const questionsInTopic = (questionsByTopic[topic.topic_id] || []).sort(() => 0.5 - Math.random());
+        const questionsInTopic =
+              (allByTopic[topic.topic_id] || []).sort(() => 0.5 - Math.random());
         questionsInTopic.forEach(addToDeck);
       }
     }

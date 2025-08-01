@@ -566,9 +566,9 @@ export default function DrivingTestApp() {
         if (excludeIds.length > 0) {
             params.append('exclude', excludeIds.join(','));
         }
-        // Přidání chyb z minulého balíčku
-        if (incorrectIds.length > 0) {
-            params.append('includeIncorrectFromPrevious', incorrectIds.join(','));
+        // vezmi 1-5 posledních špatně zodpovězených ID
+        if (incorrectIds.length) {
+          params.append("includeIncorrectFromPrevious", incorrectIds.slice(0, 5).join(","));
         }
         
         const res = await fetch(`/api/spaced-repetition-deck?${params.toString()}`);
@@ -577,11 +577,10 @@ export default function DrivingTestApp() {
         const { questionIds } = await res.json();
 
         if (questionIds && questionIds.length > 0) {
-            // Sjednocení typů: porovnáváme Number(q.id) s číselnými ID ze serveru
-            const deckQuestions = questionsToFilter.filter(q => questionIds.includes(Number(q.id)) || questionIds.includes(String(q.id)));
+            const deckQuestions = questionsToFilter.filter(q => questionIds.includes(String(q.id)));
             deckQuestions.sort((a, b) => {
-                const indexA = questionIds.indexOf(String(a.id)) !== -1 ? questionIds.indexOf(String(a.id)) : questionIds.indexOf(Number(a.id));
-                const indexB = questionIds.indexOf(String(b.id)) !== -1 ? questionIds.indexOf(String(b.id)) : questionIds.indexOf(Number(b.id));
+                const indexA = questionIds.indexOf(String(a.id));
+                const indexB = questionIds.indexOf(String(b.id));
                 return indexA - indexB;
             });
             setDailyDeck(deckQuestions);
