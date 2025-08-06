@@ -27,7 +27,7 @@ import {
 } from "./src/mysql.js";
 
 dotenv.config();
-// let analysisIndex; // Odstraněno cachování, bude se generovat za běhu
+let analysisIndex;
 const { 
   GEMINI_API_KEY, 
   UPSTASH_REDIS_REST_URL, 
@@ -200,13 +200,6 @@ Klíčové pokyny pro interakci:
 app.post("/api/ai", async (req, res) => {
   try {
     const { userQuestion, context, history } = req.body;
-
-    if (!analysisIndex) {
-      // This should not happen if the server started correctly, but it's a good fallback.
-      console.warn("⚠️ Analysis index not ready, building dynamically...");
-      analysisIndex = await buildAnalysisIndex();
-      console.log(`✅ Dynamic index built, ${analysisIndex.size} items loaded.`);
-    }
 
     const questionId = context?.question?.id_otazky;
     if (!questionId) {
@@ -719,15 +712,18 @@ app.get("/api/export-data", async (req, res) => {
 
 
 /**
- * Loads the analysis index from the static JSON file.
- * Falls back to building it dynamically if the file doesn't exist.
+ * Loads the analysis index. This is critical for server operation.
  */
-// Funkce loadAnalysisIndex se již nepoužívá, můžeme ji odstranit nebo zakomentovat
-// async function loadAnalysisIndex() {
-//   console.log("ℹ️  Building dynamic analysis index on startup...");
-//   analysisIndex = await buildAnalysisIndex();
-//   console.log(`✅ Dynamic index built, ${analysisIndex.size} items loaded.`);
-// }
+async function loadAnalysisIndex() {
+  console.log("ℹ️  Building dynamic analysis index on startup...");
+  try {
+    analysisIndex = await buildAnalysisIndex();
+    console.log(`✅ Dynamic index built, ${analysisIndex.size} items loaded.`);
+  } catch (error) {
+    console.error("❌ Failed to build analysis index on startup:", error);
+    process.exit(1); // Exit if the index fails to build
+  }
+}
 
 // Catch-all pro servírování index.html (pro React Router)
 app.get('*', (req, res) => {
@@ -741,6 +737,6 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, async () => {
-  // await loadAnalysisIndex(); // Již se nenačítá při startu
+  await loadAnalysisIndex();
   console.log(`AI proxy běží na :${PORT} (chat=${MODEL_CHAT})`);
 });
