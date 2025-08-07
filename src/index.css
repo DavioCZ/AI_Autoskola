@@ -100,3 +100,11 @@ body {
   /* Tento placeholder zajistí, že se obsah neskryje pod plovoucí lištu */
   min-height: 96px; 
 }
+
+#bg-lines {
+  position: fixed;
+  inset: 0;          /* top/right/bottom/left: 0 */
+  z-index: -1;       /* pod obsahem */
+  pointer-events: none;
+  background: #0b0c10; /* fallback barva */
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test pozadí</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Zabrání scrollbarům */
+    }
+    #bg-lines {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+    /* Přidáme třídu pro detekci světlého/tmavého režimu, pokud by ji JS potřeboval */
+    .dark {
+        /* Tuto třídu bude přepínat JS v aplikaci, zde ji můžeme natvrdo nastavit pro testování */
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg-lines"></canvas>
+  <script src="/bg-lines.js" defer></script>
+</body>
+</html>
