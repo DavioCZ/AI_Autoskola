@@ -5,6 +5,7 @@ const ROAD_W_MAX     = 0.58;     // půl-šířka vozovky dole
 const SPEED          = 0.002;            // Rychlost jízdy (v normalizovaném prostoru 0-1 za sekundu)
 const NUM_DASHES     = 15;              // Počet cyklů čára+mezera na obrazovce
 
+
 /* === Plátno & téma ======================================================= */
 const canvas = document.getElementById('bg-lines');
 const ctx    = canvas.getContext('2d', { alpha: false });
@@ -155,6 +156,7 @@ function draw(t){
     // Posuneme se na další úsečku. Mezera je 75 % délky čáry.
     p = pBottom + (segmentH * 0.75);
   }
+
 
   requestAnimationFrame(draw);
 }
