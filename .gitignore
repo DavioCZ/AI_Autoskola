@@ -45,6 +45,5 @@ lerna-debug.log*
 
 # Development-only files and directories
 /scraper/
-/scripts/
 task-list.md
 task-list-redesign.md
