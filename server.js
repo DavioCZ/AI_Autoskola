@@ -11,7 +11,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 // import { Redis } from "@upstash/redis"; // Dočasně deaktivováno
 // import { Ratelimit } from "@upstash/ratelimit"; // Dočasně deaktivováno
 import { createClient } from "@supabase/supabase-js";
-import { allBadges } from "./src/badges.js";
+import { allBadges } from "./badges.js";
 import { 
   mysqlPool,
   ensureUserExists,
@@ -24,7 +24,7 @@ import {
   getUserBadges,
   deleteAllUserData,
   getAllEvents
-} from "./src/mysql.js";
+} from "./mysql.js";
 
 dotenv.config();
 let analysisIndex;

@@ -17,6 +17,7 @@ execSync('npm run build', { stdio: 'inherit' }); // vytváří ./build
 await cp('build', path.join(dist, 'build'), { recursive: true });
 await cp('public', path.join(dist, 'public'), { recursive: true });
 await cp('utils', path.join(dist, 'utils'), { recursive: true });
+await cp('src', path.join(dist, 'src'), { recursive: true });
 await cp('server.js', path.join(dist, 'server.js'));
 await cp('requirements.txt', path.join(dist, 'requirements.txt'));
 try { await cp('.env.example', path.join(dist, '.env.example')); } catch {}
