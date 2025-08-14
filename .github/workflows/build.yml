@@ -28,12 +28,15 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: List files for debugging
         run: ls -R
 
       - name: Build production package
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON }}
         run: node scripts/build_package.mjs
 
       - name: List dist contents
