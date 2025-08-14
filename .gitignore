@@ -1,6 +1,5 @@
 # node / front-end artefakty
 node_modules/
-dist/
 .env
 .vscode/
 .DS_Store
@@ -12,8 +11,6 @@ dist/
 # Testing
 /coverage
 
-# Production
-/build
 
 # Misc
 *.pem
