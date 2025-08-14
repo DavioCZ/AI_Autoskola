@@ -74,8 +74,10 @@ app.use(express.json({ limit: "8mb" }));   // zvýšeno kvůli base64 médiím
 // --- Statické soubory pro produkci ---
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// Upravená cesta: směřuje o úroveň výš z `build` do `dist`
-app.use(express.static(path.join(__dirname, "..", "dist")));
+// Serve the 'build' directory which contains the frontend assets
+app.use(express.static(path.join(__dirname, 'build')));
+// Serve the 'public' directory for other assets like images
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // --- CAPTCHA Verification Helper ---
 async function verifyCaptcha(token) {
@@ -727,12 +729,12 @@ async function loadAnalysisIndex() {
 
 // Catch-all pro servírování index.html (pro React Router)
 app.get('*', (req, res) => {
-  // Pokud požadavek směřuje na API, nechej ho propadnout (nebo zpracuj jinak)
+  // If the request is for an API endpoint, let it pass to the 404 handler
   if (req.originalUrl.startsWith('/api/')) {
     return res.status(404).json({ error: 'API endpoint not found' });
   }
-  // Jinak pošli hlavní soubor aplikace
-  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+  // For any other request, serve the main index.html file from the 'build' directory
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3002;
