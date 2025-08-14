@@ -11,7 +11,7 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 
 // 2️⃣ sestav frontend
-// execSync('npm run build', { stdio: 'inherit' }); // Běží explicitně ve workflow
+execSync('npm run build', { stdio: 'inherit' }); // vytváří ./build
 
 // 3️⃣ nakopíruj runtime soubory
 await cp('build', path.join(dist, 'build'), { recursive: true });
