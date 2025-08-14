@@ -48,3 +48,15 @@ lerna-debug.log*
 /scripts/
 task-list.md
 task-list-redesign.md
+
+# Ignored project files and documentation
+__pycache__/
+.vscode/
+.idea/
+*.md
+redis_backup.json
+run_npm.ps1
+py_scripts/
+assets/raw/
+data_format_guide.md
+tsconfig.server-David_NTB.json
