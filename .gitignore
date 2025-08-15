@@ -60,3 +60,4 @@ py_scripts/
 assets/raw/
 data_format_guide.md
 tsconfig.server-David_NTB.json
+/public/bg-lines.js

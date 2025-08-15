@@ -1,0 +1,46 @@
+# Node.js
+node_modules
+npm-debug.log
+*.log
+
+# Build output
+dist
+build
+
+# Dev-only source code and assets
+src
+components
+lib
+utils
+py_scripts
+assets
+__pycache__
+
+# Documentation and configuration
+*.md
+*.ps1
+*.json
+*.sql
+*.js
+*.cjs
+*.ts
+*.tsx
+
+# Allow necessary files
+!package.json
+!package-lock.json
+!server.js
+!vite.config.ts
+!tailwind.config.js
+!postcss.config.cjs
+!tsconfig.json
+!tsconfig.server.json
+!public/
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Environment
+.env
